@@ -10,7 +10,6 @@ const manrope = Manrope({
   display: 'swap',
 })
 
-// Load Bangers for comic-book headings (v2)
 const bangers = Bangers({
   subsets: ['latin'],
   weight: ['400'],
@@ -20,11 +19,11 @@ const bangers = Bangers({
 
 export const metadata: Metadata = {
   title: 'Sayso',
-  description: 'Transform your landing pages',
+  description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
   icons: {
-    icon: '/logo-youtube.png',
-    apple: '/logo-youtube.png',
-    shortcut: '/logo-youtube.png',
+    icon: '/logo-sayso.png',
+    apple: '/logo-sayso.png',
+    shortcut: '/logo-sayso.png',
   },
 }
 
@@ -34,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${bangers.variable}`} style={{ zoom: 0.8 }}>
+    <html lang="en" className={`${manrope.variable} ${bangers.variable}`}>
       <body>{children}</body>
     </html>
   )

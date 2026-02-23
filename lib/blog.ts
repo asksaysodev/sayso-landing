@@ -42,7 +42,7 @@ function parseMdxFile(filePath: string): BlogPost {
     description: data.description || '',
     category: data.category || 'general',
     tags: data.tags || [],
-    author: data.author || { name: 'Sayso Team', role: 'Team', avatar: '/logo-youtube.png' },
+    author: data.author || { name: 'Sayso Team', role: 'Team', avatar: '/logo-sayso.png' },
     coverImage: data.coverImage || '/blog/covers/default.jpg',
     publishedAt: data.publishedAt || new Date().toISOString().split('T')[0],
     updatedAt: data.updatedAt || data.publishedAt || new Date().toISOString().split('T')[0],
