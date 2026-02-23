@@ -509,7 +509,7 @@ function DialerBottomBar() {
 
 // === Main Export: Dialer Showcase ===
 
-export function CRMDialerShowcaseV3() {
+export function CRMDialerShowcase() {
   const {
     currentCycle,
     showBuyerMessage,

@@ -74,7 +74,7 @@ function PanelWastedOpportunity({ imgHeight = 'min-h-[240px] md:min-h-[280px]' }
   );
 }
 
-export function PainPointPanelV4() {
+export function PainPointPanel() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (

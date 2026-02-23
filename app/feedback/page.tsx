@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import SaysoNavbarV4 from '@/components/landing-v4/SaysoNavbarV4';
-import { FooterV4 } from '@/components/landing-v4/FooterV4';
+import SaysoNavbar from '@/components/landing/SaysoNavbar';
+import { Footer } from '@/components/landing/Footer';
 import { CannyBoard } from '@/components/CannyBoard';
 
 type TabType = 'feedback' | 'bugs' | 'roadmap';
@@ -72,7 +72,7 @@ export default function FeedbackPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <SaysoNavbarV4 />
+      <SaysoNavbar />
 
       {/* Main Content */}
       <main className="flex-1 pt-8 md:pt-16">
@@ -221,7 +221,7 @@ export default function FeedbackPage() {
         )}
       </main>
 
-      <FooterV4 />
+      <Footer />
     </div>
   );
 }

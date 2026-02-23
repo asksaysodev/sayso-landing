@@ -80,8 +80,8 @@ components/
 - No props needed — all state is internal
 
 ### Navigation Update
-- In `SaysoNavbarV4.tsx`: Change all `href="#get-started"` links to `href="/get-started"`
-- In `HeroWithVideoV4.tsx`: Change the "Activate Sayso" button to `href="/get-started"` (currently calls `openDemoCalendar()`)
+- In `SaysoNavbar.tsx`: Change all `href="#get-started"` links to `href="/get-started"`
+- In `HeroWithVideo.tsx`: Change the "Activate Sayso" button to `href="/get-started"` (currently calls `openDemoCalendar()`)
 - In `TransformationSectionV4.tsx`: Change the "Activate Sayso" `<a>` tag `href` from `#get-started` to `/get-started`
 
 ---
@@ -676,8 +676,8 @@ max-w-2xl mx-auto w-full
 ### Phase 3: Polish & Connect
 14. Wire up Framer Motion slide transitions between screens
 15. Add the analyzing animation sequence
-16. Update `SaysoNavbarV4.tsx` — change `#get-started` hrefs to `/get-started`
-17. Update `HeroWithVideoV4.tsx` — change "Activate Sayso" to link to `/get-started`
+16. Update `SaysoNavbar.tsx` — change `#get-started` hrefs to `/get-started`
+17. Update `HeroWithVideo.tsx` — change "Activate Sayso" to link to `/get-started`
 18. Update `TransformationSectionV4.tsx` — change "Activate Sayso" href to `/get-started`
 19. Test full flow on mobile and desktop
 20. Verify all V4 visual consistency (colors, fonts, spacing, border-radius)

@@ -1,24 +1,18 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback } from 'react';
-import { OnboardingModal } from '../onboarding/OnboardingModal';
+import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
 
 const DEMO_CALENDAR_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0eeiee8mED3XOLfAhzApvxOvHL96hIK8pNfAcZBY89TaKTa_LeVrtJr_kEbOlbQyb1juvLNPG3?gv=true';
 const CONTACT_FORM_URL = 'https://alert-tartan-008.notion.site/ebd/2f04de400468813784b3cd2d7a1290af';
 
-const DemoCalendarContext = createContext<{
-  openDemoCalendar: () => void;
-  openContactForm: () => void;
-  openOnboarding: () => void;
-}>({
-  openDemoCalendar: () => {},
-  openContactForm: () => {},
-  openOnboarding: () => {},
-});
-
-export function useDemoCalendar() {
-  return useContext(DemoCalendarContext);
+interface IDemoCalendarContext {
+    openDemoCalendar: () => void;
+    openContactForm: () => void;
+    openOnboarding: () => void;
 }
+
+const DemoCalendarContext = createContext<IDemoCalendarContext | null>(null);
 
 export function DemoCalendarProvider({ children }: { children: React.ReactNode }) {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
@@ -90,4 +84,10 @@ export function DemoCalendarProvider({ children }: { children: React.ReactNode }
       )}
     </DemoCalendarContext.Provider>
   );
+}
+
+export function useDemoCalendar() {
+  const context = useContext(DemoCalendarContext);
+  if (!context) throw new Error('useDemoCalendar must be used within DemoCalendarProvider');
+  return context;
 }

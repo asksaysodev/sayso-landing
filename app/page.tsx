@@ -1,28 +1,22 @@
-import SaysoNavbar from '@/components/ui/SaysoNavbar';
-import { SocialProofStrip } from '@/components/landing/SocialProofStrip';
-import { ProductShowcaseCopy } from '@/components/landing/ProductShowcaseSection';
-import { ThreeStepsSection } from '@/components/landing/ThreeStepsSection';
-import { PricingSection } from '@/components/landing/PricingSection';
-import { Footer } from '@/components/landing/Footer';
-import { HeroWithVideo } from '@/components/landing/HeroWithVideo';
+import { DemoCalendarProvider } from "@/app/context/landing/DemoCalendarContext";
+import { Footer } from "@/components/landing/Footer";
+import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
+import { PainPointPanel } from "@/components/landing/PainPointPanel";
+import SaysoNavbar from "@/components/landing/SaysoNavbar";
+import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
+import { TransformationSection } from "@/components/landing/TransformationSection";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-[#FFFFFF] pt-2">
-      <SaysoNavbar />
-
-      {/* Hero: headline + CTAs + video mock (all visible above the fold) */}
-      <HeroWithVideo />
-
-      {/* Copy section below the video */}
-      <ProductShowcaseCopy />
-
-      {/* Social proof moved below */}
-      <SocialProofStrip />
-
-      <ThreeStepsSection />
-      <PricingSection />
-      <Footer />
-    </div>
-  );
+    return (
+        <DemoCalendarProvider>
+            <div className="relative bg-white">
+                <SaysoNavbar />
+                <HeroWithVideo />
+                <PainPointPanel />
+                <TransformationSection />
+                <ThreeStepsSection />
+                <Footer />
+            </div>
+        </DemoCalendarProvider>
+    );
 }

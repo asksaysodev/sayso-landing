@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { useDemoCalendar } from './DemoCalendarProvider';
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#top' },
@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact', isContact: true },
 ];
 
-export default function SaysoNavbarV4() {
+export default function SaysoNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { openDemoCalendar, openContactForm } = useDemoCalendar();
   const menuRef = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ export default function SaysoNavbarV4() {
             className="flex items-center gap-2 text-[#1D4871] font-bold text-lg md:text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg px-2 -ml-2"
             aria-label="Sayso home"
           >
-            <img src="/logo-pos-horizontal.png" alt="Sayso" className="h-8" />
+            <Image src="/logo-pos-horizontal.png" alt="Sayso" width={90} height={32} />
           </a>
 
           {/* Desktop Nav Links */}

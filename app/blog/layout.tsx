@@ -1,14 +1,14 @@
-import SaysoNavbarV4 from '@/components/landing-v4/SaysoNavbarV4';
-import { FooterV4 } from '@/components/landing-v4/FooterV4';
-import { DemoCalendarProvider } from '@/components/landing-v4/DemoCalendarProvider';
+import SaysoNavbar from '@/components/landing/SaysoNavbar';
+import { Footer } from '@/components/landing/Footer';
+import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
   return (
     <DemoCalendarProvider>
       <div className="relative bg-[#F4F4F5] min-h-screen">
-        <SaysoNavbarV4 />
+        <SaysoNavbar />
         <main className="pt-6">{children}</main>
-        <FooterV4 />
+        <Footer />
       </div>
     </DemoCalendarProvider>
   );

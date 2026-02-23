@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { DesktopDemoFrame } from './DesktopDemoFrame';
-import { CRMDialerShowcaseV3, SaysoWidget, useSaysoWidget } from './CRMDialerShowcaseV3';
+import { CRMDialerShowcase, SaysoWidget, useSaysoWidget } from './CRMDialerShowcase';
 
 const DESKTOP_RENDER_WIDTH = 900;
 
@@ -77,7 +77,7 @@ export function ProductShowcaseDesktop() {
             }
           >
             <div className="relative h-full">
-              <CRMDialerShowcaseV3 />
+              <CRMDialerShowcase />
             </div>
           </DesktopDemoFrame>
         </div>

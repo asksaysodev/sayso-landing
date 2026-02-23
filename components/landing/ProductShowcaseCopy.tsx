@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export function ProductShowcaseCopyV4() {
+export function ProductShowcaseCopy() {
   return (
     <section className="bg-[#F8F8FA] py-12 md:py-14 lg:py-16 v2-halftone relative">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DesktopDemoFrame } from '@/components/landing-v3/DesktopDemoFrame';
+import { DesktopDemoFrame } from '@/components/landing/DesktopDemoFrame';
 
 
 // === Data ===
