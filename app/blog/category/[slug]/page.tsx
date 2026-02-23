@@ -23,6 +23,19 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     alternates: {
       canonical: `${siteUrl}/blog/category/${slug}`,
     },
+    openGraph: {
+      title: `${name} Articles | Sayso Blog`,
+      description: `Read our latest articles about ${name.toLowerCase()}. Tips, strategies, and insights from the Sayso team.`,
+      url: `${siteUrl}/blog/category/${slug}`,
+      type: 'website',
+      // TODO: create /public/og-default.png (1200x630) and uncomment
+      // images: [{ url: '/og-default.png', width: 1200, height: 630, alt: `${name} — Sayso Blog` }],
+    },
+    twitter: {
+      title: `${name} Articles | Sayso Blog`,
+      description: `Read our latest articles about ${name.toLowerCase()}. Tips, strategies, and insights from the Sayso team.`,
+      // images: ['/og-default.png'],
+    },
   };
 }
 

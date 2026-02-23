@@ -8,7 +8,7 @@ export function Footer() {
           {/* Left Column: Logo + Description */}
           <div className="space-y-3">
             <a
-              href="/v4"
+              href="/"
               className="flex items-center gap-2 text-white font-bold text-lg md:text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#FFDE59] focus:ring-offset-2 focus:ring-offset-[#1D4871] rounded-lg px-2 -ml-2 w-fit"
               aria-label="Sayso home"
             >

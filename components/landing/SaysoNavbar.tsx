@@ -51,7 +51,7 @@ export default function SaysoNavbar() {
         <div className="flex items-center justify-between h-14 md:h-[4.5rem] px-4 md:px-6 rounded-full bg-white border-2 border-[#1D4871] v2-comic-shadow-sm">
           {/* Logo with superhero character */}
           <a
-            href="/v4"
+            href="/"
             className="flex items-center gap-2 text-[#1D4871] font-bold text-lg md:text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg px-2 -ml-2"
             aria-label="Sayso home"
           >
