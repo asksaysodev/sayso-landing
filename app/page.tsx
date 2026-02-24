@@ -32,12 +32,12 @@ export default function Home() {
     return (
         <DemoCalendarProvider>
             <div className="relative bg-white">
-                {/*<SaysoNavbar />*/}
-                {/*<HeroWithVideo />*/}
-                {/*<PainPointPanel />*/}
-                {/*<TransformationSection />*/}
+                <SaysoNavbar />
+                <HeroWithVideo />
+                <PainPointPanel />
+                <TransformationSection />
                 <ThreeStepsSection />
-                {/*<Footer />*/}
+                <Footer />
             </div>
         </DemoCalendarProvider>
     );

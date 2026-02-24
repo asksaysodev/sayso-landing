@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 function useRevealOnScroll() {
   const ref = useRef<HTMLDivElement>(null);
@@ -100,9 +101,7 @@ export function PainPointPanel() {
               aria-label="Previous"
               className="w-9 h-9 rounded-full border-2 border-[#1D4871] bg-white flex items-center justify-center disabled:opacity-30 transition-opacity"
             >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M10 12L6 8l4-4" stroke="#1D4871" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ChevronLeft size={16} strokeWidth={2} stroke="#1D4871" />
             </button>
             <div className="flex gap-2">
               {[0, 1].map(i => (
@@ -120,9 +119,7 @@ export function PainPointPanel() {
               aria-label="Next"
               className="w-9 h-9 rounded-full border-2 border-[#1D4871] bg-white flex items-center justify-center disabled:opacity-30 transition-opacity"
             >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 4l4 4-4 4" stroke="#1D4871" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ChevronRight size={16} strokeWidth={2} stroke="#1D4871" />
             </button>
           </div>
         </div>

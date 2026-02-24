@@ -2,21 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-
-/* ─── Chevron Icon ─── */
-function ChevronIcon({ isOpen }: { isOpen: boolean }) {
-  return (
-    <svg
-      className={`w-8 h-8 text-white transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-}
+import { ChevronDown } from 'lucide-react';
 
 /* ─── Mock case study data ─── */
 const CASE_STUDIES = [
@@ -208,7 +194,7 @@ function CaseStudySection({ study }: { study: (typeof CASE_STUDIES)[number] }) {
 
             {/* Expand/Collapse Chevron */}
             <div className="flex-shrink-0 self-center hidden md:block">
-              <ChevronIcon isOpen={isExpanded} />
+              <ChevronDown className={`w-8 h-8 text-white transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} strokeWidth={2} />
             </div>
           </div>
 
@@ -217,7 +203,7 @@ function CaseStudySection({ study }: { study: (typeof CASE_STUDIES)[number] }) {
             <span className="text-white/60 text-sm font-bold">
               {isExpanded ? 'Tap to collapse' : 'Tap to expand'}
             </span>
-            <ChevronIcon isOpen={isExpanded} />
+            <ChevronDown className={`w-8 h-8 text-white transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} strokeWidth={2} />
           </div>
         </button>
 
@@ -379,7 +365,7 @@ export function CaseStudiesPage() {
             Join teams already using Sayso to book more appointments and ramp agents faster.
           </p>
           <a
-            href="/v3#get-started"
+            href="/"
             className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base md:text-lg v2-comic-btn border-2 border-[#1D4871]"
           >
             Get Started

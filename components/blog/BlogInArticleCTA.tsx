@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 
 export function BlogInArticleCTA() {
   return (
@@ -12,18 +13,16 @@ export function BlogInArticleCTA() {
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <Link
-            href="/v4#demo"
+            href="/#demo"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-[#1D4871] font-bold text-sm border-2 border-white hover:bg-[#FFDE59] hover:border-[#FFDE59] transition-colors"
           >
             Book a Demo
           </Link>
           <Link
-            href="/v4"
+            href="/"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-white font-bold text-sm border-2 border-white/50 hover:border-white hover:bg-white/10 transition-colors"
           >
-            <svg width="14" height="14" viewBox="0 0 512 512" fill="none" className="mr-1.5">
-              <path d="M294.4 25.6L115.2 281.6H256L217.6 486.4L396.8 230.4H256L294.4 25.6Z" fill="currentColor" stroke="currentColor" strokeWidth="20"/>
-            </svg>
+            <LightningIcon size={14} className="mr-1.5" />
             Activate Sayso
           </Link>
         </div>

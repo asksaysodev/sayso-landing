@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback } from 'react';
+import { X } from 'lucide-react';
 import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
 
 const DEMO_CALENDAR_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0eeiee8mED3XOLfAhzApvxOvHL96hIK8pNfAcZBY89TaKTa_LeVrtJr_kEbOlbQyb1juvLNPG3?gv=true';
@@ -41,7 +42,7 @@ export function DemoCalendarProvider({ children }: { children: React.ReactNode }
               className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white border-2 border-[#1D4871] text-[#1D4871] hover:bg-gray-100 transition-colors"
               aria-label="Close calendar"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <X size={20} strokeWidth={2.5} />
             </button>
             <iframe
               src={DEMO_CALENDAR_URL}
@@ -67,7 +68,7 @@ export function DemoCalendarProvider({ children }: { children: React.ReactNode }
               className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white border-2 border-[#1D4871] text-[#1D4871] hover:bg-gray-100 transition-colors"
               aria-label="Close contact form"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <X size={20} strokeWidth={2.5} />
             </button>
             <iframe
               src={CONTACT_FORM_URL}

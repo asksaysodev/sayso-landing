@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 
 export function ProductShowcaseCopy() {
   return (
@@ -15,9 +16,7 @@ export function ProductShowcaseCopy() {
           {/* Heading with lightning bolt + small superhero */}
           <div className="flex items-center justify-center gap-3 mb-3 md:mb-4">
             <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] tracking-wide">
-              <svg width="28" height="28" viewBox="0 0 512 512" fill="none" className="inline-block mr-1 -mt-1">
-                <path d="M294.4 25.6L115.2 281.6H256L217.6 486.4L396.8 230.4H256L294.4 25.6Z" fill="#2367EE" stroke="#2367EE" strokeWidth="20"/>
-              </svg>
+              <LightningIcon size={28} color="#2367EE" className="inline-block mr-1 -mt-1" />
               Enter SaySo.
             </h2>
             <Image
