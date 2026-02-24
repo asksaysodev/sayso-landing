@@ -17,11 +17,10 @@ export function useDialerState() {
   const timeoutIds = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   const clearAllTimeouts = useCallback(() => {
-    timeoutIds.current.forEach(clearTimeout);
+    timeoutIds.current.forEach((t) => clearTimeout(t));
     timeoutIds.current = [];
   }, []);
 
-  // Timer
   useEffect(() => {
     const interval = setInterval(() => {
       setTimerSeconds((prev) => prev + 1);

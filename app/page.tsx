@@ -6,6 +6,7 @@ import { PainPointPanel } from "@/components/landing/PainPointPanel";
 import SaysoNavbar from "@/components/landing/SaysoNavbar";
 import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
 import { TransformationSection } from "@/components/landing/TransformationSection";
+import { ProductShowcaseSection } from '@/components/landing/ProductShowcaseSection';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 

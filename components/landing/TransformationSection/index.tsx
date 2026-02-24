@@ -3,62 +3,11 @@
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
-import { CalendarCheck, TrendingUp, Rocket, ShieldCheck } from 'lucide-react';
-
-const ICON_CONSTANTS = { size: 28, color: '#2367EE' };
-const metrics = [
-    {
-        icon: <CalendarCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color}/>,
-        title: 'More Appointments',
-        description: 'Book meetings at the right moment',
-    },
-    {
-        icon: <TrendingUp size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color}/>,
-        title: 'Real Time Assistance',
-        description: 'Higher quality conversations create higher quality appointments',
-    },
-    {
-        icon: <Rocket size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
-        title: 'Set up in minutes',
-        description: 'Works in any CRM or dialer',
-    },
-    {
-        icon: <ShieldCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color}/>,
-        title: 'Always-On Guidance',
-        description: 'Real-time support on every call',
-    },
-];
-
-// Starburst behind the hero
-function HeroStarburst() {
-  return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <svg viewBox="0 0 600 600" className="w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]" fill="none">
-        {Array.from({ length: 24 }).map((_, i) => {
-          const angle = (i * 15) * (Math.PI / 180);
-          const innerR = 60;
-          const outerR = i % 2 === 0 ? 280 : 200;
-          const x1 = 300 + Math.cos(angle) * innerR;
-          const y1 = 300 + Math.sin(angle) * innerR;
-          const x2 = 300 + Math.cos(angle) * outerR;
-          const y2 = 300 + Math.sin(angle) * outerR;
-          return (
-            <line
-              key={i}
-              x1={x1} y1={y1} x2={x2} y2={y2}
-              stroke="#FFDE59"
-              strokeWidth={i % 2 === 0 ? 3 : 1.5}
-              opacity={i % 2 === 0 ? 0.25 : 0.15}
-            />
-          );
-        })}
-      </svg>
-    </div>
-  );
-}
+import { metrics } from './metrics';
+import { HeroStarburst } from './HeroStarburst';
 
 export function TransformationSection() {
-  const { openDemoCalendar, openOnboarding } = useDemoCalendar();
+  const { openDemoCalendar } = useDemoCalendar();
 
   return (
     <section className="relative bg-[#1D4871] py-10 md:py-20 lg:py-24 overflow-hidden v4-halftone-dark">

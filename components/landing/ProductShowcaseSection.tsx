@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef, useCallback } from 'react';
 
+// TODO: Use Lucide Icons instead
 // === Inline SVG Icons ===
 
 const GridIcon = () => (
