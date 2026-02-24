@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
 import { DemoCalendarProvider } from "@/app/context/landing/DemoCalendarContext";
+import { Footer } from "@/components/landing/Footer";
+import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
+import { PainPointPanel } from "@/components/landing/PainPointPanel";
+import SaysoNavbar from "@/components/landing/SaysoNavbar";
+import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
+import { TransformationSection } from "@/components/landing/TransformationSection";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 
@@ -21,12 +27,6 @@ export const metadata: Metadata = {
     // images: ['/og-default.png'],
   },
 };
-import { Footer } from "@/components/landing/Footer";
-import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
-import { PainPointPanel } from "@/components/landing/PainPointPanel";
-import SaysoNavbar from "@/components/landing/SaysoNavbar";
-import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
-import { TransformationSection } from "@/components/landing/TransformationSection";
 
 export default function Home() {
     return (
