@@ -5,7 +5,8 @@ import { DialerHeader } from './DialerHeader';
 import { DialerSplitView } from './DialerSplitView';
 import { DialerBottomBar } from './DialerBottomBar';
 
-export { SaysoWidget, useSaysoWidget } from './SaysoWidget';
+export { SaysoWidget } from './SaysoWidget';
+export { useSaysoWidget } from './hooks/useSaysoWidget';
 
 export function CRMDialerShowcase() {
   const {
