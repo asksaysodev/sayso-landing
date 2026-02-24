@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 
 export function Footer() {
   return (
@@ -83,9 +84,7 @@ export function Footer() {
 
         <div className="pt-6 md:pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/50 flex items-center gap-1.5">
-            <svg width="12" height="12" viewBox="0 0 512 512" fill="none" className="inline-block">
-              <path d="M294.4 25.6L115.2 281.6H256L217.6 486.4L396.8 230.4H256L294.4 25.6Z" fill="currentColor" stroke="currentColor" strokeWidth="20"/>
-            </svg>
+            <LightningIcon size={12} className="inline-block" />
             &copy; 2026 AskSayso, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-3 text-xs text-white/50">
