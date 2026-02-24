@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 import { BlogPostMeta, formatCategoryName } from '@/lib/blog';
 
 interface BlogFeaturedPostProps {
@@ -24,9 +26,7 @@ export function BlogFeaturedPost({ post }: BlogFeaturedPostProps) {
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1D4871] to-[#2367EE]">
-                  <svg width="80" height="80" viewBox="0 0 512 512" fill="none" className="text-white/30">
-                    <path d="M294.4 25.6L115.2 281.6H256L217.6 486.4L396.8 230.4H256L294.4 25.6Z" fill="currentColor" stroke="currentColor" strokeWidth="20"/>
-                  </svg>
+                  <LightningIcon size={80} className="text-white/30" />
                 </div>
               )}
             </div>
@@ -75,9 +75,7 @@ export function BlogFeaturedPost({ post }: BlogFeaturedPostProps) {
               <div>
                 <span className="inline-flex items-center gap-2 text-[#2367EE] font-bold text-sm group-hover:gap-3 transition-all">
                   Read More
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
+                  <ArrowRight size={16} strokeWidth={2.5} />
                 </span>
               </div>
             </div>

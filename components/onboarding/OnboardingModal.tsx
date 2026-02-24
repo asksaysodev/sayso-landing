@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { X } from 'lucide-react';
 import { OnboardingFlow } from './OnboardingFlow';
 
 interface OnboardingModalProps {
@@ -40,9 +41,7 @@ export function OnboardingModal({ onClose }: OnboardingModalProps) {
           className="absolute top-3 right-3 z-50 p-2 rounded-full bg-white border-2 border-[#D7DEE1] text-[#1D4871] hover:bg-gray-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
           aria-label="Close onboarding"
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <X size={18} strokeWidth={2.5} />
         </button>
 
         <OnboardingFlow />

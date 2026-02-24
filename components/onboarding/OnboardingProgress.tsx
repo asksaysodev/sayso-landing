@@ -11,7 +11,7 @@ export function OnboardingProgress({ currentStep, totalSteps }: OnboardingProgre
   return (
     <div className="w-full bg-white border-b border-[#D7DEE1]">
       <div className="max-w-2xl mx-auto px-6 py-3 flex items-center justify-between">
-        <a href="/v4" aria-label="Sayso home">
+        <a href="/" aria-label="Sayso home">
           <img
             src="/logo-pos-horizontal.png"
             alt="Sayso"

@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OnboardingProgress } from './OnboardingProgress';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 import { OnboardingNavButtons } from './OnboardingNavButtons';
 import { FeelingCheckScreen } from './screens/FeelingCheckScreen';
 import { CallFrequencyScreen } from './screens/CallFrequencyScreen';
@@ -132,14 +133,7 @@ export function OnboardingFlow() {
         return (
           <div className="text-center py-6">
             <div className="w-16 h-16 rounded-2xl bg-[#2367EE] flex items-center justify-center mx-auto mb-4">
-              <svg width="32" height="32" viewBox="0 0 512 512" fill="none">
-                <path
-                  d="M294.4 25.6L115.2 281.6H256L217.6 486.4L396.8 230.4H256L294.4 25.6Z"
-                  fill="white"
-                  stroke="white"
-                  strokeWidth="20"
-                />
-              </svg>
+              <LightningIcon size={32} color="white" />
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#1D4871]">
               Welcome to SaySo

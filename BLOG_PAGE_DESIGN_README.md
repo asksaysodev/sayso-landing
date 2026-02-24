@@ -44,7 +44,7 @@ All routes live under `app/blog/` using Next.js App Router.
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  SaysoNavbarV4 (sticky, reused from landing)        │
+│  SaysoNavbar (sticky, reused from landing)        │
 ├─────────────────────────────────────────────────────┤
 │                                                     │
 │  BLOG HERO BANNER                                   │
@@ -116,7 +116,7 @@ All routes live under `app/blog/` using Next.js App Router.
 │  │  [ Beehiiv embed or email input + CTA btn ]   │  │
 │  └───────────────────────────────────────────────┘  │
 │                                                     │
-│  FooterV4 (reused from landing)                     │
+│  Footer (reused from landing)                     │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -151,7 +151,7 @@ All routes live under `app/blog/` using Next.js App Router.
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  SaysoNavbarV4                                      │
+│  SaysoNavbar                                      │
 ├─────────────────────────────────────────────────────┤
 │                                                     │
 │  BREADCRUMB                                         │
@@ -243,7 +243,7 @@ All routes live under `app/blog/` using Next.js App Router.
 │  │  Related 1  │ │  Related 2  │ │  Related 3  │   │
 │  └─────────────┘ └─────────────┘ └─────────────┘   │
 │                                                     │
-│  FooterV4                                           │
+│  Footer                                           │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -411,7 +411,7 @@ Add blog URLs to `app/sitemap.ts` (create if not existing):
 
 ### Navbar Update
 
-Add "Blog" to `NAV_LINKS` in `SaysoNavbarV4`:
+Add "Blog" to `NAV_LINKS` in `SaysoNavbar`:
 
 ```typescript
 const NAV_LINKS = [
@@ -426,7 +426,7 @@ const NAV_LINKS = [
 
 ### Footer Update
 
-Add a "Blog" link under the **Product** column in `FooterV4`:
+Add a "Blog" link under the **Product** column in `Footer`:
 
 ```html
 <li><a href="/blog">Blog</a></li>

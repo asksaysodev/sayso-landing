@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 import { BlogPost, formatCategoryName } from '@/lib/blog';
 
 interface BlogArticleHeaderProps {
@@ -56,9 +57,7 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1D4871] to-[#2367EE]">
-            <svg width="80" height="80" viewBox="0 0 512 512" fill="none" className="text-white/30">
-              <path d="M294.4 25.6L115.2 281.6H256L217.6 486.4L396.8 230.4H256L294.4 25.6Z" fill="currentColor" stroke="currentColor" strokeWidth="20"/>
-            </svg>
+            <LightningIcon size={80} className="text-white/30" />
           </div>
         )}
       </div>

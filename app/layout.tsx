@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Manrope, Bangers } from 'next/font/google'
 import './globals.css'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+
 // Load Manrope for hero text
 const manrope = Manrope({
   subsets: ['latin'],
@@ -10,7 +12,6 @@ const manrope = Manrope({
   display: 'swap',
 })
 
-// Load Bangers for comic-book headings (v2)
 const bangers = Bangers({
   subsets: ['latin'],
   weight: ['400'],
@@ -18,13 +19,39 @@ const bangers = Bangers({
   display: 'swap',
 })
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Sayso',
+  url: siteUrl,
+  logo: `${siteUrl}/logo-pos-horizontal.png`,
+  description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
+  sameAs: [
+    'https://www.linkedin.com/company/asksayso',
+    'https://www.instagram.com/asksayso',
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'Sayso',
-  description: 'Transform your landing pages',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Sayso | Real-Time AI Sales Coaching',
+    template: '%s | Sayso',
+  },
+  description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
+  openGraph: {
+    siteName: 'Sayso',
+    type: 'website',
+    // TODO: create /public/og-default.png (1200x630) and uncomment
+    // images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Real-Time AI Sales Coaching' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
   icons: {
-    icon: '/logo-youtube.png',
-    apple: '/logo-youtube.png',
-    shortcut: '/logo-youtube.png',
+    icon: '/logo-sayso.png',
+    apple: '/logo-sayso.png',
+    shortcut: '/logo-sayso.png',
   },
 }
 
@@ -34,8 +61,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${bangers.variable}`} style={{ zoom: 0.8 }}>
-      <body>{children}</body>
+    <html lang="en" className={`${manrope.variable} ${bangers.variable}`}>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   )
 }

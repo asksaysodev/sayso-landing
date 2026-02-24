@@ -19,7 +19,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Sayso Blog',
     description: 'Tips, strategies, and insights to help you win every sales moment.',
+    url: `${siteUrl}/blog`,
     type: 'website',
+    // TODO: create /public/og-default.png (1200x630) and uncomment
+    // images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'The Sayso Blog' }],
+  },
+  twitter: {
+    title: 'The Sayso Blog',
+    description: 'Tips, strategies, and insights to help you win every sales moment.',
+    // images: ['/og-default.png'],
   },
 };
 
