@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { CONVERSATION_CYCLES } from '../data';
 
 const CYCLE_DURATION = 11000;
@@ -14,6 +14,13 @@ export function useDialerState() {
   const [sellerSpeaking, setSellerSpeaking] = useState(false);
   const [timerSeconds, setTimerSeconds] = useState(29);
 
+  const timeoutIds = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  const clearAllTimeouts = useCallback(() => {
+    timeoutIds.current.forEach(clearTimeout);
+    timeoutIds.current = [];
+  }, []);
+
   // Timer
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,20 +30,28 @@ export function useDialerState() {
   }, []);
 
   const startCycle = useCallback(() => {
+    clearAllTimeouts();
+
     setShowBuyerMessage(false);
     setShowPrompt(false);
     setShowSellerMessage(false);
     setBuyerSpeaking(false);
     setSellerSpeaking(false);
 
-    setTimeout(() => setBuyerSpeaking(true), 300);
-    setTimeout(() => setShowBuyerMessage(true), 800);
-    setTimeout(() => setBuyerSpeaking(false), 3200);
-    setTimeout(() => setShowPrompt(true), 3500);
-    setTimeout(() => setSellerSpeaking(true), 5500);
-    setTimeout(() => setShowSellerMessage(true), 6000);
-    setTimeout(() => setSellerSpeaking(false), 8500);
-  }, []);
+    timeoutIds.current = [
+      setTimeout(() => setBuyerSpeaking(true), 300),
+      setTimeout(() => setShowBuyerMessage(true), 800),
+      setTimeout(() => setBuyerSpeaking(false), 3200),
+      setTimeout(() => setShowPrompt(true), 3500),
+      setTimeout(() => setSellerSpeaking(true), 5500),
+      setTimeout(() => setShowSellerMessage(true), 6000),
+      setTimeout(() => setSellerSpeaking(false), 8500),
+    ];
+  }, [clearAllTimeouts]);
+
+  useEffect(() => {
+    return () => clearAllTimeouts();
+  }, [clearAllTimeouts]);
 
   useEffect(() => {
     startCycle();
