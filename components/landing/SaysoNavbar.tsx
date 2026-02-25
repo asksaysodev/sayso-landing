@@ -82,7 +82,7 @@ export default function SaysoNavbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={openDemoCalendar}
-              className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-lg v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
+              className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-md v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
             >
               <LightningIcon size={14} className="mr-1.5" />
               Book a Demo
