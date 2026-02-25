@@ -172,6 +172,8 @@ npm run type-check   # Run TypeScript compiler check
 
 ## 📝 Contributing Guidelines
 
+**New to the repo?** See [Developer Guide](./docs/DEV_GUIDE.md) for setup, Git workflow, branch naming, and PR process.
+
 1. **Follow brand guidelines**: All UI must adhere to `docs/brand.md`
 2. **Use Tailwind tokens**: No arbitrary values - use defined tokens
 3. **TypeScript strict mode**: No `any` types
