@@ -18,9 +18,8 @@ import { LeadTypeScreen } from './screens/LeadTypeScreen';
 import { TeamLeadTypeScreen } from './screens/TeamLeadTypeScreen';
 import { SaysoHelpScreen } from './screens/SaysoHelpScreen';
 import { ContactInfoScreen } from './screens/ContactInfoScreen';
-import { WindowsComingSoonScreen } from './screens/WindowsComingSoonScreen';
 import { AnalyzingScreen } from './screens/AnalyzingScreen';
-import { VerdictScreen } from './screens/VerdictScreen';
+import { PaywallScreen } from './screens/PaywallScreen';
 
 const variants = {
   enter: (direction: number) => ({
@@ -47,8 +46,6 @@ export function OnboardingFlow() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isSaysoHelping, setIsSaysoHelping] = useState(false);
   const [saysoHelpReady, setSaysoHelpReady] = useState(false);
-  const [isWindowsScreen, setIsWindowsScreen] = useState(false);
-  const [isWindowsSubmitted, setIsWindowsSubmitted] = useState(false);
 
   // Role + path
   const [role, setRole] = useState<string | null>(null);
@@ -85,7 +82,6 @@ export function OnboardingFlow() {
   const VERDICT_STEP = TOTAL_STEPS + 2;
 
   const canContinue = (): boolean => {
-    if (isWindowsScreen) return contactValid;
     if (isSaysoHelping) return saysoHelpReady;
     if (currentStep === CONTACT_STEP) return contactValid;
 
@@ -122,22 +118,12 @@ export function OnboardingFlow() {
       return;
     }
 
-    // Windows form submit → success
-    if (isWindowsScreen) {
-      setIsWindowsSubmitted(true);
-      return;
-    }
-
-    // SaysoHelp complete → route by computer type
+    // SaysoHelp complete → all users go to contact form
     if (isSaysoHelping) {
       setIsSaysoHelping(false);
       setSaysoHelpReady(false);
       setDirection(1);
-      if (computerType === 'PC') {
-        setIsWindowsScreen(true);
-      } else {
-        setCurrentStep(CONTACT_STEP);
-      }
+      setCurrentStep(CONTACT_STEP);
       return;
     }
 
@@ -150,7 +136,7 @@ export function OnboardingFlow() {
     setDirection(1);
     setCurrentStep((prev) => prev + 1);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentStep, isSaysoHelping, isWindowsScreen, TOTAL_STEPS, CONTACT_STEP, canContinue]);
+  }, [currentStep, isSaysoHelping, TOTAL_STEPS, CONTACT_STEP, canContinue]);
 
   // Auto-advance: called by single-choice screens after selection
   const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -168,13 +154,6 @@ export function OnboardingFlow() {
   };
 
   const goBack = () => {
-    if (isWindowsScreen) {
-      setIsWindowsScreen(false);
-      setIsWindowsSubmitted(false);
-      setDirection(-1);
-      setCurrentStep(TOTAL_STEPS);
-      return;
-    }
     if (isSaysoHelping) {
       setIsSaysoHelping(false);
       setSaysoHelpReady(false);
@@ -201,56 +180,20 @@ export function OnboardingFlow() {
     setSaysoHelpReady(true);
   }, []);
 
-  const handleSwitchToApple = useCallback(() => {
-    setIsWindowsScreen(false);
-    setDirection(1);
-    setCurrentStep(CONTACT_STEP);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [CONTACT_STEP]);
-
-  // Auto-advance from SaysoHelp after result is shown, routing by computer type
+  // Auto-advance from SaysoHelp after result is shown — all users go to contact form
   useEffect(() => {
     if (!saysoHelpReady) return;
     const timer = setTimeout(() => {
       setIsSaysoHelping(false);
       setSaysoHelpReady(false);
       setDirection(1);
-      if (computerType === 'PC') {
-        setIsWindowsScreen(true);
-      } else {
-        setCurrentStep(CONTACT_STEP);
-      }
+      setCurrentStep(CONTACT_STEP);
     }, 6000);
     return () => clearTimeout(timer);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [saysoHelpReady, computerType]);
+  }, [saysoHelpReady]);
 
   const renderScreen = () => {
-    if (isWindowsSubmitted) {
-      return (
-        <div className="text-center py-8">
-          <div className="w-16 h-16 rounded-2xl bg-[#FFDE59] flex items-center justify-center mx-auto mb-4">
-            <span className="text-3xl">🔔</span>
-          </div>
-          <h2 className="text-2xl font-bold text-[#1D4871]">You&apos;re on the list!</h2>
-          <p className="text-base text-[#1D4871]/60 mt-2 max-w-sm mx-auto">
-            We&apos;ll notify you as soon as SaySo is available on Windows.
-          </p>
-        </div>
-      );
-    }
-
-    if (isWindowsScreen) {
-      return (
-        <WindowsComingSoonScreen
-          value={contactInfo}
-          onChange={setContactInfo}
-          onValidationChange={setContactValid}
-          onSwitchToApple={handleSwitchToApple}
-        />
-      );
-    }
-
     if (isAnalyzing) {
       return <AnalyzingScreen onComplete={handleAnalyzingComplete} />;
     }
@@ -270,7 +213,7 @@ export function OnboardingFlow() {
     }
 
     if (currentStep === VERDICT_STEP) {
-      return <VerdictScreen />;
+      return <PaywallScreen computerType={computerType} isPathB={isPathB} />;
     }
 
     switch (currentStep) {
@@ -396,7 +339,7 @@ export function OnboardingFlow() {
 
   const isWelcome = currentStep === 0;
   const isVerdict = currentStep === VERDICT_STEP;
-  const showNav = !isWelcome && !isAnalyzing && !isVerdict && !isWindowsSubmitted;
+  const showNav = !isWelcome && !isAnalyzing && !isVerdict;
 
   // Progress bar: show question step number capped at TOTAL_STEPS
   const progressStep = isSaysoHelping
@@ -416,11 +359,7 @@ export function OnboardingFlow() {
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={
-                isWindowsSubmitted
-                  ? 'windows-success'
-                  : isWindowsScreen
-                  ? 'windows-coming-soon'
-                  : isSaysoHelping
+                isSaysoHelping
                   ? 'sayso-help'
                   : isAnalyzing
                   ? 'analyzing'
@@ -444,7 +383,7 @@ export function OnboardingFlow() {
           onBack={goBack}
           onContinue={goNext}
           canContinue={canContinue()}
-          showBack={currentStep > 1 || isSaysoHelping || isWindowsScreen}
+          showBack={currentStep > 1 || isSaysoHelping}
           continueLabel={isSaysoHelping && saysoHelpReady ? 'Get Started' : undefined}
         />
       )}
