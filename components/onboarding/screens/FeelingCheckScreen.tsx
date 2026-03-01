@@ -3,11 +3,11 @@
 import Image from 'next/image';
 
 const FEELINGS = [
-  { img: '/anxious_emoji_no_background.png', label: 'Anxious', size: 45 },
-  { img: '/nervous_emoji_no_background.png', label: 'Nervous', size: 54 },
-  { img: '/scared_emoji_no_background.png', label: 'Scared', size: 51 },
-  { img: '/excited_emoji_no_background.png', label: 'Excited', size: 45 },
-  { img: '/confidence_emoji_no_background.png', label: 'Confident', size: 45 },
+  { img: '/anxious_emoji_no_background.png', label: 'Anxious', size: 48 },
+  { img: '/nervous_emoji_no_background.png', label: 'Nervous', size: 57 },
+  { img: '/scared_emoji_no_background.png', label: 'Scared', size: 54 },
+  { img: '/excited_emoji_no_background.png', label: 'Excited', size: 48 },
+  { img: '/confidence_emoji_no_background.png', label: 'Confident', size: 48 },
 ];
 
 interface FeelingCheckScreenProps {
