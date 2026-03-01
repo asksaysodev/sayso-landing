@@ -42,9 +42,12 @@ export function ComputerScreen({ isTeam, value, onChange, onAutoAdvance }: Compu
                   : 'bg-white border-[#D7DEE1] hover:border-[#2367EE] hover:shadow-md'
               }`}
             >
-              <span className="text-3xl block mb-2">
-                {option === 'Mac' ? '🍎' : option === 'PC' ? '🖥️' : '💻'}
-              </span>
+              {option === 'Mac' && (
+                <img src="/apple-brands-solid-full.svg" alt="Mac logo" className="h-12 w-auto mx-auto mb-2 block" />
+              )}
+              {option === 'PC' && (
+                <img src="/microsoft-brands-solid-full.svg" alt="Microsoft logo" className="h-12 w-auto mx-auto mb-2 block" />
+              )}
               <span className="text-base font-bold text-[#1D4871]">{option}</span>
             </button>
           );
