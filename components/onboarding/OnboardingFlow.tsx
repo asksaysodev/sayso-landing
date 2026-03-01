@@ -92,8 +92,8 @@ export function OnboardingFlow() {
         case 3: return confidence !== null;
         case 4: return teamCallFrequency !== null;
         case 5: return teamSupport.length > 0;
-        case 6: return computerType !== null;
-        case 7: return leadTypes.length > 0;
+        case 6: return leadTypes.length > 0;
+        case 7: return computerType !== null;
         default: return false;
       }
     } else {
@@ -102,8 +102,8 @@ export function OnboardingFlow() {
         case 2: return feeling !== null;
         case 3: return callFrequency !== null;
         case 4: return support.length > 0;
-        case 5: return computerType !== null;
-        case 6: return leadTypes.length > 0;
+        case 5: return leadTypes.length > 0;
+        case 6: return computerType !== null;
         default: return false;
       }
     }
@@ -276,6 +276,8 @@ export function OnboardingFlow() {
       case 4:
         return <SupportTechScreen value={support} onChange={setSupport} />;
       case 5:
+        return <LeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
+      case 6:
         return (
           <ComputerScreen
             isTeam={false}
@@ -284,8 +286,6 @@ export function OnboardingFlow() {
             onAutoAdvance={handleAutoAdvance}
           />
         );
-      case 6:
-        return <LeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
       default:
         return null;
     }
@@ -322,6 +322,8 @@ export function OnboardingFlow() {
       case 5:
         return <TeamSupportTechScreen value={teamSupport} onChange={setTeamSupport} />;
       case 6:
+        return <TeamLeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
+      case 7:
         return (
           <ComputerScreen
             isTeam={true}
@@ -330,8 +332,6 @@ export function OnboardingFlow() {
             onAutoAdvance={handleAutoAdvance}
           />
         );
-      case 7:
-        return <TeamLeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
       default:
         return null;
     }
