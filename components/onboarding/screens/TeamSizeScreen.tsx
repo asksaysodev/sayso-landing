@@ -3,6 +3,7 @@
 import { useRef, useEffect, useCallback } from 'react';
 
 const CALLERS_OPTIONS = ['All of them', 'Some of them', 'Not enough'];
+const TEAM_SIZE_VALUES = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 
 interface TeamSizeScreenProps {
   teamSize: number;
@@ -77,8 +78,8 @@ export function TeamSizeScreen({
                 background: linear-gradient(
                   to right,
                   #2367EE 0%,
-                  #2367EE ${((teamSize - 1) / 99) * 100}%,
-                  #D7DEE1 ${((teamSize - 1) / 99) * 100}%,
+                  #2367EE ${(Math.max(0, TEAM_SIZE_VALUES.indexOf(teamSize)) / (TEAM_SIZE_VALUES.length - 1)) * 100}%,
+                  #D7DEE1 ${(Math.max(0, TEAM_SIZE_VALUES.indexOf(teamSize)) / (TEAM_SIZE_VALUES.length - 1)) * 100}%,
                   #D7DEE1 100%
                 );
               }
@@ -109,10 +110,11 @@ export function TeamSizeScreen({
             `}</style>
             <input
               type="range"
-              min={1}
-              max={100}
-              value={teamSize}
-              onChange={(e) => onTeamSizeChange(Number(e.target.value))}
+              min={0}
+              max={TEAM_SIZE_VALUES.length - 1}
+              step={1}
+              value={Math.max(0, TEAM_SIZE_VALUES.indexOf(teamSize))}
+              onChange={(e) => onTeamSizeChange(TEAM_SIZE_VALUES[Number(e.target.value)])}
               className="agent-slider"
             />
             <div className="flex justify-between mt-1.5">
