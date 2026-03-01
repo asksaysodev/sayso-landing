@@ -100,13 +100,20 @@ Copy the diagram below into a Google Doc using a monospace font (e.g. Courier Ne
                         |   (auto-advances after 6s)    |
                         +---------------+---------------+
                                         |
-                        +---------------v---------------+
-                        |   CONTACT INFO                |
-                        |  "Get started setting up      |
-                        |   your Sayso account"         |
-                        |  Name / Email / Phone /       |
-                        |  Company                      |
-                        +---------------+---------------+
+                         Mac / Mix               PC
+                              |                   |
+          +-------------------v--+   +------------v----------+
+          |   CONTACT INFO       |   |  WINDOWS COMING SOON  |
+          |  "Get started        |   |  "SaySo is coming     |
+          |   setting up your    |   |   soon to Windows"    |
+          |   Sayso account"     |   |  ⚠️ Not available yet  |
+          |  Name / Email /      |   |  — sign up for early  |
+          |  Phone / Company     |   |  access               |
+          +-------------------+--+   |  Name / Email /       |
+                              |      |  Phone / Company      |
+                              |      +------------+----------+
+                              |                   |
+                              +---------+---------+
                                         |
                         +---------------v---------------+
                         |   ANALYZING                   |
@@ -200,7 +207,7 @@ components/
       ContactInfoScreen.tsx       <- Shared: name / email / phone / company form
       AnalyzingScreen.tsx         <- Shared: loading animation (auto-advances)
       PaywallScreen.tsx           <- Shared: pricing - adapts by computerType + path
-      WindowsComingSoonScreen.tsx <- Unused / archived early-access form variant
+      WindowsComingSoonScreen.tsx <- Contact form variant for PC users (disclaimer + early access)
       VerdictScreen.tsx           <- Unused / archived (replaced by PaywallScreen)
 ```
 
@@ -365,10 +372,16 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 ---
 
 ### Shared — Contact Info
-**Component:** `ContactInfoScreen.tsx`
-**Question:** "Get started setting up your Sayso account"
-**UI:** Standard form (4 required fields)
-**Fields:** Full Name · Email Address · Phone Number · Company Name
+**Branches based on `computerType`:**
+
+| computerType | Component | Heading | Notes |
+|---|---|---|---|
+| Mac / Mix | `ContactInfoScreen.tsx` | "Get started setting up your Sayso account" | Standard form |
+| PC | `WindowsComingSoonScreen.tsx` | "SaySo is coming soon to Windows" | Shows yellow disclaimer banner + "Do you actually use Apple?" link |
+
+**PC disclaimer banner:** ⚠️ "SaySo isn't available for Windows yet — sign up to get early access when it launches."
+**"Do you actually use Apple?" link:** Sets `computerType` to `'Mac'` and switches to the standard `ContactInfoScreen` without navigating away.
+**Fields (both variants):** Full Name · Email Address · Phone Number · Company Name
 **Validation:** Email regex, phone 10+ digits, all fields non-empty
 
 ---
@@ -440,6 +453,6 @@ Back / Continue buttons at bottom of every question screen.
 
 1. **No data persistence.** All state lives in `OnboardingFlow.tsx` via `useState`. Refreshing resets everything.
 2. **No API calls.** Forms don't submit anywhere. Paywall is a visual mockup only.
-3. **`WindowsComingSoonScreen.tsx` and `VerdictScreen.tsx`** exist in the codebase but are not wired into the current flow (archived).
+3. **`VerdictScreen.tsx`** exists in the codebase but is not wired into the current flow (archived). **`WindowsComingSoonScreen.tsx`** is active — it renders at the contact step when `computerType === 'PC'`.
 4. **Mobile-first.** Nav buttons are fixed to bottom of viewport on mobile; relative on desktop.
 5. **Accessibility.** All interactive elements have `focus-visible` rings. Auto-advancing screens use native `<button>` elements.
