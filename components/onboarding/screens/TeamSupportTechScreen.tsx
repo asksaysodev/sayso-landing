@@ -25,6 +25,7 @@ export function TeamSupportTechScreen({ value, onChange }: TeamSupportTechScreen
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
         How do you help your agents create better conversations?
       </h1>
+      <p className="text-sm text-[#6B7A8D] mt-1">Select all that apply</p>
 
       <div className="flex flex-col gap-2.5 max-w-md mx-auto mt-6">
         {OPTIONS.map((option) => {
