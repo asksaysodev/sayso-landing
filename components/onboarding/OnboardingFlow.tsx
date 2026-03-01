@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OnboardingProgress } from './OnboardingProgress';
 import { LightningIcon } from '@/components/icons/LightningIcon';
@@ -179,6 +179,19 @@ export function OnboardingFlow() {
   const handleSaysoHelpReady = useCallback(() => {
     setSaysoHelpReady(true);
   }, []);
+
+  // Auto-advance from SaysoHelp to Contact after result is shown
+  useEffect(() => {
+    if (!saysoHelpReady) return;
+    const timer = setTimeout(() => {
+      setIsSaysoHelping(false);
+      setSaysoHelpReady(false);
+      setDirection(1);
+      setCurrentStep(CONTACT_STEP);
+    }, 6000);
+    return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [saysoHelpReady]);
 
   const renderScreen = () => {
     if (isAnalyzing) {
@@ -371,6 +384,7 @@ export function OnboardingFlow() {
           onContinue={goNext}
           canContinue={canContinue()}
           showBack={currentStep > 1 || isSaysoHelping}
+          continueLabel={isSaysoHelping && saysoHelpReady ? 'Get Started' : undefined}
         />
       )}
     </div>
