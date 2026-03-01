@@ -6,7 +6,8 @@ interface OnboardingProgressProps {
 }
 
 export function OnboardingProgress({ currentStep, totalSteps }: OnboardingProgressProps) {
-  const percentage = (currentStep / totalSteps) * 100;
+  const percentage = Math.min((currentStep / totalSteps) * 100, 100);
+  const showStepCount = currentStep <= totalSteps;
 
   return (
     <div className="w-full bg-white border-b border-[#D7DEE1]">
@@ -18,9 +19,11 @@ export function OnboardingProgress({ currentStep, totalSteps }: OnboardingProgre
             className="h-6 md:h-8"
           />
         </a>
-        <span className="text-xs text-[#1D4871]/50 font-sans">
-          Step {currentStep} of {totalSteps}
-        </span>
+        {showStepCount && (
+          <span className="text-xs text-[#1D4871]/50 font-sans">
+            Step {currentStep} of {totalSteps}
+          </span>
+        )}
       </div>
       <div className="w-full h-1.5 bg-[#D7DEE1]">
         <div
