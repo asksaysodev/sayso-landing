@@ -20,6 +20,7 @@ import { SaysoHelpScreen } from './screens/SaysoHelpScreen';
 import { ContactInfoScreen } from './screens/ContactInfoScreen';
 import { AnalyzingScreen } from './screens/AnalyzingScreen';
 import { PaywallScreen } from './screens/PaywallScreen';
+import { WindowsComingSoonScreen } from './screens/WindowsComingSoonScreen';
 
 const variants = {
   enter: (direction: number) => ({
@@ -203,6 +204,16 @@ export function OnboardingFlow() {
     }
 
     if (currentStep === CONTACT_STEP) {
+      if (computerType === 'PC') {
+        return (
+          <WindowsComingSoonScreen
+            value={contactInfo}
+            onChange={setContactInfo}
+            onValidationChange={setContactValid}
+            onSwitchToApple={() => setComputerType('Mac')}
+          />
+        );
+      }
       return (
         <ContactInfoScreen
           value={contactInfo}
