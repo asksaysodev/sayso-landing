@@ -1,9 +1,9 @@
 'use client';
 
 const OPTIONS = [
-  { emoji: '🎯', label: 'Our agents get coached' },
-  { emoji: '💻', label: 'We use a CRM / Dialer' },
-  { emoji: '🙋', label: 'We do group role play' },
+  { label: 'Our agents get coached' },
+  { label: 'We use a CRM / Dialer' },
+  { label: 'We do group role play' },
 ];
 
 interface TeamSupportTechScreenProps {
@@ -39,7 +39,6 @@ export function TeamSupportTechScreen({ value, onChange }: TeamSupportTechScreen
                   : 'bg-white border-[#D7DEE1] hover:border-[#2367EE] hover:shadow-sm'
               } focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2`}
             >
-              <span className="text-xl">{option.emoji}</span>
               <span className="text-base font-semibold text-[#1D4871] flex-1">{option.label}</span>
               <div
                 className={`w-6 h-6 rounded-md flex-shrink-0 flex items-center justify-center transition-all duration-200 ${
