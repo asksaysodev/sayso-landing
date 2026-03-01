@@ -20,12 +20,12 @@ const BUYERS = [
 
 const ALL_LEADS = [...SELLERS, ...BUYERS];
 
-interface LeadTypeScreenProps {
+interface TeamLeadTypeScreenProps {
   value: string[];
   onChange: (value: string[]) => void;
 }
 
-export function LeadTypeScreen({ value, onChange }: LeadTypeScreenProps) {
+export function TeamLeadTypeScreen({ value, onChange }: TeamLeadTypeScreenProps) {
   const isAllSelected = value.includes('All of the above');
 
   const toggleChip = (lead: string) => {
@@ -50,7 +50,7 @@ export function LeadTypeScreen({ value, onChange }: LeadTypeScreenProps) {
   return (
     <div className="text-center">
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        What types of calls do you make consistently?
+        What leads do your agents call?
       </h1>
 
       <div className="max-w-lg mx-auto mt-6 flex flex-col gap-4 text-left">

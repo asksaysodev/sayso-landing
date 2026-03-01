@@ -11,13 +11,19 @@ const FEELINGS = [
 interface FeelingCheckScreenProps {
   value: string | null;
   onChange: (value: string) => void;
+  onAutoAdvance: () => void;
 }
 
-export function FeelingCheckScreen({ value, onChange }: FeelingCheckScreenProps) {
+export function FeelingCheckScreen({ value, onChange, onAutoAdvance }: FeelingCheckScreenProps) {
+  const handleSelect = (label: string) => {
+    onChange(label);
+    onAutoAdvance();
+  };
+
   return (
     <div className="text-center">
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        When you think about making sales calls, how do you feel?
+        How do you feel when you think about making calls?
       </h1>
 
       <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 max-w-lg mx-auto mt-6">
@@ -26,7 +32,7 @@ export function FeelingCheckScreen({ value, onChange }: FeelingCheckScreenProps)
           return (
             <button
               key={feeling.label}
-              onClick={() => onChange(feeling.label)}
+              onClick={() => handleSelect(feeling.label)}
               className={`rounded-xl p-3 cursor-pointer text-center transition-all duration-200 border-2 ${
                 isSelected
                   ? 'bg-[#2367EE]/5 border-[#2367EE] shadow-md ring-2 ring-[#2367EE]/20'
