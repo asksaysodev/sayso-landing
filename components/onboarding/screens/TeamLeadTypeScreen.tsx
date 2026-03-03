@@ -2,15 +2,15 @@
 
 import { LeadChipGrid } from './LeadChipGrid';
 
-interface LeadTypeScreenProps {
+interface TeamLeadTypeScreenProps {
   value: string[];
   onChange: (value: string[]) => void;
 }
 
-export function LeadTypeScreen({ value, onChange }: LeadTypeScreenProps) {
+export function TeamLeadTypeScreen({ value, onChange }: TeamLeadTypeScreenProps) {
   return (
     <LeadChipGrid
-      title="What types of calls do you make consistently?"
+      title="What leads do your agents call?"
       value={value}
       onChange={onChange}
     />

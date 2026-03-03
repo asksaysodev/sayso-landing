@@ -9,10 +9,11 @@ interface ContactInfo {
   company: string;
 }
 
-interface ContactInfoScreenProps {
+interface WindowsComingSoonScreenProps {
   value: ContactInfo;
   onChange: (value: ContactInfo) => void;
   onValidationChange: (isValid: boolean) => void;
+  onSwitchToApple: () => void;
 }
 
 interface FieldErrors {
@@ -31,7 +32,12 @@ function validatePhone(phone: string) {
   return digits.length >= 10;
 }
 
-export function ContactInfoScreen({ value, onChange, onValidationChange }: ContactInfoScreenProps) {
+export function WindowsComingSoonScreen({
+  value,
+  onChange,
+  onValidationChange,
+  onSwitchToApple,
+}: WindowsComingSoonScreenProps) {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
@@ -73,9 +79,20 @@ export function ContactInfoScreen({ value, onChange, onValidationChange }: Conta
 
   return (
     <div className="text-center">
+      {/* Disclaimer banner */}
+      <div className="bg-[#FFDE59] border-2 border-[#1D4871]/10 rounded-xl px-4 py-3 mb-5 flex items-center gap-2 justify-center">
+        <span className="text-lg">⚠️</span>
+        <p className="text-sm font-semibold text-[#1D4871]">
+          SaySo isn&apos;t available for Windows yet — sign up to get early access when it launches.
+        </p>
+      </div>
+
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        Get started setting up your SaySo account
+        SaySo is coming soon to Windows
       </h1>
+      <p className="text-base text-[#1D4871]/60 mt-1">
+        Create your account to be the first to access it when it&apos;s live.
+      </p>
 
       <div className="max-w-md mx-auto mt-6 flex flex-col gap-3.5">
         {fields.map((field) => (
@@ -100,6 +117,16 @@ export function ContactInfoScreen({ value, onChange, onValidationChange }: Conta
             )}
           </div>
         ))}
+      </div>
+
+      {/* Apple redirect */}
+      <div className="mt-5">
+        <button
+          onClick={onSwitchToApple}
+          className="text-sm text-[#1D4871]/60 hover:text-[#2367EE] underline underline-offset-2 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 rounded"
+        >
+          Do you actually use Apple?
+        </button>
       </div>
     </div>
   );

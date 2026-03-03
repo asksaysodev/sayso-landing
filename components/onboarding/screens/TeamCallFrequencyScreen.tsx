@@ -4,16 +4,16 @@ const OPTIONS = [
   'Daily',
   '2-3 times a week',
   'Once a week',
-  "I'm just getting started",
+  "I'm not sure",
 ];
 
-interface CallFrequencyScreenProps {
+interface TeamCallFrequencyScreenProps {
   value: string | null;
   onChange: (value: string) => void;
   onAutoAdvance: () => void;
 }
 
-export function CallFrequencyScreen({ value, onChange, onAutoAdvance }: CallFrequencyScreenProps) {
+export function TeamCallFrequencyScreen({ value, onChange, onAutoAdvance }: TeamCallFrequencyScreenProps) {
   const handleSelect = (option: string) => {
     onChange(option);
     onAutoAdvance();
@@ -22,7 +22,7 @@ export function CallFrequencyScreen({ value, onChange, onAutoAdvance }: CallFreq
   return (
     <div className="text-center">
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        How often do you make prospecting calls?
+        How often does your average team agent have dedicated prospecting blocks?
       </h1>
 
       <div className="flex flex-col gap-2.5 max-w-md mx-auto mt-6">
@@ -41,9 +41,7 @@ export function CallFrequencyScreen({ value, onChange, onAutoAdvance }: CallFreq
               <span className="text-base font-semibold text-[#1D4871]">{option}</span>
               <div
                 className={`w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-200 ${
-                  isSelected
-                    ? 'bg-[#2367EE]'
-                    : 'border-2 border-[#D7DEE1]'
+                  isSelected ? 'bg-[#2367EE]' : 'border-2 border-[#D7DEE1]'
                 }`}
               >
                 {isSelected && (

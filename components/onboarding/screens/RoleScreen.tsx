@@ -1,19 +1,19 @@
 'use client';
 
 const OPTIONS = [
-  'Daily',
-  '2-3 times a week',
-  'Once a week',
-  "I'm just getting started",
+  'Individual Agent',
+  'Team Agent',
+  'Team Lead',
+  'Office Broker/Manager',
 ];
 
-interface CallFrequencyScreenProps {
+interface RoleScreenProps {
   value: string | null;
   onChange: (value: string) => void;
   onAutoAdvance: () => void;
 }
 
-export function CallFrequencyScreen({ value, onChange, onAutoAdvance }: CallFrequencyScreenProps) {
+export function RoleScreen({ value, onChange, onAutoAdvance }: RoleScreenProps) {
   const handleSelect = (option: string) => {
     onChange(option);
     onAutoAdvance();
@@ -22,7 +22,7 @@ export function CallFrequencyScreen({ value, onChange, onAutoAdvance }: CallFreq
   return (
     <div className="text-center">
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        How often do you make prospecting calls?
+        What is your role?
       </h1>
 
       <div className="flex flex-col gap-2.5 max-w-md mx-auto mt-6">

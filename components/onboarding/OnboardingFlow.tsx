@@ -1,21 +1,26 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OnboardingProgress } from './OnboardingProgress';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { OnboardingNavButtons } from './OnboardingNavButtons';
+import { RoleScreen } from './screens/RoleScreen';
+import { TeamSizeScreen } from './screens/TeamSizeScreen';
 import { FeelingCheckScreen } from './screens/FeelingCheckScreen';
+import { ConfidenceScreen } from './screens/ConfidenceScreen';
 import { CallFrequencyScreen } from './screens/CallFrequencyScreen';
+import { TeamCallFrequencyScreen } from './screens/TeamCallFrequencyScreen';
 import { SupportTechScreen } from './screens/SupportTechScreen';
+import { TeamSupportTechScreen } from './screens/TeamSupportTechScreen';
+import { ComputerScreen } from './screens/ComputerScreen';
 import { LeadTypeScreen } from './screens/LeadTypeScreen';
-import { GoalsScreen } from './screens/GoalsScreen';
+import { TeamLeadTypeScreen } from './screens/TeamLeadTypeScreen';
 import { SaysoHelpScreen } from './screens/SaysoHelpScreen';
 import { ContactInfoScreen } from './screens/ContactInfoScreen';
 import { AnalyzingScreen } from './screens/AnalyzingScreen';
-import { VerdictScreen } from './screens/VerdictScreen';
-
-const TOTAL_STEPS = 7;
+import { PaywallScreen } from './screens/PaywallScreen';
+import { WindowsComingSoonScreen } from './screens/WindowsComingSoonScreen';
 
 const variants = {
   enter: (direction: number) => ({
@@ -32,19 +37,39 @@ const variants = {
   }),
 };
 
+// Path A: role=Individual/Team Agent — 6 question steps (1-6)
+// Path B: role=Team Lead/Office Broker — 7 question steps (1-7)
+// Step 0 = welcome, contact = TOTAL_STEPS+1, verdict = TOTAL_STEPS+2
+
 export function OnboardingFlow() {
-  const [currentStep, setCurrentStep] = useState(0); // 0 = welcome screen
+  const [currentStep, setCurrentStep] = useState(0); // 0 = welcome
   const [direction, setDirection] = useState(1);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isSaysoHelping, setIsSaysoHelping] = useState(false);
   const [saysoHelpReady, setSaysoHelpReady] = useState(false);
 
-  // Screen state
+  // Role + path
+  const [role, setRole] = useState<string | null>(null);
+  const isPathB = role === 'Team Lead' || role === 'Office Broker/Manager';
+  const TOTAL_STEPS = isPathB ? 7 : 6;
+
+  // Path B state
+  const [teamSize, setTeamSize] = useState<number>(5);
+  const [callersCount, setCallersCount] = useState<string | null>(null);
+  const [confidence, setConfidence] = useState<number | null>(null);
+  const [teamCallFrequency, setTeamCallFrequency] = useState<string | null>(null);
+  const [teamSupport, setTeamSupport] = useState<string[]>([]);
+
+  // Path A state
   const [feeling, setFeeling] = useState<string | null>(null);
   const [callFrequency, setCallFrequency] = useState<string | null>(null);
   const [support, setSupport] = useState<string[]>([]);
+
+  // Shared state
+  const [computerType, setComputerType] = useState<string | null>(null);
   const [leadTypes, setLeadTypes] = useState<string[]>([]);
-  const [homesTarget, setHomesTarget] = useState<string | null>(null);
+
+  // Contact / tail
   const [contactInfo, setContactInfo] = useState({
     fullName: '',
     email: '',
@@ -53,46 +78,92 @@ export function OnboardingFlow() {
   });
   const [contactValid, setContactValid] = useState(false);
 
-  const canContinue = (): boolean => {
+  // Contact step and verdict step numbers (relative to TOTAL_STEPS)
+  const CONTACT_STEP = TOTAL_STEPS + 1;
+  const VERDICT_STEP = TOTAL_STEPS + 2;
+
+  const canContinue = useMemo((): boolean => {
     if (isSaysoHelping) return saysoHelpReady;
-    switch (currentStep) {
-      case 1: return feeling !== null;
-      case 2: return callFrequency !== null;
-      case 3: return support.length > 0;
-      case 4: return leadTypes.length > 0;
-      case 5: return homesTarget !== null;
-      case 6: return contactValid;
-      default: return false;
+    if (currentStep === CONTACT_STEP) return contactValid;
+
+    if (isPathB) {
+      switch (currentStep) {
+        case 1: return role !== null;
+        case 2: return teamSize > 0 && callersCount !== null;
+        case 3: return confidence !== null;
+        case 4: return teamCallFrequency !== null;
+        case 5: return teamSupport.length > 0;
+        case 6: return leadTypes.length > 0;
+        case 7: return computerType !== null;
+        default: return false;
+      }
+    } else {
+      switch (currentStep) {
+        case 1: return role !== null;
+        case 2: return feeling !== null;
+        case 3: return callFrequency !== null;
+        case 4: return support.length > 0;
+        case 5: return leadTypes.length > 0;
+        case 6: return computerType !== null;
+        default: return false;
+      }
     }
-  };
+  }, [
+    isSaysoHelping, saysoHelpReady, currentStep, CONTACT_STEP, contactValid,
+    isPathB, role, teamSize, callersCount, confidence, teamCallFrequency,
+    teamSupport, leadTypes, computerType, feeling, callFrequency, support,
+  ]);
 
-  const goNext = () => {
-    if (!canContinue()) return;
+  const goNext = useCallback(() => {
+    if (!canContinue) return;
 
-    // If on step 5, launch the SaySo help animation first
-    if (currentStep === 5 && !isSaysoHelping) {
+    // Last question step → SaysoHelp
+    if (currentStep === TOTAL_STEPS && !isSaysoHelping) {
       setIsSaysoHelping(true);
       return;
     }
 
-    // If SaySo help result is showing, move to step 6
+    // SaysoHelp complete → all users go to contact form
     if (isSaysoHelping) {
       setIsSaysoHelping(false);
       setSaysoHelpReady(false);
       setDirection(1);
-      setCurrentStep(6);
+      setCurrentStep(CONTACT_STEP);
       return;
     }
 
-    if (currentStep === 6) {
-      // Launch analyzing animation before going to step 7
+    // Contact → Analyzing
+    if (currentStep === CONTACT_STEP) {
       setIsAnalyzing(true);
       return;
     }
 
     setDirection(1);
-    setCurrentStep((prev) => Math.min(prev + 1, TOTAL_STEPS));
-  };
+    setCurrentStep((prev) => prev + 1);
+  }, [currentStep, isSaysoHelping, TOTAL_STEPS, CONTACT_STEP, canContinue]);
+
+  // Ref keeps the timer callback pointed at the latest goNext so the
+  // SaysoHelp screen is never bypassed, even with a stable timer callback.
+  const goNextRef = useRef(goNext);
+  useEffect(() => {
+    goNextRef.current = goNext;
+  });
+
+  // Auto-advance: called by single-choice screens after selection.
+  const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const handleAutoAdvance = useCallback(() => {
+    if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
+    autoAdvanceTimer.current = setTimeout(() => {
+      goNextRef.current();
+    }, 300);
+  }, []);
+
+  // Clean up the timer if the component unmounts mid-countdown.
+  useEffect(() => {
+    return () => {
+      if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
+    };
+  }, []);
 
   const startOnboarding = () => {
     setDirection(1);
@@ -105,6 +176,12 @@ export function OnboardingFlow() {
       setSaysoHelpReady(false);
       return;
     }
+    // Going back from contact step returns to last question step
+    if (currentStep === CONTACT_STEP) {
+      setDirection(-1);
+      setCurrentStep(TOTAL_STEPS);
+      return;
+    }
     setDirection(-1);
     setCurrentStep((prev) => Math.max(prev - 1, 1));
   };
@@ -112,12 +189,26 @@ export function OnboardingFlow() {
   const handleAnalyzingComplete = useCallback(() => {
     setIsAnalyzing(false);
     setDirection(1);
-    setCurrentStep(7);
-  }, []);
+    setCurrentStep(VERDICT_STEP);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [VERDICT_STEP]);
 
   const handleSaysoHelpReady = useCallback(() => {
     setSaysoHelpReady(true);
   }, []);
+
+  // Auto-advance from SaysoHelp after result is shown — all users go to contact form
+  useEffect(() => {
+    if (!saysoHelpReady) return;
+    const timer = setTimeout(() => {
+      setIsSaysoHelping(false);
+      setSaysoHelpReady(false);
+      setDirection(1);
+      setCurrentStep(CONTACT_STEP);
+    }, 6000);
+    return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [saysoHelpReady]);
 
   const renderScreen = () => {
     if (isAnalyzing) {
@@ -126,6 +217,30 @@ export function OnboardingFlow() {
 
     if (isSaysoHelping) {
       return <SaysoHelpScreen onReady={handleSaysoHelpReady} />;
+    }
+
+    if (currentStep === CONTACT_STEP) {
+      if (computerType === 'PC') {
+        return (
+          <WindowsComingSoonScreen
+            value={contactInfo}
+            onChange={setContactInfo}
+            onValidationChange={setContactValid}
+            onSwitchToApple={() => setComputerType('Mac')}
+          />
+        );
+      }
+      return (
+        <ContactInfoScreen
+          value={contactInfo}
+          onChange={setContactInfo}
+          onValidationChange={setContactValid}
+        />
+      );
+    }
+
+    if (currentStep === VERDICT_STEP) {
+      return <PaywallScreen computerType={computerType} isPathB={isPathB} />;
     }
 
     switch (currentStep) {
@@ -149,53 +264,120 @@ export function OnboardingFlow() {
             </button>
           </div>
         );
+
       case 1:
-        return <FeelingCheckScreen value={feeling} onChange={setFeeling} />;
-      case 2:
-        return <CallFrequencyScreen value={callFrequency} onChange={setCallFrequency} />;
-      case 3:
-        return <SupportTechScreen value={support} onChange={setSupport} />;
-      case 4:
-        return <LeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
-      case 5:
         return (
-          <GoalsScreen
-            homesTarget={homesTarget}
-            onHomesChange={setHomesTarget}
+          <RoleScreen
+            value={role}
+            onChange={setRole}
+            onAutoAdvance={handleAutoAdvance}
           />
         );
+
+      default:
+        if (isPathB) {
+          return renderPathBScreen();
+        }
+        return renderPathAScreen();
+    }
+  };
+
+  const renderPathAScreen = () => {
+    switch (currentStep) {
+      case 2:
+        return (
+          <FeelingCheckScreen
+            value={feeling}
+            onChange={setFeeling}
+            onAutoAdvance={handleAutoAdvance}
+          />
+        );
+      case 3:
+        return (
+          <CallFrequencyScreen
+            value={callFrequency}
+            onChange={setCallFrequency}
+            onAutoAdvance={handleAutoAdvance}
+          />
+        );
+      case 4:
+        return <SupportTechScreen value={support} onChange={setSupport} />;
+      case 5:
+        return <LeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
       case 6:
         return (
-          <ContactInfoScreen
-            value={contactInfo}
-            onChange={setContactInfo}
-            onValidationChange={setContactValid}
+          <ComputerScreen
+            isTeam={false}
+            value={computerType}
+            onChange={setComputerType}
+            onAutoAdvance={handleAutoAdvance}
           />
         );
+      default:
+        return null;
+    }
+  };
+
+  const renderPathBScreen = () => {
+    switch (currentStep) {
+      case 2:
+        return (
+          <TeamSizeScreen
+            teamSize={teamSize}
+            onTeamSizeChange={setTeamSize}
+            callersCount={callersCount}
+            onCallersCountChange={setCallersCount}
+            onAutoAdvance={handleAutoAdvance}
+          />
+        );
+      case 3:
+        return (
+          <ConfidenceScreen
+            value={confidence}
+            onChange={setConfidence}
+            onAutoAdvance={handleAutoAdvance}
+          />
+        );
+      case 4:
+        return (
+          <TeamCallFrequencyScreen
+            value={teamCallFrequency}
+            onChange={setTeamCallFrequency}
+            onAutoAdvance={handleAutoAdvance}
+          />
+        );
+      case 5:
+        return <TeamSupportTechScreen value={teamSupport} onChange={setTeamSupport} />;
+      case 6:
+        return <TeamLeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
       case 7:
-        return <VerdictScreen />;
+        return (
+          <ComputerScreen
+            isTeam={true}
+            value={computerType}
+            onChange={setComputerType}
+            onAutoAdvance={handleAutoAdvance}
+          />
+        );
       default:
         return null;
     }
   };
 
   const isWelcome = currentStep === 0;
-  const showNav = !isWelcome && !isAnalyzing && currentStep < 7;
-  const progressStep = isSaysoHelping ? 5 : isAnalyzing ? 6 : currentStep;
+  const isVerdict = currentStep === VERDICT_STEP;
+  const showNav = !isWelcome && !isAnalyzing && !isVerdict;
 
-  // Determine Continue button label
-  let continueLabel = 'Continue';
-  if (isSaysoHelping && saysoHelpReady) {
-    continueLabel = 'Continue';
-  } else if (currentStep === 5) {
-    continueLabel = 'Let SaySo Help';
-  } else if (currentStep === 6) {
-    continueLabel = 'See My Results';
-  }
+  // Progress bar: show question step number capped at TOTAL_STEPS
+  const progressStep = isSaysoHelping
+    ? TOTAL_STEPS
+    : isAnalyzing
+    ? TOTAL_STEPS + 1
+    : Math.min(currentStep, TOTAL_STEPS + 1);
 
   return (
     <div className="flex flex-col">
-      {!isWelcome && (
+      {!isWelcome && !isVerdict && (
         <OnboardingProgress currentStep={progressStep} totalSteps={TOTAL_STEPS} />
       )}
 
@@ -203,7 +385,13 @@ export function OnboardingFlow() {
         <div className="max-w-lg mx-auto w-full">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
-              key={isSaysoHelping ? 'sayso-help' : isAnalyzing ? 'analyzing' : currentStep}
+              key={
+                isSaysoHelping
+                  ? 'sayso-help'
+                  : isAnalyzing
+                  ? 'analyzing'
+                  : currentStep
+              }
               custom={direction}
               variants={variants}
               initial="enter"
@@ -221,9 +409,9 @@ export function OnboardingFlow() {
         <OnboardingNavButtons
           onBack={goBack}
           onContinue={goNext}
-          canContinue={canContinue()}
+          canContinue={canContinue}
           showBack={currentStep > 1 || isSaysoHelping}
-          continueLabel={continueLabel}
+          continueLabel={isSaysoHelping && saysoHelpReady ? 'Get Started' : undefined}
         />
       )}
     </div>
