@@ -49,8 +49,8 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
             {plan.bulletHeader}
           </li>
         )}
-        {plan.bullets.map((bullet, index) => (
-          <li key={index} className="flex items-start gap-2">
+        {plan.bullets.map((bullet) => (
+          <li key={bullet} className="flex items-start gap-2">
             <svg
               className="w-5 h-5 text-[#2367EE] flex-shrink-0 mt-0.5"
               fill="none"
@@ -91,7 +91,7 @@ export function PricingSection() {
         'Priority support',
         'Free trial included',
         'Coming soon: Smart Capture — automated structured note-taking to popular frameworks',
-        "Coming soon: Recall — Sayso's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
+        "Coming soon: Recall — SaySo's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
       ],
       buttonLabel: 'Start your free trial',
       buttonHref: '#start-trial',
@@ -120,7 +120,7 @@ export function PricingSection() {
       bullets: [
         'Home value and market analysis live during calls',
         'Smart Capture — automated structured note-taking to popular frameworks',
-        "Recall — Sayso's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
+        "Recall — SaySo's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
         'Custom script upload',
         'Additional note capture frameworks',
       ],
@@ -143,8 +143,8 @@ export function PricingSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
-          {plans.map((plan, index) => (
-            <PricingCardV4 key={index} plan={plan} />
+          {plans.map((plan) => (
+            <PricingCardV4 key={plan.title} plan={plan} />
           ))}
         </div>
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useCallback } from 'react';
 
 const CALLERS_OPTIONS = ['All of them', 'Some of them', 'Not enough'];
 const TEAM_SIZE_VALUES = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
@@ -22,27 +22,19 @@ export function TeamSizeScreen({
 }: TeamSizeScreenProps) {
   const didAdvance = useRef(false);
 
+  // Trigger auto-advance on selection rather than in a useEffect.
+  // This prevents the screen from bouncing the user forward when they
+  // navigate back and the parent state still has their previous answers.
   const handleCallersSelect = useCallback(
     (option: string) => {
       onCallersCountChange(option);
+      if (!didAdvance.current) {
+        didAdvance.current = true;
+        onAutoAdvance();
+      }
     },
-    [onCallersCountChange]
+    [onCallersCountChange, onAutoAdvance]
   );
-
-  // Auto-advance once both parts are answered
-  useEffect(() => {
-    if (teamSize > 0 && callersCount !== null && !didAdvance.current) {
-      didAdvance.current = true;
-      onAutoAdvance();
-    }
-  }, [teamSize, callersCount, onAutoAdvance]);
-
-  // Reset guard if answers are cleared
-  useEffect(() => {
-    if (callersCount === null) {
-      didAdvance.current = false;
-    }
-  }, [callersCount]);
 
   return (
     <div className="text-center">
@@ -66,48 +58,6 @@ export function TeamSizeScreen({
 
           {/* Slider */}
           <div className="w-full">
-            <style>{`
-              .agent-slider {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 100%;
-                height: 6px;
-                border-radius: 9999px;
-                outline: none;
-                cursor: pointer;
-                background: linear-gradient(
-                  to right,
-                  #2367EE 0%,
-                  #2367EE ${(Math.max(0, TEAM_SIZE_VALUES.indexOf(teamSize)) / (TEAM_SIZE_VALUES.length - 1)) * 100}%,
-                  #D7DEE1 ${(Math.max(0, TEAM_SIZE_VALUES.indexOf(teamSize)) / (TEAM_SIZE_VALUES.length - 1)) * 100}%,
-                  #D7DEE1 100%
-                );
-              }
-              .agent-slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                background: #2367EE;
-                border: 3px solid white;
-                box-shadow: 0 0 0 2px #2367EE, 0 2px 6px rgba(35,103,238,0.35);
-                cursor: pointer;
-                transition: box-shadow 0.15s;
-              }
-              .agent-slider::-webkit-slider-thumb:hover {
-                box-shadow: 0 0 0 4px rgba(35,103,238,0.2), 0 2px 8px rgba(35,103,238,0.4);
-              }
-              .agent-slider::-moz-range-thumb {
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                background: #2367EE;
-                border: 3px solid white;
-                box-shadow: 0 0 0 2px #2367EE, 0 2px 6px rgba(35,103,238,0.35);
-                cursor: pointer;
-              }
-            `}</style>
             <input
               type="range"
               min={0}
@@ -116,6 +66,12 @@ export function TeamSizeScreen({
               value={Math.max(0, TEAM_SIZE_VALUES.indexOf(teamSize))}
               onChange={(e) => onTeamSizeChange(TEAM_SIZE_VALUES[Number(e.target.value)])}
               className="agent-slider"
+              style={{
+                background: (() => {
+                  const pct = (Math.max(0, TEAM_SIZE_VALUES.indexOf(teamSize)) / (TEAM_SIZE_VALUES.length - 1)) * 100;
+                  return `linear-gradient(to right, #2367EE 0%, #2367EE ${pct}%, #D7DEE1 ${pct}%, #D7DEE1 100%)`;
+                })(),
+              }}
             />
             <div className="flex justify-between mt-1.5">
               <span className="text-xs text-[#1D4871]/50 font-medium">1</span>

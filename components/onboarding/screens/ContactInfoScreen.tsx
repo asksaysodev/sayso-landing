@@ -74,7 +74,7 @@ export function ContactInfoScreen({ value, onChange, onValidationChange }: Conta
   return (
     <div className="text-center">
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        Get started setting up your Sayso account
+        Get started setting up your SaySo account
       </h1>
 
       <div className="max-w-md mx-auto mt-6 flex flex-col gap-3.5">

@@ -42,7 +42,7 @@ export function SaysoHelpScreen({ onReady }: SaysoHelpScreenProps) {
               </svg>
             </div>
             <p className="text-base font-semibold text-[#1D4871]/60">
-              Sayso is activating...
+              SaySo is activating...
             </p>
             <div className="w-full max-w-xs h-2 rounded-full bg-[#2367EE]/15 overflow-hidden">
               <motion.div
@@ -62,10 +62,10 @@ export function SaysoHelpScreen({ onReady }: SaysoHelpScreenProps) {
             className="flex flex-col items-center gap-3"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-[#1D4871]">
-              Sayso is a great fit for you!
+              SaySo is a great fit for you!
             </h2>
             <p className="text-base text-[#1D4871]/60 font-medium">
-              Sayso can help you
+              SaySo can help you
             </p>
             <div className="mt-2 flex flex-col items-center gap-2">
               {[

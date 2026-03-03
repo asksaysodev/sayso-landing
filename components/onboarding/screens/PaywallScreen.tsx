@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface PaywallScreenProps {
@@ -101,12 +101,20 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
   const isPC = computerType === 'PC';
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const triggerToast = (msg: string) => {
     setToastMessage(msg);
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setShowToast(false), 3000);
   };
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current);
+    };
+  }, []);
 
   const individualBullets = [
     'Cue — real-time conversation intelligence',
@@ -137,7 +145,7 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
             Lock in your early access rate.
           </h1>
           <p className="text-sm md:text-base text-[#1D4871]/70 max-w-md mx-auto mt-2 leading-relaxed">
-            Sayso is coming to PC. Sign up now and secure 50% off — for your first 3 months.
+            SaySo is coming to PC. Sign up now and secure 50% off — for your first 3 months.
           </p>
           {/* Early access banner */}
           <div className="mt-4 inline-flex items-center gap-2 bg-[#FFDE59] text-[#1D4871] font-bold text-sm px-4 py-2 rounded-full border-2 border-[#1D4871]">
@@ -150,7 +158,7 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
       ) : (
         <div className="text-center mb-5">
           <h1 className="text-2xl md:text-3xl font-bold text-[#1D4871]">
-            Sayso is perfect for you!
+            SaySo is perfect for you!
           </h1>
           <p className="text-sm md:text-base text-[#1D4871]/70 max-w-md mx-auto mt-2 leading-relaxed">
             Based on your goals, you&apos;re ready to go. Start your 3-day free trial below.

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OnboardingProgress } from './OnboardingProgress';
 import { LightningIcon } from '@/components/icons/LightningIcon';
@@ -82,7 +82,7 @@ export function OnboardingFlow() {
   const CONTACT_STEP = TOTAL_STEPS + 1;
   const VERDICT_STEP = TOTAL_STEPS + 2;
 
-  const canContinue = (): boolean => {
+  const canContinue = useMemo((): boolean => {
     if (isSaysoHelping) return saysoHelpReady;
     if (currentStep === CONTACT_STEP) return contactValid;
 
@@ -108,10 +108,14 @@ export function OnboardingFlow() {
         default: return false;
       }
     }
-  };
+  }, [
+    isSaysoHelping, saysoHelpReady, currentStep, CONTACT_STEP, contactValid,
+    isPathB, role, teamSize, callersCount, confidence, teamCallFrequency,
+    teamSupport, leadTypes, computerType, feeling, callFrequency, support,
+  ]);
 
   const goNext = useCallback(() => {
-    if (!canContinue()) return;
+    if (!canContinue) return;
 
     // Last question step → SaysoHelp
     if (currentStep === TOTAL_STEPS && !isSaysoHelping) {
@@ -136,17 +140,29 @@ export function OnboardingFlow() {
 
     setDirection(1);
     setCurrentStep((prev) => prev + 1);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentStep, isSaysoHelping, TOTAL_STEPS, CONTACT_STEP, canContinue]);
 
-  // Auto-advance: called by single-choice screens after selection
+  // Ref keeps the timer callback pointed at the latest goNext so the
+  // SaysoHelp screen is never bypassed, even with a stable timer callback.
+  const goNextRef = useRef(goNext);
+  useEffect(() => {
+    goNextRef.current = goNext;
+  });
+
+  // Auto-advance: called by single-choice screens after selection.
   const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const handleAutoAdvance = useCallback(() => {
     if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
     autoAdvanceTimer.current = setTimeout(() => {
-      setDirection(1);
-      setCurrentStep((prev) => prev + 1);
+      goNextRef.current();
     }, 300);
+  }, []);
+
+  // Clean up the timer if the component unmounts mid-countdown.
+  useEffect(() => {
+    return () => {
+      if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
+    };
   }, []);
 
   const startOnboarding = () => {
@@ -235,7 +251,7 @@ export function OnboardingFlow() {
               <LightningIcon size={32} color="white" />
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#1D4871]">
-              Welcome to Sayso
+              Welcome to SaySo
             </h1>
             <p className="text-base text-[#1D4871]/60 mt-2 max-w-sm mx-auto">
               Let&apos;s see if it&apos;s the right fit for you.
@@ -393,7 +409,7 @@ export function OnboardingFlow() {
         <OnboardingNavButtons
           onBack={goBack}
           onContinue={goNext}
-          canContinue={canContinue()}
+          canContinue={canContinue}
           showBack={currentStep > 1 || isSaysoHelping}
           continueLabel={isSaysoHelping && saysoHelpReady ? 'Get Started' : undefined}
         />
