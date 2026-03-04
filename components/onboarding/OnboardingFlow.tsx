@@ -343,7 +343,7 @@ export function OnboardingFlow() {
           onContinue={goNext}
           canContinue={canContinue}
           showBack={currentStep > 1 || isSaysoHelping}
-          continueLabel={isSaysoHelping && saysoHelpReady ? 'Get Started' : undefined}
+          continueLabel={isSaysoHelping && saysoHelpReady ? 'Book a Demo' : undefined}
         />
       )}
     </div>
