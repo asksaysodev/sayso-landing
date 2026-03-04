@@ -6,11 +6,11 @@ This is a shared team repository. Please follow these conventions to maintain or
 
 ## Quick Start Before Every Task
 
-Always start from an up-to-date `main` branch:
+Always start from an up-to-date `development` branch:
 
 ```bash
-git checkout main
-git pull origin main
+git checkout development
+git pull origin development
 ```
 
 ---
@@ -71,19 +71,19 @@ git commit -m "your clear message"
    - Commit and push again
    - PR updates automatically
 
-5. **Merge to main** (maintainer merges after approval)
+5. **Merge to `development`** (maintainer merges after approval; `development` is promoted to `main` for production releases)
 
 ---
 
 ## After Your PR is Merged
 
 ```bash
-git checkout main
-git pull origin main
+git checkout development
+git pull origin development
 git branch -d type/short-description  # optional cleanup
 ```
 
-Then start your next task from a fresh `main`.
+Then start your next task from a fresh `development`.
 
 ---
 
