@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { ProductShowcaseDesktop } from './ProductShowcaseDesktop';
+import type { HeroContent } from '@/lib/content/personas/types';
 
 const logos = [
   { name: 'eXp Realty', src: '/exp realty.png' },
@@ -10,7 +11,13 @@ const logos = [
   { name: 'Olaf', src: '/olaf logo.png' },
 ];
 
-export function HeroWithVideo() {
+const defaultContent: HeroContent = {
+  headline: 'Win the Moment',
+  tagline:
+    'Real-time prompts to help agents handle objections, ask better questions, and book more appointments.',
+};
+
+export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
   const { openDemoCalendar } = useDemoCalendar();
 
   return (
@@ -38,14 +45,14 @@ export function HeroWithVideo() {
             {/* LEFT COLUMN — headline, tagline, CTAs */}
             <div className="text-center lg:max-w-md flex-shrink-0 lg:pl-8">
               <div className="mb-3 md:mb-4">
-                <h1 className="font-comic text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-wide leading-[1.05] text-[#1D4871] v4-slide-in-left">
-                  Win the Moment
+                <h1 className={`font-comic tracking-wide leading-[1.05] text-[#1D4871] v4-slide-in-left ${content.headlineSize ?? 'text-5xl sm:text-6xl lg:text-7xl xl:text-8xl'}`}>
+                  {content.headline}
                 </h1>
               </div>
 
               {/* Tagline */}
               <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-lg mx-auto">
-                Real-time prompts to help agents handle objections, ask better questions, and book more appointments.
+                {content.tagline}
               </p>
 
               {/* CTA */}

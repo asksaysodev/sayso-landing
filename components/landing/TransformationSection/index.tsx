@@ -3,11 +3,19 @@
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
-import { metrics } from './metrics';
+import { metrics as defaultMetrics } from './metrics';
 import { HeroStarburst } from './HeroStarburst';
+import type { TransformationContent } from '@/lib/content/personas/types';
 
-export function TransformationSection() {
+const defaultContent: TransformationContent = {
+  headline: "With SaySo, You're Unstoppable",
+  subheading: 'Transform every prospecting call into a winning conversation.',
+  metrics: defaultMetrics,
+};
+
+export function TransformationSection({ content = defaultContent }: { content?: TransformationContent }) {
   const { openDemoCalendar } = useDemoCalendar();
+  const { headline, subheading, metrics } = content;
 
   return (
     <section className="relative bg-[#1D4871] py-10 md:py-20 lg:py-24 overflow-hidden v4-halftone-dark">
@@ -38,10 +46,10 @@ export function TransformationSection() {
           {/* Right column — Victory metrics (2/5 width on desktop) */}
           <div className="lg:col-span-3">
             <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-white mb-3 tracking-wide text-center lg:text-left">
-              With SaySo, You&apos;re Unstoppable
+              {headline}
             </h2>
             <p className="text-base md:text-lg text-white/70 mb-5 md:mb-10 text-center lg:text-left max-w-xl">
-              Transform every prospecting call into a winning conversation.
+              {subheading}
             </p>
 
             {/* Victory metric cards grid */}
