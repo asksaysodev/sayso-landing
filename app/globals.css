@@ -13,6 +13,9 @@
 
 /* Base Styles */
 @layer base {
+  html {
+    zoom: 0.8;
+  }
   body {
     @apply bg-background text-primary font-sans;
   }
