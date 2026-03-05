@@ -21,9 +21,7 @@ import { SaysoHelpScreen } from './screens/SaysoHelpScreen';
 // import { AnalyzingScreen } from './screens/AnalyzingScreen';       // DISABLED: simplified flow
 // import { PaywallScreen } from './screens/PaywallScreen';           // DISABLED: simplified flow
 // import { WindowsComingSoonScreen } from './screens/WindowsComingSoonScreen'; // DISABLED: simplified flow
-
-// TODO: Replace with real book-a-demo calendar URL
-const BOOK_DEMO_URL = '#book-demo';
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 const variants = {
   enter: (direction: number) => ({
@@ -49,6 +47,7 @@ const variants = {
 // Shared: ContactInfoScreen, WindowsComingSoonScreen, AnalyzingScreen, PaywallScreen
 
 export function OnboardingFlow() {
+  const { openDemoCalendar } = useDemoCalendar();
   const [currentStep, setCurrentStep] = useState(0); // 0 = welcome
   const [direction, setDirection] = useState(1);
   // const [isAnalyzing, setIsAnalyzing] = useState(false); // DISABLED: no analyzing screen
@@ -113,7 +112,7 @@ export function OnboardingFlow() {
 
     // SaysoHelp complete → redirect to book demo
     if (isSaysoHelping) {
-      window.location.href = BOOK_DEMO_URL;
+      openDemoCalendar();
       return;
     }
 
@@ -184,7 +183,7 @@ export function OnboardingFlow() {
   useEffect(() => {
     if (!saysoHelpReady) return;
     const timer = setTimeout(() => {
-      window.location.href = BOOK_DEMO_URL;
+      openDemoCalendar();
     }, 6000);
     return () => clearTimeout(timer);
   }, [saysoHelpReady]);
