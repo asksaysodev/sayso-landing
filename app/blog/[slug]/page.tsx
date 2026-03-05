@@ -6,7 +6,6 @@ import { BlogBreadcrumb } from '@/components/blog/BlogBreadcrumb';
 import { BlogArticleHeader } from '@/components/blog/BlogArticleHeader';
 import { BlogArticleContent } from '@/components/blog/BlogArticleContent';
 import { BlogSidebar } from '@/components/blog/BlogSidebar';
-import { BlogShareBar } from '@/components/blog/BlogShareBar';
 import { BlogAuthorCard } from '@/components/blog/BlogAuthorCard';
 import { BlogInArticleCTA } from '@/components/blog/BlogInArticleCTA';
 import { BlogRelatedPosts } from '@/components/blog/BlogRelatedPosts';
@@ -106,24 +105,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Content area with sidebar */}
       <div className="max-w-[1200px] mx-auto px-6 pb-10">
         <div className="flex flex-col lg:flex-row gap-10">
-          {/* Share bar — desktop left sticky */}
-          <div className="hidden lg:block w-12 shrink-0">
-            <div className="sticky top-24">
-              <BlogShareBar title={post.title} slug={post.slug} />
-            </div>
-          </div>
-
           {/* Article content */}
           <article className="flex-1 min-w-0 max-w-[700px]">
             <BlogArticleContent content={firstHalf} />
             <BlogInArticleCTA />
             <BlogArticleContent content={secondHalf} />
-
-            {/* Mobile share bar */}
-            <div className="lg:hidden py-6 border-t border-[#D7DEE1] mt-8">
-              <p className="text-sm font-bold text-[#1D4871] mb-3">Share this article</p>
-              <BlogShareBar title={post.title} slug={post.slug} />
-            </div>
 
             {/* Author card */}
             <div className="mt-8">
