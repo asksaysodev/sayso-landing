@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { DemoCalendarProvider } from "@/app/context/landing/DemoCalendarContext";
 import { Footer } from "@/components/landing/Footer";
 import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
 import { PainPointPanel } from "@/components/landing/PainPointPanel";
@@ -32,15 +31,13 @@ export const metadata: Metadata = {
 
 export default function BrokerPage() {
   return (
-    <DemoCalendarProvider>
-      <div className="relative bg-white">
-        <SaysoNavbar />
-        <HeroWithVideo content={brokerContent.hero} />
-        <PainPointPanel />
-        <TransformationSection content={brokerContent.transformation} />
-        <ThreeStepsSection content={brokerContent.threeSteps} />
-        <Footer />
-      </div>
-    </DemoCalendarProvider>
+    <div className="relative bg-white">
+      <SaysoNavbar />
+      <HeroWithVideo content={brokerContent.hero} />
+      <PainPointPanel />
+      <TransformationSection content={brokerContent.transformation} />
+      <ThreeStepsSection content={brokerContent.threeSteps} />
+      <Footer />
+    </div>
   );
 }
