@@ -39,7 +39,7 @@ export function ThreeStepsSection() {
   const step = steps[currentStep];
 
   return (
-    <section id="how-it-works" className="mt-16 md:mt-20 lg:mt-24 bg-white py-12 md:py-16 lg:py-20 v2-halftone relative">
+    <section id="how-it-works" className="mt-6 md:mt-20 lg:mt-24 bg-white py-12 md:py-16 lg:py-20 v2-halftone relative">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] mb-4 tracking-wide">
