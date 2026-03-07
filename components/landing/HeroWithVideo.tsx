@@ -17,7 +17,7 @@ export function HeroWithVideo() {
   return (
     <>
 
-      <section className="relative bg-white pt-[140px] pb-[140px] overflow-hidden v2-halftone">
+      <section className="relative bg-white pt-[70px] lg:pt-[140px] pb-[140px] overflow-hidden v2-halftone">
         <div className="max-w-[1600px] mx-auto px-6">
 
           {/* Two-column layout: text left, video far right */}
