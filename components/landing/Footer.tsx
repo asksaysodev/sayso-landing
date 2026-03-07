@@ -52,6 +52,7 @@ export function Footer() {
             <div className="space-y-3">
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Company</h3>
               <ul className="space-y-2">
+                <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li>
                 <li><a href="#security" className="text-sm text-white/70 hover:text-white transition-colors">Security</a></li>
                 <li><a href="#help" className="text-sm text-white/70 hover:text-white transition-colors">Help</a></li>
                 <li><a href="#contact" className="text-sm text-white/70 hover:text-white transition-colors">Contact</a></li>
