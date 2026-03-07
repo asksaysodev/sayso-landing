@@ -11,11 +11,8 @@ export function TransformationSection() {
 
   return (
     <section className="relative bg-[#1D4871] py-10 md:py-20 lg:py-24 overflow-hidden v4-halftone-dark">
-      {/* Diagonal yellow accent stripe at top */}
-      <div
-        className="absolute top-0 left-0 right-0 h-3 md:h-4 bg-[#FFDE59]"
-        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 60%)' }}
-      />
+      {/* Yellow accent stripe at top */}
+      <div className="absolute top-0 left-0 right-0 h-3 md:h-4 bg-[#FFDE59]" />
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-center">
