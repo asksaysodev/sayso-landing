@@ -9,9 +9,9 @@ import { Menu, X } from 'lucide-react';
 const NAV_LINKS = [
   { label: 'Home', href: '#top' },
   { label: 'How Sayso Works', href: '#how-it-works' },
-  // { label: 'Blog', href: '/blog' },
   // { label: 'Case Studies', href: '/case-studies' },
   { label: 'Demo', href: '#demo', isCalendar: true },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '#contact', isContact: true },
 ];
 
