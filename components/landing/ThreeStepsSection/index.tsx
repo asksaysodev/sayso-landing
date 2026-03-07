@@ -115,14 +115,14 @@ export function ThreeStepsSection() {
         <div className="mt-10 md:mt-14 flex gap-3 justify-center">
           <button
             onClick={openDemoCalendar}
-            className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-6 py-3.5 text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
           >
-            <LightningIcon size={18} className="mr-2" />
+            <LightningIcon size={16} className="mr-1.5" />
             Activate Sayso
           </button>
           <button
             onClick={openDemoCalendar}
-            className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 py-3.5 text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59] focus-visible:ring-offset-2 whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59] focus-visible:ring-offset-2 whitespace-nowrap"
             style={{ boxShadow: '3px 3px 0px #1D4871' }}
           >
             Book a Demo
