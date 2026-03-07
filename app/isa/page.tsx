@@ -6,8 +6,7 @@ import SaysoNavbar from "@/components/landing/SaysoNavbar";
 import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
 import { TransformationSection } from "@/components/landing/TransformationSection";
 import { isaContent } from "@/lib/content/personas/isa";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+import { siteUrl } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: 'Sayso for ISAs & Prospecting Agents | Never Run Out of What to Say',

@@ -6,8 +6,7 @@ import SaysoNavbar from "@/components/landing/SaysoNavbar";
 import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
 import { TransformationSection } from "@/components/landing/TransformationSection";
 import { brokerContent } from "@/lib/content/personas/broker";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+import { siteUrl } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: 'Sayso for Brokers & Team Owners | Fix Your Conversion Problem',

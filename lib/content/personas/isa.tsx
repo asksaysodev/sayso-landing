@@ -1,7 +1,6 @@
 import { CalendarCheck, Mic, ShieldCheck, Zap } from 'lucide-react';
 import type { PersonaContent } from './types';
-
-const ICON_CONSTANTS = { size: 28, color: '#2367EE' };
+import { ICON_CONSTANTS } from './constants';
 
 export const isaContent: PersonaContent = {
   hero: {
