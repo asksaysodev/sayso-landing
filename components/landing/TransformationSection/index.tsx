@@ -66,15 +66,15 @@ export function TransformationSection() {
             <div className="mt-5 md:mt-10 flex gap-3 justify-center lg:justify-start">
               <button
                 onClick={openDemoCalendar}
-                className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-6 py-3.5 text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
+                className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-6 py-3.5 text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
               >
                 <LightningIcon size={18} color="white" className="mr-2" />
                 Download Sayso
               </button>
               <button
                 onClick={openDemoCalendar}
-                className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 py-3.5 text-[1.1rem] font-bold text-[#1D4871] border-2 border-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
-                style={{ boxShadow: '3px 3px 0px rgba(255,255,255,0.4)' }}
+                className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 py-3.5 text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
+                style={{ boxShadow: '3px 3px 0px #1D4871' }}
               >
                 Book a Demo
               </button>
