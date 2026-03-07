@@ -16,7 +16,7 @@ const CONVERSATION_CYCLES = [
   {
     buyerMessage: "We're thinking about Santa Monica for the schools.",
     sellerMessage: "That's great — what's most important about the neighborhood for your family?",
-    saysoPrompt: "It's great you're considering Santa Monica! What's most important to you about the location or neighborhood there?",
+    saysoPrompt: "Santa Monica is great. Which neighborhoods are you considering? and why?",
   },
 ];
 
