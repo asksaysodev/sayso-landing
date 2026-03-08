@@ -60,8 +60,8 @@ export function Footer() {
             <div className="space-y-3">
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#privacy" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#terms" className="text-sm text-white/70 hover:text-white transition-colors">Terms</a></li>
+                <li><a href="/privacy" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a></li>
+                <li><a href="/terms" className="text-sm text-white/70 hover:text-white transition-colors">Terms</a></li>
               </ul>
             </div>
             <div className="space-y-3">
@@ -88,9 +88,9 @@ export function Footer() {
             &copy; 2026 AskSayso, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-3 text-xs text-white/50">
-            <a href="#privacy" className="hover:text-white/70 transition-colors">Privacy</a>
+            <a href="/privacy" className="hover:text-white/70 transition-colors">Privacy</a>
             <span>&bull;</span>
-            <a href="#terms" className="hover:text-white/70 transition-colors">Terms</a>
+            <a href="/terms" className="hover:text-white/70 transition-colors">Terms</a>
           </div>
         </div>
       </div>
