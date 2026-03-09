@@ -3,19 +3,24 @@
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
-import { metrics } from './metrics';
+import { metrics as defaultMetrics } from './metrics';
 import { HeroStarburst } from './HeroStarburst';
+import type { TransformationContent } from '@/lib/content/personas/types';
 
-export function TransformationSection() {
+const defaultContent: TransformationContent = {
+  headline: "With SaySo, You're Unstoppable",
+  subheading: 'Transform every prospecting call into a winning conversation.',
+  metrics: defaultMetrics,
+};
+
+export function TransformationSection({ content = defaultContent }: { content?: TransformationContent }) {
   const { openDemoCalendar } = useDemoCalendar();
+  const { headline, subheading, metrics } = content;
 
   return (
     <section className="relative bg-[#1D4871] py-10 md:py-20 lg:py-24 overflow-hidden v4-halftone-dark">
-      {/* Diagonal yellow accent stripe at top */}
-      <div
-        className="absolute top-0 left-0 right-0 h-3 md:h-4 bg-[#FFDE59]"
-        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 60%)' }}
-      />
+      {/* Yellow accent stripe at top */}
+      <div className="absolute top-0 left-0 right-0 h-3 md:h-4 bg-[#FFDE59]" />
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-center">
@@ -38,10 +43,10 @@ export function TransformationSection() {
           {/* Right column — Victory metrics (2/5 width on desktop) */}
           <div className="lg:col-span-3">
             <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-white mb-3 tracking-wide text-center lg:text-left">
-              With SaySo, You&apos;re Unstoppable
+              {headline}
             </h2>
             <p className="text-base md:text-lg text-white/70 mb-5 md:mb-10 text-center lg:text-left max-w-xl">
-              Transform every prospecting call into a winning conversation.
+              {subheading}
             </p>
 
             {/* Victory metric cards grid */}
@@ -63,12 +68,19 @@ export function TransformationSection() {
             </div>
 
             {/* Final CTA */}
-            <div className="mt-5 md:mt-10 flex flex-wrap gap-4 justify-center lg:justify-start">
+            <div className="mt-5 md:mt-10 flex gap-3 justify-center lg:justify-start">
               <button
                 onClick={openDemoCalendar}
-                className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-7 py-3.5 text-[1.1rem] font-bold text-[#1D4871] v2-comic-btn border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871]"
+                className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
               >
-                <LightningIcon size={18} color="#1D4871" className="mr-2" />
+                <LightningIcon size={16} color="white" className="mr-1.5" />
+                Download Sayso
+              </button>
+              <button
+                onClick={openDemoCalendar}
+                className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
+                style={{ boxShadow: '3px 3px 0px #1D4871' }}
+              >
                 Book a Demo
               </button>
             </div>
