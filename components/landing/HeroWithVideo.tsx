@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { ProductShowcaseDesktop } from './ProductShowcaseDesktop';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 import type { HeroContent } from '@/lib/content/personas/types';
 
 const logos = [
@@ -23,7 +24,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
   return (
     <>
 
-      <section className="relative bg-white pt-[140px] pb-[140px] overflow-hidden v2-halftone">
+      <section className="relative bg-white pt-[70px] lg:pt-[140px] pb-[70px] lg:pb-[140px] overflow-hidden v2-halftone">
         <div className="max-w-[1600px] mx-auto px-6">
 
           {/* Three-column layout: text | superhero | video */}
@@ -42,11 +43,19 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                 {content.tagline}
               </p>
 
-              {/* CTA */}
-              <div className="mt-5 md:mt-6 flex justify-center gap-4">
+              {/* CTAs */}
+              <div className="mt-5 md:mt-6 flex justify-center gap-3">
                 <button
                   onClick={openDemoCalendar}
-                  className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-8 py-3.5 text-lg font-semibold text-white v4-hero-glow v2-comic-border-light border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
+                  className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
+                >
+                  <LightningIcon size={16} className="mr-2 flex-shrink-0" />
+                  Download Sayso
+                </button>
+                <button
+                  onClick={openDemoCalendar}
+                  className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
+                  style={{ boxShadow: '3px 3px 0px #1D4871' }}
                 >
                   Book a Demo
                 </button>

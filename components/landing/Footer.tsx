@@ -32,21 +32,22 @@ export function Footer() {
           </div>
 
           {/* Right Column: Link Columns */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-8 lg:gap-10">
             <div className="space-y-3">
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Product</h3>
               <ul className="space-y-2">
-                <li><a href="#how-it-works" className="text-sm text-white/70 hover:text-white transition-colors whitespace-nowrap">How it works</a></li>
+                <li><a href="#how-it-works" className="text-sm text-white/70 hover:text-white transition-colors ">How it works</a></li>
                 <li><a href="#pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a></li>
                 {/* <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li> */}
-                <li><a href="#book-demo" className="text-sm text-white/70 hover:text-white transition-colors whitespace-nowrap">Book a demo</a></li>
+                <li><a href="#book-demo" className="text-sm text-white/70 hover:text-white transition-colors ">Book a demo</a></li>
               </ul>
             </div>
             <div className="space-y-3">
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Programs</h3>
               <ul className="space-y-2">
-                <li><a href="#referral-program" className="text-sm text-white/70 hover:text-white transition-colors whitespace-nowrap">Referral program</a></li>
-                <li><a href="#affiliate-program" className="text-sm text-white/70 hover:text-white transition-colors whitespace-nowrap">Affiliate program</a></li>
+                <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#referral-program" className="text-sm text-white/70 hover:text-white transition-colors ">Referral program</a></li>
+                <li><a href="#affiliate-program" className="text-sm text-white/70 hover:text-white transition-colors ">Affiliate program</a></li>
               </ul>
             </div>
             <div className="space-y-3">
