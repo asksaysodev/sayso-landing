@@ -7,30 +7,50 @@ import { StepCard } from './StepCard';
 import { StepVisualStartSayso, StepVisualPrompts, StepVisualBooked } from './StepVisuals';
 import { ComicArrow } from './ComicArrow';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
+import type { ThreeStepsContent } from '@/lib/content/personas/types';
 
-export function ThreeStepsSection() {
+const defaultContent: ThreeStepsContent = {
+  headline: 'Sayso in 3 Easy Steps',
+  subheading: 'Real-time guidance that keeps prospecting calls structured and moving toward a booked appointment.',
+  steps: [
+    {
+      title: '1. Launch Coach',
+      description: "Turn Sayso on while you're calling to get real-time context-based guidance during the call.",
+    },
+    {
+      title: '2. Get Real-Time Prompts',
+      description: 'Sayso suggests what to ask or say next.',
+    },
+    {
+      title: '3. Win the moment',
+      description: 'Sayso helps you earn the meeting at the right moment—so appointments are more qualified and more likely to convert.',
+    },
+  ],
+};
+
+export function ThreeStepsSection({ content = defaultContent }: { content?: ThreeStepsContent }) {
   const [currentStep, setCurrentStep] = useState(0);
   const { openDemoCalendar } = useDemoCalendar();
 
   const steps = [
     {
       number: 1,
-      title: '1. Launch Coach',
-      description: "Turn Sayso on while you're calling to get real-time context-based guidance during the call.",
+      title: content.steps[0].title,
+      description: content.steps[0].description,
       visual: <StepVisualStartSayso />,
       tilt: 'v2-tilt-left',
     },
     {
       number: 2,
-      title: '2. Get Real-Time Prompts',
-      description: 'Sayso suggests what to ask or say next.',
+      title: content.steps[1].title,
+      description: content.steps[1].description,
       visual: <StepVisualPrompts />,
       tilt: '',
     },
     {
       number: 3,
-      title: '3. Win the moment',
-      description: 'Sayso helps you earn the meeting at the right moment—so appointments are more qualified and more likely to convert.',
+      title: content.steps[2].title,
+      description: content.steps[2].description,
       visual: <StepVisualBooked />,
       tilt: 'v2-tilt-right',
     },
@@ -44,10 +64,10 @@ export function ThreeStepsSection() {
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] mb-4 tracking-wide">
             <LightningIcon size={24} color="#2367EE" className="inline-block mr-2 -mt-1" />
-            Sayso in 3 Easy Steps
+            {content.headline}
           </h2>
           <p className="text-[1.2rem] text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
-            Real-time guidance that keeps prospecting calls structured and moving toward a booked appointment.
+            {content.subheading}
           </p>
         </div>
 

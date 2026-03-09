@@ -1,21 +1,14 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OnboardingProgress } from './OnboardingProgress';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { OnboardingNavButtons } from './OnboardingNavButtons';
-import { FeelingCheckScreen } from './screens/FeelingCheckScreen';
+import { RoleScreen } from './screens/RoleScreen';
 import { CallFrequencyScreen } from './screens/CallFrequencyScreen';
-import { SupportTechScreen } from './screens/SupportTechScreen';
-import { LeadTypeScreen } from './screens/LeadTypeScreen';
-import { GoalsScreen } from './screens/GoalsScreen';
 import { SaysoHelpScreen } from './screens/SaysoHelpScreen';
-import { ContactInfoScreen } from './screens/ContactInfoScreen';
-import { AnalyzingScreen } from './screens/AnalyzingScreen';
-import { VerdictScreen } from './screens/VerdictScreen';
-
-const TOTAL_STEPS = 7;
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 const variants = {
   enter: (direction: number) => ({
@@ -33,66 +26,61 @@ const variants = {
 };
 
 export function OnboardingFlow() {
-  const [currentStep, setCurrentStep] = useState(0); // 0 = welcome screen
+  const { openDemoCalendar } = useDemoCalendar();
+  const [currentStep, setCurrentStep] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isSaysoHelping, setIsSaysoHelping] = useState(false);
   const [saysoHelpReady, setSaysoHelpReady] = useState(false);
 
-  // Screen state
-  const [feeling, setFeeling] = useState<string | null>(null);
+  const [role, setRole] = useState<string | null>(null);
   const [callFrequency, setCallFrequency] = useState<string | null>(null);
-  const [support, setSupport] = useState<string[]>([]);
-  const [leadTypes, setLeadTypes] = useState<string[]>([]);
-  const [homesTarget, setHomesTarget] = useState<string | null>(null);
-  const [contactInfo, setContactInfo] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    company: '',
-  });
-  const [contactValid, setContactValid] = useState(false);
 
-  const canContinue = (): boolean => {
+  const TOTAL_STEPS = 2;
+
+  const canContinue = useMemo((): boolean => {
     if (isSaysoHelping) return saysoHelpReady;
     switch (currentStep) {
-      case 1: return feeling !== null;
+      case 1: return role !== null;
       case 2: return callFrequency !== null;
-      case 3: return support.length > 0;
-      case 4: return leadTypes.length > 0;
-      case 5: return homesTarget !== null;
-      case 6: return contactValid;
       default: return false;
     }
-  };
+  }, [isSaysoHelping, saysoHelpReady, currentStep, role, callFrequency]);
 
-  const goNext = () => {
-    if (!canContinue()) return;
+  const goNext = useCallback(() => {
+    if (!canContinue) return;
 
-    // If on step 5, launch the SaySo help animation first
-    if (currentStep === 5 && !isSaysoHelping) {
+    if (currentStep === TOTAL_STEPS && !isSaysoHelping) {
       setIsSaysoHelping(true);
       return;
     }
 
-    // If SaySo help result is showing, move to step 6
     if (isSaysoHelping) {
-      setIsSaysoHelping(false);
-      setSaysoHelpReady(false);
-      setDirection(1);
-      setCurrentStep(6);
-      return;
-    }
-
-    if (currentStep === 6) {
-      // Launch analyzing animation before going to step 7
-      setIsAnalyzing(true);
+      openDemoCalendar();
       return;
     }
 
     setDirection(1);
-    setCurrentStep((prev) => Math.min(prev + 1, TOTAL_STEPS));
-  };
+    setCurrentStep((prev) => prev + 1);
+  }, [currentStep, isSaysoHelping, TOTAL_STEPS, canContinue]);
+
+  const goNextRef = useRef(goNext);
+  useEffect(() => {
+    goNextRef.current = goNext;
+  });
+
+  const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const handleAutoAdvance = useCallback(() => {
+    if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
+    autoAdvanceTimer.current = setTimeout(() => {
+      goNextRef.current();
+    }, 300);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
+    };
+  }, []);
 
   const startOnboarding = () => {
     setDirection(1);
@@ -109,21 +97,19 @@ export function OnboardingFlow() {
     setCurrentStep((prev) => Math.max(prev - 1, 1));
   };
 
-  const handleAnalyzingComplete = useCallback(() => {
-    setIsAnalyzing(false);
-    setDirection(1);
-    setCurrentStep(7);
-  }, []);
-
   const handleSaysoHelpReady = useCallback(() => {
     setSaysoHelpReady(true);
   }, []);
 
-  const renderScreen = () => {
-    if (isAnalyzing) {
-      return <AnalyzingScreen onComplete={handleAnalyzingComplete} />;
-    }
+  useEffect(() => {
+    if (!saysoHelpReady) return;
+    const timer = setTimeout(() => {
+      openDemoCalendar();
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, [saysoHelpReady]);
 
+  const renderScreen = () => {
     if (isSaysoHelping) {
       return <SaysoHelpScreen onReady={handleSaysoHelpReady} />;
     }
@@ -149,53 +135,41 @@ export function OnboardingFlow() {
             </button>
           </div>
         );
+
       case 1:
-        return <FeelingCheckScreen value={feeling} onChange={setFeeling} />;
+        return (
+          <RoleScreen
+            value={role}
+            onChange={setRole}
+            onAutoAdvance={handleAutoAdvance}
+          />
+        );
+
       case 2:
-        return <CallFrequencyScreen value={callFrequency} onChange={setCallFrequency} />;
-      case 3:
-        return <SupportTechScreen value={support} onChange={setSupport} />;
-      case 4:
-        return <LeadTypeScreen value={leadTypes} onChange={setLeadTypes} />;
-      case 5:
         return (
-          <GoalsScreen
-            homesTarget={homesTarget}
-            onHomesChange={setHomesTarget}
+          <CallFrequencyScreen
+            value={callFrequency}
+            onChange={setCallFrequency}
+            onAutoAdvance={handleAutoAdvance}
           />
         );
-      case 6:
-        return (
-          <ContactInfoScreen
-            value={contactInfo}
-            onChange={setContactInfo}
-            onValidationChange={setContactValid}
-          />
-        );
-      case 7:
-        return <VerdictScreen />;
+
       default:
         return null;
     }
   };
 
   const isWelcome = currentStep === 0;
-  const showNav = !isWelcome && !isAnalyzing && currentStep < 7;
-  const progressStep = isSaysoHelping ? 5 : isAnalyzing ? 6 : currentStep;
+  const isVerdict = false;
+  const showNav = !isWelcome && !isVerdict;
 
-  // Determine Continue button label
-  let continueLabel = 'Continue';
-  if (isSaysoHelping && saysoHelpReady) {
-    continueLabel = 'Continue';
-  } else if (currentStep === 5) {
-    continueLabel = 'Let SaySo Help';
-  } else if (currentStep === 6) {
-    continueLabel = 'See My Results';
-  }
+  const progressStep = isSaysoHelping
+    ? TOTAL_STEPS
+    : Math.min(currentStep, TOTAL_STEPS + 1);
 
   return (
     <div className="flex flex-col">
-      {!isWelcome && (
+      {!isWelcome && !isVerdict && (
         <OnboardingProgress currentStep={progressStep} totalSteps={TOTAL_STEPS} />
       )}
 
@@ -203,7 +177,7 @@ export function OnboardingFlow() {
         <div className="max-w-lg mx-auto w-full">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
-              key={isSaysoHelping ? 'sayso-help' : isAnalyzing ? 'analyzing' : currentStep}
+              key={isSaysoHelping ? 'sayso-help' : currentStep}
               custom={direction}
               variants={variants}
               initial="enter"
@@ -221,9 +195,9 @@ export function OnboardingFlow() {
         <OnboardingNavButtons
           onBack={goBack}
           onContinue={goNext}
-          canContinue={canContinue()}
+          canContinue={canContinue}
           showBack={currentStep > 1 || isSaysoHelping}
-          continueLabel={continueLabel}
+          continueLabel={isSaysoHelping && saysoHelpReady ? 'Book a Demo' : undefined}
         />
       )}
     </div>

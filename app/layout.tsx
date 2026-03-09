@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Manrope, Bangers } from 'next/font/google'
+import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import './globals.css'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
@@ -66,7 +67,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        {children}
+        <DemoCalendarProvider>
+          {children}
+        </DemoCalendarProvider>
       </body>
     </html>
   )

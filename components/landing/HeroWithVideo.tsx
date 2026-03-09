@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { ProductShowcaseDesktop } from './ProductShowcaseDesktop';
 import { LightningIcon } from '@/components/icons/LightningIcon';
+import type { HeroContent } from '@/lib/content/personas/types';
 
 const logos = [
   { name: 'eXp Realty', src: '/exp realty.png' },
@@ -11,7 +12,13 @@ const logos = [
   { name: 'Olaf', src: '/olaf logo.png' },
 ];
 
-export function HeroWithVideo() {
+const defaultContent: HeroContent = {
+  headline: 'Win the Moment',
+  tagline:
+    'Real-time prompts to help agents handle objections, ask better questions, and book more appointments.',
+};
+
+export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
   const { openDemoCalendar } = useDemoCalendar();
 
   return (
@@ -20,33 +27,20 @@ export function HeroWithVideo() {
       <section className="relative bg-white pt-[70px] lg:pt-[140px] pb-[70px] lg:pb-[140px] overflow-hidden v2-halftone">
         <div className="max-w-[1600px] mx-auto px-6">
 
-          {/* Two-column layout: text left, video far right */}
-          <div className="relative flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8">
-
-            {/* Superhero — always visible, pointing right at the SaySo top bar */}
-            <div
-              className="hidden lg:block absolute top-[-5%] left-[28%] z-30 pointer-events-none"
-            >
-              <Image
-                src="/this_is_sayso_right.png"
-                alt="This is SaySo"
-                width={300}
-                height={300}
-                className="w-[300px] h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
-              />
-            </div>
+          {/* Three-column layout: text | superhero | video */}
+          <div className="relative flex flex-col lg:flex-row lg:items-center gap-6 xl:gap-8">
 
             {/* LEFT COLUMN — headline, tagline, CTAs */}
-            <div className="text-center lg:max-w-md flex-shrink-0 lg:pl-8">
+            <div className="text-center lg:max-w-[360px] xl:max-w-[400px] flex-shrink-0 lg:pl-8">
               <div className="mb-3 md:mb-4">
-                <h1 className="font-comic text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-wide leading-[1.05] text-[#1D4871] v4-slide-in-left">
-                  Win the Moment
+                <h1 className={`font-comic tracking-wide leading-[1.05] text-[#1D4871] v4-slide-in-left ${content.headlineSize ?? 'text-5xl sm:text-6xl lg:text-7xl xl:text-8xl'}`}>
+                  {content.headline}
                 </h1>
               </div>
 
               {/* Tagline */}
               <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-lg mx-auto">
-                Real-time prompts to help agents handle objections, ask better questions, and book more appointments.
+                {content.tagline}
               </p>
 
               {/* CTAs */}
@@ -68,8 +62,19 @@ export function HeroWithVideo() {
               </div>
             </div>
 
+            {/* SUPERHERO — sits between text and video, overlaps video's left edge */}
+            <div className="hidden lg:block flex-shrink-0 w-[160px] xl:w-[220px] -mr-[40px] xl:-mr-[50px] self-start z-30 pointer-events-none">
+              <Image
+                src="/this_is_sayso_right.png"
+                alt="This is SaySo"
+                width={300}
+                height={300}
+                className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+              />
+            </div>
+
             {/* RIGHT COLUMN — demo video */}
-            <div className="relative flex-shrink-0 lg:w-[55%]">
+            <div className="relative flex-1 min-w-0">
               <ProductShowcaseDesktop />
               {/* Mobile narrator badge — overlays top of demo frame */}
               <div className="flex lg:hidden justify-end pointer-events-none absolute top-[-10px] right-2 z-40">

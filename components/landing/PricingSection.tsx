@@ -3,7 +3,9 @@ import Image from 'next/image';
 interface PricingPlan {
   title: string;
   price: string;
+  priceNote?: string;
   description: string;
+  bulletHeader?: string;
   bullets: string[];
   buttonLabel: string;
   buttonHref: string;
@@ -14,7 +16,6 @@ interface PricingPlan {
 function PricingCardV4({ plan }: { plan: PricingPlan }) {
   return (
     <div className={`relative flex flex-col h-full bg-white rounded-2xl v2-comic-border v4-accent-top p-6 md:p-7 ${plan.isPopular ? 'v2-comic-shadow-blue' : 'v2-comic-shadow'} ${plan.isPopular ? 'shadow-[4px_4px_0px_#2367EE,0_0_20px_rgba(255,222,89,0.3)]' : ''}`}>
-      {/* Hero's Choice badge for popular plan */}
       {plan.isPopular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
           <span className="v2-pow-badge px-4 py-1.5 rounded-lg text-sm font-comic tracking-wider inline-block">
@@ -28,9 +29,14 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
       </h3>
 
       <div className="mb-3">
-        <p className="text-3xl md:text-4xl font-bold text-[#1D4871]">
-          {plan.price}
-        </p>
+        {plan.price && (
+          <p className="text-3xl md:text-4xl font-bold text-[#1D4871]">
+            {plan.price}
+          </p>
+        )}
+        {plan.priceNote && (
+          <p className="text-sm text-[#1D4871]/60 mt-1">{plan.priceNote}</p>
+        )}
       </div>
 
       <p className="text-base text-[#1D4871]/70 mb-6 leading-relaxed">
@@ -38,8 +44,13 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
       </p>
 
       <ul className="flex-1 space-y-3 mb-6">
-        {plan.bullets.map((bullet, index) => (
-          <li key={index} className="flex items-start gap-2">
+        {plan.bulletHeader && (
+          <li className="text-sm font-semibold text-[#1D4871]/80 italic mb-1">
+            {plan.bulletHeader}
+          </li>
+        )}
+        {plan.bullets.map((bullet) => (
+          <li key={bullet} className="flex items-start gap-2">
             <svg
               className="w-5 h-5 text-[#2367EE] flex-shrink-0 mt-0.5"
               fill="none"
@@ -71,43 +82,50 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 export function PricingSection() {
   const plans: PricingPlan[] = [
     {
-      title: 'Free Trial',
-      price: '8 days free',
-      description: 'Try Sayso on real outbound calls.',
+      title: 'Individual Agent',
+      price: '$69 / month',
+      priceNote: '*Billed annually — save $120. Or $79/month.',
+      description: 'For agents who want daily consistency.',
       bullets: [
-        'Real-time prompts during the call',
-        'Buyer + seller conversations',
-        'Basic guidance + follow-ups',
-      ],
-      buttonLabel: 'Start 8-day free trial',
-      buttonHref: '#start-trial',
-      buttonVariant: 'primary',
-    },
-    {
-      title: 'Standard',
-      price: '$49.99 / month',
-      description: 'For agents who want consistency every day.',
-      bullets: [
-        'Full real-time coaching',
-        'Better meeting timing + positioning',
+        'Cue — real-time conversation intelligence',
         'Priority support',
+        'Free trial included',
+        'Coming soon: Smart Capture — automated structured note-taking to popular frameworks',
+        "Coming soon: Recall — SaySo's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
       ],
-      buttonLabel: 'Unlock Your Power',
-      buttonHref: '#get-standard',
+      buttonLabel: 'Start your free trial',
+      buttonHref: '#start-trial',
       buttonVariant: 'primary',
       isPopular: true,
     },
     {
-      title: 'Enterprise',
-      price: 'Talk to sales',
-      description: 'For teams and brokerages that want rollout support.',
+      title: 'Teams',
+      price: 'Custom based on team size',
+      description: 'For teams and brokerages.',
+      bulletHeader: 'Every agent gets what\'s in Individual Agent, plus:',
       bullets: [
-        'Team onboarding + enablement',
-        'Admin + reporting (as available)',
-        'Custom rollout support',
+        'Custom team onboarding + enablement',
+        'Dedicated Team Success Manager',
+        'Unlimited agents',
+        'Admin controls + reporting',
       ],
-      buttonLabel: 'Assemble Your Team',
+      buttonLabel: 'Assemble your team',
       buttonHref: '#contact-sales',
+      buttonVariant: 'secondary',
+    },
+    {
+      title: 'Coming Soon',
+      price: '',
+      description: 'Secure your account now to include future developments at a significantly reduced cost.',
+      bullets: [
+        'Home value and market analysis live during calls',
+        'Smart Capture — automated structured note-taking to popular frameworks',
+        "Recall — SaySo's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
+        'Custom script upload',
+        'Additional note capture frameworks',
+      ],
+      buttonLabel: 'Questions? Chat with our team',
+      buttonHref: '#chat',
       buttonVariant: 'secondary',
     },
   ];
@@ -120,13 +138,13 @@ export function PricingSection() {
             Simple Pricing.
           </h2>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
-            Start free. Upgrade when you&apos;re ready for consistency on every call.
+            Free Trial. Custom Set Up. Included Training.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
-          {plans.map((plan, index) => (
-            <PricingCardV4 key={index} plan={plan} />
+          {plans.map((plan) => (
+            <PricingCardV4 key={plan.title} plan={plan} />
           ))}
         </div>
 

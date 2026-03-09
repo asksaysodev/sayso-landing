@@ -1,9 +1,9 @@
 'use client';
 
 const OPTIONS = [
-  { emoji: '🎯', label: 'I have a conversation coach' },
-  { emoji: '💻', label: 'I use sales technology tools' },
-  { emoji: '🙋', label: "I'm currently working solo" },
+  'I have a conversation coach',
+  'I use a CRM / Dialer',
+  'I role-play with AI or friends',
 ];
 
 interface SupportTechScreenProps {
@@ -23,24 +23,24 @@ export function SupportTechScreen({ value, onChange }: SupportTechScreenProps) {
   return (
     <div className="text-center">
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        Do you currently use any technology for making calls or have a conversation coach?
+        What&apos;s helping you create better conversations?
       </h1>
+      <p className="text-sm text-[#6B7A8D] mt-1">Select all that apply</p>
 
       <div className="flex flex-col gap-2.5 max-w-md mx-auto mt-6">
         {OPTIONS.map((option) => {
-          const isSelected = value.includes(option.label);
+          const isSelected = value.includes(option);
           return (
             <button
-              key={option.label}
-              onClick={() => toggle(option.label)}
+              key={option}
+              onClick={() => toggle(option)}
               className={`w-full rounded-xl px-5 py-3 cursor-pointer text-left transition-all duration-200 border-2 flex items-center gap-3 ${
                 isSelected
                   ? 'bg-[#2367EE]/5 border-[#2367EE] shadow-sm ring-2 ring-[#2367EE]/20'
                   : 'bg-white border-[#D7DEE1] hover:border-[#2367EE] hover:shadow-sm'
               } focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2`}
             >
-              <span className="text-xl">{option.emoji}</span>
-              <span className="text-base font-semibold text-[#1D4871] flex-1">{option.label}</span>
+              <span className="text-base font-semibold text-[#1D4871] flex-1">{option}</span>
               <div
                 className={`w-6 h-6 rounded-md flex-shrink-0 flex items-center justify-center transition-all duration-200 ${
                   isSelected
