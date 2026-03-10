@@ -74,7 +74,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             </div>
 
             {/* RIGHT COLUMN — demo video */}
-            <div className="relative flex-1 min-w-0">
+            <div className="relative flex-1 min-w-0 z-0">
               <ProductShowcaseDesktop />
               {/* Mobile narrator badge — overlays top of demo frame */}
               <div className="flex lg:hidden justify-end pointer-events-none absolute top-[-10px] right-2 z-40">
