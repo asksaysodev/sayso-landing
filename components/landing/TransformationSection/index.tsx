@@ -74,7 +74,7 @@ export function TransformationSection({ content = defaultContent }: { content?: 
                 className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
               >
                 <LightningIcon size={16} color="white" className="mr-1.5" />
-                Download Sayso
+                Activate Sayso
               </button>
               <button
                 onClick={openDemoCalendar}
