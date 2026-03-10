@@ -82,9 +82,10 @@ export default function SaysoNavbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={openDemoCalendar}
-              className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-md v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
+              className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base md:text-md border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#1D4871] focus:ring-offset-2"
+              style={{ boxShadow: '3px 3px 0px #1D4871' }}
             >
-              <LightningIcon size={14} className="mr-1.5" />
+              <LightningIcon size={14} color="#1D4871" className="mr-1.5" />
               Activate Sayso
             </button>
 
@@ -125,7 +126,7 @@ export default function SaysoNavbar() {
               ))}
               <button
                 onClick={() => { setIsMobileMenuOpen(false); openDemoCalendar(); }}
-                className="block w-full mt-3 px-4 py-3 rounded-full bg-[#2367EE] text-white font-bold text-lg text-center v2-comic-btn border-2 border-[#1D4871]"
+                className="block w-full mt-3 px-4 py-3 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-lg text-center v2-comic-btn border-2 border-[#1D4871]"
               >
                 Activate Sayso
               </button>
