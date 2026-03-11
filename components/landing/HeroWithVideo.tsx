@@ -15,7 +15,7 @@ const logos = [
 const defaultContent: HeroContent = {
   headline: 'Win the Moment',
   tagline:
-    'Real-time guidance during prospecting calls to help agents handle objections, ask better questions, book more appointments, and automatically capture their notes.',
+    'Real-time guidance during prospecting calls to help agents handle objections, ask better questions, book more appointments, and automatically capture call notes in their CRM.',
 };
 
 export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
