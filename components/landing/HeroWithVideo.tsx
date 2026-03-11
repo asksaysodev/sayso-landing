@@ -51,7 +51,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                   style={{ boxShadow: '3px 3px 0px #1D4871' }}
                 >
                   <LightningIcon size={16} className="mr-2 flex-shrink-0" />
-                  Activate Sayso
+                  Download Sayso
                 </button>
               </div>
             </div>

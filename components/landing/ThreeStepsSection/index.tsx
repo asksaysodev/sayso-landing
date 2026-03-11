@@ -139,7 +139,7 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
             style={{ boxShadow: '3px 3px 0px #1D4871' }}
           >
             <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
-            Activate Sayso
+            Download Sayso
           </button>
           <button
             onClick={openDemoCalendar}
