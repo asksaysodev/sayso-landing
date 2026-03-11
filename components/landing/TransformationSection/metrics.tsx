@@ -6,21 +6,21 @@ export const metrics = [
   {
     icon: <CalendarCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
     title: 'More Appointments',
-    description: 'Book meetings at the right moment',
+    description: 'Turn better conversations into more qualified meetings.',
   },
   {
     icon: <TrendingUp size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
-    title: 'Real Time Assistance',
-    description: 'Higher quality conversations create higher quality appointments',
+    title: 'Better Conversations',
+    description: 'Real-time guidance to help agents be the expert in every scenario.',
   },
   {
     icon: <Rocket size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
-    title: 'Set up in minutes',
-    description: 'Works in any CRM or dialer',
+    title: 'Automatic Notes',
+    description: 'Your conversations are captured and organized automatically.',
   },
   {
     icon: <ShieldCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
-    title: 'Always-On Guidance',
-    description: 'Real-time support on every call',
+    title: 'Works With Your Tech',
+    description: 'Set up in minutes with any dialer or CRM',
   },
 ];

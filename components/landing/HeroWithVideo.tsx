@@ -15,7 +15,9 @@ const logos = [
 const defaultContent: HeroContent = {
   headline: 'Win the Moment',
   tagline:
-    'Real-time prompts to help agents handle objections, ask better questions, and book more appointments.',
+    'Real-time guidance during prospecting calls to help agents handle objections, ask better questions, book more appointments, and automatically capture their notes.',
+  taglineSub:
+    'No more messy CRM data, lost papers with notes, or forgotten details from your conversations.',
 };
 
 export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
@@ -42,6 +44,11 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
               <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-lg mx-auto">
                 {content.tagline}
               </p>
+              {content.taglineSub && (
+                <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-lg mx-auto">
+                  {content.taglineSub}
+                </p>
+              )}
 
               {/* CTAs */}
               <div className="mt-5 md:mt-6 flex justify-center">

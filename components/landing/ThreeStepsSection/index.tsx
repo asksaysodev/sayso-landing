@@ -11,18 +11,18 @@ import type { ThreeStepsContent } from '@/lib/content/personas/types';
 
 const defaultContent: ThreeStepsContent = {
   headline: 'Sayso in 3 Easy Steps',
-  subheading: 'Real-time guidance that keeps prospecting calls structured and moving toward a booked appointment.',
+  subheading: 'Real-time guidance that keeps prospecting conversations focused and moving toward an appointment.',
   steps: [
     {
       title: '1. Launch Coach',
-      description: "Turn Sayso on while you're calling to get real-time context-based guidance during the call.",
+      description: "Turn Sayso on while you're making calls",
     },
     {
-      title: '2. Get Real-Time Prompts',
-      description: 'Sayso suggests what to ask or say next.',
+      title: '2. Stay in Control',
+      description: 'Sayso shows you what to say when you need help & Sayso organizes your notes live',
     },
     {
-      title: '3. Win the moment',
+      title: '3. Win The Moment',
       description: 'Sayso helps you earn the meeting at the right moment—so appointments are more qualified and more likely to convert.',
     },
   ],

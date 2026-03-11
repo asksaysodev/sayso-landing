@@ -57,6 +57,11 @@ export function TransformationSection({ content = defaultContent }: { content?: 
                   className="bg-white rounded-xl v2-comic-border v2-comic-shadow p-3 md:p-5"
                 >
                   <div className="mb-2">{metric.icon}</div>
+                  {metric.label && (
+                    <p className="text-xs font-bold tracking-widest text-[#2367EE] uppercase mb-1">
+                      {metric.label}
+                    </p>
+                  )}
                   <h3 className="font-comic text-xl md:text-2xl text-black tracking-wide mb-1">
                     {metric.title}
                   </h3>
