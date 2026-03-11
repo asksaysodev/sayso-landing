@@ -16,8 +16,6 @@ const defaultContent: HeroContent = {
   headline: 'Win the Moment',
   tagline:
     'Real-time guidance during prospecting calls to help agents handle objections, ask better questions, book more appointments, and automatically capture their notes.',
-  taglineSub:
-    'No more messy CRM data, lost papers with notes, or forgotten details from your conversations.',
 };
 
 export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
