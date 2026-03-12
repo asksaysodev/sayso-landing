@@ -76,9 +76,12 @@ export function AgentAdPage() {
               />
             </a>
           </div>
-          <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-4">
-            Know what to say when the conversation goes off script.
+          <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-2">
+            Know what to say
           </h1>
+          <p className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-6 leading-snug">
+            when the conversation goes off script.
+          </p>
           <p className="text-base text-[#1D4871]/70 mb-8 leading-relaxed">
             Real-time guidance during prospecting calls. Ask better questions, handle objections,
             and book appointments that actually happen.
@@ -90,11 +93,11 @@ export function AgentAdPage() {
       {/* ── Trust strip ── */}
       <div className="max-w-xl mx-auto px-6 pb-10">
         <div className="flex items-center gap-3 text-sm text-[#1D4871]/60">
-          <div className="h-px flex-1 bg-[#1D4871]/15" />
-          <span className="whitespace-nowrap text-center">
+          <div className="hidden sm:block h-px flex-1 bg-[#1D4871]/15" />
+          <span className="text-center">
             Built for agents who prospect and want to convert more appointments.
           </span>
-          <div className="h-px flex-1 bg-[#1D4871]/15" />
+          <div className="hidden sm:block h-px flex-1 bg-[#1D4871]/15" />
         </div>
       </div>
 
@@ -163,7 +166,7 @@ export function AgentAdPage() {
           <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-6">
             Sayso supports you during the call.
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Step 1 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
               <div className="px-4 pt-4 pb-2">
@@ -179,7 +182,7 @@ export function AgentAdPage() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
               <div className="px-4 pt-4 pb-2">
                 <h3 className="font-comic text-lg text-[#1D4871] mb-1">2. Sayso listens</h3>
-                <p className="text-xs text-[#1D4871]/60">It detects what the prospect is saying and helps you have better conversations</p>
+                <p className="text-xs text-[#1D4871]/60">It detects what the prospect says and surfaces the right prompts in real time</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
                 <StepVisualPrompts />
@@ -188,7 +191,7 @@ export function AgentAdPage() {
           </div>
 
           {/* ── Benefits ── */}
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
             {[
               {
                 icon: <MessageCircle size={18} />,

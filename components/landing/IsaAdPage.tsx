@@ -165,7 +165,7 @@ export function IsaAdPage() {
           <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-6">
             Sayso supports you during the call.
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Step 1 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
               <div className="px-4 pt-4 pb-2">
@@ -190,7 +190,7 @@ export function IsaAdPage() {
           </div>
 
           {/* ── Benefits ── */}
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
             {[
               {
                 icon: <MessageCircle size={18} />,
