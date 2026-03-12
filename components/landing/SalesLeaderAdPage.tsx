@@ -1,27 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Check, TrendingUp, Users, Zap } from 'lucide-react';
-import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { Footer } from '@/components/landing/Footer';
-import { LightningIcon } from '@/components/icons/LightningIcon';
+import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
-
-function CTAButtons() {
-  const { openDemoCalendar } = useDemoCalendar();
-  return (
-    <div className="flex items-center justify-center">
-      <button
-        onClick={openDemoCalendar}
-        className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 py-3 text-base font-semibold text-[#1D4871] border-2 border-[#1D4871]"
-        style={{ boxShadow: '3px 3px 0px #1D4871' }}
-      >
-        <LightningIcon size={16} className="mr-2 flex-shrink-0" />
-        Book a Demo
-      </button>
-    </div>
-  );
-}
 
 export function SalesLeaderAdPage() {
   return (
@@ -31,7 +15,7 @@ export function SalesLeaderAdPage() {
       <section className="pt-10 pb-8 px-6 text-center">
         <div className="max-w-xl mx-auto">
           <div className="flex justify-center mb-8">
-            <a href="/" aria-label="Sayso home">
+            <Link href="/" aria-label="Sayso home">
               <Image
                 src="/logo-pos-horizontal.png"
                 alt="Sayso"
@@ -39,7 +23,7 @@ export function SalesLeaderAdPage() {
                 height={40}
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
           </div>
           <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-4">
             Your agents don&apos;t need another script. They need help during the call.
@@ -48,7 +32,7 @@ export function SalesLeaderAdPage() {
             Real-time guidance during prospecting calls that helps agents handle objections, ask
             better questions, book more appointments, and capture their notes automatically.
           </p>
-          <CTAButtons />
+          <AdPageCTAButton />
         </div>
       </section>
 
@@ -155,7 +139,7 @@ export function SalesLeaderAdPage() {
         <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-8">
           Maximize the potential in the leads you&apos;re already generating.
         </h2>
-        <CTAButtons />
+        <AdPageCTAButton />
         <p className="mt-4 text-sm text-[#1D4871]/60">
           Give your agents real-time support during prospecting calls.
         </p>

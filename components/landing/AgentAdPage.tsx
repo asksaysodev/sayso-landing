@@ -1,27 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Check, MessageCircle, Zap, FileText } from 'lucide-react';
-import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { Footer } from '@/components/landing/Footer';
-import { LightningIcon } from '@/components/icons/LightningIcon';
+import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
-
-function CTAButtons() {
-  const { openDemoCalendar } = useDemoCalendar();
-  return (
-    <div className="flex items-center justify-center">
-      <button
-        onClick={openDemoCalendar}
-        className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 py-3 text-base font-semibold text-[#1D4871] border-2 border-[#1D4871]"
-        style={{ boxShadow: '3px 3px 0px #1D4871' }}
-      >
-        <LightningIcon size={16} className="mr-2 flex-shrink-0" />
-        Book a Demo
-      </button>
-    </div>
-  );
-}
 
 function HandwrittenNote() {
   return (
@@ -66,7 +50,7 @@ export function AgentAdPage() {
       <section className="pt-10 pb-8 px-6 text-center">
         <div className="max-w-xl mx-auto">
           <div className="flex justify-center mb-8">
-            <a href="/" aria-label="Sayso home">
+            <Link href="/" aria-label="Sayso home">
               <Image
                 src="/logo-pos-horizontal.png"
                 alt="Sayso"
@@ -74,7 +58,7 @@ export function AgentAdPage() {
                 height={40}
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
           </div>
           <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-2">
             Know what to say
@@ -86,7 +70,7 @@ export function AgentAdPage() {
             Real-time guidance during prospecting calls. Ask better questions, handle objections,
             and book appointments that actually happen.
           </p>
-          <CTAButtons />
+          <AdPageCTAButton />
         </div>
       </section>
 
@@ -229,7 +213,7 @@ export function AgentAdPage() {
         <p className="text-[#1D4871]/70 mb-8 text-base">
           Better conversations lead to better appointments.
         </p>
-        <CTAButtons />
+        <AdPageCTAButton />
       </section>
 
       <Footer />
