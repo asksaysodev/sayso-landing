@@ -15,7 +15,7 @@ const logos = [
 const defaultContent: HeroContent = {
   headline: 'Win the Moment',
   tagline:
-    'Real-time prompts to help agents handle objections, ask better questions, and book more appointments.',
+    'Real-time guidance during prospecting calls to help agents handle objections, ask better questions, book more appointments, and automatically capture call notes in their CRM.',
 };
 
 export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
@@ -42,22 +42,21 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
               <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-lg mx-auto">
                 {content.tagline}
               </p>
+              {content.taglineSub && (
+                <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-lg mx-auto">
+                  {content.taglineSub}
+                </p>
+              )}
 
               {/* CTAs */}
-              <div className="mt-5 md:mt-6 flex justify-center gap-3">
-                <button
-                  onClick={openDemoCalendar}
-                  className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
-                >
-                  <LightningIcon size={16} className="mr-2 flex-shrink-0" />
-                  Download Sayso
-                </button>
+              <div className="mt-5 md:mt-6 flex justify-center">
                 <button
                   onClick={openDemoCalendar}
                   className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
                   style={{ boxShadow: '3px 3px 0px #1D4871' }}
                 >
-                  Book a Demo
+                  <LightningIcon size={16} className="mr-2 flex-shrink-0" />
+                  Download Sayso
                 </button>
               </div>
             </div>
@@ -74,7 +73,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             </div>
 
             {/* RIGHT COLUMN — demo video */}
-            <div className="relative flex-1 min-w-0">
+            <div className="relative flex-1 min-w-0 z-0">
               <ProductShowcaseDesktop />
               {/* Mobile narrator badge — overlays top of demo frame */}
               <div className="flex lg:hidden justify-end pointer-events-none absolute top-[-10px] right-2 z-40">

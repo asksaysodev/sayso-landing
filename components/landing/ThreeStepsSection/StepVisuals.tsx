@@ -21,7 +21,7 @@ function RecordIcon() {
 export function StepVisualStartSayso() {
   return (
     <div className="w-full h-full relative bg-gradient-to-br from-[#0d1b2a] to-[#1a2a3a] rounded-2xl overflow-hidden p-3 flex items-center justify-center">
-      <div className="w-full max-w-[240px] flex items-center justify-between gap-2">
+      <div className="w-full max-w-[240px] flex flex-col items-center gap-2">
         <div className="flex items-center gap-1.5 px-2.5 h-8 rounded-full showcase-glass border border-white/15 shadow-[0_10px_25px_rgba(0,0,0,0.35)]">
           <div className="p-0.5 text-white/80"><LayoutGrid size={12} /></div>
           <span className="text-[11px] text-white/80 whitespace-nowrap">Launch Coach</span>

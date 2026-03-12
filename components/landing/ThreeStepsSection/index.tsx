@@ -11,18 +11,18 @@ import type { ThreeStepsContent } from '@/lib/content/personas/types';
 
 const defaultContent: ThreeStepsContent = {
   headline: 'Sayso in 3 Easy Steps',
-  subheading: 'Real-time guidance that keeps prospecting calls structured and moving toward a booked appointment.',
+  subheading: 'Real-time guidance that keeps prospecting conversations focused and moving toward an appointment.',
   steps: [
     {
       title: '1. Launch Coach',
-      description: "Turn Sayso on while you're calling to get real-time context-based guidance during the call.",
+      description: "Turn Sayso on while you're making calls",
     },
     {
-      title: '2. Get Real-Time Prompts',
-      description: 'Sayso suggests what to ask or say next.',
+      title: '2. Stay in Control',
+      description: 'Sayso shows you what to say when you need help & Sayso organizes your notes live',
     },
     {
-      title: '3. Win the moment',
+      title: '3. Win The Moment',
       description: 'Sayso helps you earn the meeting at the right moment—so appointments are more qualified and more likely to convert.',
     },
   ],
@@ -135,15 +135,15 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
         <div className="mt-10 md:mt-14 flex gap-3 justify-center">
           <button
             onClick={openDemoCalendar}
-            className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
+            style={{ boxShadow: '3px 3px 0px #1D4871' }}
           >
-            <LightningIcon size={16} className="mr-1.5" />
-            Activate Sayso
+            <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
+            Download Sayso
           </button>
           <button
             onClick={openDemoCalendar}
-            className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59] focus-visible:ring-offset-2 whitespace-nowrap"
-            style={{ boxShadow: '3px 3px 0px #1D4871' }}
+            className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
           >
             Book a Demo
           </button>
