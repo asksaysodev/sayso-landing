@@ -1,42 +1,27 @@
 import type { Metadata } from 'next';
-import { Footer } from "@/components/landing/Footer";
-import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
-import { PainPointPanel } from "@/components/landing/PainPointPanel";
-import SaysoNavbar from "@/components/landing/SaysoNavbar";
-import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
-import { TransformationSection } from "@/components/landing/TransformationSection";
-import { isaContent } from "@/lib/content/personas/isa";
-import { siteUrl } from "@/lib/config";
+import { IsaAdPage } from '@/components/landing/IsaAdPage';
+import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Sayso for ISAs & Prospecting Agents | Never Run Out of What to Say',
-  description: 'Sayso gives you live prompts during prospecting calls so you always know what question to ask next.',
+  title: 'Sayso for ISAs | Never Miss the Details That Book the Appointment',
+  description: 'Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.',
   alternates: {
     canonical: `${siteUrl}/isa`,
   },
   openGraph: {
-    title: 'Sayso for ISAs & Prospecting Agents | Never Run Out of What to Say',
-    description: 'Sayso gives you live prompts during prospecting calls so you always know what question to ask next.',
+    title: 'Sayso for ISAs | Never Miss the Details That Book the Appointment',
+    description: 'Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.',
     url: `${siteUrl}/isa`,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Real-Time AI Coaching for ISAs and Prospecting Agents' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Real-Time AI Coaching for ISAs' }],
     type: 'website',
   },
   twitter: {
-    title: 'Sayso for ISAs & Prospecting Agents | Never Run Out of What to Say',
-    description: 'Sayso gives you live prompts during prospecting calls so you always know what question to ask next.',
+    title: 'Sayso for ISAs | Never Miss the Details That Book the Appointment',
+    description: 'Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.',
     images: ['/og-default.png'],
   },
 };
 
 export default function IsaPage() {
-  return (
-    <div className="relative bg-white">
-      <SaysoNavbar />
-      <HeroWithVideo content={isaContent.hero} />
-      <PainPointPanel />
-      <TransformationSection content={isaContent.transformation} />
-      <ThreeStepsSection content={isaContent.threeSteps} />
-      <Footer />
-    </div>
-  );
+  return <IsaAdPage />;
 }
