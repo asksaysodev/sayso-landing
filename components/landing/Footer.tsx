@@ -46,7 +46,7 @@ export function Footer() {
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Programs</h3>
               <ul className="space-y-2">
                 <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#referral-program" className="text-sm text-white/70 hover:text-white transition-colors ">Referral program</a></li>
+                <li><a href="/referral" className="text-sm text-white/70 hover:text-white transition-colors ">Referral program</a></li>
                 <li><a href="/affiliate" className="text-sm text-white/70 hover:text-white transition-colors ">Affiliate program</a></li>
               </ul>
             </div>
