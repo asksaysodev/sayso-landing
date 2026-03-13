@@ -106,7 +106,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
           <div className="mt-12 md:mt-16 pt-4 md:pt-6">
             {/* Label */}
             <div className="flex justify-center mb-5">
-              <span className="text-sm md:text-base font-bold tracking-widest uppercase text-black" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>Trusted by Top Teams and Agents Nationwide</span>
+              <span className="text-sm md:text-base font-bold tracking-widest uppercase text-black text-center" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>Trusted by Top Teams and Agents Nationwide</span>
             </div>
 
             {/* Fixed logos — three equal columns */}
