@@ -1,3 +1,12 @@
+import { StepsList } from '@/components/landing/StepsList';
+
+const STEPS = [
+  { id: 1, text: 'Apply to become a Sayso affiliate' },
+  { id: 2, text: 'Get approved and receive your unique referral code or link' },
+  { id: 3, text: 'Share Sayso with your network' },
+  { id: 4, text: 'Earn monthly commissions' },
+];
+
 export function AffiliatePageContent() {
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
@@ -31,21 +40,7 @@ export function AffiliatePageContent() {
           <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
             How It Works
           </h2>
-          <ol className="space-y-4">
-            {[
-              'Apply to become a Sayso affiliate',
-              'Get approved and receive your unique referral code or link',
-              'Share Sayso with your network',
-              'Earn monthly commissions',
-            ].map((step, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FFDE59] flex items-center justify-center font-bold text-[#1D4871] text-sm">
-                  {i + 1}
-                </span>
-                <p className="text-base text-[#1D4871]/80 leading-relaxed pt-1">{step}</p>
-              </li>
-            ))}
-          </ol>
+          <StepsList steps={STEPS} />
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
@@ -63,11 +58,22 @@ export function AffiliatePageContent() {
               src="https://alert-tartan-008.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
               width="100%"
               height="600"
-              frameBorder={0}
+              style={{ border: 'none' }}
               allowFullScreen
               title="Sayso Affiliate Application"
             />
           </div>
+          <p className="text-sm text-[#1D4871]/60">
+            Form not loading?{' '}
+            <a
+              href="https://alert-tartan-008.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[#1D4871] transition-colors"
+            >
+              Open it directly →
+            </a>
+          </p>
         </section>
 
       </div>

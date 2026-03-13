@@ -1,3 +1,12 @@
+import { StepsList } from '@/components/landing/StepsList';
+
+const STEPS = [
+  { id: 1, text: 'Log in to your Sayso account' },
+  { id: 2, text: 'Find your unique referral code in your account panel' },
+  { id: 3, text: 'Share it with friends, teammates, or your network' },
+  { id: 4, text: 'They sign up and get a discount — you get a credit' },
+];
+
 export function ReferralPageContent() {
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
@@ -31,21 +40,7 @@ export function ReferralPageContent() {
           <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
             How It Works
           </h2>
-          <ol className="space-y-4">
-            {[
-              'Log in to your Sayso account',
-              'Find your unique referral code in your account panel',
-              'Share it with friends, teammates, or your network',
-              'They sign up and get a discount — you get a credit',
-            ].map((step, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FFDE59] flex items-center justify-center font-bold text-[#1D4871] text-sm">
-                  {i + 1}
-                </span>
-                <p className="text-base text-[#1D4871]/80 leading-relaxed pt-1">{step}</p>
-              </li>
-            ))}
-          </ol>
+          <StepsList steps={STEPS} />
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
