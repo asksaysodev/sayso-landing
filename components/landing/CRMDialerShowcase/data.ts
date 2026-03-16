@@ -8,7 +8,7 @@ export const CONVERSATION_CYCLES = [
   {
     buyerMessage: "We're thinking about Santa Monica for the schools.",
     sellerMessage: "Santa Monica is great. What part of Santa Monica are you considering?",
-    saysoPrompt: "It's great you're considering Santa Monica! What's most important to you about the location or neighborhood there?",
+    saysoPrompt: "Santa Monica is great. Which neighborhoods are you considering? and why?",
     promptSource: 'Top performer pattern',
   },
   // {

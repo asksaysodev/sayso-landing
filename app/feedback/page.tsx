@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { FeedbackClient } from './FeedbackClient';
+import { siteUrl } from '@/lib/config';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Feedback',

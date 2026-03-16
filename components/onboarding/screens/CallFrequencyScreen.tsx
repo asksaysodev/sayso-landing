@@ -10,13 +10,19 @@ const OPTIONS = [
 interface CallFrequencyScreenProps {
   value: string | null;
   onChange: (value: string) => void;
+  onAutoAdvance: () => void;
 }
 
-export function CallFrequencyScreen({ value, onChange }: CallFrequencyScreenProps) {
+export function CallFrequencyScreen({ value, onChange, onAutoAdvance }: CallFrequencyScreenProps) {
+  const handleSelect = (option: string) => {
+    onChange(option);
+    onAutoAdvance();
+  };
+
   return (
     <div className="text-center">
       <h1 className="text-xl md:text-2xl font-bold text-[#1D4871]">
-        How often do you currently make sales calls?
+        How often do you make prospecting calls?
       </h1>
 
       <div className="flex flex-col gap-2.5 max-w-md mx-auto mt-6">
@@ -25,7 +31,7 @@ export function CallFrequencyScreen({ value, onChange }: CallFrequencyScreenProp
           return (
             <button
               key={option}
-              onClick={() => onChange(option)}
+              onClick={() => handleSelect(option)}
               className={`w-full rounded-xl px-5 py-3 cursor-pointer text-left transition-all duration-200 border-2 flex items-center justify-between ${
                 isSelected
                   ? 'bg-[#2367EE]/5 border-[#2367EE] shadow-sm ring-2 ring-[#2367EE]/20'

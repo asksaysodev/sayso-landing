@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkGfm from 'remark-gfm';
 
 interface BlogArticleContentProps {
   content: string;
@@ -59,6 +60,7 @@ export function BlogArticleContent({ content }: BlogArticleContentProps) {
         components={mdxComponents}
         options={{
           mdxOptions: {
+            remarkPlugins: [remarkGfm],
             rehypePlugins: [
               rehypeSlug,
               [rehypeAutolinkHeadings, { behavior: 'wrap' }],

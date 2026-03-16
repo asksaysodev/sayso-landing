@@ -29,7 +29,7 @@ export function StepCard({ title, description, visual, tilt, number }: StepProps
           {visual}
         </div>
       </div>
-      <h3 className="text-2xl md:text-3xl text-black mb-3 tracking-wide font-bold" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+      <h3 className="text-2xl text-black mb-3 tracking-wide font-bold whitespace-nowrap" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
         {title}
       </h3>
       <p className="text-[1.1rem] text-[#1D4871]/70 max-w-sm leading-relaxed min-h-[60px]">

@@ -8,7 +8,7 @@ Quick reference for working on this repo:
 
 ```bash
 # Clone the repo (if you haven't already)
-git clone <repo-url>
+git clone <https://github.com/asksaysodev/sayso-landing.git>
 cd sayso_landing_page
 
 # Install dependencies

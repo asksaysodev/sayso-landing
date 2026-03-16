@@ -23,7 +23,7 @@ export function BlogInArticleCTA() {
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-white font-bold text-sm border-2 border-white/50 hover:border-white hover:bg-white/10 transition-colors"
           >
             <LightningIcon size={14} className="mr-1.5" />
-            Activate Sayso
+            Download Sayso
           </Link>
         </div>
       </div>

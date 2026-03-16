@@ -19,6 +19,7 @@ const config: Config = {
         hero: ['var(--font-manrope)', 'sans-serif'],
         comic: ['var(--font-bangers)', 'cursive'],
         sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'system-ui', 'sans-serif'],
+        handwriting: ['var(--font-caveat)', 'cursive'],
       },
       fontSize: {
         hero: ['30px', { lineHeight: '1.2', fontWeight: '700' }],
