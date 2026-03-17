@@ -50,14 +50,16 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
 
               {/* CTAs — hidden on mobile, shown on desktop */}
               <div className="mt-5 md:mt-6 hidden lg:flex justify-center">
-                <button
-                  onClick={openDemoCalendar}
+                <a
+                  href="https://app.asksayso.com/login?signup=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
                   style={{ boxShadow: '3px 3px 0px #1D4871' }}
                 >
                   <LightningIcon size={16} className="mr-2 flex-shrink-0" />
                   Download Sayso
-                </button>
+                </a>
               </div>
             </div>
 
@@ -101,14 +103,16 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
 
             {/* Mobile CTA — below demo frame, hidden on desktop */}
             <div className="mt-6 flex lg:hidden justify-center">
-              <button
-                onClick={openDemoCalendar}
+              <a
+                href="https://app.asksayso.com/login?signup=true"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
                 style={{ boxShadow: '3px 3px 0px #1D4871' }}
               >
                 <LightningIcon size={16} className="mr-2 flex-shrink-0" />
                 Download Sayso
-              </button>
+              </a>
             </div>
           </div>
 
