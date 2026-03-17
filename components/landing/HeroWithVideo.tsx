@@ -89,7 +89,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                 </div>
               </div>
               {/* Desktop narrator badge — overlays top of demo frame */}
-              <div className="hidden lg:flex justify-end pointer-events-none absolute top-[-16px] right-[2%] z-40">
+              <div className="hidden lg:flex justify-end pointer-events-none absolute top-[-16px] right-[2%] z-50">
                 <div
                   className="bg-[#FFDE59] border-[2.5px] border-[#1D4871] px-5 py-2.5 rounded-lg transform -rotate-2"
                   style={{ boxShadow: '3px 3px 0px #1D4871' }}
