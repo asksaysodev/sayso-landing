@@ -14,7 +14,7 @@ const defaultContent: TransformationContent = {
 };
 
 export function TransformationSection({ content = defaultContent }: { content?: TransformationContent }) {
-  const { openDemoCalendar } = useDemoCalendar();
+  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
   const { headline, subheading, metrics } = content;
 
   return (
@@ -75,12 +75,13 @@ export function TransformationSection({ content = defaultContent }: { content?: 
             {/* Final CTA */}
             <div className="mt-5 md:mt-10 flex gap-3 justify-center lg:justify-start">
               <button
-                onClick={openDemoCalendar}
+                onClick={openSystemSelect}
                 className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
                 style={{ boxShadow: '3px 3px 0px #1D4871' }}
               >
                 <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
-                Download Sayso
+                <span className="lg:hidden">Create an Account</span>
+                <span className="hidden lg:inline">Download Sayso</span>
               </button>
               <button
                 onClick={openDemoCalendar}
