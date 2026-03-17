@@ -86,18 +86,16 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                   </span>
                 </div>
               </div>
-            </div>
-
-            {/* "Works with existing dialer or CRM" — comic narrator badge overlaying the demo frame */}
-            <div className="hidden lg:flex absolute top-[-16px] right-[2%] z-40 pointer-events-none flex-col items-center">
-              {/* Narrator badge */}
-              <div
-                className="bg-[#FFDE59] border-[2.5px] border-[#1D4871] px-5 py-2.5 rounded-lg transform -rotate-2"
-                style={{ boxShadow: '3px 3px 0px #1D4871' }}
-              >
-                <span className="font-comic text-[#1D4871] text-2xl lg:text-3xl tracking-wide whitespace-nowrap">
-                  Works with existing dialer or CRM!
-                </span>
+              {/* Desktop narrator badge — overlays top of demo frame */}
+              <div className="hidden lg:flex justify-end pointer-events-none absolute top-[-16px] right-[2%] z-40">
+                <div
+                  className="bg-[#FFDE59] border-[2.5px] border-[#1D4871] px-5 py-2.5 rounded-lg transform -rotate-2"
+                  style={{ boxShadow: '3px 3px 0px #1D4871' }}
+                >
+                  <span className="font-comic text-[#1D4871] text-2xl lg:text-3xl tracking-wide whitespace-nowrap">
+                    Works with existing dialer or CRM!
+                  </span>
+                </div>
               </div>
             </div>
           </div>
