@@ -33,6 +33,35 @@ const organizationJsonLd = {
   ],
 };
 
+const siteNavigationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Site Navigation',
+  itemListElement: [
+    {
+      '@type': 'SiteNavigationElement',
+      position: 1,
+      name: 'Book a Demo',
+      description: 'Schedule an intro call with the Sayso founders',
+      url: `${siteUrl}/contact`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 2,
+      name: 'Blog',
+      description: 'Tips and strategies for real estate prospecting',
+      url: `${siteUrl}/blog`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 3,
+      name: 'Home',
+      description: 'Sayso — Fix Where Prospecting Breaks Down',
+      url: siteUrl,
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -66,6 +95,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
         />
         <DemoCalendarProvider>
           {children}
