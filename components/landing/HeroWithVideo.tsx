@@ -48,16 +48,18 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                 </p>
               )}
 
-              {/* CTAs */}
-              <div className="mt-5 md:mt-6 flex justify-center">
-                <button
-                  onClick={openDemoCalendar}
+              {/* CTAs — hidden on mobile, shown on desktop */}
+              <div className="mt-5 md:mt-6 hidden lg:flex justify-center">
+                <a
+                  href="https://app.asksayso.com/login?signup=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
                   style={{ boxShadow: '3px 3px 0px #1D4871' }}
                 >
                   <LightningIcon size={16} className="mr-2 flex-shrink-0" />
                   Download Sayso
-                </button>
+                </a>
               </div>
             </div>
 
@@ -78,27 +80,39 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
               {/* Mobile narrator badge — overlays top of demo frame */}
               <div className="flex lg:hidden justify-end pointer-events-none absolute top-[-10px] right-2 z-40">
                 <div
-                  className="bg-[#FFDE59] border-2 border-[#1D4871] px-3 py-1.5 rounded-md transform -rotate-2"
+                  className="bg-[#FFDE59] border-2 border-[#1D4871] px-2 py-1 sm:px-3 sm:py-1.5 rounded-md transform -rotate-2"
                   style={{ boxShadow: '2px 2px 0px #1D4871' }}
                 >
-                  <span className="font-comic text-[#1D4871] text-sm sm:text-base tracking-wide whitespace-nowrap">
+                  <span className="font-comic text-[#1D4871] text-[2.8vw] sm:text-sm tracking-wide whitespace-nowrap">
+                    Works with existing dialer or CRM!
+                  </span>
+                </div>
+              </div>
+              {/* Desktop narrator badge — overlays top of demo frame */}
+              <div className="hidden lg:flex justify-end pointer-events-none absolute top-[-16px] right-[2%] z-50">
+                <div
+                  className="bg-[#FFDE59] border-[2.5px] border-[#1D4871] px-5 py-2.5 rounded-lg transform -rotate-2"
+                  style={{ boxShadow: '3px 3px 0px #1D4871' }}
+                >
+                  <span className="font-comic text-[#1D4871] text-2xl xl:text-3xl tracking-wide whitespace-nowrap">
                     Works with existing dialer or CRM!
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* "Works with existing dialer or CRM" — comic narrator badge overlaying the demo frame */}
-            <div className="hidden lg:flex absolute top-[-16px] right-[2%] z-40 pointer-events-none flex-col items-center">
-              {/* Narrator badge */}
-              <div
-                className="bg-[#FFDE59] border-[2.5px] border-[#1D4871] px-5 py-2.5 rounded-lg transform -rotate-2"
+            {/* Mobile CTA — below demo frame, hidden on desktop */}
+            <div className="mt-6 flex lg:hidden justify-center">
+              <a
+                href="https://app.asksayso.com/login?signup=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-5 sm:px-8 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
                 style={{ boxShadow: '3px 3px 0px #1D4871' }}
               >
-                <span className="font-comic text-[#1D4871] text-2xl lg:text-3xl tracking-wide whitespace-nowrap">
-                  Works with existing dialer or CRM!
-                </span>
-              </div>
+                <LightningIcon size={16} className="mr-2 flex-shrink-0" />
+                Download Sayso
+              </a>
             </div>
           </div>
 
