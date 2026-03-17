@@ -94,7 +94,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                   className="bg-[#FFDE59] border-[2.5px] border-[#1D4871] px-5 py-2.5 rounded-lg transform -rotate-2"
                   style={{ boxShadow: '3px 3px 0px #1D4871' }}
                 >
-                  <span className="font-comic text-[#1D4871] text-2xl lg:text-3xl tracking-wide whitespace-nowrap">
+                  <span className="font-comic text-[#1D4871] text-2xl xl:text-3xl tracking-wide whitespace-nowrap">
                     Works with existing dialer or CRM!
                   </span>
                 </div>
