@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: 'Sayso | Real-Time AI Sales Coaching',
+    title: 'Sayso | Fix the Hardest Part of Prospecting',
     description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
     url: siteUrl,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Real-Time AI Sales Coaching' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Fix the Hardest Part of Prospecting' }],
     type: 'website',
   },
   twitter: {
-    title: 'Sayso | Real-Time AI Sales Coaching',
+    title: 'Sayso | Fix the Hardest Part of Prospecting',
     description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
     images: ['/og-default.png'],
   },
