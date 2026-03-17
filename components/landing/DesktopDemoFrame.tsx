@@ -6,7 +6,7 @@ import Image from 'next/image';
 // macOS Menu Bar Component
 function MacOSMenuBar() {
   return (
-    <div className="absolute top-0 left-0 right-0 h-[26px] bg-black/25 backdrop-blur-xl border-b border-white/10 flex items-center justify-between px-4 z-50">
+    <div className="absolute top-0 left-0 right-0 h-[26px] bg-black/25 backdrop-blur-xl border-b border-white/10 flex items-center justify-between px-4 z-40">
       {/* Left side - App menu */}
       <div className="flex items-center gap-[18px] text-white/90 text-[13px] leading-none">
         {/* Apple logo */}

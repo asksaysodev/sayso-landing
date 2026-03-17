@@ -61,7 +61,7 @@ export default function SaysoNavbar() {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden lg:flex items-center gap-6 lg:gap-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
@@ -82,7 +82,7 @@ export default function SaysoNavbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={openDemoCalendar}
-              className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-md v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
+              className="hidden lg:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-md v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
             >
               <LightningIcon size={14} className="mr-1.5" />
               Download Sayso
@@ -90,7 +90,7 @@ export default function SaysoNavbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
+              className="lg:hidden p-2 rounded-lg text-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
             >
