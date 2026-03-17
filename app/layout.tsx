@@ -26,7 +26,7 @@ const organizationJsonLd = {
   name: 'Sayso',
   url: siteUrl,
   logo: `${siteUrl}/logo-pos-horizontal.png`,
-  description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
+  description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   sameAs: [
     'https://www.linkedin.com/company/asksayso',
     'https://www.instagram.com/asksayso',
@@ -36,10 +36,10 @@ const organizationJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sayso | Fix the Hardest Part of Prospecting',
+    default: 'Sayso — Fix Where Prospecting Breaks Down',
     template: '%s | Sayso',
   },
-  description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
+  description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   openGraph: {
     siteName: 'Sayso',
     type: 'website',
