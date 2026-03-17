@@ -43,11 +43,24 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
     setStep('checking');
   }, []);
 
-  const handleWaitlistSubmit = (e: React.FormEvent) => {
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
-    // TODO: POST email to waitlist endpoint when available
-    console.log('Waitlist email submitted:', email);
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+
+      if (!res.ok) {
+        console.error('Waitlist submission failed:', res.status);
+      }
+    } catch (err) {
+      console.error('Waitlist submission error:', err);
+    }
+
     setStep('thankyou');
   };
 
