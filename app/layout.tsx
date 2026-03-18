@@ -43,7 +43,7 @@ const siteNavigationJsonLd = {
       position: 1,
       name: 'Book a Demo',
       description: 'Schedule an intro call with the Sayso founders',
-      url: `${siteUrl}/contact`,
+      url: `${siteUrl}/demo`,
     },
     {
       '@type': 'SiteNavigationElement',
