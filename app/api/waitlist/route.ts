@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     formData.append('email', email.trim());
 
     const res = await fetch(
-      'https://subscribe-forms.beehiiv.com/de7b925b-6f1f-4557-9fde-cf8005c34c5f',
+      'https://subscribe-forms.beehiiv.com/e3c75a03-411f-498f-9cce-281b3845531e',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
