@@ -10,6 +10,7 @@ type Step = 'select' | 'checking' | 'waitlist' | 'thankyou';
 export function SystemSelectModal({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState<Step>('select');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState<string | null>(null);
 
   // Lock body scroll
   useEffect(() => {
@@ -46,6 +47,7 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
+    setError(null);
 
     try {
       const res = await fetch('/api/waitlist', {
@@ -55,13 +57,15 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
       });
 
       if (!res.ok) {
-        console.error('Waitlist submission failed:', res.status);
+        setError('Something went wrong. Please try again.');
+        return;
       }
+
+      setStep('thankyou');
     } catch (err) {
       console.error('Waitlist submission error:', err);
+      setError('Something went wrong. Please try again.');
     }
-
-    setStep('thankyou');
   };
 
   return (
@@ -157,6 +161,7 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
                   Join the waitlist
                 </button>
               </form>
+              {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
             </>
           )}
 
