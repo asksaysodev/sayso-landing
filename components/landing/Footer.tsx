@@ -37,7 +37,7 @@ export function Footer() {
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Product</h3>
               <ul className="space-y-2">
                 <li><a href="#how-it-works" className="text-sm text-white/70 hover:text-white transition-colors ">How it works</a></li>
-                <li><a href="#pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a></li>
                 {/* <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li> */}
                 <li><a href="/demo" className="text-sm text-white/70 hover:text-white transition-colors ">Book a demo</a></li>
               </ul>
