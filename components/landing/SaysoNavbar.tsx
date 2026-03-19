@@ -6,18 +6,24 @@ import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { Menu, X } from 'lucide-react';
 
-const NAV_LINKS = [
+interface NavLink {
+  label: string;
+  href: string;
+  isCalendar?: boolean;
+  isContact?: boolean;
+}
+
+const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '#top' },
   { label: 'How Sayso Works', href: '#how-it-works' },
   // { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Demo', href: '#demo', isCalendar: true },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '#contact', isContact: true },
 ];
 
 export default function SaysoNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { openDemoCalendar, openContactForm } = useDemoCalendar();
+  const { openDemoCalendar, openContactForm, openSystemSelect } = useDemoCalendar();
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,7 +87,7 @@ export default function SaysoNavbar() {
           {/* Right Section */}
           <div className="flex items-center gap-3">
             <button
-              onClick={openDemoCalendar}
+              onClick={openSystemSelect}
               className="hidden lg:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-md v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
             >
               <LightningIcon size={14} className="mr-1.5" />
@@ -124,10 +130,10 @@ export default function SaysoNavbar() {
                 </a>
               ))}
               <button
-                onClick={() => { setIsMobileMenuOpen(false); openDemoCalendar(); }}
+                onClick={() => { setIsMobileMenuOpen(false); openSystemSelect(); }}
                 className="block w-full mt-3 px-4 py-3 rounded-full bg-[#2367EE] text-white font-bold text-lg text-center v2-comic-btn border-2 border-[#1D4871]"
               >
-                Download Sayso
+                Create an Account
               </button>
             </div>
           </div>

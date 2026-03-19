@@ -26,24 +26,53 @@ const organizationJsonLd = {
   name: 'Sayso',
   url: siteUrl,
   logo: `${siteUrl}/logo-pos-horizontal.png`,
-  description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
+  description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   sameAs: [
     'https://www.linkedin.com/company/asksayso',
     'https://www.instagram.com/asksayso',
   ],
 };
 
+const siteNavigationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Site Navigation',
+  itemListElement: [
+    {
+      '@type': 'SiteNavigationElement',
+      position: 1,
+      name: 'Book a Demo',
+      description: 'Schedule an intro call with the Sayso founders',
+      url: `${siteUrl}/demo`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 2,
+      name: 'Blog',
+      description: 'Tips and strategies for real estate prospecting',
+      url: `${siteUrl}/blog`,
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 3,
+      name: 'Home',
+      description: 'Sayso — Fix Where Prospecting Breaks Down',
+      url: siteUrl,
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sayso | Real-Time AI Sales Coaching',
+    default: 'Sayso — Fix Where Prospecting Breaks Down',
     template: '%s | Sayso',
   },
-  description: 'Real-time AI coaching for sales agents — handle objections, ask better questions, and book more appointments.',
+  description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   openGraph: {
     siteName: 'Sayso',
     type: 'website',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Real-Time AI Sales Coaching' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Fix the Hardest Part of Prospecting' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -66,6 +95,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
         />
         <DemoCalendarProvider>
           {children}

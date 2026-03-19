@@ -37,9 +37,9 @@ export function Footer() {
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Product</h3>
               <ul className="space-y-2">
                 <li><a href="#how-it-works" className="text-sm text-white/70 hover:text-white transition-colors ">How it works</a></li>
-                <li><a href="#pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a></li>
                 {/* <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li> */}
-                <li><a href="#book-demo" className="text-sm text-white/70 hover:text-white transition-colors ">Book a demo</a></li>
+                <li><a href="/demo" className="text-sm text-white/70 hover:text-white transition-colors ">Demo</a></li>
               </ul>
             </div>
             <div className="space-y-3">
@@ -53,9 +53,9 @@ export function Footer() {
             <div className="space-y-3">
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Company</h3>
               <ul className="space-y-2">
-                <li><a href="#security" className="text-sm text-white/70 hover:text-white transition-colors">Security</a></li>
-                <li><a href="#help" className="text-sm text-white/70 hover:text-white transition-colors">Help</a></li>
-                <li><a href="#contact" className="text-sm text-white/70 hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/security" className="text-sm text-white/70 hover:text-white transition-colors">Security</a></li>
+                <li><a href="mailto:support@asksayso.com" className="text-sm text-white/70 hover:text-white transition-colors">Help</a></li>
+                <li><a href="/contact" className="text-sm text-white/70 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
             <div className="space-y-3">
