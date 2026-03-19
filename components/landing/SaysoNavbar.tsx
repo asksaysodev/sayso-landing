@@ -6,7 +6,14 @@ import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { Menu, X } from 'lucide-react';
 
-const NAV_LINKS = [
+interface NavLink {
+  label: string;
+  href: string;
+  isCalendar?: boolean;
+  isContact?: boolean;
+}
+
+const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '#top' },
   { label: 'How Sayso Works', href: '#how-it-works' },
   // { label: 'Case Studies', href: '/case-studies' },
