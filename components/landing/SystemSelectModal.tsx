@@ -5,12 +5,10 @@ import { X } from 'lucide-react';
 
 const SIGNUP_URL = 'https://app.asksayso.com/login?signup=true';
 
-type Step = 'select' | 'checking' | 'waitlist' | 'thankyou';
+type Step = 'select' | 'checking' | 'waitlist';
 
 export function SystemSelectModal({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState<Step>('select');
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState<string | null>(null);
 
   // Lock body scroll
   useEffect(() => {
@@ -27,7 +25,7 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
     return () => document.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
-  // Auto-advance from checking to waitlist after 3 seconds
+  // Auto-advance from checking to waitlist after 2 seconds
   useEffect(() => {
     if (step === 'checking') {
       const timer = setTimeout(() => setStep('waitlist'), 2000);
@@ -43,30 +41,6 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
   const handleWindows = useCallback(() => {
     setStep('checking');
   }, []);
-
-  const handleWaitlistSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setError(null);
-
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim() }),
-      });
-
-      if (!res.ok) {
-        setError('Something went wrong. Please try again.');
-        return;
-      }
-
-      setStep('thankyou');
-    } catch (err) {
-      console.error('Waitlist submission error:', err);
-      setError('Something went wrong. Please try again.');
-    }
-  };
 
   return (
     <div
@@ -121,7 +95,6 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
 
           {step === 'checking' && (
             <>
-              {/* Spinner */}
               <div className="mb-6">
                 <div className="w-12 h-12 border-[3px] border-white/20 border-t-white rounded-full animate-spin mx-auto" />
               </div>
@@ -144,36 +117,15 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
                 We don&apos;t support Windows yet (but will soon).<br />
                 Join the waitlist and we&apos;ll notify you when it&apos;s ready.
               </p>
-              <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#FFDE59] text-base"
+              <div className="flex justify-center">
+                <iframe
+                  src="https://subscribe-forms.beehiiv.com/e3c75a03-411f-498f-9cce-281b3845531e"
+                  data-test-id="beehiiv-embed"
+                  scrolling="no"
+                  style={{ width: '100%', maxWidth: '414px', height: '57px', border: 'none', backgroundColor: 'transparent' }}
+                  title="Join Windows waitlist"
                 />
-                <button
-                  type="submit"
-                  className="px-6 py-3 rounded-xl bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#1D4871] hover:bg-[#ffe566] transition-colors whitespace-nowrap"
-                  style={{ boxShadow: '2px 2px 0px #1D4871' }}
-                >
-                  Join the waitlist
-                </button>
-              </form>
-              {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
-            </>
-          )}
-
-          {step === 'thankyou' && (
-            <>
-              <div className="text-5xl mb-4">🎉</div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                You&apos;re on the list!
-              </h2>
-              <p className="text-white/60 text-base">
-                We&apos;ll email you as soon as SaySo is available for Windows.
-              </p>
+              </div>
             </>
           )}
         </div>

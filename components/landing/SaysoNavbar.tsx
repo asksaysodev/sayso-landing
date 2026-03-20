@@ -18,7 +18,7 @@ const NAV_LINKS: NavLink[] = [
   { label: 'How Sayso Works', href: '#how-it-works' },
   // { label: 'Case Studies', href: '/case-studies' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '#contact', isContact: true },
+  { label: 'Demo', href: '#demo', isCalendar: true },
 ];
 
 export default function SaysoNavbar() {
