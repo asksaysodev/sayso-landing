@@ -1,6 +1,7 @@
 'use client';
 
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 
 interface PricingPlan {
   title: string;
@@ -48,8 +49,9 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 
       {plan.freeTrialBadge && (
         <div className="-mx-6 md:-mx-7 mb-5 px-6 py-2.5 bg-[#FFDE59] text-center">
-          <span className="font-comic text-sm tracking-wide text-[#1D4871]">
-            ⚡ {plan.freeTrialBadge}
+          <span className="font-comic text-sm tracking-wide text-[#1D4871] inline-flex items-center gap-1.5">
+            <LightningIcon size={14} color="#2367EE" />
+            {plan.freeTrialBadge}
           </span>
         </div>
       )}
@@ -123,7 +125,7 @@ export function PricingSection() {
         'Admin controls + reporting',
       ],
       buttonLabel: 'Assemble your team',
-      buttonOnClick: openSystemSelect,
+      buttonOnClick: () => { window.open('https://app.asksayso.com/login?signup=true', '_blank'); },
       buttonVariant: 'secondary',
     },
     {
