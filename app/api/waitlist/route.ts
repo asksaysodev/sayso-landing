@@ -17,11 +17,14 @@ export async function POST(request: NextRequest) {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData.toString(),
+        redirect: 'manual',
       }
     );
 
-    if (!res.ok) {
-      console.error('Beehiiv subscription failed:', res.status, await res.text());
+    // Beehiiv form submissions typically redirect (302) on success.
+    // Accept any 2xx or 3xx status as a successful subscription.
+    if (res.status >= 400) {
+      console.error('Beehiiv subscription failed:', res.status);
       return NextResponse.json({ error: 'Subscription failed' }, { status: 502 });
     }
 
