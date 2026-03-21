@@ -119,7 +119,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Sidebar — desktop right */}
           <div className="w-full lg:w-[280px] shrink-0">
-            <BlogSidebar content={post.content} relatedPosts={relatedPosts} />
+            <BlogSidebar relatedPosts={relatedPosts} />
           </div>
         </div>
       </div>
