@@ -242,6 +242,10 @@ featured: false
 
 Write the finished file to `content/blog/[slug].mdx`.
 
+### 4.5 Layout Notes
+- The blog layout does NOT have a sidebar. There is no table of contents or related posts sidebar — do not add or reference sidebar components.
+- Related posts are displayed automatically at the bottom of every blog post by the page layout. Do not add related post sections in the MDX content itself.
+
 ---
 
 ## Phase 5 — Summary
