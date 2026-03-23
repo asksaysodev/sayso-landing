@@ -5,7 +5,6 @@ import { generateArticleJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/blog-
 import { BlogBreadcrumb } from '@/components/blog/BlogBreadcrumb';
 import { BlogArticleHeader } from '@/components/blog/BlogArticleHeader';
 import { BlogArticleContent } from '@/components/blog/BlogArticleContent';
-import { BlogSidebar } from '@/components/blog/BlogSidebar';
 import { BlogAuthorCard } from '@/components/blog/BlogAuthorCard';
 import { BlogInArticleCTA } from '@/components/blog/BlogInArticleCTA';
 import { BlogRelatedPosts } from '@/components/blog/BlogRelatedPosts';
@@ -102,26 +101,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article header */}
       <BlogArticleHeader post={post} />
 
-      {/* Content area with sidebar */}
-      <div className="max-w-[1200px] mx-auto px-6 pb-10">
-        <div className="flex flex-col lg:flex-row gap-10">
-          {/* Article content */}
-          <article className="flex-1 min-w-0 max-w-[700px]">
-            <BlogArticleContent content={firstHalf} />
-            <BlogInArticleCTA />
-            <BlogArticleContent content={secondHalf} />
+      {/* Content area */}
+      <div className="max-w-[800px] mx-auto px-6 pb-10">
+        <article>
+          <BlogArticleContent content={firstHalf} />
+          <BlogInArticleCTA />
+          <BlogArticleContent content={secondHalf} />
 
-            {/* Author card */}
-            <div className="mt-8">
-              <BlogAuthorCard author={post.author} />
-            </div>
-          </article>
-
-          {/* Sidebar — desktop right */}
-          <div className="w-full lg:w-[280px] shrink-0">
-            <BlogSidebar content={post.content} relatedPosts={relatedPosts} />
+          {/* Author card */}
+          <div className="mt-8">
+            <BlogAuthorCard author={post.author} />
           </div>
-        </div>
+        </article>
       </div>
 
       {/* Related posts full width */}
