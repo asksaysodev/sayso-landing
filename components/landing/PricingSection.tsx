@@ -1,4 +1,7 @@
-import Image from 'next/image';
+'use client';
+
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 
 interface PricingPlan {
   title: string;
@@ -7,8 +10,9 @@ interface PricingPlan {
   description: string;
   bulletHeader?: string;
   bullets: string[];
+  freeTrialBadge?: string;
   buttonLabel: string;
-  buttonHref: string;
+  buttonOnClick: () => void;
   buttonVariant: 'primary' | 'secondary';
   isPopular?: boolean;
 }
@@ -39,9 +43,18 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
         )}
       </div>
 
-      <p className="text-base text-[#1D4871]/70 mb-6 leading-relaxed">
+      <p className="text-base text-[#1D4871]/70 mb-4 leading-relaxed">
         {plan.description}
       </p>
+
+      {plan.freeTrialBadge && (
+        <div className="-mx-6 md:-mx-7 mb-5 px-6 py-2.5 bg-[#FFDE59] text-center">
+          <span className="font-comic text-sm tracking-wide text-[#1D4871] inline-flex items-center gap-1.5">
+            <LightningIcon size={14} color="#2367EE" />
+            {plan.freeTrialBadge}
+          </span>
+        </div>
+      )}
 
       <ul className="flex-1 space-y-3 mb-6">
         {plan.bulletHeader && (
@@ -65,8 +78,8 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
         ))}
       </ul>
 
-      <a
-        href={plan.buttonHref}
+      <button
+        onClick={plan.buttonOnClick}
         className={`w-full inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-base font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 ${
           plan.buttonVariant === 'primary'
             ? 'bg-[#2367EE] text-white v2-comic-btn border-2 border-[#1D4871]'
@@ -74,58 +87,60 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
         }`}
       >
         {plan.buttonLabel}
-      </a>
+      </button>
     </div>
   );
 }
 
 export function PricingSection() {
+  const { openSystemSelect, openDemoCalendar } = useDemoCalendar();
+
   const plans: PricingPlan[] = [
     {
       title: 'Individual Agent',
       price: '$69 / month',
       priceNote: '*Billed annually — save $120. Or $79/month.',
       description: 'For agents who want daily consistency.',
+      freeTrialBadge: '3 day Free Trial included',
       bullets: [
         'Cue — real-time conversation intelligence',
-        'Priority support',
-        'Free trial included',
-        'Coming soon: Smart Capture — automated structured note-taking to popular frameworks',
-        "Coming soon: Recall — SaySo's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
+        'Dashboard analytics',
+        'Email Support',
+        'Up to 50% off new features',
       ],
       buttonLabel: 'Start your free trial',
-      buttonHref: '#start-trial',
+      buttonOnClick: openSystemSelect,
       buttonVariant: 'primary',
       isPopular: true,
     },
     {
-      title: 'Teams',
+      title: 'Teams & Brokerages',
       price: 'Custom based on team size',
       description: 'For teams and brokerages.',
-      bulletHeader: 'Every agent gets what\'s in Individual Agent, plus:',
+      bulletHeader: "Every agent gets what's in Individual Agent, plus:",
       bullets: [
         'Custom team onboarding + enablement',
         'Dedicated Team Success Manager',
-        'Unlimited agents',
+        'Unlimited agents and team members',
         'Admin controls + reporting',
       ],
       buttonLabel: 'Assemble your team',
-      buttonHref: '#contact-sales',
+      buttonOnClick: () => { window.open('https://app.asksayso.com/login?signup=true', '_blank'); },
       buttonVariant: 'secondary',
     },
     {
       title: 'Coming Soon',
       price: '',
-      description: 'Secure your account now to include future developments at a significantly reduced cost.',
+      description: 'Secure your account now to include future developments and new features up to 50% off!',
       bullets: [
         'Home value and market analysis live during calls',
-        'Smart Capture — automated structured note-taking to popular frameworks',
-        "Recall — SaySo's engine recalls previous context from your conversations to further customize your prompts, so you're not scrambling to organize your notes pre-call",
+        'Smart Capture — automated conversation note-taking to popular frameworks directly in your CRM in real time',
         'Custom script upload',
         'Additional note capture frameworks',
+        'And much more!',
       ],
       buttonLabel: 'Questions? Chat with our team',
-      buttonHref: '#chat',
+      buttonOnClick: () => { window.location.href = '/demo'; },
       buttonVariant: 'secondary',
     },
   ];
@@ -149,7 +164,7 @@ export function PricingSection() {
         </div>
 
         <p className="text-center text-xs text-[#1D4871]/50">
-          Prices shown in USD. Cancel anytime.
+          Prices shown in USD. Cancel anytime. No contracts.
         </p>
       </div>
     </section>

@@ -30,7 +30,7 @@ const defaultContent: ThreeStepsContent = {
 
 export function ThreeStepsSection({ content = defaultContent }: { content?: ThreeStepsContent }) {
   const [currentStep, setCurrentStep] = useState(0);
-  const { openDemoCalendar } = useDemoCalendar();
+  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
 
   const steps = [
     {
@@ -134,12 +134,13 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
         {/* CTAs */}
         <div className="mt-10 md:mt-14 flex gap-3 justify-center">
           <button
-            onClick={openDemoCalendar}
+            onClick={openSystemSelect}
             className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
             style={{ boxShadow: '3px 3px 0px #1D4871' }}
           >
             <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
-            Download Sayso
+            <span className="lg:hidden">Create an Account</span>
+            <span className="hidden lg:inline">Download Sayso</span>
           </button>
           <button
             onClick={openDemoCalendar}
