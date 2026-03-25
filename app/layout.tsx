@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope, Bangers } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import './globals.css'
 
@@ -103,6 +105,8 @@ export default function RootLayout({
         <DemoCalendarProvider>
           {children}
         </DemoCalendarProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
