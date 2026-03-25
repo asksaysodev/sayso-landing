@@ -1,6 +1,12 @@
-# SaySo Landing Page — Shared Repository Guidelines
+# Sayso Landing Page — Shared Repository Guidelines
 
 This is a shared team repository. Please follow these conventions to maintain organization and smooth collaboration.
+
+---
+
+## Brand Name
+
+The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "SaySo", "SAYSO", "Say So", or "say so". This applies to all code, copy, and content.
 
 ---
 
