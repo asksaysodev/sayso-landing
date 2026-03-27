@@ -95,13 +95,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${bangers.variable}`}>
       <head>
-        <Script
-          id="vtag-ai-js"
-          src="https://r2.leadsy.ai/tag.js"
-          data-pid="1nhqD1cnSGYVDeXLS"
-          data-version="062024"
-          strategy="afterInteractive"
-        />
+      <script
+        id="vtag-ai-js"
+        src="https://r2.leadsy.ai/tag.js"
+        data-pid="1nhqD1cnSGYVDeXLS"
+        data-version="062024"
+        async
+      />
       </head>
       <body>
         <script
