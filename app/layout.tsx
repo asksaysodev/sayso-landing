@@ -100,7 +100,7 @@ export default function RootLayout({
         src="https://r2.leadsy.ai/tag.js"
         data-pid="1nhqD1cnSGYVDeXLS"
         data-version="062024"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       </head>
       <body>
