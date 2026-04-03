@@ -45,3 +45,10 @@ next-env.d.ts
 # Claude Code
 .claude/*
 !.claude/commands/
+
+# Marketing asset export tooling
+/exports/
+playwright.config.ts
+/scripts/export-assets.ts
+/test-results/
+/playwright-report/
