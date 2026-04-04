@@ -2,6 +2,13 @@ import { MetadataRoute } from 'next';
 import { getAllPostsMeta, getCategories } from '@/lib/blog';
 import { siteUrl } from '@/lib/config';
 import { getAllNavHrefs } from '@/lib/navigation';
+import { getAllGlossarySlugs } from '@/lib/content/glossary';
+import { getAllObjectionSlugs } from '@/lib/content/objections';
+import { getAllFeatureSlugs } from '@/lib/content/features';
+import { getAllIntegrationSlugs } from '@/lib/content/integrations';
+import { getAllUseCaseSlugs } from '@/lib/content/for';
+import { getAllComparisonSlugs } from '@/lib/content/comparisons';
+import { getAllCaseStudySlugs } from '@/lib/content/case-studies';
 
 /** Paths that should never appear in the sitemap. */
 const EXCLUDED_PATHS = new Set([
@@ -30,7 +37,7 @@ function getPriority(path: string): number {
   if (path.startsWith('/for/')) return 0.7;
   if (path.startsWith('/integrations')) return 0.7;
   if (path.startsWith('/compare/')) return 0.7;
-  if (path.startsWith('/objections')) return 0.6;
+  if (path.startsWith('/objections')) return 0.7;
   if (path.startsWith('/glossary')) return 0.5;
   return 0.6;
 }
@@ -70,5 +77,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }));
 
-  return [...staticPages, ...blogPages, ...categoryPages];
+  // 5. Dynamic content pages from content loaders
+  const contentSections: { slugs: string[]; prefix: string; priority: number }[] = [
+    { slugs: getAllGlossarySlugs(), prefix: '/glossary', priority: 0.5 },
+    { slugs: getAllObjectionSlugs(), prefix: '/objections', priority: 0.7 },
+    { slugs: getAllFeatureSlugs(), prefix: '/features', priority: 0.7 },
+    { slugs: getAllIntegrationSlugs(), prefix: '/integrations', priority: 0.7 },
+    { slugs: getAllUseCaseSlugs(), prefix: '/for', priority: 0.7 },
+    { slugs: getAllComparisonSlugs(), prefix: '/compare', priority: 0.7 },
+    { slugs: getAllCaseStudySlugs(), prefix: '/case-studies', priority: 0.7 },
+  ];
+
+  const contentPages: MetadataRoute.Sitemap = contentSections.flatMap(({ slugs, prefix, priority }) =>
+    slugs.map((slug) => ({
+      url: `${siteUrl}${prefix}/${slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority,
+    })),
+  );
+
+  return [...staticPages, ...blogPages, ...categoryPages, ...contentPages];
 }
