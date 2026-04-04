@@ -3,7 +3,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
-import { generateWebPageJsonLd } from '@/lib/seo/schema';
+import { generateWebPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import type { UseCaseEntry } from '@/lib/content/for/types';
 
 interface PersonaPageProps {
@@ -17,11 +17,21 @@ export function PersonaPage({ entry }: PersonaPageProps) {
     `/for/${entry.slug}`,
   );
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Solutions', url: '/for' },
+    { name: entry.persona, url: `/for/${entry.slug}` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <Breadcrumb
@@ -39,15 +49,19 @@ export function PersonaPage({ entry }: PersonaPageProps) {
         </h1>
 
         {/* Opening Empathy — NO product mention */}
-        <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-8">
-          {entry.openingEmpathy}
-        </p>
+        <div className="space-y-4 mb-8">
+          {entry.openingEmpathy.map((paragraph, i) => (
+            <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans">
+              {paragraph}
+            </p>
+          ))}
+        </div>
 
         {/* The Problem */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
-          The Real Problem
+          {entry.theProblemHeading ?? 'The Real Problem'}
         </h2>
-        {entry.theProblem.split('\n\n').map((paragraph, i) => (
+        {entry.theProblem.map((paragraph, i) => (
           <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
             {paragraph}
           </p>
@@ -55,9 +69,9 @@ export function PersonaPage({ entry }: PersonaPageProps) {
 
         {/* What They Try */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
-          What Most {entry.persona} Try (And Why It Falls Short)
+          {entry.whatTheyTryHeading ?? `What Most ${entry.persona} Try (And Why It Falls Short)`}
         </h2>
-        {entry.whatTheyTry.split('\n\n').map((paragraph, i) => (
+        {entry.whatTheyTry.map((paragraph, i) => (
           <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
             {paragraph}
           </p>
@@ -65,9 +79,9 @@ export function PersonaPage({ entry }: PersonaPageProps) {
 
         {/* Better Approach — introduces Sayso here */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
-          A Better Approach — Real-Time Coaching
+          {entry.betterApproachHeading ?? 'A Better Approach \u2014 Real-Time Coaching'}
         </h2>
-        {entry.betterApproach.split('\n\n').map((paragraph, i) => (
+        {entry.betterApproach.map((paragraph, i) => (
           <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
             {paragraph}
           </p>
@@ -85,15 +99,47 @@ export function PersonaPage({ entry }: PersonaPageProps) {
               key={item.feature}
               className="bg-white border-2 border-[#1D4871]/10 rounded-2xl p-5"
             >
-              <p className="font-bold text-[#1D4871] text-base font-sans mb-2">
-                {item.feature}
-              </p>
+              <h3 className="font-bold text-[#1D4871] text-base font-sans mb-2">
+                {item.href ? (
+                  <Link href={item.href} className="hover:text-[#2367EE] transition-colors">
+                    {item.feature}
+                  </Link>
+                ) : (
+                  item.feature
+                )}
+              </h3>
               <p className="text-[#1D4871]/70 text-sm leading-relaxed font-sans">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
+
+        {/* Get Started */}
+        {entry.getStarted && (
+          <>
+            <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+              Get Started
+            </h2>
+            <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-4">
+              {entry.getStarted}
+            </p>
+            <div className="flex items-center gap-4 flex-wrap mb-6">
+              <Link
+                href="/demo"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] v2-comic-btn"
+              >
+                Book a Demo
+              </Link>
+              <Link
+                href="/pricing"
+                className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+              >
+                View Pricing \u2192
+              </Link>
+            </div>
+          </>
+        )}
 
         {/* Related Features */}
         <h2 className="font-hero text-xl text-[#1D4871] mt-6 mb-3">
@@ -110,7 +156,36 @@ export function PersonaPage({ entry }: PersonaPageProps) {
               </Link>
             </li>
           ))}
+          <li>
+            <Link
+              href="/for"
+              className="text-[#2367EE] hover:underline font-sans"
+            >
+              See all solutions \u2192
+            </Link>
+          </li>
         </ul>
+
+        {/* Related Objections */}
+        {entry.relatedObjections && entry.relatedObjections.length > 0 && (
+          <>
+            <h2 className="font-hero text-xl text-[#1D4871] mt-6 mb-3">
+              Objection Scripts
+            </h2>
+            <ul className="space-y-2 mb-6">
+              {entry.relatedObjections.map((objection) => (
+                <li key={objection.href}>
+                  <Link
+                    href={objection.href}
+                    className="text-[#2367EE] hover:underline font-sans"
+                  >
+                    {objection.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
         {/* Related Blog Posts */}
         {entry.relatedBlogPosts.length > 0 && (
