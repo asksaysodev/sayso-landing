@@ -1,20 +1,59 @@
 import { MetadataRoute } from 'next';
 import { getAllPostsMeta, getCategories } from '@/lib/blog';
+import { siteUrl } from '@/lib/config';
+import { getAllNavHrefs } from '@/lib/navigation';
+
+/** Paths that should never appear in the sitemap. */
+const EXCLUDED_PATHS = new Set([
+  '/privacy',
+  '/terms',
+  '/start',
+  '/feedback',
+  '/paywall-preview',
+  '/ui',
+]);
+
+/** Priority overrides by exact path. */
+const PRIORITY_MAP: Record<string, number> = {
+  '/': 1.0,
+  '/demo': 0.9,
+  '/blog': 0.9,
+  '/pricing': 0.8,
+  '/case-studies': 0.7,
+  '/contact': 0.7,
+};
+
+/** Default priority by path prefix. */
+function getPriority(path: string): number {
+  if (PRIORITY_MAP[path] !== undefined) return PRIORITY_MAP[path];
+  if (path.startsWith('/features/')) return 0.7;
+  if (path.startsWith('/for/')) return 0.7;
+  if (path.startsWith('/integrations')) return 0.7;
+  if (path.startsWith('/compare/')) return 0.7;
+  if (path.startsWith('/objections')) return 0.6;
+  if (path.startsWith('/glossary')) return 0.5;
+  return 0.6;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+  const now = new Date();
+
+  // 1. Collect all nav-registered pages + homepage + demo
+  const navHrefs = getAllNavHrefs();
+  const allStaticPaths = new Set(['/', '/demo', ...navHrefs]);
+
+  // 2. Filter out excluded paths
+  const staticPages: MetadataRoute.Sitemap = Array.from(allStaticPaths)
+    .filter((path) => !EXCLUDED_PATHS.has(path))
+    .map((path) => ({
+      url: `${siteUrl}${path}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: getPriority(path),
+    }));
+
+  // 3. Dynamic blog post pages
   const posts = getAllPostsMeta();
-  const categories = getCategories();
-
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: siteUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
-    { url: `${siteUrl}/demo`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${siteUrl}/pricing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${siteUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${siteUrl}/blog`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
-    { url: `${siteUrl}/case-studies`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-  ];
-
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
     lastModified: new Date(post.updatedAt),
@@ -22,11 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // 4. Blog category pages (low priority, supports topic clusters)
+  const categories = getCategories();
   const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
     url: `${siteUrl}/blog/category/${cat.slug}`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: 'weekly' as const,
-    priority: 0.6,
+    priority: 0.4,
   }));
 
   return [...staticPages, ...blogPages, ...categoryPages];
