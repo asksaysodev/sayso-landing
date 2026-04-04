@@ -1,12 +1,12 @@
 import { MetadataRoute } from 'next';
+import { siteUrl } from '@/lib/config';
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
-
   return {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/api/', '/start', '/feedback', '/paywall-preview', '/ui'],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
   };
