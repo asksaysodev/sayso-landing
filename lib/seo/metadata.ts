@@ -34,7 +34,7 @@ export function buildMetadata({
     }
   }
 
-  const canonicalUrl = `${siteUrl}${path}`;
+  const canonicalUrl = `${siteUrl}${path.replace(/\/?$/, '/')}`;
 
   return {
     title,

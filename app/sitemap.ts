@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = Array.from(allStaticPaths)
     .filter((path) => !EXCLUDED_PATHS.has(path))
     .map((path) => ({
-      url: `${siteUrl}${path}`,
+      url: `${siteUrl}${path.replace(/\/?$/, '/')}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: getPriority(path),
@@ -62,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 3. Dynamic blog post pages
   const posts = getAllPostsMeta();
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
+    url: `${siteUrl}/blog/${post.slug}/`,
     lastModified: new Date(post.updatedAt),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
@@ -71,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 4. Blog category pages (low priority, supports topic clusters)
   const categories = getCategories();
   const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${siteUrl}/blog/category/${cat.slug}`,
+    url: `${siteUrl}/blog/category/${cat.slug}/`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.4,
@@ -90,7 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const contentPages: MetadataRoute.Sitemap = contentSections.flatMap(({ slugs, prefix, priority }) =>
     slugs.map((slug) => ({
-      url: `${siteUrl}${prefix}/${slug}`,
+      url: `${siteUrl}${prefix}/${slug}/`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority,
