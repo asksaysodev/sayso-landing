@@ -1,4 +1,8 @@
 import { BlogPost, BlogPostMeta } from '@/lib/blog';
+import { SAYSO_PUBLISHER } from '@/lib/seo/schema';
+
+// Re-export for backward compatibility
+export { generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 
 export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: string) {
   return {
@@ -10,14 +14,7 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
       '@type': 'Person',
       name: post.author.name,
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Sayso',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteUrl}/logo-pos-horizontal.png`,
-      },
-    },
+    publisher: SAYSO_PUBLISHER,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
     description: post.description,
@@ -35,29 +32,6 @@ export function generateBlogListJsonLd(siteUrl: string) {
     name: 'The Sayso Blog',
     description: 'Tips, strategies, and insights to help you win every sales moment.',
     url: `${siteUrl}/blog`,
-    publisher: {
-      '@type': 'Organization',
-      name: 'Sayso',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteUrl}/logo-pos-horizontal.png`,
-      },
-    },
-  };
-}
-
-export function generateBreadcrumbJsonLd(
-  items: { name: string; url: string }[],
-  siteUrl: string
-) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: `${siteUrl}${item.url}`,
-    })),
+    publisher: SAYSO_PUBLISHER,
   };
 }
