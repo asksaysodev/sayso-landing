@@ -55,14 +55,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const relatedPosts = getRelatedPosts(post.slug, post.category);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
   const articleJsonLd = generateArticleJsonLd(post, siteUrl);
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(
-    [
-      { name: 'Blog', url: '/blog' },
-      { name: formatCategoryName(post.category), url: `/blog/category/${post.category}` },
-      { name: post.title, url: `/blog/${post.slug}` },
-    ],
-    siteUrl
-  );
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Blog', url: '/blog' },
+    { name: formatCategoryName(post.category), url: `/blog/category/${post.category}` },
+    { name: post.title, url: `/blog/${post.slug}` },
+  ]);
 
   // Split content roughly in half for mid-article CTA insertion
   const contentLines = post.content.split('\n');
