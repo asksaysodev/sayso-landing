@@ -1,4 +1,4 @@
-# AskSaySo — Complete Site Architecture & Keyword Map
+# Sayso — Complete Site Architecture & Keyword Map
 
 **Updated:** April 3, 2026
 **Total Pages:** ~105–115
@@ -270,17 +270,17 @@ All other existing pages (homepage, pricing, demo, privacy, terms, security, con
 
 Product ▾                       Solutions ▾                  Resources ▾                  Compare ▾
 ┌─────────────────────┐         ┌──────────────────────┐     ┌──────────────────────┐     ┌──────────────────────────┐
-│ Real-Time Coaching   │         │ Solo Agents           │     │ Blog                  │     │ SaySo vs Shilo           │
-│ Objection Handling   │         │ Team Leaders          │     │ Objection Library      │     │ SaySo vs MaverickRE      │
+│ Real-Time Coaching   │         │ Solo Agents           │     │ Blog                  │     │ Sayso vs Shilo           │
+│ Objection Handling   │         │ Team Leaders          │     │ Objection Library      │     │ Sayso vs MaverickRE      │
 │ Call Notes           │         │ New Agents            │     │ Glossary               │     │ AI vs Manual Coaching    │
-│ Call Grading         │         │ ISAs                  │     │ Case Studies           │     │ Why SaySo                │
+│ Call Grading         │         │ ISAs                  │     │ Case Studies           │     │ Why Sayso                │
 │ Role Play            │         │ ─────────────────     │     └──────────────────────┘     └──────────────────────────┘
 │ ─────────────────    │         │ Integrations          │
 │ Pricing              │         └──────────────────────┘
 └─────────────────────┘
 
 CTAs (always visible):
-  [Download SaySo]  — primary action button
+  [Download Sayso]  — primary action button
   [Book a Demo]     — secondary action button / link
 ```
 
@@ -317,7 +317,7 @@ CTAs (always visible):
 - **Every hub page is 1 click from every other page** via header or footer — this is the #1 crawl priority signal for Google
 - **Dropdowns keep the header clean** — 4 nav items + CTA button, no mega-menu overwhelm
 - **Footer is the comprehensive crawl path** — includes pages (programs, company, legal) that don't fit in the header but still need link equity
-- **Dual CTAs on every page** — "Download SaySo" (primary) + "Book a Demo" (secondary) mirrors the current homepage pattern
+- **Dual CTAs on every page** — "Download Sayso" (primary) + "Book a Demo" (secondary) mirrors the current homepage pattern
 - **Objection Library and Glossary are in Resources** — these are your biggest SEO assets and need prominent nav placement so Google discovers and crawls all child pages through the hub links
 
 ---

@@ -1,6 +1,6 @@
 # Blog Content Guide
 
-How to write, format, and publish blog posts for the SaySo website.
+How to write, format, and publish blog posts for the Sayso website.
 
 ---
 

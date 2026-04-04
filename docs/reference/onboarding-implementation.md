@@ -1,4 +1,4 @@
-# SaySo Onboarding Flow — Implementation Reference
+# Sayso Onboarding Flow — Implementation Reference
 
 ## Overview
 
@@ -104,7 +104,7 @@ Copy the diagram below into a Google Doc using a monospace font (e.g. Courier Ne
                               |                   |
           +-------------------v--+   +------------v----------+
           |   CONTACT INFO       |   |  WINDOWS COMING SOON  |
-          |  "Get started        |   |  "SaySo is coming     |
+          |  "Get started        |   |  "Sayso is coming     |
           |   setting up your    |   |   soon to Windows"    |
           |   Sayso account"     |   |  ⚠️ Not available yet  |
           |  Name / Email /      |   |  — sign up for early  |
@@ -377,9 +377,9 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 | computerType | Component | Heading | Notes |
 |---|---|---|---|
 | Mac / Mix | `ContactInfoScreen.tsx` | "Get started setting up your Sayso account" | Standard form |
-| PC | `WindowsComingSoonScreen.tsx` | "SaySo is coming soon to Windows" | Shows yellow disclaimer banner + "Do you actually use Apple?" link |
+| PC | `WindowsComingSoonScreen.tsx` | "Sayso is coming soon to Windows" | Shows yellow disclaimer banner + "Do you actually use Apple?" link |
 
-**PC disclaimer banner:** ⚠️ "SaySo isn't available for Windows yet — sign up to get early access when it launches."
+**PC disclaimer banner:** ⚠️ "Sayso isn't available for Windows yet — sign up to get early access when it launches."
 **"Do you actually use Apple?" link:** Sets `computerType` to `'Mac'` and switches to the standard `ContactInfoScreen` without navigating away.
 **Fields (both variants):** Full Name · Email Address · Phone Number · Company Name
 **Validation:** Email regex, phone 10+ digits, all fields non-empty
@@ -413,7 +413,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 ### `OnboardingProgress.tsx`
 Progress bar pinned to top on every screen except Welcome and Paywall.
 ```
-[SaySo Logo]                         Step 3 of 6
+[Sayso Logo]                         Step 3 of 6
 ████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
 - Total steps = 6 (Path A) or 7 (Path B)

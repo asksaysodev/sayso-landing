@@ -20,7 +20,7 @@ This document describes the layout, style, and component pattern used for person
 - **No heavy animations** — static layout only, no framer-motion or interactive panels
 - **Centered single column** — `max-w-xl mx-auto` (~576px) for all content
 - **Same footer** — uses the standard `<Footer />` component
-- **SaySo brand styles** throughout: `font-comic` (Bangers) for headings, `#1D4871` dark blue for text, `#FFDE59` yellow for the primary CTA button with `3px 3px 0px #1D4871` cartoon shadow
+- **Sayso brand styles** throughout: `font-comic` (Bangers) for headings, `#1D4871` dark blue for text, `#FFDE59` yellow for the primary CTA button with `3px 3px 0px #1D4871` cartoon shadow
 
 ---
 

@@ -26,7 +26,7 @@
 
   "WITH SAYSO" SECTION
   ─────────────────────
-  Headline:    With SaySo, Your Whole Team Wins
+  Headline:    With Sayso, Your Whole Team Wins
 
   Subheading:  Turn wasted leads into booked appointments — across every
                agent, every call.
@@ -89,7 +89,7 @@
 
   "WITH SAYSO" SECTION
   ─────────────────────
-  Headline:    With SaySo, Role-Play Finally Pays Off
+  Headline:    With Sayso, Role-Play Finally Pays Off
 
   Subheading:  Stop watching great role-play fall apart the moment a real
                prospect pushes back.
@@ -151,7 +151,7 @@
 
   "WITH SAYSO" SECTION
   ─────────────────────
-  Headline:    With SaySo, You Always Know What to Say
+  Headline:    With Sayso, You Always Know What to Say
 
   Subheading:  Stay confident and in control — even when prospects push back.
 
@@ -212,7 +212,7 @@
 
   "WITH SAYSO" SECTION
   ─────────────────────
-  Headline:    With SaySo, You Sound Like a Pro
+  Headline:    With Sayso, You Sound Like a Pro
 
   Subheading:  Stop guessing what to say. Start booking appointments
                like the top agents do.
