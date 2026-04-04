@@ -3,7 +3,8 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
-import { generateWebPageJsonLd } from '@/lib/seo/schema';
+import { generateWebPageJsonLd, generateSoftwareAppJsonLd } from '@/lib/seo/schema';
+import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { ComparisonEntry } from '@/lib/content/comparisons/types';
 
 interface ComparisonPageProps {
@@ -17,12 +18,22 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
     `/compare/${entry.slug}`,
   );
 
+  const softwareAppJsonLd = entry.featureList
+    ? generateSoftwareAppJsonLd({ featureList: entry.featureList })
+    : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
+      {softwareAppJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
+        />
+      )}
 
       <Breadcrumb
         items={[
@@ -44,7 +55,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
             TL;DR
           </p>
           <p className="text-[#1D4871] text-base leading-relaxed font-sans mb-4">
-            {entry.tldr}
+            {renderInlineMarkdown(entry.tldr)}
           </p>
           <Link
             href="/demo"
@@ -60,7 +71,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
         </h2>
         {entry.whyLooking.split('\n\n').map((paragraph, i) => (
           <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
-            {paragraph}
+            {renderInlineMarkdown(paragraph)}
           </p>
         ))}
 
@@ -109,9 +120,38 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
         </h2>
         {entry.whereSaysoWins.split('\n\n').map((paragraph, i) => (
           <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
-            {paragraph}
+            {renderInlineMarkdown(paragraph)}
           </p>
         ))}
+
+        {/* H3 subsections for Where Sayso Wins */}
+        {entry.whereSaysoWinsDetails?.map((detail, i) => (
+          <div key={i}>
+            <h3 className="font-hero text-xl md:text-[22px] text-[#1D4871] mt-8 mb-3">
+              {detail.heading}
+            </h3>
+            {detail.body.split('\n\n').map((paragraph, j) => (
+              <p key={j} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
+                {renderInlineMarkdown(paragraph)}
+              </p>
+            ))}
+          </div>
+        ))}
+
+        {/* Feature Links */}
+        {entry.featureLinks && entry.featureLinks.length > 0 && (
+          <div className="flex flex-wrap gap-3 mt-4 mb-6">
+            {entry.featureLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+              >
+                Learn more about {link.title} →
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* Where Competitor Wins */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
@@ -119,7 +159,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
         </h2>
         {entry.whereCompetitorWins.split('\n\n').map((paragraph, i) => (
           <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
-            {paragraph}
+            {renderInlineMarkdown(paragraph)}
           </p>
         ))}
 
@@ -127,17 +167,36 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
           Who Sayso Is Best For
         </h2>
-        <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-6">
-          {entry.whoItsFor}
-        </p>
+        {entry.whoItsFor.split('\n\n').map((paragraph, i) => (
+          <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
+            {renderInlineMarkdown(paragraph)}
+          </p>
+        ))}
+
+        {/* Persona Links */}
+        {entry.personaLinks && entry.personaLinks.length > 0 && (
+          <div className="flex flex-wrap gap-3 mb-6">
+            {entry.personaLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+              >
+                Sayso for {link.title} →
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* Pricing */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
           Pricing
         </h2>
-        <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-4">
-          {entry.pricing}
-        </p>
+        {entry.pricing.split('\n\n').map((paragraph, i) => (
+          <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-4">
+            {renderInlineMarkdown(paragraph)}
+          </p>
+        ))}
         <Link
           href="/pricing"
           className="text-[#2367EE] hover:underline font-bold font-sans"
@@ -148,9 +207,9 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
         {/* Related Comparisons */}
         {entry.relatedComparisons.length > 0 && (
           <>
-            <h2 className="font-hero text-xl text-[#1D4871] mt-10 mb-3">
+            <p className="font-hero text-lg text-[#1D4871]/70 mt-10 mb-3 uppercase tracking-wider">
               More Comparisons
-            </h2>
+            </p>
             <ul className="space-y-2 mb-6">
               {entry.relatedComparisons.map((comparison) => (
                 <li key={comparison.slug}>
