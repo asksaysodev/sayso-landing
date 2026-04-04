@@ -117,10 +117,18 @@ Use **Draft PRs** with preview deployments:
 - `/app` — Next.js app directory
 - `/components` — React components
 - `/styles` — Tailwind CSS and global styles
-- `/content` — Content files
-- `ONBOARDING_IMPLEMENTATION.md` — Onboarding flow details
-- `UI_readme.md` — UI component documentation
+- `/content` — Content files (blog posts, page data)
+
+### Documentation (`/docs`)
+
+| Folder | Contents | Used by |
+|--------|----------|---------|
+| `docs/architecture/` | Site architecture & keyword map | Claude commands for building pages |
+| `docs/brand/` | Brand guidelines, UI style guide | Design decisions, new page builds |
+| `docs/content/` | Blog writing guides, persona copy, blog design specs | Content creation commands |
+| `docs/reference/` | Dev guide, onboarding flow, Canny setup, UI component inventory | Developer reference |
+| `docs/templates/` | Page templates (persona ad pages, etc.) | Claude commands for building new pages |
 
 ---
 
-**Need help?** Refer to the dev guide or ask the team.
+**Need help?** Refer to `docs/reference/dev-guide.md` or ask the team.
