@@ -1,20 +1,22 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { LightningIcon } from '@/components/icons/LightningIcon';
+import { footerNav } from '@/lib/navigation';
 
 export function Footer() {
   return (
     <footer className="relative bg-[#1D4871] border-t-4 border-[#FFDE59]">
       <div className="max-w-[1200px] mx-auto px-6 py-12 md:py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-10">
-          {/* Left Column: Logo + Description */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 mb-8 md:mb-10">
+          {/* Left Column: Logo + Description + Newsletter */}
           <div className="space-y-3">
-            <a
+            <Link
               href="/"
               className="flex items-center gap-2 text-white font-bold text-lg md:text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#FFDE59] focus:ring-offset-2 focus:ring-offset-[#1D4871] rounded-lg px-2 -ml-2 w-fit"
               aria-label="Sayso home"
             >
               <Image src="/logo-neg-transparent-horizontal.png" alt="Sayso" height={32} width={80}/>
-            </a>
+            </Link>
             <p className="text-sm text-white/70 leading-relaxed max-w-md">
               Win the Moment — your real-time call superpower.
             </p>
@@ -29,45 +31,10 @@ export function Footer() {
                 title="Newsletter signup"
               />
             </div>
-          </div>
-
-          {/* Right Column: Link Columns */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-8 lg:gap-10">
-            <div className="space-y-3">
-              <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Product</h3>
-              <ul className="space-y-2">
-                <li><a href="#how-it-works" className="text-sm text-white/70 hover:text-white transition-colors ">How it works</a></li>
-                <li><a href="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a></li>
-                {/* <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li> */}
-                <li><a href="/demo" className="text-sm text-white/70 hover:text-white transition-colors ">Demo</a></li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Programs</h3>
-              <ul className="space-y-2">
-                <li><a href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="/referral" className="text-sm text-white/70 hover:text-white transition-colors ">Referral program</a></li>
-                <li><a href="/affiliate" className="text-sm text-white/70 hover:text-white transition-colors ">Affiliate program</a></li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Company</h3>
-              <ul className="space-y-2">
-                <li><a href="/security" className="text-sm text-white/70 hover:text-white transition-colors">Security</a></li>
-                <li><a href="mailto:support@asksayso.com" className="text-sm text-white/70 hover:text-white transition-colors">Help</a></li>
-                <li><a href="/contact" className="text-sm text-white/70 hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Legal</h3>
-              <ul className="space-y-2">
-                <li><a href="/privacy" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="/terms" className="text-sm text-white/70 hover:text-white transition-colors">Terms</a></li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">Follow Us</h3>
-              <div className="flex items-center gap-4 pt-1">
+            {/* Social Links */}
+            <div className="pt-3">
+              <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold mb-2">Follow Us</h3>
+              <div className="flex items-center gap-4">
                 <a href="https://www.linkedin.com/company/asksayso" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -81,6 +48,40 @@ export function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Right Column: 6-Section Link Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-8">
+            {footerNav.map((section) => (
+              <div key={section.label} className="space-y-3">
+                <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold">
+                  {section.label}
+                </h3>
+                <ul className="space-y-2">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      {link.external ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-white/70 hover:text-white transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="text-sm text-white/70 hover:text-white transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="pt-6 md:pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -89,9 +90,9 @@ export function Footer() {
             &copy; 2026 AskSayso, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-3 text-xs text-white/50">
-            <a href="/privacy" className="hover:text-white/70 transition-colors">Privacy</a>
+            <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy</Link>
             <span>&bull;</span>
-            <a href="/terms" className="hover:text-white/70 transition-colors">Terms</a>
+            <Link href="/terms" className="hover:text-white/70 transition-colors">Terms</Link>
           </div>
         </div>
       </div>
