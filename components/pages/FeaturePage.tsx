@@ -4,7 +4,7 @@ import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { ImagePlaceholder } from '@/components/pages/ImagePlaceholder';
 import { FAQ } from '@/components/pages/FAQ';
-import { generateSoftwareAppJsonLd } from '@/lib/seo/schema';
+import { generateSoftwareAppJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import type { FeatureEntry } from '@/lib/content/features/types';
 
 interface FeaturePageProps {
@@ -16,11 +16,21 @@ export function FeaturePage({ entry }: FeaturePageProps) {
     featureList: entry.featureList,
   });
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Features', url: '/features' },
+    { name: entry.h1, url: `/features/${entry.slug}` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <Breadcrumb
@@ -36,9 +46,16 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         <h1 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mb-4">
           {entry.h1}
         </h1>
-        <p className="text-[#1D4871]/80 text-base md:text-lg leading-relaxed font-sans mb-6">
-          {entry.heroDescription}
-        </p>
+        <div className="space-y-4 mb-6">
+          {entry.heroDescription.map((paragraph, index) => (
+            <p
+              key={index}
+              className="text-[#1D4871]/80 text-base md:text-lg leading-relaxed font-sans"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
         <div className="flex items-center gap-4 flex-wrap mb-8">
           <Link
             href="/demo"
@@ -59,7 +76,7 @@ export function FeaturePage({ entry }: FeaturePageProps) {
       {/* How It Works */}
       <section className="max-w-[800px] mx-auto px-6 pb-10">
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
-          How It Works
+          {entry.howItWorksHeading ?? 'How It Works'}
         </h2>
         <div className="space-y-5">
           {entry.howItWorks.map((step, index) => (
@@ -80,20 +97,49 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         </div>
       </section>
 
+      {/* Secondary CTA — after How It Works */}
+      <div className="max-w-[800px] mx-auto px-6">
+        <ContentInlineCTA />
+      </div>
+
       {/* Who It's For */}
       <section className="max-w-[800px] mx-auto px-6 pb-10">
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
           Who This Is For
         </h2>
-        <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans">
-          {entry.whoItsFor}
-        </p>
+        <div className="space-y-4">
+          {entry.whoItsFor.map((paragraph, index) => (
+            <p
+              key={index}
+              className="text-[#1D4871]/80 text-base leading-relaxed font-sans"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <div className="flex items-center gap-4 flex-wrap mt-4">
+          {entry.personaLinks && entry.personaLinks.map((persona) => (
+            <Link
+              key={persona.href}
+              href={persona.href}
+              className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+            >
+              {persona.title} →
+            </Link>
+          ))}
+          <Link
+            href="/pricing"
+            className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+          >
+            View Pricing →
+          </Link>
+        </div>
       </section>
 
       {/* Differentiators */}
       <section className="max-w-[800px] mx-auto px-6 pb-10">
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
-          What Makes This Different
+          {entry.differentiatorsHeading ?? 'What Makes This Different'}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {entry.differentiators.map((diff) => (
@@ -101,9 +147,9 @@ export function FeaturePage({ entry }: FeaturePageProps) {
               key={diff.title}
               className="bg-white border-2 border-[#1D4871]/10 rounded-2xl p-5"
             >
-              <p className="font-bold text-[#1D4871] text-base font-sans mb-2">
+              <h3 className="font-bold text-[#1D4871] text-base font-sans mb-2">
                 {diff.title}
-              </p>
+              </h3>
               <p className="text-[#1D4871]/70 text-sm leading-relaxed font-sans">
                 {diff.body}
               </p>
@@ -126,10 +172,6 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         </section>
       )}
 
-      <div className="max-w-[800px] mx-auto px-6">
-        <ContentInlineCTA />
-      </div>
-
       {/* Related Features */}
       <section className="max-w-[800px] mx-auto px-6 pb-6">
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-6 mb-4">
@@ -146,6 +188,14 @@ export function FeaturePage({ entry }: FeaturePageProps) {
               </Link>
             </li>
           ))}
+          <li>
+            <Link
+              href="/features"
+              className="text-[#2367EE] hover:underline font-sans"
+            >
+              See all features →
+            </Link>
+          </li>
         </ul>
       </section>
 
