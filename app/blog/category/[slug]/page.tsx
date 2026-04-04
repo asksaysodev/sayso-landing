@@ -35,6 +35,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       description: `Read our latest articles about ${name.toLowerCase()}. Tips, strategies, and insights from the Sayso team.`,
       images: ['/og-default.png'],
     },
+    robots: {
+      index: false,
+      follow: true,
+    },
   };
 }
 
