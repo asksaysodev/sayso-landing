@@ -1,5 +1,7 @@
-import Link from 'next/link';
+'use client';
+
 import { LightningIcon } from '@/components/icons/LightningIcon';
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 interface ContentCTAProps {
   headline?: string;
@@ -10,6 +12,8 @@ export function ContentCTA({
   headline = 'Ready to Win the Moment?',
   subheading = 'See how Sayso gives you real-time coaching on every call.',
 }: ContentCTAProps) {
+  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-10">
       <div className="bg-[#1D4871] border-2 border-[#1D4871] rounded-2xl v2-comic-shadow overflow-hidden">
@@ -21,19 +25,19 @@ export function ContentCTA({
             {subheading}
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Link
-              href="/demo"
+            <button
+              onClick={openDemoCalendar}
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-transparent text-white font-bold text-base border-2 border-white hover:bg-white/10 transition-colors"
             >
               Book a Demo
-            </Link>
-            <Link
-              href="/"
+            </button>
+            <button
+              onClick={openSystemSelect}
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#2367EE] text-white font-bold text-base v4-hero-glow border-2 border-[#1D4871]"
             >
               <LightningIcon size={14} className="mr-1.5" />
               Download Sayso
-            </Link>
+            </button>
           </div>
         </div>
       </div>

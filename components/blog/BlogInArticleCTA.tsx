@@ -1,7 +1,11 @@
-import Link from 'next/link';
+'use client';
+
 import { LightningIcon } from '@/components/icons/LightningIcon';
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 export function BlogInArticleCTA() {
+  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+
   return (
     <div className="my-10 bg-gradient-to-r from-[#1D4871] to-[#2367EE] rounded-2xl border-2 border-[#1D4871] v2-comic-shadow overflow-hidden">
       <div className="px-8 py-10 text-center">
@@ -12,19 +16,19 @@ export function BlogInArticleCTA() {
           See how Sayso gives your team real-time coaching on every call.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
-          <Link
-            href="/#demo"
+          <button
+            onClick={openDemoCalendar}
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-white font-bold text-sm border-2 border-white hover:bg-white/10 transition-colors"
           >
             Book a Demo
-          </Link>
-          <Link
-            href="/"
+          </button>
+          <button
+            onClick={openSystemSelect}
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
           >
             <LightningIcon size={14} className="mr-1.5" />
             Download Sayso
-          </Link>
+          </button>
         </div>
       </div>
     </div>

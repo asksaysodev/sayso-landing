@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
@@ -5,6 +7,7 @@ import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { generateWebPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import type { UseCaseEntry } from '@/lib/content/for/types';
 
 interface PersonaPageProps {
@@ -12,6 +15,8 @@ interface PersonaPageProps {
 }
 
 export function PersonaPage({ entry }: PersonaPageProps) {
+  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+
   const webPageJsonLd = generateWebPageJsonLd(
     entry.seoTitle,
     entry.seoDescription,
@@ -126,19 +131,19 @@ export function PersonaPage({ entry }: PersonaPageProps) {
               {entry.getStarted}
             </p>
             <div className="flex items-center gap-4 flex-wrap mb-6">
-              <Link
-                href="/demo"
+              <button
+                onClick={openDemoCalendar}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
               >
                 Book a Demo
-              </Link>
-              <Link
-                href="/"
+              </button>
+              <button
+                onClick={openSystemSelect}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
               >
                 <LightningIcon size={14} className="mr-1.5" />
                 Download Sayso
-              </Link>
+              </button>
             </div>
           </>
         )}
