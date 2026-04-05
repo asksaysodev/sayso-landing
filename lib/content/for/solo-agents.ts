@@ -3,17 +3,17 @@ import type { UseCaseEntry } from './types';
 export const soloAgents: UseCaseEntry = {
   slug: 'solo-agents',
   persona: 'Solo Agents',
-  keyword: 'how to have better sales conversations in real estate',
-  seoTitle: 'Better Sales Conversations in Real Estate \u2014 Solo Agents',
+  keyword: 'how to have better prospecting conversations in real estate',
+  seoTitle: 'Better Prospecting Conversations in Real Estate \u2014 Solo Agents',
   seoDescription:
-    'Solo agents lose deals when conversations stall. Learn how to have better sales conversations in real estate with live AI coaching on every call. Try Sayso.',
-  h1: 'How to Have Better Sales Conversations in Real Estate',
+    'Solo agents lose prospects when conversations stall. Learn how to have better prospecting conversations in real estate with live AI coaching on every call. Try Sayso.',
+  h1: 'How to Have Better Prospecting Conversations in Real Estate',
   openingEmpathy: [
-    'If you are a solo real estate agent, you already know the biggest challenge is not finding leads \u2014 it is what happens when you get them on the phone. Knowing how to have better sales conversations in real estate is the difference between booking the appointment and hearing "I will think about it."',
-    'You do everything yourself \u2014 prospecting, showing, negotiating, paperwork, follow-ups. There is no ISA picking up your phone and no manager whispering in your ear during a tough call. When a prospect pushes back, you are on your own.',
-    'And at the end of a long day of calls, you still need to log everything to your CRM before the details fade. The gap between how good your conversations could be and how good they actually are grows wider with every dial.',
+    'If you are a solo real estate agent, you already know the biggest challenges every solo agent faces are 1) finding leads and 2) converting leads when you talk to them on the phone. Knowing how to have better conversations in real estate is the difference between booking the appointment and hearing "I will think about it."',
+    'You do everything yourself \u2014 prospecting, showing, negotiating, paperwork, follow-ups. There is no ISA picking up your phone and no guidance during a tough call. When there is pushback, you are on your own.',
+    'And at the end of a long day, you still need to log everything to your CRM before the details fade. The gap between how good your conversations could be and how good they actually are grows wider with every dial.',
   ],
-  theProblemHeading: 'Why Most Sales Conversations Fall Apart',
+  theProblemHeading: 'Why Most Prospecting Conversations Fall Apart',
   theProblem: [
     'The hardest part of being a solo agent is not the volume \u2014 it is the quality of each conversation when you are doing 30 calls a day. By call number 15, your energy drops. By call 25, you are running on autopilot. The conversations where you freeze on an objection or forget to ask for the appointment \u2014 those are the ones that cost you listings.',
     'And then there is the admin. Every call needs notes. Every lead needs a follow-up task. Every conversation needs to be logged. The administrative work after a calling session often takes as long as the calls themselves \u2014 which means even your good conversations lose momentum because follow-up gets delayed.',
@@ -23,15 +23,15 @@ export const soloAgents: UseCaseEntry = {
   whatTheyTry: [
     'Most solo agents try to solve this with script binders, CRM templates, or sheer willpower. You memorize your opening, rehearse your closes, and hope you remember the right objection handler when the moment comes. But real sales conversations do not follow a script \u2014 and the moment a prospect goes off-book, your preparation falls apart.',
     'Some agents invest in coaching programs. These are valuable for building long-term skills, but they cannot help you in the moment on a live call. You learn what to say in theory, then freeze when a prospect actually hits you with an unexpected objection.',
-    'Others record their calls and review them later. This is great for self-awareness, but it does nothing to save the deal that just slipped away. By the time you hear the mistake, the prospect has already moved on.',
-    'The common pattern is investing time and money in preparation, but having zero support during the conversation itself \u2014 the exact moment where deals are won or lost.',
+    'Others record their calls and review them later. This is great for self-awareness, but it does nothing to save the prospect that just slipped away. By the time you hear the mistake, the prospect has already moved on.',
+    'The common pattern is investing time and money in preparation, but having zero support during the conversation itself \u2014 the exact moment where appointments are won or lost.',
   ],
-  betterApproachHeading: 'A Better Approach to Sales Conversations',
+  betterApproachHeading: 'A Better Approach to Prospecting Conversations',
   betterApproach: [
-    'What if you could have a coach in your ear during every call \u2014 not after it? Real-time coaching changes the equation. Instead of preparing for every possible scenario before the conversation, you get guidance during the conversation when it actually matters.',
-    'Sayso listens to your live prospecting calls and shows you what to say next on your screen. When a prospect pushes back, the right response appears. When the conversation stalls, Sayso suggests the next question to keep it moving. This is how solo agents have better sales conversations in real estate without memorizing a binder full of scripts.',
+    'What if you could have a coach in your ear during every call, not after? Real-time coaching changes the equation. Instead of preparing for every possible scenario before the conversation, you get guidance during the conversation when it actually matters.',
+    'Sayso listens to your live prospecting calls and shows you what to say next on your screen. When a prospect pushes back, the right response appears. When the conversation stalls, Sayso suggests the next question to keep it moving. This is how solo agents have better prospecting conversations in real estate without memorizing a binder full of scripts.',
     'Picture this: a lead says "I already have an agent." Instead of stammering through a generic reply, you see a proven response on your screen \u2014 tailored to what they just said. You deliver it naturally, the conversation continues, and you book the appointment. That is the difference real-time coaching makes.',
-    'After the call, Sayso captures your notes automatically and syncs them to your CRM \u2014 so the admin work that used to take an hour now takes zero. You move straight to the next dial with your conversation details already logged.',
+    'Sayso captures your notes automatically and syncs them to your CRM \u2014 so the admin work that used to take an hour now takes zero. You move straight to the next dial with your conversation details already logged.',
   ],
   getStarted:
     'See how Sayso helps solo agents sound better on every prospecting call. Book a demo to watch real-time coaching in action, or visit pricing to find the right plan for you.',
@@ -43,7 +43,7 @@ export const soloAgents: UseCaseEntry = {
     },
     {
       feature: 'Automatic Call Notes',
-      description: 'Sayso generates a call summary and logs it to your CRM after every conversation. Stop spending 30 minutes on notes after a calling session.',
+      description: 'Sayso generates call notes during every conversation. Stop spending 30 minutes on notes after a calling session.',
       href: '/features/call-notes',
     },
     {
@@ -51,10 +51,14 @@ export const soloAgents: UseCaseEntry = {
       description: 'When a prospect pushes back, the right response appears on your screen \u2014 tuned to what they just said, not a generic script.',
       href: '/features/objection-handling',
     },
+    {
+      feature: "What's Working & Coaching Tips",
+      description: 'See how your conversations stack up over time. Identify patterns in the calls that convert and the ones that do not \u2014 without hiring a coach.',
+    },
   ],
   faq: [
     {
-      question: 'How does Sayso help me have better sales conversations in real estate?',
+      question: 'How does Sayso help me have better prospecting conversations in real estate?',
       answer: 'Sayso listens to your live calls and shows coaching prompts on your screen in real time. When a prospect raises an objection, you see the right response immediately \u2014 so you handle it confidently instead of freezing.',
     },
     {
@@ -67,7 +71,7 @@ export const soloAgents: UseCaseEntry = {
     },
     {
       question: 'How much time does Sayso save per day?',
-      answer: 'Most solo agents save 30\u201360 minutes per day on call notes alone. The real-time coaching also reduces the number of lost deals from fumbled objections, which compounds over time.',
+      answer: 'Most solo agents save 30\u201360 minutes per day on call notes alone. The real-time coaching also reduces the number of lost prospects from fumbled objections, which compounds over time.',
     },
     {
       question: 'How much does Sayso cost and how do I get started?',

@@ -12,7 +12,6 @@ export const realTimeCoaching: FeatureEntry = {
     'Sayso gives real estate agents and teams confidence that they know exactly what to say in any scenario. Sayso\u2019s engine listens to your live call, understands the context, and shows you exactly what to say, the moment you need it.',
     'Sayso means agents will never have to memorize a script and will never have post-call regret. You will book more appointments using Sayso.',
   ],
-  inlineCTASubheading: '',
   screenshotAlt:
     'Sayso real-time sales help prompt appearing on screen during a live real estate prospecting call',
   howItWorksHeading: 'How Real-Time Sales Help Works',

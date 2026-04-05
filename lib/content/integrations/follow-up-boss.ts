@@ -7,16 +7,16 @@ export const followUpBoss: IntegrationEntry = {
   seoTitle: 'Follow Up Boss + Sayso AI Integration',
   seoDescription:
     'Follow Up Boss users: get real-time AI coaching and automatic call notes with Sayso. Every call logged to your CRM. Try it free.',
-  h1: 'Sayso + Follow Up Boss — Real-Time Coaching Meets Your CRM',
+  h1: 'Sayso + Follow Up Boss: Real-Time Coaching Meets Your CRM',
   logoAlt: 'Follow Up Boss AI integration with Sayso',
   openingDescription:
-    'Follow Up Boss is where your leads live. The Follow Up Boss AI integration with Sayso adds real-time coaching to every prospecting call and automatic note syncing back to your FUB contact records — so nothing falls through the cracks.',
+    'Follow Up Boss is where your leads live. The Follow Up Boss AI integration with Sayso adds real-time coaching to every prospecting call and automatic note syncing back to your FUB contact records, so nothing falls through the cracks.',
   howItWorksHeading: 'How Sayso Works with Follow Up Boss',
   howItWorks: [
     {
       step: 'Connect your Follow Up Boss account',
       description:
-        'Link your FUB workspace to Sayso in Settings. This Follow Up Boss AI integration takes under two minutes — no developer needed.',
+        'Link your FUB workspace to Sayso in Settings. This Follow Up Boss AI integration takes under two minutes, no developer needed.',
     },
     {
       step: 'Start a prospecting call',
@@ -26,7 +26,7 @@ export const followUpBoss: IntegrationEntry = {
     {
       step: 'Get coached in real time',
       description:
-        'Sayso listens to the conversation and shows you what to say — objection responses, follow-up questions, appointment closes.',
+        'Sayso listens to the conversation and shows you what to say, including objection responses, follow-up questions, and appointment closes.',
     },
     {
       step: 'Notes sync automatically',
@@ -35,16 +35,14 @@ export const followUpBoss: IntegrationEntry = {
     },
   ],
   inlineCtaHeadline: 'Ready to Connect Sayso to Follow Up Boss?',
-  inlineCtaSubheading:
-    'Real-time coaching and automatic notes — set up in under two minutes.',
   benefits: [
     {
       title: 'Call notes appear in FUB automatically',
-      body: 'Every conversation gets logged to the right contact record with a summary, key details, and next steps — without you touching your CRM.',
+      body: 'Every conversation gets logged to the right contact record with a summary, key details, and next steps, without you touching your CRM.',
     },
     {
       title: 'No context switching',
-      body: 'You do not need to leave FUB or open a separate app. Sayso runs alongside your existing workflow — smart lists, calling from FUB, contact records. Everything stays where it is.',
+      body: 'You do not need to leave FUB or open a separate app. Sayso runs alongside your existing workflow, including smart lists, calling from FUB, and contact records. Everything stays where it is.',
     },
     {
       title: 'Better follow-ups from better notes',
@@ -52,11 +50,11 @@ export const followUpBoss: IntegrationEntry = {
     },
     {
       title: 'Team visibility',
-      body: 'Team leaders can see call activity and coaching data alongside FUB pipeline metrics — one place for everything.',
+      body: 'Team leaders can see call activity and coaching data alongside FUB pipeline metrics, all in one place.',
     },
   ],
   whyChoose:
-    'Follow Up Boss users choose Sayso because this Follow Up Boss AI integration fits into the workflow they already have. You do not need to learn a new system or change how you dial. Sayso adds a coaching layer on top of FUB — real-time prompts during calls and automatic notes after. The agents who get the most value are those making 20+ calls a day where consistent follow-up is the difference between a pipeline and a graveyard.',
+    'Follow Up Boss users choose Sayso because this Follow Up Boss AI integration fits into the workflow they already have. You do not need to learn a new system or change how you dial. Sayso adds a coaching layer on top of FUB, with real-time prompts during calls and automatic notes after. The agents who get the most value are those making 20+ calls a day where consistent follow-up is the difference between a pipeline and a graveyard.',
   getStarted:
     'Connecting Sayso to Follow Up Boss takes under two minutes. Sign up, link your FUB account in Settings, and start your next call with real-time coaching.',
   featureList: [
@@ -74,7 +72,7 @@ export const followUpBoss: IntegrationEntry = {
     {
       question: 'How long does the Follow Up Boss integration take to set up?',
       answer:
-        'Under two minutes. Connect your FUB account in Sayso Settings — no developer or IT support needed.',
+        'Under two minutes. Connect your FUB account in Sayso Settings, no developer or IT support needed.',
     },
     {
       question: 'Will Sayso slow down my Follow Up Boss workflow?',

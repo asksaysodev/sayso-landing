@@ -23,6 +23,4 @@ export interface IntegrationEntry {
   relatedLinks?: { label: string; title: string; href: string }[];
   /** Override headline for the inline CTA. */
   inlineCtaHeadline?: string;
-  /** Override subheading for the inline CTA. */
-  inlineCtaSubheading?: string;
 }

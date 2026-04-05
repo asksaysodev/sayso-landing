@@ -80,7 +80,6 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
 
         <ContentInlineCTA
           headline={entry.inlineCtaHeadline}
-          subheading={entry.inlineCtaSubheading}
         />
 
         {/* Benefits */}
