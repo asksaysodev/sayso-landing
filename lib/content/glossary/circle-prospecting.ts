@@ -12,11 +12,11 @@ export const circleProspecting: GlossaryEntry = {
     'Circle prospecting is the practice of calling homeowners in a specific geographic area, usually around a recent listing, sale, or open house, to generate new buyer and seller leads. It gives agents a natural reason to call and a predictable way to build pipeline from a geographic farm.',
   howItWorks: [
     'When a home sells or gets listed in a neighborhood, nearby homeowners pay attention. Circle prospecting takes advantage of that awareness by reaching out while the topic is top of mind. You typically pull a list of 50–200 homeowners within a half-mile radius of the property, then call them with a simple script that references the recent activity.',
-    'The goal is not to pitch, it is to start a conversation. You mention the listing or sale, ask if they have thought about their own home\'s value, and listen for signals of interest.',
+    'The goal is to start a conversation. You mention the listing or sale, ask if they have thought about their own home\'s value, and listen for signals of interest.',
     'Most calls are short. The ones that matter turn into listing appointments weeks or months later.',
   ],
   whyItMatters: [
-    'Circle prospecting works because it gives you a natural reason to call. You are not calling out of thin air, you are referencing something that happened in their neighborhood. That context makes the conversation feel relevant instead of intrusive.',
+    'Circle prospecting works because it gives you a natural reason to call. You are referencing something that happened in their neighborhood. That context makes the conversation feel relevant instead of intrusive.',
     'For agents who struggle with cold outreach, circle prospecting is often the easiest entry point. The scripts are simple, the objections are softer, and the conversion timeline is predictable.',
     'Teams that circle prospect consistently build a pipeline of future listings from their own geographic farm area.',
   ],
