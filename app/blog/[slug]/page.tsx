@@ -52,7 +52,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const relatedPosts = getRelatedPosts(post.slug, post.category);
+  const relatedPosts = getRelatedPosts(post.slug, {
+    cluster: post.cluster,
+    category: post.category,
+  });
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
   const articleJsonLd = generateArticleJsonLd(post, siteUrl);
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
