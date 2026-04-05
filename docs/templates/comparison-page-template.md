@@ -597,9 +597,7 @@ These are defined in the compare hub (`lib/content/hubs/compare.ts`):
 |-----------|------|----------------|--------|
 | Shilo | `sayso-vs-shilo` | shilo alternative | Done |
 | MaverickRE | `sayso-vs-maverickre` | maverickre alternative | Not started |
-| AI vs Manual | `ai-coaching-vs-manual` | real estate coaching AI vs manual | Not started |
-
-**Note:** The "AI Coaching vs Manual Coaching" page is a concept comparison, not a competitor comparison. It may need a slightly different tone (educational rather than alternative-focused). Consider whether the comparison page template or a standalone content page is the better format.
+| Sayso vs Manual Coaching | `sayso-vs-manual-coaching` | real estate coaching AI vs manual | Not started |
 
 ---
 

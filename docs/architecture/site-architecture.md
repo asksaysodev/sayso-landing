@@ -44,9 +44,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 /features/                                  (hub — no keyword target)                                   ⚪ NONE
 ├── /features/real-time-coaching/           "real time sales help"                                      🟡 MED
 ├── /features/objection-handling/           "real estate objection handling scripts"                    🟡 MED
-├── /features/call-notes/                   "automatic call notes real estate"                          🟢 WIN
-├── /features/call-grading/                 "how to improve call performance real estate"               🟡 MED
-└── /features/role-play/                    "how to practice scripts real estate"                       🟢 WIN
+└── /features/call-notes/                   "automatic call notes real estate"                          🟢 WIN
 ```
 
 ---
@@ -82,7 +80,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 /compare/                                   (hub — no keyword target)                                   ⚪ NONE
 ├── /compare/sayso-vs-shilo/               "shilo alternative"                                         🟢 WIN
 ├── /compare/sayso-vs-maverickre/          "maverickre alternative"                                    🟢 WIN
-└── /compare/ai-coaching-vs-manual/        "real estate coaching AI vs manual"                          🟡 MED
+└── /compare/sayso-vs-manual-coaching/      "real estate coaching AI vs manual"                          🟡 MED
 ```
 
 ---
@@ -163,6 +161,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ├── /blog/buyer-lead-scripts/               "real estate phone script for leads"                       🟡 MED
 ├── /blog/how-to-start-a-real-estate-call/  "how to start a real estate call"                          🟡 MED
 ├── /blog/appointment-setting-script/       "real estate appointment setting script"                    🟡 MED
+├── /blog/how-to-practice-scripts/         "how to practice scripts real estate"                       🟢 WIN     ← moved from /features/role-play
 └── /blog/best-real-estate-call-coaching-software/ "best real estate call coaching software"            🔴 HARD    ← existing post, kept as supporting
 ```
 
@@ -186,6 +185,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ├── /blog/how-to-guide-a-sales-conversation/   (support)  "how to guide a sales conversation"                        🟡 MED
 ├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED
 ├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN
+├── /blog/how-to-improve-call-performance/ (support)  "how to improve call performance real estate"               🟡 MED     ← moved from /features/call-grading
 └── /blog/what-real-time-call-coaching-looks-like/ (support)  "how does AI call coaching work"                     🟢 WIN     ← NEW mid-funnel bridge
 ```
 
@@ -272,12 +272,11 @@ Product ▾                       Solutions ▾                  Resources ▾  
 ┌─────────────────────┐         ┌──────────────────────┐     ┌──────────────────────┐     ┌──────────────────────────┐
 │ Real-Time Coaching   │         │ Solo Agents           │     │ Blog                  │     │ Sayso vs Shilo           │
 │ Objection Handling   │         │ Team Leaders          │     │ Objection Library      │     │ Sayso vs MaverickRE      │
-│ Call Notes           │         │ New Agents            │     │ Glossary               │     │ AI vs Manual Coaching    │
-│ Call Grading         │         │ ISAs                  │     │ Case Studies           │     │ Why Sayso                │
-│ Role Play            │         │ ─────────────────     │     └──────────────────────┘     └──────────────────────────┘
-│ ─────────────────    │         │ Integrations          │
-│ Pricing              │         └──────────────────────┘
-└─────────────────────┘
+│ Call Notes           │         │ New Agents            │     │ Glossary               │     │ Sayso vs Manual Coaching │
+│ ─────────────────    │         │ ISAs                  │     │ Case Studies           │     │ Why Sayso                │
+│ Pricing              │         │ ─────────────────     │     └──────────────────────┘     └──────────────────────────┘
+└─────────────────────┘         │ Integrations          │
+                                └──────────────────────┘
 
 CTAs (always visible):
   [Download Sayso]  — primary action button
@@ -296,9 +295,8 @@ CTAs (always visible):
 │  ├─ Real-Time Coach   ├─ Solo Agents       ├─ Blog              ├─ About             │
 │  ├─ Objection Handle  ├─ Team Leaders      ├─ Objection Library ├─ Security          │
 │  ├─ Call Notes        ├─ New Agents        ├─ Glossary          ├─ Contact            │
-│  ├─ Call Grading      ├─ ISAs             ├─ Case Studies      └─ Help (email)       │
-│  ├─ Role Play         └─ Integrations                                                │
-│  └─ Pricing                                                                          │
+│  └─ Pricing           ├─ ISAs             ├─ Case Studies      └─ Help (email)       │
+│                       └─ Integrations                                                │
 │                                                                                      │
 │  Programs             Legal                                                          │
 │  ├─ Referral Program  ├─ Privacy                                                     │

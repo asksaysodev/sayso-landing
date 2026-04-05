@@ -104,7 +104,6 @@ export const realTimeCoaching: FeatureEntry = {
   relatedFeatures: [
     { title: 'Objection Handling', slug: 'objection-handling' },
     { title: 'Call Notes', slug: 'call-notes' },
-    { title: 'Call Grading', slug: 'call-grading' },
   ],
   relatedBlogPosts: [
     { title: 'What Real-Time Call Coaching Looks Like', href: '/blog/what-real-time-call-coaching-looks-like' },

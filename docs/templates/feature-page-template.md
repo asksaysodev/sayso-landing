@@ -436,8 +436,8 @@ These are defined in the features hub (`lib/content/hubs/features.ts`) but not y
 | Real-Time Coaching | `real-time-coaching` | real-time sales help for real estate agents | Done |
 | Objection Handling | `objection-handling` | real estate objection handling scripts | Not started |
 | Call Notes | `call-notes` | automatic call notes real estate | Not started |
-| Call Grading | `call-grading` | how to improve call performance real estate | Not started |
-| Role Play | `role-play` | how to practice scripts real estate | Not started |
+
+**Removed pages:** Call Grading and Role Play were removed as feature pages (Sayso doesn't offer these as standalone features). Their keywords ("how to improve call performance real estate" and "how to practice scripts real estate") have been moved to blog posts in the Conversation Skills and Cold Calling clusters respectively.
 
 **Note:** The keywords listed for unbuilt pages are the originals from the hub config. Before building each page, validate the keyword with actual search volume data and consider using long-tail variants (as was done for real-time-coaching: `real time sales help` became `real-time sales help for real estate agents`).
 

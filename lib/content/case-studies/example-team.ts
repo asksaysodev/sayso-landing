@@ -31,7 +31,6 @@ export const exampleTeam: CaseStudyEntry = {
   relatedFeatures: [
     { title: 'Real-Time Coaching', href: '/features/real-time-coaching' },
     { title: 'Call Notes', href: '/features/call-notes' },
-    { title: 'Call Grading', href: '/features/call-grading' },
   ],
   relatedPersona: {
     title: 'Sayso for Team Leaders',

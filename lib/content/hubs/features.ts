@@ -7,7 +7,7 @@ const featuresHub: HubPageConfig = {
   basePath: '/features',
   seoTitle: 'Sayso Features — Real-Time Coaching for Agents',
   seoDescription:
-    'Explore Sayso features: real-time coaching, objection handling, automatic call notes, call grading, and role play practice for real estate agents.',
+    'Explore Sayso features: real-time coaching, objection handling, and automatic call notes for real estate agents.',
   h1: 'Features Built for the Phone',
   introduction:
     'Every feature in Sayso is designed for one thing — helping you sound better on prospecting calls. Real-time coaching, automatic notes, objection handling, and more.',
@@ -32,20 +32,6 @@ const featuresHub: HubPageConfig = {
       description: 'Automatic call summaries synced to your CRM after every conversation.',
       keyword: 'automatic call notes real estate',
       linkText: 'How automatic call notes work',
-    },
-    {
-      title: 'Call Grading',
-      slug: 'call-grading',
-      description: 'See how your calls stack up and where to improve — without a manager listening in.',
-      keyword: 'how to improve call performance real estate',
-      linkText: 'Improve your call performance',
-    },
-    {
-      title: 'Role Play',
-      slug: 'role-play',
-      description: 'Practice scripts and objection handling before you pick up the phone.',
-      keyword: 'how to practice scripts real estate',
-      linkText: 'Practice with AI role play',
     },
   ],
   noKeyword: true,

@@ -69,20 +69,18 @@ export const saysoVsShilo: ComparisonEntry = {
     },
     {
       question: 'What is the best Shilo alternative for real estate agents?',
-      answer: 'Sayso is the top-rated option for real estate agents who want coaching during live calls instead of post-call review. It includes real-time objection handling prompts, automatic call notes synced to your CRM, call grading, and AI-powered role play practice — features designed specifically for prospecting-heavy agents.',
+      answer: 'Sayso is the top-rated option for real estate agents who want coaching during live calls instead of post-call review. It includes real-time objection handling prompts and automatic call notes synced to your CRM — features designed specifically for prospecting-heavy agents.',
     },
   ],
   relatedComparisons: [
     { title: 'Sayso vs MaverickRE', slug: 'sayso-vs-maverickre' },
-    { title: 'AI Coaching vs Manual Coaching', slug: 'ai-coaching-vs-manual' },
+    { title: 'Sayso vs Manual Coaching', slug: 'sayso-vs-manual-coaching' },
   ],
   featureList: [
     'Real-time call coaching',
     'Live objection handling prompts',
     'Automatic call notes',
     'CRM integration',
-    'Call grading',
-    'Role play practice',
   ],
   personaLinks: [
     { title: 'Solo Agents', href: '/for/solo-agents' },

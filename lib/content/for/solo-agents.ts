@@ -51,11 +51,6 @@ export const soloAgents: UseCaseEntry = {
       description: 'When a prospect pushes back, the right response appears on your screen \u2014 tuned to what they just said, not a generic script.',
       href: '/features/objection-handling',
     },
-    {
-      feature: 'Call Grading',
-      description: 'See how your conversations stack up over time. Identify patterns in the calls that convert and the ones that do not \u2014 without hiring a coach.',
-      href: '/features/call-grading',
-    },
   ],
   faq: [
     {
@@ -82,7 +77,6 @@ export const soloAgents: UseCaseEntry = {
   relatedFeatures: [
     { title: 'Real-Time Coaching', href: '/features/real-time-coaching' },
     { title: 'Call Notes', href: '/features/call-notes' },
-    { title: 'Call Grading', href: '/features/call-grading' },
   ],
   relatedBlogPosts: [
     { title: 'How to Not Freeze on Sales Calls', href: '/blog/how-to-not-freeze-on-calls' },
