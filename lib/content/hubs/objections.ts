@@ -119,7 +119,7 @@ const objectionsHub: HubPageConfig = {
     },
   ],
   howSaysoHelps:
-    'Sayso coaches you through these objections in real time, the moment a prospect pushes back, the right response appears on your screen. No memorization required. You sound like you have been doing this for years, if you\'re new on the phone.',
+    'Sayso coaches you through these objections in real time, the moment a prospect pushes back, the right response appears on your screen. No memorization required. You sound like you have been doing this for years, even if you\'re new on the phone.',
   faq: [
     {
       question: 'What are the most common real estate objections?',
