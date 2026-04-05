@@ -10,7 +10,7 @@ const caseStudiesHub: HubPageConfig = {
     'See how real estate teams use Sayso to handle more objections, book more appointments, and close more deals with real-time call coaching.',
   h1: 'Real Results from Real Teams',
   introduction:
-    'See how real estate teams and agents use Sayso to book more appointments, handle objections confidently, and stop losing deals on the phone.',
+    'See how real estate teams and agents use Sayso to book more appointments, handle objections confidently, and stop losing opportunities on the phone.',
   childPages: [
     {
       title: 'Example Real Estate Team',
