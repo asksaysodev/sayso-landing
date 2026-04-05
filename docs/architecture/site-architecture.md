@@ -179,27 +179,27 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 #### Conversation Skills Cluster
 
 ```
-/blog/real-estate-conversation-guide/       "how to talk to real estate leads"                          🟡 MED     ← PILLAR
-├── /blog/how-to-build-rapport-calls/       "how to build rapport real estate calls"                   🟢 WIN
-├── /blog/how-to-qualify-leads-on-phone/    "how to qualify real estate leads"                          🟡 MED
-├── /blog/questions-to-ask-real-estate-leads/"questions to ask real estate leads"                       🟡 MED
-├── /blog/how-to-guide-a-sales-conversation/"how to guide a sales conversation"                        🟡 MED
-├── /blog/how-to-keep-control-of-a-call/    "how to keep control of a call"                            🟡 MED
-├── /blog/what-top-agents-say-on-calls/     "what top real estate agents say on calls"                  🟢 WIN
-└── /blog/what-real-time-call-coaching-looks-like/ "how does AI call coaching work"                     🟢 WIN     ← NEW mid-funnel bridge
+/blog/real-estate-conversation-guide/  (main)     "how to talk to real estate leads"                          🟡 MED     ← PILLAR
+├── /blog/how-to-build-rapport-calls/    (support)    "how to build rapport real estate calls"                   🟢 WIN
+├── /blog/how-to-qualify-leads-on-phone/  (support)   "how to qualify real estate leads"                          🟡 MED
+├── /blog/questions-to-ask-real-estate-leads/   (support)  "questions to ask real estate leads"                       🟡 MED
+├── /blog/how-to-guide-a-sales-conversation/   (support)  "how to guide a sales conversation"                        🟡 MED
+├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED
+├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN
+└── /blog/what-real-time-call-coaching-looks-like/ (support)  "how does AI call coaching work"                     🟢 WIN     ← NEW mid-funnel bridge
 ```
 
 #### Follow-Up Cluster
 
 ```
-/blog/real-estate-follow-up-guide/          "real estate follow up scripts"                             🟡 MED     ← PILLAR
-├── /blog/follow-up-scripts-cold-leads/     "how to follow up with cold leads real estate"             🟢 WIN
-├── /blog/how-often-follow-up-real-estate/  "how often should i follow up real estate leads"            🟢 WIN
-├── /blog/how-to-revive-dead-leads/         "how to revive dead leads real estate"                     🟢 WIN
-└── /blog/what-to-say-to-old-leads/         "what to say to old leads real estate"                     🟢 WIN
+/blog/real-estate-follow-up-guide/ (main)          "real estate follow up scripts"                             🟡 MED     ← PILLAR
+├── /blog/follow-up-scripts-cold-leads/ (support)     "how to follow up with cold leads real estate"             🟢 WIN
+├── /blog/how-often-follow-up-real-estate/ (support)   "how often should i follow up real estate leads"            🟢 WIN
+├── /blog/how-to-revive-dead-leads/   (support)       "how to revive dead leads real estate"                     🟢 WIN
+└── /blog/what-to-say-to-old-leads/    (support)      "what to say to old leads real estate"                     🟢 WIN
 ```
 
-#### CRM & Notes Cluster
+#### CRM & Notes Cluster (Stand alone)
 
 ```
 /blog/real-estate-call-notes-template/      "real estate call notes template"                           🟢 WIN
@@ -210,7 +210,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 /blog/day-in-the-life-agent-using-ai-coaching/ "AI coaching real estate agent daily workflow"           🟢 WIN     ← NEW mid-funnel bridge
 ```
 
-#### Struggle & Emotional Content
+#### Struggle & Emotional Content (standalone)
 
 ```
 /blog/i-hate-cold-calling/                  "i hate cold calling real estate"                           🟢 WIN
@@ -221,7 +221,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 /blog/how-to-think-on-your-feet-sales/      "how to think on your feet sales"                          🟢 WIN
 ```
 
-#### Data & Authority Content
+#### Data & Authority Content (standalone)
 
 ```
 /blog/real-estate-call-data-study/          "real estate call statistics"                               🔴 HARD
