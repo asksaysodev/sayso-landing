@@ -33,7 +33,7 @@ export function ContentCTA({
             </button>
             <button
               onClick={openSystemSelect}
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#2367EE] text-white font-bold text-base v4-hero-glow border-2 border-[#1D4871]"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#FFDE59] hover:bg-[#FFDE59]/90 transition-colors"
             >
               <LightningIcon size={14} className="mr-1.5" />
               Download Sayso

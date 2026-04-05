@@ -10,26 +10,26 @@ const glossaryHub: HubPageConfig = {
     'Clear definitions of real estate prospecting terms, including circle prospecting, ISA, FSBO, expired listings, and more. Written for agents, not textbooks.',
   h1: 'Real Estate Glossary',
   introduction:
-    'Clear, practical definitions of the terms real estate agents actually use on the phones every day. No jargon walls, just the context you need to sound confident on every call.',
+    'Clear, practical definitions of the terms real estate agents actually use every day. When you are on the phone with a prospect, it is important that you do not use industry jargon.',
   childPages: [
     {
       title: 'Circle Prospecting',
       slug: 'circle-prospecting',
-      description: 'Calling homeowners near a recent listing or sale to generate new leads.',
+      description: 'Calling homeowners in a specific area to generate new leads.',
       keyword: 'what is circle prospecting',
       linkText: 'What is circle prospecting?',
     },
     {
       title: 'ISA (Inside Sales Agent)',
       slug: 'isa-real-estate',
-      description: 'A dedicated team member who handles inbound and outbound lead calls.',
+      description: 'A dedicated team member who handles inbound and outbound lead calls. An ISA\'s goal is to book appointments for agents.',
       keyword: 'what does ISA mean in real estate',
       linkText: 'Learn what ISA means in real estate',
     },
     {
       title: 'Listing Appointment',
       slug: 'listing-appointment',
-      description: 'The in-person meeting where an agent pitches to represent a seller.',
+      description: 'The meeting where an agent pitches to represent a seller.',
       keyword: 'what is a listing appointment',
       linkText: 'Understanding listing appointments',
     },
@@ -48,9 +48,9 @@ const glossaryHub: HubPageConfig = {
       linkText: 'What does FSBO mean?',
     },
     {
-      title: 'Cold Calling in Real Estate',
+      title: 'Cold Calling',
       slug: 'cold-calling-real-estate',
-      description: 'Calling prospects you have no prior relationship with to generate leads.',
+      description: 'Calling prospects you have no prior relationship with to generate new business.',
       keyword: 'what is cold calling in real estate',
       linkText: 'Get the cold calling definition',
     },
