@@ -3,6 +3,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 import { generateWebPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import type { UseCaseEntry } from '@/lib/content/for/types';
 
@@ -48,7 +49,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
           {entry.h1}
         </h1>
 
-        {/* Opening Empathy — NO product mention */}
+        {/* Opening Empathy - NO product mention */}
         <div className="space-y-4 mb-8">
           {entry.openingEmpathy.map((paragraph, i) => (
             <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans">
@@ -77,7 +78,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
           </p>
         ))}
 
-        {/* Better Approach — introduces Sayso here */}
+        {/* Better Approach - introduces Sayso here */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
           {entry.betterApproachHeading ?? 'A Better Approach \u2014 Real-Time Coaching'}
         </h2>
@@ -127,15 +128,16 @@ export function PersonaPage({ entry }: PersonaPageProps) {
             <div className="flex items-center gap-4 flex-wrap mb-6">
               <Link
                 href="/demo"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] v2-comic-btn"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
               >
                 Book a Demo
               </Link>
               <Link
-                href="/pricing"
-                className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+                href="/"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
               >
-                View Pricing \u2192
+                <LightningIcon size={14} className="mr-1.5" />
+                Download Sayso
               </Link>
             </div>
           </>

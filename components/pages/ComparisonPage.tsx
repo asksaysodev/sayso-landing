@@ -59,7 +59,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
           </p>
           <Link
             href="/demo"
-            className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#1D4871] text-white font-bold text-sm hover:bg-[#2367EE] transition-colors"
+            className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
           >
             Book a Demo
           </Link>
@@ -77,7 +77,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
 
         {/* Comparison Table */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
-          {entry.competitor} vs Sayso — Feature Comparison
+          {entry.competitor} vs Sayso: Feature Comparison
         </h2>
         <div className="overflow-x-auto mb-6">
           <table className="w-full border-collapse border-2 border-[#1D4871] rounded-lg text-sm font-sans">

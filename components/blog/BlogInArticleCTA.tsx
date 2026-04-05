@@ -14,13 +14,13 @@ export function BlogInArticleCTA() {
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <Link
             href="/#demo"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-[#1D4871] font-bold text-sm border-2 border-white hover:bg-[#FFDE59] hover:border-[#FFDE59] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-white font-bold text-sm border-2 border-white hover:bg-white/10 transition-colors"
           >
             Book a Demo
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-white font-bold text-sm border-2 border-white/50 hover:border-white hover:bg-white/10 transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
           >
             <LightningIcon size={14} className="mr-1.5" />
             Download Sayso

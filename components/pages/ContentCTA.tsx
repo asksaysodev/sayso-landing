@@ -23,13 +23,13 @@ export function ContentCTA({
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-transparent text-white font-bold text-base border-2 border-white/50 hover:border-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-transparent text-white font-bold text-base border-2 border-white hover:bg-white/10 transition-colors"
             >
               Book a Demo
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#1D4871] v2-comic-btn"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#2367EE] text-white font-bold text-base v4-hero-glow border-2 border-[#1D4871]"
             >
               <LightningIcon size={14} className="mr-1.5" />
               Download Sayso

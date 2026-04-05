@@ -4,6 +4,7 @@ import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { ImagePlaceholder } from '@/components/pages/ImagePlaceholder';
 import { FAQ } from '@/components/pages/FAQ';
+import { LightningIcon } from '@/components/icons/LightningIcon';
 import { generateSoftwareAppJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import type { FeatureEntry } from '@/lib/content/features/types';
 
@@ -59,14 +60,15 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         <div className="flex items-center gap-4 flex-wrap mb-8">
           <Link
             href="/demo"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] v2-comic-btn"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
           >
             Book a Demo
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871]/30 hover:border-[#1D4871] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
           >
+            <LightningIcon size={14} className="mr-1.5" />
             Download Sayso
           </Link>
         </div>
@@ -97,11 +99,9 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         </div>
       </section>
 
-      {/* Secondary CTA — after How It Works */}
+      {/* Secondary CTA - after How It Works */}
       <div className="max-w-[800px] mx-auto px-6">
-        <ContentInlineCTA
-          {...(entry.inlineCTASubheading !== undefined && { subheading: entry.inlineCTASubheading })}
-        />
+        <ContentInlineCTA />
       </div>
 
       {/* Who It's For */}
