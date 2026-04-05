@@ -18,6 +18,7 @@ These rules apply to **all** copy and content across the entire site:
 2. **Never use "run" or "running" when talking about phone calls.** Use regular conversational English (e.g., "make calls", "dial", "get on the phone").
 3. **Avoid "cold call(s)".** Use "call(s)" instead, unless you are specifically discussing cold calling as a topic.
 4. **Never say "phone call(s)".** Use "call(s)" instead.
+5. **Never refer to real estate agents as "reps" or "representatives".** Only refer to them as "agents" or "real estate agents".
 
 ---
 
