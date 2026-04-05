@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
-    title: 'Sayso — Fix Where Prospecting Breaks Down',
+    title: 'Sayso: Fix Where Prospecting Breaks Down',
     description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
     url: `${siteUrl}/`,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Fix the Hardest Part of Prospecting' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix the Hardest Part of Prospecting' }],
     type: 'website',
   },
   twitter: {
-    title: 'Sayso — Fix Where Prospecting Breaks Down',
+    title: 'Sayso: Fix Where Prospecting Breaks Down',
     description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
     images: ['/og-default.png'],
   },

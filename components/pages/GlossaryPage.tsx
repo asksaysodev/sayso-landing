@@ -40,7 +40,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
           {entry.h1}
         </h1>
 
-        {/* Definition — featured snippet target */}
+        {/* Definition - featured snippet target */}
         <p className="text-[#1D4871] text-lg leading-relaxed font-sans mb-3">
           <strong>{entry.definition}</strong>
         </p>

@@ -1,5 +1,5 @@
 ================================================================================
-  SAYSO — PERSONA LANDING PAGE COPY REVIEW
+  SAYSO - PERSONA LANDING PAGE COPY REVIEW
   Generated for team review
   Pages: /broker  /sales-leader  /isa  /agent
 ================================================================================
@@ -28,7 +28,7 @@
   ─────────────────────
   Headline:    With Sayso, Your Whole Team Wins
 
-  Subheading:  Turn wasted leads into booked appointments — across every
+  Subheading:  Turn wasted leads into booked appointments - across every
                agent, every call.
 
   Metric Cards:
@@ -36,32 +36,32 @@
        Stop losing the leads your agents already have
 
     2. Consistent Conversations
-       Every agent sounds like your best agent — on every call
+       Every agent sounds like your best agent - on every call
 
     3. Faster Agent Ramp
        New agents get productive in days, not months
 
     4. Coaching That Scales
-       Real-time guidance on every call — without you having to be there
+       Real-time guidance on every call - without you having to be there
 
 
   HOW IT WORKS (3 STEPS)
   ───────────────────────
   Section Headline:  Sayso in 3 Easy Steps
 
-  Subheading:        Your agents get real-time guidance on every call — so
+  Subheading:        Your agents get real-time guidance on every call - so
                      you stop leaving appointments on the table.
 
-  Step 1 — Deploy to Your Team
-    Agents turn Sayso on while calling. No complex setup — works with any
+  Step 1 - Deploy to Your Team
+    Agents turn Sayso on while calling. No complex setup - works with any
     CRM or dialer they already use.
 
-  Step 2 — Agents Get Live Prompts
+  Step 2 - Agents Get Live Prompts
     Sayso suggests the right question or response in real-time, keeping
     every conversation structured.
 
-  Step 3 — More Appointments, Every Day
-    Your team books more qualified meetings — and you see the difference
+  Step 3 - More Appointments, Every Day
+    Your team books more qualified meetings - and you see the difference
     in your conversion numbers.
 
 
@@ -82,7 +82,7 @@
 
   Tagline:
     Sayso listens during prospect conversations and shows agents what to ask
-    next — so they stay confident and in control when it matters most.
+    next - so they stay confident and in control when it matters most.
 
   CTA Button:  Book a Demo
 
@@ -99,10 +99,10 @@
        Real-time prompts keep agents confident when objections hit
 
     2. Scripts That Work Live
-       Guidance in the moment — not just in meetings
+       Guidance in the moment - not just in meetings
 
     3. Coaching That Scales
-       Stop running the same sessions — Sayso coaches every call automatically
+       Stop running the same sessions - Sayso coaches every call automatically
 
     4. More Booked Appointments
        Consistent conversations lead to consistent results
@@ -112,18 +112,18 @@
   ───────────────────────
   Section Headline:  Sayso in 3 Easy Steps
 
-  Subheading:        Your agents get live coaching on every call — so
+  Subheading:        Your agents get live coaching on every call - so
                      role-play performance finally shows up in real results.
 
-  Step 1 — Launch Coach
+  Step 1 - Launch Coach
     Agents turn Sayso on before dialing. Works with any CRM or dialer
-    they already use — no new tools to learn.
+    they already use - no new tools to learn.
 
-  Step 2 — Live Prompts on Every Call
+  Step 2 - Live Prompts on Every Call
     When a prospect pushes back, Sayso shows agents exactly what to ask
-    or say next — keeping the conversation on track.
+    or say next - keeping the conversation on track.
 
-  Step 3 — Role-Play Results in Real Calls
+  Step 3 - Role-Play Results in Real Calls
     Agents stay confident and in control, and you see the improvement
     in your booking numbers.
 
@@ -153,7 +153,7 @@
   ─────────────────────
   Headline:    With Sayso, You Always Know What to Say
 
-  Subheading:  Stay confident and in control — even when prospects push back.
+  Subheading:  Stay confident and in control - even when prospects push back.
 
   Metric Cards:
     1. Handle Any Objection
@@ -166,7 +166,7 @@
        More confident calls means more meetings on your calendar
 
     4. Works on Every Call
-       Live prompts for FSBOs, expireds, buyer leads — any prospect type
+       Live prompts for FSBOs, expireds, buyer leads - any prospect type
 
 
   HOW IT WORKS (3 STEPS)
@@ -176,15 +176,15 @@
   Subheading:        Get real-time guidance on every call so you stop losing
                      momentum when prospects push back.
 
-  Step 1 — Launch Coach
+  Step 1 - Launch Coach
     Open Sayso before you dial. Works with whatever CRM or dialer you
-    already use — no new setup.
+    already use - no new setup.
 
-  Step 2 — Get Your Next Question
+  Step 2 - Get Your Next Question
     When a prospect pushes back or goes quiet, Sayso shows you exactly
-    what to ask next — so you never run out of words.
+    what to ask next - so you never run out of words.
 
-  Step 3 — Book the Appointment
+  Step 3 - Book the Appointment
     Stay confident through objections and close more calls with a
     scheduled meeting.
 
@@ -222,10 +222,10 @@
        Never go blank or freeze when a prospect pushes back
 
     2. Objections? No Problem
-       Sayso shows you what top agents say — in real time, on the call
+       Sayso shows you what top agents say - in real time, on the call
 
     3. Built-In Coaching
-       No manager needed — get guidance on every single prospecting call
+       No manager needed - get guidance on every single prospecting call
 
     4. More Appointments Booked
        Turn uncomfortable conversations into meetings on your calendar
@@ -238,15 +238,15 @@
   Subheading:        Real-time prompts that make every call feel like you
                      have done it a thousand times.
 
-  Step 1 — Launch Coach
+  Step 1 - Launch Coach
     Open Sayso before you dial. Works with any dialer or CRM you already
-    use — takes minutes to set up.
+    use - takes minutes to set up.
 
-  Step 2 — Follow the Prompts
+  Step 2 - Follow the Prompts
     When a prospect pushes back or the conversation stalls, Sayso tells
-    you exactly what to ask next — no more going blank.
+    you exactly what to ask next - no more going blank.
 
-  Step 3 — Book the Appointment
+  Step 3 - Book the Appointment
     Handle objections confidently and close more calls with a meeting
     on the calendar.
 

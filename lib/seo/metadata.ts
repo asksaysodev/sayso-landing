@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { siteUrl } from '@/lib/config';
 
 interface BuildMetadataOptions {
-  /** Page title — max 60 chars recommended. Used in <title> as "[title] | Sayso" via root layout template. */
+  /** Page title - max 60 chars recommended. Used in <title> as "[title] | Sayso" via root layout template. */
   title: string;
-  /** Meta description — max 160 chars recommended. */
+  /** Meta description - max 160 chars recommended. */
   description: string;
   /** URL path, e.g. "/features/real-time-coaching". Used to build canonical URL. */
   path: string;

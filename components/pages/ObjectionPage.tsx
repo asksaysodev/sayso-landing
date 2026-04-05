@@ -107,7 +107,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
           ),
         )}
 
-        {/* What to Say Next — merged under "3 Ways to Respond" */}
+        {/* What to Say Next - merged under "3 Ways to Respond" */}
         <h3 className="font-hero text-xl text-[#1D4871] mb-3">
           What to Say Next
         </h3>
@@ -152,7 +152,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
                 {related.title}
               </Link>
               <span className="text-[#1D4871]/40 text-sm ml-2 font-sans">
-                — {related.keyword}
+                 - {related.keyword}
               </span>
             </li>
           ))}

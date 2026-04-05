@@ -67,14 +67,14 @@ const siteNavigationJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sayso — Fix Where Prospecting Breaks Down',
+    default: 'Sayso: Fix Where Prospecting Breaks Down',
     template: '%s | Sayso',
   },
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   openGraph: {
     siteName: 'Sayso',
     type: 'website',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Fix the Hardest Part of Prospecting' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix the Hardest Part of Prospecting' }],
   },
   twitter: {
     card: 'summary_large_image',

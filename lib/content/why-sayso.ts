@@ -14,16 +14,16 @@ export interface WhySaysoContent {
 export const whySaysoContent: WhySaysoContent = {
   seoTitle: 'Why Teams Are Switching to Sayso',
   seoDescription:
-    'Sayso gives real estate agents real-time coaching during live calls — not after them. See why teams are switching from script binders and post-call reviews.',
+    'Sayso gives real estate agents real-time coaching during live calls, not after them. See why teams are switching from script binders and post-call reviews.',
   h1: 'Why Teams Are Switching to Sayso',
   opening:
-    'Real estate agents lose deals every day — not because they do not know the scripts, but because they freeze in the moment. Sayso fixes that by coaching you during the call, not after it. Real-time prompts, automatic notes, and objection handling that works when you need it most.',
+    'Real estate agents lose deals every day, not because they do not know the scripts, but because they freeze in the moment. Sayso fixes that by coaching you during the call, not after it. Real-time prompts, automatic notes, and objection handling that works when you need it most.',
   problemToday:
-    'Most agents learn through script binders, ride-alongs, and post-call reviews. These methods teach you what to say — but they cannot help you when the prospect is on the phone and you have three seconds to respond. The gap between preparation and performance is where deals die.\n\nPost-call tools tell you what went wrong. Real-time coaching prevents it from going wrong in the first place.',
+    'Most agents learn through script binders, ride-alongs, and post-call reviews. These methods teach you what to say, but they cannot help you when the prospect is on the phone and you have three seconds to respond. The gap between preparation and performance is where deals die.\n\nPost-call tools tell you what went wrong. Real-time coaching prevents it from going wrong in the first place.',
   differentiators: [
     {
       title: 'Coaching happens during the call, not after',
-      description: 'Sayso listens to your live conversation and shows you what to say next — the moment you need it. No more reviewing a recording to find out what you should have said.',
+      description: 'Sayso listens to your live conversation and shows you what to say next, the moment you need it. No more reviewing a recording to find out what you should have said.',
     },
     {
       title: 'No scripts to memorize',
@@ -35,11 +35,11 @@ export const whySaysoContent: WhySaysoContent = {
     },
     {
       title: 'Works with your existing tools',
-      description: 'Sayso runs alongside your dialer and CRM — Follow Up Boss, Sierra Interactive, kvCORE, and more. Nothing changes about how you work.',
+      description: 'Sayso runs alongside your dialer and CRM, including Follow Up Boss, Sierra Interactive, kvCORE, and more. Nothing changes about how you work.',
     },
     {
       title: 'Built for real estate prospecting',
-      description: 'Sayso is not a generic sales tool. It is built for the conversations real estate agents have every day — cold calls, follow-ups, objection handling, and appointment setting.',
+      description: 'Sayso is not a generic sales tool. It is built for the conversations real estate agents have every day, including calls, follow-ups, objection handling, and appointment setting.',
     },
   ],
   whoItsFor: [
@@ -70,7 +70,7 @@ export const whySaysoContent: WhySaysoContent = {
     'I used to dread objections. Now I know exactly what to say.',
   ],
   integrationsBlurb:
-    'Sayso connects to the CRMs real estate teams already use — Follow Up Boss, Sierra Interactive, kvCORE, and more. Call notes sync automatically. No platform switching, no manual logging.',
+    'Sayso connects to the CRMs real estate teams already use, including Follow Up Boss, Sierra Interactive, kvCORE, and more. Call notes sync automatically. No platform switching, no manual logging.',
   faq: [
     {
       question: 'What makes Sayso different from other coaching tools?',
@@ -86,7 +86,7 @@ export const whySaysoContent: WhySaysoContent = {
     },
     {
       question: 'How fast can I get started?',
-      answer: 'Most agents are set up and coaching on calls within minutes. There is no training period or onboarding program — just open Sayso and start your next call.',
+      answer: 'Most agents are set up and coaching on calls within minutes. There is no training period or onboarding program, just open Sayso and start your next call.',
     },
     {
       question: 'Is there a free trial?',

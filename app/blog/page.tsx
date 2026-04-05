@@ -70,7 +70,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <BlogHeroBanner />
       <BlogCategoryPills categories={categories} />
 
-      {/* Featured post — only on page 1 */}
+      {/* Featured post - only on page 1 */}
       {featuredPost && page === 1 && <BlogFeaturedPost post={featuredPost} />}
 
       {/* Post grid */}

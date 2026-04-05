@@ -10,8 +10,8 @@ This document is the complete reference for creating `/objections/[slug]` pages.
 
 1. [File Locations](#file-locations)
 2. [What an Objection Page Is (and Is Not)](#what-an-objection-page-is-and-is-not)
-3. [SEO Rules — Universal](#seo-rules--universal)
-4. [SEO Rules — Objection-Specific](#seo-rules--objection-specific)
+3. [SEO Rules - Universal](#seo-rules--universal)
+4. [SEO Rules - Objection-Specific](#seo-rules--objection-specific)
 5. [Page Structure (Section by Section)](#page-structure-section-by-section)
 6. [TypeScript Data Interface](#typescript-data-interface)
 7. [Internal Linking Requirements](#internal-linking-requirements)
@@ -29,20 +29,20 @@ This document is the complete reference for creating `/objections/[slug]` pages.
 | File | Purpose |
 |------|---------|
 | `lib/content/objections/types.ts` | `ObjectionEntry` and `ObjectionResponse` TypeScript interfaces |
-| `lib/content/objections/index.ts` | Content loader — exports `getAllObjectionEntries()`, `getObjectionBySlug()`, `getAllObjectionSlugs()` |
+| `lib/content/objections/index.ts` | Content loader - exports `getAllObjectionEntries()`, `getObjectionBySlug()`, `getAllObjectionSlugs()` |
 | `lib/content/objections/*.ts` | Individual objection content files (one per objection) |
-| `components/pages/ObjectionPage.tsx` | Shared page template component — renders all objection pages |
-| `app/(content)/objections/[slug]/page.tsx` | Next.js dynamic route — handles metadata + static params |
+| `components/pages/ObjectionPage.tsx` | Shared page template component - renders all objection pages |
+| `app/(content)/objections/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/objections/page.tsx` | Objections hub listing page |
-| `lib/content/hubs/objections.ts` | Hub page config — lists all child objection pages |
-| `lib/seo/metadata.ts` | `buildMetadata()` — generates title, description, canonical, OG tags |
-| `lib/seo/schema.ts` | JSON-LD generators — `generateHowToJsonLd()`, `generateBreadcrumbJsonLd()`, `generateFAQPageJsonLd()` |
+| `lib/content/hubs/objections.ts` | Hub page config - lists all child objection pages |
+| `lib/seo/metadata.ts` | `buildMetadata()` - generates title, description, canonical, OG tags |
+| `lib/seo/schema.ts` | JSON-LD generators - `generateHowToJsonLd()`, `generateBreadcrumbJsonLd()`, `generateFAQPageJsonLd()` |
 
 ---
 
 ## What an Objection Page Is (and Is Not)
 
-Objection pages sit at the **top-to-mid funnel**. The visitor is searching for help handling a specific real estate prospecting objection. They want scripts, context, and practical advice — not a product pitch.
+Objection pages sit at the **top-to-mid funnel**. The visitor is searching for help handling a specific real estate prospecting objection. They want scripts, context, and practical advice - not a product pitch.
 
 **An objection page IS:**
 - A practical resource that teaches agents how to respond to a specific prospect objection
@@ -59,11 +59,11 @@ If you find yourself describing Sayso features in detail, you are writing a feat
 
 ---
 
-## SEO Rules — Universal
+## SEO Rules - Universal
 
 These rules apply to every objection page without exception.
 
-### Keyword Placement — Required Locations
+### Keyword Placement - Required Locations
 
 | Location | Rule | Example |
 |----------|------|---------|
@@ -84,7 +84,7 @@ These rules apply to every objection page without exception.
 
 ### Heading Structure
 
-- **One H1 only** — the page title.
+- **One H1 only** - the page title.
 - **H2s:** 5-6 per page. Each major section gets an H2.
 - **H3s:** Used for subsections (response framework labels under "3 Ways to Respond," and "What to Say Next").
 - **Never skip heading levels** (no H1 -> H3 without an H2 between them).
@@ -102,13 +102,13 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ---
 
-## SEO Rules — Objection-Specific
+## SEO Rules - Objection-Specific
 
 ### Content Constraints
 
 - **Paragraphs:** Max 3 sentences per paragraph. The `whyTheySayThis` field supports `\n\n` to split into multiple paragraphs.
 - **Total word count:** 600-900 words. Objection pages are practical and concise. Do not pad with filler.
-- **Tone:** Clear, conversational, empathetic. Think "experienced agent coaching a newer agent" — not a textbook or Wikipedia article.
+- **Tone:** Clear, conversational, empathetic. Think "experienced agent coaching a newer agent" - not a textbook or Wikipedia article.
 - **No filler openers.** Do not start with "In the competitive world of real estate..." or similar. Get to the answer immediately.
 
 ### Featured Snippet Optimization
@@ -130,8 +130,8 @@ Every objection page provides 3 response frameworks at different confidence leve
 | **Advanced** | "The Advanced Response" | High-confidence. Reframes the objection as an advantage or uses a value offer. |
 
 Each response includes:
-- A **script** — the exact words to say, in quotes, italic
-- A **"Why it works"** explanation — 1-2 sentences explaining the psychology
+- A **script** - the exact words to say, in quotes, italic
+- A **"Why it works"** explanation - 1-2 sentences explaining the psychology
 
 ### "Why They Say This" Section
 
@@ -142,7 +142,7 @@ Each response includes:
 ### Common Mistakes
 
 - 4-6 bullet points describing what NOT to do when hearing this objection.
-- Each mistake should be a short, specific statement — not a paragraph.
+- Each mistake should be a short, specific statement - not a paragraph.
 - Focus on mistakes that actually cost agents deals.
 
 ### FAQ
@@ -176,7 +176,7 @@ The `ObjectionPage.tsx` component renders sections in this exact order:
 ### 4. Objection Quote
 - Styled speech bubble showing the exact words the prospect says
 - Pulls from `objectionQuote` field
-- Visual element — not crawled as main content, but reinforces the topic
+- Visual element - not crawled as main content, but reinforces the topic
 
 ### 5. Opening Paragraph (Featured Snippet Target)
 - 2-3 sentences max
@@ -194,9 +194,9 @@ The `ObjectionPage.tsx` component renders sections in this exact order:
 - Should contain one instance of the target keyword woven in naturally
 
 ### 8. 3 Ways to Respond (H2)
-- Three response cards (safe, stronger, advanced) — each as an H3
+- Three response cards (safe, stronger, advanced) - each as an H3
 - Each card: script in a yellow-bordered blockquote + "Why it works" explanation
-- **"What to Say Next" (H3)** — merged under this section as a final subsection
+- **"What to Say Next" (H3)** - merged under this section as a final subsection
   - Transition advice for after the initial response
   - Should contain one instance of the target keyword
 
@@ -207,10 +207,10 @@ The `ObjectionPage.tsx` component renders sections in this exact order:
 ### 10. How Sayso Helps (H2)
 - Brief product tie-in (2-4 sentences)
 - Connect the objection to a specific Sayso feature
-- Keep it brief — this is not a feature page
+- Keep it brief - this is not a feature page
 
 ### 11. Inline CTA
-- `ContentInlineCTA` component — "Book a Demo" + "Download Sayso"
+- `ContentInlineCTA` component - "Book a Demo" + "Download Sayso"
 - Appears after the Sayso section (never before it)
 
 ### 12. Related Objections (H2)
@@ -227,7 +227,7 @@ The `ObjectionPage.tsx` component renders sections in this exact order:
 - Automatically generates `FAQPage` JSON-LD
 
 ### 15. Closing CTA
-- `ContentCTA` component — full-width bottom section
+- `ContentCTA` component - full-width bottom section
 
 ---
 
@@ -245,9 +245,9 @@ export interface ObjectionResponse {
 export interface ObjectionEntry {
   slug: string;                  // URL slug: "not-ready-yet"
   keyword: string;               // Target SEO keyword: 'how to handle "not ready yet" real estate'
-  seoTitle: string;              // Meta title (max 60 chars — "| Sayso" added by layout)
+  seoTitle: string;              // Meta title (max 60 chars - "| Sayso" added by layout)
   seoDescription: string;        // Meta description (max 160 chars)
-  h1: string;                    // Page H1 — must contain exact target keyword
+  h1: string;                    // Page H1 - must contain exact target keyword
   objectionQuote: string;        // Exact prospect words: "I'm not ready yet."
   openingParagraph: string;      // 2-3 sentences, featured snippet target
   whyTheyTitle: string;          // Custom H2 for "Why They Say This"
@@ -273,18 +273,18 @@ export interface ObjectionEntry {
 
 | Field | Max Length / Count | Notes |
 |-------|-------------------|-------|
-| `slug` | — | Lowercase, hyphenated. The objection phrase only (e.g., `not-ready-yet`). |
-| `keyword` | — | Full target keyword. Format: `how to handle "[objection]" real estate` |
+| `slug` | - | Lowercase, hyphenated. The objection phrase only (e.g., `not-ready-yet`). |
+| `keyword` | - | Full target keyword. Format: `how to handle "[objection]" real estate` |
 | `seoTitle` | 60 chars | Should match or closely mirror the H1. Layout appends " \| Sayso". |
 | `seoDescription` | 150-160 chars | Format: What page teaches. Benefit. Optional CTA. Dev build warns if over 160. |
-| `h1` | — | Must contain the exact target keyword. Format: `How to Handle "[Objection]" in Real Estate` |
-| `objectionQuote` | — | The exact words a prospect says. Used in the speech bubble. e.g., `I'm not ready yet.` |
+| `h1` | - | Must contain the exact target keyword. Format: `How to Handle "[Objection]" in Real Estate` |
+| `objectionQuote` | - | The exact words a prospect says. Used in the speech bubble. e.g., `I'm not ready yet.` |
 | `openingParagraph` | 2-3 sentences | Featured snippet target. Sentence 1 under 45 words with exact keyword. |
-| `whyTheyTitle` | — | Custom H2. Format: `Why Prospects Say "[Objection]"` |
+| `whyTheyTitle` | - | Custom H2. Format: `Why Prospects Say "[Objection]"` |
 | `whyTheySayThis` | 2-3 paragraphs | Separate paragraphs with `\n\n`. Include 1 keyword instance. |
-| `responses.safe` | — | Label: "The Safe Response". Script + why it works. |
-| `responses.stronger` | — | Label: "The Stronger Response". Script + why it works. |
-| `responses.advanced` | — | Label: "The Advanced Response". Script + why it works. |
+| `responses.safe` | - | Label: "The Safe Response". Script + why it works. |
+| `responses.stronger` | - | Label: "The Stronger Response". Script + why it works. |
+| `responses.advanced` | - | Label: "The Advanced Response". Script + why it works. |
 | `whatToSayNext` | 1 paragraph | Transition advice. Include 1 keyword instance. |
 | `commonMistakes` | 4-6 items | Short, specific strings. Each is a single mistake description. |
 | `howSaysoHelps` | 2-4 sentences | Brief. Connect objection to a Sayso feature. Not a feature page. |
@@ -318,11 +318,11 @@ Every objection page must include **6-8 internal links** with cross-section dive
 
 ## CTA Placement
 
-Objection pages are informational — earn trust with the content before pitching.
+Objection pages are informational - earn trust with the content before pitching.
 
 | Position | Component | Placement |
 |----------|-----------|-----------|
-| **Inline CTA** | `ContentInlineCTA` | After the "How Sayso Helps" section — never before it |
+| **Inline CTA** | `ContentInlineCTA` | After the "How Sayso Helps" section - never before it |
 | **Closing CTA** | `ContentCTA` | Full-width block at the very bottom of the page |
 
 **No CTA appears before the product section.** This is a hard rule. The reader came for objection-handling advice, not a sales pitch.
@@ -385,7 +385,7 @@ Use this before submitting any new objection page:
 - [ ] Opening paragraph starts with a clean definition sentence (under 45 words)
 - [ ] Opening paragraph is 2-3 sentences max
 - [ ] No paragraph exceeds 3 sentences
-- [ ] Scripts sound natural — agents would actually say these words
+- [ ] Scripts sound natural - agents would actually say these words
 - [ ] "Why it works" explanations reference specific psychology, not generic praise
 - [ ] Common mistakes are specific, not platitudes
 - [ ] `howSaysoHelps` is 2-4 sentences, not a feature page
@@ -445,11 +445,11 @@ That is it. The dynamic route at `app/(content)/objections/[slug]/page.tsx` auto
 ### Step 3: Update the hub (if needed)
 
 If your objection is not already listed in `lib/content/hubs/objections.ts`, add it to the `childPages` array with:
-- `title` — the objection in quotes (e.g., `"Already Working with an Agent"`)
-- `slug` — must match your content file slug
-- `description` — one-liner describing what the page covers
-- `keyword` — the target keyword
-- `linkText` — CTA text on the hub page
+- `title` - the objection in quotes (e.g., `"Already Working with an Agent"`)
+- `slug` - must match your content file slug
+- `description` - one-liner describing what the page covers
+- `keyword` - the target keyword
+- `linkText` - CTA text on the hub page
 
 ### Step 4: Cross-link from other objection pages
 
@@ -457,7 +457,7 @@ Open other existing objection content files and add your new page to their `rela
 
 ### Step 5: Verify
 
-1. Run `npm run build` — check for TypeScript errors and dev-mode SEO warnings.
+1. Run `npm run build` - check for TypeScript errors and dev-mode SEO warnings.
 2. Run `npm run dev` and visit `http://localhost:3001/objections/[slug]`.
 3. View page source and verify:
    - Meta title and description contain the keyword
@@ -509,7 +509,7 @@ Run through this after creating or editing any objection page:
 ### Keyword Density
 - [ ] Exact keyword appears 3-5 times in rendered content
 - [ ] Semantic variations appear 5-10 times total
-- [ ] No keyword stuffing — every usage reads naturally
+- [ ] No keyword stuffing - every usage reads naturally
 
 ### Featured Snippet
 - [ ] Opening paragraph sentence 1 is under 45 words
@@ -526,8 +526,8 @@ Run through this after creating or editing any objection page:
 - [ ] OG title, description, and image are set
 
 ### Content Structure
-- [ ] Single H1 — contains exact target keyword
-- [ ] 5-6 H2s — at least one contains keyword variation
+- [ ] Single H1 - contains exact target keyword
+- [ ] 5-6 H2s - at least one contains keyword variation
 - [ ] H3s used for response labels + "What to Say Next" (proper hierarchy under "3 Ways to Respond" H2)
 - [ ] No heading levels skipped
 - [ ] All paragraphs ≤3 sentences

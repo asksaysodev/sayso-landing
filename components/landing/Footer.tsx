@@ -18,7 +18,7 @@ export function Footer() {
               <Image src="/logo-neg-transparent-horizontal.png" alt="Sayso" height={32} width={80}/>
             </Link>
             <p className="text-sm text-white/70 leading-relaxed max-w-md">
-              Win the Moment — your real-time call superpower.
+              Win the Moment, your real-time call superpower.
             </p>
             <div className="pt-2">
               <h3 className="text-xs tracking-widest uppercase text-[#FFDE59] font-bold mb-2">Subscribe to our newsletter</h3>

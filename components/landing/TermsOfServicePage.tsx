@@ -51,8 +51,8 @@ export function TermsOfServicePage() {
             Intellectual Property Rights
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            Unless otherwise noted, the Service — including software, code, design, text, graphics,
-            and other content — along with the "Sayso" name, logo, and related marks are the
+            Unless otherwise noted, the Service, including software, code, design, text, graphics,
+            and other content, along with the "Sayso" name, logo, and related marks are the
             property of AskSayso, Inc. or our licensors.
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">

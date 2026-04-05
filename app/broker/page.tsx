@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'Sayso — Real-Time AI Sales Coaching for Brokers',
+        alt: 'Sayso | Real-Time AI Sales Coaching for Brokers',
       },
     ],
     type: 'website',

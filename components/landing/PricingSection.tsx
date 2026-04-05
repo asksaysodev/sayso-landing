@@ -99,11 +99,11 @@ export function PricingSection() {
     {
       title: 'Individual Agent',
       price: '$69 / month',
-      priceNote: '*Billed annually — save $120. Or $79/month.',
+      priceNote: '*Billed annually, save $120. Or $79/month.',
       description: 'For agents who want daily consistency.',
       freeTrialBadge: '3 day Free Trial included',
       bullets: [
-        'Cue — real-time conversation intelligence',
+        'Cue: real-time conversation intelligence',
         'Dashboard analytics',
         'Email Support',
         'Up to 50% off new features',
@@ -134,7 +134,7 @@ export function PricingSection() {
       description: 'Secure your account now to include future developments and new features up to 50% off!',
       bullets: [
         'Home value and market analysis live during calls',
-        'Smart Capture — automated conversation note-taking to popular frameworks directly in your CRM in real time',
+        'Smart Capture: automated conversation note-taking to popular frameworks directly in your CRM in real time',
         'Custom script upload',
         'Additional note capture frameworks',
         'And much more!',

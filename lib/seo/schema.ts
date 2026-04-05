@@ -13,7 +13,7 @@ export const SAYSO_PUBLISHER = {
 };
 
 /**
- * BreadcrumbList JSON-LD — generic for all pages.
+ * BreadcrumbList JSON-LD - generic for all pages.
  */
 export function generateBreadcrumbJsonLd(
   items: { name: string; url: string }[],
@@ -31,7 +31,7 @@ export function generateBreadcrumbJsonLd(
 }
 
 /**
- * FAQPage JSON-LD — for objection pages with Q&A pairs.
+ * FAQPage JSON-LD - for objection pages with Q&A pairs.
  */
 export function generateFAQPageJsonLd(
   items: { question: string; answer: string }[],
@@ -51,7 +51,7 @@ export function generateFAQPageJsonLd(
 }
 
 /**
- * HowTo JSON-LD — for response frameworks on objection/script pages.
+ * HowTo JSON-LD - for response frameworks on objection/script pages.
  */
 export function generateHowToJsonLd(
   name: string,
@@ -71,7 +71,7 @@ export function generateHowToJsonLd(
 }
 
 /**
- * SoftwareApplication JSON-LD — for feature and integration pages.
+ * SoftwareApplication JSON-LD - for feature and integration pages.
  */
 export function generateSoftwareAppJsonLd(options?: {
   featureList?: string[];
@@ -97,7 +97,7 @@ export function generateSoftwareAppJsonLd(options?: {
 }
 
 /**
- * DefinedTerm JSON-LD — for glossary pages.
+ * DefinedTerm JSON-LD - for glossary pages.
  */
 export function generateDefinedTermJsonLd(
   name: string,
@@ -120,7 +120,7 @@ export function generateDefinedTermJsonLd(
 }
 
 /**
- * WebPage JSON-LD — generic fallback for comparison/use-case pages.
+ * WebPage JSON-LD - generic fallback for comparison/use-case pages.
  */
 export function generateWebPageJsonLd(
   name: string,

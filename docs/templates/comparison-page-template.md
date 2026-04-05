@@ -10,8 +10,8 @@ This document is the complete reference for creating `/compare/[slug]` competito
 
 1. [File Locations](#file-locations)
 2. [What a Comparison Page Is (and Is Not)](#what-a-comparison-page-is-and-is-not)
-3. [SEO Rules — Universal](#seo-rules--universal)
-4. [SEO Rules — Comparison-Specific](#seo-rules--comparison-specific)
+3. [SEO Rules - Universal](#seo-rules--universal)
+4. [SEO Rules - Comparison-Specific](#seo-rules--comparison-specific)
 5. [Page Structure (Section by Section)](#page-structure-section-by-section)
 6. [TypeScript Data Interface](#typescript-data-interface)
 7. [Internal Linking Requirements](#internal-linking-requirements)
@@ -29,29 +29,29 @@ This document is the complete reference for creating `/compare/[slug]` competito
 
 | File | Purpose |
 |------|---------|
-| `lib/content/comparisons/types.ts` | `ComparisonEntry` TypeScript interface — every content field |
-| `lib/content/comparisons/index.ts` | Content loader — exports `getAllComparisonEntries()`, `getComparisonBySlug()`, `getAllComparisonSlugs()` |
+| `lib/content/comparisons/types.ts` | `ComparisonEntry` TypeScript interface - every content field |
+| `lib/content/comparisons/index.ts` | Content loader - exports `getAllComparisonEntries()`, `getComparisonBySlug()`, `getAllComparisonSlugs()` |
 | `lib/content/comparisons/*.ts` | Individual comparison content files (one per competitor) |
-| `components/pages/ComparisonPage.tsx` | Shared page template component — renders all comparison pages |
-| `app/(content)/compare/[slug]/page.tsx` | Next.js dynamic route — handles metadata + static params |
+| `components/pages/ComparisonPage.tsx` | Shared page template component - renders all comparison pages |
+| `app/(content)/compare/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/compare/page.tsx` | Compare hub listing page |
-| `lib/content/hubs/compare.ts` | Hub page config — lists all child comparison pages |
-| `lib/seo/metadata.ts` | `buildMetadata()` — generates title, description, canonical, OG tags |
-| `lib/seo/schema.ts` | JSON-LD generators — `generateWebPageJsonLd()`, `generateSoftwareAppJsonLd()`, `generateFAQPageJsonLd()` |
-| `lib/utils/render-inline-markdown.tsx` | Inline link renderer — parses `[text](/url/)` syntax in content strings into Next.js `<Link>` components |
+| `lib/content/hubs/compare.ts` | Hub page config - lists all child comparison pages |
+| `lib/seo/metadata.ts` | `buildMetadata()` - generates title, description, canonical, OG tags |
+| `lib/seo/schema.ts` | JSON-LD generators - `generateWebPageJsonLd()`, `generateSoftwareAppJsonLd()`, `generateFAQPageJsonLd()` |
+| `lib/utils/render-inline-markdown.tsx` | Inline link renderer - parses `[text](/url/)` syntax in content strings into Next.js `<Link>` components |
 
 ---
 
 ## What a Comparison Page Is (and Is Not)
 
-Comparison pages are the **highest-intent pages on the site.** Someone searching "[competitor] alternative" has already decided they want something different. This is not an informational search — it is a buying search.
+Comparison pages are the **highest-intent pages on the site.** Someone searching "[competitor] alternative" has already decided they want something different. This is not an informational search - it is a buying search.
 
 From the Bildad SEO training: competitor alternative articles drove most of the early SEO wins in the case study (3K to 130K impressions in 70 days). These pages convert at the highest rate because the searcher is already in decision mode.
 
 **A comparison page IS:**
 - A fair, honest side-by-side evaluation of Sayso and a specific competitor
 - Designed to rank for "[competitor] alternative" keywords and convert visitors who are actively evaluating options
-- A bottom-of-funnel page — the reader is ready to switch or already comparing tools
+- A bottom-of-funnel page - the reader is ready to switch or already comparing tools
 
 **A comparison page is NOT:**
 - A feature page (that is `/features/`)
@@ -63,18 +63,18 @@ From the Bildad SEO training: competitor alternative articles drove most of the 
 
 ---
 
-## SEO Rules — Universal
+## SEO Rules - Universal
 
 These rules apply to every comparison page without exception.
 
-### Keyword Placement — Required Locations
+### Keyword Placement - Required Locations
 
 | Location | Rule | Example |
 |----------|------|---------|
 | **H1** | Must contain the exact target keyword. Include the year for freshness signaling. Use a "Best [Competitor] Alternative" format. | `Best Shilo Alternative for Real Estate Call Coaching (2026)` |
 | **First 100 words** | The exact target keyword must appear within the first 100 words of body content (the TLDR). Ideally in the first 2 sentences. | `If you are looking for a Shilo alternative that coaches you during live calls...` |
-| **Meta title** | Format: `[Target Keyword] — Top Pick for [Year]`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should NOT include "Sayso". Max 60 characters for the `seoTitle` value. | `seoTitle: 'Shilo Alternative — Top Pick for 2026'` (37 chars + " \| Sayso" = 46 total) |
-| **Meta description** | 150-160 characters max. Must contain the target keyword. Follow the format: `Looking for a [competitor] alternative? [Key differentiator]. [CTA].` | `Looking for a Shilo alternative? Sayso coaches you during live calls — not after. Compare features, pricing, and see why agents switch.` |
+| **Meta title** | Format: `[Target Keyword] - Top Pick for [Year]`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should NOT include "Sayso". Max 60 characters for the `seoTitle` value. | `seoTitle: 'Shilo Alternative - Top Pick for 2026'` (37 chars + " \| Sayso" = 46 total) |
+| **Meta description** | 150-160 characters max. Must contain the target keyword. Follow the format: `Looking for a [competitor] alternative? [Key differentiator]. [CTA].` | `Looking for a Shilo alternative? Sayso coaches you during live calls - not after. Compare features, pricing, and see why agents switch.` |
 | **URL slug** | Simple format: `sayso-vs-[competitor]`. | `/compare/sayso-vs-shilo/` |
 | **First H2** | Must contain the keyword or a strong semantic variation. The component renders "Why People Look for [Competitor] Alternatives" automatically. | `Why People Look for Shilo Alternatives` |
 
@@ -85,15 +85,15 @@ These rules apply to every comparison page without exception.
 | **Exact target keyword** | 4-6 times in visible content | Spread across H1, TLDR, whyLooking, whoItsFor, and FAQ. Never stuff. |
 | **Semantic variations** | 6-10 times | Include: "alternative to [Competitor]," "switch from [Competitor]," "[Competitor] vs Sayso," "compared to [Competitor]," "better than [Competitor]," "switching from [Competitor]." |
 
-**Counting note:** The `keyword`, `seoTitle`, and `seoDescription` fields are metadata — they do NOT render in the page body. Only count occurrences in fields that produce visible text: `h1`, `tldr`, `whyLooking`, `whereSaysoWins`, `whereSaysoWinsDetails[].body`, `whereCompetitorWins`, `whoItsFor`, `pricing`, and `faq[].question`/`faq[].answer`.
+**Counting note:** The `keyword`, `seoTitle`, and `seoDescription` fields are metadata - they do NOT render in the page body. Only count occurrences in fields that produce visible text: `h1`, `tldr`, `whyLooking`, `whereSaysoWins`, `whereSaysoWinsDetails[].body`, `whereCompetitorWins`, `whoItsFor`, `pricing`, and `faq[].question`/`faq[].answer`.
 
 ### Heading Structure
 
-- **One H1 only** — the page title.
+- **One H1 only** - the page title.
 - **H2s:** 6 per page (Why Looking, Feature Comparison, Where Sayso Wins, Where Competitor Wins, Who Best For, Pricing). The FAQ component adds a 7th H2 ("Frequently Asked Questions").
 - **H3s:** Used for subsections within "Where Sayso Wins" via `whereSaysoWinsDetails`.
 - **Never skip heading levels** (no H1 → H3 without an H2 between them).
-- **At least one H2** must contain a semantic variation of the keyword — the auto-rendered "Why People Look for [Competitor] Alternatives" covers this.
+- **At least one H2** must contain a semantic variation of the keyword - the auto-rendered "Why People Look for [Competitor] Alternatives" covers this.
 - "More Comparisons" renders as a styled `<p>`, NOT an H2, to keep the H2 count within range.
 
 ### Canonical URL
@@ -108,7 +108,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ---
 
-## SEO Rules — Comparison-Specific
+## SEO Rules - Comparison-Specific
 
 ### Keyword Selection
 
@@ -116,12 +116,12 @@ From the Bildad training, these are the rules for choosing comparison page keywo
 
 - Target keywords with **very low keyword difficulty** (KD 10-20 range when starting out).
 - **Volume matters less than intent.** Even 30-70 monthly searches are worth it because these searchers are buyers, not browsers.
-- Check **trends** before committing — make sure the keyword is rising or stable, not dying.
+- Check **trends** before committing - make sure the keyword is rising or stable, not dying.
 - The keyword format is always `[competitor name] alternative`.
 
 ### Content Constraints
 
-- **Paragraphs:** Max 3 sentences per paragraph. Content strings support `\n\n` for paragraph breaks — each segment renders as its own `<p>` tag.
+- **Paragraphs:** Max 3 sentences per paragraph. Content strings support `\n\n` for paragraph breaks - each segment renders as its own `<p>` tag.
 - **Total word count:** 1,500-2,500 words. Comparison pages must be comprehensive enough to rank but focused enough to convert.
 - **Tone:** Confident, fair, professional. You are helping the reader make a decision, not attacking a competitor.
 - **No filler.** Every section should add information that helps the reader decide.
@@ -155,7 +155,7 @@ The `ComparisonPage.tsx` component renders sections in this exact order:
 
 ### 1. JSON-LD Schema (invisible)
 - `WebPage` schema with title, description, and URL
-- `SoftwareApplication` schema (conditional — only if `featureList` is provided)
+- `SoftwareApplication` schema (conditional - only if `featureList` is provided)
 - `FAQPage` schema (injected by the FAQ component)
 
 ### 2. Breadcrumb Navigation
@@ -172,43 +172,43 @@ The `ComparisonPage.tsx` component renders sections in this exact order:
 - 3-5 sentences with a clear recommendation
 - **The exact target keyword must appear in the first 2 sentences.**
 - Ends with a "Book a Demo" CTA button linking to `/demo/`
-- This is one of the highest-converting elements on the page — readers who do not need convincing will act here
+- This is one of the highest-converting elements on the page - readers who do not need convincing will act here
 
 Content guidance for the TLDR:
-- Sentence 1: "If you are looking for a [competitor] alternative..." — establishes relevance and includes keyword
+- Sentence 1: "If you are looking for a [competitor] alternative..." - establishes relevance and includes keyword
 - Sentence 2: State the core differentiator (e.g., real-time vs post-call)
 - Sentence 3: Who Sayso is best for
 - Optional: Include an inline link to `/demo/` using markdown syntax
 
 ### 5. Why People Look for [Competitor] Alternatives
 - **H2:** Rendered by the component: `Why People Look for {competitor} Alternatives`
-- Content from `whyLooking` field — split on `\n\n` into paragraphs
+- Content from `whyLooking` field - split on `\n\n` into paragraphs
 - 3-4 paragraphs covering common pain points
-- Be factual and fair — state limitations without being snarky
+- Be factual and fair - state limitations without being snarky
 - Include the exact keyword in the first paragraph ("If you are researching a [competitor] alternative...")
 - Common reasons to cover: missing features, pricing concerns, integration gaps, workflow mismatches
 - Link to relevant `/features/` pages naturally (e.g., "the need for [real-time coaching](/features/real-time-coaching/)")
 
 ### 6. Feature Comparison Table
-- **H2:** Rendered by the component: `{competitor} vs Sayso — Feature Comparison`
+- **H2:** Rendered by the component: `{competitor} vs Sayso - Feature Comparison`
 - The comparison table is **the single most important element on the page.** From the Bildad training: pros/cons tables and pricing tables were specifically called out as elements that pushed articles to #1.
-- Content from `comparisonTable` array — renders as a 3-column table (Feature, Sayso, Competitor)
+- Content from `comparisonTable` array - renders as a 3-column table (Feature, Sayso, Competitor)
 - Include 5-8 features that matter to the buyer
-- Be honest — if the competitor does something well, say so
-- Use concise cell values: "Yes — live prompts on screen", "Limited", "Varies"
+- Be honest - if the competitor does something well, say so
+- Use concise cell values: "Yes - live prompts on screen", "Limited", "Varies"
 
 ### 7. Inline CTA
-- `ContentInlineCTA` component — positioned immediately after the comparison table
-- This is a natural decision point — the reader just saw the feature breakdown
+- `ContentInlineCTA` component - positioned immediately after the comparison table
+- This is a natural decision point - the reader just saw the feature breakdown
 
 ### 8. Where Sayso Wins
 - **H2:** `Where Sayso Wins`
-- Intro paragraph from `whereSaysoWins` field — summarize the key difference in 2-3 sentences
-- **H3 subsections** from `whereSaysoWinsDetails[]` — 2-3 subsections, each with:
+- Intro paragraph from `whereSaysoWins` field - summarize the key difference in 2-3 sentences
+- **H3 subsections** from `whereSaysoWinsDetails[]` - 2-3 subsections, each with:
   - A descriptive heading (renders as `<h3>`)
   - 1-2 paragraphs explaining the advantage in detail
   - Inline links to relevant `/features/` pages
-- Focus on what matters to the searcher — they are looking for an alternative, so emphasize what is different or better
+- Focus on what matters to the searcher - they are looking for an alternative, so emphasize what is different or better
 - Use specific details, not vague claims ("saves 30-60 minutes of manual note-taking" not "saves time")
 
 ### 9. Feature Links
@@ -218,14 +218,14 @@ Content guidance for the TLDR:
 ### 10. Where [Competitor] Might Be Better
 - **H2:** `Where {competitor} Might Be Better`
 - 2-3 paragraphs from `whereCompetitorWins` field
-- Acknowledge where the competitor has an edge — this builds trust
+- Acknowledge where the competitor has an edge - this builds trust
 - Be brief but honest
 - Common angles: existing user base, specific workflow fit, transition cost
-- This section is SHORT — it acknowledges reality without dwelling on it
+- This section is SHORT - it acknowledges reality without dwelling on it
 
 ### 11. Who Sayso Is Best For
 - **H2:** `Who Sayso Is Best For`
-- 2-3 paragraphs from `whoItsFor` field — split on `\n\n`
+- 2-3 paragraphs from `whoItsFor` field - split on `\n\n`
 - Include the exact keyword once ("Sayso is the best [competitor] alternative for agents who...")
 - Cover 2-3 persona types with specific use cases
 - Link to relevant `/for/` persona pages using inline markdown: `[Solo agents](/for/solo-agents/) who prospect daily...`
@@ -236,9 +236,9 @@ Content guidance for the TLDR:
 
 ### 13. Pricing
 - **H2:** `Pricing`
-- 1-2 paragraphs from `pricing` field — split on `\n\n`
+- 1-2 paragraphs from `pricing` field - split on `\n\n`
 - Include Sayso pricing framing (transparent, free trial, no hidden fees)
-- For competitor pricing: if you know it, compare it. If not, write "Contact [Competitor] for pricing" — never guess.
+- For competitor pricing: if you know it, compare it. If not, write "Contact [Competitor] for pricing" - never guess.
 - Link to `/pricing/` using inline markdown
 - The component also renders a standalone "See Sayso pricing →" link below the pricing text
 
@@ -254,7 +254,7 @@ Content guidance for the TLDR:
 - See FAQ content rules below
 
 ### 16. Closing CTA
-- `ContentCTA` component — full-width dark section with "Book a Demo" and "Download Sayso" buttons
+- `ContentCTA` component - full-width dark section with "Book a Demo" and "Download Sayso" buttons
 
 ---
 
@@ -273,21 +273,21 @@ export interface ComparisonEntry {
   slug: string;                    // URL slug: "sayso-vs-shilo"
   competitor: string;              // Display name: "Shilo"
   keyword: string;                 // Target SEO keyword: "shilo alternative"
-  seoTitle: string;                // Meta title (max 60 chars — "| Sayso" added by layout)
+  seoTitle: string;                // Meta title (max 60 chars - "| Sayso" added by layout)
   seoDescription: string;          // Meta description (max 160 chars)
-  h1: string;                      // Page H1 — keyword + year
-  tldr: string;                    // TLDR summary — keyword in first 2 sentences, supports [link](/url/) syntax
-  whyLooking: string;              // Why people switch — \n\n separated paragraphs, supports inline links
+  h1: string;                      // Page H1 - keyword + year
+  tldr: string;                    // TLDR summary - keyword in first 2 sentences, supports [link](/url/) syntax
+  whyLooking: string;              // Why people switch - \n\n separated paragraphs, supports inline links
   comparisonTable: ComparisonTableRow[];  // 5-8 feature rows
-  whereSaysoWins: string;          // Intro paragraph for "Where Sayso Wins" — 2-3 sentences
-  whereCompetitorWins: string;     // Fair competitor acknowledgment — \n\n separated, 2-3 paragraphs
-  whoItsFor: string;               // Target audience — \n\n separated, link to /for/ pages
-  pricing: string;                 // Pricing framing — \n\n separated, link to /pricing/
+  whereSaysoWins: string;          // Intro paragraph for "Where Sayso Wins" - 2-3 sentences
+  whereCompetitorWins: string;     // Fair competitor acknowledgment - \n\n separated, 2-3 paragraphs
+  whoItsFor: string;               // Target audience - \n\n separated, link to /for/ pages
+  pricing: string;                 // Pricing framing - \n\n separated, link to /pricing/
   faq: { question: string; answer: string }[];  // 4-6 Q&A pairs
   relatedComparisons: { title: string; slug: string }[];  // Links to other comparison pages
   ogImage?: string;                // Custom OG image (defaults to /og-default.png)
 
-  // Optional structured fields (recommended — these improve SEO and page depth)
+  // Optional structured fields (recommended - these improve SEO and page depth)
   whereSaysoWinsDetails?: { heading: string; body: string }[];  // H3 subsections within "Where Sayso Wins"
   personaLinks?: { title: string; href: string }[];              // Links to /for/ pages after "Who It's For"
   featureLinks?: { title: string; href: string }[];              // Links to /features/ pages after "Where Sayso Wins"
@@ -299,15 +299,15 @@ export interface ComparisonEntry {
 
 | Field | Max Length / Count | Notes |
 |-------|-------------------|-------|
-| `slug` | — | Format: `sayso-vs-[competitor]`. Lowercase, hyphenated. |
-| `competitor` | — | Display name used in H2 headings and table headers. Capitalize properly. |
-| `keyword` | — | Always format: "[competitor name] alternative". Validate with search volume data before using. |
-| `seoTitle` | 60 chars | Do NOT include "Sayso" — layout appends " \| Sayso". Format: `[Keyword] — Top Pick for [Year]`. Dev build warns if over 60. |
+| `slug` | - | Format: `sayso-vs-[competitor]`. Lowercase, hyphenated. |
+| `competitor` | - | Display name used in H2 headings and table headers. Capitalize properly. |
+| `keyword` | - | Always format: "[competitor name] alternative". Validate with search volume data before using. |
+| `seoTitle` | 60 chars | Do NOT include "Sayso" - layout appends " \| Sayso". Format: `[Keyword] - Top Pick for [Year]`. Dev build warns if over 60. |
 | `seoDescription` | 160 chars | Format: Question with keyword. Differentiator. CTA. Dev build warns if over 160. |
-| `h1` | — | Format: `Best [Keyword] for [Use Case] ([Year])`. Include the year. |
+| `h1` | - | Format: `Best [Keyword] for [Use Case] ([Year])`. Include the year. |
 | `tldr` | 3-5 sentences | Keyword in first 2 sentences. End with inline link to `/demo/`. Supports `[text](/url/)` links. |
 | `whyLooking` | 3-4 paragraphs | Separate with `\n\n`. Include keyword in first paragraph. Link to relevant `/features/` pages. |
-| `comparisonTable` | 5-8 rows | Be honest. Use concise, specific cell values — not just "Yes"/"No" when you can say more. |
+| `comparisonTable` | 5-8 rows | Be honest. Use concise, specific cell values - not just "Yes"/"No" when you can say more. |
 | `whereSaysoWins` | 2-3 sentences | Short intro paragraph. The detail goes in `whereSaysoWinsDetails`. |
 | `whereSaysoWinsDetails` | 2-3 items | Each item: `heading` (renders as H3) + `body` (1-2 paragraphs, supports inline links). Cover the key differentiators in depth. |
 | `whereCompetitorWins` | 2-3 paragraphs | Separate with `\n\n`. Be honest and fair. Keep it shorter than "Where Sayso Wins". |
@@ -379,7 +379,7 @@ Comparison pages carry **3 CTAs** because the reader is in decision mode:
 | Position | Component | Placement | Why Here |
 |----------|-----------|-----------|----------|
 | **TLDR CTA** | "Book a Demo" button | Inside the TLDR box at the top | Catches readers who do not need convincing |
-| **Inline CTA** | `ContentInlineCTA` | Immediately after the comparison table | Natural decision point — reader just saw the feature breakdown |
+| **Inline CTA** | `ContentInlineCTA` | Immediately after the comparison table | Natural decision point - reader just saw the feature breakdown |
 | **Closing CTA** | `ContentCTA` | Full-width block at the very bottom | Final catch-all after FAQ |
 
 ---
@@ -402,7 +402,7 @@ Always present. Generated by `generateWebPageJsonLd()`.
 ```
 
 ### 2. SoftwareApplication (conditional)
-Only present if `featureList` is provided. Generated by `generateSoftwareAppJsonLd()`. **Always provide `featureList`** — this schema helps Google understand the product.
+Only present if `featureList` is provided. Generated by `generateSoftwareAppJsonLd()`. **Always provide `featureList`** - this schema helps Google understand the product.
 ```json
 {
   "@context": "https://schema.org",
@@ -438,7 +438,7 @@ Comparison pages require a specific balance:
 - **Confident but not arrogant.** You believe in Sayso, but you are not dismissing the competitor.
 - **Specific, not vague.** "Saves 30-60 minutes of manual note-taking per day" beats "saves time."
 - **Fair, not sycophantic.** Acknowledging competitor strengths builds trust. But keep the "Where Competitor Wins" section shorter than "Where Sayso Wins."
-- **Direct, not salesy.** The reader is already comparing tools. Help them decide — do not hard-sell.
+- **Direct, not salesy.** The reader is already comparing tools. Help them decide - do not hard-sell.
 
 ### Paragraph Structure
 
@@ -452,7 +452,7 @@ Comparison pages require a specific balance:
 The table is the most-scanned element on the page. Make it count:
 
 - **Feature names should be descriptive.** "Real-time coaching during calls" not "Coaching."
-- **Sayso column should be specific.** "Yes — live prompts on screen" not just "Yes."
+- **Sayso column should be specific.** "Yes - live prompts on screen" not just "Yes."
 - **Competitor column should be honest.** Use "Limited", "Varies", "No", or a specific description. Never write "No" if you are not certain.
 - **Order features by importance to the reader.** Lead with the biggest differentiator.
 - **Do not pad.** If both tools do the same thing equally well, you can include the row (it builds credibility), but do not add rows just to make the table longer.
@@ -461,9 +461,9 @@ The table is the most-scanned element on the page. Make it count:
 
 | Section | Target Words | Notes |
 |---------|-------------|-------|
-| TLDR | 50-80 | Concise — this is a summary, not an intro |
+| TLDR | 50-80 | Concise - this is a summary, not an intro |
 | Why Looking | 200-300 | 3-4 paragraphs covering specific pain points |
-| Where Sayso Wins (intro) | 40-60 | Short framing paragraph — detail goes in subsections |
+| Where Sayso Wins (intro) | 40-60 | Short framing paragraph - detail goes in subsections |
 | Where Sayso Wins (subsections) | 300-500 | 2-3 H3 subsections, ~100-170 words each |
 | Where Competitor Wins | 100-200 | 2-3 paragraphs, honest but brief |
 | Who It's For | 100-200 | 2-3 paragraphs with persona references |
@@ -479,14 +479,14 @@ Use this before submitting any new comparison page:
 
 ### Copy Quality
 - [ ] H1 contains the exact target keyword and the current year
-- [ ] TLDR is a genuine summary — not a restated intro
+- [ ] TLDR is a genuine summary - not a restated intro
 - [ ] TLDR contains the keyword in the first 2 sentences
 - [ ] "Why Looking" covers real, specific pain points
-- [ ] Comparison table is honest — competitor marked fairly
+- [ ] Comparison table is honest - competitor marked fairly
 - [ ] "Where Sayso Wins" includes specific details and numbers, not vague claims
 - [ ] "Where Competitor Wins" honestly acknowledges at least one competitor advantage
 - [ ] No paragraph exceeds 3 sentences
-- [ ] Tone is confident and fair — not aggressive toward the competitor
+- [ ] Tone is confident and fair - not aggressive toward the competitor
 - [ ] Brand name is "Sayso" (not SaySo, SAYSO, Say So)
 - [ ] No features described that are not live in the product
 - [ ] No fabricated competitor information
@@ -517,9 +517,9 @@ Use this before submitting any new comparison page:
 
 Before writing anything:
 - The keyword is always `[competitor name] alternative`
-- Check search volume — even 30-70 monthly searches are worth it (high intent)
-- Check keyword difficulty — target KD 10-20 when starting out
-- Check trends — make sure the keyword is rising or stable, not dying
+- Check search volume - even 30-70 monthly searches are worth it (high intent)
+- Check keyword difficulty - target KD 10-20 when starting out
+- Check trends - make sure the keyword is rising or stable, not dying
 - Verify the competitor is real and active in the real estate call coaching space
 
 ### Step 2: Research the competitor
@@ -565,11 +565,11 @@ That is it. The dynamic route at `app/(content)/compare/[slug]/page.tsx` automat
 ### Step 5: Update the compare hub (if needed)
 
 If your competitor is not already listed in `lib/content/hubs/compare.ts`, add it to the `childPages` array with:
-- `title` — display name (e.g., "Sayso vs MaverickRE")
-- `slug` — must match your content file slug (e.g., "sayso-vs-maverickre")
-- `description` — one-liner for the hub listing
-- `keyword` — the target keyword
-- `linkText` — CTA text on the hub page (MUST vary per page for SEO)
+- `title` - display name (e.g., "Sayso vs MaverickRE")
+- `slug` - must match your content file slug (e.g., "sayso-vs-maverickre")
+- `description` - one-liner for the hub listing
+- `keyword` - the target keyword
+- `linkText` - CTA text on the hub page (MUST vary per page for SEO)
 
 ### Step 6: Cross-link from other comparison pages
 
@@ -577,14 +577,14 @@ Open other existing comparison content files and add your new page to their `rel
 
 ### Step 7: Verify
 
-1. Run `npm run build` — check for TypeScript errors and dev-mode SEO warnings.
+1. Run `npm run build` - check for TypeScript errors and dev-mode SEO warnings.
 2. Run `npm run dev` and visit `http://localhost:3001/compare/[slug]`.
 3. View page source and verify:
    - Meta title contains the keyword and does NOT double up on "Sayso"
    - Meta description contains the keyword and is 130-160 chars
    - Canonical URL has trailing slash
    - JSON-LD blocks are present (WebPage, SoftwareApplication, FAQPage)
-4. Count keyword occurrences in the rendered page text — should be 4-6 exact + 6-10 semantic.
+4. Count keyword occurrences in the rendered page text - should be 4-6 exact + 6-10 semantic.
 5. Run the page content through the [SEO Audit Checklist](#seo-audit-checklist) below.
 
 ---
@@ -617,7 +617,7 @@ Run through this after creating or editing any comparison page:
 ### Keyword Density
 - [ ] Exact keyword appears 4-6 times in visible content
 - [ ] Semantic variations appear 6-10 times total
-- [ ] No keyword stuffing — every usage reads naturally
+- [ ] No keyword stuffing - every usage reads naturally
 
 ### Technical SEO
 - [ ] `seoTitle` is ≤60 characters (layout adds " | Sayso")
@@ -629,7 +629,7 @@ Run through this after creating or editing any comparison page:
 - [ ] OG title, description, and image are set
 
 ### Content Structure
-- [ ] Single H1 — keyword + year
+- [ ] Single H1 - keyword + year
 - [ ] 6 H2s in article + 1 FAQ H2 = 7 total
 - [ ] 2-3 H3s under "Where Sayso Wins" (`whereSaysoWinsDetails`)
 - [ ] No heading levels skipped

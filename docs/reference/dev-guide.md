@@ -1,4 +1,4 @@
-# Dev Guide — Sayso Marketing Site
+# Dev Guide - Sayso Marketing Site
 
 Quick reference for working on this repo:
 
@@ -88,7 +88,7 @@ Keep commits small and focused:
 
 ---
 
-## 6. After Submitting a PR — What Next?
+## 6. After Submitting a PR - What Next?
 
 **Option A: Start a new task**
 

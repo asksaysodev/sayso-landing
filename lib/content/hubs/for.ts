@@ -5,7 +5,7 @@ const forHub: HubPageConfig = {
   slug: 'for',
   section: 'Solutions',
   basePath: '/for',
-  seoTitle: 'Sayso Solutions — Built for Every Role',
+  seoTitle: 'Sayso Solutions: Built for Every Role',
   seoDescription:
     'See how Sayso helps solo agents, team leaders, new agents, and ISAs sound better on every prospecting call with real-time coaching.',
   h1: 'Built for How You Work',
@@ -15,7 +15,7 @@ const forHub: HubPageConfig = {
     {
       title: 'Solo Agents',
       slug: 'solo-agents',
-      description: 'Real-time coaching for agents who do everything themselves — prospecting, objections, follow-ups.',
+      description: 'Real-time coaching for agents who do everything themselves, including prospecting, objections, and follow-ups.',
       keyword: 'how to be more efficient real estate agent',
       linkText: 'How Sayso helps solo agents',
     },

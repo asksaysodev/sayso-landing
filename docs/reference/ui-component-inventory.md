@@ -1,4 +1,4 @@
-# UI Component Inventory — Sayso Landing Page
+# UI Component Inventory - Sayso Landing Page
 
 > Generated: 2026-04-03
 > Total components cataloged: **95+**
@@ -274,7 +274,7 @@
 - **Description:** Renders MDX blog content with custom styled components and syntax highlighting.
 - **Used on:** Blog post (`/blog/[slug]`)
 - **Props:** `content: string` (MDX markdown)
-- **Visual behavior:** Styled prose — h2/h3 headings, blue links, blockquotes with yellow left border, code blocks with gray background, tables with dark header.
+- **Visual behavior:** Styled prose - h2/h3 headings, blue links, blockquotes with yellow left border, code blocks with gray background, tables with dark header.
 
 ### BlogAuthorCard
 - **Path:** `components/blog/BlogAuthorCard.tsx`
@@ -584,5 +584,5 @@ Developer reference components for the UI catalog at `/(marketing)/ui`. Not used
 | Blog/Article | 12 | 0 | 12 |
 | SEO/Meta | 0 (utilities) | 0 | 0 |
 | Shared UI | 12 | 0 | 12 |
-| Page-Specific | — | ~45 | ~45 |
+| Page-Specific | - | ~45 | ~45 |
 | **Total** | **~55** | **~45** | **~100** |

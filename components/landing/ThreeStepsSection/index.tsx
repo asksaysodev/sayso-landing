@@ -23,7 +23,7 @@ const defaultContent: ThreeStepsContent = {
     },
     {
       title: '3. Win The Moment',
-      description: 'Sayso helps you earn the meeting at the right moment—so appointments are more qualified and more likely to convert.',
+      description: 'Sayso helps you earn the meeting at the right moment, so appointments are more qualified and more likely to convert.',
     },
   ],
 };

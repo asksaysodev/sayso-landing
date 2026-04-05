@@ -1,4 +1,4 @@
-# Sayso — Complete Site Architecture & Keyword Map
+# Sayso - Complete Site Architecture & Keyword Map
 
 **Updated:** April 3, 2026
 **Total Pages:** ~105–115
@@ -13,10 +13,10 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 | Rating | Meaning | Timeline |
 |---|---|---|
-| 🟢 WIN | Winnable today — low/no competition | Rank in 2–6 weeks |
-| 🟡 MED | Medium competition — needs cluster authority | 3–6 months |
-| 🔴 HARD | High competition — needs backlinks + time | 6–12 months |
-| ⚪ NONE | No keyword target — conversion/trust/legal page | N/A |
+| 🟢 WIN | Winnable today - low/no competition | Rank in 2–6 weeks |
+| 🟡 MED | Medium competition - needs cluster authority | 3–6 months |
+| 🔴 HARD | High competition - needs backlinks + time | 6–12 months |
+| ⚪ NONE | No keyword target - conversion/trust/legal page | N/A |
 
 ---
 
@@ -24,15 +24,15 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ```
 /                                           "real-time AI coaching real estate"                          🟡 MED
-├── /about/                                 (no keyword — trust page)                                   ⚪ NONE
-├── /contact/                               (no keyword — trust page)                                   ⚪ NONE
-├── /demo/                                  (no keyword — conversion page)                              ⚪ NONE
+├── /about/                                 (no keyword - trust page)                                   ⚪ NONE
+├── /contact/                               (no keyword - trust page)                                   ⚪ NONE
+├── /demo/                                  (no keyword - conversion page)                              ⚪ NONE
 ├── /pricing/                               "sayso pricing"                                             🟢 WIN
 ├── /privacy/                               (legal)                                                     ⚪ NONE
 ├── /terms/                                 (legal)                                                     ⚪ NONE
-├── /security/                              (no keyword — trust page)                                   ⚪ NONE
-├── /referral/                              (no keyword — program page)                                 ⚪ NONE
-├── /affiliate/                             (no keyword — program page)                                 ⚪ NONE
+├── /security/                              (no keyword - trust page)                                   ⚪ NONE
+├── /referral/                              (no keyword - program page)                                 ⚪ NONE
+├── /affiliate/                             (no keyword - program page)                                 ⚪ NONE
 └── /why-sayso/                             "why switch to sayso"                                       🟢 WIN
 ```
 
@@ -41,9 +41,9 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ### /features/
 
 ```
-/features/                                  (hub — no keyword target)                                   ⚪ NONE
+/features/                                  (hub - no keyword target)                                   ⚪ NONE
 ├── /features/real-time-coaching/           "real time sales help"                                      🟡 MED
-│   ⚠️  SEO NOTE (2026-04-05): H1 changed from keyword-rich "Real-Time Sales Help — AI That
+│   ⚠️  SEO NOTE (2026-04-05): H1 changed from keyword-rich "Real-Time Sales Help - AI That
 │   Coaches You Through Every Call" to branded "Cue - Real-Time Coaching" per co-founder
 │   feedback. The primary keyword "real time sales help" is no longer in the H1. It is still
 │   present in seoTitle, seoDescription, and body copy. Monitor rankings for this keyword
@@ -57,7 +57,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ### /for/
 
 ```
-/for/                                       (hub — no keyword target)                                   ⚪ NONE
+/for/                                       (hub - no keyword target)                                   ⚪ NONE
 ├── /for/solo-agents/                       "how to be more efficient real estate agent"                🟡 MED
 ├── /for/team-leaders/                      "how to manage high volume leads real estate"               🟡 MED
 ├── /for/new-agents/                        "how to get better at cold calling real estate"             🟡 MED
@@ -82,7 +82,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ### /compare/
 
 ```
-/compare/                                   (hub — no keyword target)                                   ⚪ NONE
+/compare/                                   (hub - no keyword target)                                   ⚪ NONE
 ├── /compare/sayso-vs-shilo/               "shilo alternative"                                         🟢 WIN
 ├── /compare/sayso-vs-maverickre/          "maverickre alternative"                                    🟢 WIN
 └── /compare/sayso-vs-manual-coaching/      "real estate coaching AI vs manual"                          🟡 MED
@@ -116,7 +116,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ### /glossary/
 
 ```
-/glossary/                                  (hub — no keyword target)                                   ⚪ NONE
+/glossary/                                  (hub - no keyword target)                                   ⚪ NONE
 ├── /glossary/circle-prospecting/           "what is circle prospecting"                               🟢 WIN
 ├── /glossary/isa-real-estate/              "what does ISA mean in real estate"                         🟢 WIN
 ├── /glossary/listing-appointment/          "what is a listing appointment"                             🟢 WIN
@@ -134,8 +134,8 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ### /case-studies/
 
 ```
-/case-studies/                              (hub — no keyword, conversion-focused)                      ⚪ NONE
-└── /case-studies/[customer-slug]/          (individual — no keyword, conversion-focused)               ⚪ NONE
+/case-studies/                              (hub - no keyword, conversion-focused)                      ⚪ NONE
+└── /case-studies/[customer-slug]/          (individual - no keyword, conversion-focused)               ⚪ NONE
 ```
 
 **Structure note:** Build hub page and URL pattern in Wave 1 even if content is placeholder. Page must exist in nav and sitemap before customer stories are ready.
@@ -144,16 +144,16 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ### /blog/
 
-#### Category Pages (noindex — navigation only)
+#### Category Pages (noindex - navigation only)
 
 ```
-/blog/                                      (hub — shows latest posts + category browse links)          ⚪ NONE
-├── /blog/category/cold-calling/            (noindex — cluster navigation)                             ⚪ NONE
-├── /blog/category/appointment-setting/     (noindex — cluster navigation)                             ⚪ NONE
-├── /blog/category/conversation-skills/     (noindex — cluster navigation)                             ⚪ NONE
-├── /blog/category/follow-up/              (noindex — cluster navigation)                             ⚪ NONE
-├── /blog/category/crm-notes/              (noindex — cluster navigation)                             ⚪ NONE
-└── /blog/category/mindset/                (noindex — struggle/emotional content)                      ⚪ NONE
+/blog/                                      (hub - shows latest posts + category browse links)          ⚪ NONE
+├── /blog/category/cold-calling/            (noindex - cluster navigation)                             ⚪ NONE
+├── /blog/category/appointment-setting/     (noindex - cluster navigation)                             ⚪ NONE
+├── /blog/category/conversation-skills/     (noindex - cluster navigation)                             ⚪ NONE
+├── /blog/category/follow-up/              (noindex - cluster navigation)                             ⚪ NONE
+├── /blog/category/crm-notes/              (noindex - cluster navigation)                             ⚪ NONE
+└── /blog/category/mindset/                (noindex - struggle/emotional content)                      ⚪ NONE
 ```
 
 #### Cold Calling Cluster
@@ -240,10 +240,10 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 | Difficulty | Count | % of Keyword-Targeted Pages |
 |---|---|---|
-| 🟢 WIN — Winnable today | ~58 pages | ~68% |
-| 🟡 MED — 3–6 months | ~18 pages | ~21% |
-| 🔴 HARD — 6–12 months | ~5 pages | ~6% |
-| ⚪ NONE — No keyword target | ~24 pages | N/A (conversion/trust/legal/nav) |
+| 🟢 WIN - Winnable today | ~58 pages | ~68% |
+| 🟡 MED - 3–6 months | ~18 pages | ~21% |
+| 🔴 HARD - 6–12 months | ~5 pages | ~6% |
+| ⚪ NONE - No keyword target | ~24 pages | N/A (conversion/trust/legal/nav) |
 
 The plan is intentionally weighted toward winnable keywords. ~68% of keyword-targeted pages can start ranking within weeks, building topical authority that lifts the harder targets over time.
 
@@ -284,8 +284,8 @@ Product ▾                       Solutions ▾                  Resources ▾  
                                 └──────────────────────┘
 
 CTAs (always visible):
-  [Download Sayso]  — primary action button
-  [Book a Demo]     — secondary action button / link
+  [Download Sayso]  - primary action button
+  [Book a Demo]     - secondary action button / link
 ```
 
 ### Footer
@@ -294,7 +294,7 @@ CTAs (always visible):
 ┌──────────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                      │
 │  [Logo]                                                                              │
-│  "Win the Moment — your real-time call superpower."                                 │
+│  "Win the Moment - your real-time call superpower."                                 │
 │                                                                                      │
 │  Product              Solutions            Resources            Company              │
 │  ├─ Real-Time Coach   ├─ Solo Agents       ├─ Blog              ├─ About             │
@@ -317,11 +317,11 @@ CTAs (always visible):
 
 ### Why This Navigation Structure Works
 
-- **Every hub page is 1 click from every other page** via header or footer — this is the #1 crawl priority signal for Google
-- **Dropdowns keep the header clean** — 4 nav items + CTA button, no mega-menu overwhelm
-- **Footer is the comprehensive crawl path** — includes pages (programs, company, legal) that don't fit in the header but still need link equity
-- **Dual CTAs on every page** — "Download Sayso" (primary) + "Book a Demo" (secondary) mirrors the current homepage pattern
-- **Objection Library and Glossary are in Resources** — these are your biggest SEO assets and need prominent nav placement so Google discovers and crawls all child pages through the hub links
+- **Every hub page is 1 click from every other page** via header or footer - this is the #1 crawl priority signal for Google
+- **Dropdowns keep the header clean** - 4 nav items + CTA button, no mega-menu overwhelm
+- **Footer is the comprehensive crawl path** - includes pages (programs, company, legal) that don't fit in the header but still need link equity
+- **Dual CTAs on every page** - "Download Sayso" (primary) + "Book a Demo" (secondary) mirrors the current homepage pattern
+- **Objection Library and Glossary are in Resources** - these are your biggest SEO assets and need prominent nav placement so Google discovers and crawls all child pages through the hub links
 
 ---
 
@@ -334,7 +334,7 @@ Not part of the initial build. Documented for future planning.
 | Local SEO (Google Business Profile, market-specific pages) | After traffic >2,000/mo | High for geo-specific searches |
 | Downloadable script PDFs (email gated) | After traffic >2,000/mo | High lead gen |
 | Interactive objection simulator | After demo video exists | Very high engagement |
-| Video content (YouTube) | Anytime — repurpose blog | Separate SEO channel |
+| Video content (YouTube) | Anytime - repurpose blog | Separate SEO channel |
 | Guest posts (TheClose, Inman) | After 3+ months publishing | Backlinks |
 | Podcast appearances | After strong case study data | Brand awareness |
 | ROI calculator tool | After enough customer data | Linkable asset |

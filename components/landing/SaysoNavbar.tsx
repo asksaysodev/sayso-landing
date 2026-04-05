@@ -69,7 +69,7 @@ export default function SaysoNavbar() {
   return (
     <nav className="sticky top-4 z-50 flex justify-center px-4" aria-label="Main navigation">
       <div ref={menuRef} className="relative w-full max-w-[1200px]">
-        {/* Main Navbar — comic border style */}
+        {/* Main Navbar - comic border style */}
         <div className="flex items-center justify-between h-14 md:h-[4.5rem] px-4 md:px-6 rounded-full bg-white border-2 border-[#1D4871] v2-comic-shadow-sm">
           {/* Logo */}
           <Link
@@ -80,7 +80,7 @@ export default function SaysoNavbar() {
             <Image src="/logo-pos-horizontal.png" alt="Sayso" width={90} height={32} />
           </Link>
 
-          {/* Desktop Nav — Dropdown Triggers */}
+          {/* Desktop Nav - Dropdown Triggers */}
           <div className="hidden lg:flex items-center gap-1">
             {headerNav.map((section) => (
               <div
@@ -132,7 +132,7 @@ export default function SaysoNavbar() {
             ))}
           </div>
 
-          {/* Right Section — CTAs + Mobile Toggle */}
+          {/* Right Section - CTAs + Mobile Toggle */}
           <div className="flex items-center gap-3">
             <button
               onClick={openDemoCalendar}
@@ -159,13 +159,13 @@ export default function SaysoNavbar() {
           </div>
         </div>
 
-        {/* Mobile Menu — Accordion Sections */}
+        {/* Mobile Menu - Accordion Sections */}
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 mt-2 rounded-2xl bg-white border-2 border-[#1D4871] v2-comic-shadow overflow-hidden lg:hidden">
             <div className="py-4 px-4 space-y-1 max-h-[70vh] overflow-y-auto">
               {headerNav.map((section) => (
                 <div key={section.label}>
-                  {/* Section Header — Label navigates, chevron toggles accordion */}
+                  {/* Section Header - Label navigates, chevron toggles accordion */}
                   <div className="flex items-center w-full rounded-lg hover:bg-[#FFDE59]/20 transition-colors">
                     <Link
                       href={section.href ?? '#'}

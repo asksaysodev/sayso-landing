@@ -1,15 +1,15 @@
-# Sayso Onboarding Flow — Implementation Reference
+# Sayso Onboarding Flow - Implementation Reference
 
 ## Overview
 
 A branching onboarding flow that launches at `/start`. Users are routed into one of two paths based on their role:
 
-- **Path A** — Individual Agent or Team Agent → 6 question steps
-- **Path B** — Team Lead or Office Broker/Manager → 7 question steps
+- **Path A** - Individual Agent or Team Agent → 6 question steps
+- **Path B** - Team Lead or Office Broker/Manager → 7 question steps
 
 Both paths share a welcome screen, the role-selection question, a "Sayso is activating" animation, a contact info form, an analyzing animation, and a paywall. The final paywall screen adapts further based on **Mac vs PC** selection.
 
-The flow is **UI/UX only** — no data is persisted or sent anywhere.
+The flow is **UI/UX only** - no data is persisted or sent anywhere.
 
 ---
 
@@ -107,7 +107,7 @@ Copy the diagram below into a Google Doc using a monospace font (e.g. Courier Ne
           |  "Get started        |   |  "Sayso is coming     |
           |   setting up your    |   |   soon to Windows"    |
           |   Sayso account"     |   |  ⚠️ Not available yet  |
-          |  Name / Email /      |   |  — sign up for early  |
+          |  Name / Email /      |   |  - sign up for early  |
           |  Phone / Company     |   |  access               |
           +-------------------+--+   |  Name / Email /       |
                               |      |  Phone / Company      |
@@ -155,7 +155,7 @@ Copy the diagram below into a Google Doc using a monospace font (e.g. Courier Ne
 | Styling | Tailwind CSS |
 | Animation | Framer Motion (v12) |
 | Fonts | Manrope (headings), Helvetica Neue (body) |
-| State | React `useState` — no persistence |
+| State | React `useState` - no persistence |
 
 ---
 
@@ -262,7 +262,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Step 1 — Role (Shared branch point)
+### Step 1 - Role (Shared branch point)
 **Component:** `RoleScreen.tsx`
 **Question:** "What is your role?"
 **UI:** Vertical radio list (auto-advances on selection)
@@ -271,7 +271,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path A — Step 2: Feeling Check
+### Path A - Step 2: Feeling Check
 **Component:** `FeelingCheckScreen.tsx`
 **Question:** "How do you feel when you think about making calls?"
 **UI:** Emoji card grid (pick one, auto-advances)
@@ -279,7 +279,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path A — Step 3: Call Frequency
+### Path A - Step 3: Call Frequency
 **Component:** `CallFrequencyScreen.tsx`
 **Question:** "How often do you make prospecting calls?"
 **UI:** Vertical radio list (auto-advances)
@@ -287,7 +287,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path A — Step 4: Support & Tech
+### Path A - Step 4: Support & Tech
 **Component:** `SupportTechScreen.tsx`
 **Question:** "What's helping you create better conversations?"
 **UI:** Multi-select toggle list (at least one required)
@@ -295,7 +295,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path A — Step 5: Lead Types
+### Path A - Step 5: Lead Types
 **Component:** `LeadTypeScreen.tsx`
 **Question:** "What types of calls do you make consistently?"
 **UI:** Chips organized under two category headers (multi-select, at least one required)
@@ -305,7 +305,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path A — Step 6: Computer
+### Path A - Step 6: Computer
 **Component:** `ComputerScreen.tsx` (isTeam=false)
 **Question:** "What type of computer do you use?"
 **UI:** Two large icon cards (auto-advances)
@@ -313,16 +313,16 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path B — Step 2: Team Size
+### Path B - Step 2: Team Size
 **Component:** `TeamSizeScreen.tsx`
 **Questions (two-part screen):**
-- Part 1: "How many agents are on your team?" — slider (1-100)
-- Part 2: "How many make calls consistently?" — radio (All of them · Some of them · Not enough)
+- Part 1: "How many agents are on your team?" - slider (1-100)
+- Part 2: "How many make calls consistently?" - radio (All of them · Some of them · Not enough)
 **Auto-advances** when both parts are answered
 
 ---
 
-### Path B — Step 3: Confidence
+### Path B - Step 3: Confidence
 **Component:** `ConfidenceScreen.tsx`
 **Question:** "How confident are you in your agents during live prospecting conversations?"
 **UI:** 1-5 emoji scale (pick one, auto-advances)
@@ -330,7 +330,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path B — Step 4: Team Call Frequency
+### Path B - Step 4: Team Call Frequency
 **Component:** `TeamCallFrequencyScreen.tsx`
 **Question:** "How often does your average team agent have dedicated prospecting blocks?"
 **UI:** Vertical radio list (auto-advances)
@@ -338,7 +338,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path B — Step 5: Team Support & Tech
+### Path B - Step 5: Team Support & Tech
 **Component:** `TeamSupportTechScreen.tsx`
 **Question:** "How do you help your agents create better conversations?"
 **UI:** Multi-select toggle list (at least one required)
@@ -346,14 +346,14 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Path B — Step 6: Team Lead Types
+### Path B - Step 6: Team Lead Types
 **Component:** `TeamLeadTypeScreen.tsx`
 **Question:** "What leads do your agents call?"
 **UI:** Chips organized under Sellers / Buyers (same chip set as Path A)
 
 ---
 
-### Path B — Step 7: Team Computer
+### Path B - Step 7: Team Computer
 **Component:** `ComputerScreen.tsx` (isTeam=true)
 **Question:** "What hardware does your team have?"
 **UI:** Three large icon cards (auto-advances)
@@ -361,7 +361,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Shared — Sayso Activating
+### Shared - Sayso Activating
 **Component:** `SaysoHelpScreen.tsx`
 **UI:** Two-phase animation
 1. "Sayso is activating..." + animated progress bar (~2.5s)
@@ -371,7 +371,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 
 ---
 
-### Shared — Contact Info
+### Shared - Contact Info
 **Branches based on `computerType`:**
 
 | computerType | Component | Heading | Notes |
@@ -379,21 +379,21 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 | Mac / Mix | `ContactInfoScreen.tsx` | "Get started setting up your Sayso account" | Standard form |
 | PC | `WindowsComingSoonScreen.tsx` | "Sayso is coming soon to Windows" | Shows yellow disclaimer banner + "Do you actually use Apple?" link |
 
-**PC disclaimer banner:** ⚠️ "Sayso isn't available for Windows yet — sign up to get early access when it launches."
+**PC disclaimer banner:** ⚠️ "Sayso isn't available for Windows yet - sign up to get early access when it launches."
 **"Do you actually use Apple?" link:** Sets `computerType` to `'Mac'` and switches to the standard `ContactInfoScreen` without navigating away.
 **Fields (both variants):** Full Name · Email Address · Phone Number · Company Name
 **Validation:** Email regex, phone 10+ digits, all fields non-empty
 
 ---
 
-### Shared — Analyzing
+### Shared - Analyzing
 **Component:** `AnalyzingScreen.tsx`
 **UI:** Loading animation cycling through messages, auto-advances after ~3.5s
 **Note:** Progress bar stays at last question step during this screen
 
 ---
 
-### Shared — Paywall (Verdict)
+### Shared - Paywall (Verdict)
 **Component:** `PaywallScreen.tsx`
 **Adapts based on `computerType` and `isPathB`:**
 
@@ -401,7 +401,7 @@ Verdict step    -> PaywallScreen                 [both paths, adapts by computer
 |---|---|---|---|
 | Mac / Mix | false | "Sayso is perfect for you!" | Individual Agent ($69/mo) |
 | Mac / Mix | true | "Sayso is perfect for you!" | Individual Agent ($69/mo) + Teams (custom) |
-| PC | false | "Lock in your early access rate." | Individual Agent ($35/mo — 50% off) |
+| PC | false | "Lock in your early access rate." | Individual Agent ($35/mo - 50% off) |
 | PC | true | "Lock in your early access rate." | Individual Agent ($35/mo) + Teams (50% off) |
 
 **No Back button on this screen.**
@@ -423,7 +423,7 @@ Progress bar pinned to top on every screen except Welcome and Paywall.
 Back / Continue buttons at bottom of every question screen.
 - **Back** hidden on Step 1
 - **Continue** disabled until screen validation passes
-- Auto-advancing screens (single-select) skip this — they advance on tap
+- Auto-advancing screens (single-select) skip this - they advance on tap
 
 ---
 
@@ -453,6 +453,6 @@ Back / Continue buttons at bottom of every question screen.
 
 1. **No data persistence.** All state lives in `OnboardingFlow.tsx` via `useState`. Refreshing resets everything.
 2. **No API calls.** Forms don't submit anywhere. Paywall is a visual mockup only.
-3. **`VerdictScreen.tsx`** exists in the codebase but is not wired into the current flow (archived). **`WindowsComingSoonScreen.tsx`** is active — it renders at the contact step when `computerType === 'PC'`.
+3. **`VerdictScreen.tsx`** exists in the codebase but is not wired into the current flow (archived). **`WindowsComingSoonScreen.tsx`** is active - it renders at the contact step when `computerType === 'PC'`.
 4. **Mobile-first.** Nav buttons are fixed to bottom of viewport on mobile; relative on desktop.
 5. **Accessibility.** All interactive elements have `focus-visible` rings. Auto-advancing screens use native `<button>` elements.

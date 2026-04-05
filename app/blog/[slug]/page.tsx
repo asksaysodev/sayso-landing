@@ -11,7 +11,7 @@ import { BlogEarlyCTA } from '@/components/blog/BlogEarlyCTA';
 import { BlogPillarUplink } from '@/components/blog/BlogPillarUplink';
 import { BlogRelatedPosts } from '@/components/blog/BlogRelatedPosts';
 import { BlogClusterPosts } from '@/components/blog/BlogClusterPosts';
-// TOC sidebar and cluster nav sidebar removed — blog posts use a single centered column.
+// TOC sidebar and cluster nav sidebar removed - blog posts use a single centered column.
 // Do not re-add BlogTableOfContents or BlogClusterNav sidebar here.
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
 
@@ -118,10 +118,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Article content block (shared between layouts)
   const articleContent = (
     <>
-      {/* Early CTA — pillar posts only */}
+      {/* Early CTA - pillar posts only */}
       {post.type === 'pillar' && <BlogEarlyCTA />}
 
-      {/* Pillar uplink — supporting posts only, when pillar exists */}
+      {/* Pillar uplink - supporting posts only, when pillar exists */}
       {post.type === 'supporting' && pillarPost && pillarPost.slug !== post.slug && (
         <BlogPillarUplink pillar={pillarPost} />
       )}
@@ -160,7 +160,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article header */}
       <BlogArticleHeader post={post} />
 
-      {/* Content area — single centered column for all post types */}
+      {/* Content area - single centered column for all post types */}
       <div className="max-w-[800px] mx-auto px-6 pb-10">
         <article>
           {articleContent}

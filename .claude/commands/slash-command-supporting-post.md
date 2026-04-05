@@ -1,4 +1,4 @@
-# /supporting-post Slash Command — Production Prompt
+# /supporting-post Slash Command - Production Prompt
 
 **Usage:** `/supporting-post "[target keyword]" cluster:[cluster-name]`
 **Examples:**
@@ -11,9 +11,9 @@ When this command is invoked, follow the two-phase process below. **Phase 1** re
 ### Input Parsing
 
 From the command input, extract:
-1. **Target keyword** — the quoted string (e.g., "how to build rapport real estate calls")
-2. **Cluster** — the value after `cluster:` (e.g., `conversation-skills`)
-3. **Pillar slug** — look up from the cluster reference table below. Every cluster has exactly one pillar.
+1. **Target keyword** - the quoted string (e.g., "how to build rapport real estate calls")
+2. **Cluster** - the value after `cluster:` (e.g., `conversation-skills`)
+3. **Pillar slug** - look up from the cluster reference table below. Every cluster has exactly one pillar.
 
 If no cluster is provided, attempt to infer from the keyword using the cluster reference table. If ambiguous, ask the user before generating.
 
@@ -46,7 +46,7 @@ Before writing a single word, complete both competitive research AND internal co
 
 - Read the pillar post for this cluster from `content/blog/[pillar-slug].mdx`
 - Note exactly what the pillar says about this sub-topic: how many words, which scripts it includes, what angle it takes
-- Your supporting post must go **significantly deeper** than the pillar's treatment — not repeat it. Knowing exactly what the pillar covers is the only way to guarantee differentiation
+- Your supporting post must go **significantly deeper** than the pillar's treatment - not repeat it. Knowing exactly what the pillar covers is the only way to guarantee differentiation
 
 ### Step 2: Read Sibling Supporting Posts
 
@@ -77,23 +77,23 @@ Before writing a single word, complete both competitive research AND internal co
 
 ### Step 6: Build a Competitive Brief
 
-After researching, compile a brief (for your own reference — do NOT include this in the final output) with:
+After researching, compile a brief (for your own reference - do NOT include this in the final output) with:
 
-1. **What the pillar already covers** — so you don't repeat it
-2. **What sibling posts already cover** — so you don't overlap
-3. **Common topics every competitor covers** — table stakes your post must hit
-4. **Content gaps** — angles or techniques fewer than 2 of the top 5 cover. These are your Information Gain opportunities
-5. **Overused patterns to avoid** — generic advice or cliché framing that appears in 4+ results
-6. **Best scripts found** — use as a quality benchmark, then write original scripts that are equally specific or better. Do NOT copy
-7. **PAA questions** — "People Also Ask" questions to target in the FAQ section
-8. **Keyword variations** — semantic variations found across competitor content to weave into headings and body
+1. **What the pillar already covers** - so you don't repeat it
+2. **What sibling posts already cover** - so you don't overlap
+3. **Common topics every competitor covers** - table stakes your post must hit
+4. **Content gaps** - angles or techniques fewer than 2 of the top 5 cover. These are your Information Gain opportunities
+5. **Overused patterns to avoid** - generic advice or cliché framing that appears in 4+ results
+6. **Best scripts found** - use as a quality benchmark, then write original scripts that are equally specific or better. Do NOT copy
+7. **PAA questions** - "People Also Ask" questions to target in the FAQ section
+8. **Keyword variations** - semantic variations found across competitor content to weave into headings and body
 
 ### Research Rules
 
 - Spend the research phase reading and analyzing. Do NOT start writing until the brief is complete
 - If a competitor page is behind a paywall or fails to load, skip it and move to the next result
 - Focus on extracting structure and angles, not copying content
-- The goal is to understand what exists — both on your own site and competitors' — so this post is **genuinely different and more useful**
+- The goal is to understand what exists - both on your own site and competitors' - so this post is **genuinely different and more useful**
 
 ---
 
@@ -110,12 +110,12 @@ Using the competitive brief from Phase 1, write the complete supporting post fol
 
 ## CONTEXT: What You're Writing For
 
-**Product:** SaySo (asksayso.com) — an AI-powered real-time coaching tool for real estate agents and ISAs. During live phone calls, SaySo displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
+**Product:** SaySo (asksayso.com) - an AI-powered real-time coaching tool for real estate agents and ISAs. During live phone calls, SaySo displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
 **What makes SaySo different from competitors:**
-- **Shilo AI** — focuses on post-call grading and analysis. Reviews calls AFTER they happen. Doesn't help the agent during the actual call.
-- **MaverickRE** — broader platform (lead routing, accountability, reporting) with AI role-play for practice. Agents train with simulated calls, but the AI isn't there during real calls.
-- **SaySo's edge** — real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after.
+- **Shilo AI** - focuses on post-call grading and analysis. Reviews calls AFTER they happen. Doesn't help the agent during the actual call.
+- **MaverickRE** - broader platform (lead routing, accountability, reporting) with AI role-play for practice. Agents train with simulated calls, but the AI isn't there during real calls.
+- **SaySo's edge** - real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after.
 
 **Target audience:** Real estate agents (solo and team), ISAs, team leaders, and brokerage managers in the US. They make 20-100+ calls per day. Practical, time-pressed, skeptical of tools that don't immediately help them book more appointments.
 
@@ -127,8 +127,8 @@ Using the competitive brief from Phase 1, write the complete supporting post fol
 
 ```yaml
 ---
-title: "[H1 — must contain target keyword, add parenthetical benefit for CTR]"
-description: "[Meta description — 150-160 chars, contains keyword, specific value + CTA]"
+title: "[H1 - must contain target keyword, add parenthetical benefit for CTR]"
+description: "[Meta description - 150-160 chars, contains keyword, specific value + CTA]"
 slug: "[url-slug-with-keyword]"
 type: "supporting"
 cluster: "[cluster from input]"
@@ -147,19 +147,19 @@ coverImage: "/blog/covers/[slug].jpg"
 
 ### Body Content
 
-Standard markdown. The following custom MDX components are available — use them to make the content more scannable and actionable:
+Standard markdown. The following custom MDX components are available - use them to make the content more scannable and actionable:
 
-**`<CalloutBox type="tip|warning|key-takeaway">`** — for tips, warnings, or key insights
+**`<CalloutBox type="tip|warning|key-takeaway">`** - for tips, warnings, or key insights
 ```mdx
 <CalloutBox type="tip">
-Don't ask "is now a good time?" — it gives them an exit. Ask "do you have a quick minute?" instead.
+Don't ask "is now a good time?" - it gives them an exit. Ask "do you have a quick minute?" instead.
 </CalloutBox>
 ```
 
-**`<ScriptExample label="[context]">`** — for formatted phone scripts agents can reference
+**`<ScriptExample label="[context]">`** - for formatted phone scripts agents can reference
 ```mdx
 <ScriptExample label="Rapport-Building Opener">
-Hey [Name], this is [Your Name]. Before I jump into why I'm calling — I saw you're in [Neighborhood]. How's that area been lately?
+Hey [Name], this is [Your Name]. Before I jump into why I'm calling - I saw you're in [Neighborhood]. How's that area been lately?
 </ScriptExample>
 ```
 
@@ -172,7 +172,7 @@ Use `<ScriptExample>` at least 2 times in a supporting post. These posts need to
 ### Keyword Placement (Non-Negotiable)
 1. **H1:** Contains the exact target keyword. Add a parenthetical benefit or objection-buster for CTR (e.g., "How to Build Rapport on Real Estate Calls (Without Sounding Fake)").
 2. **First 100 words:** Exact target keyword in sentence 1 or 2.
-3. **Meta title:** `[Target Keyword] | SaySo` — max 60 characters.
+3. **Meta title:** `[Target Keyword] | SaySo` - max 60 characters.
 4. **Meta description:** 150-160 characters. Contains keyword. Format: "[Keyword context]. [Specific value this post delivers]. [CTA]."
 5. **URL slug:** Keyword in slug, lowercase, hyphens.
 6. **First H2:** Contains the keyword or a strong semantic variation.
@@ -180,12 +180,12 @@ Use `<ScriptExample>` at least 2 times in a supporting post. These posts need to
 
 ### Keyword Density
 - **Exact keyword:** 3-6 times across the full page.
-- **Semantic variations:** 6-10 times. Keep these natural — synonyms, related phrases, rephrased versions of the keyword.
+- **Semantic variations:** 6-10 times. Keep these natural - synonyms, related phrases, rephrased versions of the keyword.
 - **Never stuff.** If it sounds forced, use a variation.
 
 ### Heading Structure
 - **One H1 only.**
-- **3-5 H2s.** Supporting posts are focused — they don't need as many sections as pillars.
+- **3-5 H2s.** Supporting posts are focused - they don't need as many sections as pillars.
 - **H3s** for subsections when needed.
 - **Never skip levels.**
 - At least one H2 should contain a semantic variation of the keyword.
@@ -193,7 +193,7 @@ Use `<ScriptExample>` at least 2 times in a supporting post. These posts need to
 ### Word Count
 - **1,200-1,800 words.** More focused than pillar posts, more substantial than objection or glossary pages.
 - Supporting posts go deep on ONE specific sub-topic. If you find yourself covering 5 different things, you're writing a pillar post.
-- If the topic genuinely requires more depth, stretch to 2,000 — but that's the ceiling.
+- If the topic genuinely requires more depth, stretch to 2,000 - but that's the ceiling.
 
 ---
 
@@ -202,10 +202,10 @@ Use `<ScriptExample>` at least 2 times in a supporting post. These posts need to
 Google's March 2026 core update rewards first-hand experience and penalizes generic content. Supporting posts are especially vulnerable because they target specific, often how-to queries where Google can easily compare your answer against competitors. Your post must stand out.
 
 ### Experience Markers (Include at Least 2)
-- **Walk through a specific scenario step by step** — not "you should build rapport" but "when the lead picks up and says 'who is this?', here's exactly what to say in the next 5 seconds and why it works."
-- **Include a specific mistake and its consequence** — "If you jump straight to 'I have a great listing in your area,' you've positioned yourself as a salesperson. The lead's guard goes up. Instead, start with a question about their situation."
-- **Reference a real workflow** — "You're on your third hour of cold calling from Follow Up Boss. You've hit 40 dials. Lead #41 actually picks up. Your brain freezes. Here's the framework that prevents that."
-- **Provide a counter-intuitive insight** — something the reader won't find in the top 5 Google results for this keyword. A specific technique, a reframe, or a "most people do X but Y actually works better" moment.
+- **Walk through a specific scenario step by step** - not "you should build rapport" but "when the lead picks up and says 'who is this?', here's exactly what to say in the next 5 seconds and why it works."
+- **Include a specific mistake and its consequence** - "If you jump straight to 'I have a great listing in your area,' you've positioned yourself as a salesperson. The lead's guard goes up. Instead, start with a question about their situation."
+- **Reference a real workflow** - "You're on your third hour of cold calling from Follow Up Boss. You've hit 40 dials. Lead #41 actually picks up. Your brain freezes. Here's the framework that prevents that."
+- **Provide a counter-intuitive insight** - something the reader won't find in the top 5 Google results for this keyword. A specific technique, a reframe, or a "most people do X but Y actually works better" moment.
 
 ### Information Gain
 Every supporting post must offer at least ONE thing that differentiates it from existing search results:
@@ -216,7 +216,7 @@ Every supporting post must offer at least ONE thing that differentiates it from 
 ### What to AVOID
 - Generic advice reworded from competitor articles ("building rapport is important because it builds trust")
 - Filler sentences that could be deleted without losing information
-- Overly broad coverage — stay in your lane. This post owns ONE topic.
+- Overly broad coverage - stay in your lane. This post owns ONE topic.
 - Academic or formal tone. Agents want coach-talk: direct, practical, from someone who's been on the phones.
 
 ---
@@ -241,13 +241,13 @@ Rules:
 - **No fluff.** No backstory. No "In today's market..." throat-clearing.
 
 Example:
-> Building rapport on real estate calls is what separates a 30-second hangup from a 4-minute conversation that ends in an appointment. Most agents either skip it entirely or force it with awkward small talk. Here's a framework that makes it natural — and a script you can use on your next call.
+> Building rapport on real estate calls is what separates a 30-second hangup from a 4-minute conversation that ends in an appointment. Most agents either skip it entirely or force it with awkward small talk. Here's a framework that makes it natural - and a script you can use on your next call.
 
 ### 3. Pillar Uplink (Within First 300 Words)
 
 **This is non-negotiable.** Within the first 300 words of the body, include a natural link back to the parent pillar post. The template auto-generates a banner above the content, but an in-content link carries more SEO weight.
 
-Format it naturally — don't make it feel forced:
+Format it naturally - don't make it feel forced:
 > "For the complete breakdown of cold calling strategies, see our [real estate cold calling guide](/blog/real-estate-cold-calling-guide/)."
 
 Or weave it into context:
@@ -255,7 +255,7 @@ Or weave it into context:
 
 Use the pillar's target keyword as the anchor text.
 
-### 4. H2 Sections — The Core Content (2-3 Sections)
+### 4. H2 Sections - The Core Content (2-3 Sections)
 
 Each H2 covers a distinct aspect of the topic. This is the meat of the post. Rules:
 
@@ -266,7 +266,7 @@ Each H2 covers a distinct aspect of the topic. This is the meat of the post. Rul
 - **Each H2 should teach one distinct thing.** If two H2s could be merged without losing anything, merge them.
 
 Example H2 structure for "how to build rapport real estate calls":
-- H2: The 10-Second Rule — Why the First Thing You Say Determines Everything
+- H2: The 10-Second Rule - Why the First Thing You Say Determines Everything
 - H2: 3 Rapport Techniques That Work on Cold Calls (With Scripts)
 - H2: What to Do When a Lead Won't Open Up
 
@@ -274,7 +274,7 @@ Example H2 structure for "how to build rapport real estate calls":
 
 Brief product tie-in. Rules:
 - 2-4 sentences maximum. Supporting posts are lighter on product promotion than pillars.
-- Connect this specific topic to a specific SaySo feature. Not "SaySo helps with calls" but "When you're struggling to build rapport and the lead goes quiet, SaySo suggests a conversation-starter on screen — in real time."
+- Connect this specific topic to a specific SaySo feature. Not "SaySo helps with calls" but "When you're struggling to build rapport and the lead goes quiet, SaySo suggests a conversation-starter on screen - in real time."
 - CTA: Link to `/demo/` or a relevant feature page (e.g., `/features/real-time-coaching/`).
 
 ### 6. H2: FAQ (Optional but Recommended)
@@ -291,7 +291,7 @@ Brief product tie-in. Rules:
 Supporting posts are the connective tissue of the cluster. Their linking job is simpler than a pillar's but just as important.
 
 ### Required Links
-1. **Link UP to the pillar post** — within the first 300 words. Use the pillar's target keyword as anchor text. This is the most important link on the page.
+1. **Link UP to the pillar post** - within the first 300 words. Use the pillar's target keyword as anchor text. This is the most important link on the page.
 2. **Link ACROSS to 2-3 other supporting posts** in the same cluster. Use their target keywords as anchor text. Link to them even if they don't exist yet.
 3. **Link to 1-2 objection pages** if the topic involves phone calls (most do). Example: `/objections/not-interested/`, `/objections/call-me-later/`
 4. **Link to 1 feature page** if naturally relevant. Example: `/features/real-time-coaching/`, `/features/call-notes/`
@@ -311,7 +311,7 @@ Supporting posts are the connective tissue of the cluster. Their linking job is 
 Supporting posts get 1-2 CTAs. Keep them lighter than pillar posts.
 
 1. **Product section CTA (in the "How SaySo Helps" H2):** Single CTA linking to `/demo/` or a feature page.
-2. **Optional soft CTA earlier in the post** — only if a SaySo feature is directly relevant to the technique being discussed. One sentence, inline: "This is exactly what SaySo does — feeds you rapport-building prompts in real time. [See how it works →](/demo/)"
+2. **Optional soft CTA earlier in the post** - only if a SaySo feature is directly relevant to the technique being discussed. One sentence, inline: "This is exactly what SaySo does - feeds you rapport-building prompts in real time. [See how it works →](/demo/)"
 
 Do NOT put a CTA before delivering real value. The reader should get at least one useful technique before seeing any product mention.
 
@@ -321,9 +321,9 @@ Do NOT put a CTA before delivering real value. The reader should get at least on
 
 - **Paragraphs:** Max 3 sentences. Agents read between calls on mobile.
 - **Short sentences.** Punch over polish. Vary length but lean short.
-- **Tone:** Practical, coach-like, direct. You're someone who's made 10,000 calls and is sharing what actually works. Not a professor, not a marketer — a coach.
+- **Tone:** Practical, coach-like, direct. You're someone who's made 10,000 calls and is sharing what actually works. Not a professor, not a marketer - a coach.
 - **Banned phrases:** "In today's competitive market," "It's no secret that," "As a real estate professional," "In the ever-evolving world of," "Let's dive in," "Without further ado," "At the end of the day." Any sentence that could be deleted without losing information should be deleted.
-- **Bold sparingly** — only for key terms or phrases a scanner's eye should catch.
+- **Bold sparingly** - only for key terms or phrases a scanner's eye should catch.
 
 ---
 
@@ -331,10 +331,10 @@ Do NOT put a CTA before delivering real value. The reader should get at least on
 
 A supporting post is NOT a section of the pillar copy-pasted into its own page. The supporting post must go deeper than the pillar's treatment of the same sub-topic:
 
-- **More detailed scripts and examples** — the pillar gives one script per sub-topic; the supporting post gives 2-3 variations with context for each.
-- **More specific scenarios** — the pillar says "here's an expired listing opener"; the supporting post covers openers for listings expired <30 days, 30-90 days, and 90+ days.
-- **Common mistakes with explanations** — the pillar might list one mistake; the supporting post breaks down 3-5 with specific consequences.
-- **Fresh angles** — approach the topic from a direction the pillar doesn't cover.
+- **More detailed scripts and examples** - the pillar gives one script per sub-topic; the supporting post gives 2-3 variations with context for each.
+- **More specific scenarios** - the pillar says "here's an expired listing opener"; the supporting post covers openers for listings expired <30 days, 30-90 days, and 90+ days.
+- **Common mistakes with explanations** - the pillar might list one mistake; the supporting post breaks down 3-5 with specific consequences.
+- **Fresh angles** - approach the topic from a direction the pillar doesn't cover.
 
 If the pillar gives 300 words on this sub-topic, the supporting post gives 1,200-1,800 words with significantly more depth, scripts, and actionable detail.
 
@@ -342,11 +342,11 @@ If the pillar gives 300 words on this sub-topic, the supporting post gives 1,200
 
 ## WHAT THE TEMPLATE HANDLES AUTOMATICALLY
 
-Do NOT include these in your content — the blog template generates them:
+Do NOT include these in your content - the blog template generates them:
 
 - Schema markup (BlogPosting with `isPartOf` referencing the pillar + FAQPage)
 - Canonical URL with trailing slash
-- Pillar uplink banner above the content (auto-injected for supporting posts — but you STILL write an in-content uplink in the first 300 words because it carries more SEO weight)
+- Pillar uplink banner above the content (auto-injected for supporting posts - but you STILL write an in-content uplink in the first 300 words because it carries more SEO weight)
 - Mid-page CTA (auto-injected at content midpoint)
 - Newsletter CTA (auto-injected at bottom)
 - "More in This Series" cluster navigation section
@@ -367,7 +367,7 @@ Your job is the content, the heading structure, the internal links within the pr
 Before finalizing, verify:
 
 - [ ] Competitive research was completed (top 5 pages analyzed, PAA questions collected)
-- [ ] Parent pillar post was read — this post goes deeper without repeating the pillar's scripts or angles
+- [ ] Parent pillar post was read - this post goes deeper without repeating the pillar's scripts or angles
 - [ ] Sibling supporting posts were checked for overlap
 - [ ] At least 1 content gap from research is addressed in the post
 - [ ] FAQ includes at least 1 question sourced from PAA or related searches
@@ -386,7 +386,7 @@ Before finalizing, verify:
 - [ ] 1-2 CTAs maximum (not before delivering value)
 - [ ] Word count 1,200-1,800
 - [ ] No banned filler phrases
-- [ ] No generic advice — every tip is specific to real estate calling
+- [ ] No generic advice - every tip is specific to real estate calling
 - [ ] Content goes deeper than the pillar's coverage of this sub-topic
 - [ ] Frontmatter includes type: "supporting", cluster, AND pillar slug
 - [ ] Tone is coach-like, not academic

@@ -7,10 +7,10 @@ const objectionsHub: HubPageConfig = {
   basePath: '/objections',
   seoTitle: 'Real Estate Objection Handling Scripts & Examples',
   seoDescription:
-    'Scripts and response frameworks for every common real estate objection — "not ready yet," "already have an agent," "call me later," and more.',
+    'Scripts and response frameworks for every common real estate objection, "not ready yet," "already have an agent," "call me later," and more.',
   h1: 'Real Estate Objection Library',
   introduction:
-    'Every common objection real estate agents hear on prospecting calls — with proven response scripts you can use today. Each page breaks down why prospects say it, how to respond at three confidence levels, and what to say next.',
+    'Every common objection real estate agents hear on prospecting calls, with proven response scripts you can use today. Each page breaks down why prospects say it, how to respond at three confidence levels, and what to say next with confidence.',
   childPages: [
     {
       title: '"I\'m Not Ready Yet"',
@@ -119,7 +119,7 @@ const objectionsHub: HubPageConfig = {
     },
   ],
   howSaysoHelps:
-    'Sayso coaches you through these objections in real time — the moment a prospect pushes back, the right response appears on your screen. No memorization required. You sound like you have been doing this for years, even on your first week.',
+    'Sayso coaches you through these objections in real time, the moment a prospect pushes back, the right response appears on your screen. No memorization required. You sound like you have been doing this for years, if you\'re new on the phone.',
   faq: [
     {
       question: 'What are the most common real estate objections?',

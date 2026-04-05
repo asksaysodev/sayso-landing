@@ -70,10 +70,10 @@ Tables on this site render with a dark blue header row and bordered cells. To en
 
 - **Header row**: Short, title-cased column names
 - **Separator row**: Use `| ----- |` for each column (dashes only, no colons for alignment)
-- **Cell content**: Keep concise — one phrase or short sentence per cell
-- **Links in cells**: Allowed — use `[Name](https://url.com)` format
-- **No HTML tables** — always use Markdown pipe syntax
-- **Wrap in nothing** — the site handles overflow scrolling automatically on mobile
+- **Cell content**: Keep concise - one phrase or short sentence per cell
+- **Links in cells**: Allowed - use `[Name](https://url.com)` format
+- **No HTML tables** - always use Markdown pipe syntax
+- **Wrap in nothing** - the site handles overflow scrolling automatically on mobile
 
 ### Comparison table example (common pattern)
 
@@ -94,7 +94,7 @@ Tables on this site render with a dark blue header row and bordered cells. To en
 ### Subsection           ← Subsections (H3)
 ```
 
-- The article `title` from frontmatter renders as the H1 — **do not include a `# Title` in the body**
+- The article `title` from frontmatter renders as the H1 - **do not include a `# Title` in the body**
 - Never go deeper than H3
 
 ---
@@ -125,7 +125,7 @@ Category: ai-tools
 Tags: maverick re, real estate coaching, AI tools
 ```
 
-The `/blog-convert` skill will detect this and use it to fill in the frontmatter automatically. You do not need to remove it before dropping the file in `content/blog/drafts/` — the skill removes it from the body and puts it in the right place.
+The `/blog-convert` skill will detect this and use it to fill in the frontmatter automatically. You do not need to remove it before dropping the file in `content/blog/drafts/` - the skill removes it from the body and puts it in the right place.
 
 ---
 
@@ -134,7 +134,7 @@ The `/blog-convert` skill will detect this and use it to fill in the frontmatter
 - [ ] Frontmatter is complete (all required fields filled)
 - [ ] No `# H1` heading in the body (title comes from frontmatter)
 - [ ] All tables use pipe format with header + separator rows
-- [ ] All links use `[text](url)` format — no bare URLs
+- [ ] All links use `[text](url)` format - no bare URLs
 - [ ] Metadata section removed from body (moved to frontmatter)
 - [ ] Only one post has `featured: true` across all posts
 - [ ] File is saved as `.mdx` in `content/blog/` (not `drafts/`)

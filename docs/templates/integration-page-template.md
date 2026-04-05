@@ -10,8 +10,8 @@ This document is the complete reference for creating `/integrations/[slug]` CRM 
 
 1. [File Locations](#file-locations)
 2. [What an Integration Page Is (and Is Not)](#what-an-integration-page-is-and-is-not)
-3. [SEO Rules — Universal](#seo-rules--universal)
-4. [SEO Rules — Integration-Specific](#seo-rules--integration-specific)
+3. [SEO Rules - Universal](#seo-rules--universal)
+4. [SEO Rules - Integration-Specific](#seo-rules--integration-specific)
 5. [Page Structure (Section by Section)](#page-structure-section-by-section)
 6. [TypeScript Data Interface](#typescript-data-interface)
 7. [Internal Linking Requirements](#internal-linking-requirements)
@@ -30,15 +30,15 @@ This document is the complete reference for creating `/integrations/[slug]` CRM 
 
 | File | Purpose |
 |------|---------|
-| `lib/content/integrations/types.ts` | `IntegrationEntry` TypeScript interface — every content field |
-| `lib/content/integrations/index.ts` | Content loader — exports `getAllIntegrationEntries()`, `getIntegrationBySlug()`, `getAllIntegrationSlugs()` |
+| `lib/content/integrations/types.ts` | `IntegrationEntry` TypeScript interface - every content field |
+| `lib/content/integrations/index.ts` | Content loader - exports `getAllIntegrationEntries()`, `getIntegrationBySlug()`, `getAllIntegrationSlugs()` |
 | `lib/content/integrations/*.ts` | Individual integration content files (one per CRM) |
-| `components/pages/IntegrationPage.tsx` | Shared page template component — renders all integration pages |
-| `app/(content)/integrations/[slug]/page.tsx` | Next.js dynamic route — handles metadata + static params |
+| `components/pages/IntegrationPage.tsx` | Shared page template component - renders all integration pages |
+| `app/(content)/integrations/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/integrations/page.tsx` | Integrations hub listing page |
-| `lib/content/hubs/integrations.ts` | Hub page config — lists all child integration pages |
-| `lib/seo/metadata.ts` | `buildMetadata()` — generates title, description, canonical, OG tags |
-| `lib/seo/schema.ts` | JSON-LD generators — `generateSoftwareAppJsonLd()`, `generateFAQPageJsonLd()` |
+| `lib/content/hubs/integrations.ts` | Hub page config - lists all child integration pages |
+| `lib/seo/metadata.ts` | `buildMetadata()` - generates title, description, canonical, OG tags |
+| `lib/seo/schema.ts` | JSON-LD generators - `generateSoftwareAppJsonLd()`, `generateFAQPageJsonLd()` |
 
 ---
 
@@ -48,12 +48,12 @@ Integration pages are **trust signals and conversion aids.** An agent who alread
 
 From the site architecture doc: CRM-specific keywords may have near-zero search volume today. These pages are primarily trust signals, not traffic drivers. However, as "AI integration" searches grow in the CRM space, these pages will be positioned to capture that emerging traffic.
 
-From the programmatic SEO training: these pages follow the micro keyword principle — combining two specific concepts (CRM name + AI capability) that have almost no competition right now.
+From the programmatic SEO training: these pages follow the micro keyword principle - combining two specific concepts (CRM name + AI capability) that have almost no competition right now.
 
 **An integration page IS:**
 - A concise page confirming that Sayso works with a specific CRM and explaining how the integration works
 - Designed to reassure existing CRM users that Sayso fits their workflow
-- A conversion aid — the reader is already interested in Sayso and checking compatibility
+- A conversion aid - the reader is already interested in Sayso and checking compatibility
 - A future SEO asset for emerging "[CRM] AI integration" searches
 
 **An integration page is NOT:**
@@ -62,19 +62,19 @@ From the programmatic SEO training: these pages follow the micro keyword princip
 - A persona pitch (that is `/for/`)
 - A detailed technical integration guide (keep it simple and benefit-oriented)
 
-**Key principle: concise and functional.** Integration pages are the most functional pages on the site. Every sentence should inform or reassure. The reader wants to confirm the integration exists and works — not read an essay.
+**Key principle: concise and functional.** Integration pages are the most functional pages on the site. Every sentence should inform or reassure. The reader wants to confirm the integration exists and works - not read an essay.
 
 ---
 
-## SEO Rules — Universal
+## SEO Rules - Universal
 
 These rules apply to every integration page without exception.
 
-### Keyword Placement — Required Locations
+### Keyword Placement - Required Locations
 
 | Location | Rule | Example |
 |----------|------|---------|
-| **H1** | Must contain the CRM name and Sayso. Use an em-dash to separate the CRM pairing from the benefit clause. | `Sayso + Follow Up Boss — Real-Time Coaching Meets Your CRM` |
+| **H1** | Must contain the CRM name and Sayso. Use an em-dash to separate the CRM pairing from the benefit clause. | `Sayso + Follow Up Boss - Real-Time Coaching Meets Your CRM` |
 | **First 100 words** | The exact target keyword must appear within the first 100 words of body content (the opening description). Ideally in the first 2 sentences. | `The Follow Up Boss AI integration with Sayso adds real-time coaching to every prospecting call...` |
 | **Meta title** | Format: `[CRM Name] + Sayso AI Integration`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should NOT include "| Sayso". Max 60 characters for the `seoTitle` value. | `seoTitle: 'Follow Up Boss + Sayso AI Integration'` (42 chars + " \| Sayso" = 50 total) |
 | **Meta description** | 150-160 characters max. Must contain the target keyword. Format: `[CRM Name] users: [what Sayso adds]. [Key benefit]. [CTA].` | `Follow Up Boss users: get real-time AI coaching and automatic call notes with Sayso. Every call logged to your CRM. Try it free.` |
@@ -89,14 +89,14 @@ These rules apply to every integration page without exception.
 | **Exact target keyword** | 3-4 times | Spread across opening, howItWorks, whyChoose, and FAQ. These pages are shorter so 3-4 is sufficient. Never stuff. |
 | **Semantic variations** | 5-8 times | Include the CRM name alone, "Sayso + [CRM]," "AI coaching for [CRM] users," "[CRM] integration," "connect Sayso to [CRM]." |
 
-**Counting note:** The `keyword`, `seoTitle`, and `seoDescription` fields are metadata — they do NOT render in the page body. Only count occurrences in fields that produce visible text: `h1`, `openingDescription`, `howItWorks[].description`, `benefits[].body`, `whyChoose`, `getStarted`, and `faq[].question`/`faq[].answer`.
+**Counting note:** The `keyword`, `seoTitle`, and `seoDescription` fields are metadata - they do NOT render in the page body. Only count occurrences in fields that produce visible text: `h1`, `openingDescription`, `howItWorks[].description`, `benefits[].body`, `whyChoose`, `getStarted`, and `faq[].question`/`faq[].answer`.
 
 ### Heading Structure
 
-- **One H1 only** — the page title.
+- **One H1 only** - the page title.
 - **H2s:** 5 per page (How It Works, What You Get, Why Choose, Get Started, FAQ). The FAQ component adds the 5th H2 ("Frequently Asked Questions").
 - **Never skip heading levels** (no H1 → H3 without an H2 between them).
-- **At least one H2** must contain the CRM name — the `howItWorksHeading` field handles this.
+- **At least one H2** must contain the CRM name - the `howItWorksHeading` field handles this.
 - The inline CTA renders an `<h3>` inside the CTA box ("See It in Action" or custom), which is proper hierarchy under the preceding H2.
 
 ### Canonical URL
@@ -111,7 +111,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ---
 
-## SEO Rules — Integration-Specific
+## SEO Rules - Integration-Specific
 
 ### Keyword Selection
 
@@ -123,14 +123,14 @@ Examples:
 - `kvcore AI integration`
 
 These keywords may have near-zero volume today. That is expected. The pages serve two purposes:
-1. **Trust signal** — confirms compatibility for visitors already on the site
-2. **Future SEO** — positions for emerging "[CRM] AI" searches as the category grows
+1. **Trust signal** - confirms compatibility for visitors already on the site
+2. **Future SEO** - positions for emerging "[CRM] AI" searches as the category grows
 
 ### Content Constraints
 
 - **Paragraphs:** Max 3 sentences per paragraph.
-- **Total word count:** 600-1,000 words. Integration pages should be concise. The reader wants to confirm the integration exists and works — not read an essay.
-- **Tone:** Clear, confident, technical-but-accessible. These readers are already using CRM software — they understand tech basics. Do not over-explain.
+- **Total word count:** 600-1,000 words. Integration pages should be concise. The reader wants to confirm the integration exists and works - not read an essay.
+- **Tone:** Clear, confident, technical-but-accessible. These readers are already using CRM software - they understand tech basics. Do not over-explain.
 - **No filler.** Every sentence should inform or reassure. Integration pages are the most functional pages on the site.
 - **No vaporware.** Only describe integration capabilities that exist today.
 
@@ -167,11 +167,11 @@ The `IntegrationPage.tsx` component renders sections in this exact order:
 - **Alt text must be keyword-enriched** (e.g., "Follow Up Boss AI integration with Sayso")
 
 ### 4. H1
-- Format: `Sayso + [CRM Name] — [Benefit Statement]`
+- Format: `Sayso + [CRM Name] - [Benefit Statement]`
 - Must contain both brand names
 - The benefit clause should describe what the integration delivers
 - Examples:
-  - `Sayso + Follow Up Boss — Real-Time Coaching Meets Your CRM`
+  - `Sayso + Follow Up Boss - Real-Time Coaching Meets Your CRM`
   - `Sayso + Sierra Interactive: AI Coaching That Works Inside Your CRM`
 
 ### 5. Opening Description
@@ -180,7 +180,7 @@ The `IntegrationPage.tsx` component renders sections in this exact order:
 - **The exact target keyword must appear in the first 2 sentences.**
 - Sentence 1: State what the CRM is and its role in the agent's workflow
 - Sentence 2: Introduce the integration with the exact keyword phrase
-- Keep it direct — this is a confirmation, not a sales pitch
+- Keep it direct - this is a confirmation, not a sales pitch
 
 ### 6. How It Works
 - **H2:** Custom heading from `howItWorksHeading` (should contain CRM name). Falls back to "How It Works."
@@ -190,11 +190,11 @@ The `IntegrationPage.tsx` component renders sections in this exact order:
 - Reference CRM-specific terminology (e.g., "FUB workspace," "contact record," "smart lists")
 
 ### 7. Inline CTA
-- `ContentInlineCTA` component — positioned immediately after "How It Works"
+- `ContentInlineCTA` component - positioned immediately after "How It Works"
 - Customizable headline and subheading via `inlineCtaHeadline` and `inlineCtaSubheading` fields
 - **Headline should include the CRM name:** "Ready to Connect Sayso to [CRM Name]?"
 - Renders "Book a Demo" (`/demo`) and "Download Sayso" (`/`) buttons
-- This is the first of 2 CTAs — placed at a natural decision point
+- This is the first of 2 CTAs - placed at a natural decision point
 
 ### 8. What You Get (Benefits)
 - **H2:** "What You Get"
@@ -202,7 +202,7 @@ The `IntegrationPage.tsx` component renders sections in this exact order:
 - Each card has a bold title and a 1-2 sentence body
 - Focus on **workflow improvements specific to this CRM's users:** less manual note-taking, better follow-up data, consistent coaching across calls
 - **Mention CRM-specific elements** in at least one benefit body (e.g., smart lists, calling from FUB, contact records)
-- Do not list Sayso's full feature set — only what is relevant to this CRM's users
+- Do not list Sayso's full feature set - only what is relevant to this CRM's users
 
 ### 9. Why [CRM Name] Users Choose Sayso
 - **H2:** Rendered by the component: `Why {crmName} Users Choose Sayso`
@@ -215,15 +215,15 @@ The `IntegrationPage.tsx` component renders sections in this exact order:
 
 ### 10. Get Started
 - **H2:** "Get Started"
-- 1 paragraph from `getStarted` field — 2-3 sentences
-- Setup instructions (brief) — how easy it is to connect
+- 1 paragraph from `getStarted` field - 2-3 sentences
+- Setup instructions (brief) - how easy it is to connect
 - Mention the time to set up (e.g., "under two minutes")
 
 ### 11. Related Pages
 - Rendered if `relatedLinks` has items
 - Displays as styled link cards with a label (e.g., "Related feature") and a title with arrow
 - Links to features, personas, pricing, and other cross-section pages
-- **Only link to pages that actually exist** — verify before adding
+- **Only link to pages that actually exist** - verify before adding
 
 ### 12. Other Integrations (conditional)
 - Rendered if `relatedIntegrations` has items
@@ -238,7 +238,7 @@ The `IntegrationPage.tsx` component renders sections in this exact order:
 - See FAQ content rules below
 
 ### 14. Closing CTA
-- `ContentCTA` component — full-width dark section with "Book a Demo" and "Download Sayso" buttons
+- `ContentCTA` component - full-width dark section with "Book a Demo" and "Download Sayso" buttons
 
 ---
 
@@ -251,15 +251,15 @@ export interface IntegrationEntry {
   slug: string;                    // URL slug: "follow-up-boss"
   crmName: string;                 // Display name: "Follow Up Boss"
   keyword: string;                 // Target SEO keyword: "follow up boss AI integration"
-  seoTitle: string;                // Meta title (max 60 chars — "| Sayso" added by layout)
+  seoTitle: string;                // Meta title (max 60 chars - "| Sayso" added by layout)
   seoDescription: string;          // Meta description (max 160 chars)
-  h1: string;                      // Page H1 — CRM + Sayso + benefit
-  openingDescription: string;      // Intro paragraph — keyword in first 2 sentences
+  h1: string;                      // Page H1 - CRM + Sayso + benefit
+  openingDescription: string;      // Intro paragraph - keyword in first 2 sentences
   howItWorksHeading?: string;      // Custom H2 for "How It Works" (include CRM name)
   howItWorks: { step: string; description: string }[];  // 3-5 numbered steps
   benefits: { title: string; body: string }[];           // 3-5 benefit cards
-  whyChoose: string;               // Why CRM users choose Sayso — 1 paragraph
-  getStarted: string;              // Setup instructions — 2-3 sentences
+  whyChoose: string;               // Why CRM users choose Sayso - 1 paragraph
+  getStarted: string;              // Setup instructions - 2-3 sentences
   faq: { question: string; answer: string }[];           // 3-5 Q&A pairs
   relatedIntegrations: { name: string; slug: string }[]; // Links to other integration pages
   featureList: string[];           // For SoftwareApplication JSON-LD schema
@@ -275,14 +275,14 @@ export interface IntegrationEntry {
 
 | Field | Max Length / Count | Notes |
 |-------|-------------------|-------|
-| `slug` | — | CRM name, lowercase, hyphenated. e.g., `follow-up-boss`, `sierra-interactive`, `kvcore`. |
-| `crmName` | — | Display name used in H2 headings. Capitalize properly: "Follow Up Boss", "Sierra Interactive", "kvCORE". |
-| `keyword` | — | Format: `[crm name] AI integration` (or `AI coaching` for Sierra). |
-| `seoTitle` | 60 chars | Format: `[CRM Name] + Sayso AI Integration`. Do NOT include "Sayso" suffix — layout appends " \| Sayso". Dev build warns if over 60. |
+| `slug` | - | CRM name, lowercase, hyphenated. e.g., `follow-up-boss`, `sierra-interactive`, `kvcore`. |
+| `crmName` | - | Display name used in H2 headings. Capitalize properly: "Follow Up Boss", "Sierra Interactive", "kvCORE". |
+| `keyword` | - | Format: `[crm name] AI integration` (or `AI coaching` for Sierra). |
+| `seoTitle` | 60 chars | Format: `[CRM Name] + Sayso AI Integration`. Do NOT include "Sayso" suffix - layout appends " \| Sayso". Dev build warns if over 60. |
 | `seoDescription` | 160 chars | Format: `[CRM] users: [benefit]. [Key benefit]. [CTA].` Dev build warns if over 160. |
-| `h1` | — | Format: `Sayso + [CRM Name] — [Benefit Statement]`. Include both brand names. |
+| `h1` | - | Format: `Sayso + [CRM Name] - [Benefit Statement]`. Include both brand names. |
 | `openingDescription` | 2-3 sentences | **Exact keyword in first 2 sentences.** Sentence 1 = what the CRM is. Sentence 2 = what the integration does (include keyword). |
-| `howItWorksHeading` | — | Format: `How Sayso Works with [CRM Name]`. Always populate this — do not use the default. |
+| `howItWorksHeading` | - | Format: `How Sayso Works with [CRM Name]`. Always populate this - do not use the default. |
 | `howItWorks` | 3-5 steps | Each step: bold title + 1-2 sentence description. Include keyword once in any step description. Reference CRM terminology. |
 | `benefits` | 3-5 items | Title = bold text. Body = 1-2 sentences. Focus on CRM-specific workflow improvements. Mention CRM elements in at least 1 benefit. |
 | `whyChoose` | 1 paragraph, max 3 sentences | Include keyword once. Social proof or typical use case. |
@@ -290,10 +290,10 @@ export interface IntegrationEntry {
 | `faq` | 3-5 items | Must include required questions (see FAQ rules below). Answers are 2-3 sentences each. |
 | `relatedIntegrations` | 0-3 items | **Only include integration slugs that have content files.** Set to `[]` if target pages do not exist yet. |
 | `featureList` | 3-6 items | Short strings for SoftwareApplication schema. e.g., "Follow Up Boss CRM integration", "Real-time call coaching". |
-| `logoAlt` | — | Keyword-enriched. Format: `[CRM Name] AI integration with Sayso`. |
+| `logoAlt` | - | Keyword-enriched. Format: `[CRM Name] AI integration with Sayso`. |
 | `relatedLinks` | 3-5 items | Cross-section links. Only link to pages that exist. Check `lib/content/features/`, `lib/content/for/`, and `app/pricing/` before adding. |
-| `inlineCtaHeadline` | — | Format: `Ready to Connect Sayso to [CRM Name]?` |
-| `inlineCtaSubheading` | — | 1 sentence describing the key benefit + ease of setup. |
+| `inlineCtaHeadline` | - | Format: `Ready to Connect Sayso to [CRM Name]?` |
+| `inlineCtaSubheading` | - | 1 sentence describing the key benefit + ease of setup. |
 
 ### FAQ Content Rules
 
@@ -301,10 +301,10 @@ Every integration page FAQ must include these question patterns:
 
 | Required Question | Example | Why |
 |------------------|---------|-----|
-| "Does Sayso integrate with [CRM]?" | "Does Sayso integrate with Follow Up Boss?" | Directly targets the search intent — the #1 question visitors have |
-| "How long does setup take?" | "How long does the Follow Up Boss integration take to set up?" | Addresses friction — visitors want to know it is easy |
-| "Will it slow down my workflow?" | "Will Sayso slow down my Follow Up Boss workflow?" | Addresses the main objection — CRM users are protective of their workflow |
-| "Does it cost extra?" | "Does it cost extra to use the Follow Up Boss integration?" | Pricing transparency — removes a buying obstacle |
+| "Does Sayso integrate with [CRM]?" | "Does Sayso integrate with Follow Up Boss?" | Directly targets the search intent - the #1 question visitors have |
+| "How long does setup take?" | "How long does the Follow Up Boss integration take to set up?" | Addresses friction - visitors want to know it is easy |
+| "Will it slow down my workflow?" | "Will Sayso slow down my Follow Up Boss workflow?" | Addresses the main objection - CRM users are protective of their workflow |
+| "Does it cost extra?" | "Does it cost extra to use the Follow Up Boss integration?" | Pricing transparency - removes a buying obstacle |
 
 Additional recommended questions (pick 1):
 - "Does Sayso work with [CRM-specific feature]?" (e.g., "Follow Up Boss smart lists and calling from FUB?")
@@ -313,7 +313,7 @@ Additional recommended questions (pick 1):
 
 **Answer guidelines:**
 - 2-3 sentences each
-- Be specific and direct — these are functional answers, not marketing copy
+- Be specific and direct - these are functional answers, not marketing copy
 - Include the exact keyword in at least one answer (ideally the first)
 - Reference CRM-specific terminology in at least one answer
 
@@ -350,19 +350,19 @@ Before populating `relatedLinks`, verify that the target pages exist:
 **Never link to pages that do not exist.** As new feature and persona pages are created, update `relatedLinks` on integration pages to include them.
 
 **Priority links for integration pages:**
-1. Feature page for call notes (`/features/call-notes/`) — when it exists, this should be the primary feature link since auto-syncing notes is a key integration benefit
-2. Team leaders persona page (`/for/team-leaders/`) — when it exists, this is the best persona link since teams care most about CRM integration
-3. `/pricing/` — always available
+1. Feature page for call notes (`/features/call-notes/`) - when it exists, this should be the primary feature link since auto-syncing notes is a key integration benefit
+2. Team leaders persona page (`/for/team-leaders/`) - when it exists, this is the best persona link since teams care most about CRM integration
+3. `/pricing/` - always available
 
 ---
 
 ## CTA Placement
 
-Integration pages carry **2 CTAs**. These are functional, conversion-focused pages — keep the CTAs direct and low-friction.
+Integration pages carry **2 CTAs**. These are functional, conversion-focused pages - keep the CTAs direct and low-friction.
 
 | Position | Component | Placement | Why Here |
 |----------|-----------|-----------|----------|
-| **Inline CTA** | `ContentInlineCTA` | Immediately after the "How It Works" section | Natural decision point — the reader just saw how easy the integration is |
+| **Inline CTA** | `ContentInlineCTA` | Immediately after the "How It Works" section | Natural decision point - the reader just saw how easy the integration is |
 | **Closing CTA** | `ContentCTA` | Full-width block at the very bottom | Final catch-all after FAQ |
 
 **CTA copy guidance:**
@@ -426,7 +426,7 @@ Generated automatically by the `FAQ` component when `faq` items are provided.
 
 Integration pages require a specific balance:
 
-- **Clear and confident.** The reader is checking compatibility — be direct.
+- **Clear and confident.** The reader is checking compatibility - be direct.
 - **Technical-but-accessible.** These readers already use CRM software. They understand tech basics. Do not over-explain what a CRM is.
 - **Functional, not salesy.** Every sentence should inform or reassure. This is the most functional page type on the site.
 - **CRM-literate.** Reference the specific CRM's terminology (contact records, smart lists, dialer, lead routing). This shows you actually understand their workflow.
@@ -483,7 +483,7 @@ Each integration page must be tailored to its CRM. Use this reference table when
 | **CRM terminology to use** | Lead routing, website integration, lead activity feed, Sierra dialer, lead profiles |
 | **Key workflow** | Leads come in via Sierra website → routed to agents → contacted via Sierra dialer → activity tracked in lead profiles |
 | **Sayso tie-in** | Real-time coaching when Sierra leads call in, notes enrich lead profiles, coaching works with Sierra's lead routing |
-| **Typical user** | Teams using Sierra's full ecosystem — website + CRM + dialer |
+| **Typical user** | Teams using Sierra's full ecosystem - website + CRM + dialer |
 
 ### kvCORE
 
@@ -502,10 +502,10 @@ Use this before submitting any new integration page:
 
 ### Copy Quality
 - [ ] Opening description includes the exact keyword in the first 2 sentences
-- [ ] Each section is concise — no filler, no essays
+- [ ] Each section is concise - no filler, no essays
 - [ ] CRM-specific terminology is used in at least 3 places (benefits, FAQ, how-it-works)
 - [ ] No paragraph exceeds 3 sentences
-- [ ] Tone is functional and direct — not salesy
+- [ ] Tone is functional and direct - not salesy
 - [ ] Brand name is "Sayso" (not SaySo, SAYSO, Say So)
 - [ ] No features described that are not live in the product
 
@@ -537,7 +537,7 @@ Use this before submitting any new integration page:
 
 Before writing anything:
 - Keyword format is always `[CRM name] AI integration` (or `AI coaching` if that fits better)
-- These keywords will likely have near-zero volume today — that is expected
+- These keywords will likely have near-zero volume today - that is expected
 - The page's primary value is as a trust signal for site visitors
 - Verify the CRM is real, active, and used by real estate agents
 
@@ -577,10 +577,10 @@ export const yourCrm: IntegrationEntry = {
   seoTitle: 'Your CRM + Sayso AI Integration',
   seoDescription:
     'Your CRM users: get real-time AI coaching and automatic call notes with Sayso. [Key benefit]. [CTA].',
-  h1: 'Sayso + Your CRM — [Benefit Statement]',
+  h1: 'Sayso + Your CRM - [Benefit Statement]',
   logoAlt: 'Your CRM AI integration with Sayso',
   openingDescription:
-    '[What Your CRM is]. The Your CRM AI integration with Sayso [what it does] — [key outcome].',
+    '[What Your CRM is]. The Your CRM AI integration with Sayso [what it does] - [key outcome].',
   howItWorksHeading: 'How Sayso Works with Your CRM',
   howItWorks: [
     { step: 'Connect your [CRM] account', description: '...' },
@@ -589,7 +589,7 @@ export const yourCrm: IntegrationEntry = {
     { step: 'Notes sync automatically', description: '...' },
   ],
   inlineCtaHeadline: 'Ready to Connect Sayso to Your CRM?',
-  inlineCtaSubheading: '[Key benefit] — set up in under two minutes.',
+  inlineCtaSubheading: '[Key benefit] - set up in under two minutes.',
   benefits: [
     { title: '...', body: '...' },
     { title: '...', body: '...' },
@@ -639,11 +639,11 @@ That is it. The dynamic route at `app/(content)/integrations/[slug]/page.tsx` au
 ### Step 5: Update the integrations hub (if needed)
 
 If your CRM is not already listed in `lib/content/hubs/integrations.ts`, add it to the `childPages` array with:
-- `title` — CRM display name (e.g., "Sierra Interactive")
-- `slug` — must match your content file slug (e.g., "sierra-interactive")
-- `description` — one-liner for the hub listing
-- `keyword` — the target keyword
-- `linkText` — CTA text on the hub page (MUST vary per page for SEO)
+- `title` - CRM display name (e.g., "Sierra Interactive")
+- `slug` - must match your content file slug (e.g., "sierra-interactive")
+- `description` - one-liner for the hub listing
+- `keyword` - the target keyword
+- `linkText` - CTA text on the hub page (MUST vary per page for SEO)
 
 ### Step 6: Cross-link from other integration pages
 
@@ -653,7 +653,7 @@ Also update `relatedLinks` if your new CRM integration page is relevant as a lin
 
 ### Step 7: Verify
 
-1. Run `npm run build` — check for TypeScript errors and dev-mode SEO warnings.
+1. Run `npm run build` - check for TypeScript errors and dev-mode SEO warnings.
 2. Run `npm run dev` and visit `http://localhost:3001/integrations/[slug]`.
 3. Check the rendered page:
    - Browser tab shows `[CRM] + Sayso AI Integration | Sayso`
@@ -669,7 +669,7 @@ Also update `relatedLinks` if your new CRM integration page is relevant as a lin
    - SoftwareApplication JSON-LD present with CRM-specific feature list
    - FAQPage JSON-LD has the correct number of items
    - BreadcrumbList JSON-LD present
-5. Count keyword occurrences in visible page text — should be 3-4 exact + 5-8 semantic.
+5. Count keyword occurrences in visible page text - should be 3-4 exact + 5-8 semantic.
 6. Run the page through the [SEO Audit Checklist](#seo-audit-checklist) below.
 
 ---
@@ -704,7 +704,7 @@ Run through this after creating or editing any integration page:
 ### Keyword Density
 - [ ] Exact keyword appears 3-4 times in visible content
 - [ ] Semantic variations appear 5-8 times total
-- [ ] No keyword stuffing — every usage reads naturally
+- [ ] No keyword stuffing - every usage reads naturally
 
 ### Technical SEO
 - [ ] `seoTitle` is ≤60 characters (layout adds " | Sayso")
@@ -716,7 +716,7 @@ Run through this after creating or editing any integration page:
 - [ ] OG title, description, and image are set
 
 ### Content Structure
-- [ ] Single H1 — contains both CRM name and Sayso
+- [ ] Single H1 - contains both CRM name and Sayso
 - [ ] 5 H2s (How It Works, What You Get, Why Choose, Get Started, FAQ)
 - [ ] No heading levels skipped
 - [ ] All paragraphs ≤3 sentences
@@ -726,12 +726,12 @@ Run through this after creating or editing any integration page:
 - [ ] 3-5 FAQ items including all 4 required question patterns
 
 ### Internal Links (4-6 total)
-- [ ] Link to `/integrations/` hub (breadcrumb — automatic)
-- [ ] Link to `/demo` (inline CTA + closing CTA — automatic)
+- [ ] Link to `/integrations/` hub (breadcrumb - automatic)
+- [ ] Link to `/demo` (inline CTA + closing CTA - automatic)
 - [ ] Link to 1+ feature page (`relatedLinks`)
 - [ ] Link to 1+ persona page (`relatedLinks`)
 - [ ] Link to `/pricing/` (`relatedLinks`)
-- [ ] Links to other integration pages (`relatedIntegrations`) — only when those pages exist
+- [ ] Links to other integration pages (`relatedIntegrations`) - only when those pages exist
 - [ ] Zero broken links / 404s on the page
 
 ### CTAs
@@ -742,4 +742,4 @@ Run through this after creating or editing any integration page:
 ### CRM-Specific Content
 - [ ] At least 2-3 CRM-specific workflow elements referenced in content
 - [ ] CRM terminology used in benefits, FAQ, and/or how-it-works
-- [ ] Content is not generic — it specifically addresses this CRM's users and workflow
+- [ ] Content is not generic - it specifically addresses this CRM's users and workflow

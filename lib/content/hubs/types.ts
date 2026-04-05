@@ -5,7 +5,7 @@ export interface HubChildPage {
   /** Optional eyebrow label displayed above the card title. */
   eyebrow?: string;
   keyword?: string;
-  /** Visible anchor text for the link — MUST vary across items for SEO. */
+  /** Visible anchor text for the link - MUST vary across items for SEO. */
   linkText: string;
   /** Override the default `basePath/slug` link (e.g. when children live at non-standard paths). */
   href?: string;

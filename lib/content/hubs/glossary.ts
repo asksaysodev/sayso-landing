@@ -5,12 +5,12 @@ const glossaryHub: HubPageConfig = {
   slug: 'glossary',
   section: 'Glossary',
   basePath: '/glossary',
-  seoTitle: 'Real Estate Glossary — Key Terms Explained',
+  seoTitle: 'Real Estate Glossary: Key Terms Explained',
   seoDescription:
-    'Clear definitions of real estate prospecting terms — circle prospecting, ISA, FSBO, expired listings, and more. Written for agents, not textbooks.',
+    'Clear definitions of real estate prospecting terms, including circle prospecting, ISA, FSBO, expired listings, and more. Written for agents, not textbooks.',
   h1: 'Real Estate Glossary',
   introduction:
-    'Clear, practical definitions of the terms real estate agents actually use on the phones every day. No jargon walls — just the context you need to sound confident on every call.',
+    'Clear, practical definitions of the terms real estate agents actually use on the phones every day. No jargon walls, just the context you need to sound confident on every call.',
   childPages: [
     {
       title: 'Circle Prospecting',
@@ -43,7 +43,7 @@ const glossaryHub: HubPageConfig = {
     {
       title: 'FSBO',
       slug: 'fsbo',
-      description: 'For Sale By Owner — a homeowner selling without an agent.',
+      description: 'For Sale By Owner, a homeowner selling without an agent.',
       keyword: 'what does FSBO mean',
       linkText: 'What does FSBO mean?',
     },

@@ -11,7 +11,7 @@ export const isaContent: PersonaContent = {
   },
   transformation: {
     headline: "With SaySo, You Always Know What to Say",
-    subheading: 'Stay confident and in control — even when prospects push back.',
+    subheading: 'Stay confident and in control, even when prospects push back.',
     metrics: [
       {
         icon: <ShieldCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
@@ -31,7 +31,7 @@ export const isaContent: PersonaContent = {
       {
         icon: <Zap size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
         title: 'Works on Every Call',
-        description: 'Live prompts for FSBOs, expireds, buyer leads — any prospect type',
+        description: 'Live prompts for FSBOs, expireds, buyer leads, and any prospect type',
       },
     ],
   },
@@ -43,12 +43,12 @@ export const isaContent: PersonaContent = {
       {
         title: '1. Launch Coach',
         description:
-          'Open Sayso before you dial. Works with whatever CRM or dialer you already use — no new setup.',
+          'Open Sayso before you dial. Works with whatever CRM or dialer you already use, no new setup.',
       },
       {
         title: '2. Get Your Next Question',
         description:
-          "When a prospect pushes back or goes quiet, Sayso shows you exactly what to ask next — so you never run out of words.",
+          "When a prospect pushes back or goes quiet, Sayso shows you exactly what to ask next, so you never run out of words.",
       },
       {
         title: '3. Book the Appointment',

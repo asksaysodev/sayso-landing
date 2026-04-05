@@ -10,8 +10,8 @@ This document is the complete reference for creating `/features/[slug]` pages. I
 
 1. [File Locations](#file-locations)
 2. [What a Feature Page Is (and Is Not)](#what-a-feature-page-is-and-is-not)
-3. [SEO Rules — Universal](#seo-rules--universal)
-4. [SEO Rules — Feature-Specific](#seo-rules--feature-specific)
+3. [SEO Rules - Universal](#seo-rules--universal)
+4. [SEO Rules - Feature-Specific](#seo-rules--feature-specific)
 5. [Page Structure (Section by Section)](#page-structure-section-by-section)
 6. [TypeScript Data Interface](#typescript-data-interface)
 7. [Internal Linking Requirements](#internal-linking-requirements)
@@ -28,21 +28,21 @@ This document is the complete reference for creating `/features/[slug]` pages. I
 
 | File | Purpose |
 |------|---------|
-| `lib/content/features/types.ts` | `FeatureEntry` TypeScript interface — every content field |
-| `lib/content/features/index.ts` | Content loader — exports `getAllFeatureEntries()`, `getFeatureBySlug()`, `getAllFeatureSlugs()` |
+| `lib/content/features/types.ts` | `FeatureEntry` TypeScript interface - every content field |
+| `lib/content/features/index.ts` | Content loader - exports `getAllFeatureEntries()`, `getFeatureBySlug()`, `getAllFeatureSlugs()` |
 | `lib/content/features/*.ts` | Individual feature content files (one per feature) |
-| `components/pages/FeaturePage.tsx` | Shared page template component — renders all feature pages |
-| `app/(content)/features/[slug]/page.tsx` | Next.js dynamic route — handles metadata + static params |
+| `components/pages/FeaturePage.tsx` | Shared page template component - renders all feature pages |
+| `app/(content)/features/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/features/page.tsx` | Features hub listing page |
-| `lib/content/hubs/features.ts` | Hub page config — lists all child feature pages |
-| `lib/seo/metadata.ts` | `buildMetadata()` — generates title, description, canonical, OG tags |
-| `lib/seo/schema.ts` | JSON-LD generators — `generateSoftwareAppJsonLd()`, `generateBreadcrumbJsonLd()`, `generateFAQPageJsonLd()` |
+| `lib/content/hubs/features.ts` | Hub page config - lists all child feature pages |
+| `lib/seo/metadata.ts` | `buildMetadata()` - generates title, description, canonical, OG tags |
+| `lib/seo/schema.ts` | JSON-LD generators - `generateSoftwareAppJsonLd()`, `generateBreadcrumbJsonLd()`, `generateFAQPageJsonLd()` |
 
 ---
 
 ## What a Feature Page Is (and Is Not)
 
-Feature pages sit at the **mid-to-bottom of the funnel**. The visitor is solution-aware — they know what kind of tool they want and are checking whether Sayso delivers it.
+Feature pages sit at the **mid-to-bottom of the funnel**. The visitor is solution-aware - they know what kind of tool they want and are checking whether Sayso delivers it.
 
 **A feature page IS:**
 - A product page that describes what Sayso does and why it matters
@@ -59,15 +59,15 @@ If you find yourself writing a "how to" guide, you are writing a blog post, not 
 
 ---
 
-## SEO Rules — Universal
+## SEO Rules - Universal
 
 These rules apply to every feature page without exception.
 
-### Keyword Placement — Required Locations
+### Keyword Placement - Required Locations
 
 | Location | Rule | Example |
 |----------|------|---------|
-| **H1** | Must contain the target keyword naturally. Must be benefit-oriented — sell the outcome, not just the feature name. Use an em-dash to separate keyword from benefit clause. | `Real-Time Sales Help — AI That Coaches You Through Every Call` |
+| **H1** | Must contain the target keyword naturally. Must be benefit-oriented - sell the outcome, not just the feature name. Use an em-dash to separate keyword from benefit clause. | `Real-Time Sales Help - AI That Coaches You Through Every Call` |
 | **First 100 words** | The exact target keyword must appear within the first 100 words of body content (the hero paragraphs). Ideally in the first 2 sentences. | `Sayso gives you real-time sales help for real estate agents who prospect on the phone...` |
 | **Meta title** | Format: `[Target Keyword Phrase] | Sayso`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should just be the keyword phrase portion. Max 60 characters for the `seoTitle` value. | `seoTitle: 'Real-Time Sales Help for Real Estate Agents'` (48 chars + " | Sayso" = 57 total) |
 | **Meta description** | 150-160 characters max. Must contain the target keyword. Follow the format: `[Problem]. [How Sayso solves it]. [CTA].` | `Freeze on a call and lose the listing. Sayso gives real-time sales help for real estate agents with live coaching prompts on screen. Book a demo.` |
@@ -84,7 +84,7 @@ These rules apply to every feature page without exception.
 
 ### Heading Structure
 
-- **One H1 only** — the page title.
+- **One H1 only** - the page title.
 - **H2s:** 5-7 per page. Each major section gets an H2.
 - **H3s:** Used for subsections (e.g., differentiator titles under the differentiators H2).
 - **Never skip heading levels** (no H1 → H3 without an H2 between them).
@@ -103,19 +103,19 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ---
 
-## SEO Rules — Feature-Specific
+## SEO Rules - Feature-Specific
 
 ### Content Constraints
 
 - **No vaporware.** Only describe features that exist today. Features listed as "Coming Soon" on pricing must NOT be referenced in content pages until they are live.
-- **Paragraphs:** Max 3 sentences per paragraph. The `heroDescription` and `whoItsFor` fields are `string[]` — each string renders as its own `<p>` tag.
+- **Paragraphs:** Max 3 sentences per paragraph. The `heroDescription` and `whoItsFor` fields are `string[]` - each string renders as its own `<p>` tag.
 - **Total word count:** 800-1,500 words. Feature pages should be thorough but not bloated. Aim for the 800-1,000 range.
-- **Tone:** Confident and clear. You are showing someone what the product does — be specific, not vague.
+- **Tone:** Confident and clear. You are showing someone what the product does - be specific, not vague.
 
 ### Differentiators
 
 - Compare against the **generic way** agents handle this problem (manual scripts, post-call reviews, memorization).
-- Do NOT compare against specific competitors — that is what `/compare/` pages are for.
+- Do NOT compare against specific competitors - that is what `/compare/` pages are for.
 - Each differentiator should be 2-3 sentences.
 - Differentiator titles render as `<h3>` tags for proper heading hierarchy.
 
@@ -123,7 +123,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 - If real testimonials exist, use them.
 - If no testimonials exist yet, frame it as outcomes: "Agents using [feature] report [specific outcome]."
-- Always populate the `socialProof` field — even an outcome-framed statement is better than leaving the section empty.
+- Always populate the `socialProof` field - even an outcome-framed statement is better than leaving the section empty.
 
 ### FAQ
 
@@ -157,8 +157,8 @@ The `FeaturePage.tsx` component renders sections in this exact order:
 - **Body:** 2-3 paragraphs from `heroDescription[]`. Each paragraph is max 3 sentences.
   - Paragraph 1: State the **problem** this feature solves. Lead with the pain.
   - Paragraph 2: Introduce **Sayso's solution**. Include the exact target keyword here.
-  - Paragraph 3: Reinforce the outcome — what changes for the agent.
-- **Hero CTA:** Two buttons — "Book a Demo" (`/demo`) and "Download Sayso" (`/`)
+  - Paragraph 3: Reinforce the outcome - what changes for the agent.
+- **Hero CTA:** Two buttons - "Book a Demo" (`/demo`) and "Download Sayso" (`/`)
 - **Screenshot placeholder:** Image placeholder with keyword-rich alt text
 
 ### 4. How It Works
@@ -167,7 +167,7 @@ The `FeaturePage.tsx` component renders sections in this exact order:
 - Keep it concrete: "When a lead says X, Sayso shows Y on your screen."
 
 ### 5. Secondary CTA (Inline)
-- `ContentInlineCTA` component — positioned immediately after "How It Works."
+- `ContentInlineCTA` component - positioned immediately after "How It Works."
 - Customizable headline and subheading via props.
 
 ### 6. Who This Is For
@@ -178,7 +178,7 @@ The `FeaturePage.tsx` component renders sections in this exact order:
   - New agents
   - Team leaders / managers
 - **Persona links:** Rendered below the text. Links to relevant `/for/` pages.
-- **Pricing link:** Always rendered — "View Pricing" linking to `/pricing/`.
+- **Pricing link:** Always rendered - "View Pricing" linking to `/pricing/`.
 
 ### 7. Differentiators
 - **H2:** Custom heading from `differentiatorsHeading`. Format: `What Makes Sayso's [Feature Name] Different`. Falls back to "What Makes This Different."
@@ -188,7 +188,7 @@ The `FeaturePage.tsx` component renders sections in this exact order:
 ### 8. Social Proof
 - **H2:** "What Agents Are Saying"
 - **Blockquote:** Styled with yellow left border. Italic text.
-- Only renders if `socialProof` is defined (but it should always be defined — see rules above).
+- Only renders if `socialProof` is defined (but it should always be defined - see rules above).
 
 ### 9. Related Features
 - **H2:** "Related Features"
@@ -205,7 +205,7 @@ The `FeaturePage.tsx` component renders sections in this exact order:
 - Automatically generates `FAQPage` JSON-LD.
 
 ### 12. Closing CTA
-- `ContentCTA` component — full-width dark section with "Book a Demo" button.
+- `ContentCTA` component - full-width dark section with "Book a Demo" button.
 
 ---
 
@@ -217,9 +217,9 @@ Every feature page is defined by a `FeatureEntry` object in `lib/content/feature
 export interface FeatureEntry {
   slug: string;                  // URL slug: "real-time-coaching"
   keyword: string;               // Target SEO keyword
-  seoTitle: string;              // Meta title (max 60 chars — "| Sayso" added by layout)
+  seoTitle: string;              // Meta title (max 60 chars - "| Sayso" added by layout)
   seoDescription: string;        // Meta description (max 160 chars)
-  h1: string;                    // Page H1 — keyword + benefit clause
+  h1: string;                    // Page H1 - keyword + benefit clause
   heroDescription: string[];     // Each string = one <p> in the hero (max 3 sentences each)
   howItWorksHeading?: string;    // Custom H2 for "How It Works" (include keyword variation)
   howItWorks: { step: string; description: string }[];  // 3-5 numbered steps
@@ -241,24 +241,24 @@ export interface FeatureEntry {
 
 | Field | Max Length / Count | Notes |
 |-------|-------------------|-------|
-| `slug` | — | Lowercase, hyphenated. Should describe the feature clearly. |
-| `keyword` | — | The exact long-tail keyword you are targeting. |
+| `slug` | - | Lowercase, hyphenated. Should describe the feature clearly. |
+| `keyword` | - | The exact long-tail keyword you are targeting. |
 | `seoTitle` | 60 chars | Layout appends " \| Sayso". Dev build warns if over 60. |
 | `seoDescription` | 160 chars | Format: Problem. Solution. CTA. Dev build warns if over 160. |
-| `h1` | — | Keyword + em-dash + benefit. e.g., `[Keyword] — [Benefit Clause]` |
+| `h1` | - | Keyword + em-dash + benefit. e.g., `[Keyword] - [Benefit Clause]` |
 | `heroDescription` | 2-3 strings | Paragraph 1 = problem. Paragraph 2 = solution + keyword. Paragraph 3 = outcome. |
-| `howItWorksHeading` | — | Include a keyword variation. e.g., `How [Keyword Phrase] Works` |
+| `howItWorksHeading` | - | Include a keyword variation. e.g., `How [Keyword Phrase] Works` |
 | `howItWorks` | 3-5 steps | Each step: bold title + 1-2 sentence description. |
 | `whoItsFor` | 2-4 strings | One paragraph per persona/use case. Include keyword in the first paragraph. |
 | `personaLinks` | 1-3 links | Only link to persona pages that actually exist. Currently only `/for/solo-agents`. |
-| `differentiatorsHeading` | — | Format: `What Makes Sayso's [Feature Name] Different` |
+| `differentiatorsHeading` | - | Format: `What Makes Sayso's [Feature Name] Different` |
 | `differentiators` | 3-4 items | Title = `<h3>`. Body = 2-3 sentences. Compare against generic approaches, not competitors. |
-| `socialProof` | — | Real testimonial preferred. Otherwise, outcome-framed statement. |
+| `socialProof` | - | Real testimonial preferred. Otherwise, outcome-framed statement. |
 | `faq` | 4-5 items | Must include pricing/getting-started Q. At least one Q should contain the keyword. |
 | `relatedFeatures` | 2-3 items | Link to other feature slugs. |
 | `relatedBlogPosts` | 1-2 items | Link to blog posts that support this feature's topic. |
 | `featureList` | 3-6 items | Short strings for SoftwareApplication schema. e.g., "Real-time call coaching" |
-| `screenshotAlt` | — | Describe the image + include keyword or variation + real estate context. |
+| `screenshotAlt` | - | Describe the image + include keyword or variation + real estate context. |
 
 ---
 
@@ -347,7 +347,7 @@ Use this before submitting any new feature page:
 - [ ] H1 is benefit-oriented, not just the feature name
 - [ ] Hero paragraph 1 leads with the problem, not the product
 - [ ] No paragraph exceeds 3 sentences
-- [ ] Tone is confident and specific — no vague marketing language
+- [ ] Tone is confident and specific - no vague marketing language
 - [ ] No "how-to" instructional content (that belongs in blog posts)
 - [ ] Brand name is "Sayso" (not SaySo, SAYSO, Say So)
 - [ ] No features described that are not live in the product
@@ -405,11 +405,11 @@ That is it. The dynamic route at `app/(content)/features/[slug]/page.tsx` automa
 ### Step 3: Update the features hub (if needed)
 
 If your feature is not already listed in `lib/content/hubs/features.ts`, add it to the `childPages` array with:
-- `title` — display name
-- `slug` — must match your content file slug
-- `description` — one-liner for the hub listing
-- `keyword` — the target keyword
-- `linkText` — CTA text on the hub page
+- `title` - display name
+- `slug` - must match your content file slug
+- `description` - one-liner for the hub listing
+- `keyword` - the target keyword
+- `linkText` - CTA text on the hub page
 
 ### Step 4: Update related features on other pages
 
@@ -417,7 +417,7 @@ Open other existing feature content files and add your new page to their `relate
 
 ### Step 5: Verify
 
-1. Run `npm run build` — check for TypeScript errors and dev-mode SEO warnings.
+1. Run `npm run build` - check for TypeScript errors and dev-mode SEO warnings.
 2. Run `npm run dev` and visit `http://localhost:3001/features/[slug]`.
 3. View page source and verify:
    - Meta title and description contain the keyword
@@ -459,7 +459,7 @@ Run through this after creating or editing any feature page:
 ### Keyword Density
 - [ ] Exact keyword appears 3-5 times total
 - [ ] Semantic variations appear 6-10 times total
-- [ ] No keyword stuffing — every usage reads naturally
+- [ ] No keyword stuffing - every usage reads naturally
 
 ### Technical SEO
 - [ ] `seoTitle` is ≤60 characters (layout adds " | Sayso")
@@ -471,8 +471,8 @@ Run through this after creating or editing any feature page:
 - [ ] OG title, description, and image are set
 
 ### Content Structure
-- [ ] Single H1 — benefit-oriented with keyword
-- [ ] 5-7 H2s — at least one contains keyword variation
+- [ ] Single H1 - benefit-oriented with keyword
+- [ ] 5-7 H2s - at least one contains keyword variation
 - [ ] H3s used for differentiator titles (proper hierarchy)
 - [ ] No heading levels skipped
 - [ ] All paragraphs ≤3 sentences

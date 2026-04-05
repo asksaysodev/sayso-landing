@@ -10,12 +10,12 @@ export interface NavLink {
 export interface NavSection {
   label: string;
   links: NavLink[];
-  /** Optional hub page URL — clicking the section label navigates here. */
+  /** Optional hub page URL - clicking the section label navigates here. */
   href?: string;
 }
 
 // ---------------------------------------------------------------------------
-// Header navigation — 4 dropdown sections
+// Header navigation - 4 dropdown sections
 // ---------------------------------------------------------------------------
 
 export const headerNav: NavSection[] = [
@@ -66,7 +66,7 @@ export const headerNav: NavSection[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Footer navigation — 6 sections
+// Footer navigation - 6 sections
 // ---------------------------------------------------------------------------
 
 export const footerNav: NavSection[] = [

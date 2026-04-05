@@ -1,4 +1,4 @@
-# Sayso Landing Page UI/UX Rules (Style 1 — Clean, Quiet Confidence)
+# Sayso Landing Page UI/UX Rules (Style 1 - Clean, Quiet Confidence)
 
 **Goal:** A minimal, premium landing page that communicates Sayso in seconds: *real-time, in-call guidance that helps agents say the right thing at the right moment.*  
 **Reference vibe:** clean + decisive like Cluely; professional + trust-forward like Hedy.  
@@ -9,12 +9,12 @@
 ## 1) Overall Feel
 
 ### The vibe in one sentence
-**Calm, crisp, confident — like a premium tool that stays out of your way.**
+**Calm, crisp, confident - like a premium tool that stays out of your way.**
 
 ### What the user should feel
 - “I understand what this does in 5 seconds.”
 - “This feels premium and simple.”
-- “It’s a coach in my ear — not another complicated platform.”
+- “It’s a coach in my ear - not another complicated platform.”
 
 ### Page behavior
 - Fast to scan, short sections, high whitespace.

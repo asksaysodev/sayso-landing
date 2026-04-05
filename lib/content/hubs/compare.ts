@@ -5,7 +5,7 @@ const compareHub: HubPageConfig = {
   slug: 'compare',
   section: 'Compare',
   basePath: '/compare',
-  seoTitle: 'Compare Sayso — How We Stack Up',
+  seoTitle: 'Compare Sayso: How We Stack Up',
   seoDescription:
     'See how Sayso compares to other real estate call coaching tools. Honest feature comparisons, pricing breakdowns, and use case analysis.',
   h1: 'How Sayso Compares',
@@ -15,7 +15,7 @@ const compareHub: HubPageConfig = {
     {
       title: 'Sayso vs Shilo',
       slug: 'sayso-vs-shilo',
-      description: 'Real-time coaching vs post-call analysis — which approach fits your workflow?',
+      description: 'Real-time coaching vs post-call analysis, which approach fits your workflow?',
       keyword: 'shilo alternative',
       linkText: 'Compare Sayso and Shilo',
     },
@@ -31,7 +31,7 @@ const compareHub: HubPageConfig = {
       slug: 'sayso-vs-manual-coaching',
       description: 'When does Sayso make more sense than a traditional coaching program?',
       keyword: 'real estate coaching AI vs manual',
-      linkText: 'Sayso vs manual coaching — which is better?',
+      linkText: 'Sayso vs manual coaching, which is better?',
     },
   ],
   noKeyword: true,

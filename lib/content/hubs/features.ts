@@ -5,18 +5,18 @@ const featuresHub: HubPageConfig = {
   slug: 'features',
   section: 'Features',
   basePath: '/features',
-  seoTitle: 'Sayso Product — Real-Time Coaching for Agents',
+  seoTitle: 'Sayso Product: Real-Time Coaching for Agents',
   seoDescription:
     'Explore the Sayso product: real-time coaching, objection handling, and automatic call notes for real estate agents.',
   h1: 'Features Built For You',
   introduction:
-    'Every feature in Sayso is designed for one thing — helping you sound better on prospecting calls. Real-time coaching, automatic notes, objection handling, and more.',
+    'Every feature in Sayso is designed for one thing: helping you sound better on prospecting calls. Real-time coaching, automatic notes, objection handling, and more.',
   childPages: [
     {
       title: 'Real-Time Coaching',
       eyebrow: 'Cue',
       slug: 'real-time-coaching',
-      description: 'Live guidance on every call — see what to say the moment you need it.',
+      description: 'Live guidance on every call. See what to say the moment you need it.',
       keyword: 'real time sales help',
       linkText: 'See how real-time coaching works',
     },

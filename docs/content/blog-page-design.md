@@ -1,8 +1,8 @@
-# Blog Page Design — Sayso Landing Site
+# Blog Page Design - Sayso Landing Site
 
 ## Purpose
 
-Add a blog section to the Sayso landing site to improve organic SEO rankings. The blog will target keywords around real estate sales calls, cold calling, AI-powered calling tools, and lead conversion — driving inbound traffic that funnels into demo bookings and onboarding activations.
+Add a blog section to the Sayso landing site to improve organic SEO rankings. The blog will target keywords around real estate sales calls, cold calling, AI-powered calling tools, and lead conversion - driving inbound traffic that funnels into demo bookings and onboarding activations.
 
 ---
 
@@ -55,7 +55,7 @@ All routes live under `app/blog/` using Next.js App Router.
 │  │  "Tips, strategies, and insights to help      │  │
 │  │   you win every sales moment."   (white/70)   │  │
 │  │                                               │  │
-│  │  [ Search bar — white, rounded-full,          │  │
+│  │  [ Search bar - white, rounded-full,          │  │
 │  │    border-2 border-white/30, search icon ]    │  │
 │  └───────────────────────────────────────────────┘  │
 │                                                     │
@@ -130,16 +130,16 @@ All routes live under `app/blog/` using Next.js App Router.
 │  │                      ││  Object-fit: cover
 │  └──────────────────────┘│
 │                          │
-│  Cold Calling            │  Category pill — bg-[#FFDE59] text-[#1D4871]
+│  Cold Calling            │  Category pill - bg-[#FFDE59] text-[#1D4871]
 │                          │  font-comic text-xs uppercase tracking-wide
 │  How to Double Your      │
-│  Appointment Set Rate    │  Title — font-hero text-lg, line-clamp-2
+│  Appointment Set Rate    │  Title - font-hero text-lg, line-clamp-2
 │                          │
-│  Learn the proven        │  Excerpt — text-sm text-[#1D4871]/70
+│  Learn the proven        │  Excerpt - text-sm text-[#1D4871]/70
 │  strategies that top...  │  line-clamp-2
 │                          │
 │  ○ Marcus Rivera         │  Author avatar (24px circle) + name
-│  Feb 10, 2026 • 5 min   │  Date + read time — text-small text-[#1D4871]/50
+│  Feb 10, 2026 • 5 min   │  Date + read time - text-small text-[#1D4871]/50
 └──────────────────────────┘
 ```
 
@@ -254,7 +254,7 @@ All routes live under `app/blog/` using Next.js App Router.
 Same layout as the blog index, but:
 - Hero banner shows category name and description instead of "The Sayso Blog"
 - Active category pill is pre-selected
-- No featured post section — goes straight to the post grid
+- No featured post section - goes straight to the post grid
 - Breadcrumb: `Blog > Category Name`
 
 ---
@@ -283,7 +283,7 @@ Same layout as the blog index, but:
 
 ## Content Management: MDX
 
-Use **MDX** for blog posts (already partially configured in the project — MDX support is commented out in `next.config.js`).
+Use **MDX** for blog posts (already partially configured in the project - MDX support is commented out in `next.config.js`).
 
 ### Blog Post File Structure
 
@@ -302,7 +302,7 @@ content/
 ---
 title: "How to Double Your Appointment Set Rate in 30 Days"
 slug: "how-to-double-appointment-set-rate"
-description: "Learn the proven strategies top-performing agents use to convert cold calls into booked appointments — with step-by-step playbooks."
+description: "Learn the proven strategies top-performing agents use to convert cold calls into booked appointments - with step-by-step playbooks."
 category: "cold-calling"
 tags: ["appointment setting", "cold calling", "conversion rate", "scripts"]
 author:
@@ -461,14 +461,14 @@ Add a "Blog" link under the **Product** column in `Footer`:
 
 ## Implementation Order
 
-1. **Phase 1 — Foundation**
+1. **Phase 1 - Foundation**
    - Install MDX dependencies
    - Uncomment MDX support in `next.config.js`
    - Create `lib/blog.ts` utility (read/parse/sort posts)
    - Create `content/blog/` with 1-2 sample MDX posts
    - Set up `app/blog/` route with layout
 
-2. **Phase 2 — Blog Index Page**
+2. **Phase 2 - Blog Index Page**
    - `BlogHeroBanner` component
    - `BlogCategoryPills` component
    - `BlogPostCard` component
@@ -477,7 +477,7 @@ Add a "Blog" link under the **Product** column in `Footer`:
    - `BlogNewsletterCTA` component
    - Wire up `app/blog/page.tsx`
 
-3. **Phase 3 — Blog Post Page**
+3. **Phase 3 - Blog Post Page**
    - `BlogArticleHeader` component
    - `BlogArticleContent` with custom MDX components
    - `BlogTableOfContents` component
@@ -489,17 +489,17 @@ Add a "Blog" link under the **Product** column in `Footer`:
    - `BlogBreadcrumb` component
    - Wire up `app/blog/[slug]/page.tsx`
 
-4. **Phase 4 — Category Pages**
+4. **Phase 4 - Category Pages**
    - `app/blog/category/[slug]/page.tsx`
    - Reuse index page components with filtered data
 
-5. **Phase 5 — SEO & Navigation**
+5. **Phase 5 - SEO & Navigation**
    - Add `generateMetadata()` to all blog routes
    - Add JSON-LD structured data
    - Create/update `app/sitemap.ts`
    - Add "Blog" to navbar and footer
 
-6. **Phase 6 — Content**
+6. **Phase 6 - Content**
    - Write initial batch of 5-10 SEO-targeted blog posts
    - Create cover images following the comic/superhero visual style
    - Set up author profiles

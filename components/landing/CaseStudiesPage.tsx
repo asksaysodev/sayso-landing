@@ -23,17 +23,17 @@ const CASE_STUDIES = [
       '"Sayso turned our cold calls from guessing games into real conversations. My newer agents are booking like veterans now."',
     beforeSayso: {
       problem:
-        'Marcus\'s team was making 200+ cold calls per day but converting less than 2% into appointments. Newer agents especially struggled when prospects threw objections — they\'d freeze, fumble, or rush through scripted responses that felt robotic.',
+        'Marcus\'s team was making 200+ cold calls per day but converting less than 2% into appointments. Newer agents especially struggled when prospects threw objections, they\'d freeze, fumble, or rush through scripted responses that felt robotic.',
       triedBefore:
         'They tried weekly role-play sessions, printed objection-handling scripts taped to monitors, and even had senior agents listen in on calls to coach afterward.',
       whyItFailed:
-        'Role-play didn\'t replicate the pressure of a live call. Scripts couldn\'t cover every scenario. Post-call coaching came too late — the moment was already gone.',
+        'Role-play didn\'t replicate the pressure of a live call. Scripts couldn\'t cover every scenario. Post-call coaching came too late, the moment was already gone.',
     },
     howTheyUseSayso: {
       leadType: 'Seller leads (expired listings, FSBOs)',
       callTypes: 'Cold calls and follow-ups',
       description:
-        'Every agent on the team turns on Sayso before their power hour. When a homeowner pushes back — "I\'m not interested," "We already have an agent," "Now isn\'t the right time" — Sayso surfaces the next best question in real time. Agents stay in the conversation instead of retreating to a script.',
+        'Every agent on the team turns on Sayso before their power hour. When a homeowner pushes back, "I\'m not interested," "We already have an agent," "Now isn\'t the right time," Sayso surfaces the next best question in real time. Agents stay in the conversation instead of retreating to a script.',
     },
     results: {
       appointmentsBefore: '3–4 per week (team avg)',
@@ -62,14 +62,14 @@ const CASE_STUDIES = [
     customerSince: 'November 2025',
     housesSold: '89 houses sold in 2025',
     heroQuote:
-      '"I can\'t sit on every call with every agent. Sayso is like having me whispering in their ear — except it\'s actually there when it matters."',
+      '"I can\'t sit on every call with every agent. Sayso is like having me whispering in their ear, except it\'s actually there when it matters."',
     beforeSayso: {
       problem:
         'Sarah built her brokerage on her own outbound skills, but scaling that to her team was the bottleneck. She was spending 10+ hours a week listening to recorded calls, leaving notes, and running 1-on-1 coaching sessions. Her agents still struggled to handle live objections independently.',
       triedBefore:
         'Invested in a call coaching platform that analyzed recordings after the fact. Also tried a shared Google Doc of "best responses" that agents could reference.',
       whyItFailed:
-        'Post-call analysis meant agents kept making the same mistakes before getting feedback. The Google Doc was too slow to search during a live call — you can\'t scroll through a document while a prospect is talking.',
+        'Post-call analysis meant agents kept making the same mistakes before getting feedback. The Google Doc was too slow to search during a live call, you can\'t scroll through a document while a prospect is talking.',
     },
     howTheyUseSayso: {
       leadType: 'Buyer and seller leads',
@@ -86,7 +86,7 @@ const CASE_STUDIES = [
     },
     momentStory: {
       quote:
-        '"I was on a follow-up call with a seller who\'d gone cold for 3 weeks. He hit me with \'We decided to just wait until spring.\' Normally I\'d accept that and schedule a callback. But Sayso prompted me to ask what specifically changes for them in spring. He paused, then admitted nothing really — they were just nervous. I booked the listing appointment right there."',
+        '"I was on a follow-up call with a seller who\'d gone cold for 3 weeks. He hit me with \'We decided to just wait until spring.\' Normally I\'d accept that and schedule a callback. But Sayso prompted me to ask what specifically changes for them in spring. He paused, then admitted nothing really, they were just nervous. I booked the listing appointment right there."',
       agent: 'Sarah Anderson',
     },
   },
@@ -285,7 +285,7 @@ function CaseStudySection({ study }: { study: (typeof CASE_STUDIES)[number] }) {
                 {/* Bubble tail */}
                 <div className="absolute -bottom-3 left-10 w-6 h-6 bg-[#F4F4F5] border-b-2 border-r-2 border-[#1D4871] rotate-45" />
               </div>
-              <p className="mt-5 ml-10 font-bold text-[#1D4871] text-sm">— {study.momentStory.agent}</p>
+              <p className="mt-5 ml-10 font-bold text-[#1D4871] text-sm"> - {study.momentStory.agent}</p>
             </div>
           </div>
 

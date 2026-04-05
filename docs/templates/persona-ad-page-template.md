@@ -8,18 +8,18 @@ This document describes the layout, style, and component pattern used for person
 
 | File | Purpose |
 |------|---------|
-| `components/landing/BrokerAdPage.tsx` | The broker page layout — use this as the template |
-| `app/broker/page.tsx` | Next.js route — just imports and renders `BrokerAdPage` |
+| `components/landing/BrokerAdPage.tsx` | The broker page layout - use this as the template |
+| `app/broker/page.tsx` | Next.js route - just imports and renders `BrokerAdPage` |
 | `components/landing/ThreeStepsSection/StepVisuals.tsx` | Reusable dark UI mockups used in the How It Works cards |
 
 ---
 
 ## Design Principles
 
-- **No navbar** — ad landing pages strip navigation to reduce exit points
-- **No heavy animations** — static layout only, no framer-motion or interactive panels
-- **Centered single column** — `max-w-xl mx-auto` (~576px) for all content
-- **Same footer** — uses the standard `<Footer />` component
+- **No navbar** - ad landing pages strip navigation to reduce exit points
+- **No heavy animations** - static layout only, no framer-motion or interactive panels
+- **Centered single column** - `max-w-xl mx-auto` (~576px) for all content
+- **Same footer** - uses the standard `<Footer />` component
 - **Sayso brand styles** throughout: `font-comic` (Bangers) for headings, `#1D4871` dark blue for text, `#FFDE59` yellow for the primary CTA button with `3px 3px 0px #1D4871` cartoon shadow
 
 ---
@@ -30,7 +30,7 @@ This document describes the layout, style, and component pattern used for person
 
 - White background (`bg-white`)
 - Logo centered at top (links to `/`, uses `logo-pos-horizontal.png`)
-- `h1` in `font-comic text-3xl sm:text-4xl text-[#1D4871]` — no bold/strong tags, uniform weight
+- `h1` in `font-comic text-3xl sm:text-4xl text-[#1D4871]` - no bold/strong tags, uniform weight
 - Subtext paragraph in `text-base text-[#1D4871]/70`
 - Single CTA button: yellow `bg-[#FFDE59]`, `border-2 border-[#1D4871]`, `boxShadow: '3px 3px 0px #1D4871'`, with `<LightningIcon>` prefix
 - CTA uses `openDemoCalendar()` from `useDemoCalendar()` hook
@@ -44,7 +44,7 @@ This document describes the layout, style, and component pattern used for person
 ### 3. Problem Section
 
 - `text-center`, `max-w-xl mx-auto`
-- `h2` in `font-comic` — no bold/strong tags
+- `h2` in `font-comic` - no bold/strong tags
 - Bullet list using `<Check>` icon from lucide-react in `text-[#2367EE]`
 - Bullet text: `text-sm italic text-[#1D4871]/75`
 - First bullet restates the persona's core frustration; subsequent bullets are specific pain points
@@ -53,7 +53,7 @@ This document describes the layout, style, and component pattern used for person
 
 - Single `font-comic` statement that reinforces the core problem
 - `text-xl sm:text-2xl text-[#1D4871]`, centered
-- No bullet, no icon — standalone emphasis line
+- No bullet, no icon - standalone emphasis line
 
 ### 5. How It Works (gray panel)
 
@@ -64,8 +64,8 @@ This document describes the layout, style, and component pattern used for person
   - Each card: `bg-white rounded-2xl overflow-hidden shadow-sm`
   - Card header: `font-comic text-lg` title + `text-xs text-[#1D4871]/60` description
   - Card visual: `h-36 mx-3 mb-3 rounded-xl overflow-hidden` containing a `StepVisual` component
-  - Step 1 uses `<StepVisualStartSayso />` — shows the "Launch Coach" toggle stacked above "Select Prospect" button on a dark gradient background
-  - Step 2 uses `<StepVisualPrompts />` — shows the Sayso status bar + live prompt suggestion card on a dark gradient background
+  - Step 1 uses `<StepVisualStartSayso />` - shows the "Launch Coach" toggle stacked above "Select Prospect" button on a dark gradient background
+  - Step 2 uses `<StepVisualPrompts />` - shows the Sayso status bar + live prompt suggestion card on a dark gradient background
 
 ### 6. Benefits (inside the gray panel)
 
@@ -75,12 +75,12 @@ This document describes the layout, style, and component pattern used for person
 - Icon in a `w-9 h-9 rounded-full bg-[#2367EE]/10` circle, icon color `text-[#2367EE]`
 - Title: `font-semibold text-[#1D4871] text-sm`
 - Description: `text-xs text-[#1D4871]/65`
-- Icons from lucide-react (`Zap`, `TrendingUp`, `Users` — swap as appropriate per persona)
+- Icons from lucide-react (`Zap`, `TrendingUp`, `Users` - swap as appropriate per persona)
 
 ### 7. Closing CTA
 
 - Back to white background, centered
-- `h2` in `font-comic` — no bold/strong tags
+- `h2` in `font-comic` - no bold/strong tags
 - Same yellow CTA button as hero
 
 ### 8. Footer
@@ -117,7 +117,7 @@ This document describes the layout, style, and component pattern used for person
 3. **Update the page route** in `app/[persona]/page.tsx` to import and render your new component
 4. **Update metadata** (title, description, canonical URL, OG tags) in the page file
 
-No new components needed — the layout and all visuals are fully reusable.
+No new components needed - the layout and all visuals are fully reusable.
 
 ---
 

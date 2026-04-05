@@ -65,7 +65,7 @@ export default function UIPage() {
                   Win the Moment
                 </h1>
                 <p className="mt-4 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 mx-auto">
-                  Guidance that shows up during the call—before the moment passes.
+                  Guidance that shows up during the call, before the moment passes.
                 </p>
                 <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-[42rem] mx-auto">
                   <a
@@ -194,7 +194,7 @@ export default function UIPage() {
               <h3 className="text-lg font-semibold text-[#1D4871] mb-3">Body Text</h3>
               <div className="bg-[#F4F4F5] p-6 rounded-xl">
                 <p className="text-base md:text-lg text-[#1D4871]/80 max-w-2xl">
-                  Guidance that shows up during the call—before the moment passes.
+                  Guidance that shows up during the call, before the moment passes.
                 </p>
                 <p className="mt-2 text-sm text-[#1D4871]/60 font-mono">
                   Classes: <code>text-base md:text-lg text-[#1D4871]/80</code>

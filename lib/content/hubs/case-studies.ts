@@ -5,7 +5,7 @@ const caseStudiesHub: HubPageConfig = {
   slug: 'case-studies',
   section: 'Case Studies',
   basePath: '/case-studies',
-  seoTitle: 'Sayso Case Studies — Real Results from Real Teams',
+  seoTitle: 'Sayso Case Studies: Real Results from Real Teams',
   seoDescription:
     'See how real estate teams use Sayso to handle more objections, book more appointments, and close more deals with real-time call coaching.',
   h1: 'Real Results from Real Teams',

@@ -4,7 +4,7 @@ This document is the complete reference for creating `/for/[slug]` persona pages
 
 **Reference implementation:** `lib/content/for/solo-agents.ts`
 
-**Not to be confused with:** `persona-ad-page-template.md`, which covers ad landing pages (`/broker`, `/agent`, `/isa`) — those are standalone marketing pages with no navbar. The `/for/` pages documented here are SEO-driven content pages with a completely different structure.
+**Not to be confused with:** `persona-ad-page-template.md`, which covers ad landing pages (`/broker`, `/agent`, `/isa`) - those are standalone marketing pages with no navbar. The `/for/` pages documented here are SEO-driven content pages with a completely different structure.
 
 ---
 
@@ -12,8 +12,8 @@ This document is the complete reference for creating `/for/[slug]` persona pages
 
 1. [File Locations](#file-locations)
 2. [What a Persona Page Is (and Is Not)](#what-a-persona-page-is-and-is-not)
-3. [SEO Rules — Universal](#seo-rules--universal)
-4. [SEO Rules — Persona-Specific](#seo-rules--persona-specific)
+3. [SEO Rules - Universal](#seo-rules--universal)
+4. [SEO Rules - Persona-Specific](#seo-rules--persona-specific)
 5. [Page Structure (Section by Section)](#page-structure-section-by-section)
 6. [TypeScript Data Interface](#typescript-data-interface)
 7. [Internal Linking Requirements](#internal-linking-requirements)
@@ -31,15 +31,15 @@ This document is the complete reference for creating `/for/[slug]` persona pages
 
 | File | Purpose |
 |------|---------|
-| `lib/content/for/types.ts` | `UseCaseEntry` TypeScript interface — every content field |
-| `lib/content/for/index.ts` | Content loader — exports `getAllUseCaseEntries()`, `getUseCaseBySlug()`, `getAllUseCaseSlugs()` |
+| `lib/content/for/types.ts` | `UseCaseEntry` TypeScript interface - every content field |
+| `lib/content/for/index.ts` | Content loader - exports `getAllUseCaseEntries()`, `getUseCaseBySlug()`, `getAllUseCaseSlugs()` |
 | `lib/content/for/*.ts` | Individual persona content files (one per persona) |
-| `components/pages/PersonaPage.tsx` | Shared page template component — renders all persona pages |
-| `app/(content)/for/[slug]/page.tsx` | Next.js dynamic route — handles metadata + static params |
+| `components/pages/PersonaPage.tsx` | Shared page template component - renders all persona pages |
+| `app/(content)/for/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/for/page.tsx` | Solutions hub listing page |
-| `lib/content/hubs/for.ts` | Hub page config — lists all child persona pages |
-| `lib/seo/metadata.ts` | `buildMetadata()` — generates title, description, canonical, OG tags |
-| `lib/seo/schema.ts` | JSON-LD generators — `generateWebPageJsonLd()`, `generateBreadcrumbJsonLd()`, `generateFAQPageJsonLd()` |
+| `lib/content/hubs/for.ts` | Hub page config - lists all child persona pages |
+| `lib/seo/metadata.ts` | `buildMetadata()` - generates title, description, canonical, OG tags |
+| `lib/seo/schema.ts` | JSON-LD generators - `generateWebPageJsonLd()`, `generateBreadcrumbJsonLd()`, `generateFAQPageJsonLd()` |
 
 ---
 
@@ -50,29 +50,29 @@ Persona pages are **mid-funnel**. The visitor knows they have a problem (efficie
 **A persona page IS:**
 - A problem-first content page that speaks directly to a specific type of user
 - Designed to validate the visitor's pain point, build empathy, and introduce Sayso as the answer
-- A **micro keyword page** — combining persona + pain point for low-competition, high-relevance searches
+- A **micro keyword page** - combining persona + pain point for low-competition, high-relevance searches
 
 **A persona page is NOT:**
 - A product brochure (that is a `/features/` page)
 - A competitor comparison (that is a `/compare/` page)
 - A tutorial or how-to guide (that is a blog post)
-- An ad landing page (that is `/broker`, `/agent`, etc. — see `persona-ad-page-template.md`)
+- An ad landing page (that is `/broker`, `/agent`, etc. - see `persona-ad-page-template.md`)
 
 The key difference from feature pages: persona pages **earn credibility before selling**. The first half of the page should not mention Sayso at all. You are someone who understands their world, not a salesperson.
 
 ---
 
-## SEO Rules — Universal
+## SEO Rules - Universal
 
 These rules apply to every persona page without exception.
 
-### Keyword Placement — Required Locations
+### Keyword Placement - Required Locations
 
 | Location | Rule | Example |
 |----------|------|---------|
 | **H1** | Must contain the target keyword naturally. Should feel like a direct answer to the search query. Use a "How to..." format. | `How to Have Better Sales Conversations in Real Estate` |
 | **First 100 words** | The exact target keyword must appear within the first 100 words of body content (the opening empathy section). Ideally in the first 2 sentences. | `Knowing how to have better sales conversations in real estate is the difference between booking the appointment and hearing "I will think about it."` |
-| **Meta title** | Format: `[Keyword Phrase] — [Persona] | Sayso`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should NOT include "Sayso" (it creates a double-Sayso problem). Max 60 characters. | `seoTitle: 'Better Sales Conversations in Real Estate — Solo Agents'` (55 chars + " \| Sayso" = 64 total) |
+| **Meta title** | Format: `[Keyword Phrase] - [Persona] | Sayso`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should NOT include "Sayso" (it creates a double-Sayso problem). Max 60 characters. | `seoTitle: 'Better Sales Conversations in Real Estate - Solo Agents'` (55 chars + " \| Sayso" = 64 total) |
 | **Meta description** | 150-160 characters max. Must contain the target keyword. Format: `[Empathy about persona's problem]. [How Sayso helps]. [CTA].` | `Solo agents lose deals when conversations stall. Learn how to have better sales conversations in real estate with live AI coaching on every call. Try Sayso.` |
 | **URL slug** | Persona-focused, not keyword-focused. | `/for/solo-agents/` |
 | **First H2** | Must contain the keyword or a strong semantic variation. Use the `theProblemHeading` field to customize. | `Why Most Sales Conversations Fall Apart` |
@@ -87,7 +87,7 @@ These rules apply to every persona page without exception.
 
 ### Heading Structure
 
-- **One H1 only** — the page title.
+- **One H1 only** - the page title.
 - **H2s:** 5-8 per page. Each major content section gets an H2, plus Related Features, Objection Scripts, From the Blog, and FAQ.
 - **H3s:** Used for feature card titles under the "How Sayso Works for [Persona]" H2.
 - **Never skip heading levels** (no H1 → H3 without an H2 between them).
@@ -105,12 +105,12 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ---
 
-## SEO Rules — Persona-Specific
+## SEO Rules - Persona-Specific
 
 ### Content Constraints
 
 - **Empathy first, product second.** The first ~40% of the page (opening + problem + what they try) should NOT mention Sayso. Earn credibility before selling.
-- **Paragraphs:** Max 3 sentences per paragraph. All prose fields are `string[]` — each string renders as its own `<p>` tag.
+- **Paragraphs:** Max 3 sentences per paragraph. All prose fields are `string[]` - each string renders as its own `<p>` tag.
 - **Total word count:** 1,000-1,800 words. Persona pages need enough space to empathize AND convert.
 - **Tone:** Empathetic, direct, insider. Use "you" language heavily. You are someone who has been in their shoes.
 - **No generic advice.** Every tip, example, or scenario should be specific to this persona's reality. A solo agent page should not read like a team leader page with the name swapped.
@@ -119,7 +119,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 ### The "What They Try" Section
 
 - Cover common approaches the persona uses: memorizing scripts, hiring coaches, recording calls, willpower, etc.
-- Explain why each one has limitations — time, cost, inconsistency, not real-time.
+- Explain why each one has limitations - time, cost, inconsistency, not real-time.
 - This section sets up Sayso as the alternative without explicitly selling.
 - 3-4 paragraphs. Be concrete about the failure modes.
 
@@ -133,7 +133,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ### How Sayso Works Cards
 
-- Pick the 3-4 features most relevant to THIS persona — not a full feature dump.
+- Pick the 3-4 features most relevant to THIS persona - not a full feature dump.
 - Each card should have a link (`href`) to the relevant `/features/` page.
 - Card titles render as `<h3>` tags with optional links.
 
@@ -195,13 +195,13 @@ The `PersonaPage.tsx` component renders sections in this exact order:
 - Sets up Sayso as the alternative without explicitly selling.
 
 ### 7. A Better Approach
-- **H2:** Custom heading from `betterApproachHeading`. Falls back to "A Better Approach — Real-Time Coaching."
+- **H2:** Custom heading from `betterApproachHeading`. Falls back to "A Better Approach - Real-Time Coaching."
 - 3-4 paragraphs from `betterApproach[]`.
 - Introduce the concept, then introduce Sayso, then give persona-specific scenarios.
 - Include the target keyword again here.
 
 ### 8. Soft CTA (Inline)
-- `ContentInlineCTA` component — positioned immediately after "A Better Approach."
+- `ContentInlineCTA` component - positioned immediately after "A Better Approach."
 - **No CTA appears before this point.** The first half of the page is empathy-only.
 
 ### 9. How Sayso Works for [Persona]
@@ -236,7 +236,7 @@ The `PersonaPage.tsx` component renders sections in this exact order:
 - Automatically generates `FAQPage` JSON-LD.
 
 ### 15. Closing CTA
-- `ContentCTA` component — full-width dark section.
+- `ContentCTA` component - full-width dark section.
 - Headline: "Get Started Today"
 - Subheading: "See how Sayso helps [persona] sound better on every call."
 
@@ -251,15 +251,15 @@ export interface UseCaseEntry {
   slug: string;                    // URL slug: "solo-agents"
   persona: string;                 // Display name: "Solo Agents"
   keyword: string;                 // Target SEO keyword
-  seoTitle: string;                // Meta title (max 60 chars — "| Sayso" added by layout, do NOT include "Sayso")
+  seoTitle: string;                // Meta title (max 60 chars - "| Sayso" added by layout, do NOT include "Sayso")
   seoDescription: string;         // Meta description (max 160 chars)
-  h1: string;                     // Page H1 — "How to..." problem statement with keyword
+  h1: string;                     // Page H1 - "How to..." problem statement with keyword
   openingEmpathy: string[];       // Each string = one <p>. NO product mention. Keyword in first 2 sentences.
   theProblemHeading?: string;     // Custom H2 (include keyword variation). Defaults to "The Real Problem"
   theProblem: string[];           // Each string = one <p>. Dig into the specific challenge.
   whatTheyTryHeading?: string;    // Custom H2. Defaults to "What Most [Persona] Try (And Why It Falls Short)"
   whatTheyTry: string[];          // Each string = one <p>. Common approaches + their limitations.
-  betterApproachHeading?: string; // Custom H2 (include keyword variation). Defaults to "A Better Approach — Real-Time Coaching"
+  betterApproachHeading?: string; // Custom H2 (include keyword variation). Defaults to "A Better Approach - Real-Time Coaching"
   betterApproach: string[];       // Each string = one <p>. Concept → Sayso → scenarios.
   getStarted?: string;            // Closing text before FAQ. Rendered with demo button + pricing link.
   howSaysoWorks: { feature: string; description: string; href?: string }[];  // 3-4 feature cards
@@ -275,20 +275,20 @@ export interface UseCaseEntry {
 
 | Field | Max Length / Count | Notes |
 |-------|-------------------|-------|
-| `slug` | — | Lowercase, hyphenated. Persona-focused: `solo-agents`, `team-leaders`, `new-agents`, `isas`. |
-| `persona` | — | Display name used in H2 headings and CTA copy: "Solo Agents", "Team Leaders", etc. |
-| `keyword` | — | Long-tail problem-statement keyword. Validate with search volume data before using. |
-| `seoTitle` | 60 chars | Do NOT include "Sayso" — layout appends " \| Sayso". Format: `[Keyword Phrase] — [Persona]`. |
+| `slug` | - | Lowercase, hyphenated. Persona-focused: `solo-agents`, `team-leaders`, `new-agents`, `isas`. |
+| `persona` | - | Display name used in H2 headings and CTA copy: "Solo Agents", "Team Leaders", etc. |
+| `keyword` | - | Long-tail problem-statement keyword. Validate with search volume data before using. |
+| `seoTitle` | 60 chars | Do NOT include "Sayso" - layout appends " \| Sayso". Format: `[Keyword Phrase] - [Persona]`. |
 | `seoDescription` | 160 chars | Format: Empathy. Solution. CTA. Dev build warns if over 160. |
-| `h1` | — | "How to..." format matching the search query. Contains the target keyword. |
+| `h1` | - | "How to..." format matching the search query. Contains the target keyword. |
 | `openingEmpathy` | 2-3 strings | NO product mention. Keyword in first 2 sentences. Max 3 sentences per paragraph. |
-| `theProblemHeading` | — | Include keyword variation. e.g., `Why Most Sales Conversations Fall Apart` |
+| `theProblemHeading` | - | Include keyword variation. e.g., `Why Most Sales Conversations Fall Apart` |
 | `theProblem` | 2-3 strings | Specific challenges this persona faces. Use recognizable scenarios. |
-| `whatTheyTryHeading` | — | Can include persona name. e.g., `What Most Solo Agents Try (And Why It Falls Short)` |
+| `whatTheyTryHeading` | - | Can include persona name. e.g., `What Most Solo Agents Try (And Why It Falls Short)` |
 | `whatTheyTry` | 3-4 strings | Cover 3-4 common approaches (scripts, coaching, recordings, willpower) and their failure modes. |
-| `betterApproachHeading` | — | Include keyword variation. e.g., `A Better Approach to Sales Conversations` |
+| `betterApproachHeading` | - | Include keyword variation. e.g., `A Better Approach to Sales Conversations` |
 | `betterApproach` | 3-4 strings | Para 1 = concept. Para 2 = Sayso + keyword. Para 3 = specific scenario. Para 4 = after-call benefit. |
-| `getStarted` | — | 2-3 sentences. Reference demo and pricing. Always populate this. |
+| `getStarted` | - | 2-3 sentences. Reference demo and pricing. Always populate this. |
 | `howSaysoWorks` | 3-4 items | Feature title (`<h3>`) + description + optional `href` to `/features/` page. Pick features relevant to THIS persona. |
 | `faq` | 4-5 items | Must include pricing Q. At least one Q should contain the target keyword. |
 | `relatedFeatures` | 2-3 items | Link to the most relevant feature pages for this persona. |
@@ -318,11 +318,11 @@ Every persona page must include **5-8 internal links**. The component handles mo
 
 ## CTA Placement
 
-Persona pages carry **2 CTAs** — fewer than feature pages because the first half builds empathy:
+Persona pages carry **2 CTAs** - fewer than feature pages because the first half builds empathy:
 
 | Position | Component | Placement | Why Here |
 |----------|-----------|-----------|----------|
-| **Soft CTA** | `ContentInlineCTA` | After "A Better Approach" section | Sayso has just been introduced — visitor is warm |
+| **Soft CTA** | `ContentInlineCTA` | After "A Better Approach" section | Sayso has just been introduced - visitor is warm |
 | **Get Started** | Inline button + link | After "How Sayso Works" section | Visitor has seen the feature highlights |
 | **Closing CTA** | `ContentCTA` | Full-width block at the very bottom | Final catch-all |
 
@@ -335,7 +335,7 @@ Persona pages carry **2 CTAs** — fewer than feature pages because the first ha
 Each persona page includes three JSON-LD blocks:
 
 ### 1. WebPage
-Generated by `generateWebPageJsonLd()`. Generic page schema — persona pages do not need SoftwareApplication schema.
+Generated by `generateWebPageJsonLd()`. Generic page schema - persona pages do not need SoftwareApplication schema.
 ```json
 {
   "@context": "https://schema.org",
@@ -383,7 +383,7 @@ Use this table when choosing keywords, tone, and feature focus for each persona:
 |---------|---------------|-------------------|---------------|-------------|
 | **Solo Agents** | Doing everything alone, no backup on calls | Conversations, efficiency, phone skills | Real-time coaching, call notes (saves time) | "You're already doing the work of 3 people" |
 | **Team Leaders** | Inconsistent performance across agents, can't scale coaching | Managing agents, call quality at scale | Call grading, coaching at scale, onboarding | "You can't sit in on every call" |
-| **New Agents** | Don't know what to say, fear of rejection, long ramp time | Cold calling, getting better, confidence | Objection handling, scripts, role play | "Everyone was new once — this accelerates the learning" |
+| **New Agents** | Don't know what to say, fear of rejection, long ramp time | Cold calling, getting better, confidence | Objection handling, scripts, role play | "Everyone was new once - this accelerates the learning" |
 | **ISAs** | High call volume, low conversion rate, script fatigue | Conversion scripts, booking rate, lead handling | Real-time prompts, conversion scripts | "Every call counts when you're dialing 100+ a day" |
 
 ### Important: Every persona page must feel distinct.
@@ -440,7 +440,7 @@ Use this before submitting any new persona page:
 Before writing anything, decide on the target keyword:
 - Use a **problem-statement format** ("how to...", "why...", "best way to...")
 - Target **long-tail keywords** that combine the persona + their pain point
-- Validate with search volume data — avoid broad, competitive terms
+- Validate with search volume data - avoid broad, competitive terms
 - The keyword should map to something Sayso actually solves
 
 Example evolution: `how to be more efficient real estate agent` (too broad) → `how to have better sales conversations in real estate` (specific, maps to Sayso).
@@ -474,11 +474,11 @@ The dynamic route at `app/(content)/for/[slug]/page.tsx` automatically picks up 
 ### Step 4: Update the solutions hub (if needed)
 
 If your persona is not already listed in `lib/content/hubs/for.ts`, add it to the `childPages` array with:
-- `title` — display name
-- `slug` — must match your content file slug
-- `description` — one-liner for the hub listing
-- `keyword` — the target keyword
-- `linkText` — CTA text on the hub page (MUST vary per page for SEO)
+- `title` - display name
+- `slug` - must match your content file slug
+- `description` - one-liner for the hub listing
+- `keyword` - the target keyword
+- `linkText` - CTA text on the hub page (MUST vary per page for SEO)
 
 ### Step 5: Cross-link from other pages
 
@@ -487,7 +487,7 @@ If your persona is not already listed in `lib/content/hubs/for.ts`, add it to th
 
 ### Step 6: Verify
 
-1. Run `npm run build` — check for TypeScript errors and dev-mode SEO warnings.
+1. Run `npm run build` - check for TypeScript errors and dev-mode SEO warnings.
 2. Run `npm run dev` and visit `http://localhost:3001/for/[slug]`.
 3. View page source and verify:
    - Meta title does NOT contain double "Sayso"
@@ -530,7 +530,7 @@ Run through this after creating or editing any persona page:
 ### Keyword Density
 - [ ] Exact keyword appears 3-5 times total
 - [ ] Semantic variations appear 6-10 times total
-- [ ] No keyword stuffing — every usage reads naturally
+- [ ] No keyword stuffing - every usage reads naturally
 
 ### Technical SEO
 - [ ] `seoTitle` is ≤60 characters and does NOT include "Sayso"
@@ -542,8 +542,8 @@ Run through this after creating or editing any persona page:
 - [ ] OG title, description, and image are set
 
 ### Content Structure
-- [ ] Single H1 — problem-statement format with keyword
-- [ ] 5-8 H2s — at least two contain keyword variations
+- [ ] Single H1 - problem-statement format with keyword
+- [ ] 5-8 H2s - at least two contain keyword variations
 - [ ] H3s used for feature card titles (proper hierarchy)
 - [ ] No heading levels skipped
 - [ ] All paragraphs ≤3 sentences

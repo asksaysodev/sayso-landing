@@ -7,7 +7,7 @@ export const salesLeaderContent: PersonaContent = {
     headline: "Your agents don't need another script. They need help during the call.",
     headlineSize: 'text-3xl sm:text-4xl lg:text-4xl xl:text-5xl',
     tagline:
-      'Sayso listens during prospect conversations and shows agents what to ask next — so they stay confident and in control when it matters most.',
+      'Sayso listens during prospect conversations and shows agents what to ask next, so they stay confident and in control when it matters most.',
   },
   transformation: {
     headline: 'With SaySo, Role-Play Finally Pays Off',
@@ -22,12 +22,12 @@ export const salesLeaderContent: PersonaContent = {
       {
         icon: <TrendingUp size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
         title: 'Scripts That Work Live',
-        description: 'Guidance in the moment — not just in meetings',
+        description: 'Guidance in the moment, not just in meetings',
       },
       {
         icon: <RefreshCw size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
         title: 'Coaching That Scales',
-        description: 'Stop running the same sessions — Sayso coaches every call automatically',
+        description: 'Stop repeating the same sessions, Sayso coaches every call automatically',
       },
       {
         icon: <CalendarCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
@@ -39,17 +39,17 @@ export const salesLeaderContent: PersonaContent = {
   threeSteps: {
     headline: 'Sayso in 3 Easy Steps',
     subheading:
-      'Your agents get live coaching on every call — so role-play performance finally shows up in real results.',
+      'Your agents get live coaching on every call, so role-play performance finally shows up in real results.',
     steps: [
       {
         title: '1. Launch Coach',
         description:
-          'Agents turn Sayso on before dialing. Works with any CRM or dialer they already use — no new tools to learn.',
+          'Agents turn Sayso on before dialing. Works with any CRM or dialer they already use, no new tools to learn.',
       },
       {
         title: '2. Live Prompts on Every Call',
         description:
-          'When a prospect pushes back, Sayso shows agents exactly what to ask or say next — keeping the conversation on track.',
+          'When a prospect pushes back, Sayso shows agents exactly what to ask or say next, keeping the conversation on track.',
       },
       {
         title: '3. Role-Play Results in Real Calls',

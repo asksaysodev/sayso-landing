@@ -5,7 +5,7 @@ const resourcesHub: HubPageConfig = {
   slug: 'resources',
   section: 'Resources',
   basePath: '/resources',
-  seoTitle: 'Sayso Resources — Guides, Scripts & Insights for Real Estate Agents',
+  seoTitle: 'Sayso Resources: Guides, Scripts & Insights for Real Estate Agents',
   seoDescription:
     'Browse Sayso resources: blog articles, objection scripts, glossary terms, and case studies to help you close more deals on the phone.',
   h1: 'Resources for Real Estate Agents',

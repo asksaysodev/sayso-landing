@@ -127,7 +127,7 @@ export function LandingTypographySection() {
                   meta="16px • Regular • 1.5"
                 >
                   <p className="text-base font-sans font-normal text-[#1D4871] leading-relaxed">
-                    AI-powered coaching that whispers exactly what to say—right
+                    AI-powered coaching that whispers exactly what to say, right
                     when it matters.
                   </p>
                 </TypeRow>

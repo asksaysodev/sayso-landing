@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       description: `Read our latest articles about ${name.toLowerCase()}. Tips, strategies, and insights from the Sayso team.`,
       url: `${siteUrl}/blog/category/${slug}/`,
       type: 'website',
-      images: [{ url: '/og-default.png', width: 1200, height: 630, alt: `${name} — Sayso Blog` }],
+      images: [{ url: '/og-default.png', width: 1200, height: 630, alt: `${name} | Sayso Blog` }],
     },
     twitter: {
       title: `${name} Articles | Sayso Blog`,

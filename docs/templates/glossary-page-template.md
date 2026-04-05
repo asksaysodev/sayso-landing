@@ -10,8 +10,8 @@ This document is the complete reference for creating `/glossary/[slug]` pages. I
 
 1. [File Locations](#file-locations)
 2. [What a Glossary Page Is (and Is Not)](#what-a-glossary-page-is-and-is-not)
-3. [SEO Rules — Universal](#seo-rules--universal)
-4. [SEO Rules — Glossary-Specific](#seo-rules--glossary-specific)
+3. [SEO Rules - Universal](#seo-rules--universal)
+4. [SEO Rules - Glossary-Specific](#seo-rules--glossary-specific)
 5. [Page Structure (Section by Section)](#page-structure-section-by-section)
 6. [TypeScript Data Interface](#typescript-data-interface)
 7. [Internal Linking Requirements](#internal-linking-requirements)
@@ -28,27 +28,27 @@ This document is the complete reference for creating `/glossary/[slug]` pages. I
 
 | File | Purpose |
 |------|---------|
-| `lib/content/glossary/types.ts` | `GlossaryEntry` TypeScript interface — every content field |
-| `lib/content/glossary/index.ts` | Content loader — exports `getAllGlossaryEntries()`, `getGlossaryBySlug()`, `getAllGlossarySlugs()` |
+| `lib/content/glossary/types.ts` | `GlossaryEntry` TypeScript interface - every content field |
+| `lib/content/glossary/index.ts` | Content loader - exports `getAllGlossaryEntries()`, `getGlossaryBySlug()`, `getAllGlossarySlugs()` |
 | `lib/content/glossary/*.ts` | Individual glossary content files (one per term) |
-| `components/pages/GlossaryPage.tsx` | Shared page template component — renders all glossary pages |
-| `app/(content)/glossary/[slug]/page.tsx` | Next.js dynamic route — handles metadata + static params |
+| `components/pages/GlossaryPage.tsx` | Shared page template component - renders all glossary pages |
+| `app/(content)/glossary/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/glossary/page.tsx` | Glossary hub listing page |
-| `lib/content/hubs/glossary.ts` | Hub page config — lists all child glossary pages |
-| `lib/seo/metadata.ts` | `buildMetadata()` — generates title, description, canonical, OG tags |
-| `lib/seo/schema.ts` | JSON-LD generators — `generateDefinedTermJsonLd()`, `generateFAQPageJsonLd()` |
-| `lib/utils/render-inline-markdown.tsx` | Inline `[text](/url/)` → `<Link>` renderer — used in the "How Sayso Helps" section |
+| `lib/content/hubs/glossary.ts` | Hub page config - lists all child glossary pages |
+| `lib/seo/metadata.ts` | `buildMetadata()` - generates title, description, canonical, OG tags |
+| `lib/seo/schema.ts` | JSON-LD generators - `generateDefinedTermJsonLd()`, `generateFAQPageJsonLd()` |
+| `lib/utils/render-inline-markdown.tsx` | Inline `[text](/url/)` → `<Link>` renderer - used in the "How Sayso Helps" section |
 
 ---
 
 ## What a Glossary Page Is (and Is Not)
 
-Glossary pages sit at the **top of the funnel**. The visitor is searching for the definition of a real estate industry term. They want a clear, fast answer — then they might explore further.
+Glossary pages sit at the **top of the funnel**. The visitor is searching for the definition of a real estate industry term. They want a clear, fast answer - then they might explore further.
 
 **A glossary page IS:**
 - A concise definition page that explains a real estate term in plain language
 - Designed to rank for "what is [term]" keywords and build topical authority
-- A hub for internal linking — connecting definitions to deeper content across the site
+- A hub for internal linking - connecting definitions to deeper content across the site
 
 **A glossary page is NOT:**
 - A product page (that is a `/features/` page)
@@ -60,11 +60,11 @@ If you find yourself describing Sayso features in detail, you are writing a feat
 
 ---
 
-## SEO Rules — Universal
+## SEO Rules - Universal
 
 These rules apply to every glossary page without exception.
 
-### Keyword Placement — Required Locations
+### Keyword Placement - Required Locations
 
 | Location | Rule | Example |
 |----------|------|---------|
@@ -85,7 +85,7 @@ These rules apply to every glossary page without exception.
 
 ### Heading Structure
 
-- **One H1 only** — the page title (the question).
+- **One H1 only** - the page title (the question).
 - **H2s:** 5-6 per page. Each major section gets an H2.
 - **H3s:** Used for subsections under an H2 (if needed).
 - **Never skip heading levels** (no H1 → H3 without an H2 between them).
@@ -104,13 +104,13 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ---
 
-## SEO Rules — Glossary-Specific
+## SEO Rules - Glossary-Specific
 
 ### Content Constraints
 
-- **Paragraphs:** Max 3 sentences per paragraph. The `howItWorks`, `whyItMatters`, and `howSaysoHelps` fields are `string[]` — each string renders as its own `<p>` tag.
+- **Paragraphs:** Max 3 sentences per paragraph. The `howItWorks`, `whyItMatters`, and `howSaysoHelps` fields are `string[]` - each string renders as its own `<p>` tag.
 - **Total word count:** 600-900 words. Glossary pages are concise by design. Do not pad.
-- **Tone:** Clear, educational, approachable. Think "smart friend explaining it" — not a Wikipedia article or textbook.
+- **Tone:** Clear, educational, approachable. Think "smart friend explaining it" - not a Wikipedia article or textbook.
 - **No filler openers.** Do not start with "In the ever-evolving world of real estate..." Get to the definition immediately.
 
 ### Featured Snippet Optimization
@@ -119,14 +119,14 @@ The `definition` field is your featured snippet target. Follow these rules:
 
 - **Sentence 1** must be a clean, standalone definition that Google can pull directly. Under 45 words.
 - Use the format: `[Term] is [definition].`
-- **Sentence 2** should add context — who uses it, why it matters, or how it fits into the workflow.
+- **Sentence 2** should add context - who uses it, why it matters, or how it fits into the workflow.
 - The full definition should be 2 sentences and work as a standalone answer.
 
 ### Tips Section
 
 - 4-6 actionable tips in a numbered list.
 - Each tip has a bold title and a 1-2 sentence explanation.
-- Practical, specific advice — not generic platitudes.
+- Practical, specific advice - not generic platitudes.
 - At least one tip should reference a specific number or timeframe.
 
 ### FAQ
@@ -188,24 +188,24 @@ The `GlossaryPage.tsx` component renders sections in this exact order:
 - 2-3 paragraphs from `howSaysoHelps[]`. Brief product tie-in.
 - Connect the term to a specific Sayso feature (e.g., circle prospecting → real-time coaching during cold calls).
 - **Must include an inline CTA link** using markdown: `[Book a demo](/demo/)`. The `renderInlineMarkdown` utility converts this into a clickable Next.js `<Link>`.
-- Keep it brief — this is not a feature page.
+- Keep it brief - this is not a feature page.
 
 ### 11. Inline CTA
-- `ContentInlineCTA` component — "Book a Demo" + "Download Sayso"
+- `ContentInlineCTA` component - "Book a Demo" + "Download Sayso"
 - Appears immediately after the "How Sayso Helps" section (never before it)
 
-### 12. Related Terms (H2) — Conditional
+### 12. Related Terms (H2) - Conditional
 - Only renders if `relatedTerms` has entries.
 - Links to 3-5 other glossary pages.
 - Use the term name as anchor text.
 - **Only include terms that have live pages.** Do not link to planned-but-unbuilt glossary entries.
 
-### 13. Cross-Section Links — Conditional
+### 13. Cross-Section Links - Conditional
 - Links to a related feature page (`relatedFeature`) and/or persona page (`relatedPersona`).
 - Rendered as styled link cards with arrow indicators.
 - Provides cross-section diversity for internal linking.
 
-### 14. Deeper Content Link — Conditional
+### 14. Deeper Content Link - Conditional
 - Only renders if `deeperLink` is provided.
 - Links to a related blog post for readers who want to go deeper.
 - **Only set this field if the blog post exists.** Do not link to planned-but-unwritten posts.
@@ -215,7 +215,7 @@ The `GlossaryPage.tsx` component renders sections in this exact order:
 - Automatically generates `FAQPage` JSON-LD.
 
 ### 16. Closing CTA
-- `ContentCTA` component — full-width bottom section.
+- `ContentCTA` component - full-width bottom section.
 
 ---
 
@@ -241,7 +241,7 @@ export interface GlossaryEntry {
   /** Each string renders as its own paragraph. Supports [text](/url/) inline markdown for CTA links. */
   howSaysoHelps: string[];
   relatedTerms: { term: string; slug: string }[];
-  /** Link to a deeper blog post. Optional — omit if the post does not exist yet. */
+  /** Link to a deeper blog post. Optional - omit if the post does not exist yet. */
   deeperLink?: { title: string; href: string };
   faq: { question: string; answer: string }[];
   /** Optional hero/inline image with alt text for keyword placement. */
@@ -258,16 +258,16 @@ export interface GlossaryEntry {
 
 | Field | Max Length / Count | Notes |
 |-------|-------------------|-------|
-| `slug` | — | Lowercase, hyphenated. The core term only (e.g., `circle-prospecting`). |
-| `term` | — | Display name of the term (e.g., `Circle Prospecting`). Used in headings. |
-| `keyword` | — | Full target keyword including "what is" (e.g., `what is circle prospecting`). |
+| `slug` | - | Lowercase, hyphenated. The core term only (e.g., `circle-prospecting`). |
+| `term` | - | Display name of the term (e.g., `Circle Prospecting`). Used in headings. |
+| `keyword` | - | Full target keyword including "what is" (e.g., `what is circle prospecting`). |
 | `seoTitle` | 60 chars | Should be the keyword phrase. Layout appends " \| Sayso". Dev build warns if over 60. |
 | `seoDescription` | 150-160 chars | Format: Direct answer. Why it matters. CTA/value prop. Dev build warns if over 160. |
-| `h1` | — | The question form of the keyword: `What Is [Term]?` |
+| `h1` | - | The question form of the keyword: `What Is [Term]?` |
 | `definition` | 2 sentences | Featured snippet target. Sentence 1: clean definition under 45 words. Sentence 2: added context. |
 | `howItWorks` | 2-3 strings | Each string = one `<p>`. Walk through a real-world example. Max 3 sentences per paragraph. |
 | `whyItMatters` | 2-3 strings | Each string = one `<p>`. Connect to outcomes. Max 3 sentences per paragraph. |
-| `tips` | 4-6 items | Each item: bold title + 1-2 sentence body. Be specific — include numbers and timeframes. |
+| `tips` | 4-6 items | Each item: bold title + 1-2 sentence body. Be specific - include numbers and timeframes. |
 | `howSaysoHelps` | 2-3 strings | Brief product tie-in. Last paragraph must include `[Book a demo](/demo/)` inline markdown link. |
 | `relatedTerms` | 0-5 items | Only include terms with live glossary pages. Set to `[]` if no pages exist yet. |
 | `deeperLink` | 0-1 item | Link to a related blog post. Only set if the post exists. |
@@ -301,7 +301,7 @@ Every glossary page must include **at least 4 internal links** with cross-sectio
 
 ## CTA Placement
 
-Glossary pages are informational — earn trust with the content before pitching.
+Glossary pages are informational - earn trust with the content before pitching.
 
 | Position | Component | Placement |
 |----------|-----------|-----------|
@@ -371,10 +371,10 @@ Use this before submitting any new glossary page:
 - [ ] Definition sentence 1 is a clean, standalone answer (under 45 words)
 - [ ] Definition is 2 sentences total
 - [ ] No paragraph exceeds 3 sentences
-- [ ] Tips are specific and actionable — include numbers and timeframes
-- [ ] `howSaysoHelps` is 2-3 paragraphs, not a feature page — keep it brief
+- [ ] Tips are specific and actionable - include numbers and timeframes
+- [ ] `howSaysoHelps` is 2-3 paragraphs, not a feature page - keep it brief
 - [ ] `howSaysoHelps` includes `[Book a demo](/demo/)` inline markdown link
-- [ ] Tone is clear, educational, approachable — not a textbook
+- [ ] Tone is clear, educational, approachable - not a textbook
 - [ ] No filler openers ("In the ever-evolving world of real estate...")
 - [ ] Brand name is "Sayso" (not SaySo, SAYSO, Say So)
 
@@ -429,14 +429,14 @@ export const yourTerm: GlossaryEntry = {
   definition:
     'Your term is [clean definition under 45 words]. [Second sentence adding context about who uses it or why it matters].',
   howItWorks: [
-    '[Paragraph 1 — set the scene with a concrete example. Max 3 sentences.]',
-    '[Paragraph 2 — walk through what happens step by step. Max 3 sentences.]',
-    '[Paragraph 3 — what the outcome looks like. Max 3 sentences.]',
+    '[Paragraph 1 - set the scene with a concrete example. Max 3 sentences.]',
+    '[Paragraph 2 - walk through what happens step by step. Max 3 sentences.]',
+    '[Paragraph 3 - what the outcome looks like. Max 3 sentences.]',
   ],
   whyItMatters: [
-    '[Paragraph 1 — the core reason this matters. Max 3 sentences.]',
-    '[Paragraph 2 — connect to agent outcomes. Max 3 sentences.]',
-    '[Paragraph 3 — reinforce with a broader takeaway. Max 3 sentences.]',
+    '[Paragraph 1 - the core reason this matters. Max 3 sentences.]',
+    '[Paragraph 2 - connect to agent outcomes. Max 3 sentences.]',
+    '[Paragraph 3 - reinforce with a broader takeaway. Max 3 sentences.]',
   ],
   tips: [
     { title: 'Tip title with a specific action', body: '1-2 sentence explanation.' },
@@ -469,7 +469,7 @@ export const yourTerm: GlossaryEntry = {
   faq: [
     {
       question: 'What is [term] in real estate?',
-      answer: '[Variation of the definition — 2-3 sentences].',
+      answer: '[Variation of the definition - 2-3 sentences].',
     },
     {
       question: '[Practical question about the term]?',
@@ -506,11 +506,11 @@ That is it. The dynamic route at `app/(content)/glossary/[slug]/page.tsx` automa
 ### Step 3: Update the hub (if needed)
 
 If your term is not already listed in `lib/content/hubs/glossary.ts`, add it to the `childPages` array with:
-- `title` — display name of the term
-- `slug` — must match your content file slug
-- `description` — one-liner definition for the hub listing
-- `keyword` — the target keyword (e.g., `what is cold calling in real estate`)
-- `linkText` — CTA text on the hub page (e.g., `Get the cold calling definition`)
+- `title` - display name of the term
+- `slug` - must match your content file slug
+- `description` - one-liner definition for the hub listing
+- `keyword` - the target keyword (e.g., `what is cold calling in real estate`)
+- `linkText` - CTA text on the hub page (e.g., `Get the cold calling definition`)
 
 ### Step 4: Cross-link from other glossary pages
 
@@ -518,7 +518,7 @@ Open other existing glossary content files and add your new page to their `relat
 
 ### Step 5: Verify
 
-1. Run `npx tsc --noEmit` — check for TypeScript errors.
+1. Run `npx tsc --noEmit` - check for TypeScript errors.
 2. Run `npm run dev` and visit `http://localhost:3001/glossary/[slug]`.
 3. Verify in the browser:
    - H1 renders as the question
@@ -579,7 +579,7 @@ Run through this after creating or editing any glossary page:
 ### Keyword Density
 - [ ] Exact keyword appears 3-5 times in rendered content
 - [ ] Semantic variations appear 5-10 times total
-- [ ] No keyword stuffing — every usage reads naturally
+- [ ] No keyword stuffing - every usage reads naturally
 
 ### Featured Snippet
 - [ ] Definition sentence 1 is under 45 words
@@ -596,8 +596,8 @@ Run through this after creating or editing any glossary page:
 - [ ] OG title, description, and image are set
 
 ### Content Structure
-- [ ] Single H1 — the question form with exact keyword
-- [ ] 5-6 H2s — at least one contains keyword variation
+- [ ] Single H1 - the question form with exact keyword
+- [ ] 5-6 H2s - at least one contains keyword variation
 - [ ] No heading levels skipped
 - [ ] All paragraphs ≤3 sentences
 - [ ] Total word count 600-900
@@ -607,7 +607,7 @@ Run through this after creating or editing any glossary page:
 - [ ] `howSaysoHelps` has 2-3 paragraphs with inline `/demo/` link
 
 ### Internal Links (4+ total with cross-section diversity)
-- [ ] Link to `/glossary/` hub (automatic — breadcrumb + in-content text link)
+- [ ] Link to `/glossary/` hub (automatic - breadcrumb + in-content text link)
 - [ ] Link to `/demo/` (inline markdown in howSaysoHelps + CTA components)
 - [ ] 3-5 links to other glossary pages (only if live)
 - [ ] 1 link to a related blog post (only if it exists)

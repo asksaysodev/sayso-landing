@@ -209,7 +209,7 @@ export function getPillarPost(cluster: string): BlogPostMeta | null {
 
   if (pillars.length > 1) {
     console.warn(
-      `[Blog] Cluster "${cluster}" has ${pillars.length} pillar posts — expected 1`
+      `[Blog] Cluster "${cluster}" has ${pillars.length} pillar posts - expected 1`
     );
   }
 
