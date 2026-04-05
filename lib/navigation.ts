@@ -71,11 +71,11 @@ export const headerNav: NavSection[] = [
 
 export const footerNav: NavSection[] = [
   {
-    label: 'Product',
+    label: 'Features',
     links: [
-      { label: 'Real-Time Coaching', href: '/features/real-time-coaching' },
-      { label: 'Objection Handling', href: '/features/objection-handling' },
-      { label: 'Call Notes', href: '/features/call-notes' },
+      { label: 'Cue', href: '/features/real-time-coaching' },
+      { label: 'Live Objection Handling', href: '/features/objection-handling' },
+      { label: 'Smart Capture', href: '/features/call-notes' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },
