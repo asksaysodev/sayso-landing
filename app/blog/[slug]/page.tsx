@@ -11,8 +11,8 @@ import { BlogEarlyCTA } from '@/components/blog/BlogEarlyCTA';
 import { BlogPillarUplink } from '@/components/blog/BlogPillarUplink';
 import { BlogRelatedPosts } from '@/components/blog/BlogRelatedPosts';
 import { BlogClusterPosts } from '@/components/blog/BlogClusterPosts';
-import { BlogClusterNav } from '@/components/blog/BlogClusterNav';
-import { BlogTableOfContents } from '@/components/blog/BlogTableOfContents';
+// TOC sidebar and cluster nav sidebar removed — blog posts use a single centered column.
+// Do not re-add BlogTableOfContents or BlogClusterNav sidebar here.
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
 
 export async function generateStaticParams() {
@@ -160,30 +160,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article header */}
       <BlogArticleHeader post={post} />
 
-      {/* Content area — two-column for pillar, single-column for others */}
-      {post.type === 'pillar' ? (
-        <div className="max-w-[1100px] mx-auto px-6 pb-10">
-          <div className="flex gap-10">
-            {/* Sticky sidebar: TOC + cluster nav */}
-            <aside className="hidden lg:block w-[260px] shrink-0">
-              <div className="sticky top-24 space-y-0">
-                <BlogTableOfContents content={post.content} />
-                <BlogClusterNav posts={clusterSupporting} />
-              </div>
-            </aside>
-            {/* Article */}
-            <article className="flex-1 min-w-0 max-w-[800px]">
-              {articleContent}
-            </article>
-          </div>
-        </div>
-      ) : (
-        <div className="max-w-[800px] mx-auto px-6 pb-10">
-          <article>
-            {articleContent}
-          </article>
-        </div>
-      )}
+      {/* Content area — single centered column for all post types */}
+      <div className="max-w-[800px] mx-auto px-6 pb-10">
+        <article>
+          {articleContent}
+        </article>
+      </div>
 
       {/* Cluster navigation */}
       {post.cluster && (
