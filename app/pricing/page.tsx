@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Simple, transparent pricing for individual agents and teams. Free trial included.',
   alternates: {
-    canonical: `${siteUrl}/pricing`,
+    canonical: `${siteUrl}/pricing/`,
   },
   openGraph: {
     title: 'Pricing | Sayso',
     description:
       'Simple, transparent pricing for individual agents and teams. Free trial included.',
-    url: `${siteUrl}/pricing`,
+    url: `${siteUrl}/pricing/`,
     type: 'website',
     images: [
       {

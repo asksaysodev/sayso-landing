@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Sayso listens during prospect conversations and shows agents what to ask next — so they stay confident and in control when it matters most.',
   alternates: {
-    canonical: `${siteUrl}/sales-leader`,
+    canonical: `${siteUrl}/sales-leader/`,
   },
   openGraph: {
     title: 'Sayso for Sales Leaders | Turn Role-Play Into Real Results',
     description:
       'Sayso listens during prospect conversations and shows agents what to ask next — so they stay confident and in control when it matters most.',
-    url: `${siteUrl}/sales-leader`,
+    url: `${siteUrl}/sales-leader/`,
     images: [
       {
         url: '/og-default.png',

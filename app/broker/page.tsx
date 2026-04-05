@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Sayso guides agents during live prospecting calls so they ask better questions, handle objections confidently, and convert more conversations into appointments.',
   alternates: {
-    canonical: `${siteUrl}/broker`,
+    canonical: `${siteUrl}/broker/`,
   },
   openGraph: {
     title: 'Sayso for Brokers & Team Owners | Fix Your Conversion Problem',
     description:
       'Sayso guides agents during live prospecting calls so they ask better questions, handle objections confidently, and convert more conversations into appointments.',
-    url: `${siteUrl}/broker`,
+    url: `${siteUrl}/broker/`,
     images: [
       {
         url: '/og-default.png',

@@ -65,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}/blog/${post.slug}/`,
     lastModified: new Date(post.updatedAt),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: post.type === 'pillar' ? 0.9 : post.type === 'supporting' ? 0.7 : 0.6,
   }));
 
   // 4. Blog category pages (low priority, supports topic clusters)
