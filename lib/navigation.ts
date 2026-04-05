@@ -20,7 +20,7 @@ export interface NavSection {
 
 export const headerNav: NavSection[] = [
   {
-    label: 'Product',
+    label: 'Features',
     href: '/features',
     links: [
       { label: 'Cue', href: '/features/real-time-coaching', subtitle: 'Real time coaching' },

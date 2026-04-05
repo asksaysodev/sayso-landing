@@ -3,12 +3,12 @@ import { registerHub } from './index';
 
 const featuresHub: HubPageConfig = {
   slug: 'features',
-  section: 'Product',
+  section: 'Features',
   basePath: '/features',
   seoTitle: 'Sayso Product — Real-Time Coaching for Agents',
   seoDescription:
     'Explore the Sayso product: real-time coaching, objection handling, and automatic call notes for real estate agents.',
-  h1: 'Product Built for the Phone',
+  h1: 'Features Built for the Phone',
   introduction:
     'Every feature in Sayso is designed for one thing — helping you sound better on prospecting calls. Real-time coaching, automatic notes, objection handling, and more.',
   childPages: [
