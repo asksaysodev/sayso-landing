@@ -17,9 +17,8 @@ export const saysoVsShilo: ComparisonEntry = {
     { feature: 'Automatic call notes', sayso: 'Yes, synced to CRM', competitor: 'Varies' },
     { feature: 'Objection handling prompts', sayso: 'Real-time, context-aware', competitor: 'Script-based' },
     { feature: 'CRM integrations', sayso: 'Follow Up Boss, Sierra, kvCORE', competitor: 'Varies' },
-    { feature: 'Works with any dialer', sayso: 'Yes', competitor: 'Yes' },
-    { feature: 'Call grading', sayso: 'Yes', competitor: 'Yes' },
-    { feature: 'Role play practice', sayso: 'Yes', competitor: 'No' },
+    { feature: 'Works with any dialer', sayso: 'Yes', competitor: 'No' },
+    { feature: 'Post call analytics', sayso: 'Yes', competitor: 'Yes' },
   ],
   whereSaysoWins:
     'The biggest difference between Sayso and Shilo comes down to timing. Shilo reviews your calls after they happen. Sayso coaches you while the call is still live. For agents whose biggest challenge is what to say in the moment, not what they should have said afterward, that distinction changes everything.',
@@ -32,20 +31,15 @@ export const saysoVsShilo: ComparisonEntry = {
     {
       heading: 'Automatic Call Notes That Sync to Your CRM',
       body:
-        'After every call, Sayso generates a summary and pushes it directly to your CRM contact record. For agents making 20 to 40 calls a day, this saves 30 to 60 minutes of manual note-taking. Your Follow Up Boss, kvCORE, or Sierra Interactive account stays updated without you lifting a finger.\n\nShilo may offer some form of call recording or transcript, but the automatic CRM sync, where notes appear on the right contact without manual entry, is where Sayso pulls ahead.',
-    },
-    {
-      heading: 'Role Play Practice Before You Dial',
-      body:
-        'Sayso includes an AI-powered role play mode that lets you rehearse objection handling before picking up the phone. You can practice scenarios like expired listings, FSBOs, or cold circle prospecting calls and get instant feedback on your delivery.\n\nThis is especially valuable for newer agents who have not built up a mental library of responses yet. Instead of learning by failing on real calls, you can drill specific objections until the right response feels automatic. Shilo does not currently offer a comparable practice feature, which means agents on that platform are limited to learning from post-call reviews.',
+        'After every call, Sayso generates structured call notes and pushes them directly to your CRM contact record. For agents making 20 to 40 calls a day, this saves 30 to 60 minutes of manual note-taking.',
     },
   ],
   whereCompetitorWins:
-    'Shilo has been in the market and may have features or integrations that fit specific workflows. If your team is already using Shilo and the post-call analytics meet your needs, switching always has a transition cost. It is worth evaluating your decision based on your specific pain point rather than switching tools for the sake of it.\n\nIf after-call analysis is your top priority and you do not need in-the-moment coaching, Shilo may be sufficient for your workflow. Some teams prefer to review recorded calls in bulk during coaching sessions, and a tool designed around that workflow could be the right fit.\n\nTeams that have already integrated Shilo into their daily operations may also want to weigh the onboarding time against the potential gains. Switching from Shilo means getting your agents comfortable with a new interface and updating any internal processes that rely on the old tool.',
+    'Shilo has been in the market and may have features or integrations that fit specific workflows. If your team is already using Shilo and the post-call analytics meet your needs, switching always has a transition cost. It is worth evaluating your decision based on your specific pain point rather than switching tools for the sake of it. Teams can use Sayso while they still use Shilo if they value both tools.\n\nIf after-call analysis is your top priority and you do not need in-the-moment coaching, Shilo may be sufficient for your workflow. Some teams prefer to review recorded calls in bulk during coaching sessions, and a tool designed around that workflow could be the right fit.',
   whoItsFor:
-    'Sayso is the best Shilo alternative for agents and teams whose biggest pain point is what happens during the call, whether that is freezing on objections, forgetting to ask for the appointment, or losing confidence on tough conversations. If you need in-the-moment coaching rather than after-the-fact review, Sayso is built for exactly that.\n\n[Solo agents](/for/solo-agents/) who prospect daily get the most immediate value. Real-time prompts mean you never blank on an objection, and automatic call notes mean you spend more time dialing and less time typing. If you are making 20 or more calls a day, the time savings alone can pay for the tool.\n\n[Team leaders](/for/team-leaders/) benefit from call grading and role play practice, which help newer agents ramp up faster without a manager sitting in on every call. You can review call scores, identify coaching opportunities, and use the role play feature to prep agents before high-stakes conversations.',
+    'Sayso is the best Shilo alternative for agents and teams whose biggest pain point is what happens during the call, whether that is freezing on objections, forgetting to ask for the appointment, or losing confidence on tough conversations. If you need in-the-moment coaching rather than after-the-fact review, Sayso is built for exactly that.\n\n[Solo agents](/for/solo-agents/) who prospect daily get the most immediate value. Real-time prompts mean you never blank on an objection, and automatic call notes mean you spend more time dialing and less time typing. If you are making 20 or more calls a day, the time savings alone can pay for the tool.\n\n[Team leaders](/for/team-leaders/), operations staff and brokerage owners benefit from faster ramping agents, coaching scaling without more staff and more appointments booked. You can review coaching points at a high level if that is part of your workflow through Sayso.',
   pricing:
-    'Sayso offers transparent pricing for individual agents and teams, including a free trial so you can test the tool on real calls before committing. Every plan includes real-time coaching, automatic call notes, and CRM integrations with no hidden fees. There are no setup costs and no long-term contracts required.\n\nWe cannot speak to Shilo pricing, which may vary depending on your plan and team size, so we recommend contacting them directly for a current quote. For Sayso, all plan details are published on the [pricing page](/pricing/) so you can compare costs and features before making a decision.',
+    'Sayso offers transparent pricing for individual agents and teams. There are no setup costs and no long-term contracts required.\n\nWe cannot speak to Shilo pricing, which may vary depending on your plan and team size, so we recommend contacting them directly for a current quote. For Sayso, all plan details are published on the [pricing page](/pricing/) so you can compare costs and features before making a decision.',
   faq: [
     {
       question: 'Is Sayso a good alternative to Shilo?',
@@ -61,7 +55,7 @@ export const saysoVsShilo: ComparisonEntry = {
     },
     {
       question: 'Is Shilo better than Sayso?',
-      answer: 'It depends on what you need. Shilo may be a better fit if you primarily want post-call analytics and are already integrated into their platform. Sayso is better if you want real-time coaching during live calls, automatic CRM notes, and role play practice. Most agents who switch to Sayso do so because they want help in the moment, not after.',
+      answer: 'It depends on what you need. Sayso is better if you want real-time coaching during live calls and automatic CRM notes. Most agents who switch to Sayso do so because they want help in the moment, not after.',
     },
     {
       question: 'How much does Shilo cost?',

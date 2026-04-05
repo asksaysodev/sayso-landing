@@ -4,6 +4,7 @@ import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { generateWebPageJsonLd, generateSoftwareAppJsonLd } from '@/lib/seo/schema';
+import { TldrButtons } from '@/components/pages/TldrButtons';
 import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { ComparisonEntry } from '@/lib/content/comparisons/types';
 
@@ -57,12 +58,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
           <p className="text-[#1D4871] text-base leading-relaxed font-sans mb-4">
             {renderInlineMarkdown(entry.tldr)}
           </p>
-          <Link
-            href="/demo"
-            className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
-          >
-            Book a Demo
-          </Link>
+          <TldrButtons />
         </div>
 
         {/* Why Looking */}
