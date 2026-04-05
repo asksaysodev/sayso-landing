@@ -93,7 +93,7 @@ export default function SaysoNavbar() {
                   className="flex items-center gap-1 px-3 py-2 text-[#1D4871] font-bold text-[1rem] hover:text-[#2367EE] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg cursor-pointer"
                   aria-expanded={activeDropdown === section.label}
                   aria-haspopup="true"
-                  onClick={() => setActiveDropdown(activeDropdown === section.label ? null : section.label)}
+
                 >
                   {section.label}
                   <ChevronDown
