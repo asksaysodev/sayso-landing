@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
@@ -59,6 +60,19 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
           {entry.openingParagraph}
         </p>
 
+        {/* Optional Hero Image */}
+        {entry.heroImage && (
+          <div className="mb-8">
+            <Image
+              src={entry.heroImage.src}
+              alt={entry.heroImage.alt}
+              width={800}
+              height={450}
+              className="rounded-xl border-2 border-[#1D4871]/10"
+            />
+          </div>
+        )}
+
         {/* Why They Say This */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
           {entry.whyTheyTitle}
@@ -69,7 +83,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
           </p>
         ))}
 
-        {/* 3 Response Frameworks */}
+        {/* 3 Response Frameworks + What to Say Next (merged) */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
           3 Ways to Respond
         </h2>
@@ -93,10 +107,10 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
           ),
         )}
 
-        {/* What to Say Next */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        {/* What to Say Next — merged under "3 Ways to Respond" */}
+        <h3 className="font-hero text-xl text-[#1D4871] mb-3">
           What to Say Next
-        </h2>
+        </h3>
         <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-6">
           {entry.whatToSayNext}
         </p>
@@ -124,7 +138,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
 
         <ContentInlineCTA />
 
-        {/* Related Objections */}
+        {/* Related Objections + Cross-Section Links */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
           Related Objections
         </h2>
@@ -143,6 +157,38 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
             </li>
           ))}
         </ul>
+
+        {/* Cross-Section Links */}
+        {(entry.relatedBlogPost || entry.relatedFeature) && (
+          <div className="flex flex-col gap-3 mb-6">
+            {entry.relatedBlogPost && (
+              <Link
+                href={entry.relatedBlogPost.href}
+                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-[#1D4871]/10 bg-white hover:border-[#2367EE]/40 transition-colors group"
+              >
+                <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
+                  Deeper reading
+                </span>
+                <span className="text-[#2367EE] font-bold font-sans group-hover:underline">
+                  {entry.relatedBlogPost.title} &rarr;
+                </span>
+              </Link>
+            )}
+            {entry.relatedFeature && (
+              <Link
+                href={entry.relatedFeature.href}
+                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-[#1D4871]/10 bg-white hover:border-[#2367EE]/40 transition-colors group"
+              >
+                <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
+                  Related feature
+                </span>
+                <span className="text-[#2367EE] font-bold font-sans group-hover:underline">
+                  {entry.relatedFeature.title} &rarr;
+                </span>
+              </Link>
+            )}
+          </div>
+        )}
       </article>
 
       {/* FAQ */}

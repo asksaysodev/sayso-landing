@@ -25,5 +25,11 @@ export interface ObjectionEntry {
   howSaysoHelps: string;
   relatedObjections: { title: string; slug: string; keyword: string }[];
   faq: { question: string; answer: string }[];
+  /** Link to a related blog post for down-funnel linking. */
+  relatedBlogPost?: { title: string; href: string };
+  /** Link to a related feature page for cross-section linking. */
+  relatedFeature?: { title: string; href: string };
+  /** Optional hero/inline image with alt text for keyword placement. */
+  heroImage?: { src: string; alt: string };
   ogImage?: string;
 }

@@ -5,14 +5,14 @@ export const notReadyYet: ObjectionEntry = {
   keyword: 'how to handle "not ready yet" real estate',
   seoTitle: 'How to Handle "Not Ready Yet" in Real Estate',
   seoDescription:
-    'When a prospect says "I\'m not ready yet," here are 3 proven response frameworks to keep the conversation alive and book the appointment anyway.',
-  h1: 'How to Handle "I\'m Not Ready Yet" in Real Estate',
+    'Learn how to handle "not ready yet" in real estate with 3 proven response frameworks. Keep the conversation alive and book more appointments.',
+  h1: 'How to Handle "Not Ready Yet" in Real Estate',
   objectionQuote: "I'm not ready yet.",
   openingParagraph:
-    '"I\'m not ready yet" is one of the most common objections in real estate prospecting — and one of the most mishandled. Most agents hear it and back off, assuming the lead is cold. But "not ready yet" rarely means "not interested." It usually means the prospect needs a reason to keep talking. Here is how to handle it without being pushy.',
+    'Knowing how to handle "not ready yet" in real estate is one of the most important prospecting skills an agent can develop. This objection rarely means "not interested" — it usually means the prospect needs a lower-pressure reason to keep talking. Here is how to respond without being pushy.',
   whyTheyTitle: 'Why Prospects Say "I\'m Not Ready Yet"',
   whyTheySayThis:
-    'When a prospect says they are not ready, they are usually protecting themselves from a sales conversation they did not ask for. It is a reflex, not a decision. In most cases, they have not actually thought about their timeline — they are reacting to the pressure of being on the phone with an agent.\n\nSometimes "not ready" means they are 6–12 months out and assume that is too early to talk to an agent. Other times it means they are overwhelmed by the idea of selling and do not know where to start. In both cases, the door is open — they just need you to lower the stakes before they will walk through it.',
+    'When a prospect says they are not ready, they are usually protecting themselves from a sales conversation they did not ask for. It is a reflex, not a decision. In most cases, they have not actually thought about their timeline — they are reacting to the pressure of being on the phone with an agent.\n\nSometimes "not ready" means they are 6–12 months out and assume that is too early to talk to an agent. Other times it means they are overwhelmed by the idea of selling and do not know where to start. Understanding how to handle "not ready yet" in real estate starts with recognizing that the door is open — they just need you to lower the stakes before they will walk through it.',
   responses: {
     safe: {
       label: 'The Safe Response',
@@ -37,7 +37,7 @@ export const notReadyYet: ObjectionEntry = {
     },
   },
   whatToSayNext:
-    'After the initial response, pivot to a soft close. Do not ask for an appointment — ask for permission to follow up. "Would it be okay if I checked back in a month or two?" gets a yes almost every time. Once you have permission, add them to your CRM with a follow-up task and a note about what they said. When you call back, reference the original conversation: "Last time we spoke, you mentioned you were thinking about next spring..."',
+    'After the initial response, pivot to a soft close. Do not ask for an appointment — ask for permission to follow up. "Would it be okay if I checked back in a month or two?" gets a yes almost every time. Once you have permission, add them to your CRM with a follow-up task and a note about what they said. When you call back, reference the original conversation: "Last time we spoke, you mentioned you were thinking about next spring..." Agents who handle "not ready yet" in real estate this way convert more prospects over time because they stay in the conversation instead of dropping it.',
   commonMistakes: [
     'Hanging up immediately — "not ready" is not "not interested"',
     'Pushing for an appointment right away, which confirms their fear of being sold',
@@ -53,6 +53,14 @@ export const notReadyYet: ObjectionEntry = {
     { title: '"Need to Think About It"', slug: 'need-to-think-about-it', keyword: 'what to say when prospect shuts down' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },
   ],
+  relatedBlogPost: {
+    title: 'Real Estate Cold Call Scripts: The Complete Guide',
+    href: '/blog/real-estate-cold-calling-guide',
+  },
+  relatedFeature: {
+    title: 'Real-Time Coaching',
+    href: '/features/real-time-coaching',
+  },
   faq: [
     {
       question: 'What does "I\'m not ready yet" really mean in real estate?',
