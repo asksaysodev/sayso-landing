@@ -10,7 +10,7 @@ const integrationsHub: HubPageConfig = {
     'Sayso integrates with Follow Up Boss, Sierra Interactive, kvCORE, and more. Automatic call notes and real-time coaching that fits your existing workflow.',
   h1: 'Integrations That Fit Your Workflow',
   introduction:
-    'Sayso connects to the tools you already use. Automatic call notes sync to your CRM, real-time coaching runs alongside your dialer, and nothing changes about how you work — it just gets better.',
+    'Sayso connects to the tools you already use — it is one of the best tools for real estate note taking because notes happen automatically. Call notes sync to your CRM, real-time coaching runs alongside your dialer, and nothing changes about how you work — it just gets better.',
   childPages: [
     {
       title: 'Follow Up Boss',

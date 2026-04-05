@@ -58,7 +58,7 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
 
         {/* How It Works */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
-          How It Works
+          {entry.howItWorksHeading ?? 'How It Works'}
         </h2>
         <div className="space-y-5 mb-8">
           {entry.howItWorks.map((step, index) => (
@@ -77,6 +77,11 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
             </div>
           ))}
         </div>
+
+        <ContentInlineCTA
+          headline={entry.inlineCtaHeadline}
+          subheading={entry.inlineCtaSubheading}
+        />
 
         {/* Benefits */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
@@ -106,8 +111,6 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
           {entry.whyChoose}
         </p>
 
-        <ContentInlineCTA />
-
         {/* Get Started */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
           Get Started
@@ -115,6 +118,26 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
         <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-6">
           {entry.getStarted}
         </p>
+
+        {/* Related Pages */}
+        {entry.relatedLinks && entry.relatedLinks.length > 0 && (
+          <div className="flex flex-col gap-3 mt-10 mb-6">
+            {entry.relatedLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-[#1D4871]/10 bg-white hover:border-[#2367EE]/40 transition-colors group"
+              >
+                <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
+                  {link.label}
+                </span>
+                <span className="text-[#2367EE] font-bold font-sans group-hover:underline">
+                  {link.title} &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* Related Integrations */}
         {entry.relatedIntegrations.length > 0 && (
