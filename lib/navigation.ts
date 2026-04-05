@@ -76,6 +76,8 @@ export const footerNav: NavSection[] = [
       { label: 'Cue', href: '/features/real-time-coaching' },
       { label: 'Live Objection Handling', href: '/features/objection-handling' },
       { label: 'Smart Capture', href: '/features/call-notes' },
+      { label: 'Pulse', href: '/features/pulse' },
+      { label: 'Playbook', href: '/features/playbook' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },
