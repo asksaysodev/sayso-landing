@@ -6,12 +6,13 @@ export const realTimeCoaching: FeatureEntry = {
   seoTitle: 'Real-Time Sales Help for Real Estate Agents',
   seoDescription:
     'Freeze on a call and lose the listing. Sayso gives real-time sales help for real estate agents with live coaching prompts on screen. Book a demo.',
-  h1: 'Real-Time Sales Help \u2014 AI That Coaches You Through Every Call',
+  h1: 'Cue - Real-Time Coaching',
   heroDescription: [
-    'When a prospect hits you with an objection you did not expect, most real estate agents freeze \u2014 or worse, fumble the response and lose the appointment. That one moment can cost you a listing.',
-    'Sayso gives you real-time sales help for real estate agents who prospect on the phone every day. It listens to your live calls and shows you exactly what to say on your screen, the moment you need it.',
-    'No memorizing scripts. No post-call regret. Just live coaching prompts that help you handle objections, ask better questions, and book more appointments.',
+    'When a prospect hits you with an objection out of left field, do you freeze? Or fumble? Either way, you might lose the appointment. That one moment can cost you a listing.',
+    'Sayso gives real estate agents and teams confidence that they know exactly what to say in any scenario. Sayso\u2019s engine listens to your live call, understands the context, and shows you exactly what to say, the moment you need it.',
+    'Sayso means agents will never have to memorize a script and will never have post-call regret. You will book more appointments using Sayso.',
   ],
+  inlineCTASubheading: '',
   screenshotAlt:
     'Sayso real-time sales help prompt appearing on screen during a live real estate prospecting call',
   howItWorksHeading: 'How Real-Time Sales Help Works',
@@ -34,14 +35,15 @@ export const realTimeCoaching: FeatureEntry = {
     {
       step: 'Notes are captured automatically',
       description:
-        'After the call, Sayso generates a summary and logs key details to your CRM \u2014 so you can move straight to the next dial without stopping to write anything down.',
+        'As the conversation continues, Sayso is automatically taking notes in structured frameworks \u2014 so you can move straight to the next dial without stopping to write anything down.',
     },
   ],
   whoItsFor: [
-    'Real-time sales help for real estate agents is built for anyone who prospects on the phone regularly. Solo agents running their own cold-call sessions use it to stay sharp without a coach in the room. When a lead throws a curveball, Sayso feeds you the right response instead of leaving you scrambling for words.',
-    'ISAs handling high call volume use Sayso to maintain quality across dozens of daily conversations. Instead of relying on memorized scripts that go stale, they get live prompts that adapt to what the prospect actually says. The result is more booked appointments with less mental fatigue.',
+    'Sayso is built to fix disjointed prospecting and help agents get over their phone-aphobia. Real-time sales help is built for anyone who prospects on the phone regularly. When a lead throws a curveball, Sayso feeds you the right response instead of leaving you scrambling for words.',
+    'ISAs handling high call volume use Sayso to maintain quality across dozens of daily conversations.',
     'New agents who are still building confidence use it as a real-time safety net. Rather than spending weeks memorizing objection handlers before they start dialing, they can get on the phone from day one with Sayso guiding them through each exchange.',
     'Team leaders use Sayso to onboard new hires faster. Instead of ride-alongs and script binders, new agents get on-call guidance from their first dial \u2014 cutting ramp time and freeing up senior agents to focus on their own pipeline.',
+    'The results are more appointments, more confidence, less mental fatigue, less messy.',
   ],
   personaLinks: [
     { title: 'Solo Agents', href: '/for/solo-agents' },
@@ -50,7 +52,7 @@ export const realTimeCoaching: FeatureEntry = {
   differentiators: [
     {
       title: 'Live, not after-the-fact',
-      body: 'Most coaching tools analyze calls after they end. By then, the listing is lost. Sayso coaches you during the call \u2014 surfacing the right words while the conversation is still happening.',
+      body: 'Most coaching tools analyze calls after they end. By then, you\u2019ve already lost. Sayso coaches you during the call \u2014 surfacing the right words while the conversation is still happening.',
     },
     {
       title: 'Context-aware responses',
@@ -62,11 +64,11 @@ export const realTimeCoaching: FeatureEntry = {
     },
     {
       title: 'Works with your existing tools',
-      body: 'Sayso runs alongside your dialer and CRM. There is no switching platforms, no complicated setup, and no hardware to install. If you can make a phone call, you can use Sayso.',
+      body: 'Sayso runs alongside your dialer and CRM. There is no switching platforms, no complicated setup, and no hardware required. If you can make a call, you can use Sayso.',
     },
   ],
   socialProof:
-    'Agents using real-time coaching report feeling more confident on cold calls and booking more appointments from conversations that would have previously stalled. Teams see faster onboarding and more consistent call quality across their entire roster.',
+    'Agents using real-time coaching report feeling more confident on calls and booking more appointments from conversations that would have previously stalled. Teams see faster onboarding and more consistent call quality across their entire organization.',
   featureList: [
     'Real-time call coaching',
     'Live objection handling prompts',

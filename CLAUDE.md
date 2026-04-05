@@ -10,6 +10,17 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ---
 
+## Global Writing Rules
+
+These rules apply to **all** copy and content across the entire site:
+
+1. **Never use "Not X. Not Y. Just Z" sentence structures.** Rewrite to use affirmative phrasing instead.
+2. **Never use "run" or "running" when talking about phone calls.** Use regular conversational English (e.g., "make calls", "dial", "get on the phone").
+3. **Avoid "cold call(s)".** Use "call(s)" instead, unless you are specifically discussing cold calling as a topic.
+4. **Never say "phone call(s)".** Use "call(s)" instead.
+
+---
+
 ## Quick Start Before Every Task
 
 Always start from an up-to-date `development` branch:

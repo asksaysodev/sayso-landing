@@ -24,5 +24,7 @@ export interface FeatureEntry {
   featureList: string[];
   /** Alt text for hero screenshot placeholder. */
   screenshotAlt: string;
+  /** Optional override for the inline CTA subheading. Set to empty string to hide. */
+  inlineCTASubheading?: string;
   ogImage?: string;
 }

@@ -99,7 +99,9 @@ export function FeaturePage({ entry }: FeaturePageProps) {
 
       {/* Secondary CTA — after How It Works */}
       <div className="max-w-[800px] mx-auto px-6">
-        <ContentInlineCTA />
+        <ContentInlineCTA
+          {...(entry.inlineCTASubheading !== undefined && { subheading: entry.inlineCTASubheading })}
+        />
       </div>
 
       {/* Who It's For */}

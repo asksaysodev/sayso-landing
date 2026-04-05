@@ -43,6 +43,11 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ```
 /features/                                  (hub — no keyword target)                                   ⚪ NONE
 ├── /features/real-time-coaching/           "real time sales help"                                      🟡 MED
+│   ⚠️  SEO NOTE (2026-04-05): H1 changed from keyword-rich "Real-Time Sales Help — AI That
+│   Coaches You Through Every Call" to branded "Cue - Real-Time Coaching" per co-founder
+│   feedback. The primary keyword "real time sales help" is no longer in the H1. It is still
+│   present in seoTitle, seoDescription, and body copy. Monitor rankings for this keyword
+│   and consider restoring keyword-rich H1 if organic traffic drops.
 ├── /features/objection-handling/           "real estate objection handling scripts"                    🟡 MED
 └── /features/call-notes/                   "automatic call notes real estate"                          🟢 WIN
 ```
