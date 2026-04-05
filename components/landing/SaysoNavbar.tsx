@@ -105,7 +105,7 @@ export default function SaysoNavbar() {
                 {/* Desktop Dropdown Panel */}
                 {activeDropdown === section.label && (
                   <div
-                    className="absolute top-full left-0 mt-2 min-w-[220px] rounded-xl bg-white border-2 border-[#1D4871] v2-comic-shadow-sm py-2 z-50"
+                    className="absolute top-full left-0 mt-2 min-w-[280px] rounded-xl bg-white border-2 border-[#1D4871] v2-comic-shadow-sm py-2 z-50"
                     onMouseEnter={() => handleMouseEnter(section.label)}
                     onMouseLeave={handleMouseLeave}
                   >
@@ -113,10 +113,17 @@ export default function SaysoNavbar() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-4 py-2.5 text-[#1D4871] font-medium text-sm hover:bg-[#FFDE59]/20 hover:text-[#2367EE] transition-colors"
+                        className="block px-4 py-2.5 hover:bg-[#FFDE59]/20 transition-colors"
                         onClick={() => setActiveDropdown(null)}
                       >
-                        {link.label}
+                        <span className="text-[#1D4871] font-medium text-sm hover:text-[#2367EE]">
+                          {link.label}
+                        </span>
+                        {link.subtitle && (
+                          <span className="block text-sm text-[#1D4871]/60 mt-1">
+                            {link.subtitle}
+                          </span>
+                        )}
                       </Link>
                     ))}
                   </div>
@@ -179,9 +186,16 @@ export default function SaysoNavbar() {
                           key={link.href}
                           href={link.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block px-4 py-2.5 rounded-lg text-[#1D4871]/80 font-medium text-sm hover:bg-[#FFDE59]/10 hover:text-[#2367EE] transition-colors"
+                          className="block px-4 py-2.5 rounded-lg hover:bg-[#FFDE59]/10 transition-colors"
                         >
-                          {link.label}
+                          <span className="text-[#1D4871]/80 font-medium text-sm hover:text-[#2367EE]">
+                            {link.label}
+                          </span>
+                          {link.subtitle && (
+                            <span className="block text-sm text-[#1D4871]/60 mt-0.5">
+                              {link.subtitle}
+                            </span>
+                          )}
                         </Link>
                       ))}
                     </div>

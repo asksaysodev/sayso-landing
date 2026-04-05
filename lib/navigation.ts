@@ -3,6 +3,8 @@ export interface NavLink {
   href: string;
   /** If true, this is an external link (opens in new tab) */
   external?: boolean;
+  /** Optional subtitle displayed below the label (e.g. feature description) */
+  subtitle?: string;
 }
 
 export interface NavSection {
@@ -18,9 +20,12 @@ export const headerNav: NavSection[] = [
   {
     label: 'Product',
     links: [
-      { label: 'Real-Time Coaching', href: '/features/real-time-coaching' },
-      { label: 'Objection Handling', href: '/features/objection-handling' },
-      { label: 'Call Notes', href: '/features/call-notes' },
+      { label: 'Cue', href: '/features/real-time-coaching', subtitle: 'Real time coaching' },
+      { label: 'Live Objection Handling', href: '/features/objection-handling' },
+      { label: 'Smart Capture', href: '/features/call-notes', subtitle: 'Structured Call Notes' },
+      { label: 'Pulse', href: '/features/pulse', subtitle: 'Live market analysis mid-call' },
+      { label: 'Playbook', href: '/features/playbook', subtitle: 'Custom scripts for every scenario' },
+      { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },
