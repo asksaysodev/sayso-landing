@@ -104,16 +104,17 @@ export function generateDefinedTermJsonLd(
   description: string,
   url: string,
 ) {
+  const normalizedUrl = url.replace(/\/?$/, '/');
   return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     name,
     description,
-    url: `${siteUrl}${url}`,
+    url: `${siteUrl}${normalizedUrl}`,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
       name: 'Sayso Real Estate Glossary',
-      url: `${siteUrl}/glossary`,
+      url: `${siteUrl}/glossary/`,
     },
   };
 }
