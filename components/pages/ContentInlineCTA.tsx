@@ -21,13 +21,13 @@ export function ContentInlineCTA({
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <button
             onClick={openDemoCalendar}
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
+            className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
           >
             Book a Demo
           </button>
           <button
             onClick={openSystemSelect}
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
+            className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
           >
             <LightningIcon size={14} className="mr-1.5" />
             Download Sayso

@@ -112,19 +112,6 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
           ))}
         </div>
 
-        {/* Integrations */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
-          Integrations
-        </h2>
-        <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-4">
-          {content.integrationsBlurb}
-        </p>
-        <Link
-          href="/integrations"
-          className="text-[#2367EE] hover:underline font-bold font-sans"
-        >
-          See all integrations →
-        </Link>
       </article>
 
       {/* FAQ */}

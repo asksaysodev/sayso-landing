@@ -7,7 +7,6 @@ export interface WhySaysoContent {
   differentiators: { title: string; description: string }[];
   whoItsFor: { persona: string; description: string; href: string }[];
   socialProof: string[];
-  integrationsBlurb: string;
   faq: { question: string; answer: string }[];
 }
 
@@ -17,9 +16,9 @@ export const whySaysoContent: WhySaysoContent = {
     'Sayso gives real estate agents real-time coaching during live calls, not after them. See why teams are switching from script binders and post-call reviews.',
   h1: 'Why Teams Are Switching to Sayso',
   opening:
-    'Real estate agents lose deals every day, not because they do not know the scripts, but because they freeze in the moment. Sayso fixes that by coaching you during the call, not after it. Real-time prompts, automatic notes, and objection handling that works when you need it most.',
+    'Real estate agents lose opportunities every day, not because they do not know the scripts, but because they freeze in the moment. Sayso fixes that by coaching you during the call, not after it. Real-time prompts, automatic notes, and objection handling that works when you need it most.',
   problemToday:
-    'Most agents learn through script binders, ride-alongs, and post-call reviews. These methods teach you what to say, but they cannot help you when the prospect is on the phone and you have three seconds to respond. The gap between preparation and performance is where deals die.\n\nPost-call tools tell you what went wrong. Real-time coaching prevents it from going wrong in the first place.',
+    'Most agents learn through script binders, ride-alongs, and post-call reviews. These methods teach you what to say, but they cannot help you when the prospect is on the phone and you have seconds to respond. The gap between preparation and performance is where opportunities slip away.\n\nPost-call tools tell you what went wrong. Real-time coaching prevents it from going wrong in the first place.',
   differentiators: [
     {
       title: 'Coaching happens during the call, not after',
@@ -30,12 +29,12 @@ export const whySaysoContent: WhySaysoContent = {
       description: 'The right response appears on your screen when the prospect pushes back. You follow the prompt naturally instead of trying to recall memorized lines.',
     },
     {
-      title: 'Call notes are automatic',
+      title: 'Structured notes are automatic',
       description: 'After every call, Sayso generates a summary and syncs it to your CRM. No more spending 30 minutes logging notes after a calling session.',
     },
     {
       title: 'Works with your existing tools',
-      description: 'Sayso runs alongside your dialer and CRM, including Follow Up Boss, Sierra Interactive, kvCORE, and more. Nothing changes about how you work.',
+      description: 'Sayso runs alongside your dialer and CRM. Nothing changes about how you work.',
     },
     {
       title: 'Built for real estate prospecting',
@@ -45,11 +44,11 @@ export const whySaysoContent: WhySaysoContent = {
   whoItsFor: [
     {
       persona: 'Solo Agents',
-      description: 'Sound experienced on every call, even without a team or coach behind you.',
+      description: 'Wanting an edge when every call and minute is valuable.',
       href: '/for/solo-agents',
     },
     {
-      persona: 'Team Leaders',
+      persona: 'Team Leaders & Brokerage Owners',
       description: 'Scale your coaching without sitting in on every call. See how your team sounds and where they need help.',
       href: '/for/team-leaders',
     },
@@ -60,7 +59,7 @@ export const whySaysoContent: WhySaysoContent = {
     },
     {
       persona: 'ISAs',
-      description: 'Convert more leads with consistent coaching on every inbound and outbound call.',
+      description: 'Convert more leads with consistent coaching on every inbound and outbound call. Have cleaner appointment handoffs, every time.',
       href: '/for/isas',
     },
   ],
@@ -69,8 +68,6 @@ export const whySaysoContent: WhySaysoContent = {
     'The call notes alone saved me an hour a day.',
     'I used to dread objections. Now I know exactly what to say.',
   ],
-  integrationsBlurb:
-    'Sayso connects to the CRMs real estate teams already use, including Follow Up Boss, Sierra Interactive, kvCORE, and more. Call notes sync automatically. No platform switching, no manual logging.',
   faq: [
     {
       question: 'What makes Sayso different from other coaching tools?',
