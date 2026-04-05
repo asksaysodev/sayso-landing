@@ -89,18 +89,18 @@ export default function SaysoNavbar() {
                 onMouseEnter={() => handleMouseEnter(section.label)}
                 onMouseLeave={handleMouseLeave}
               >
-                <button
+                <Link
+                  href={section.href ?? '#'}
                   className="flex items-center gap-1 px-3 py-2 text-[#1D4871] font-bold text-[1rem] hover:text-[#2367EE] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg cursor-pointer"
                   aria-expanded={activeDropdown === section.label}
                   aria-haspopup="true"
-
                 >
                   {section.label}
                   <ChevronDown
                     size={14}
                     className={`transition-transform duration-200 ${activeDropdown === section.label ? 'rotate-180' : ''}`}
                   />
-                </button>
+                </Link>
 
                 {/* Desktop Dropdown Panel */}
                 {activeDropdown === section.label && (
@@ -165,18 +165,27 @@ export default function SaysoNavbar() {
             <div className="py-4 px-4 space-y-1 max-h-[70vh] overflow-y-auto">
               {headerNav.map((section) => (
                 <div key={section.label}>
-                  {/* Section Header — Accordion Toggle */}
-                  <button
-                    onClick={() => toggleMobileSection(section.label)}
-                    className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-[#1D4871] font-bold text-base text-right hover:bg-[#FFDE59]/20 transition-colors"
-                    aria-expanded={openMobileSection === section.label}
-                  >
-                    <span>{section.label}</span>
-                    <ChevronDown
-                      size={16}
-                      className={`transition-transform duration-200 ${openMobileSection === section.label ? 'rotate-180' : ''}`}
-                    />
-                  </button>
+                  {/* Section Header — Label navigates, chevron toggles accordion */}
+                  <div className="flex items-center w-full rounded-lg hover:bg-[#FFDE59]/20 transition-colors">
+                    <Link
+                      href={section.href ?? '#'}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex-1 px-4 py-3 text-[#1D4871] font-bold text-base text-left"
+                    >
+                      {section.label}
+                    </Link>
+                    <button
+                      onClick={() => toggleMobileSection(section.label)}
+                      className="px-4 py-3 text-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg"
+                      aria-expanded={openMobileSection === section.label}
+                      aria-label={`Expand ${section.label} submenu`}
+                    >
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${openMobileSection === section.label ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                  </div>
 
                   {/* Accordion Content */}
                   {openMobileSection === section.label && (

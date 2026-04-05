@@ -84,7 +84,7 @@ function HubCard({
 }) {
   return (
     <Link
-      href={`${basePath}/${page.slug}`}
+      href={page.href ?? `${basePath}/${page.slug}`}
       className="group bg-white border-2 border-[#1D4871]/10 rounded-2xl p-6 hover:border-[#2367EE] hover:v2-comic-shadow-sm transition-all block"
     >
       <h3 className="font-hero text-lg text-[#1D4871] mb-2 group-hover:text-[#2367EE] transition-colors">

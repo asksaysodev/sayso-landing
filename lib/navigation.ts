@@ -10,6 +10,8 @@ export interface NavLink {
 export interface NavSection {
   label: string;
   links: NavLink[];
+  /** Optional hub page URL — clicking the section label navigates here. */
+  href?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -19,6 +21,7 @@ export interface NavSection {
 export const headerNav: NavSection[] = [
   {
     label: 'Product',
+    href: '/features',
     links: [
       { label: 'Cue', href: '/features/real-time-coaching', subtitle: 'Real time coaching' },
       { label: 'Live Objection Handling', href: '/features/objection-handling' },
@@ -31,6 +34,7 @@ export const headerNav: NavSection[] = [
   },
   {
     label: 'Solutions',
+    href: '/for',
     links: [
       { label: 'Solo Agents', href: '/for/solo-agents' },
       { label: 'Team Leaders', href: '/for/team-leaders' },
@@ -41,6 +45,7 @@ export const headerNav: NavSection[] = [
   },
   {
     label: 'Resources',
+    href: '/resources',
     links: [
       { label: 'Blog', href: '/blog' },
       { label: 'Objection Library', href: '/objections' },
@@ -50,6 +55,7 @@ export const headerNav: NavSection[] = [
   },
   {
     label: 'Compare',
+    href: '/compare',
     links: [
       { label: 'Sayso vs Shilo', href: '/compare/sayso-vs-shilo' },
       { label: 'Sayso vs MaverickRE', href: '/compare/sayso-vs-maverickre' },
@@ -125,6 +131,9 @@ export function getAllNavHrefs(): string[] {
   const hrefs = new Set<string>();
 
   for (const section of allSections) {
+    if (section.href?.startsWith('/')) {
+      hrefs.add(section.href);
+    }
     for (const link of section.links) {
       if (!link.external && link.href.startsWith('/')) {
         hrefs.add(link.href);
