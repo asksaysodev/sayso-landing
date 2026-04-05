@@ -1,4 +1,4 @@
-# Sayso Landing Page — Shared Repository Guidelines
+# Sayso Landing Page: Shared Repository Guidelines
 
 This is a shared team repository. Please follow these conventions to maintain organization and smooth collaboration.
 
@@ -19,6 +19,10 @@ These rules apply to **all** copy and content across the entire site:
 3. **Avoid "cold call(s)".** Use "call(s)" instead, unless you are specifically discussing cold calling as a topic.
 4. **Never say "phone call(s)".** Use "call(s)" instead.
 5. **Never refer to real estate agents as "reps" or "representatives".** Only refer to them as "agents" or "real estate agents".
+6. **Never refer to clients or prospects as "deals".** Agents book appointments and turn prospects into clients. Use "prospect," "lead," "client," or "appointment" instead.
+7. **Never say "close a deal" or "win/lose deals".** Agents book appointments and meetings. The end goal is turning a prospect into a client.
+8. **Never use em dashes (—).** Use commas, periods, colons, or rephrase instead.
+9. **Sayso helps agents with both buyers and sellers.** All copy must be lead type agnostic (do not assume the prospect is only buying or only selling).
 
 ---
 
@@ -126,10 +130,10 @@ Use **Draft PRs** with preview deployments:
 
 ## Key Files
 
-- `/app` — Next.js app directory
-- `/components` — React components
-- `/styles` — Tailwind CSS and global styles
-- `/content` — Content files (blog posts, page data)
+- `/app`: Next.js app directory
+- `/components`: React components
+- `/styles`: Tailwind CSS and global styles
+- `/content`: Content files (blog posts, page data)
 
 ### Documentation (`/docs`)
 
