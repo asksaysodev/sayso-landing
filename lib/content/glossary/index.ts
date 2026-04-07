@@ -1,7 +1,8 @@
 import type { GlossaryEntry } from './types';
 import { circleProspecting } from './circle-prospecting';
+import { isaRealEstate } from './isa-real-estate';
 
-const entries: GlossaryEntry[] = [circleProspecting];
+const entries: GlossaryEntry[] = [circleProspecting, isaRealEstate];
 
 export function getAllGlossaryEntries(): GlossaryEntry[] {
   return entries;
