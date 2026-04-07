@@ -49,7 +49,7 @@ export const soloAgents: UseCaseEntry = {
     {
       feature: 'Objection Handling',
       description: 'When a prospect pushes back, the right response appears on your screen \u2014 tuned to what they just said, not a generic script.',
-      href: '/features/objection-handling',
+      href: '/features/real-time-coaching',
     },
     {
       feature: "What's Working & Coaching Tips",

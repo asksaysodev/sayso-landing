@@ -104,7 +104,7 @@ export const callNotes: FeatureEntry = {
   ],
   relatedFeatures: [
     { title: 'Real-Time Coaching', slug: 'real-time-coaching' },
-    { title: 'Objection Handling', slug: 'objection-handling' },
+    { title: 'Custom Scripts', slug: 'playbook' },
   ],
   relatedBlogPosts: [
     { title: 'Real Estate Call Notes Template', href: '/blog/real-estate-call-notes-template' },

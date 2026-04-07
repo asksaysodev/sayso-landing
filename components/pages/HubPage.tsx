@@ -85,10 +85,10 @@ function HubCard({
   page: HubPageConfig['childPages'][number];
   basePath: string;
 }) {
-  return (
+  const card = (
     <Link
       href={page.href ?? `${basePath}/${page.slug}`}
-      className="group bg-white border-2 border-[#1D4871]/10 rounded-2xl p-6 hover:border-[#2367EE] hover:v2-comic-shadow-sm transition-all block"
+      className={`group bg-white border-2 border-[#1D4871]/10 rounded-2xl p-6 hover:border-[#2367EE] hover:v2-comic-shadow-sm transition-all block${page.bannerText ? ' h-full' : ''}`}
     >
       {page.eyebrow && (
         <span className="block text-xs font-bold text-[#2367EE] uppercase tracking-wider mb-1 font-sans">
@@ -107,6 +107,19 @@ function HubCard({
       </span>
     </Link>
   );
+
+  if (page.bannerText) {
+    return (
+      <div className="relative">
+        <div className="absolute -top-4 -right-3 z-10 bg-[#FFDE59] text-[#1D4871] font-comic text-base px-4 py-1.5 v2-comic-border v2-comic-shadow-sm rotate-[8deg] whitespace-nowrap">
+          {page.bannerText}
+        </div>
+        {card}
+      </div>
+    );
+  }
+
+  return card;
 }
 
 function FeatureRequestCard({

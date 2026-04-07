@@ -103,8 +103,8 @@ export const realTimeCoaching: FeatureEntry = {
     },
   ],
   relatedFeatures: [
-    { title: 'Objection Handling', slug: 'objection-handling' },
     { title: 'Call Notes', slug: 'call-notes' },
+    { title: 'Live Market Analysis', slug: 'pulse' },
   ],
   relatedBlogPosts: [
     { title: 'What Real-Time Call Coaching Looks Like', href: '/blog/what-real-time-call-coaching-looks-like' },

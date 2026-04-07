@@ -9,6 +9,8 @@ export interface HubChildPage {
   linkText: string;
   /** Override the default `basePath/slug` link (e.g. when children live at non-standard paths). */
   href?: string;
+  /** Comic-style banner text shown on the card (e.g. "Coming soon"). */
+  bannerText?: string;
 }
 
 export interface HubPageConfig {
