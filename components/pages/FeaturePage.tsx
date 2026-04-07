@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
@@ -85,8 +86,14 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         </div>
         {entry.heroVisual === 'product-showcase' ? (
           <div className="relative">
-            <div className="hidden md:block absolute top-[12%] left-[2%] z-10 bg-[#FFDE59] text-[#1D4871] font-comic text-lg px-6 py-2 v2-comic-border v2-comic-shadow-sm -rotate-[3deg] whitespace-nowrap">
-              Real Time Coaching
+            <div className="hidden md:block absolute top-[8%] left-[-120px] xl:left-[-150px] z-10 w-[120px] xl:w-[160px] pointer-events-none">
+              <Image
+                src="/this_is_sayso_right.png"
+                alt="This is Sayso"
+                width={300}
+                height={300}
+                className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+              />
             </div>
             <ProductShowcaseDesktop />
           </div>
