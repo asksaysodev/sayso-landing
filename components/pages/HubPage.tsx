@@ -51,6 +51,9 @@ export function HubPage({ config }: HubPageProps) {
             {config.childPages.map((page) => (
               <HubCard key={page.slug} page={page} basePath={config.basePath} />
             ))}
+            {config.featureRequestCard && (
+              <FeatureRequestCard card={config.featureRequestCard} />
+            )}
           </div>
         )}
       </section>
@@ -103,5 +106,36 @@ function HubCard({
         <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
       </span>
     </Link>
+  );
+}
+
+function FeatureRequestCard({
+  card,
+}: {
+  card: NonNullable<HubPageConfig['featureRequestCard']>;
+}) {
+  return (
+    <div className="relative">
+      {card.bannerText && (
+        <div className="absolute -top-4 -right-3 z-10 bg-[#FFDE59] text-[#1D4871] font-comic text-base px-4 py-1.5 v2-comic-border v2-comic-shadow-sm rotate-[8deg] whitespace-nowrap">
+          {card.bannerText}
+        </div>
+      )}
+      <Link
+        href={card.href}
+        className="group bg-white border-2 border-[#1D4871]/10 rounded-2xl p-6 hover:border-[#2367EE] hover:v2-comic-shadow-sm transition-all block h-full"
+      >
+        <h3 className="font-hero text-lg text-[#1D4871] mb-2 group-hover:text-[#2367EE] transition-colors">
+          {card.title}
+        </h3>
+        <p className="text-sm text-[#1D4871]/60 font-sans leading-relaxed mb-4">
+          {card.description}
+        </p>
+        <span className="inline-flex items-center text-sm font-bold text-[#2367EE] font-sans">
+          {card.linkText}
+          <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+        </span>
+      </Link>
+    </div>
   );
 }
