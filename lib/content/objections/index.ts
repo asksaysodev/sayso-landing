@@ -1,7 +1,8 @@
 import type { ObjectionEntry } from './types';
+import { alreadyHaveAnAgent } from './already-have-an-agent';
 import { notReadyYet } from './not-ready-yet';
 
-const entries: ObjectionEntry[] = [notReadyYet];
+const entries: ObjectionEntry[] = [alreadyHaveAnAgent, notReadyYet];
 
 export function getAllObjectionEntries(): ObjectionEntry[] {
   return entries;
