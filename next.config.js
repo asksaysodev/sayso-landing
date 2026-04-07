@@ -8,6 +8,32 @@ const nextConfig = {
       // ──────────────────────────────────────────────────
       // PERSONA PAGE REDIRECTS — activate when /for/ pages are live
       // ──────────────────────────────────────────────────
+      // ──────────────────────────────────────────────────
+      // FEATURE PAGE SLUG REDIRECTS
+      // ──────────────────────────────────────────────────
+      {
+        source: '/features/real-time-coaching',
+        destination: '/features/cue',
+        permanent: true,
+      },
+      {
+        source: '/features/real-time-coaching/',
+        destination: '/features/cue/',
+        permanent: true,
+      },
+      {
+        source: '/features/call-notes',
+        destination: '/features/smart-capture',
+        permanent: true,
+      },
+      {
+        source: '/features/call-notes/',
+        destination: '/features/smart-capture/',
+        permanent: true,
+      },
+      // ──────────────────────────────────────────────────
+      // PERSONA PAGE REDIRECTS — activate when /for/ pages are live
+      // ──────────────────────────────────────────────────
       // {
       //   source: '/agent',
       //   destination: '/for/solo-agents',

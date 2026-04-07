@@ -1,7 +1,7 @@
 import type { FeatureEntry } from './types';
 
-export const realTimeCoaching: FeatureEntry = {
-  slug: 'real-time-coaching',
+export const cue: FeatureEntry = {
+  slug: 'cue',
   keyword: 'real-time sales help for real estate agents',
   seoTitle: 'Real-Time Sales Help for Real Estate Agents',
   seoDescription:
@@ -14,6 +14,7 @@ export const realTimeCoaching: FeatureEntry = {
   ],
   screenshotAlt:
     'Sayso real-time sales help prompt appearing on screen during a live real estate prospecting call',
+  heroVisual: 'product-showcase',
   howItWorksHeading: 'How Real-Time Sales Help Works',
   howItWorks: [
     {
@@ -103,7 +104,7 @@ export const realTimeCoaching: FeatureEntry = {
     },
   ],
   relatedFeatures: [
-    { title: 'Call Notes', slug: 'call-notes' },
+    { title: 'Smart Capture', slug: 'smart-capture' },
     { title: 'Live Market Analysis', slug: 'pulse' },
   ],
   relatedBlogPosts: [

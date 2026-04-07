@@ -96,7 +96,7 @@ export const followUpBoss: IntegrationEntry = {
     {
       label: 'Related feature',
       title: 'Real-Time Coaching',
-      href: '/features/real-time-coaching',
+      href: '/features/cue',
     },
     {
       label: "Who it's for",

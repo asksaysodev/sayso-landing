@@ -29,8 +29,8 @@ export const exampleTeam: CaseStudyEntry = {
     'I used to dread objections. Now I almost look forward to them because I know exactly what to say.',
   ],
   relatedFeatures: [
-    { title: 'Real-Time Coaching', href: '/features/real-time-coaching' },
-    { title: 'Call Notes', href: '/features/call-notes' },
+    { title: 'Real-Time Coaching', href: '/features/cue' },
+    { title: 'Call Notes', href: '/features/smart-capture' },
   ],
   relatedPersona: {
     title: 'Sayso for Team Leaders',

@@ -133,7 +133,7 @@ Content strings support `[link text](/url/)` markdown syntax via the `renderInli
 
 Example in a content string:
 ```
-'Sayso surfaces [real-time coaching prompts](/features/real-time-coaching/) directly on your screen.'
+'Sayso surfaces [real-time coaching prompts](/features/cue/) directly on your screen.'
 ```
 
 ### Honesty Rules
@@ -187,7 +187,7 @@ Content guidance for the TLDR:
 - Be factual and fair - state limitations without being snarky
 - Include the exact keyword in the first paragraph ("If you are researching a [competitor] alternative...")
 - Common reasons to cover: missing features, pricing concerns, integration gaps, workflow mismatches
-- Link to relevant `/features/` pages naturally (e.g., "the need for [real-time coaching](/features/real-time-coaching/)")
+- Link to relevant `/features/` pages naturally (e.g., "the need for [real-time coaching](/features/cue/)")
 
 ### 6. Feature Comparison Table
 - **H2:** Rendered by the component: `{competitor} vs Sayso - Feature Comparison`
@@ -364,8 +364,8 @@ Every comparison page must include **5-8 internal links**. The component handles
 
 | Content Field | What to Link | Example |
 |--------------|-------------|---------|
-| `whyLooking` | Link to the primary feature that addresses the pain point | `[real-time coaching](/features/real-time-coaching/)` |
-| `whereSaysoWinsDetails[].body` | Link to the feature being discussed in that subsection | `[real-time coaching prompts](/features/real-time-coaching/)` |
+| `whyLooking` | Link to the primary feature that addresses the pain point | `[real-time coaching](/features/cue/)` |
+| `whereSaysoWinsDetails[].body` | Link to the feature being discussed in that subsection | `[real-time coaching prompts](/features/cue/)` |
 | `whoItsFor` | Link to persona pages for each audience type mentioned | `[Solo agents](/for/solo-agents/) who prospect daily...` |
 | `pricing` | Link to the pricing page inline | `Visit the [pricing page](/pricing/) for current plans` |
 | `tldr` | Optional link to demo | `[Sayso is the better fit](/demo/)` |

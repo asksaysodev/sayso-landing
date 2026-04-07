@@ -2,7 +2,7 @@
 
 This document is the complete reference for creating `/features/[slug]` pages. It covers SEO rules, content structure, the TypeScript data interface, internal linking requirements, and a step-by-step process for adding new feature pages at scale.
 
-**Reference implementation:** `lib/content/features/real-time-coaching.ts`
+**Reference implementation:** `lib/content/features/cue.ts`
 
 ---
 
@@ -71,7 +71,7 @@ These rules apply to every feature page without exception.
 | **First 100 words** | The exact target keyword must appear within the first 100 words of body content (the hero paragraphs). Ideally in the first 2 sentences. | `Sayso gives you real-time sales help for real estate agents who prospect on the phone...` |
 | **Meta title** | Format: `[Target Keyword Phrase] | Sayso`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should just be the keyword phrase portion. Max 60 characters for the `seoTitle` value. | `seoTitle: 'Real-Time Sales Help for Real Estate Agents'` (48 chars + " | Sayso" = 57 total) |
 | **Meta description** | 150-160 characters max. Must contain the target keyword. Follow the format: `[Problem]. [How Sayso solves it]. [CTA].` | `Freeze on a call and lose the listing. Sayso gives real-time sales help for real estate agents with live coaching prompts on screen. Book a demo.` |
-| **URL slug** | Short, descriptive. Does not need to match the keyword exactly. | `/features/real-time-coaching/` |
+| **URL slug** | Short, descriptive. Does not need to match the keyword exactly. | `/features/cue/` |
 | **First H2** | Must contain the keyword or a strong semantic variation. Use the `howItWorksHeading` field to customize. | `How Real-Time Sales Help Works` |
 | **Image alt text** | Describe the image AND include the keyword or a variation. Reference both the feature and the real estate context. | `Sayso real-time sales help prompt appearing on screen during a live real estate prospecting call` |
 
@@ -215,7 +215,7 @@ Every feature page is defined by a `FeatureEntry` object in `lib/content/feature
 
 ```typescript
 export interface FeatureEntry {
-  slug: string;                  // URL slug: "real-time-coaching"
+  slug: string;                  // URL slug: "cue"
   keyword: string;               // Target SEO keyword
   seoTitle: string;              // Meta title (max 60 chars - "| Sayso" added by layout)
   seoDescription: string;        // Meta description (max 160 chars)
@@ -384,7 +384,7 @@ Create a new TypeScript file in `lib/content/features/`:
 lib/content/features/[slug].ts
 ```
 
-Export a `FeatureEntry` object following the interface and all the rules above. Use `real-time-coaching.ts` as your reference.
+Export a `FeatureEntry` object following the interface and all the rules above. Use `cue.ts` as your reference.
 
 ### Step 2: Register it in the content loader
 
@@ -433,13 +433,13 @@ These are defined in the features hub (`lib/content/hubs/features.ts`) but not y
 
 | Feature | Slug | Target Keyword | Status |
 |---------|------|----------------|--------|
-| Real-Time Coaching | `real-time-coaching` | real-time sales help for real estate agents | Done |
+| Real-Time Coaching | `cue` | real-time sales help for real estate agents | Done |
 | Objection Handling | `objection-handling` | real estate objection handling scripts | Not started |
-| Call Notes | `call-notes` | automatic call notes real estate | Not started |
+| Call Notes | `smart-capture` | automatic call notes real estate | Not started |
 
 **Removed pages:** Call Grading and Role Play were removed as feature pages (Sayso doesn't offer these as standalone features). Their keywords ("how to improve call performance real estate" and "how to practice scripts real estate") have been moved to blog posts in the Conversation Skills and Cold Calling clusters respectively.
 
-**Note:** The keywords listed for unbuilt pages are the originals from the hub config. Before building each page, validate the keyword with actual search volume data and consider using long-tail variants (as was done for real-time-coaching: `real time sales help` became `real-time sales help for real estate agents`).
+**Note:** The keywords listed for unbuilt pages are the originals from the hub config. Before building each page, validate the keyword with actual search volume data and consider using long-tail variants (as was done for cue: `real time sales help` became `real-time sales help for real estate agents`).
 
 ---
 

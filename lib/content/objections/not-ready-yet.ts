@@ -59,7 +59,7 @@ export const notReadyYet: ObjectionEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/real-time-coaching',
+    href: '/features/cue',
   },
   faq: [
     {

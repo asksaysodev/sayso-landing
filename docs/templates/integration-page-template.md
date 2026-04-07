@@ -342,7 +342,7 @@ Before populating `relatedLinks`, verify that the target pages exist:
 
 | Link Type | Where to Check | Currently Available |
 |-----------|---------------|-------------------|
-| Feature pages | `lib/content/features/index.ts` | `/features/real-time-coaching` |
+| Feature pages | `lib/content/features/index.ts` | `/features/cue` |
 | Persona pages | `lib/content/for/index.ts` | `/for/solo-agents` |
 | Pricing | `app/pricing/` directory | `/pricing` |
 | Blog posts | `content/blog/` directory | `/blog/real-estate-cold-calling-guide`, `/blog/how-to-build-rapport-calls` |
@@ -350,7 +350,7 @@ Before populating `relatedLinks`, verify that the target pages exist:
 **Never link to pages that do not exist.** As new feature and persona pages are created, update `relatedLinks` on integration pages to include them.
 
 **Priority links for integration pages:**
-1. Feature page for call notes (`/features/call-notes/`) - when it exists, this should be the primary feature link since auto-syncing notes is a key integration benefit
+1. Feature page for call notes (`/features/smart-capture/`) - when it exists, this should be the primary feature link since auto-syncing notes is a key integration benefit
 2. Team leaders persona page (`/for/team-leaders/`) - when it exists, this is the best persona link since teams care most about CRM integration
 3. `/pricing/` - always available
 
@@ -613,7 +613,7 @@ export const yourCrm: IntegrationEntry = {
   ],
   relatedIntegrations: [],  // Populate when other integration pages exist
   relatedLinks: [
-    { label: 'Related feature', title: 'Real-Time Coaching', href: '/features/real-time-coaching' },
+    { label: 'Related feature', title: 'Real-Time Coaching', href: '/features/cue' },
     { label: "Who it's for", title: 'Solo Agents', href: '/for/solo-agents' },
     { label: 'Pricing', title: 'View Pricing', href: '/pricing' },
   ],

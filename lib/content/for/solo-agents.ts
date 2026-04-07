@@ -39,17 +39,17 @@ export const soloAgents: UseCaseEntry = {
     {
       feature: 'Real-Time Coaching',
       description: 'See what to say during live calls \u2014 objection responses, follow-up questions, appointment closes. No memorization needed.',
-      href: '/features/real-time-coaching',
+      href: '/features/cue',
     },
     {
       feature: 'Automatic Call Notes',
       description: 'Sayso generates call notes during every conversation. Stop spending 30 minutes on notes after a calling session.',
-      href: '/features/call-notes',
+      href: '/features/smart-capture',
     },
     {
       feature: 'Objection Handling',
       description: 'When a prospect pushes back, the right response appears on your screen \u2014 tuned to what they just said, not a generic script.',
-      href: '/features/real-time-coaching',
+      href: '/features/cue',
     },
     {
       feature: "What's Working & Coaching Tips",
@@ -79,8 +79,8 @@ export const soloAgents: UseCaseEntry = {
     },
   ],
   relatedFeatures: [
-    { title: 'Real-Time Coaching', href: '/features/real-time-coaching' },
-    { title: 'Call Notes', href: '/features/call-notes' },
+    { title: 'Real-Time Coaching', href: '/features/cue' },
+    { title: 'Call Notes', href: '/features/smart-capture' },
   ],
   relatedBlogPosts: [
     { title: 'How to Not Freeze on Sales Calls', href: '/blog/how-to-not-freeze-on-calls' },

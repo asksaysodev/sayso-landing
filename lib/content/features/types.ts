@@ -24,5 +24,7 @@ export interface FeatureEntry {
   featureList: string[];
   /** Alt text for hero screenshot placeholder. */
   screenshotAlt: string;
+  /** Which visual to render in the hero section. Defaults to 'placeholder'. */
+  heroVisual?: 'placeholder' | 'product-showcase';
   ogImage?: string;
 }

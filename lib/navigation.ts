@@ -23,8 +23,8 @@ export const headerNav: NavSection[] = [
     label: 'Features',
     href: '/features',
     links: [
-      { label: 'Cue', href: '/features/real-time-coaching', subtitle: 'Real time context based coaching' },
-      { label: 'Smart Capture', href: '/features/call-notes', subtitle: 'Structured call notes' },
+      { label: 'Cue', href: '/features/cue', subtitle: 'Real time context based coaching' },
+      { label: 'Smart Capture', href: '/features/smart-capture', subtitle: 'Structured call notes' },
       { label: 'Pulse', href: '/features/pulse', subtitle: 'Live market analysis mid-call' },
       { label: 'Playbook', href: '/features/playbook', subtitle: 'Custom scripts for every scenario' },
       { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' },
@@ -72,8 +72,8 @@ export const footerNav: NavSection[] = [
   {
     label: 'Features',
     links: [
-      { label: 'Cue', href: '/features/real-time-coaching' },
-      { label: 'Smart Capture', href: '/features/call-notes' },
+      { label: 'Cue', href: '/features/cue' },
+      { label: 'Smart Capture', href: '/features/smart-capture' },
       { label: 'Pulse', href: '/features/pulse' },
       { label: 'Playbook', href: '/features/playbook' },
       { label: 'Pricing', href: '/pricing' },

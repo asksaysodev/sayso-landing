@@ -275,7 +275,7 @@ Example H2 structure for "how to build rapport real estate calls":
 Brief product tie-in. Rules:
 - 2-4 sentences maximum. Supporting posts are lighter on product promotion than pillars.
 - Connect this specific topic to a specific SaySo feature. Not "SaySo helps with calls" but "When you're struggling to build rapport and the lead goes quiet, SaySo suggests a conversation-starter on screen - in real time."
-- CTA: Link to `/demo/` or a relevant feature page (e.g., `/features/real-time-coaching/`).
+- CTA: Link to `/demo/` or a relevant feature page (e.g., `/features/cue/`).
 
 ### 6. H2: FAQ (Optional but Recommended)
 
@@ -294,7 +294,7 @@ Supporting posts are the connective tissue of the cluster. Their linking job is 
 1. **Link UP to the pillar post** - within the first 300 words. Use the pillar's target keyword as anchor text. This is the most important link on the page.
 2. **Link ACROSS to 2-3 other supporting posts** in the same cluster. Use their target keywords as anchor text. Link to them even if they don't exist yet.
 3. **Link to 1-2 objection pages** if the topic involves phone calls (most do). Example: `/objections/not-interested/`, `/objections/call-me-later/`
-4. **Link to 1 feature page** if naturally relevant. Example: `/features/real-time-coaching/`, `/features/call-notes/`
+4. **Link to 1 feature page** if naturally relevant. Example: `/features/cue/`, `/features/smart-capture/`
 5. **Link to 1 glossary page** if an industry term appears that has a glossary entry. Example: first mention of "FSBO" → `/glossary/fsbo/`
 
 ### Total: 5-8 internal links per post.

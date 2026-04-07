@@ -1,7 +1,7 @@
 import type { FeatureEntry } from './types';
 
-export const callNotes: FeatureEntry = {
-  slug: 'call-notes',
+export const smartCapture: FeatureEntry = {
+  slug: 'smart-capture',
   keyword: 'automatic call notes real estate',
   seoTitle: 'Automatic Call Notes for Real Estate Agents',
   seoDescription:
@@ -103,7 +103,7 @@ export const callNotes: FeatureEntry = {
     },
   ],
   relatedFeatures: [
-    { title: 'Real-Time Coaching', slug: 'real-time-coaching' },
+    { title: 'Real-Time Coaching', slug: 'cue' },
     { title: 'Custom Scripts', slug: 'playbook' },
   ],
   relatedBlogPosts: [

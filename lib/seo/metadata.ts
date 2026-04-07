@@ -6,7 +6,7 @@ interface BuildMetadataOptions {
   title: string;
   /** Meta description - max 160 chars recommended. */
   description: string;
-  /** URL path, e.g. "/features/real-time-coaching". Used to build canonical URL. */
+  /** URL path, e.g. "/features/cue". Used to build canonical URL. */
   path: string;
   /** Custom OG image path. Defaults to '/og-default.png'. */
   ogImage?: string;

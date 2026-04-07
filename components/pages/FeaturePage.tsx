@@ -1,11 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { ImagePlaceholder } from '@/components/pages/ImagePlaceholder';
 import { FAQ } from '@/components/pages/FAQ';
+
+const ProductShowcaseDesktop = dynamic(
+  () => import('@/components/landing/ProductShowcaseDesktop').then(m => m.ProductShowcaseDesktop),
+  { ssr: false }
+);
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { generateSoftwareAppJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
@@ -77,7 +83,16 @@ export function FeaturePage({ entry }: FeaturePageProps) {
             Download Sayso
           </button>
         </div>
-        <ImagePlaceholder alt={entry.screenshotAlt} />
+        {entry.heroVisual === 'product-showcase' ? (
+          <div className="relative">
+            <div className="hidden md:block absolute top-[12%] left-[2%] z-10 bg-[#FFDE59] text-[#1D4871] font-comic text-lg px-6 py-2 v2-comic-border v2-comic-shadow-sm -rotate-[3deg] whitespace-nowrap">
+              Real Time Coaching
+            </div>
+            <ProductShowcaseDesktop />
+          </div>
+        ) : (
+          <ImagePlaceholder alt={entry.screenshotAlt} />
+        )}
       </section>
 
       {/* How It Works */}

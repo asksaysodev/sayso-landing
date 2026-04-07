@@ -53,7 +53,7 @@ export const circleProspecting: GlossaryEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/real-time-coaching',
+    href: '/features/cue',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

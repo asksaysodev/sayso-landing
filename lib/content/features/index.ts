@@ -1,10 +1,10 @@
 import type { FeatureEntry } from './types';
-import { realTimeCoaching } from './real-time-coaching';
-import { callNotes } from './call-notes';
+import { cue } from './cue';
+import { smartCapture } from './smart-capture';
 import { pulse } from './pulse';
 import { playbook } from './playbook';
 
-const entries: FeatureEntry[] = [realTimeCoaching, callNotes, pulse, playbook];
+const entries: FeatureEntry[] = [cue, smartCapture, pulse, playbook];
 
 export function getAllFeatureEntries(): FeatureEntry[] {
   return entries;

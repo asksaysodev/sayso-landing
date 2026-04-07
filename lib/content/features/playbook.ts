@@ -103,8 +103,8 @@ export const playbook: FeatureEntry = {
     },
   ],
   relatedFeatures: [
-    { title: 'Real-Time Coaching', slug: 'real-time-coaching' },
-    { title: 'Call Notes', slug: 'call-notes' },
+    { title: 'Real-Time Coaching', slug: 'cue' },
+    { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [
     { title: 'How to Practice Scripts for Real Estate', href: '/blog/how-to-practice-scripts' },

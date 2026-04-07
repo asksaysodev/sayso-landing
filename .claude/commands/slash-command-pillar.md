@@ -248,7 +248,7 @@ Pillar posts are the most link-dense pages on the site. Rules:
 
 - **Link DOWN to every supporting post in the cluster.** This is the pillar's #1 SEO job. Each supporting post gets at least one link with descriptive anchor text (the supporting post's target keyword).
 - **Link to 2-3 relevant objection pages** (e.g., `/objections/not-interested/`, `/objections/call-me-later/`)
-- **Link to 1-2 feature pages** (e.g., `/features/real-time-coaching/`, `/features/objection-handling/`)
+- **Link to 1-2 feature pages** (e.g., `/features/cue/`, `/features/objection-handling/`)
 - **Link to 1 persona page** if relevant (e.g., `/for/new-agents/`)
 - **Link to the glossary** when industry terms appear (e.g., first mention of "circle prospecting" → `/glossary/circle-prospecting/`)
 - **Link to 1 comparison page** if naturally relevant (e.g., mentioning coaching software → `/compare/sayso-vs-shilo/`)

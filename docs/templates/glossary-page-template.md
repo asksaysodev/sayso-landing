@@ -273,7 +273,7 @@ export interface GlossaryEntry {
 | `deeperLink` | 0-1 item | Link to a related blog post. Only set if the post exists. |
 | `faq` | 3-4 items | First Q = H1 variation. One "how to" Q required. Answers 2-3 sentences. |
 | `heroImage` | 0-1 item | Image src + keyword-rich alt text. Optional but recommended for SEO. |
-| `relatedFeature` | 0-1 item | Link to a related feature page (e.g., `/features/real-time-coaching`). |
+| `relatedFeature` | 0-1 item | Link to a related feature page (e.g., `/features/cue`). |
 | `relatedPersona` | 0-1 item | Link to a related persona page (e.g., `/for/solo-agents`). |
 
 ---
@@ -460,7 +460,7 @@ export const yourTerm: GlossaryEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/real-time-coaching',
+    href: '/features/cue',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

@@ -51,8 +51,8 @@ Before writing a single word, complete the research steps below.
 Scan `docs/architecture/site-architecture.md` and identify which of the following pages are marked as DONE:
 
 **Feature pages** (for `relatedFeature`):
-- `/features/real-time-coaching/` - live on-screen coaching during calls
-- `/features/call-notes/` - automatic call summaries synced to CRM
+- `/features/cue/` - live on-screen coaching during calls
+- `/features/smart-capture/` - automatic call summaries synced to CRM
 - `/features/playbook/` - custom scripts and strategies
 - `/features/pulse/` - real-time market data during calls
 
@@ -111,8 +111,8 @@ Using the competitive brief from Phase 1, write the complete glossary entry foll
 **Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
 **Key features (for linking in `howSaysoHelps`):**
-- **Real-Time Coaching** (`/features/real-time-coaching/`) - live on-screen prompts during calls
-- **Call Notes** (`/features/call-notes/`) - automatic call summaries synced to CRM
+- **Real-Time Coaching** (`/features/cue/`) - live on-screen prompts during calls
+- **Call Notes** (`/features/smart-capture/`) - automatic call summaries synced to CRM
 - **Playbook** (`/features/playbook/`) - custom scripts and strategies
 - **Pulse** (`/features/pulse/`) - real-time market data during calls
 
@@ -205,8 +205,8 @@ export const camelCaseName: GlossaryEntry = {
 **`heroImage`**: Omit for now. No images are available for glossary pages yet.
 
 **`relatedFeature`**: Link to the most relevant DONE feature page. Format: `{ title: 'Feature Name', href: '/features/feature-slug' }`. Choose based on relevance:
-- Call-related terms -> `/features/real-time-coaching/`
-- Notes/CRM terms -> `/features/call-notes/`
+- Call-related terms -> `/features/cue/`
+- Notes/CRM terms -> `/features/smart-capture/`
 - Script-related terms -> `/features/playbook/`
 - Market data terms -> `/features/pulse/`
 

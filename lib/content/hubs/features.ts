@@ -15,7 +15,7 @@ const featuresHub: HubPageConfig = {
     {
       title: 'Real-Time Coaching',
       eyebrow: 'Cue',
-      slug: 'real-time-coaching',
+      slug: 'cue',
       description:
         'Live guidance on every call. See how to handle objections and exactly what to ask or say the moment you need it.',
       keyword: 'real time sales help',
@@ -24,7 +24,7 @@ const featuresHub: HubPageConfig = {
     {
       title: 'Call Notes',
       eyebrow: 'Smart Capture',
-      slug: 'call-notes',
+      slug: 'smart-capture',
       description:
         'Automate, instant, and structured conversation notes for your CRM.',
       keyword: 'automatic call notes real estate',

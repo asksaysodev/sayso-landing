@@ -1,6 +1,6 @@
 # Sayso - Complete Site Architecture & Keyword Map
 
-**Updated:** April 5, 2026
+**Updated:** April 6, 2026
 **Total Pages:** ~105–115
 
 ---
@@ -14,12 +14,12 @@
 | For (Personas) | 2 | 5 | 40% |
 | Integrations | 2 | 4 | 50% |
 | Compare | 2 | 4 | 50% |
-| Objections | 16 | 16 | 100% |
+| Objections | 1 | 16 | 6% |
 | Glossary | 2 | 10 | 20% |
 | Case Studies | 2 | 2 | 100% |
 | Blog Posts | 2 | 45 | 4% |
 | Blog Category Pages | 1 | 7 | 14% |
-| **TOTAL** | **44** | **~110** | **~40%** |
+| **TOTAL** | **29** | **~110** | **~26%** |
 
 ---
 
@@ -67,14 +67,14 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ```
 /features/                                  (hub - no keyword target)                                   ⚪ NONE    ✅ DONE
-├── /features/real-time-coaching/           "real time sales help"                                      🟡 MED     ✅ DONE
+├── /features/cue/                          "real time sales help"                                      🟡 MED     ✅ DONE
 │   ⚠️  SEO NOTE (2026-04-05): H1 changed from keyword-rich "Real-Time Sales Help - AI That
 │   Coaches You Through Every Call" to branded "Cue - Real-Time Coaching" per co-founder
 │   feedback. The primary keyword "real time sales help" is no longer in the H1. It is still
 │   present in seoTitle, seoDescription, and body copy. Monitor rankings for this keyword
 │   and consider restoring keyword-rich H1 if organic traffic drops.
 ├── /features/objection-handling/           "real estate objection handling scripts"                    🟡 MED     ❌ TODO
-├── /features/call-notes/                   "automatic call notes real estate"                          🟢 WIN     ✅ DONE
+├── /features/smart-capture/                "automatic call notes real estate"                          🟢 WIN     ✅ DONE
 ├── /features/pulse/                        "real estate market data during calls"                      🟢 WIN     ✅ DONE
 └── /features/playbook/                     "custom call scripts real estate"                           🟢 WIN     ✅ DONE
 ```
@@ -121,21 +121,21 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ```
 /objections/                                "real estate phone objection examples"                      🟢 WIN     ✅ DONE
-├── /objections/already-have-an-agent/      "how to handle 'already working with agent'"               🟢 WIN     ✅ DONE
+├── /objections/already-have-an-agent/      "how to handle 'already working with agent'"               🟢 WIN     ❌ TODO
 ├── /objections/not-ready-yet/              "how to handle 'not ready yet' real estate"                🟢 WIN     ✅ DONE
-├── /objections/just-looking/               "how to respond to 'just looking' real estate"             🟢 WIN     ✅ DONE
-├── /objections/call-me-later/              "real estate script for 'call me later'"                   🟢 WIN     ✅ DONE
-├── /objections/price-too-high/             "how to handle price objection real estate"                🟢 WIN     ✅ DONE
-├── /objections/want-to-sell-ourselves/     "FSBO objection handling"                                  🟢 WIN     ✅ DONE
-├── /objections/need-to-think-about-it/     "what to say when prospect shuts down"                     🟢 WIN     ✅ DONE
-├── /objections/not-interested/             "what to say when lead is not interested"                   🟢 WIN     ✅ DONE
-├── /objections/already-listed/             "how to handle already listed objection"                    🟢 WIN     ✅ DONE
-├── /objections/bad-experience-with-agents/ "how to handle bad agent experience objection"              🟢 WIN     ✅ DONE
-├── /objections/market-is-bad/              "how to handle market objection real estate"                🟢 WIN     ✅ DONE
-├── /objections/just-send-listings/         "how to redirect a conversation real estate"                🟢 WIN     ✅ DONE
-├── /objections/how-much-is-your-commission/"how to handle commission question real estate"             🟢 WIN     ✅ DONE
-├── /objections/well-wait-for-spring/       "how to handle timing objection real estate"                🟢 WIN     ✅ DONE
-└── /objections/my-spouse-needs-to-decide/  "how to handle third-party objection real estate"           🟢 WIN     ✅ DONE
+├── /objections/just-looking/               "how to respond to 'just looking' real estate"             🟢 WIN     ❌ TODO
+├── /objections/call-me-later/              "real estate script for 'call me later'"                   🟢 WIN     ❌ TODO
+├── /objections/price-too-high/             "how to handle price objection real estate"                🟢 WIN     ❌ TODO
+├── /objections/want-to-sell-ourselves/     "FSBO objection handling"                                  🟢 WIN     ❌ TODO
+├── /objections/need-to-think-about-it/     "what to say when prospect shuts down"                     🟢 WIN     ❌ TODO
+├── /objections/not-interested/             "what to say when lead is not interested"                   🟢 WIN     ❌ TODO
+├── /objections/already-listed/             "how to handle already listed objection"                    🟢 WIN     ❌ TODO
+├── /objections/bad-experience-with-agents/ "how to handle bad agent experience objection"              🟢 WIN     ❌ TODO
+├── /objections/market-is-bad/              "how to handle market objection real estate"                🟢 WIN     ❌ TODO
+├── /objections/just-send-listings/         "how to redirect a conversation real estate"                🟢 WIN     ❌ TODO
+├── /objections/how-much-is-your-commission/"how to handle commission question real estate"             🟢 WIN     ❌ TODO
+├── /objections/well-wait-for-spring/       "how to handle timing objection real estate"                🟢 WIN     ❌ TODO
+└── /objections/my-spouse-needs-to-decide/  "how to handle third-party objection real estate"           🟢 WIN     ❌ TODO
 ```
 
 ---
