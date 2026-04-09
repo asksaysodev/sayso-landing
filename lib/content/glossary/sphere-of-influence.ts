@@ -49,6 +49,7 @@ export const sphereOfInfluence: GlossaryEntry = {
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
     { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
+    { term: 'Lead Nurturing', slug: 'lead-nurturing' },
     { term: 'Listing Appointment', slug: 'listing-appointment' },
   ],
   relatedFeature: {

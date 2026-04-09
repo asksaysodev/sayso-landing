@@ -51,6 +51,7 @@ export const listingAppointment: GlossaryEntry = {
     { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
     { term: 'Door Knocking', slug: 'door-knocking' },
     { term: 'ISA (Inside Sales Agent)', slug: 'isa-real-estate' },
+    { term: 'Lead Nurturing', slug: 'lead-nurturing' },
   ],
   deeperLink: {
     title: 'What to Say to Expired Listings: Scripts That Get Callbacks',

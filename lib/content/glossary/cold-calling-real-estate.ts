@@ -49,7 +49,9 @@ export const coldCallingRealEstate: GlossaryEntry = {
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
     { term: 'Door Knocking', slug: 'door-knocking' },
+    { term: 'Drip Campaign', slug: 'drip-campaign' },
     { term: 'ISA (Inside Sales Agent)', slug: 'isa-real-estate' },
+    { term: 'Lead Nurturing', slug: 'lead-nurturing' },
     { term: 'Listing Appointment', slug: 'listing-appointment' },
     { term: 'Sphere of Influence', slug: 'sphere-of-influence' },
   ],
