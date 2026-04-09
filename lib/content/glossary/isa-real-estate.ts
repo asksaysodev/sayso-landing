@@ -50,6 +50,7 @@ export const isaRealEstate: GlossaryEntry = {
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
     { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
     { term: 'FSBO (For Sale By Owner)', slug: 'fsbo' },
+    { term: 'Lead Nurturing', slug: 'lead-nurturing' },
     { term: 'Listing Appointment', slug: 'listing-appointment' },
   ],
   deeperLink: {
