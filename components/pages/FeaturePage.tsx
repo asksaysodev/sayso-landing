@@ -13,6 +13,18 @@ const ProductShowcaseDesktop = dynamic(
   () => import('@/components/landing/ProductShowcaseDesktop').then(m => m.ProductShowcaseDesktop),
   { ssr: false }
 );
+const ProductShowcaseSCDesktop = dynamic(
+  () => import('@/components/landing/showcases/ProductShowcaseSCDesktop').then(m => m.ProductShowcaseSCDesktop),
+  { ssr: false }
+);
+const ProductShowcasePulseDesktop = dynamic(
+  () => import('@/components/landing/showcases/ProductShowcasePulseDesktop').then(m => m.ProductShowcasePulseDesktop),
+  { ssr: false }
+);
+const ProductShowcasePlaybookDesktop = dynamic(
+  () => import('@/components/landing/showcases/ProductShowcasePlaybookDesktop').then(m => m.ProductShowcasePlaybookDesktop),
+  { ssr: false }
+);
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { generateSoftwareAppJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
@@ -86,16 +98,21 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         </div>
         {entry.heroVisual === 'product-showcase' ? (
           <div className="relative">
-            <div className="hidden md:block absolute top-[8%] left-[-120px] xl:left-[-150px] z-10 w-[120px] xl:w-[160px] pointer-events-none">
-              <Image
-                src="/this_is_sayso_right.png"
-                alt="This is Sayso"
-                width={300}
-                height={300}
-                className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
-              />
-            </div>
-            <ProductShowcaseDesktop />
+            {entry.slug === 'cue' && (
+              <div className="hidden md:block absolute top-[8%] left-[-120px] xl:left-[-150px] z-10 w-[120px] xl:w-[160px] pointer-events-none">
+                <Image
+                  src="/this_is_sayso_right.png"
+                  alt="This is Sayso"
+                  width={300}
+                  height={300}
+                  className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+                />
+              </div>
+            )}
+            {entry.slug === 'cue' && <ProductShowcaseDesktop />}
+            {entry.slug === 'smart-capture' && <ProductShowcaseSCDesktop />}
+            {entry.slug === 'pulse' && <ProductShowcasePulseDesktop />}
+            {entry.slug === 'playbook' && <ProductShowcasePlaybookDesktop />}
           </div>
         ) : (
           <ImagePlaceholder alt={entry.screenshotAlt} />

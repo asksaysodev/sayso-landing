@@ -12,6 +12,7 @@ export const pulse: FeatureEntry = {
     'Pulse gives you live market data during every call. Look up a zip code in real time and see the numbers you need: median prices, days on market, inventory levels, and trends. Instead of guessing, you anchor the conversation in actual data.',
     'Prospects hear specific numbers and trust that you know the market. Conversations move forward instead of stalling, and you never have to pause a call to look something up.',
   ],
+  heroVisual: 'product-showcase',
   screenshotAlt:
     'Sayso Pulse showing live zip code market data on screen during a real estate prospecting call',
   howItWorksHeading: 'How Live Market Data Works',

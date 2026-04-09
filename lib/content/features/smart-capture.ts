@@ -12,6 +12,7 @@ export const smartCapture: FeatureEntry = {
     'Smart Capture listens to your live call and writes structured notes automatically. Key details, objections, next steps, and buying signals are all captured and organized as the conversation happens. You never have to choose between listening and writing.',
     'After every call, your notes are clean, consistent, and ready to drop into your CRM. Agents stay fully present in the conversation and walk away with everything they need to follow up.',
   ],
+  heroVisual: 'product-showcase',
   screenshotAlt:
     'Sayso Smart Capture showing structured call notes organized in LPMAMA framework during a real estate prospecting call',
   howItWorksHeading: 'How Automatic Call Notes Work',

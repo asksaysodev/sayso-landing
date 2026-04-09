@@ -12,6 +12,7 @@ export const playbook: FeatureEntry = {
     'Playbook lets you upload your own scripts, frameworks, or talk tracks directly into Sayso. They appear on screen during your calls, right alongside Cue\u2019s live coaching prompts. No switching tabs, no losing your place, no fumbling for the right page.',
     'Your best material is always visible when you need it. Agents stay structured without feeling locked into a rigid script, and teams maintain consistency across every call.',
   ],
+  heroVisual: 'product-showcase',
   screenshotAlt:
     'Sayso Playbook showing a custom call script overlay visible during a live real estate prospecting call',
   howItWorksHeading: 'How Custom Call Scripts Work',
