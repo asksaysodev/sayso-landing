@@ -50,6 +50,7 @@ export const listingAppointment: GlossaryEntry = {
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
     { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
     { term: 'Door Knocking', slug: 'door-knocking' },
+    { term: 'Expired Listing', slug: 'expired-listing' },
     { term: 'ISA (Inside Sales Agent)', slug: 'isa-real-estate' },
     { term: 'Lead Nurturing', slug: 'lead-nurturing' },
   ],
