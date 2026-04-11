@@ -2,11 +2,12 @@ import type { ObjectionEntry } from './types';
 import { alreadyHaveAnAgent } from './already-have-an-agent';
 import { callMeLater } from './call-me-later';
 import { justLooking } from './just-looking';
+import { notInterested } from './not-interested';
 import { notReadyYet } from './not-ready-yet';
 import { priceTooHigh } from './price-too-high';
 import { wantToSellOurselves } from './want-to-sell-ourselves';
 
-const entries: ObjectionEntry[] = [alreadyHaveAnAgent, callMeLater, justLooking, notReadyYet, priceTooHigh, wantToSellOurselves];
+const entries: ObjectionEntry[] = [alreadyHaveAnAgent, callMeLater, justLooking, notInterested, notReadyYet, priceTooHigh, wantToSellOurselves];
 
 export function getAllObjectionEntries(): ObjectionEntry[] {
   return entries;
