@@ -30,8 +30,8 @@ export const coldCallingRealEstate: GlossaryEntry = {
       body: 'Expired listings, FSBO homeowners, and recent neighborhood activity give you a reason to call. A targeted list leads to better conversations than dialing names at random.',
     },
     {
-      title: 'Call between 10 a.m. and noon or 4 p.m. and 5 p.m.',
-      body: 'These windows tend to have the highest contact rates. Avoid early mornings and late Fridays when prospects are least likely to pick up.',
+      title: 'Make your calls first thing in the morning',
+      body: 'Many agents try to "hack" their schedule. By the time it gets to the "perfect time to call" they come up with any excuse to not call. Make your calls first thing in the morning before your day gets crazy. This is the only proven method for consistent success.',
     },
     {
       title: 'Ask one question, then listen',
