@@ -22,8 +22,8 @@ export const doorKnocking: GlossaryEntry = {
   ],
   tips: [
     {
-      title: 'Knock between 10 a.m. and noon on Saturdays',
-      body: 'Late mornings on weekends have the highest contact rates. Avoid early mornings, meal times, and evenings after 6 p.m.',
+      title: 'Knock the same doors 100 times instead of 100 doors one time',
+      body: 'Be consistent in the same area and you will succeed. Knock anytime but make sure you know if there are any regulations in your area.',
     },
     {
       title: 'Lead with the neighborhood, not yourself',
