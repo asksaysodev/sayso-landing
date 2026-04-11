@@ -13,8 +13,9 @@ import { notInterested } from './not-interested';
 import { notReadyYet } from './not-ready-yet';
 import { priceTooHigh } from './price-too-high';
 import { wantToSellOurselves } from './want-to-sell-ourselves';
+import { wellWaitForSpring } from './well-wait-for-spring';
 
-const entries: ObjectionEntry[] = [alreadyHaveAnAgent, alreadyListed, badExperienceWithAgents, callMeLater, howMuchIsYourCommission, justLooking, justSendListings, marketIsBad, mySpouseNeedsToDecide, needToThinkAboutIt, notInterested, notReadyYet, priceTooHigh, wantToSellOurselves];
+const entries: ObjectionEntry[] = [alreadyHaveAnAgent, alreadyListed, badExperienceWithAgents, callMeLater, howMuchIsYourCommission, justLooking, justSendListings, marketIsBad, mySpouseNeedsToDecide, needToThinkAboutIt, notInterested, notReadyYet, priceTooHigh, wantToSellOurselves, wellWaitForSpring];
 
 export function getAllObjectionEntries(): ObjectionEntry[] {
   return entries;

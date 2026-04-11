@@ -52,6 +52,7 @@ export const notReadyYet: ObjectionEntry = {
     { title: '"Call Me Later"', slug: 'call-me-later', keyword: 'real estate script for "call me later"' },
     { title: '"Need to Think About It"', slug: 'need-to-think-about-it', keyword: 'what to say when prospect shuts down' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },
+    { title: '"We\'ll Wait for Spring"', slug: 'well-wait-for-spring', keyword: 'how to handle timing objection real estate' },
   ],
   relatedBlogPost: {
     title: 'Real Estate Cold Call Scripts: The Complete Guide',
