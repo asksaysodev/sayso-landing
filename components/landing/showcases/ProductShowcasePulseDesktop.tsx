@@ -1,22 +1,20 @@
 'use client';
 
-import { DesktopDemoFrame } from '../DesktopDemoFrame';
+import Image from 'next/image';
 import { useShowcaseScale } from '../hooks/useShowcaseScale';
-import { SaysoToolbar } from './SaysoToolbar';
-import { SmartCaptureBubbles } from './SmartCaptureBubbles';
-import { PulseDataWindow } from './PulseDataWindow';
-import { StaticDialerView } from './StaticDialerView';
+
+const PULSE_RENDER_WIDTH = 656;
 
 export function ProductShowcasePulseDesktop() {
-  const { containerRef, mobileScale, isScaled, scaledHeight, renderWidth } =
-    useShowcaseScale();
+  const { containerRef, mobileScale, isScaled, renderWidth } =
+    useShowcaseScale(PULSE_RENDER_WIDTH, null);
 
   return (
     <div ref={containerRef} className="relative">
       <div
         style={
           isScaled
-            ? { height: scaledHeight, overflow: 'hidden' }
+            ? { overflow: 'visible' }
             : undefined
         }
       >
@@ -31,19 +29,15 @@ export function ProductShowcasePulseDesktop() {
               : undefined
           }
         >
-          <DesktopDemoFrame
-            desktopOverlay={
-              <div className="w-full flex flex-col gap-[6px]">
-                <SaysoToolbar zipValue="85323" />
-                <SmartCaptureBubbles maxSignals={2} />
-                <PulseDataWindow />
-              </div>
-            }
-          >
-            <div className="relative h-full">
-              <StaticDialerView />
-            </div>
-          </DesktopDemoFrame>
+          <div className="flex justify-center">
+            <Image
+              src="/pulse-widget.svg"
+              alt="Sayso Pulse widget showing live market analysis data for real-time call insights"
+              width={656}
+              height={149}
+              priority
+            />
+          </div>
         </div>
       </div>
     </div>
