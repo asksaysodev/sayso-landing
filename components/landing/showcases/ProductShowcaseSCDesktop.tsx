@@ -1,21 +1,20 @@
 'use client';
 
-import { DesktopDemoFrame } from '../DesktopDemoFrame';
+import Image from 'next/image';
 import { useShowcaseScale } from '../hooks/useShowcaseScale';
-import { SaysoToolbar } from './SaysoToolbar';
-import { SmartCaptureBubbles } from './SmartCaptureBubbles';
-import { StaticDialerView } from './StaticDialerView';
+
+const SC_RENDER_WIDTH = 649;
 
 export function ProductShowcaseSCDesktop() {
-  const { containerRef, mobileScale, isScaled, scaledHeight, renderWidth } =
-    useShowcaseScale();
+  const { containerRef, mobileScale, isScaled, renderWidth } =
+    useShowcaseScale(SC_RENDER_WIDTH, null);
 
   return (
     <div ref={containerRef} className="relative">
       <div
         style={
           isScaled
-            ? { height: scaledHeight, overflow: 'hidden' }
+            ? { overflow: 'visible' }
             : undefined
         }
       >
@@ -30,18 +29,15 @@ export function ProductShowcaseSCDesktop() {
               : undefined
           }
         >
-          <DesktopDemoFrame
-            desktopOverlay={
-              <div className="w-full flex flex-col gap-[6px]">
-                <SaysoToolbar />
-                <SmartCaptureBubbles maxSignals={4} />
-              </div>
-            }
-          >
-            <div className="relative h-full">
-              <StaticDialerView />
-            </div>
-          </DesktopDemoFrame>
+          <div className="flex justify-center">
+            <Image
+              src="/smart-capture-widget.svg"
+              alt="Sayso Smart Capture widget showing real-time call insights with LPMAMA indicators"
+              width={649}
+              height={199}
+              priority
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -4,7 +4,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 const DEFAULT_RENDER_WIDTH = 900;
 
-export function useShowcaseScale(renderWidth = DEFAULT_RENDER_WIDTH) {
+const DEFAULT_ASPECT_RATIO = 10 / 16;
+
+export function useShowcaseScale(
+  renderWidth = DEFAULT_RENDER_WIDTH,
+  aspectRatio: number | null = DEFAULT_ASPECT_RATIO,
+) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mobileScale, setMobileScale] = useState<number | null>(null);
 
@@ -24,9 +29,11 @@ export function useShowcaseScale(renderWidth = DEFAULT_RENDER_WIDTH) {
   }, [renderWidth]);
 
   const isScaled = mobileScale !== null;
-  const scaledHeight = isScaled
-    ? renderWidth * (10 / 16) * mobileScale
-    : undefined;
+  // When aspectRatio is a number use it for fixed height; pass null for content-driven height.
+  const scaledHeight =
+    isScaled && aspectRatio !== null
+      ? renderWidth * aspectRatio * mobileScale
+      : undefined;
 
   return { containerRef, mobileScale, isScaled, scaledHeight, renderWidth };
 }
