@@ -48,6 +48,7 @@ export const alreadyHaveAnAgent: ObjectionEntry = {
   howSaysoHelps:
     'Sayso detects when a prospect mentions another agent and instantly displays the agreement question on your screen, so you never freeze or skip the most important follow-up. After the call, Sayso logs the details and the prospect\'s commitment status to your CRM automatically, making it easy to time your next outreach perfectly.',
   relatedObjections: [
+    { title: '"Already Listed"', slug: 'already-listed', keyword: 'how to handle already listed objection' },
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"Just Looking"', slug: 'just-looking', keyword: 'how to respond to "just looking" real estate' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },
