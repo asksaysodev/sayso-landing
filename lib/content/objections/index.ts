@@ -4,8 +4,9 @@ import { callMeLater } from './call-me-later';
 import { justLooking } from './just-looking';
 import { notReadyYet } from './not-ready-yet';
 import { priceTooHigh } from './price-too-high';
+import { wantToSellOurselves } from './want-to-sell-ourselves';
 
-const entries: ObjectionEntry[] = [alreadyHaveAnAgent, callMeLater, justLooking, notReadyYet, priceTooHigh];
+const entries: ObjectionEntry[] = [alreadyHaveAnAgent, callMeLater, justLooking, notReadyYet, priceTooHigh, wantToSellOurselves];
 
 export function getAllObjectionEntries(): ObjectionEntry[] {
   return entries;
