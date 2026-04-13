@@ -24,7 +24,7 @@ export const mySpouseNeedsToDecide: ObjectionEntry = {
     stronger: {
       label: 'The Stronger Response',
       script:
-        '"That makes total sense. When you talk to your spouse, what do you think their biggest question is going to be? Maybe I can help you answer that right now."',
+        '"That makes total sense. When you talk to your spouse, what do you think their biggest question is going to be?"',
       whyItWorks:
         'This uncovers the real concern behind the objection. If the prospect can name what their spouse would ask, you can address it on the spot and give them the confidence to move forward.',
     },
@@ -37,7 +37,7 @@ export const mySpouseNeedsToDecide: ObjectionEntry = {
     },
   },
   whatToSayNext:
-    'After the initial response, your goal is to stay connected to the decision. Ask what their partner values most when it comes to buying or selling, or what concerns they expect will come up. If you can book a second meeting with both decision makers, that is always the best outcome. Agents who handle the third-party objection in real estate this way avoid the common trap of ending the call with "just let me know what they think" and never hearing back.',
+    'After the initial response, your goal is to stay connected to the decision. Ask what their partner values most when it comes to buying or selling, or what concerns they expect will come up. If you can book a second meeting with both decision makers, that is always the best outcome. The prospect might say that they are not sure of the partner\'s availability. If this happens, you can suggest to "just pencil it in." Agents who handle the third-party objection in real estate this way avoid the common trap of ending the call with "just let me know what they think" and never hearing back.',
   commonMistakes: [
     'Accepting "I\'ll talk to my spouse" and ending the conversation with no next step scheduled',
     'Asking the prospect to "convince" their partner, which puts pressure in the wrong place',

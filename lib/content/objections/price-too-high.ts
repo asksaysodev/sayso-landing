@@ -24,14 +24,14 @@ export const priceTooHigh: ObjectionEntry = {
     stronger: {
       label: 'The Stronger Response',
       script:
-        '"Totally fair. When you say the price is too high, are you comparing it to something specific, or does it just feel like a lot right now?"',
+        '"Totally fair. When you say the price is too high, what are you comparing it to?"',
       whyItWorks:
         'This forces the prospect to define their objection. Most people have not done a real comparison, and once they admit that, you can introduce market context and reframe the conversation around value.',
     },
     advanced: {
       label: 'The Advanced Response',
       script:
-        '"I get it. And honestly, that\'s exactly why it\'s worth sitting down together. Most people are surprised when they see what the market actually looks like right now versus what they expected. What if we took 20 minutes to map out the real numbers so you\'re not guessing?"',
+        '"I get it. And honestly, that\'s exactly why it\'s worth sitting down together. Most people are surprised when they see what the market actually looks like right now versus what they expected. What if we took 20 minutes to map out the numbers so you\'re not guessing?"',
       whyItWorks:
         'This reframes the objection as a reason to meet. Instead of arguing about price on the call, you position yourself as the person who brings clarity. The prospect goes from resisting to considering a low-commitment next step.',
     },

@@ -17,7 +17,7 @@ export const notInterested: ObjectionEntry = {
     safe: {
       label: 'The Safe Response',
       script:
-        '"That\'s completely fair. Most people I call feel the same way. Can I ask one quick question though? Is there anything about your current situation that has you even thinking about a change, or are you totally set where you are?"',
+        '"That\'s completely fair. Is there anything about your current situation that has you even thinking about a change, or are you totally set where you are?"',
       whyItWorks:
         'This validates their response and normalizes it. The question at the end gives them two clear options, and most people will clarify rather than shut down completely.',
     },
@@ -31,7 +31,7 @@ export const notInterested: ObjectionEntry = {
     advanced: {
       label: 'The Advanced Response',
       script:
-        '"I totally get it, and honestly I\'d probably say the same thing. But here\'s why I called: most people I talk to who say they\'re not interested end up having a real conversation once they hear what\'s actually happening in their market. Would two minutes be worth it?"',
+        '"I totally get it, and honestly I\'d probably say the same thing. Most people I talk to who say they\'re not interested end up having a conversation once they hear what\'s happening in their market. Would two minutes be worth it?"',
       whyItWorks:
         'This uses social proof and curiosity to reopen the door. Offering a specific, short time commitment makes saying yes feel low risk.',
     },

@@ -31,7 +31,7 @@ export const howMuchIsYourCommission: ObjectionEntry = {
     advanced: {
       label: 'The Advanced Response',
       script:
-        '"I appreciate you asking. Honestly, the agents who cut their rate the fastest are usually the ones who have to. I\'d rather show you why my clients never ask me to. What\'s driving you to think about making a move right now?"',
+        '"I appreciate you asking. Honestly, the agents who cut their rate the fastest are usually the ones who have to. I\'d rather show you why my clients never ask me to. Tell me more about your goals, why do you want to move?"',
       whyItWorks:
         'This reframes discounting as a weakness and positions your full rate as a sign of demand. The pivot to their motivation pulls them into a real conversation about their goals instead of a negotiation about fees.',
     },

@@ -17,7 +17,7 @@ export const wantToSellOurselves: ObjectionEntry = {
     safe: {
       label: 'The Safe Response',
       script:
-        '"I totally get that. I\'m not calling to change your mind. I\'m just curious, how has it been going so far? Have you had much interest?"',
+        '"I totally get that. I\'m not calling to change your mind. I\'m just curious, how has it been going so far?"',
       whyItWorks:
         'This removes all pressure by taking the listing pitch off the table. The question about how things are going invites them to share frustrations without feeling judged, and most for-sale-by-owner sellers have at least one.',
     },
@@ -48,8 +48,7 @@ export const wantToSellOurselves: ObjectionEntry = {
   howSaysoHelps:
     'Sayso coaches you through FSBO conversations in real time, displaying the right discovery questions on your screen the moment a seller mentions going it alone. Playbook lets you load your FSBO-specific scripts so the prompts match your style and strategy. After the call, Sayso captures your notes and syncs them to your CRM, making it easy to follow up at the right time.',
   relatedObjections: [
-    { title: '"Already Listed"', slug: 'already-listed', keyword: 'how to handle already listed objection' },
-    { title: '"How Much Is Your Commission?"', slug: 'how-much-is-your-commission', keyword: 'how to handle commission question real estate' },
+{ title: '"How Much Is Your Commission?"', slug: 'how-much-is-your-commission', keyword: 'how to handle commission question real estate' },
     { title: '"Bad Experience with Agents"', slug: 'bad-experience-with-agents', keyword: 'how to handle bad agent experience objection' },
     { title: '"The Price Is Too High"', slug: 'price-too-high', keyword: 'how to handle price objection real estate' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },

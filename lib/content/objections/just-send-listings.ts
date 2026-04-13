@@ -24,14 +24,14 @@ export const justSendListings: ObjectionEntry = {
     stronger: {
       label: 'The Stronger Response',
       script:
-        '"I can definitely do that. Honestly though, most of the listings you\'ll find online are the same ones everyone else sees. What usually helps more is understanding what you\'re actually looking for so I can connect you with opportunities before they hit the market. What does your ideal situation look like?"',
+        '"I can definitely do that. Honestly though, most of the listings you\'ll find online are the same ones everyone else sees. What usually helps more is understanding what you\'re actually looking for so I can connect you with opportunities before they hit the market. What does your ideal next home look like?"',
       whyItWorks:
         'This reframes your value from listing sender to market insider. The prospect now has a reason to keep talking because you have offered something they cannot get from a portal on their own.',
     },
     advanced: {
       label: 'The Advanced Response',
       script:
-        '"Happy to send info. It\'s usually way clearer when we walk through it together instead of over text. I\'ve got time tomorrow afternoon or Thursday evening. Which works better?"',
+        '"Happy to do that. What my top clients really appreciate about working with me is that I don\'t spam them with emails, but I connect them with off market inventory so they don\'t have to deal with competition, bidding wars, or headaches. I\'d be happy to show you how I do that and learn more about what might help you. Are you available later today at 6pm or tomorrow at 10:15am to sit down?"',
       whyItWorks:
         'This skips the listing trap entirely and goes straight to the meeting. By offering two specific times, you give the prospect a simple decision instead of an open-ended commitment. Top-producing agents treat the listing request as a signal of interest, not a dismissal.',
     },

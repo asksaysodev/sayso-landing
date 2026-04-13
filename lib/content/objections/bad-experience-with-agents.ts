@@ -17,14 +17,14 @@ export const badExperienceWithAgents: ObjectionEntry = {
     safe: {
       label: 'The Safe Response',
       script:
-        '"I appreciate you telling me that. A lot of people I talk to have had a similar experience, and I understand why that would make you hesitant. Do you mind if I ask what happened?"',
+        '"I appreciate you telling me that. I understand why that would make you hesitant. Do you mind if I ask what happened?"',
       whyItWorks:
         'This validates their experience without badmouthing the other agent. Asking what happened gives you specific information to address and shows you actually care about their story.',
     },
     stronger: {
       label: 'The Stronger Response',
       script:
-        '"That\'s fair, and honestly, your experience usually comes down to the agent you work with. What specifically didn\'t go well? I want to make sure I\'m not making the same mistakes."',
+        '"That\'s fair, and honestly, your experience usually comes down to the agent you work with. What didn\'t go well?"',
       whyItWorks:
         'This positions you as someone who takes accountability seriously. By asking for specifics and framing it as mistakes you want to avoid, you show self-awareness and separate yourself from the previous agent.',
     },
@@ -51,8 +51,7 @@ export const badExperienceWithAgents: ObjectionEntry = {
     { title: '"Already Working with an Agent"', slug: 'already-have-an-agent', keyword: 'how to handle "already working with agent"' },
     { title: '"Want to Sell Ourselves"', slug: 'want-to-sell-ourselves', keyword: 'FSBO objection handling' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },
-    { title: '"Already Listed"', slug: 'already-listed', keyword: 'how to handle already listed objection' },
-  ],
+],
   faq: [
     {
       question: 'What does "I had a bad experience with an agent" really mean in real estate?',

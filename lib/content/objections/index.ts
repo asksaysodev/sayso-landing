@@ -1,6 +1,5 @@
 import type { ObjectionEntry } from './types';
 import { alreadyHaveAnAgent } from './already-have-an-agent';
-import { alreadyListed } from './already-listed';
 import { badExperienceWithAgents } from './bad-experience-with-agents';
 import { callMeLater } from './call-me-later';
 import { howMuchIsYourCommission } from './how-much-is-your-commission';
@@ -15,7 +14,7 @@ import { priceTooHigh } from './price-too-high';
 import { wantToSellOurselves } from './want-to-sell-ourselves';
 import { wellWaitForSpring } from './well-wait-for-spring';
 
-const entries: ObjectionEntry[] = [alreadyHaveAnAgent, alreadyListed, badExperienceWithAgents, callMeLater, howMuchIsYourCommission, justLooking, justSendListings, marketIsBad, mySpouseNeedsToDecide, needToThinkAboutIt, notInterested, notReadyYet, priceTooHigh, wantToSellOurselves, wellWaitForSpring];
+const entries: ObjectionEntry[] = [alreadyHaveAnAgent, badExperienceWithAgents, callMeLater, howMuchIsYourCommission, justLooking, justSendListings, marketIsBad, mySpouseNeedsToDecide, needToThinkAboutIt, notInterested, notReadyYet, priceTooHigh, wantToSellOurselves, wellWaitForSpring];
 
 export function getAllObjectionEntries(): ObjectionEntry[] {
   return entries;

@@ -31,13 +31,13 @@ export const justLooking: ObjectionEntry = {
     advanced: {
       label: 'The Advanced Response',
       script:
-        '"I hear you, and honestly, this is the best time to have a conversation because there\'s no pressure on either side. What got you thinking about looking in the first place?"',
+        '"I hear you, and honestly, this is the best time to have a conversation because there\'s no pressure and no rush. What got you looking in the first place?"',
       whyItWorks:
         'This reframes "just looking" as an advantage. By positioning the early stage as the ideal time to talk, you remove the pressure they were trying to avoid and redirect straight to their motivation.',
     },
   },
   whatToSayNext:
-    'Once they share what caught their attention or confirm a loose timeline, keep asking discovery questions. Something like "What is your current situation?" or "What made you start looking?" helps you understand where they stand without pushing. The goal is not to book a meeting on the first call. It is to learn enough about their situation that a follow-up feels natural. Agents who know how to respond to "just looking" in real estate this way build a pipeline of prospects who call back when the timing is right.',
+    'Once they share what caught their attention or confirm a loose timeline, keep asking discovery questions. Something like "What is your current situation?" or "What made you start looking?" helps you understand where they stand without pushing. The goal is next step, to learn enough about their situation that a follow-up feels natural. Agents who know how to respond to "just looking" in real estate this way build a pipeline of prospects who call back when the timing is right.',
   commonMistakes: [
     'Sending listings right away, which replaces your value with an automated search',
     'Hanging up because you assume "just looking" means "not interested"',

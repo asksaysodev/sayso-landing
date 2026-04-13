@@ -24,20 +24,20 @@ export const alreadyHaveAnAgent: ObjectionEntry = {
     stronger: {
       label: 'The Stronger Response',
       script:
-        '"Got it. And how\'s that been going so far? Are they keeping you in the loop, or has it been kind of quiet?"',
+        '"Got it. And how\'s your experience been?"',
       whyItWorks:
         'This shifts the focus from loyalty to satisfaction. If the experience has been mediocre, the prospect will tell you, and that opens the door to offer something better.',
     },
     advanced: {
       label: 'The Advanced Response',
       script:
-        '"I respect that. Most people I talk to think they\'re committed when they haven\'t actually signed anything. If you are locked in, no worries at all. But if not, it\'s worth ten minutes to compare what you\'re getting."',
+        '"I respect that! Everyone knows a realtor and some people I talk to feel obligated to work with someone for one reason or another. Has anyone sat down and showed you the three most important factors to consider before making a move in today\'s market?"',
       whyItWorks:
-        'This normalizes the gap between perceived and actual commitment. You position yourself as a comparison, not a replacement, which lowers defensiveness.',
+        'This shifts the focus from commitment to knowledge. You position yourself as an expert who has value to provide outside of being a door opener.',
     },
   },
   whatToSayNext:
-    'If they confirm there is no agreement, treat it like a fresh conversation. Ask what they are looking for and what their timeline looks like. If they are under contract, respect it and ask if you can follow up when it expires. Log the details so you have context when you call back. Agents who handle "already working with agent" objections this way stay top of mind for when the current relationship fades.',
+    'Treat it like a fresh conversation. Understand their motivation, ask what they are looking for, and what their timeline looks like. If they are under contract, respect it and suggest a follow-up when it expires. Log the details so you have context when you call back. Agents who handle "already working with agent" objections this way stay top of mind for when the current relationship fades.',
   commonMistakes: [
     'Arguing or badmouthing the other agent, which destroys trust immediately',
     'Hanging up without asking whether they actually signed an agreement',
@@ -46,10 +46,9 @@ export const alreadyHaveAnAgent: ObjectionEntry = {
     'Failing to follow up later when the other relationship ends',
   ],
   howSaysoHelps:
-    'Sayso detects when a prospect mentions another agent and instantly displays the agreement question on your screen, so you never freeze or skip the most important follow-up. After the call, Sayso logs the details and the prospect\'s commitment status to your CRM automatically, making it easy to time your next outreach perfectly.',
+    'Sayso detects when a prospect mentions another agent and instantly displays a clarification question, so you never freeze or skip the most important follow-up. After the call, Sayso logs the details and the prospect\'s commitment status to your CRM automatically, making it easy to time your next outreach perfectly.',
   relatedObjections: [
-    { title: '"Already Listed"', slug: 'already-listed', keyword: 'how to handle already listed objection' },
-    { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
+{ title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"Just Looking"', slug: 'just-looking', keyword: 'how to respond to "just looking" real estate' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },
     { title: '"Bad Experience with Agents"', slug: 'bad-experience-with-agents', keyword: 'how to handle bad agent experience objection' },

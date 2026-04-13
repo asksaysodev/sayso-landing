@@ -68,14 +68,7 @@ const objectionsHub: HubPageConfig = {
       keyword: 'what to say when lead is not interested',
       linkText: 'Overcome "not interested"',
     },
-    {
-      title: '"Already Listed"',
-      slug: 'already-listed',
-      description: 'Scripts for when a homeowner tells you their property is already on the market.',
-      keyword: 'how to handle already listed objection',
-      linkText: 'Handle the "already listed" pushback',
-    },
-    {
+{
       title: '"Bad Experience with Agents"',
       slug: 'bad-experience-with-agents',
       description: 'How to rebuild trust with a prospect burned by a previous agent.',
