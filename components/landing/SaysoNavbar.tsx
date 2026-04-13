@@ -82,54 +82,64 @@ export default function SaysoNavbar() {
 
           {/* Desktop Nav - Dropdown Triggers */}
           <div className="hidden lg:flex items-center gap-1">
-            {headerNav.map((section) => (
-              <div
-                key={section.label}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(section.label)}
-                onMouseLeave={handleMouseLeave}
-              >
+            {headerNav.map((section) =>
+              section.links.length > 0 ? (
+                <div
+                  key={section.label}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(section.label)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <Link
+                    href={section.href ?? '#'}
+                    className="flex items-center gap-1 px-3 py-2 text-[#1D4871] font-bold text-[1rem] hover:text-[#2367EE] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg cursor-pointer"
+                    aria-expanded={activeDropdown === section.label}
+                    aria-haspopup="true"
+                  >
+                    {section.label}
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform duration-200 ${activeDropdown === section.label ? 'rotate-180' : ''}`}
+                    />
+                  </Link>
+
+                  {/* Desktop Dropdown Panel */}
+                  {activeDropdown === section.label && (
+                    <div
+                      className="absolute top-full left-0 mt-2 min-w-[280px] rounded-xl bg-white border-2 border-[#1D4871] v2-comic-shadow-sm py-2 z-50"
+                      onMouseEnter={() => handleMouseEnter(section.label)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {section.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="block px-4 py-2.5 hover:bg-[#FFDE59]/20 transition-colors"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <span className="text-[#1D4871] font-medium text-sm hover:text-[#2367EE]">
+                            {link.label}
+                          </span>
+                          {link.subtitle && (
+                            <span className="block text-sm text-[#1D4871]/60 mt-1">
+                              {link.subtitle}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
                 <Link
+                  key={section.label}
                   href={section.href ?? '#'}
-                  className="flex items-center gap-1 px-3 py-2 text-[#1D4871] font-bold text-[1rem] hover:text-[#2367EE] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg cursor-pointer"
-                  aria-expanded={activeDropdown === section.label}
-                  aria-haspopup="true"
+                  className="flex items-center px-3 py-2 text-[#1D4871] font-bold text-[1rem] hover:text-[#2367EE] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg cursor-pointer"
                 >
                   {section.label}
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform duration-200 ${activeDropdown === section.label ? 'rotate-180' : ''}`}
-                  />
                 </Link>
-
-                {/* Desktop Dropdown Panel */}
-                {activeDropdown === section.label && (
-                  <div
-                    className="absolute top-full left-0 mt-2 min-w-[280px] rounded-xl bg-white border-2 border-[#1D4871] v2-comic-shadow-sm py-2 z-50"
-                    onMouseEnter={() => handleMouseEnter(section.label)}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {section.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="block px-4 py-2.5 hover:bg-[#FFDE59]/20 transition-colors"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <span className="text-[#1D4871] font-medium text-sm hover:text-[#2367EE]">
-                          {link.label}
-                        </span>
-                        {link.subtitle && (
-                          <span className="block text-sm text-[#1D4871]/60 mt-1">
-                            {link.subtitle}
-                          </span>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              )
+            )}
           </div>
 
           {/* Right Section - CTAs + Mobile Toggle */}
@@ -163,54 +173,65 @@ export default function SaysoNavbar() {
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 mt-2 rounded-2xl bg-white border-2 border-[#1D4871] v2-comic-shadow overflow-hidden lg:hidden">
             <div className="py-4 px-4 space-y-1 max-h-[70vh] overflow-y-auto">
-              {headerNav.map((section) => (
-                <div key={section.label}>
-                  {/* Section Header - Label navigates, chevron toggles accordion */}
-                  <div className="flex items-center w-full rounded-lg hover:bg-[#FFDE59]/20 transition-colors">
-                    <Link
-                      href={section.href ?? '#'}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex-1 px-4 py-3 text-[#1D4871] font-bold text-base text-left"
-                    >
-                      {section.label}
-                    </Link>
-                    <button
-                      onClick={() => toggleMobileSection(section.label)}
-                      className="px-4 py-3 text-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg"
-                      aria-expanded={openMobileSection === section.label}
-                      aria-label={`Expand ${section.label} submenu`}
-                    >
-                      <ChevronDown
-                        size={16}
-                        className={`transition-transform duration-200 ${openMobileSection === section.label ? 'rotate-180' : ''}`}
-                      />
-                    </button>
-                  </div>
-
-                  {/* Accordion Content */}
-                  {openMobileSection === section.label && (
-                    <div className="pl-4 pb-2 space-y-0.5">
-                      {section.links.map((link) => (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="block px-4 py-2.5 rounded-lg hover:bg-[#FFDE59]/10 transition-colors"
-                        >
-                          <span className="text-[#1D4871]/80 font-medium text-sm hover:text-[#2367EE]">
-                            {link.label}
-                          </span>
-                          {link.subtitle && (
-                            <span className="block text-sm text-[#1D4871]/60 mt-0.5">
-                              {link.subtitle}
-                            </span>
-                          )}
-                        </Link>
-                      ))}
+              {headerNav.map((section) =>
+                section.links.length > 0 ? (
+                  <div key={section.label}>
+                    {/* Section Header - Label navigates, chevron toggles accordion */}
+                    <div className="flex items-center w-full rounded-lg hover:bg-[#FFDE59]/20 transition-colors">
+                      <Link
+                        href={section.href ?? '#'}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex-1 px-4 py-3 text-[#1D4871] font-bold text-base text-left"
+                      >
+                        {section.label}
+                      </Link>
+                      <button
+                        onClick={() => toggleMobileSection(section.label)}
+                        className="px-4 py-3 text-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg"
+                        aria-expanded={openMobileSection === section.label}
+                        aria-label={`Expand ${section.label} submenu`}
+                      >
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform duration-200 ${openMobileSection === section.label ? 'rotate-180' : ''}`}
+                        />
+                      </button>
                     </div>
-                  )}
-                </div>
-              ))}
+
+                    {/* Accordion Content */}
+                    {openMobileSection === section.label && (
+                      <div className="pl-4 pb-2 space-y-0.5">
+                        {section.links.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block px-4 py-2.5 rounded-lg hover:bg-[#FFDE59]/10 transition-colors"
+                          >
+                            <span className="text-[#1D4871]/80 font-medium text-sm hover:text-[#2367EE]">
+                              {link.label}
+                            </span>
+                            {link.subtitle && (
+                              <span className="block text-sm text-[#1D4871]/60 mt-0.5">
+                                {link.subtitle}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={section.label}
+                    href={section.href ?? '#'}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block px-4 py-3 text-[#1D4871] font-bold text-base rounded-lg hover:bg-[#FFDE59]/20 transition-colors"
+                  >
+                    {section.label}
+                  </Link>
+                )
+              )}
 
               {/* Mobile CTAs */}
               <div className="pt-3 space-y-2">

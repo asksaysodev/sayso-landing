@@ -62,6 +62,11 @@ export const headerNav: NavSection[] = [
       { label: 'Why Sayso', href: '/why-sayso' },
     ],
   },
+  {
+    label: 'About',
+    href: '/about',
+    links: [],
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -101,6 +106,7 @@ export const footerNav: NavSection[] = [
   {
     label: 'Company',
     links: [
+      { label: 'About', href: '/about' },
       { label: 'Security', href: '/security' },
       { label: 'Contact', href: '/contact' },
       { label: 'Help', href: 'mailto:support@asksayso.com', external: true },
