@@ -133,19 +133,6 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                 </div>
               ))}
             </div>
-
-            {/* Case studies badge */}
-            <div className="flex justify-center mt-8 md:mt-10">
-              <div
-                className="inline-flex items-center gap-2 bg-[#FFDE59] border-[2.5px] border-[#1D4871] px-5 py-2.5 rounded-lg transform -rotate-1"
-                style={{ boxShadow: '3px 3px 0px #1D4871' }}
-              >
-                <span className="text-lg" aria-hidden="true">📋</span>
-                <span className="font-comic text-[#1D4871] text-base md:text-lg tracking-wide whitespace-nowrap">
-                  Case Studies Coming Soon
-                </span>
-              </div>
-            </div>
           </div>
 
         </div>
