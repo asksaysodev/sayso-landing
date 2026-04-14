@@ -49,6 +49,7 @@ export const playbook: FeatureEntry = {
     { title: 'Solo Agents', href: '/for/solo-agents' },
     { title: 'Team Leaders', href: '/for/team-leaders' },
     { title: 'New Agents', href: '/for/new-agents' },
+    { title: 'ISAs', href: '/for/isas' },
   ],
   differentiatorsHeading: 'What Makes Playbook Different',
   differentiators: [

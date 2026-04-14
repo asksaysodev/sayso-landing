@@ -2,8 +2,9 @@ import type { UseCaseEntry } from './types';
 import { soloAgents } from './solo-agents';
 import { teamLeaders } from './team-leaders';
 import { newAgents } from './new-agents';
+import { isas } from './isas';
 
-const entries: UseCaseEntry[] = [soloAgents, teamLeaders, newAgents];
+const entries: UseCaseEntry[] = [soloAgents, teamLeaders, newAgents, isas];
 
 export function getAllUseCaseEntries(): UseCaseEntry[] {
   return entries;
