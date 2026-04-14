@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.description,
-      images: [post.coverImage],
+      images: [post.heroImage],
       type: 'article',
       publishedTime: post.publishedAt,
       authors: [post.author.name],
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: [post.coverImage],
+      images: [post.heroImage],
     },
   };
 }

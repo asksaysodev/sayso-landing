@@ -46,7 +46,7 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
       </div>
 
       {/* Cover image */}
-      <BlogCoverImage src={post.coverImage} alt={post.title} />
+      <BlogCoverImage src={post.heroImage} alt={post.title} />
     </header>
   );
 }

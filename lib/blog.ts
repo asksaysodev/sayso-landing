@@ -21,6 +21,7 @@ export interface BlogPost {
   tags: string[];
   author: BlogAuthor;
   coverImage: string;
+  heroImage: string;
   publishedAt: string;
   updatedAt: string;
   readingTime: number;
@@ -46,7 +47,8 @@ function parseMdxFile(filePath: string): BlogPost {
     category: data.category || 'general',
     tags: data.tags || [],
     author: data.author || { name: 'Sayso Team', role: 'Team', avatar: '/logo-sayso.png' },
-    coverImage: data.coverImage || '/blog/covers/default.jpg',
+    coverImage: data.coverImage || '/blog/covers/blog-card.jpg',
+    heroImage: data.heroImage || '/blog/covers/blog-hero.jpg',
     publishedAt: data.publishedAt || new Date().toISOString().split('T')[0],
     updatedAt: data.updatedAt || data.publishedAt || new Date().toISOString().split('T')[0],
     readingTime: data.readingTime || Math.ceil(stats.minutes),

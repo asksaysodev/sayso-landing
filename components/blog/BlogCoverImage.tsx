@@ -11,10 +11,10 @@ interface BlogCoverImageProps {
 
 export function BlogCoverImage({ src, alt }: BlogCoverImageProps) {
   const [imgError, setImgError] = useState(false);
-  const hasImage = src && src !== '/blog/covers/default.jpg' && !imgError;
+  const hasImage = src && !imgError;
 
   return (
-    <div className="relative aspect-video bg-[#D7DEE1] rounded-xl border-2 border-[#1D4871] overflow-hidden">
+    <div className="relative aspect-video bg-[#F4F4F5] rounded-xl border-2 border-[#1D4871] overflow-hidden">
       {hasImage ? (
         <Image
           src={src}
