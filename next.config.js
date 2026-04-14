@@ -12,23 +12,26 @@ const nextConfig = {
       // FEATURE PAGE SLUG REDIRECTS
       // ──────────────────────────────────────────────────
       {
-        source: '/features/real-time-coaching',
-        destination: '/features/cue',
-        permanent: true,
-      },
-      {
         source: '/features/real-time-coaching/',
         destination: '/features/cue/',
         permanent: true,
       },
       {
-        source: '/features/call-notes',
-        destination: '/features/smart-capture',
+        source: '/features/call-notes/',
+        destination: '/features/smart-capture/',
+        permanent: true,
+      },
+      // ──────────────────────────────────────────────────
+      // DELETED BLOG POST REDIRECTS
+      // ──────────────────────────────────────────────────
+      {
+        source: '/blog/best-real-estate-call-coaching-software-alternatives/',
+        destination: '/compare/sayso-vs-shilo/',
         permanent: true,
       },
       {
-        source: '/features/call-notes/',
-        destination: '/features/smart-capture/',
+        source: '/blog/shilo-ai-alternatives-real-estate-call-coaching/',
+        destination: '/compare/sayso-vs-shilo/',
         permanent: true,
       },
       // ──────────────────────────────────────────────────

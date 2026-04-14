@@ -36,9 +36,9 @@ export const headerNav: NavSection[] = [
     href: '/for',
     links: [
       { label: 'Solo Agents', href: '/for/solo-agents' },
-      { label: 'Team Leaders', href: '/for/team-leaders' },
-      { label: 'New Agents', href: '/for/new-agents' },
-      { label: 'ISAs', href: '/for/isas' },
+      // { label: 'Team Leaders', href: '/for/team-leaders' }, // TODO: re-enable when page is ready
+      // { label: 'New Agents', href: '/for/new-agents' }, // TODO: re-enable when page is ready
+      // { label: 'ISAs', href: '/for/isas' }, // TODO: re-enable when page is ready
       // { label: 'Integrations', href: '/integrations' }, // TODO: re-enable when integrations article is published
     ],
   },
@@ -57,8 +57,8 @@ export const headerNav: NavSection[] = [
     href: '/compare',
     links: [
       { label: 'Sayso vs Shilo', href: '/compare/sayso-vs-shilo' },
-      { label: 'Sayso vs MaverickRE', href: '/compare/sayso-vs-maverickre' },
-      { label: 'Sayso vs Manual Coaching', href: '/compare/sayso-vs-manual-coaching' },
+      // { label: 'Sayso vs MaverickRE', href: '/compare/sayso-vs-maverickre' }, // TODO: re-enable when page is ready
+      // { label: 'Sayso vs Manual Coaching', href: '/compare/sayso-vs-manual-coaching' }, // TODO: re-enable when page is ready
       { label: 'Why Sayso', href: '/why-sayso' },
     ],
   },
@@ -88,9 +88,9 @@ export const footerNav: NavSection[] = [
     label: 'Solutions',
     links: [
       { label: 'Solo Agents', href: '/for/solo-agents' },
-      { label: 'Team Leaders', href: '/for/team-leaders' },
-      { label: 'New Agents', href: '/for/new-agents' },
-      { label: 'ISAs', href: '/for/isas' },
+      // { label: 'Team Leaders', href: '/for/team-leaders' }, // TODO: re-enable when page is ready
+      // { label: 'New Agents', href: '/for/new-agents' }, // TODO: re-enable when page is ready
+      // { label: 'ISAs', href: '/for/isas' }, // TODO: re-enable when page is ready
       // { label: 'Integrations', href: '/integrations' }, // TODO: re-enable when integrations article is published
     ],
   },
