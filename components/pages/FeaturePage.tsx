@@ -1,0 +1,257 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { ContentCTA } from '@/components/pages/ContentCTA';
+import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
+import { FeatureCTAButtons } from '@/components/pages/FeatureCTAButtons';
+import { ImagePlaceholder } from '@/components/pages/ImagePlaceholder';
+import { FAQ } from '@/components/pages/FAQ';
+
+const ProductShowcaseDesktop = dynamic(
+  () => import('@/components/landing/ProductShowcaseDesktop').then(m => m.ProductShowcaseDesktop),
+  { ssr: false }
+);
+const ProductShowcaseSCDesktop = dynamic(
+  () => import('@/components/landing/showcases/ProductShowcaseSCDesktop').then(m => m.ProductShowcaseSCDesktop),
+  { ssr: false }
+);
+const ProductShowcasePulseDesktop = dynamic(
+  () => import('@/components/landing/showcases/ProductShowcasePulseDesktop').then(m => m.ProductShowcasePulseDesktop),
+  { ssr: false }
+);
+const ProductShowcasePlaybookDesktop = dynamic(
+  () => import('@/components/landing/showcases/ProductShowcasePlaybookDesktop').then(m => m.ProductShowcasePlaybookDesktop),
+  { ssr: false }
+);
+import { generateSoftwareAppJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
+import type { FeatureEntry } from '@/lib/content/features/types';
+
+interface FeaturePageProps {
+  entry: FeatureEntry;
+}
+
+export function FeaturePage({ entry }: FeaturePageProps) {
+
+  const softwareJsonLd = generateSoftwareAppJsonLd({
+    featureList: entry.featureList,
+  });
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Features', url: '/features' },
+    { name: entry.h1, url: `/features/${entry.slug}` },
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      <Breadcrumb
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Features', href: '/features' },
+          { label: entry.h1 },
+        ]}
+      />
+
+      {/* Hero */}
+      <section className="max-w-[800px] mx-auto px-6 pt-6 pb-8">
+        <h1 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mb-4">
+          {entry.h1}
+        </h1>
+        <div className="space-y-4 mb-6">
+          {entry.heroDescription.map((paragraph, index) => (
+            <p
+              key={index}
+              className="text-[#1D4871]/80 text-base md:text-lg leading-relaxed font-sans"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <FeatureCTAButtons />
+        {entry.heroVisual === 'product-showcase' ? (
+          <div className="relative">
+            {entry.slug === 'cue' && (
+              <div className="hidden md:block absolute top-[8%] left-[-120px] xl:left-[-150px] z-10 w-[120px] xl:w-[160px] pointer-events-none">
+                <Image
+                  src="/this_is_sayso_right.png"
+                  alt="This is Sayso"
+                  width={300}
+                  height={300}
+                  className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+                />
+              </div>
+            )}
+            {entry.slug === 'cue' && <ProductShowcaseDesktop />}
+            {entry.slug === 'smart-capture' && <ProductShowcaseSCDesktop />}
+            {entry.slug === 'pulse' && <ProductShowcasePulseDesktop />}
+            {entry.slug === 'playbook' && <ProductShowcasePlaybookDesktop />}
+          </div>
+        ) : (
+          <ImagePlaceholder alt={entry.screenshotAlt} />
+        )}
+      </section>
+
+      {/* How It Works */}
+      <section className="max-w-[800px] mx-auto px-6 pb-10">
+        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
+          {entry.howItWorksHeading ?? 'How It Works'}
+        </h2>
+        <div className="space-y-5">
+          {entry.howItWorks.map((step, index) => (
+            <div key={index} className="flex gap-4">
+              <span className="flex-shrink-0 w-10 h-10 rounded-full bg-[#2367EE] text-white font-bold text-sm flex items-center justify-center">
+                {index + 1}
+              </span>
+              <div>
+                <p className="font-bold text-[#1D4871] text-base font-sans">
+                  {step.step}
+                </p>
+                <p className="text-[#1D4871]/70 text-base leading-relaxed font-sans mt-1">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Secondary CTA - after How It Works */}
+      <div className="max-w-[800px] mx-auto px-6">
+        <ContentInlineCTA />
+      </div>
+
+      {/* Who It's For */}
+      <section className="max-w-[800px] mx-auto px-6 pb-10">
+        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+          Who This Is For
+        </h2>
+        <div className="space-y-4">
+          {entry.whoItsFor.map((paragraph, index) => (
+            <p
+              key={index}
+              className="text-[#1D4871]/80 text-base leading-relaxed font-sans"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <div className="flex items-center gap-4 flex-wrap mt-4">
+          {entry.personaLinks && entry.personaLinks.map((persona) => (
+            <Link
+              key={persona.href}
+              href={persona.href}
+              className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+            >
+              {persona.title} →
+            </Link>
+          ))}
+          <Link
+            href="/pricing"
+            className="text-[#2367EE] hover:underline font-bold font-sans text-sm"
+          >
+            View Pricing →
+          </Link>
+        </div>
+      </section>
+
+      {/* Differentiators */}
+      <section className="max-w-[800px] mx-auto px-6 pb-10">
+        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
+          {entry.differentiatorsHeading ?? 'What Makes This Different'}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {entry.differentiators.map((diff) => (
+            <div
+              key={diff.title}
+              className="bg-white border-2 border-[#1D4871]/10 rounded-2xl p-5"
+            >
+              <h3 className="font-bold text-[#1D4871] text-base font-sans mb-2">
+                {diff.title}
+              </h3>
+              <p className="text-[#1D4871]/70 text-sm leading-relaxed font-sans">
+                {diff.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      {entry.socialProof && (
+        <section className="max-w-[800px] mx-auto px-6 pb-10">
+          <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+            What Agents Are Saying
+          </h2>
+          <blockquote className="border-l-4 border-[#FFDE59] bg-[#FFDE59]/10 px-6 py-4 rounded-r-lg">
+            <p className="text-[#1D4871] text-base leading-relaxed font-sans italic">
+              {entry.socialProof}
+            </p>
+          </blockquote>
+        </section>
+      )}
+
+      {/* Related Features */}
+      <section className="max-w-[800px] mx-auto px-6 pb-6">
+        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-6 mb-4">
+          Related Features
+        </h2>
+        <ul className="space-y-2">
+          {entry.relatedFeatures.map((feature) => (
+            <li key={feature.slug}>
+              <Link
+                href={`/features/${feature.slug}`}
+                className="text-[#2367EE] hover:underline font-bold font-sans"
+              >
+                {feature.title}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link
+              href="/features"
+              className="text-[#2367EE] hover:underline font-sans"
+            >
+              See all features →
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      {/* Related Blog Posts */}
+      {entry.relatedBlogPosts.length > 0 && (
+        <section className="max-w-[800px] mx-auto px-6 pb-10">
+          <h2 className="font-hero text-xl text-[#1D4871] mb-3">
+            From the Blog
+          </h2>
+          <ul className="space-y-2">
+            {entry.relatedBlogPosts.map((post) => (
+              <li key={post.href}>
+                <Link
+                  href={post.href}
+                  className="text-[#2367EE] hover:underline font-sans"
+                >
+                  {post.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {entry.faq.length > 0 && <FAQ items={entry.faq} />}
+
+      <ContentCTA />
+    </>
+  );
+}

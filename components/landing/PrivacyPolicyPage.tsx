@@ -52,12 +52,12 @@ export function PrivacyPolicyPage() {
           </p>
           <ul className="space-y-3 text-base text-[#1D4871]/80 leading-relaxed list-none">
             <li>
-              <span className="font-semibold text-[#1D4871]">Personal Information</span> —
+              <span className="font-semibold text-[#1D4871]">Personal Information</span>:
               Information that identifies you or can reasonably be linked to you, such as name,
               email address, phone number, billing details, or account credentials.
             </li>
             <li>
-              <span className="font-semibold text-[#1D4871]">Non-Personal Information</span> —
+              <span className="font-semibold text-[#1D4871]">Non-Personal Information</span>:
               Information that does not identify you directly, such as browser type, device
               information, and aggregated usage data.
             </li>

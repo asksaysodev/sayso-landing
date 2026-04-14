@@ -1,12 +1,12 @@
-# Blog Convert — Audit, Correct, and Convert Draft to MDX
+# Blog Convert - Audit, Correct, and Convert Draft to MDX
 
-You are an expert SEO content auditor and blog formatter for the SaySo landing page. Your job is to take a raw `.md` draft, audit it against a 5-pillar SEO/GEO framework, apply all corrections, and output a production-ready `.mdx` file.
+You are an expert SEO content auditor and blog formatter for the Sayso landing page. Your job is to take a raw `.md` draft, audit it against a 5-pillar SEO/GEO framework, apply all corrections, and output a production-ready `.mdx` file.
 
 This is a 5-phase pipeline. Run all phases in sequence without pausing between them.
 
 ---
 
-## Phase 1 — Setup
+## Phase 1 - Setup
 
 ### 1.1 Find the draft file
 Look in `content/blog/drafts/` for any `.md` files. If there are multiple, list them and ask the user which one to convert. If there is only one, proceed with it.
@@ -16,9 +16,9 @@ Read the full file content.
 ### 1.2 Auto-detect article type
 Determine the article type from the content. This affects which audit rules apply:
 
-- **Competitor Alternative Article** — Compares your product against competitors (titles like "X Alternatives", "X vs Y", "Best alternatives to X")
-- **"Best X" Listicle** — Ranks or lists multiple tools/options (titles like "Best X for Y", "Top 10 X", "X Tools for Y")
-- **Pillar / Long-Form Article** — Deep topical coverage, educational, thought leadership
+- **Competitor Alternative Article** - Compares your product against competitors (titles like "X Alternatives", "X vs Y", "Best alternatives to X")
+- **"Best X" Listicle** - Ranks or lists multiple tools/options (titles like "Best X for Y", "Top 10 X", "X Tools for Y")
+- **Pillar / Long-Form Article** - Deep topical coverage, educational, thought leadership
 
 State the detected type before proceeding.
 
@@ -27,17 +27,17 @@ Read the filenames in `content/blog/` to know which posts already exist. Use the
 
 ---
 
-## Phase 2 — Audit
+## Phase 2 - Audit
 
 Run the full SEO/GEO audit against the framework below. Score the article and identify every issue.
 
 ### 2.1 Structure Check (required sections in this order)
-1. **Title** — must include the primary target keyword
-2. **TLDR / Key Takeaways** — must appear immediately after the intro, must include a CTA linking to `/demo`, must summarize only the highlights
-3. **Introduction** — short, sets context
+1. **Title** - must include the primary target keyword
+2. **TLDR / Key Takeaways** - must appear immediately after the intro, must include a CTA linking to `/demo`, must summarize only the highlights
+3. **Introduction** - short, sets context
 4. **Main body content**
-5. **FAQs** — sourced from "People Also Ask" style questions, 2 sentences max per answer, direct and specific
-6. **Closing CTA / Next Steps** — must include a CTA linking to `/demo`
+5. **FAQs** - sourced from "People Also Ask" style questions, 2 sentences max per answer, direct and specific
+6. **Closing CTA / Next Steps** - must include a CTA linking to `/demo`
 
 Flag any missing sections. Flag if the TLDR has no CTA.
 
@@ -45,24 +45,24 @@ Flag any missing sections. Flag if the TLDR has no CTA.
 - Paragraphs must be 2–3 sentences maximum
 - Sentence length target: 20–25 words (up to 30 is acceptable)
 - No walls of text
-- Content must be scannable — short paragraphs compensate for longer sentences
+- Content must be scannable - short paragraphs compensate for longer sentences
 
 Flag any paragraph over 3 sentences. Flag any section that reads as a wall of text.
 
 ### 2.3 Required Content Elements Check
 Every article must include:
-- **Pros and Cons** — explicitly labeled as "Pros" and "Cons" (not euphemisms like "where it wins" or "tradeoffs")
+- **Pros and Cons** - explicitly labeled as "Pros" and "Cons" (not euphemisms like "where it wins" or "tradeoffs")
 - **Feature comparison tables** (especially in listicles and alternative articles)
 - **FAQs** with answers of 2 sentences or less
-- **Internal links** embedded in the article body (not just in metadata) — link to `/demo` and to other published blog posts in `content/blog/`
-- **CTAs** — minimum one in the TLDR and one at the closing
+- **Internal links** embedded in the article body (not just in metadata) - link to `/demo` and to other published blog posts in `content/blog/`
+- **CTAs** - minimum one in the TLDR and one at the closing
 
 Flag any missing element.
 
 ### 2.4 Snippet & Keyword Optimization Check
 - The primary keyword must appear in the article title
 - **Sayso** must appear with the target keyword in the SAME sentence on its first mention
-  - Example: "Sayso is a MaverickRE alternative built for real estate teams..." — NOT just "Sayso listens to live calls..."
+  - Example: "Sayso is a MaverickRE alternative built for real estate teams..." - NOT just "Sayso listens to live calls..."
 - In listicle or alternative articles, **Sayso must be listed FIRST**
 - Optimize H2s and H3s to include keywords where natural
 
@@ -108,9 +108,9 @@ Present the audit as:
 2. **Overall score out of 100**
 3. **What the article does well** (be specific)
 4. **Issues found by priority:**
-   - 🔴 High Priority — significantly hurts rankings or conversions
-   - 🟡 Medium Priority — reduces LLM pickup or reader experience
-   - 🟢 Low Priority — minor improvements worth making
+   - 🔴 High Priority - significantly hurts rankings or conversions
+   - 🟡 Medium Priority - reduces LLM pickup or reader experience
+   - 🟢 Low Priority - minor improvements worth making
 
    For each issue: name the problem, explain why it matters, give a specific fix.
 
@@ -118,14 +118,14 @@ Present the audit as:
 
 ---
 
-## Phase 3 — Correct
+## Phase 3 - Correct
 
 Apply ALL audit findings to the content. Do not skip any issue. Work through corrections systematically:
 
 ### 3.1 Structure Corrections
-- Add missing TLDR section after the intro if absent — summarize article highlights as bullet points, end with: `[Book a demo with Sayso](/demo)` or similar CTA
-- Add missing FAQs section if absent — write 3–5 relevant FAQs based on the article content, 2 sentences max per answer
-- Add missing Closing CTA section if absent — write a short closing paragraph with a link to `/demo`
+- Add missing TLDR section after the intro if absent - summarize article highlights as bullet points, end with: `[Book a demo with Sayso](/demo)` or similar CTA
+- Add missing FAQs section if absent - write 3–5 relevant FAQs based on the article content, 2 sentences max per answer
+- Add missing Closing CTA section if absent - write a short closing paragraph with a link to `/demo`
 - Reorder sections to match the required structure if needed
 
 ### 3.2 Writing Style Corrections
@@ -159,7 +159,7 @@ If a link in the draft points to a competitor's website, it MUST get `rel="nofol
 
 ---
 
-## Phase 4 — Convert to MDX
+## Phase 4 - Convert to MDX
 
 ### 4.1 Extract / Infer Metadata
 From the draft content and any metadata blocks in the file, extract:
@@ -182,10 +182,10 @@ From the draft content and any metadata blocks in the file, extract:
 ### 4.3 Format the Body
 
 **Headings:**
-- Remove any H1 (`# Title`) — the title lives in frontmatter
+- Remove any H1 (`# Title`) - the title lives in frontmatter
 - All top-level sections use H2 (`##`)
 - Subsections use H3 (`###`)
-- Never use H4 or deeper — flatten to H3
+- Never use H4 or deeper - flatten to H3
 
 **Tables:**
 - All tables must use standard Markdown pipe format
@@ -215,7 +215,7 @@ From the draft content and any metadata blocks in the file, extract:
 - One quote per blockquote
 
 **Metadata section cleanup:**
-- If the original `.md` had a metadata block at the bottom (e.g. "Meta:", "SEO data:", etc.), remove it entirely from the body — it belongs only in the frontmatter.
+- If the original `.md` had a metadata block at the bottom (e.g. "Meta:", "SEO data:", etc.), remove it entirely from the body - it belongs only in the frontmatter.
 
 ### 4.4 Write the File
 
@@ -243,12 +243,12 @@ featured: false
 Write the finished file to `content/blog/[slug].mdx`.
 
 ### 4.5 Layout Notes
-- The blog layout does NOT have a sidebar. There is no table of contents or related posts sidebar — do not add or reference sidebar components.
+- The blog layout does NOT have a sidebar. There is no table of contents or related posts sidebar - do not add or reference sidebar components.
 - Related posts are displayed automatically at the bottom of every blog post by the page layout. Do not add related post sections in the MDX content itself.
 
 ---
 
-## Phase 5 — Summary
+## Phase 5 - Summary
 
 After writing the file, output a final summary:
 
@@ -258,7 +258,7 @@ After writing the file, output a final summary:
 - **Score after corrections**: [X/100]
 
 ### Key Corrections Made
-List the most significant changes applied (not every small tweak — focus on structural and SEO-impactful changes).
+List the most significant changes applied (not every small tweak - focus on structural and SEO-impactful changes).
 
 ### Output
 - **File created**: `content/blog/[slug].mdx`
@@ -268,7 +268,7 @@ List the most significant changes applied (not every small tweak — focus on st
 
 ### Manual Review Needed
 List anything that needs human attention:
-- Cover image (currently using default — replace with a custom image at `/blog/covers/`)
+- Cover image (currently using default - replace with a custom image at `/blog/covers/`)
 - Any FAQs you generated that should be verified for accuracy
 - Any links you were unsure about
 

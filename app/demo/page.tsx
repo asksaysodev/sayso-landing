@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   description:
     'Schedule a meeting with the founders to see how Sayso can help your real estate team book more appointments.',
   alternates: {
-    canonical: `${siteUrl}/demo`,
+    canonical: `${siteUrl}/demo/`,
   },
   openGraph: {
     title: 'Book a Demo | Sayso',
     description:
       'Schedule a meeting with the founders to see how Sayso can help your real estate team book more appointments.',
-    url: `${siteUrl}/demo`,
+    url: `${siteUrl}/demo/`,
     type: 'website',
     images: [
       {

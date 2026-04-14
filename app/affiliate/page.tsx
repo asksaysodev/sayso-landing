@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Affiliate Program | Sayso',
   description: 'Earn recurring commission by referring users to Sayso. Apply to become a Sayso affiliate today.',
   alternates: {
-    canonical: `${siteUrl}/affiliate`,
+    canonical: `${siteUrl}/affiliate/`,
   },
   openGraph: {
     title: 'Affiliate Program | Sayso',
     description: 'Earn recurring commission by referring users to Sayso. Apply to become a Sayso affiliate today.',
-    url: `${siteUrl}/affiliate`,
+    url: `${siteUrl}/affiliate/`,
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Affiliate Program' }],
     type: 'website',
   },

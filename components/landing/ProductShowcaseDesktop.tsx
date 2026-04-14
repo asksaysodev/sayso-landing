@@ -83,7 +83,7 @@ export function ProductShowcaseDesktop() {
         </div>
       </div>
 
-      {/* Mobile superhero — rendered outside overflow-hidden, tracks widget bottom-center */}
+      {/* Mobile superhero - rendered outside overflow-hidden, tracks widget bottom-center */}
       {widgetPos && (
         <div
           className="lg:hidden absolute z-40 pointer-events-none -translate-x-1/2"

@@ -30,7 +30,7 @@ export function ProductShowcaseCopy() {
           </div>
 
           <p className="text-base md:text-lg text-[#1D4871]/80 max-w-2xl mx-auto">
-            Sayso surfaces the next best question while you&apos;re still in the conversation—right in your workflow.
+            Sayso surfaces the next best question while you&apos;re still in the conversation, right in your workflow.
           </p>
         </div>
       </div>
