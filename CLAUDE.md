@@ -1,4 +1,4 @@
-# Sayso Landing Page — Shared Repository Guidelines
+# Sayso Landing Page: Shared Repository Guidelines
 
 This is a shared team repository. Please follow these conventions to maintain organization and smooth collaboration.
 
@@ -7,6 +7,23 @@ This is a shared team repository. Please follow these conventions to maintain or
 ## Brand Name
 
 The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "SaySo", "SAYSO", "Say So", or "say so". This applies to all code, copy, and content.
+
+---
+
+## Global Writing Rules
+
+These rules apply to **all** copy and content across the entire site:
+
+1. **Never use "Not X. Not Y. Just Z" sentence structures.** Rewrite to use affirmative phrasing instead.
+2. **Never use "run" or "running" when talking about phone calls.** Use regular conversational English (e.g., "make calls", "dial", "get on the phone").
+3. **Avoid "cold call(s)".** Use "call(s)" instead, unless you are specifically discussing cold calling as a topic.
+4. **Never say "phone call(s)".** Use "call(s)" instead.
+5. **Never refer to real estate agents as "reps" or "representatives".** Only refer to them as "agents" or "real estate agents".
+6. **Never refer to clients or prospects as "deals".** Agents book appointments and turn prospects into clients. Use "prospect," "lead," "client," or "appointment" instead.
+7. **Never say "close a deal" or "win/lose deals".** Agents book appointments and meetings. The end goal is turning a prospect into a client.
+8. **Never use em dashes (—).** Use commas, periods, colons, or rephrase instead.
+9. **Sayso helps agents with both buyers and sellers.** All copy must be lead type agnostic (do not assume the prospect is only buying or only selling).
+10. **Never write short, punchy, fragmented "tagline" sentences that sound like AI content.** Avoid staccato structures like "No pressure. No pitch. Just value." or "More calls. More clients. More growth." Write like a real person writing a blog post: use full, natural sentences with normal flow. No tweet-style one-liners, no stage catchphrases, no motivational poster copy.
 
 ---
 
@@ -114,13 +131,21 @@ Use **Draft PRs** with preview deployments:
 
 ## Key Files
 
-- `/app` — Next.js app directory
-- `/components` — React components
-- `/styles` — Tailwind CSS and global styles
-- `/content` — Content files
-- `ONBOARDING_IMPLEMENTATION.md` — Onboarding flow details
-- `UI_readme.md` — UI component documentation
+- `/app`: Next.js app directory
+- `/components`: React components
+- `/styles`: Tailwind CSS and global styles
+- `/content`: Content files (blog posts, page data)
+
+### Documentation (`/docs`)
+
+| Folder | Contents | Used by |
+|--------|----------|---------|
+| `docs/architecture/` | Site architecture & keyword map | Claude commands for building pages |
+| `docs/brand/` | Brand guidelines, UI style guide | Design decisions, new page builds |
+| `docs/content/` | Blog writing guides, persona copy, blog design specs | Content creation commands |
+| `docs/reference/` | Dev guide, onboarding flow, Canny setup, UI component inventory | Developer reference |
+| `docs/templates/` | Page templates (persona ad pages, etc.) | Claude commands for building new pages |
 
 ---
 
-**Need help?** Refer to the dev guide or ask the team.
+**Need help?** Refer to `docs/reference/dev-guide.md` or ask the team.

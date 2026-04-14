@@ -4,9 +4,9 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
+import { headerNav } from '@/lib/navigation'
+import { siteUrl } from '@/lib/config'
 import './globals.css'
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 
 // Load Manrope for hero text
 const manrope = Manrope({
@@ -44,23 +44,22 @@ const siteNavigationJsonLd = {
     {
       '@type': 'SiteNavigationElement',
       position: 1,
-      name: 'Book a Demo',
-      description: 'Schedule an intro call with the Sayso founders',
-      url: `${siteUrl}/demo`,
-    },
-    {
-      '@type': 'SiteNavigationElement',
-      position: 2,
-      name: 'Blog',
-      description: 'Tips and strategies for real estate prospecting',
-      url: `${siteUrl}/blog`,
-    },
-    {
-      '@type': 'SiteNavigationElement',
-      position: 3,
       name: 'Home',
-      description: 'Sayso — Fix Where Prospecting Breaks Down',
       url: siteUrl,
+    },
+    ...headerNav.flatMap((section, sIdx) =>
+      section.links.map((link, lIdx) => ({
+        '@type': 'SiteNavigationElement' as const,
+        position: 2 + sIdx * 10 + lIdx,
+        name: link.label,
+        url: `${siteUrl}${link.href}`,
+      })),
+    ),
+    {
+      '@type': 'SiteNavigationElement',
+      position: 100,
+      name: 'Book a Demo',
+      url: `${siteUrl}/demo`,
     },
   ],
 };
@@ -68,14 +67,14 @@ const siteNavigationJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sayso — Fix Where Prospecting Breaks Down',
+    default: 'Sayso: Fix Where Prospecting Breaks Down',
     template: '%s | Sayso',
   },
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   openGraph: {
     siteName: 'Sayso',
     type: 'website',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso — Fix the Hardest Part of Prospecting' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix the Hardest Part of Prospecting' }],
   },
   twitter: {
     card: 'summary_large_image',

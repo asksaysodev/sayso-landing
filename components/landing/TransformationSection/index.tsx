@@ -24,7 +24,7 @@ export function TransformationSection({ content = defaultContent }: { content?: 
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-center">
-          {/* Left column — Hero imagery (3/5 width on desktop) */}
+          {/* Left column - Hero imagery (3/5 width on desktop) */}
           <div className="lg:col-span-2 flex-col items-center relative hidden md:flex">
             <HeroStarburst />
 
@@ -40,7 +40,7 @@ export function TransformationSection({ content = defaultContent }: { content?: 
             </div>
           </div>
 
-          {/* Right column — Victory metrics (2/5 width on desktop) */}
+          {/* Right column - Victory metrics (2/5 width on desktop) */}
           <div className="lg:col-span-3">
             <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-white mb-3 tracking-wide text-center lg:text-left">
               {headline}

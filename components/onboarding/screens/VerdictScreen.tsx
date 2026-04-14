@@ -33,7 +33,7 @@ export function VerdictScreen() {
       {/* Section 2: Mock Stripe Checkout */}
       <div className="max-w-md mx-auto mt-5 rounded-2xl border-2 border-[#D7DEE1] bg-white p-5 text-left">
         <h2 className="text-lg font-bold text-[#1D4871]">
-          SaySo Pro — 3-Day Free Trial
+          SaySo Pro: 3-Day Free Trial
         </h2>
         <div className="h-px bg-[#D7DEE1] my-3" />
 

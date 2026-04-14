@@ -1,6 +1,6 @@
 import { CalendarRange, Check, LayoutGrid } from 'lucide-react';
 
-// Internal icons that simulate the Sayso desktop app UI — not generic, kept here intentionally
+// Internal icons that simulate the Sayso desktop app UI - not generic, kept here intentionally
 function ToggleOnIcon() {
   return (
     <svg width="20" height="12" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">

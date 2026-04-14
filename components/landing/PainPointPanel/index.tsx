@@ -18,7 +18,7 @@ export function PainPointPanel() {
           </div>
         </div>
 
-        {/* Mobile: compact carousel — hidden on md+ */}
+        {/* Mobile: compact carousel - hidden on md+ */}
         <div className="md:hidden max-w-xs mx-auto">
           {currentSlide === 0
             ? <PanelTheStruggle imgHeight="min-h-[160px]" />

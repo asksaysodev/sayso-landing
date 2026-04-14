@@ -22,12 +22,12 @@ export const agentContent: PersonaContent = {
       {
         icon: <MessageCircle size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
         title: 'Objections? No Problem',
-        description: "Sayso shows you what top agents say — in real time, on the call",
+        description: "Sayso shows you what top agents say, in real time, on the call",
       },
       {
         icon: <Star size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
         title: 'Built-In Coaching',
-        description: 'No manager needed — get guidance on every single prospecting call',
+        description: 'No manager needed, get guidance on every single prospecting call',
       },
       {
         icon: <CalendarCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
@@ -44,12 +44,12 @@ export const agentContent: PersonaContent = {
       {
         title: '1. Launch Coach',
         description:
-          'Open Sayso before you dial. Works with any dialer or CRM you already use — takes minutes to set up.',
+          'Open Sayso before you dial. Works with any dialer or CRM you already use, takes minutes to set up.',
       },
       {
         title: '2. Follow the Prompts',
         description:
-          "When a prospect pushes back or the conversation stalls, Sayso tells you exactly what to ask next — no more going blank.",
+          "When a prospect pushes back or the conversation stalls, Sayso tells you exactly what to ask next, no more going blank.",
       },
       {
         title: '3. Book the Appointment',

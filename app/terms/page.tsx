@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Terms and Conditions | Sayso',
   description: 'Review the terms and conditions governing your use of Sayso and the AskSayso platform.',
   alternates: {
-    canonical: `${siteUrl}/terms`,
+    canonical: `${siteUrl}/terms/`,
   },
   openGraph: {
     title: 'Terms and Conditions | Sayso',
     description: 'Review the terms and conditions governing your use of Sayso and the AskSayso platform.',
-    url: `${siteUrl}/terms`,
+    url: `${siteUrl}/terms/`,
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Terms and Conditions' }],
     type: 'website',
   },

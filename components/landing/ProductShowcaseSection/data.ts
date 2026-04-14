@@ -4,7 +4,7 @@ export const SUGGESTIONS = [
     source: 'Past call with Sarah Chen',
   },
   {
-    text: 'Try "What happens if you wait another year to sell?" — this reframes urgency without pressure.',
+    text: 'Try "What happens if you wait another year to sell?", this reframes urgency without pressure.',
     source: 'Objection handling playbook',
   },
   {

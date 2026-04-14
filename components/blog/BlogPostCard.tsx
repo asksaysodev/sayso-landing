@@ -12,8 +12,8 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
     <Link href={`/blog/${post.slug}`} className="group block">
       <article className="bg-white rounded-2xl border-2 border-[#1D4871] v2-comic-shadow-sm overflow-hidden transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_#1D4871]">
         {/* Cover Image */}
-        <div className="relative aspect-video bg-[#D7DEE1] overflow-hidden">
-          {post.coverImage && post.coverImage !== '/blog/covers/default.jpg' ? (
+        <div className="relative aspect-video bg-[#F4F4F5] overflow-hidden">
+          {post.coverImage ? (
             <Image
               src={post.coverImage}
               alt={post.title}
