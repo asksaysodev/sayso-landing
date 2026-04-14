@@ -1,7 +1,8 @@
 import type { ComparisonEntry } from './types';
 import { saysoVsShilo } from './sayso-vs-shilo';
+import { saysoVsMaverickre } from './sayso-vs-maverickre';
 
-const entries: ComparisonEntry[] = [saysoVsShilo];
+const entries: ComparisonEntry[] = [saysoVsShilo, saysoVsMaverickre];
 
 export function getAllComparisonEntries(): ComparisonEntry[] {
   return entries;

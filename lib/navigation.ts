@@ -57,7 +57,7 @@ export const headerNav: NavSection[] = [
     href: '/compare',
     links: [
       { label: 'Sayso vs Shilo', href: '/compare/sayso-vs-shilo' },
-      // { label: 'Sayso vs MaverickRE', href: '/compare/sayso-vs-maverickre' }, // TODO: re-enable when page is ready
+      { label: 'Sayso vs MaverickRE', href: '/compare/sayso-vs-maverickre' },
       // { label: 'Sayso vs Manual Coaching', href: '/compare/sayso-vs-manual-coaching' }, // TODO: re-enable when page is ready
       { label: 'Why Sayso', href: '/why-sayso' },
     ],
