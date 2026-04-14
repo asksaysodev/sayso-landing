@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <DemoCalendarProvider>
-      <div className="relative bg-white min-h-screen">
+      <div className="relative bg-[#F8F8FA] min-h-screen">
         <SaysoNavbar />
         <main className="pt-24">
           <PricingSection />

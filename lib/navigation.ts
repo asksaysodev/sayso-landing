@@ -20,6 +20,11 @@ export interface NavSection {
 
 export const headerNav: NavSection[] = [
   {
+    label: 'Home',
+    href: '/',
+    links: [],
+  },
+  {
     label: 'Features',
     href: '/features',
     links: [
@@ -49,7 +54,6 @@ export const headerNav: NavSection[] = [
       { label: 'Blog', href: '/blog' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
-      { label: 'Case Studies', href: '/case-studies' },
     ],
   },
   {
@@ -100,7 +104,6 @@ export const footerNav: NavSection[] = [
       { label: 'Blog', href: '/blog' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
-      { label: 'Case Studies', href: '/case-studies' },
     ],
   },
   {
