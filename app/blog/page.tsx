@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
-import { getAllPostsMeta, getCategories, getFeaturedPost, getPaginatedPosts } from '@/lib/blog';
+import { getAllPostsMeta, getCategories, getPaginatedPosts } from '@/lib/blog';
 import { generateBlogListJsonLd } from '@/lib/seo/blog-jsonld';
 import { BlogHeroBanner } from '@/components/blog/BlogHeroBanner';
 import { BlogCategoryPills } from '@/components/blog/BlogCategoryPills';
-import { BlogFeaturedPost } from '@/components/blog/BlogFeaturedPost';
 import { BlogPostCard } from '@/components/blog/BlogPostCard';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
@@ -40,7 +39,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const query = params.q?.toLowerCase();
 
   const categories = getCategories();
-  const featuredPost = page === 1 ? getFeaturedPost() : null;
   const { posts, totalPages, currentPage } = getPaginatedPosts(page);
 
   // Filter by search query if provided
@@ -53,10 +51,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       )
     : posts;
 
-  // Exclude featured post from grid on page 1
-  const gridPosts = featuredPost
-    ? filteredPosts.filter((p) => p.slug !== featuredPost.slug)
-    : filteredPosts;
+  const gridPosts = filteredPosts;
 
   const jsonLd = generateBlogListJsonLd(siteUrl);
 
@@ -69,9 +64,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
       <BlogHeroBanner />
       <BlogCategoryPills categories={categories} />
-
-      {/* Featured post - only on page 1 */}
-      {featuredPost && page === 1 && <BlogFeaturedPost post={featuredPost} />}
 
       {/* Post grid */}
       <section className="max-w-[1200px] mx-auto px-6 pb-4">

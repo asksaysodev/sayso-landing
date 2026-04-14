@@ -2,15 +2,18 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { BlogHeroBackground } from './BlogHeroBackground';
 
 interface BlogHeroBannerProps {
   title?: string;
   subtitle?: string;
+  heroImage?: string;
 }
 
 export function BlogHeroBanner({
   title = 'The Sayso Blog',
   subtitle = 'Tips, strategies, and insights to help you win every sales moment.',
+  heroImage = '/blog/covers/blog-hero.jpg',
 }: BlogHeroBannerProps) {
   const [query, setQuery] = useState('');
   const router = useRouter();
@@ -23,8 +26,9 @@ export function BlogHeroBanner({
   }
 
   return (
-    <section className="relative bg-white v2-halftone overflow-hidden border-b-4 border-[#FFDE59]">
-      <div className="max-w-[1200px] mx-auto px-6 py-16 md:py-20 text-center">
+    <section className="relative bg-[#F4F4F5] overflow-hidden border-b-4 border-[#FFDE59]">
+      <BlogHeroBackground src={heroImage} />
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-16 md:py-20 text-center">
         <h1 className="font-hero text-3xl md:text-5xl lg:text-6xl text-[#1D4871] mb-4">
           {title}
         </h1>
