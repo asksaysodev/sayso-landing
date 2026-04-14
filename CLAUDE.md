@@ -23,6 +23,7 @@ These rules apply to **all** copy and content across the entire site:
 7. **Never say "close a deal" or "win/lose deals".** Agents book appointments and meetings. The end goal is turning a prospect into a client.
 8. **Never use em dashes (—).** Use commas, periods, colons, or rephrase instead.
 9. **Sayso helps agents with both buyers and sellers.** All copy must be lead type agnostic (do not assume the prospect is only buying or only selling).
+10. **Never write short, punchy, fragmented "tagline" sentences that sound like AI content.** Avoid staccato structures like "No pressure. No pitch. Just value." or "More calls. More clients. More growth." Write like a real person writing a blog post: use full, natural sentences with normal flow. No tweet-style one-liners, no stage catchphrases, no motivational poster copy.
 
 ---
 
