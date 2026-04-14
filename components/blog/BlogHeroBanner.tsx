@@ -12,7 +12,7 @@ interface BlogHeroBannerProps {
 
 export function BlogHeroBanner({
   title = 'The Sayso Blog',
-  subtitle = 'Tips, strategies, and insights to help you win every sales moment.',
+  subtitle = 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
   heroImage = '/blog/covers/blog-hero.jpg',
 }: BlogHeroBannerProps) {
   const [query, setQuery] = useState('');

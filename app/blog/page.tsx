@@ -11,20 +11,20 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 
 export const metadata: Metadata = {
   title: 'Blog | Sayso',
-  description: 'Tips, strategies, and insights to help you win every sales moment. Cold calling scripts, AI coaching, lead conversion, and more.',
+  description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
   alternates: {
     canonical: `${siteUrl}/blog/`,
   },
   openGraph: {
     title: 'The Sayso Blog',
-    description: 'Tips, strategies, and insights to help you win every sales moment.',
+    description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
     url: `${siteUrl}/blog/`,
     type: 'website',
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'The Sayso Blog' }],
   },
   twitter: {
     title: 'The Sayso Blog',
-    description: 'Tips, strategies, and insights to help you win every sales moment.',
+    description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
     images: ['/og-default.png'],
   },
 };

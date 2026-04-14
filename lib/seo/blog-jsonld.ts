@@ -122,7 +122,7 @@ export function generateBlogListJsonLd(siteUrl: string) {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'The Sayso Blog',
-    description: 'Tips, strategies, and insights to help you win every sales moment.',
+    description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
     url: `${siteUrl}/blog/`,
     publisher: SAYSO_PUBLISHER,
   };
