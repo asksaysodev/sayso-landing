@@ -48,6 +48,7 @@ export const playbook: FeatureEntry = {
   personaLinks: [
     { title: 'Solo Agents', href: '/for/solo-agents' },
     { title: 'Team Leaders', href: '/for/team-leaders' },
+    { title: 'New Agents', href: '/for/new-agents' },
   ],
   differentiatorsHeading: 'What Makes Playbook Different',
   differentiators: [

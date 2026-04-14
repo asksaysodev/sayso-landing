@@ -37,7 +37,7 @@ export const headerNav: NavSection[] = [
     links: [
       { label: 'Solo Agents', href: '/for/solo-agents' },
       { label: 'Team Leaders', href: '/for/team-leaders' },
-      // { label: 'New Agents', href: '/for/new-agents' }, // TODO: re-enable when page is ready
+      { label: 'New Agents', href: '/for/new-agents' },
       // { label: 'ISAs', href: '/for/isas' }, // TODO: re-enable when page is ready
       // { label: 'Integrations', href: '/integrations' }, // TODO: re-enable when integrations article is published
     ],
@@ -89,7 +89,7 @@ export const footerNav: NavSection[] = [
     links: [
       { label: 'Solo Agents', href: '/for/solo-agents' },
       { label: 'Team Leaders', href: '/for/team-leaders' },
-      // { label: 'New Agents', href: '/for/new-agents' }, // TODO: re-enable when page is ready
+      { label: 'New Agents', href: '/for/new-agents' },
       // { label: 'ISAs', href: '/for/isas' }, // TODO: re-enable when page is ready
       // { label: 'Integrations', href: '/integrations' }, // TODO: re-enable when integrations article is published
     ],
