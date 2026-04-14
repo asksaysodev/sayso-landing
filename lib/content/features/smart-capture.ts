@@ -47,6 +47,7 @@ export const smartCapture: FeatureEntry = {
   ],
   personaLinks: [
     { title: 'Solo Agents', href: '/for/solo-agents' },
+    { title: 'Team Leaders', href: '/for/team-leaders' },
   ],
   differentiatorsHeading: 'What Makes Smart Capture Different',
   differentiators: [

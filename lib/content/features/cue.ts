@@ -47,6 +47,7 @@ export const cue: FeatureEntry = {
   ],
   personaLinks: [
     { title: 'Solo Agents', href: '/for/solo-agents' },
+    { title: 'Team Leaders', href: '/for/team-leaders' },
   ],
   differentiatorsHeading: "What Makes Sayso\u2019s Real-Time Sales Help Different",
   differentiators: [
