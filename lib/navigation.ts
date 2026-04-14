@@ -32,7 +32,7 @@ export const headerNav: NavSection[] = [
       { label: 'Smart Capture', href: '/features/smart-capture', subtitle: 'Structured call notes' },
       { label: 'Pulse', href: '/features/pulse', subtitle: 'Live market analysis mid-call' },
       { label: 'Playbook', href: '/features/playbook', subtitle: 'Custom scripts for every scenario' },
-      { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' },
+      // { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' }, // TODO: re-enable when feedback page is ready
       { label: 'Pricing', href: '/pricing' },
     ],
   },
