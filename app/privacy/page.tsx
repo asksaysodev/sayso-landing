@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Sayso',
   description: 'Learn how AskSayso, Inc. collects, uses, and protects your personal information.',
   alternates: {
-    canonical: `${siteUrl}/privacy`,
+    canonical: `${siteUrl}/privacy/`,
   },
   openGraph: {
     title: 'Privacy Policy | Sayso',
     description: 'Learn how AskSayso, Inc. collects, uses, and protects your personal information.',
-    url: `${siteUrl}/privacy`,
+    url: `${siteUrl}/privacy/`,
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Privacy Policy' }],
     type: 'website',
   },

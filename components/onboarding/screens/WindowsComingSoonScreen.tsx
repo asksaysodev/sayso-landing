@@ -83,7 +83,7 @@ export function WindowsComingSoonScreen({
       <div className="bg-[#FFDE59] border-2 border-[#1D4871]/10 rounded-xl px-4 py-3 mb-5 flex items-center gap-2 justify-center">
         <span className="text-lg">⚠️</span>
         <p className="text-sm font-semibold text-[#1D4871]">
-          SaySo isn&apos;t available for Windows yet — sign up to get early access when it launches.
+          SaySo isn&apos;t available for Windows yet, sign up to get early access when it launches.
         </p>
       </div>
 

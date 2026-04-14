@@ -4,7 +4,7 @@ const STEPS = [
   { id: 1, text: 'Log in to your Sayso account' },
   { id: 2, text: 'Find your unique referral code in your account panel' },
   { id: 3, text: 'Share it with friends, teammates, or your network' },
-  { id: 4, text: 'They sign up and get a discount — you get a credit' },
+  { id: 4, text: 'They sign up and get a discount, you get a credit' },
 ];
 
 export function ReferralPageContent() {
@@ -29,7 +29,7 @@ export function ReferralPageContent() {
         {/* Intro */}
         <section className="mt-10 space-y-4">
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            If you&apos;re already a Sayso user, you can refer other users or teams. When they sign up, they get a discount — and you get a credit on your account.
+            If you&apos;re already a Sayso user, you can refer other users or teams. When they sign up, they get a discount, and you get a credit on your account.
           </p>
         </section>
 

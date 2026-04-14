@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Feedback',
   description: 'Share feature requests, report bugs, and follow our product roadmap.',
   alternates: {
-    canonical: `${siteUrl}/feedback`,
+    canonical: `${siteUrl}/feedback/`,
   },
   robots: {
     index: false,

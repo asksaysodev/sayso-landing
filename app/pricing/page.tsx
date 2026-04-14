@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Simple, transparent pricing for individual agents and teams. Free trial included.',
   alternates: {
-    canonical: `${siteUrl}/pricing`,
+    canonical: `${siteUrl}/pricing/`,
   },
   openGraph: {
     title: 'Pricing | Sayso',
     description:
       'Simple, transparent pricing for individual agents and teams. Free trial included.',
-    url: `${siteUrl}/pricing`,
+    url: `${siteUrl}/pricing/`,
     type: 'website',
     images: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <DemoCalendarProvider>
-      <div className="relative bg-white min-h-screen">
+      <div className="relative bg-[#F8F8FA] min-h-screen">
         <SaysoNavbar />
         <main className="pt-24">
           <PricingSection />

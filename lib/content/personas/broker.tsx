@@ -11,7 +11,7 @@ export const brokerContent: PersonaContent = {
   },
   transformation: {
     headline: "With SaySo, Your Whole Team Wins",
-    subheading: 'Turn wasted leads into booked appointments — across every agent, every call.',
+    subheading: 'Turn wasted leads into booked appointments, across every agent, every call.',
     metrics: [
       {
         icon: <CalendarCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
@@ -21,7 +21,7 @@ export const brokerContent: PersonaContent = {
       {
         icon: <TrendingUp size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
         title: 'Consistent Conversations',
-        description: 'Every agent sounds like your best agent — on every call',
+        description: 'Every agent sounds like your best agent, on every call',
       },
       {
         icon: <Users size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
@@ -31,19 +31,19 @@ export const brokerContent: PersonaContent = {
       {
         icon: <Zap size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
         title: 'Coaching That Scales',
-        description: "Real-time guidance on every call — without you having to be there",
+        description: "Real-time guidance on every call, without you having to be there",
       },
     ],
   },
   threeSteps: {
     headline: 'Sayso in 3 Easy Steps',
     subheading:
-      'Your agents get real-time guidance on every call — so you stop leaving appointments on the table.',
+      'Your agents get real-time guidance on every call, so you stop leaving appointments on the table.',
     steps: [
       {
         title: '1. Deploy to Your Team',
         description:
-          "Agents turn Sayso on while calling. No complex setup — works with any CRM or dialer they already use.",
+          "Agents turn Sayso on while calling. No complex setup, works with any CRM or dialer they already use.",
       },
       {
         title: '2. Agents Get Live Prompts',
@@ -53,7 +53,7 @@ export const brokerContent: PersonaContent = {
       {
         title: '3. More Appointments, Every Day',
         description:
-          'Your team books more qualified meetings — and you see the difference in your conversion numbers.',
+          'Your team books more qualified meetings, and you see the difference in your conversion numbers.',
       },
     ],
   },

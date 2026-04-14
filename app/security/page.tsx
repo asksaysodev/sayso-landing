@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Security | Sayso',
   description: 'Learn how Sayso protects your data, conversations, and account access at every level.',
   alternates: {
-    canonical: `${siteUrl}/security`,
+    canonical: `${siteUrl}/security/`,
   },
   openGraph: {
     title: 'Security | Sayso',
     description: 'Learn how Sayso protects your data, conversations, and account access at every level.',
-    url: `${siteUrl}/security`,
+    url: `${siteUrl}/security/`,
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Security' }],
     type: 'website',
   },

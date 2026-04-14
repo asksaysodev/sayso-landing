@@ -117,11 +117,11 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
   }, []);
 
   const individualBullets = [
-    'Cue — real-time conversation intelligence',
+    'Cue: real-time conversation intelligence',
     'Priority support',
     'Free trial included',
-    'Coming soon: Smart Capture — automated structured note-taking',
-    'Coming soon: Recall — context recall engine',
+    'Coming soon: Smart Capture, automated structured note-taking',
+    'Coming soon: Recall, context recall engine',
   ];
 
   const teamsBullets = [
@@ -145,14 +145,14 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
             Lock in your early access rate.
           </h1>
           <p className="text-sm md:text-base text-[#1D4871]/70 max-w-md mx-auto mt-2 leading-relaxed">
-            SaySo is coming to PC. Sign up now and secure 50% off — for your first 3 months.
+            SaySo is coming to PC. Sign up now and secure 50% off for your first 3 months.
           </p>
           {/* Early access banner */}
           <div className="mt-4 inline-flex items-center gap-2 bg-[#FFDE59] text-[#1D4871] font-bold text-sm px-4 py-2 rounded-full border-2 border-[#1D4871]">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            Early Access — 50% Off Everything
+            Early Access: 50% Off Everything
           </div>
         </div>
       ) : (
@@ -168,46 +168,46 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
 
       {/* Pricing cards */}
       <div className={`grid grid-cols-1 gap-5 ${isPathB ? 'md:grid-cols-2' : 'max-w-sm mx-auto w-full'}`}>
-        {/* Individual Agent card — always shown */}
+        {/* Individual Agent card - always shown */}
         {isPC ? (
           <PlanCard
             title="Individual Agent"
             price="$35 / month"
             originalPrice="$69 / month"
-            priceNote="Early access rate — 50% off. Billed annually. Lock it in forever."
-            description="For agents who want daily consistency — at a price that never goes up."
+            priceNote="Early access rate, 50% off. Billed annually. Lock it in forever."
+            description="For agents who want daily consistency, at a price that never goes up."
             bullets={individualBullets}
             buttonLabel="Secure my early access"
             isPopular
             isPC
-            onCTA={() => triggerToast('Individual Agent — checkout would launch here.')}
+            onCTA={() => triggerToast('Individual Agent - checkout would launch here.')}
           />
         ) : (
           <PlanCard
             title="Individual Agent"
             price="$69 / month"
-            priceNote="Billed annually — save $120. Or $79/month."
+            priceNote="Billed annually, save $120. Or $79/month."
             description="For agents who want daily consistency."
             bullets={individualBullets}
             buttonLabel="Start your free trial"
             isPopular
-            onCTA={() => triggerToast('Individual Agent — checkout would launch here.')}
+            onCTA={() => triggerToast('Individual Agent - checkout would launch here.')}
           />
         )}
 
-        {/* Teams card — Flow B only */}
+        {/* Teams card - Flow B only */}
         {isPathB && (
           isPC ? (
             <PlanCard
               title="Teams"
-              price="Custom — 50% off"
+              price="Custom, 50% off"
               priceNote="50% off standard rates for your entire team. Early access pricing, locked in."
               description="For teams and brokerages who want to get ahead before PC launch."
               bulletHeader="Every agent gets Individual Agent, plus:"
               bullets={teamsBullets}
               buttonLabel="Claim team early access"
               isPC
-              onCTA={() => triggerToast('Teams — our team would reach out here.')}
+              onCTA={() => triggerToast('Teams - our team would reach out here.')}
             />
           ) : (
             <PlanCard
@@ -218,7 +218,7 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
               bulletHeader="Every agent gets Individual Agent, plus:"
               bullets={teamsBullets}
               buttonLabel="Talk to our team"
-              onCTA={() => triggerToast('Teams — our team would reach out here.')}
+              onCTA={() => triggerToast('Teams - our team would reach out here.')}
             />
           )
         )}

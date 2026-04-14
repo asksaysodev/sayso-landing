@@ -222,7 +222,7 @@ export function DesktopDemoFrame({
     <div className={fullscreen ? "absolute inset-0" : "w-full relative"}>
       {/* Desktop container */}
       <div className={`relative overflow-hidden ${fullscreen ? 'w-full h-full' : 'w-full aspect-[16/10] rounded-3xl shadow-[0_25px_80px_rgba(0,0,0,0.4)] border border-[#3a3a3c]'}`}>
-        {/* macOS Sonoma/Sequoia-style wallpaper — dark navy to teal */}
+        {/* macOS Sonoma/Sequoia-style wallpaper - dark navy to teal */}
         <div className="absolute inset-0">
           {/* Base gradient */}
           <div
@@ -255,7 +255,7 @@ export function DesktopDemoFrame({
         {/* Recording Indicator */}
         {showRecording && <RecordingIndicator time="0:17" />}
 
-        {/* SaySo widget — left side, vertically centered */}
+        {/* SaySo widget - left side, vertically centered */}
         {desktopOverlay && (
           <div className="absolute top-[24%] left-[3%] z-30" style={{ width: 'clamp(280px, 34%, 440px)' }}>
             {/* Widget container with highlight border */}
@@ -272,7 +272,7 @@ export function DesktopDemoFrame({
           </div>
         )}
 
-        {/* App Window — right area */}
+        {/* App Window - right area */}
         <div className="absolute top-[52%] right-[36%] translate-x-1/2 -translate-y-1/2 w-[62%] h-[76%] z-10">
           {/* Highlight border box - always visible */}
           <div

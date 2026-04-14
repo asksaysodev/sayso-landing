@@ -50,6 +50,32 @@ const mdxComponents = {
   td: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td className="border border-[#D7DEE1] px-4 py-3 text-[#1D4871]/80" {...props} />
   ),
+
+  // Custom content components
+  CalloutBox: ({ type = 'tip', children }: { type?: 'tip' | 'warning' | 'key-takeaway'; children: React.ReactNode }) => (
+    <div
+      className={`rounded-xl border-2 px-6 py-4 my-6 ${
+        type === 'warning'
+          ? 'border-red-300 bg-red-50'
+          : type === 'key-takeaway'
+            ? 'border-[#2367EE]/30 bg-[#2367EE]/5'
+            : 'border-[#FFDE59] bg-[#FFDE59]/10'
+      }`}
+    >
+      <div className="text-sm font-sans text-[#1D4871]/80">{children}</div>
+    </div>
+  ),
+
+  ScriptExample: ({ label, children }: { label?: string; children: React.ReactNode }) => (
+    <div className="bg-white border-2 border-[#1D4871] rounded-xl p-6 my-6">
+      {label && (
+        <span className="text-xs uppercase tracking-wide text-[#1D4871]/50 font-bold block mb-2">
+          {label}
+        </span>
+      )}
+      <div className="text-[#1D4871] italic font-sans leading-relaxed">{children}</div>
+    </div>
+  ),
 };
 
 export function BlogArticleContent({ content }: BlogArticleContentProps) {

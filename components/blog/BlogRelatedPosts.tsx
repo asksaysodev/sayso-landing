@@ -17,8 +17,8 @@ export function BlogRelatedPosts({ posts, variant = 'grid' }: BlogRelatedPostsPr
         {posts.map((post) => (
           <li key={post.slug}>
             <Link href={`/blog/${post.slug}`} className="group flex items-start gap-3">
-              <div className="w-16 h-12 rounded-lg bg-[#D7DEE1] overflow-hidden shrink-0">
-                {post.coverImage && post.coverImage !== '/blog/covers/default.jpg' ? (
+              <div className="w-16 h-12 rounded-lg bg-[#F4F4F5] overflow-hidden shrink-0">
+                {post.coverImage ? (
                   <Image
                     src={post.coverImage}
                     alt={post.title}
@@ -52,8 +52,8 @@ export function BlogRelatedPosts({ posts, variant = 'grid' }: BlogRelatedPostsPr
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
             <article className="bg-white rounded-2xl border-2 border-[#1D4871] v2-comic-shadow-sm overflow-hidden transition-all duration-200 group-hover:-translate-y-1">
-              <div className="relative aspect-video bg-[#D7DEE1] overflow-hidden">
-                {post.coverImage && post.coverImage !== '/blog/covers/default.jpg' ? (
+              <div className="relative aspect-video bg-[#F4F4F5] overflow-hidden">
+                {post.coverImage ? (
                   <Image
                     src={post.coverImage}
                     alt={post.title}

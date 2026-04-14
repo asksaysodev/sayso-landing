@@ -35,7 +35,7 @@ export function DialerSplitView({
               <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">You</span>
             </div>
             <p className="text-sm font-bold text-[#1D4871]">Alex Agent</p>
-            <p className="text-[11px] text-gray-500">SaySo Agent</p>
+            <p className="text-[11px] text-gray-500">Sayso</p>
           </div>
         </div>
 

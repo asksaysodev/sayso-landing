@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Get in touch with the Sayso team. Send us a message and we\'ll get back to you shortly.',
   alternates: {
-    canonical: `${siteUrl}/contact`,
+    canonical: `${siteUrl}/contact/`,
   },
   openGraph: {
     title: 'Contact Us | Sayso',
     description:
       'Get in touch with the Sayso team. Send us a message and we\'ll get back to you shortly.',
-    url: `${siteUrl}/contact`,
+    url: `${siteUrl}/contact/`,
     type: 'website',
     images: [
       {
