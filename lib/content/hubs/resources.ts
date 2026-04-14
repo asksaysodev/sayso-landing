@@ -7,7 +7,7 @@ const resourcesHub: HubPageConfig = {
   basePath: '/resources',
   seoTitle: 'Sayso Resources: Guides, Scripts & Insights for Real Estate Agents',
   seoDescription:
-    'Browse Sayso resources: blog articles, objection scripts, glossary terms, and case studies to help you close more deals on the phone.',
+    'Browse Sayso resources: blog articles, objection scripts, and glossary terms to help real estate agents sound better on every call.',
   h1: 'Resources for Real Estate Agents',
   introduction:
     'Scripts, strategies, and insights to help you sound better on every call. Browse our library of resources built for real estate professionals.',
@@ -35,14 +35,6 @@ const resourcesHub: HubPageConfig = {
         'Key terms and definitions every real estate agent should know.',
       linkText: 'Explore the glossary',
       href: '/glossary',
-    },
-    {
-      title: 'Case Studies',
-      slug: 'case-studies',
-      description:
-        'Real stories from agents and teams using Sayso to improve their call performance.',
-      linkText: 'Read case studies',
-      href: '/case-studies',
     },
   ],
   noKeyword: true,
