@@ -63,8 +63,8 @@ Complete the appointment-setting cluster before moving on. 4 supporting posts.
 
 | # | Publish slot | Post title | Slug | Target keyword | Command |
 |---|---|---|---|---|---|
-| 8 | Week 4 Thu | How to Build Rapport on Real Estate Calls | `how-to-build-rapport-calls` | `how to build rapport real estate calls` | `/supporting-post "how to build rapport real estate calls" cluster:conversation-skills` |
-| 9 | Week 5 Tue | How to Qualify Real Estate Leads on the Phone | `how-to-qualify-leads-on-phone` | `how to qualify real estate leads` | `/supporting-post "how to qualify real estate leads" cluster:conversation-skills` |
+| 8 | Week 4 Thu | How to Build Rapport on Real Estate Calls | `how-to-build-rapport-real-estate-calls` | `how to build rapport real estate calls` | `/supporting-post "how to build rapport real estate calls" cluster:conversation-skills` |
+| 9 | Week 5 Tue | How to Qualify Real Estate Leads on the Phone | `how-to-qualify-real-estate-leads` | `how to qualify real estate leads` | `/supporting-post "how to qualify real estate leads" cluster:conversation-skills` |
 | 10 | Week 5 Thu | Questions to Ask Real Estate Leads | `questions-to-ask-real-estate-leads` | `questions to ask real estate leads` | `/supporting-post "questions to ask real estate leads" cluster:conversation-skills` |
 | 11 | Week 6 Tue | How to Guide a Sales Conversation | `how-to-guide-a-sales-conversation` | `how to guide a sales conversation` | `/supporting-post "how to guide a sales conversation" cluster:conversation-skills` |
 | 12 | Week 6 Thu | How to Keep Control of a Call | `how-to-keep-control-of-a-call` | `how to keep control of a call` | `/supporting-post "how to keep control of a call" cluster:conversation-skills` |
