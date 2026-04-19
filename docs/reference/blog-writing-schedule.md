@@ -26,7 +26,7 @@ The exact order and slash commands to use for writing the 34 remaining blog post
 
 - **Pillar posts:** `/pillar "[target keyword]"`
 - **Supporting posts:** `/supporting-post "[target keyword]" cluster:[cluster-slug]`
-- **Standalone posts:** see section at the bottom, there is an open question about how to handle these
+- **Standalone posts:** `/standalone-post "[target keyword]" category:[category-slug]` (category is one of `crm-notes`, `mindset`, or `real-estate`)
 
 ---
 
@@ -89,59 +89,43 @@ Complete the appointment-setting cluster before moving on. 4 supporting posts.
 
 ## Phase 5: CRM and Notes Standalone (Weeks 10 to 13)
 
-6 standalone posts. See the "Open question on standalone posts" section at the bottom for command handling.
+6 standalone posts. All use `category:crm-notes` for template-heavy, practical workflow content.
 
-| # | Publish slot | Post title | Slug | Target keyword | Command (pending) |
+| # | Publish slot | Post title | Slug | Target keyword | Command |
 |---|---|---|---|---|---|
-| 20 | Week 10 Thu | Real Estate Call Notes Template | `real-estate-call-notes-template` | `real estate call notes template` | TBD |
-| 21 | Week 11 Tue | How to Take Notes During Sales Calls | `how-to-take-notes-during-calls` | `how to take notes during sales calls` | TBD |
-| 22 | Week 11 Thu | CRM Note Examples for Real Estate | `crm-note-examples-real-estate` | `crm note examples real estate` | TBD |
-| 23 | Week 12 Tue | How to Stay Organized with Real Estate Leads | `how-to-stay-organized-with-leads` | `how to stay organized with leads real estate` | TBD |
-| 24 | Week 12 Thu | What to Write in Your CRM After a Call | `what-to-write-in-crm-after-call` | `what should i write in my CRM after a call` | TBD |
-| 25 | Week 13 Tue | A Day in the Life of an Agent Using AI Coaching | `day-in-the-life-agent-using-ai-coaching` | `AI coaching real estate agent daily workflow` | TBD |
+| 20 | Week 10 Thu | Real Estate Call Notes Template | `real-estate-call-notes-template` | `real estate call notes template` | `/standalone-post "real estate call notes template" category:crm-notes` |
+| 21 | Week 11 Tue | How to Take Notes During Sales Calls | `how-to-take-notes-during-calls` | `how to take notes during sales calls` | `/standalone-post "how to take notes during sales calls" category:crm-notes` |
+| 22 | Week 11 Thu | CRM Note Examples for Real Estate | `crm-note-examples-real-estate` | `crm note examples real estate` | `/standalone-post "crm note examples real estate" category:crm-notes` |
+| 23 | Week 12 Tue | How to Stay Organized with Real Estate Leads | `how-to-stay-organized-with-leads` | `how to stay organized with leads real estate` | `/standalone-post "how to stay organized with leads real estate" category:crm-notes` |
+| 24 | Week 12 Thu | What to Write in Your CRM After a Call | `what-to-write-in-crm-after-call` | `what should i write in my CRM after a call` | `/standalone-post "what should i write in my CRM after a call" category:crm-notes` |
+| 25 | Week 13 Tue | A Day in the Life of an Agent Using AI Coaching | `day-in-the-life-agent-using-ai-coaching` | `AI coaching real estate agent daily workflow` | `/standalone-post "AI coaching real estate agent daily workflow" category:crm-notes` |
 
 ---
 
 ## Phase 6: Struggle and Emotional Standalone (Weeks 13 to 16)
 
-6 standalone posts targeting the emotional and mindset side of calling.
+6 standalone posts targeting the emotional and mindset side of calling. All use `category:mindset` for empathetic, anti-platitude tone.
 
-| # | Publish slot | Post title | Slug | Target keyword | Command (pending) |
+| # | Publish slot | Post title | Slug | Target keyword | Command |
 |---|---|---|---|---|---|
-| 26 | Week 13 Thu | I Hate Cold Calling in Real Estate (and What to Do About It) | `i-hate-cold-calling` | `i hate cold calling real estate` | TBD |
-| 27 | Week 14 Tue | Why Prospects Ghost After Calls | `why-leads-ghost-after-calls` | `why prospects ghost after calls` | TBD |
-| 28 | Week 14 Thu | How to Recover a Bad Sales Call | `how-to-recover-a-bad-call` | `how to recover a bad sales call` | TBD |
-| 29 | Week 15 Tue | How to Not Freeze on Sales Calls | `how-to-not-freeze-on-calls` | `how to not freeze on sales calls` | TBD |
-| 30 | Week 15 Thu | How to Not Sound Salesy on Calls | `how-to-not-sound-salesy` | `how to not sound salesy on calls` | TBD |
-| 31 | Week 16 Tue | How to Think on Your Feet in Sales | `how-to-think-on-your-feet-sales` | `how to think on your feet sales` | TBD |
+| 26 | Week 13 Thu | I Hate Cold Calling in Real Estate (and What to Do About It) | `i-hate-cold-calling` | `i hate cold calling real estate` | `/standalone-post "i hate cold calling real estate" category:mindset` |
+| 27 | Week 14 Tue | Why Prospects Ghost After Calls | `why-leads-ghost-after-calls` | `why prospects ghost after calls` | `/standalone-post "why prospects ghost after calls" category:mindset` |
+| 28 | Week 14 Thu | How to Recover a Bad Sales Call | `how-to-recover-a-bad-call` | `how to recover a bad sales call` | `/standalone-post "how to recover a bad sales call" category:mindset` |
+| 29 | Week 15 Tue | How to Not Freeze on Sales Calls | `how-to-not-freeze-on-calls` | `how to not freeze on sales calls` | `/standalone-post "how to not freeze on sales calls" category:mindset` |
+| 30 | Week 15 Thu | How to Not Sound Salesy on Calls | `how-to-not-sound-salesy` | `how to not sound salesy on calls` | `/standalone-post "how to not sound salesy on calls" category:mindset` |
+| 31 | Week 16 Tue | How to Think on Your Feet in Sales | `how-to-think-on-your-feet-sales` | `how to think on your feet sales` | `/standalone-post "how to think on your feet sales" category:mindset` |
 
 ---
 
 ## Phase 7: Data and Authority Standalone (Weeks 16 to 17)
 
-3 standalone posts. These target harder keywords and need original data or analysis. Plan for longer write time per post.
+3 standalone posts. These target harder keywords and need original data or analysis. Plan for longer write time per post. All use `category:real-estate` for data-driven, analytical tone.
 
-| # | Publish slot | Post title | Slug | Target keyword | Difficulty | Command (pending) |
+| # | Publish slot | Post title | Slug | Target keyword | Difficulty | Command |
 |---|---|---|---|---|---|---|
-| 32 | Week 16 Thu | Real Estate Call Statistics and Data Study | `real-estate-call-data-study` | `real estate call statistics` | HARD | TBD |
-| 33 | Week 17 Tue | AI Call Coaching Results in Real Estate | `ai-coaching-results-study` | `ai coaching real estate results` | HARD | TBD |
-| 34 | Week 17 Thu | What Separates Top Real Estate Agents on Calls | `what-separates-top-agents-calls` | `what separates top agents on calls` | HARD | TBD |
-
----
-
-## Open Question: How to Handle Standalone Posts (Phases 5, 6, 7)
-
-The current `/supporting-post` skill only supports 4 clusters: `cold-calling`, `appointment-setting`, `conversation-skills`, `follow-up`. It requires a pillar for the cluster.
-
-The 15 standalone posts (Phases 5, 6, 7) do not have a pillar. Three options to decide before starting Phase 5:
-
-**Option A: Create a `/standalone-post` slash command.** Cleanest long-term. Mirrors `/supporting-post` but skips pillar linking logic. Requires adding a new skill file to `.claude/commands/`.
-
-**Option B: Shoehorn standalones into the nearest existing cluster.** Example: use `cluster:conversation-skills` for Struggle posts (they are related to how you show up on calls). Easier in the short term, but the supporting-post skill will try to link to the conversation-skills pillar, which may not be a natural fit.
-
-**Option C: Write standalones manually (no skill).** You still get the frontmatter and structure, but you write the body yourself or in Google Docs. Good fallback if quality matters more than speed on these posts.
-
-**Recommendation:** Option A. 30 minutes to stand up a new skill, then 15 standalone posts use it cleanly. Flag this as a prerequisite before Phase 5 starts (around Week 10).
+| 32 | Week 16 Thu | Real Estate Call Statistics and Data Study | `real-estate-call-data-study` | `real estate call statistics` | HARD | `/standalone-post "real estate call statistics" category:real-estate` |
+| 33 | Week 17 Tue | AI Call Coaching Results in Real Estate | `ai-coaching-results-study` | `ai coaching real estate results` | HARD | `/standalone-post "ai coaching real estate results" category:real-estate` |
+| 34 | Week 17 Thu | What Separates Top Real Estate Agents on Calls | `what-separates-top-agents-calls` | `what separates top agents on calls` | HARD | `/standalone-post "what separates top agents on calls" category:real-estate` |
 
 ---
 
@@ -152,7 +136,6 @@ The 15 standalone posts (Phases 5, 6, 7) do not have a pillar. Three options to 
 - [ ] **Batch 2 (Phase 2):** write and schedule 4 appointment-setting supporting posts
 - [ ] **Batch 3 (Phase 3):** write and schedule 8 conversation-skills supporting posts (split into 2 batches if easier: 4 + 4)
 - [ ] **Batch 4 (Phase 4):** write and schedule 4 follow-up supporting posts
-- [ ] **Before Phase 5:** decide on standalone command strategy (Option A, B, or C above)
 - [ ] **Batch 5 (Phase 5):** write and schedule 6 CRM and Notes posts
 - [ ] **Batch 6 (Phase 6):** write and schedule 6 Struggle posts
 - [ ] **Batch 7 (Phase 7):** write and schedule 3 Data and Authority posts
