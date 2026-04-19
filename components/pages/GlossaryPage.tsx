@@ -136,7 +136,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
           ))}
         </div>
 
-        <ContentInlineCTA />
+        <ContentInlineCTA location="glossary-page" />
 
         {/* Related Terms */}
         {entry.relatedTerms.length > 0 && (
@@ -210,7 +210,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
       {/* FAQ */}
       {entry.faq.length > 0 && <FAQ items={entry.faq} />}
 
-      <ContentCTA />
+      <ContentCTA location="glossary-page" />
     </>
   );
 }

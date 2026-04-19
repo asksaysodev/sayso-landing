@@ -26,6 +26,7 @@ export function Footer() {
                 src="https://subscribe-forms.beehiiv.com/de7b925b-6f1f-4557-9fde-cf8005c34c5f"
                 className="w-full max-w-[414px] h-[57px] border-0"
                 data-test-id="beehiiv-embed"
+                data-analytics-id="form-newsletter-footer"
                 scrolling="no"
                 style={{ backgroundColor: 'transparent' }}
                 title="Newsletter signup"
@@ -64,6 +65,7 @@ export function Footer() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-analytics-id={link.dataAnalyticsId}
                           className="text-sm text-white/70 hover:text-white transition-colors"
                         >
                           {link.label}
@@ -71,6 +73,7 @@ export function Footer() {
                       ) : (
                         <Link
                           href={link.href}
+                          data-analytics-id={link.dataAnalyticsId}
                           className="text-sm text-white/70 hover:text-white transition-colors"
                         >
                           {link.label}

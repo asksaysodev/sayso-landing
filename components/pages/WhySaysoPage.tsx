@@ -72,7 +72,7 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
           ))}
         </div>
 
-        <ContentInlineCTA />
+        <ContentInlineCTA location="why-sayso-page" />
 
         {/* Who It's For */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
@@ -118,6 +118,7 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
       {content.faq.length > 0 && <FAQ items={content.faq} />}
 
       <ContentCTA
+        location="why-sayso-page"
         headline="Get Started Today"
         subheading="Try Sayso free and see the difference real-time coaching makes."
       />

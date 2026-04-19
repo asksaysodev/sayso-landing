@@ -146,12 +146,14 @@ export default function SaysoNavbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={openDemoCalendar}
+              data-analytics-id="cta-book-demo-navbar"
               className="hidden lg:inline-flex items-center justify-center px-4 py-2 rounded-full text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
             >
               Book a Demo
             </button>
             <button
               onClick={openSystemSelect}
+              data-analytics-id="cta-download-navbar"
               className="hidden lg:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
             >
               <LightningIcon size={14} className="mr-1.5" />
@@ -237,12 +239,14 @@ export default function SaysoNavbar() {
               <div className="pt-3 space-y-2">
                 <button
                   onClick={() => { setIsMobileMenuOpen(false); openDemoCalendar(); }}
+                  data-analytics-id="cta-book-demo-mobile-menu"
                   className="block w-full px-4 py-3 rounded-full text-[#1D4871] font-bold text-base text-center border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
                 >
                   Book a Demo
                 </button>
                 <button
                   onClick={() => { setIsMobileMenuOpen(false); openSystemSelect(); }}
+                  data-analytics-id="cta-download-mobile-menu"
                   className="block w-full px-4 py-3 rounded-full bg-[#2367EE] text-white font-bold text-lg text-center v2-comic-btn border-2 border-[#1D4871]"
                 >
                   Download Sayso

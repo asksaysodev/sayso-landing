@@ -72,7 +72,7 @@ export function IsaAdPage() {
           <p className="text-base text-[#1D4871]/70 mb-8 leading-relaxed">
             Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.
           </p>
-          <AdPageCTAButton />
+          <AdPageCTAButton location="isa-hero" />
         </div>
       </section>
 
@@ -212,7 +212,7 @@ export function IsaAdPage() {
         <p className="text-[#1D4871]/70 mb-8 text-base">
           Better conversations lead to better appointments.
         </p>
-        <AdPageCTAButton />
+        <AdPageCTAButton location="isa-footer" />
       </section>
 
       <Footer />

@@ -1,4 +1,4 @@
-import { ReactNode, ButtonHTMLAttributes } from 'react';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -25,7 +25,7 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} {...(props as unknown as AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </a>
     );

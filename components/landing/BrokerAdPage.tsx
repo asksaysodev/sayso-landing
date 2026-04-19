@@ -32,7 +32,7 @@ export function BrokerAdPage() {
             Real-time guidance during prospecting calls that helps agents handle objections, ask
             better questions, book more appointments, and capture their notes automatically.
           </p>
-          <AdPageCTAButton />
+          <AdPageCTAButton location="broker-hero" />
         </div>
       </section>
 
@@ -139,7 +139,7 @@ export function BrokerAdPage() {
         <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-8">
           Maximize the potential in the leads you&apos;re already generating.
         </h2>
-        <AdPageCTAButton />
+        <AdPageCTAButton location="broker-footer" />
       </section>
 
       <Footer />

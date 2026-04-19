@@ -14,6 +14,7 @@ interface PricingPlan {
   buttonLabel: string;
   buttonOnClick: () => void;
   buttonVariant: 'primary' | 'secondary';
+  analyticsId: string;
   isPopular?: boolean;
 }
 
@@ -80,6 +81,7 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 
       <button
         onClick={plan.buttonOnClick}
+        data-analytics-id={plan.analyticsId}
         className={`w-full inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-base font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 ${
           plan.buttonVariant === 'primary'
             ? 'bg-[#2367EE] text-white v2-comic-btn border-2 border-[#1D4871]'
@@ -111,6 +113,7 @@ export function PricingSection() {
       buttonLabel: 'Start your free trial',
       buttonOnClick: openSystemSelect,
       buttonVariant: 'primary',
+      analyticsId: 'cta-download-pricing-individual',
       isPopular: true,
     },
     {
@@ -127,6 +130,7 @@ export function PricingSection() {
       buttonLabel: 'Assemble your team',
       buttonOnClick: () => { window.open('https://app.asksayso.com/login?signup=true', '_blank'); },
       buttonVariant: 'secondary',
+      analyticsId: 'cta-signup-pricing-teams',
     },
     {
       title: 'Coming Soon',
@@ -142,6 +146,7 @@ export function PricingSection() {
       buttonLabel: 'Questions? Chat with our team',
       buttonOnClick: () => { window.location.href = '/demo'; },
       buttonVariant: 'secondary',
+      analyticsId: 'cta-book-demo-pricing-coming-soon',
     },
   ];
 

@@ -10,7 +10,7 @@ export function NavbarMinimal() {
           <Text as="span" className="font-bold text-xl text-primary">
             Sayso
           </Text>
-          <Button variant="primary" href="#cta">
+          <Button variant="primary" href="#cta" data-analytics-id="cta-get-started-navbar-minimal">
             Get Started
           </Button>
         </div>

@@ -14,6 +14,7 @@ export function BlogNewsletterCTA() {
               src="https://subscribe-forms.beehiiv.com/de7b925b-6f1f-4557-9fde-cf8005c34c5f"
               className="w-full max-w-[414px] h-[57px] border-0 mx-auto block"
               data-test-id="beehiiv-embed"
+              data-analytics-id="form-newsletter-blog"
               scrolling="no"
               style={{ backgroundColor: 'transparent' }}
               title="Newsletter signup"

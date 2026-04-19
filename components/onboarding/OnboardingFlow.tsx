@@ -129,6 +129,7 @@ export function OnboardingFlow() {
             </p>
             <button
               onClick={startOnboarding}
+              data-analytics-id="cta-onboarding-get-started"
               className="mt-6 px-8 py-3 rounded-full bg-[#2367EE] text-white font-bold text-base hover:bg-[#1b56cc] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 cursor-pointer"
             >
               Get Started
@@ -198,6 +199,7 @@ export function OnboardingFlow() {
           canContinue={canContinue}
           showBack={currentStep > 1 || isSaysoHelping}
           continueLabel={isSaysoHelping && saysoHelpReady ? 'Book a Demo' : undefined}
+          continueDataAnalyticsId={isSaysoHelping && saysoHelpReady ? 'cta-book-demo-onboarding-complete' : undefined}
         />
       )}
     </div>
