@@ -1,7 +1,7 @@
 # Sayso - Complete Site Architecture & Keyword Map
 
-**Updated:** April 6, 2026
-**Total Pages:** ~105–115
+**Updated:** April 19, 2026
+**Total Pages:** ~100–110
 
 ---
 
@@ -10,16 +10,16 @@
 | Section | Done | Total | % Complete |
 |---|---|---|---|
 | Root Pages | 10 | 11 | 91% |
-| Features | 5 | 6 | 83% |
-| For (Personas) | 2 | 5 | 40% |
+| Features | 5 | 6 | 83% (1 on hold) |
+| For (Personas) | 5 | 5 | 100% |
 | Integrations | 2 | 4 | 50% |
-| Compare | 2 | 4 | 50% |
-| Objections | 1 | 16 | 6% |
-| Glossary | 2 | 10 | 20% |
+| Compare | 4 | 4 | 100% |
+| Objections | 15 | 15 | 100% |
+| Glossary | 11 | 11 | 100% |
 | Case Studies | 2 | 2 | 100% |
-| Blog Posts | 2 | 45 | 4% |
-| Blog Category Pages | 1 | 7 | 14% |
-| **TOTAL** | **29** | **~110** | **~26%** |
+| Blog Posts | 9 | 43 | 21% |
+| Blog Category Pages | 2 | 7 | 29% |
+| **TOTAL** | **65** | **~100** | **~65%** |
 
 ---
 
@@ -42,6 +42,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 |---|---|
 | ✅ DONE | Page exists in codebase |
 | ❌ TODO | Page not yet created |
+| ⏸️ ON HOLD | Planned page, build paused for now |
 
 ---
 
@@ -73,11 +74,15 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 │   feedback. The primary keyword "real time sales help" is no longer in the H1. It is still
 │   present in seoTitle, seoDescription, and body copy. Monitor rankings for this keyword
 │   and consider restoring keyword-rich H1 if organic traffic drops.
-├── /features/objection-handling/           "real estate objection handling scripts"                    🟡 MED     ❌ TODO
 ├── /features/smart-capture/                "automatic call notes real estate"                          🟢 WIN     ✅ DONE
 ├── /features/pulse/                        "real estate market data during calls"                      🟢 WIN     ✅ DONE
-└── /features/playbook/                     "custom call scripts real estate"                           🟢 WIN     ✅ DONE
+├── /features/playbook/                     "custom call scripts real estate"                           🟢 WIN     ✅ DONE
+└── /features/roadmap/                      "request a feature / coming soon"                           ⚪ NONE    ⏸️ ON HOLD
 ```
+
+**Note on `/features/roadmap/`:** Page is planned as a "Request a Feature / Coming Soon" hub where users can see upcoming features and submit requests. Build is paused for now. When resumed, confirm final URL (`/features/roadmap/` vs `/features/request/`) and decide on the submission mechanism (Canny embed vs simple form).
+
+**Note on `/features/objection-handling/`:** Removed from plan on 2026-04-19. Objection handling is already covered by the `/objections/` hub and its 14 child pages, so a dedicated feature page is redundant.
 
 ---
 
@@ -86,10 +91,12 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ```
 /for/                                       (hub - no keyword target)                                   ⚪ NONE    ✅ DONE
 ├── /for/solo-agents/                       "how to be more efficient real estate agent"                🟡 MED     ✅ DONE
-├── /for/team-leaders/                      "how to manage high volume leads real estate"               🟡 MED     ❌ TODO
-├── /for/new-agents/                        "how to get better at cold calling real estate"             🟡 MED     ❌ TODO
-└── /for/isas/                              "ISA conversion scripts real estate"                        🟢 WIN     ❌ TODO
+├── /for/team-leaders/                      "how to manage high volume leads real estate"               🟡 MED     ✅ DONE
+├── /for/new-agents/                        "how to get better at cold calling real estate"             🟡 MED     ✅ DONE
+└── /for/isas/                              "ISA conversion scripts real estate"                        🟢 WIN     ✅ DONE
 ```
+
+**Note:** All persona pages are complete. No additional personas planned at this time.
 
 ---
 
@@ -111,8 +118,8 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ```
 /compare/                                   (hub - no keyword target)                                   ⚪ NONE    ✅ DONE
 ├── /compare/sayso-vs-shilo/               "shilo alternative"                                         🟢 WIN     ✅ DONE
-├── /compare/sayso-vs-maverickre/          "maverickre alternative"                                    🟢 WIN     ❌ TODO
-└── /compare/sayso-vs-manual-coaching/      "real estate coaching AI vs manual"                          🟡 MED     ❌ TODO
+├── /compare/sayso-vs-maverickre/          "maverickre alternative"                                    🟢 WIN     ✅ DONE
+└── /compare/sayso-vs-manual-coaching/      "real estate coaching AI vs manual"                          🟡 MED     ✅ DONE
 ```
 
 ---
@@ -121,22 +128,23 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ```
 /objections/                                "real estate phone objection examples"                      🟢 WIN     ✅ DONE
-├── /objections/already-have-an-agent/      "how to handle 'already working with agent'"               🟢 WIN     ❌ TODO
+├── /objections/already-have-an-agent/      "how to handle 'already working with agent'"               🟢 WIN     ✅ DONE
 ├── /objections/not-ready-yet/              "how to handle 'not ready yet' real estate"                🟢 WIN     ✅ DONE
-├── /objections/just-looking/               "how to respond to 'just looking' real estate"             🟢 WIN     ❌ TODO
-├── /objections/call-me-later/              "real estate script for 'call me later'"                   🟢 WIN     ❌ TODO
-├── /objections/price-too-high/             "how to handle price objection real estate"                🟢 WIN     ❌ TODO
-├── /objections/want-to-sell-ourselves/     "FSBO objection handling"                                  🟢 WIN     ❌ TODO
-├── /objections/need-to-think-about-it/     "what to say when prospect shuts down"                     🟢 WIN     ❌ TODO
-├── /objections/not-interested/             "what to say when lead is not interested"                   🟢 WIN     ❌ TODO
-├── /objections/already-listed/             "how to handle already listed objection"                    🟢 WIN     ❌ TODO
-├── /objections/bad-experience-with-agents/ "how to handle bad agent experience objection"              🟢 WIN     ❌ TODO
-├── /objections/market-is-bad/              "how to handle market objection real estate"                🟢 WIN     ❌ TODO
-├── /objections/just-send-listings/         "how to redirect a conversation real estate"                🟢 WIN     ❌ TODO
-├── /objections/how-much-is-your-commission/"how to handle commission question real estate"             🟢 WIN     ❌ TODO
-├── /objections/well-wait-for-spring/       "how to handle timing objection real estate"                🟢 WIN     ❌ TODO
-└── /objections/my-spouse-needs-to-decide/  "how to handle third-party objection real estate"           🟢 WIN     ❌ TODO
+├── /objections/just-looking/               "how to respond to 'just looking' real estate"             🟢 WIN     ✅ DONE
+├── /objections/call-me-later/              "real estate script for 'call me later'"                   🟢 WIN     ✅ DONE
+├── /objections/price-too-high/             "how to handle price objection real estate"                🟢 WIN     ✅ DONE
+├── /objections/want-to-sell-ourselves/     "FSBO objection handling"                                  🟢 WIN     ✅ DONE
+├── /objections/need-to-think-about-it/     "what to say when prospect shuts down"                     🟢 WIN     ✅ DONE
+├── /objections/not-interested/             "what to say when lead is not interested"                   🟢 WIN     ✅ DONE
+├── /objections/bad-experience-with-agents/ "how to handle bad agent experience objection"              🟢 WIN     ✅ DONE
+├── /objections/market-is-bad/              "how to handle market objection real estate"                🟢 WIN     ✅ DONE
+├── /objections/just-send-listings/         "how to redirect a conversation real estate"                🟢 WIN     ✅ DONE
+├── /objections/how-much-is-your-commission/"how to handle commission question real estate"             🟢 WIN     ✅ DONE
+├── /objections/well-wait-for-spring/       "how to handle timing objection real estate"                🟢 WIN     ✅ DONE
+└── /objections/my-spouse-needs-to-decide/  "how to handle third-party objection real estate"           🟢 WIN     ✅ DONE
 ```
+
+**Note:** `/objections/already-listed/` was dropped from the plan on 2026-04-19. The topic overlaps enough with existing objections (`expired-listing` content in the blog + `want-to-sell-ourselves`) that a standalone page isn't needed.
 
 ---
 
@@ -145,15 +153,15 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ```
 /glossary/                                  (hub - no keyword target)                                   ⚪ NONE    ✅ DONE
 ├── /glossary/circle-prospecting/           "what is circle prospecting"                               🟢 WIN     ✅ DONE
-├── /glossary/isa-real-estate/              "what does ISA mean in real estate"                         🟢 WIN     ❌ TODO
-├── /glossary/listing-appointment/          "what is a listing appointment"                             🟢 WIN     ❌ TODO
-├── /glossary/expired-listing/              "what is an expired listing real estate"                    🟢 WIN     ❌ TODO
-├── /glossary/fsbo/                         "what does FSBO mean"                                      🟢 WIN     ❌ TODO
-├── /glossary/cold-calling-real-estate/     "what is cold calling in real estate"                       🟢 WIN     ❌ TODO
-├── /glossary/lead-nurturing/               "what is lead nurturing real estate"                        🟢 WIN     ❌ TODO
-├── /glossary/sphere-of-influence/          "what is sphere of influence real estate"                   🟢 WIN     ❌ TODO
-├── /glossary/door-knocking/                "what is door knocking real estate"                         🟢 WIN     ❌ TODO
-└── /glossary/drip-campaign/                "what is a drip campaign real estate"                       🟢 WIN     ❌ TODO
+├── /glossary/isa-real-estate/              "what does ISA mean in real estate"                         🟢 WIN     ✅ DONE
+├── /glossary/listing-appointment/          "what is a listing appointment"                             🟢 WIN     ✅ DONE
+├── /glossary/expired-listing/              "what is an expired listing real estate"                    🟢 WIN     ✅ DONE
+├── /glossary/fsbo/                         "what does FSBO mean"                                      🟢 WIN     ✅ DONE
+├── /glossary/cold-calling-real-estate/     "what is cold calling in real estate"                       🟢 WIN     ✅ DONE
+├── /glossary/lead-nurturing/               "what is lead nurturing real estate"                        🟢 WIN     ✅ DONE
+├── /glossary/sphere-of-influence/          "what is sphere of influence real estate"                   🟢 WIN     ✅ DONE
+├── /glossary/door-knocking/                "what is door knocking real estate"                         🟢 WIN     ✅ DONE
+└── /glossary/drip-campaign/                "what is a drip campaign real estate"                       🟢 WIN     ✅ DONE
 ```
 
 ---
