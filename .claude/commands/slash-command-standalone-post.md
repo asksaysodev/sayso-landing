@@ -6,7 +6,7 @@
 - `/standalone-post "i hate cold calling real estate" category:mindset`
 - `/standalone-post "real estate call statistics" category:real-estate`
 
-When this command is invoked, follow the two-phase process below. **Phase 1** researches the competitive landscape and reads related site content. **Phase 2** writes the post using that research. The final output must be a single `.mdx` file with YAML frontmatter + markdown body that can be dropped directly into `content/blog/` with zero manual reformatting.
+When this command is invoked, follow the two-phase process below. **Phase 1** checks the Ultimate Script Book for relevant principles, reads related site content, and researches the competitive landscape. **Phase 2** writes the post using that research. The final output must be a single `.mdx` file with YAML frontmatter + markdown body that can be dropped directly into `content/blog/` with zero manual reformatting.
 
 ### Input Parsing
 
@@ -38,9 +38,27 @@ Standalone posts are not part of a pillar cluster. They live in one of three con
 
 ## PHASE 1: RESEARCH (Do This First)
 
-Before writing a single word, complete both competitive research AND internal content review. Standalone posts have no parent pillar, so the internal review focuses on related content across the whole site.
+Before writing a single word, complete the Script Book check, internal content review, AND competitive research. Standalone posts have no parent pillar, so the internal review focuses on related content across the whole site.
 
-### Step 1: Read Related Existing Site Content
+### Step 1: Check the Ultimate Script Book for Relevant Sections
+
+Standalone posts are off-cluster, so Script Book relevance varies by topic. Check first, then incorporate only what genuinely fits. The Script Book lives at `docs/content/Ultimate Script Book (1).md`.
+
+**Category-level mapping:**
+
+| Category | Likely Relevance | Where to Look |
+|---|---|---|
+| `crm-notes` | Partial. Script Book has no dedicated note-taking section, but principles like "Keep the Calls Moving" (line 222), LPMAMA discovery fields (lines 516-630), and post-call next-step language from Book the Meeting (line 29) inform what good CRM notes capture. | Use MENTALITY principles (lines 27-230) as background. Pull language patterns around "what to capture after a call" from LPMAMA and the various call-script sections. |
+| `mindset` | Strong. The Script Book's "Why Most Agents Will Not Do This" mindset (line 496), "Urgency Creates Action" (line 181), "The Real Shift" (line 496), and the general "coaching tone" throughout directly inform mindset posts. | Read MENTALITY (lines 27-230) and the 10 Days of Pain mindset sections (lines 496-514) in full. These are the voice of mindset posts. |
+| `real-estate` (data/authority) | Gap. The Script Book is not a data source. Use it for voice and Sayso's perspective on what the data means, but competitor research and original analysis drive the content. | Read TLDR/Purpose (line 1) and MENTALITY principles for voice only. Do not force frameworks where they do not fit the topic. |
+
+**Rules:**
+- Check the Script Book's table of contents (grep for `^#[# ]` headings) before writing. If a section applies to the topic, read it.
+- Standalone posts do not need to draw from the Script Book as heavily as pillars or supporting posts. Use it when the topic aligns, skip it when it does not.
+- Mindset posts should sound like they were written by someone who has actually coached agents through this. Script Book language is the shortcut to that voice.
+- If nothing in the Script Book applies, note that in your brief and proceed without it.
+
+### Step 2: Read Related Existing Site Content
 
 Standalone posts do not link up to a pillar, but they should reference relevant existing content. Identify 3 to 5 candidates:
 
@@ -48,12 +66,12 @@ Standalone posts do not link up to a pillar, but they should reference relevant 
 - **Pillar posts from related clusters.** For example, a CRM/Notes post may link to the cold-calling pillar or the conversation-skills pillar. A Mindset post may link to the cold-calling pillar. Read the pillar briefly to understand its angle.
 - **Other standalone posts** in the same category group (see the "Current Standalone Posts Planned" list above). Your post should avoid overlapping with siblings.
 
-### Step 2: Search the Target Keyword
+### Step 3: Search the Target Keyword
 
 - Run a web search for the exact target keyword
 - Run a second search appending "2025" or "2026" to catch recent content
 
-### Step 3: Analyze the Top 5 Ranking Pages
+### Step 4: Analyze the Top 5 Ranking Pages
 
 - Fetch and read the top 5 organic results (skip ads, forums, and YouTube)
 - For each page, extract:
@@ -63,13 +81,13 @@ Standalone posts do not link up to a pillar, but they should reference relevant 
   - **Unique angles or insights** they offer
   - **Word count estimate** (short/medium/long)
 
-### Step 4: Identify "People Also Ask" and Related Searches
+### Step 5: Identify "People Also Ask" and Related Searches
 
 - From the search results, note any "People Also Ask" questions Google surfaces
 - Note related search suggestions
 - These feed directly into the FAQ section and may reveal angles competitors miss
 
-### Step 5: Build a Competitive Brief
+### Step 6: Build a Competitive Brief
 
 After researching, compile a brief (for your own reference, do NOT include this in the final output) with:
 
@@ -432,6 +450,8 @@ Your job is the content, the heading structure, the internal links within the pr
 
 Before finalizing, verify:
 
+- [ ] Ultimate Script Book was checked for topic-relevant sections (even if none applied)
+- [ ] For mindset-category posts, MENTALITY principles informed the voice
 - [ ] Competitive research was completed (top 5 pages analyzed, PAA questions collected)
 - [ ] Related site content was reviewed for overlap or linking opportunities
 - [ ] At least 1 content gap from research is addressed in the post

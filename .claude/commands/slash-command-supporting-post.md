@@ -6,7 +6,7 @@
 - `/supporting-post "expired listing scripts" cluster:cold-calling`
 - `/supporting-post "how to revive dead leads real estate" cluster:follow-up`
 
-When this command is invoked, follow the two-phase process below. **Phase 1** researches the competitive landscape and reads existing cluster content. **Phase 2** writes the post using that research. The final output must be a single `.mdx` file with YAML frontmatter + markdown body that can be dropped directly into `content/blog/` with zero manual reformatting.
+When this command is invoked, follow the two-phase process below. **Phase 1** reads the Ultimate Script Book for authentic scripts and frameworks, reads the parent pillar and sibling posts, then researches the competitive landscape. **Phase 2** writes the post using that research. The final output must be a single `.mdx` file with YAML frontmatter + markdown body that can be dropped directly into `content/blog/` with zero manual reformatting.
 
 ### Input Parsing
 
@@ -40,26 +40,71 @@ If no cluster is provided, attempt to infer from the keyword using the cluster r
 
 ## PHASE 1: RESEARCH (Do This First)
 
-Before writing a single word, complete both competitive research AND internal content review.
+Before writing a single word, complete the Script Book read, internal content review, AND competitive research.
 
-### Step 1: Read the Parent Pillar Post
+### Step 1: Read the Ultimate Script Book
+
+The Ultimate Script Book (`docs/content/Ultimate Script Book (1).md`) contains real-world call scripts, follow-up cadences, and prospect psychology developed by Sayso's top-performing agents. It is the primary source for voice and framework authenticity across supporting posts. Read it FIRST, before any web research.
+
+**What to extract:**
+- **Exact language and scripts** that agents use on live calls (informs your `<ScriptExample>` blocks)
+- **Named frameworks** (10 Days of Pain, LPMAMA, Three Layers of Motivation, etc.) that should appear as H2 or H3 sections where relevant
+- **Prospect psychology insights** that explain why prospects behave a certain way (feeds into opening paragraphs and CalloutBoxes)
+- **Common mistakes or anti-patterns** to include as cautions
+- **Mentality principles** (Book the Meeting, Don't Default to Sending Homes, Keep the Calls Moving, Motivation Is Everything) that should shape the post's worldview
+
+**Per-Slug Script Book Mapping:**
+
+Use this table to locate the most relevant sections for the specific supporting post being written. "Strong" means the Script Book should heavily inform the scripts. "Partial" means use it for voice and supplement with competitor research. "Gap" means the Script Book has no dedicated section, so use the MENTALITY principles (lines 27-230) as background only.
+
+| Slug | Script Book Sections (line numbers) | Coverage |
+|---|---|---|
+| `expired-listing-scripts` | Expired full script section (line 1369) | Strong |
+| `fsbo-scripts` | FSBO full script section (line 1316) | Strong |
+| `circle-prospecting-scripts` | Circle Prosp "I have a buyer" (line 1230), Circle Prosp Open House (line 1274) | Strong |
+| `buyer-lead-scripts` | Buyer Pond (line 734), New Inbound Online (line 819), Ylopo Home Search Site (line 872), Zillow ALM (line 1097) | Strong |
+| `how-to-start-a-real-estate-call` | Buyer Openers (line 730), opener sections across call scripts | Strong |
+| `appointment-setting-script` | Appt Setting previous conversation (line 793), Book the Meeting (line 29) | Strong |
+| `how-to-close-for-appointment` | Book the Meeting (line 29), Commitment Standard (line 192), Urgency Creates Action (line 181), Confirm Listing Appt (line 1575) | Strong |
+| `how-many-times-ask-for-appointment` | Keep the Calls Moving (line 222), Book the Meeting (line 29), Your Three Limited Resources (line 201) | Partial |
+| `why-prospects-dont-commit` | Three Layers of Motivation (line 96), Motivation FIRST (line 631), Urgency Creates Action (line 181) | Strong |
+| `how-to-get-same-day-appointments` | Urgency Creates Action (line 181), Book the Meeting (line 29) | Partial |
+| `how-to-build-rapport-real-estate-calls` | Buyer Openers (line 730), opener sections throughout call-script library | Partial |
+| `how-to-qualify-real-estate-leads` | Full LPMAMA (lines 516-630), Motivation FIRST (line 631), Three Layers of Motivation (line 96) | Strong |
+| `questions-to-ask-real-estate-leads` | LPMAMA Buyer Questions (line 524), LPMAMA Seller Questions (line 581), Motivation FIRST (line 631) | Strong |
+| `how-to-guide-a-sales-conversation` | MENTALITY principles (lines 27-230), Three Layers of Motivation (line 96), Keep the Calls Moving (line 222) | Partial |
+| `how-to-keep-control-of-a-call` | Keep the Calls Moving (line 222), Book the Meeting (line 29), Your Three Limited Resources (line 201) | Partial |
+| `what-top-agents-say-on-calls` | MENTALITY principles (lines 27-230), various call openers and transitions | Partial |
+| `what-real-time-call-coaching-looks-like` | No direct coverage; Sayso-product post, rely on MENTALITY principles for general language | Gap |
+| `follow-up-scripts-cold-leads` | 10 Days of Pain examples (lines 281-410), Lead Temperatures "cold" (line 720), Risk framing (line 361) | Strong |
+| `how-often-follow-up-real-estate` | 10 Days of Pain framework (lines 233-514), How Each Day Works (line 418), When to Stop (line 481) | Strong |
+| `how-to-revive-dead-leads` | 10 Days of Pain pattern interrupt examples (lines 333, 361), Lead Temperatures "cold" (line 720) | Partial |
+| `what-to-say-to-old-leads` | 10 Days of Pain examples (lines 281-410), Risk framing (line 361), Market Insight (line 333) | Partial |
+
+**Rules:**
+- Every supporting post must draw at least 1 direct element from the Script Book (a scripted language pattern, a named framework, or a psychology insight). This is what makes the post authentically "Sayso" instead of AI-generic.
+- The Script Book shapes voice and authority. Competitor research shapes structure and SEO coverage. Do not flip these roles.
+- Do not copy Script Book language verbatim into the post. Paraphrase, adapt to the keyword's framing, and expand where it helps the reader.
+- If the slug is not in the table above, search the Script Book TOC for relevant sections based on the post's topic before falling back to MENTALITY principles only.
+
+### Step 2: Read the Parent Pillar Post
 
 - Read the pillar post for this cluster from `content/blog/[pillar-slug].mdx`
 - Note exactly what the pillar says about this sub-topic: how many words, which scripts it includes, what angle it takes
 - Your supporting post must go **significantly deeper** than the pillar's treatment - not repeat it. Knowing exactly what the pillar covers is the only way to guarantee differentiation
 
-### Step 2: Read Sibling Supporting Posts
+### Step 3: Read Sibling Supporting Posts
 
 - Check `content/blog/` for any other supporting posts already published in this cluster
 - Note their topics, angles, and scripts to avoid content overlap
 - If a sibling post covers adjacent territory, find a way to link to it and differentiate from it
 
-### Step 3: Search the Target Keyword
+### Step 4: Search the Target Keyword
 
 - Run a web search for the exact target keyword
 - Run a second search appending "2025" or "2026" to catch recent content
 
-### Step 4: Analyze the Top 5 Ranking Pages
+### Step 5: Analyze the Top 5 Ranking Pages
 
 - Fetch and read the top 5 organic results (skip ads, forums, and YouTube)
 - For each page, extract:
@@ -69,13 +114,13 @@ Before writing a single word, complete both competitive research AND internal co
   - **Unique angles or insights** they offer
   - **Word count estimate** (short/medium/long)
 
-### Step 5: Identify "People Also Ask" and Related Searches
+### Step 6: Identify "People Also Ask" and Related Searches
 
 - From the search results, note any "People Also Ask" questions Google surfaces
 - Note related search suggestions
 - These feed directly into the FAQ section and may reveal angles competitors miss
 
-### Step 6: Build a Competitive Brief
+### Step 7: Build a Competitive Brief
 
 After researching, compile a brief (for your own reference - do NOT include this in the final output) with:
 
@@ -366,6 +411,8 @@ Your job is the content, the heading structure, the internal links within the pr
 
 Before finalizing, verify:
 
+- [ ] Ultimate Script Book was read and relevant per-slug sections were identified
+- [ ] At least 1 direct element from the Script Book (scripted language, named framework, or psychology insight) appears in the post
 - [ ] Competitive research was completed (top 5 pages analyzed, PAA questions collected)
 - [ ] Parent pillar post was read - this post goes deeper without repeating the pillar's scripts or angles
 - [ ] Sibling supporting posts were checked for overlap
