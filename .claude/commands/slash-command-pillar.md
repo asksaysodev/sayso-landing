@@ -15,6 +15,8 @@ Before writing a single word, complete the Script Book read AND the competitive 
 
 The Ultimate Script Book (`docs/content/Ultimate Script Book (1).md`) contains real-world call scripts, follow-up cadences, and prospect psychology developed by Sayso's top-performing agents. It is the primary source for voice, language, and framework authenticity across all pillar posts. Read it FIRST, before any web research.
 
+A companion doc, `docs/content/5 Appointment Seeds.md`, covers the appointment-seeds framework (clarity, visual, timeline, problem-solving, and future seeds) that makes prospects ask to meet. Read it for any pillar in the `appointment-setting`, `conversation-skills`, or `follow-up` clusters.
+
 **What to extract:**
 - **Exact language and scripts** that agents use on live calls (informs your `<ScriptExample>` blocks)
 - **Named frameworks** (10 Days of Pain, LPMAMA, Three Layers of Motivation, etc.) that should appear as H2 or H3 sections where applicable
@@ -29,7 +31,7 @@ Use this table to locate the most relevant sections based on the pillar's cluste
 | Cluster | Primary Script Book Sections | Coverage |
 |---|---|---|
 | `cold-calling` | "Buyer Openers" (line 730), "Buyer Pond" (line 734), full call-script library by lead source (lines 793-1622), "Lead Temperatures" (line 676) | Strong |
-| `appointment-setting` | "Book the Meeting" (line 29), "Urgency Creates Action" (line 181), "The Commitment Standard" (line 192), "Keep the Calls Moving" (line 222), LPMAMA Appointment (line 575), "Confirm Listing Appt" (line 1575) | Strong |
+| `appointment-setting` | "Book the Meeting" (line 29), "Urgency Creates Action" (line 181), "The Commitment Standard" (line 192), "Keep the Calls Moving" (line 222), LPMAMA Appointment (line 575), "Confirm Listing Appt" (line 1575). ALSO read `docs/content/5 Appointment Seeds.md` in full. | Strong |
 | `conversation-skills` | Full LPMAMA section (lines 516-630), "Three Layers of Motivation" (line 96), "Motivation FIRST" (line 631), "Don't Default to Sending Homes" (line 46), "Lead Temperatures" (line 676) | Strong |
 | `follow-up` | "10 Days of Pain" framework + examples (lines 233-514), "O.H. 10 Days of Pain" (line 1739), "Lead Temperatures" (line 676), "Keep the Calls Moving" (line 222) | Strong |
 

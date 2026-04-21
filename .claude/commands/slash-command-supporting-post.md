@@ -46,6 +46,8 @@ Before writing a single word, complete the Script Book read, internal content re
 
 The Ultimate Script Book (`docs/content/Ultimate Script Book (1).md`) contains real-world call scripts, follow-up cadences, and prospect psychology developed by Sayso's top-performing agents. It is the primary source for voice and framework authenticity across supporting posts. Read it FIRST, before any web research.
 
+A companion doc, `docs/content/5 Appointment Seeds.md`, covers the appointment-seeds framework (clarity, visual, timeline, problem-solving, future). Read it whenever the post is in the `appointment-setting` cluster or the post's topic touches on getting prospects to want the meeting (rapport, qualification, follow-up positioning, etc.).
+
 **What to extract:**
 - **Exact language and scripts** that agents use on live calls (informs your `<ScriptExample>` blocks)
 - **Named frameworks** (10 Days of Pain, LPMAMA, Three Layers of Motivation, etc.) that should appear as H2 or H3 sections where relevant
