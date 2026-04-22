@@ -3,6 +3,7 @@ import { Footer } from "@/components/landing/Footer";
 import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
 import { PainPointPanel } from "@/components/landing/PainPointPanel";
 import SaysoNavbar from "@/components/landing/SaysoNavbar";
+import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
 import { TransformationSection } from "@/components/landing/TransformationSection";
 import { ProductShowcaseSection } from '@/components/landing/ProductShowcaseSection';
@@ -32,6 +33,7 @@ export default function Home() {
         <div className="relative bg-white">
             <SaysoNavbar />
             <HeroWithVideo />
+            <TestimonialsSection />
             <PainPointPanel />
             <TransformationSection />
             <ThreeStepsSection />
