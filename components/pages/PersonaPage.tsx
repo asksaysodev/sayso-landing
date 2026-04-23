@@ -93,7 +93,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
           </p>
         ))}
 
-        <ContentInlineCTA />
+        <ContentInlineCTA location="persona-page" />
 
         {/* How Sayso Works for This Persona */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
@@ -133,12 +133,14 @@ export function PersonaPage({ entry }: PersonaPageProps) {
             <div className="flex items-center gap-4 flex-wrap mb-6">
               <button
                 onClick={openDemoCalendar}
+                data-analytics-id="cta-book-demo-persona-page-get-started"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
               >
                 Book a Demo
               </button>
               <button
                 onClick={openSystemSelect}
+                data-analytics-id="cta-download-persona-page-get-started"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
               >
                 <LightningIcon size={14} className="mr-1.5" />
@@ -220,6 +222,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
       {entry.faq.length > 0 && <FAQ items={entry.faq} />}
 
       <ContentCTA
+        location="persona-page"
         headline="Get Started Today"
         subheading={`See how Sayso helps ${entry.persona.toLowerCase()} sound better on every call.`}
       />

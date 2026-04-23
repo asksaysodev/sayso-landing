@@ -167,6 +167,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
       </article>
 
       <ContentCTA
+        location="case-study-page"
         headline="Ready for Results Like These?"
         subheading="See how Sayso can help your team book more appointments."
       />

@@ -79,6 +79,7 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
         </div>
 
         <ContentInlineCTA
+          location="integration-page"
           headline={entry.inlineCtaHeadline}
         />
 
@@ -163,7 +164,7 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
       {/* FAQ */}
       {entry.faq.length > 0 && <FAQ items={entry.faq} />}
 
-      <ContentCTA />
+      <ContentCTA location="integration-page" />
     </>
   );
 }

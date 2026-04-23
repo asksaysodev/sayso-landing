@@ -136,7 +136,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
           {entry.howSaysoHelps}
         </p>
 
-        <ContentInlineCTA />
+        <ContentInlineCTA location="objection-page" />
 
         {/* Related Objections + Cross-Section Links */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
@@ -194,7 +194,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
       {/* FAQ */}
       {entry.faq.length > 0 && <FAQ items={entry.faq} />}
 
-      <ContentCTA />
+      <ContentCTA location="objection-page" />
     </>
   );
 }

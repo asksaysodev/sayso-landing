@@ -4,11 +4,13 @@ import { LightningIcon } from '@/components/icons/LightningIcon';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 interface ContentCTAProps {
+  location: string;
   headline?: string;
   subheading?: string;
 }
 
 export function ContentCTA({
+  location,
   headline = 'Ready to Win the Moment?',
   subheading = 'See how Sayso gives you real-time coaching on every call.',
 }: ContentCTAProps) {
@@ -27,12 +29,14 @@ export function ContentCTA({
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <button
               onClick={openDemoCalendar}
+              data-analytics-id={`cta-book-demo-${location}`}
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-transparent text-white font-bold text-base border-2 border-white hover:bg-white/10 transition-colors"
             >
               Book a Demo
             </button>
             <button
               onClick={openSystemSelect}
+              data-analytics-id={`cta-download-${location}`}
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#FFDE59] hover:bg-[#FFDE59]/90 transition-colors"
             >
               <LightningIcon size={14} className="mr-1.5" />

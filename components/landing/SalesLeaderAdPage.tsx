@@ -32,7 +32,7 @@ export function SalesLeaderAdPage() {
             Real-time guidance during prospecting calls that helps agents handle objections, ask
             better questions, book more appointments, and capture their notes automatically.
           </p>
-          <AdPageCTAButton />
+          <AdPageCTAButton location="sales-leader-hero" />
         </div>
       </section>
 
@@ -139,7 +139,7 @@ export function SalesLeaderAdPage() {
         <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-8">
           Maximize the potential in the leads you&apos;re already generating.
         </h2>
-        <AdPageCTAButton />
+        <AdPageCTAButton location="sales-leader-footer" />
         <p className="mt-4 text-sm text-[#1D4871]/60">
           Give your agents real-time support during prospecting calls.
         </p>

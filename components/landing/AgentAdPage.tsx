@@ -70,7 +70,7 @@ export function AgentAdPage() {
             Real-time guidance during prospecting calls. Ask better questions, handle objections,
             and book appointments that actually happen.
           </p>
-          <AdPageCTAButton />
+          <AdPageCTAButton location="agent-hero" />
         </div>
       </section>
 
@@ -213,7 +213,7 @@ export function AgentAdPage() {
         <p className="text-[#1D4871]/70 mb-8 text-base">
           Better conversations lead to better appointments.
         </p>
-        <AdPageCTAButton />
+        <AdPageCTAButton location="agent-footer" />
       </section>
 
       <Footer />

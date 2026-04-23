@@ -6,6 +6,7 @@ interface OnboardingNavButtonsProps {
   canContinue: boolean;
   showBack: boolean;
   continueLabel?: string;
+  continueDataAnalyticsId?: string;
 }
 
 export function OnboardingNavButtons({
@@ -14,6 +15,7 @@ export function OnboardingNavButtons({
   canContinue,
   showBack,
   continueLabel,
+  continueDataAnalyticsId,
 }: OnboardingNavButtonsProps) {
   return (
     <div className="p-4 border-t border-[#D7DEE1] bg-white rounded-b-2xl">
@@ -36,6 +38,7 @@ export function OnboardingNavButtons({
           <button
             onClick={onContinue}
             disabled={!canContinue}
+            data-analytics-id={continueDataAnalyticsId}
             className={`px-8 py-3 rounded-full bg-[#2367EE] text-white font-bold text-base transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 ${
               canContinue
                 ? 'hover:bg-[#1b56cc] cursor-pointer'
