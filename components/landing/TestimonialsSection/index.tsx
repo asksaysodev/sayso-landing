@@ -13,7 +13,7 @@ const testimonial = {
   videoId: VIDEO_ID,
   stat: {
     value: '12×',
-    label: 'more efficient at turning live conversations into booked appointments',
+    label: 'more efficient at booking appointments from his calls',
   },
   quote:
     'The prompts were really helping me out, giving me more direction toward booking the appointment. I felt more confident about where I was going with the conversation, and I was just coming up with a solution to give the prospect for the next question.',
@@ -56,11 +56,11 @@ export function TestimonialsSection() {
               <div className="hidden md:block h-14 w-0.5 bg-[#2367EE]/25 flex-shrink-0" />
 
               {/* Stat */}
-              <div className="flex items-center gap-3 md:gap-4 flex-shrink-0">
-                <p className="font-comic text-4xl md:text-5xl leading-none text-[#2367EE] tracking-wide">
+              <div className="flex items-center gap-3 md:gap-4 flex-shrink-0 text-[#2367EE]">
+                <p className="font-comic text-4xl md:text-5xl leading-none tracking-wide">
                   {testimonial.stat.value}
                 </p>
-                <p className="text-xs md:text-sm text-[#1D4871]/80 leading-tight max-w-[22ch]">
+                <p className="text-xs md:text-sm font-semibold leading-tight max-w-[22ch]">
                   {testimonial.stat.label}
                 </p>
               </div>
