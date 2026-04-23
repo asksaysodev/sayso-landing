@@ -8,10 +8,13 @@ const THUMBNAIL = `https://i.ytimg.com/vi/${VIDEO_ID}/oar2.jpg`;
 const testimonial = {
   number: 1,
   name: 'Alejandro Barrera',
-  description: 'More booked appointments and more confidence on live calls',
   attribution: 'Anderson Real Estate Group, eXp Long Beach',
   badge: 'Top 250 eXp team',
   videoId: VIDEO_ID,
+  stat: {
+    value: '12×',
+    label: 'more efficient at turning live conversations into booked appointments',
+  },
   quote:
     'The prompts were really helping me out, giving me more direction toward booking the appointment. I felt more confident about where I was going with the conversation, and I was just coming up with a solution to give the prospect for the next question.',
 };
@@ -36,14 +39,32 @@ export function TestimonialsSection() {
         {/* Unified testimonial group */}
         <div className="max-w-4xl mx-auto">
           {/* Single wide label bar spanning both cards */}
-          <div className="mb-4 md:mb-5 rounded-lg bg-[#2367EE]/10 border-2 border-[#2367EE]/25 px-5 py-3.5 md:px-6 md:py-4">
-            <p className="text-xs md:text-sm font-bold text-[#2367EE] mb-1">
-              Testimonial #{testimonial.number}
-            </p>
-            <p className="text-sm md:text-base text-[#1D4871] leading-snug">
-              <span className="font-bold">{testimonial.name}</span>
-              <span className="text-[#1D4871]/60"> - {testimonial.description}</span>
-            </p>
+          <div className="mb-4 md:mb-5 rounded-lg bg-[#2367EE]/10 border-2 border-[#2367EE]/25 px-5 py-4 md:px-6 md:py-5">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+              {/* Identity */}
+              <div className="flex-1 min-w-0">
+                <p className="text-xs md:text-sm font-bold text-[#2367EE] mb-1">
+                  Testimonial #{testimonial.number}
+                </p>
+                <p className="text-sm md:text-base text-[#1D4871] leading-snug">
+                  <span className="font-bold">{testimonial.name}</span>
+                  <span className="text-[#1D4871]/60"> - {testimonial.attribution}</span>
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="hidden md:block h-14 w-0.5 bg-[#2367EE]/25 flex-shrink-0" />
+
+              {/* Stat */}
+              <div className="flex items-center gap-3 md:gap-4 flex-shrink-0">
+                <p className="font-comic text-4xl md:text-5xl leading-none text-[#2367EE] tracking-wide">
+                  {testimonial.stat.value}
+                </p>
+                <p className="text-xs md:text-sm text-[#1D4871]/80 leading-tight max-w-[22ch]">
+                  {testimonial.stat.label}
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Video + quote grid */}
