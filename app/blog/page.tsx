@@ -9,6 +9,9 @@ import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 
+// Revalidate hourly so scheduled posts appear on production within an hour of their publishedAt date.
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: 'Blog | Sayso',
   description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',

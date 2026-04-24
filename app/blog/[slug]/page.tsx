@@ -15,6 +15,9 @@ import { BlogClusterPosts } from '@/components/blog/BlogClusterPosts';
 // Do not re-add BlogTableOfContents or BlogClusterNav sidebar here.
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
 
+// Revalidate hourly so scheduled posts appear on production within an hour of their publishedAt date.
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }

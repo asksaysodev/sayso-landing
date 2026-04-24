@@ -1,25 +1,12 @@
 # Blog Content Guide
 
-How to write, format, and publish blog posts for the Sayso website.
-
----
-
-## Workflow: Google Doc → Live Blog Post
-
-```
-1. Write article in Google Docs
-2. File → Download → Markdown (.md)
-3. Drop the .md file into  content/blog/drafts/
-4. Open Claude Code, type:  /blog-convert
-5. Claude reads, formats, and creates the .mdx file in content/blog/
-6. Review the output, commit, and open a PR
-```
+Formatting and content standards for Sayso blog posts. For the full publishing workflow (how to write, review, and schedule posts), see [../reference/blog-publishing-plan.md](../reference/blog-publishing-plan.md).
 
 ---
 
 ## Frontmatter Reference
 
-Every blog post starts with a YAML frontmatter block. Claude fills this in automatically via `/blog-convert`, but here's the full schema for reference:
+Every blog post starts with a YAML frontmatter block. Here is the full schema for reference:
 
 ```yaml
 ---
@@ -114,28 +101,12 @@ Tables on this site render with a dark blue header row and bordered cells. To en
 
 ---
 
-## Metadata at the Bottom of Google Docs
-
-If your Google Doc has a metadata section at the bottom (common pattern), it may look like:
-
-```
-Meta title: MaverickRE Alternatives: 7 Better Options
-Meta description: Looking for MaverickRE alternatives...
-Category: ai-tools
-Tags: maverick re, real estate coaching, AI tools
-```
-
-The `/blog-convert` skill will detect this and use it to fill in the frontmatter automatically. You do not need to remove it before dropping the file in `content/blog/drafts/` - the skill removes it from the body and puts it in the right place.
-
----
-
 ## Checklist Before Committing
 
 - [ ] Frontmatter is complete (all required fields filled)
 - [ ] No `# H1` heading in the body (title comes from frontmatter)
 - [ ] All tables use pipe format with header + separator rows
-- [ ] All links use `[text](url)` format - no bare URLs
-- [ ] Metadata section removed from body (moved to frontmatter)
+- [ ] All links use `[text](url)` format, no bare URLs
 - [ ] Only one post has `featured: true` across all posts
-- [ ] File is saved as `.mdx` in `content/blog/` (not `drafts/`)
-- [ ] Draft `.md` file deleted from `content/blog/drafts/`
+- [ ] File is saved as `.mdx` in `content/blog/`
+- [ ] `publishedAt` reflects the intended publish date (or a placeholder far-future date if the post is in review, see the publishing plan for details)

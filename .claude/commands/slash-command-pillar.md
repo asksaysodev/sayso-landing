@@ -3,19 +3,48 @@
 **Usage:** `/pillar "[target keyword]"`
 **Example:** `/pillar "real estate cold call scripts"`
 
-When this command is invoked, follow the two-phase process below. **Phase 1** researches the competitive landscape. **Phase 2** writes the post using that research. The final output must be a single `.mdx` file with YAML frontmatter + markdown body that can be dropped directly into `content/blog/` with zero manual reformatting.
+When this command is invoked, follow the two-phase process below. **Phase 1** reads the Ultimate Script Book for authentic language and frameworks, then researches the competitive landscape. **Phase 2** writes the post using that research. The final output must be a single `.mdx` file with YAML frontmatter + markdown body that can be dropped directly into `content/blog/` with zero manual reformatting.
 
 ---
 
-## PHASE 1: COMPETITIVE RESEARCH (Do This First)
+## PHASE 1: RESEARCH (Do This First)
 
-Before writing a single word, research the target keyword. Use the WebSearch and WebFetch tools to complete the following steps:
+Before writing a single word, complete the Script Book read AND the competitive research. Use the Read, Grep, WebSearch, and WebFetch tools to complete the steps below.
 
-### Step 1: Search the Target Keyword
+### Step 1: Read the Ultimate Script Book
+
+The Ultimate Script Book (`docs/content/Ultimate Script Book (1).md`) contains real-world call scripts, follow-up cadences, and prospect psychology developed by Sayso's top-performing agents. It is the primary source for voice, language, and framework authenticity across all pillar posts. Read it FIRST, before any web research.
+
+A companion doc, `docs/content/5 Appointment Seeds.md`, covers the appointment-seeds framework (clarity, visual, timeline, problem-solving, and future seeds) that makes prospects ask to meet. Read it for any pillar in the `appointment-setting`, `conversation-skills`, or `follow-up` clusters.
+
+**What to extract:**
+- **Exact language and scripts** that agents use on live calls (informs your `<ScriptExample>` blocks)
+- **Named frameworks** (10 Days of Pain, LPMAMA, Three Layers of Motivation, etc.) that should appear as H2 or H3 sections where applicable
+- **Prospect psychology insights** that explain why prospects behave a certain way (feeds into opening paragraphs and CalloutBoxes)
+- **Common mistakes or anti-patterns** (e.g., "sending homes weakens your position") to include as cautions
+- **Mentality principles** (Book the Meeting, Don't Default to Sending Homes, Keep the Calls Moving, Motivation Is Everything) that should shape the post's worldview
+
+**Cluster-level Script Book Mapping:**
+
+Use this table to locate the most relevant sections based on the pillar's cluster. Always also read the MENTALITY section (lines 27-230), which applies to every cluster.
+
+| Cluster | Primary Script Book Sections | Coverage |
+|---|---|---|
+| `cold-calling` | "Buyer Openers" (line 730), "Buyer Pond" (line 734), full call-script library by lead source (lines 793-1622), "Lead Temperatures" (line 676) | Strong |
+| `appointment-setting` | "Book the Meeting" (line 29), "Urgency Creates Action" (line 181), "The Commitment Standard" (line 192), "Keep the Calls Moving" (line 222), LPMAMA Appointment (line 575), "Confirm Listing Appt" (line 1575). ALSO read `docs/content/5 Appointment Seeds.md` in full. | Strong |
+| `conversation-skills` | Full LPMAMA section (lines 516-630), "Three Layers of Motivation" (line 96), "Motivation FIRST" (line 631), "Don't Default to Sending Homes" (line 46), "Lead Temperatures" (line 676) | Strong |
+| `follow-up` | "10 Days of Pain" framework + examples (lines 233-514), "O.H. 10 Days of Pain" (line 1739), "Lead Temperatures" (line 676), "Keep the Calls Moving" (line 222) | Strong |
+
+**Rules:**
+- Every pillar must draw at least 2 direct elements from the Script Book (a named framework, a scripted example language pattern, or a psychology insight). These are what makes the post authentically "Sayso" instead of AI-generic.
+- The Script Book shapes voice and authority. Competitor research shapes structure and SEO coverage. Do not flip these roles.
+- Do not copy Script Book language verbatim into the post. Paraphrase, adapt to the keyword's framing, and expand where it helps the reader.
+
+### Step 2: Search the Target Keyword
 - Run a web search for the exact target keyword (e.g., `real estate cold call scripts`)
 - Run a second search appending "2025" or "2026" to catch recent content
 
-### Step 2: Analyze the Top 5 Ranking Pages
+### Step 3: Analyze the Top 5 Ranking Pages
 - Fetch and read the top 5 organic results (skip ads, forums, and YouTube)
 - For each page, extract:
   - **Title and H1**
@@ -25,12 +54,12 @@ Before writing a single word, research the target keyword. Use the WebSearch and
   - **Unique angles or insights** they offer
   - **Word count estimate** (short/medium/long)
 
-### Step 3: Identify "People Also Ask" and Related Searches
+### Step 4: Identify "People Also Ask" and Related Searches
 - From the search results, note any "People Also Ask" questions Google surfaces
 - Note related search suggestions at the bottom of results
 - These feed directly into the FAQ section and may reveal H2 topics competitors miss
 
-### Step 4: Build a Competitive Brief
+### Step 5: Build a Competitive Brief
 After researching, compile a brief (for your own reference - do NOT include this in the final output) with:
 
 1. **Common topics every competitor covers** - these are table stakes; the post must cover them too
@@ -46,6 +75,7 @@ After researching, compile a brief (for your own reference - do NOT include this
 - If a competitor page is behind a paywall or fails to load, skip it and move to the next result
 - Focus on extracting structure and angles, not copying content
 - The goal is to understand what exists so the post can be **genuinely different and more useful**
+- The Script Book is the voice. Competitor research is the structure. If Script Book language conflicts with what competitors do, trust the Script Book
 
 ---
 
@@ -311,6 +341,8 @@ Your job is the content, the heading structure, the internal links within the pr
 
 Before finalizing, verify:
 
+- [ ] Ultimate Script Book was read and relevant cluster sections were identified
+- [ ] At least 2 direct elements from the Script Book (named framework, script language, or psychology insight) appear in the post
 - [ ] Competitive research was completed (top 5 pages analyzed, PAA questions collected)
 - [ ] At least 1 content gap from research is addressed in the post
 - [ ] FAQ includes at least 2 questions sourced from PAA or related searches

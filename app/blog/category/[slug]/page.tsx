@@ -9,6 +9,9 @@ interface CategoryPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Revalidate hourly so scheduled posts appear on production within an hour of their publishedAt date.
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   return getCategories().map((cat) => ({ slug: cat.slug }));
 }
