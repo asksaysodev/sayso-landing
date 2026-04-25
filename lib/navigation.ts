@@ -114,7 +114,8 @@ export const footerNav: NavSection[] = [
       { label: 'About', href: '/about' },
       { label: 'Security', href: '/security' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Help', href: 'mailto:support@asksayso.com', external: true, dataAnalyticsId: 'contact-email' },
+      { label: 'Help Center', href: 'https://alert-tartan-008.notion.site/Sayso-Help-Center-34c4de40046881b4a4f5d48299b4d784', external: true, dataAnalyticsId: 'help-center' },
+      { label: 'Email Support', href: 'mailto:support@asksayso.com', external: true, dataAnalyticsId: 'contact-email' },
     ],
   },
   {
