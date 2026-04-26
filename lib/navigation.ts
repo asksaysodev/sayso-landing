@@ -73,6 +73,11 @@ export const headerNav: NavSection[] = [
     href: '/about',
     links: [],
   },
+  {
+    label: 'Log In',
+    href: 'https://app.asksayso.com/login',
+    links: [],
+  },
 ];
 
 // ---------------------------------------------------------------------------
