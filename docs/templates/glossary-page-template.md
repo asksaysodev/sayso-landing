@@ -51,7 +51,7 @@ Glossary pages sit at the **top of the funnel**. The visitor is searching for th
 - A hub for internal linking - connecting definitions to deeper content across the site
 
 **A glossary page is NOT:**
-- A product page (that is a `/features/` page)
+- A product page (that is a `/products/` page)
 - A how-to guide (that is a blog post)
 - An objection-handling script (that is an `/objections/` page)
 - A competitor comparison (that is a `/compare/` page)
@@ -273,7 +273,7 @@ export interface GlossaryEntry {
 | `deeperLink` | 0-1 item | Link to a related blog post. Only set if the post exists. |
 | `faq` | 3-4 items | First Q = H1 variation. One "how to" Q required. Answers 2-3 sentences. |
 | `heroImage` | 0-1 item | Image src + keyword-rich alt text. Optional but recommended for SEO. |
-| `relatedFeature` | 0-1 item | Link to a related feature page (e.g., `/features/cue`). |
+| `relatedFeature` | 0-1 item | Link to a related feature page (e.g., `/products/cue`). |
 | `relatedPersona` | 0-1 item | Link to a related persona page (e.g., `/for/solo-agents`). |
 
 ---
@@ -460,7 +460,7 @@ export const yourTerm: GlossaryEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/cue',
+    href: '/products/cue',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

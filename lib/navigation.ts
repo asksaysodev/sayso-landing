@@ -28,12 +28,12 @@ export const headerNav: NavSection[] = [
   },
   {
     label: 'Products',
-    href: '/features',
+    href: '/products',
     links: [
-      { label: 'Cue', href: '/features/cue', subtitle: 'Real time context based coaching' },
-      { label: 'Smart Capture', href: '/features/smart-capture', subtitle: 'Structured call notes' },
-      { label: 'Pulse', href: '/features/pulse', subtitle: 'Live market analysis mid-call' },
-      { label: 'Playbook', href: '/features/playbook', subtitle: 'Custom scripts for every scenario' },
+      { label: 'Cue', href: '/products/cue', subtitle: 'Real time context based coaching' },
+      { label: 'Smart Capture', href: '/products/smart-capture', subtitle: 'Structured call notes' },
+      { label: 'Pulse', href: '/products/pulse', subtitle: 'Live market analysis mid-call' },
+      { label: 'Playbook', href: '/products/playbook', subtitle: 'Custom scripts for every scenario' },
       // { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' }, // TODO: re-enable when feedback page is ready
       { label: 'Pricing', href: '/pricing' },
     ],
@@ -83,10 +83,10 @@ export const footerNav: NavSection[] = [
   {
     label: 'Products',
     links: [
-      { label: 'Cue', href: '/features/cue' },
-      { label: 'Smart Capture', href: '/features/smart-capture' },
-      { label: 'Pulse', href: '/features/pulse' },
-      { label: 'Playbook', href: '/features/playbook' },
+      { label: 'Cue', href: '/products/cue' },
+      { label: 'Smart Capture', href: '/products/smart-capture' },
+      { label: 'Pulse', href: '/products/pulse' },
+      { label: 'Playbook', href: '/products/playbook' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },

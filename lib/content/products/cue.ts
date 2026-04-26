@@ -1,6 +1,6 @@
-import type { FeatureEntry } from './types';
+import type { ProductEntry } from './types';
 
-export const cue: FeatureEntry = {
+export const cue: ProductEntry = {
   slug: 'cue',
   keyword: 'real-time sales help for real estate agents',
   seoTitle: 'Real-Time Sales Help for Real Estate Agents',
@@ -106,7 +106,7 @@ export const cue: FeatureEntry = {
         'Sayso offers flexible plans for solo agents and teams. Visit the pricing page for current plans, or book a demo to see real-time sales help in action before you commit.',
     },
   ],
-  relatedFeatures: [
+  relatedProducts: [
     { title: 'Smart Capture', slug: 'smart-capture' },
     { title: 'Live Market Analysis', slug: 'pulse' },
   ],

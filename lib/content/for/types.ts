@@ -23,7 +23,7 @@ export interface UseCaseEntry {
   getStarted?: string;
   howSaysoWorks: { feature: string; description: string; href?: string }[];
   faq: { question: string; answer: string }[];
-  relatedFeatures: { title: string; href: string }[];
+  relatedProducts: { title: string; href: string }[];
   relatedBlogPosts: { title: string; href: string }[];
   /** Links to relevant objection pages. */
   relatedObjections?: { title: string; href: string }[];

@@ -1,10 +1,10 @@
 import type { HubPageConfig } from './types';
 import { registerHub } from './index';
 
-const featuresHub: HubPageConfig = {
-  slug: 'features',
+const productsHub: HubPageConfig = {
+  slug: 'products',
   section: 'Products',
-  basePath: '/features',
+  basePath: '/products',
   seoTitle: 'Sayso Products: Real-Time Coaching for Agents',
   seoDescription:
     'Explore the Sayso products: real-time coaching, automatic call notes, live market data, and custom scripts for real estate agents.',
@@ -62,6 +62,6 @@ const featuresHub: HubPageConfig = {
   // }, // TODO: re-enable when feedback page is ready
 };
 
-registerHub(featuresHub);
+registerHub(productsHub);
 
-export { featuresHub };
+export { productsHub };

@@ -81,6 +81,6 @@ export const callMeLater: ObjectionEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/cue',
+    href: '/products/cue',
   },
 };

@@ -82,6 +82,6 @@ export const priceTooHigh: ObjectionEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Market Data',
-    href: '/features/pulse',
+    href: '/products/pulse',
   },
 };

@@ -40,25 +40,25 @@ export const isas: UseCaseEntry = {
       feature: 'Real-Time Conversion Prompts',
       description:
         'See the right response on screen the moment a prospect pushes back. Sayso generates prompts based on what the lead just said, so your reply is relevant and sharp on every call, not just the first ten.',
-      href: '/features/cue',
+      href: '/products/cue',
     },
     {
       feature: 'Custom Scripts on Screen',
       description:
         'Load your team\'s ISA scripts into Sayso and see them during every call. No memorization, no script binders, no losing your place mid-conversation. Your material stays in front of you from the first dial to the last.',
-      href: '/features/playbook',
+      href: '/products/playbook',
     },
     {
       feature: 'Automatic Handoff Notes',
       description:
         'Sayso captures structured notes during every conversation and formats them for the agent receiving the appointment. Clean handoffs with full context, every time, without slowing your pace.',
-      href: '/features/smart-capture',
+      href: '/products/smart-capture',
     },
     {
       feature: 'Consistent Quality Across Every Dial',
       description:
         'Whether it is call number 5 or call number 105, Sayso keeps your responses sharp. Real-time coaching offloads the cognitive load that causes conversion rates to drop as the day goes on.',
-      href: '/features/cue',
+      href: '/products/cue',
     },
   ],
   faq: [
@@ -88,10 +88,10 @@ export const isas: UseCaseEntry = {
         'Sayso offers team plans built for organizations with ISAs. Visit the pricing page for current plans, or book a demo to see how real-time coaching works across a high-volume calling team.',
     },
   ],
-  relatedFeatures: [
-    { title: 'Real-Time Coaching', href: '/features/cue' },
-    { title: 'Custom Scripts', href: '/features/playbook' },
-    { title: 'Call Notes', href: '/features/smart-capture' },
+  relatedProducts: [
+    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Custom Scripts', href: '/products/playbook' },
+    { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
     { title: 'Real Estate Appointment Setting Script (Plus the Close Most Agents Never Try)', href: '/blog/appointment-setting-script' },

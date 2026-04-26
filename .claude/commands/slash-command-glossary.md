@@ -51,10 +51,10 @@ Before writing a single word, complete the research steps below.
 Scan `docs/architecture/site-architecture.md` and identify which of the following pages are marked as DONE:
 
 **Feature pages** (for `relatedFeature`):
-- `/features/cue/` - live on-screen coaching during calls
-- `/features/smart-capture/` - automatic call summaries synced to CRM
-- `/features/playbook/` - custom scripts and strategies
-- `/features/pulse/` - real-time market data during calls
+- `/products/cue/` - live on-screen coaching during calls
+- `/products/smart-capture/` - automatic call summaries synced to CRM
+- `/products/playbook/` - custom scripts and strategies
+- `/products/pulse/` - real-time market data during calls
 
 **Persona pages** (for `relatedPersona`):
 - `/for/solo-agents/`
@@ -111,10 +111,10 @@ Using the competitive brief from Phase 1, write the complete glossary entry foll
 **Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
 **Key features (for linking in `howSaysoHelps`):**
-- **Real-Time Coaching** (`/features/cue/`) - live on-screen prompts during calls
-- **Call Notes** (`/features/smart-capture/`) - automatic call summaries synced to CRM
-- **Playbook** (`/features/playbook/`) - custom scripts and strategies
-- **Pulse** (`/features/pulse/`) - real-time market data during calls
+- **Real-Time Coaching** (`/products/cue/`) - live on-screen prompts during calls
+- **Call Notes** (`/products/smart-capture/`) - automatic call summaries synced to CRM
+- **Playbook** (`/products/playbook/`) - custom scripts and strategies
+- **Pulse** (`/products/pulse/`) - real-time market data during calls
 
 **Target audience:** Real estate agents (solo and team), ISAs, team leaders, and brokerage managers in the US. They make 20-100+ calls per day. Practical, time-pressed, skeptical of tools that don't immediately help them book more appointments.
 
@@ -204,11 +204,11 @@ export const camelCaseName: GlossaryEntry = {
 
 **`heroImage`**: Omit for now. No images are available for glossary pages yet.
 
-**`relatedFeature`**: Link to the most relevant DONE feature page. Format: `{ title: 'Feature Name', href: '/features/feature-slug' }`. Choose based on relevance:
-- Call-related terms -> `/features/cue/`
-- Notes/CRM terms -> `/features/smart-capture/`
-- Script-related terms -> `/features/playbook/`
-- Market data terms -> `/features/pulse/`
+**`relatedFeature`**: Link to the most relevant DONE feature page. Format: `{ title: 'Feature Name', href: '/products/feature-slug' }`. Choose based on relevance:
+- Call-related terms -> `/products/cue/`
+- Notes/CRM terms -> `/products/smart-capture/`
+- Script-related terms -> `/products/playbook/`
+- Market data terms -> `/products/pulse/`
 
 **`relatedPersona`**: Link to a relevant DONE persona page. Currently only `/for/solo-agents/` is built. Format: `{ title: 'Sayso for Solo Agents', href: '/for/solo-agents' }`. If not relevant, omit this field.
 

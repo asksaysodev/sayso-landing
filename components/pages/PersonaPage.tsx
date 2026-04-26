@@ -155,7 +155,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
           Related Features
         </h2>
         <ul className="space-y-2 mb-6">
-          {entry.relatedFeatures.map((feature) => (
+          {entry.relatedProducts.map((feature) => (
             <li key={feature.href}>
               <Link
                 href={feature.href}

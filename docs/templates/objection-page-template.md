@@ -50,7 +50,7 @@ Objection pages sit at the **top-to-mid funnel**. The visitor is searching for h
 - Structured around 3 response frameworks at different confidence levels (safe, stronger, advanced)
 
 **An objection page is NOT:**
-- A product page (that is a `/features/` page)
+- A product page (that is a `/products/` page)
 - A general how-to guide (that is a blog post)
 - A definition page (that is a `/glossary/` page)
 - A competitor comparison (that is a `/compare/` page)

@@ -80,6 +80,6 @@ export const badExperienceWithAgents: ObjectionEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/cue',
+    href: '/products/cue',
   },
 };

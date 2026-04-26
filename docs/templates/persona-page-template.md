@@ -53,7 +53,7 @@ Persona pages are **mid-funnel**. The visitor knows they have a problem (efficie
 - A **micro keyword page** - combining persona + pain point for low-competition, high-relevance searches
 
 **A persona page is NOT:**
-- A product brochure (that is a `/features/` page)
+- A product brochure (that is a `/products/` page)
 - A competitor comparison (that is a `/compare/` page)
 - A tutorial or how-to guide (that is a blog post)
 - An ad landing page (that is `/broker`, `/agent`, etc. - see `persona-ad-page-template.md`)
@@ -134,7 +134,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 ### How Sayso Works Cards
 
 - Pick the 3-4 features most relevant to THIS persona - not a full feature dump.
-- Each card should have a link (`href`) to the relevant `/features/` page.
+- Each card should have a link (`href`) to the relevant `/products/` page.
 - Card titles render as `<h3>` tags with optional links.
 
 ### Get Started Section
@@ -207,7 +207,7 @@ The `PersonaPage.tsx` component renders sections in this exact order:
 ### 9. How Sayso Works for [Persona]
 - **H2:** "How Sayso Works for [Persona Name]"
 - 3-4 feature cards in a 2-column grid.
-- Each card: `<h3>` title (optionally linked to `/features/` page) + `<p>` description.
+- Each card: `<h3>` title (optionally linked to `/products/` page) + `<p>` description.
 - Pick features most relevant to this persona, not a full feature list.
 
 ### 10. Get Started
@@ -264,7 +264,7 @@ export interface UseCaseEntry {
   getStarted?: string;            // Closing text before FAQ. Rendered with demo button + pricing link.
   howSaysoWorks: { feature: string; description: string; href?: string }[];  // 3-4 feature cards
   faq: { question: string; answer: string }[];   // 4-5 Q&A pairs
-  relatedFeatures: { title: string; href: string }[];   // 2-3 feature page links
+  relatedProducts: { title: string; href: string }[];   // 2-3 feature page links
   relatedBlogPosts: { title: string; href: string }[];  // 1-2 blog post links
   relatedObjections?: { title: string; href: string }[]; // Objection page links
   ogImage?: string;               // Custom OG image (defaults to /og-default.png)
@@ -289,9 +289,9 @@ export interface UseCaseEntry {
 | `betterApproachHeading` | - | Include keyword variation. e.g., `A Better Approach to Sales Conversations` |
 | `betterApproach` | 3-4 strings | Para 1 = concept. Para 2 = Sayso + keyword. Para 3 = specific scenario. Para 4 = after-call benefit. |
 | `getStarted` | - | 2-3 sentences. Reference demo and pricing. Always populate this. |
-| `howSaysoWorks` | 3-4 items | Feature title (`<h3>`) + description + optional `href` to `/features/` page. Pick features relevant to THIS persona. |
+| `howSaysoWorks` | 3-4 items | Feature title (`<h3>`) + description + optional `href` to `/products/` page. Pick features relevant to THIS persona. |
 | `faq` | 4-5 items | Must include pricing Q. At least one Q should contain the target keyword. |
-| `relatedFeatures` | 2-3 items | Link to the most relevant feature pages for this persona. |
+| `relatedProducts` | 2-3 items | Link to the most relevant feature pages for this persona. |
 | `relatedBlogPosts` | 1-2 items | Link to blog posts relevant to this persona's pain points. |
 | `relatedObjections` | 1-2 items | Link to objection pages this persona commonly encounters. |
 
@@ -306,7 +306,7 @@ Every persona page must include **5-8 internal links**. The component handles mo
 | `/for/` hub | Breadcrumb + "See all solutions" in Related Features | Yes (automatic) |
 | `/demo/` | Inline CTA + "Get Started" section + closing CTA | Yes (automatic) |
 | `/pricing/` | "View Pricing" link in "Get Started" section | Yes (automatic) |
-| 2-3 feature pages | `relatedFeatures` array + `howSaysoWorks[].href` | Yes (content file) |
+| 2-3 feature pages | `relatedProducts` array + `howSaysoWorks[].href` | Yes (content file) |
 | 1-2 blog posts | `relatedBlogPosts` array | Yes (content file) |
 | 1+ objection pages | `relatedObjections` array | Yes if relevant (content file) |
 | `/` (homepage) | Breadcrumb | Yes (automatic) |
@@ -426,7 +426,7 @@ Use this before submitting any new persona page:
 - [ ] "The Real Problem" is 2-3 paragraphs
 - [ ] "What They Try" is 3-4 paragraphs
 - [ ] "A Better Approach" is 3-4 paragraphs with persona-specific scenarios
-- [ ] 3-4 feature cards with `href` links to `/features/` pages
+- [ ] 3-4 feature cards with `href` links to `/products/` pages
 - [ ] "Get Started" section is populated
 - [ ] 4-5 FAQ items including pricing/getting-started
 - [ ] `relatedObjections` populated if persona's challenge involves phone calls
@@ -482,7 +482,7 @@ If your persona is not already listed in `lib/content/hubs/for.ts`, add it to th
 
 ### Step 5: Cross-link from other pages
 
-- Add the new persona to `personaLinks` on relevant feature pages (`lib/content/features/*.ts`)
+- Add the new persona to `personaLinks` on relevant feature pages (`lib/content/products/*.ts`)
 - If other persona pages reference this one, update their content too
 
 ### Step 6: Verify

@@ -25,13 +25,13 @@ const ProductShowcasePlaybookDesktop = dynamic(
   { ssr: false }
 );
 import { generateSoftwareAppJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
-import type { FeatureEntry } from '@/lib/content/features/types';
+import type { ProductEntry } from '@/lib/content/products/types';
 
-interface FeaturePageProps {
-  entry: FeatureEntry;
+interface ProductPageProps {
+  entry: ProductEntry;
 }
 
-export function FeaturePage({ entry }: FeaturePageProps) {
+export function ProductPage({ entry }: ProductPageProps) {
 
   const softwareJsonLd = generateSoftwareAppJsonLd({
     featureList: entry.featureList,
@@ -39,8 +39,8 @@ export function FeaturePage({ entry }: FeaturePageProps) {
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: 'Home', url: '/' },
-    { name: 'Products', url: '/features' },
-    { name: entry.h1, url: `/features/${entry.slug}` },
+    { name: 'Products', url: '/products' },
+    { name: entry.h1, url: `/products/${entry.slug}` },
   ]);
 
   return (
@@ -57,7 +57,7 @@ export function FeaturePage({ entry }: FeaturePageProps) {
       <Breadcrumb
         items={[
           { label: 'Home', href: '/' },
-          { label: 'Products', href: '/features' },
+          { label: 'Products', href: '/products' },
           { label: entry.h1 },
         ]}
       />
@@ -200,28 +200,28 @@ export function FeaturePage({ entry }: FeaturePageProps) {
         </section>
       )}
 
-      {/* Related Features */}
+      {/* Related Products */}
       <section className="max-w-[800px] mx-auto px-6 pb-6">
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-6 mb-4">
-          Related Features
+          Related Products
         </h2>
         <ul className="space-y-2">
-          {entry.relatedFeatures.map((feature) => (
-            <li key={feature.slug}>
+          {entry.relatedProducts.map((product) => (
+            <li key={product.slug}>
               <Link
-                href={`/features/${feature.slug}`}
+                href={`/products/${product.slug}`}
                 className="text-[#2367EE] hover:underline font-bold font-sans"
               >
-                {feature.title}
+                {product.title}
               </Link>
             </li>
           ))}
           <li>
             <Link
-              href="/features"
+              href="/products"
               className="text-[#2367EE] hover:underline font-sans"
             >
-              See all features →
+              See all products →
             </Link>
           </li>
         </ul>

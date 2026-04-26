@@ -71,7 +71,7 @@ function buildKnownRoutes(): Set<string> {
   const sections: { dir: string; prefix: string }[] = [
     { dir: 'glossary', prefix: '/glossary' },
     { dir: 'objections', prefix: '/objections' },
-    { dir: 'features', prefix: '/features' },
+    { dir: 'products', prefix: '/products' },
     { dir: 'integrations', prefix: '/integrations' },
     { dir: 'for', prefix: '/for' },
     { dir: 'comparisons', prefix: '/compare' },
