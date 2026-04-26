@@ -39,7 +39,7 @@ export function FeaturePage({ entry }: FeaturePageProps) {
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: 'Home', url: '/' },
-    { name: 'Features', url: '/features' },
+    { name: 'Products', url: '/features' },
     { name: entry.h1, url: `/features/${entry.slug}` },
   ]);
 
@@ -57,7 +57,7 @@ export function FeaturePage({ entry }: FeaturePageProps) {
       <Breadcrumb
         items={[
           { label: 'Home', href: '/' },
-          { label: 'Features', href: '/features' },
+          { label: 'Products', href: '/features' },
           { label: entry.h1 },
         ]}
       />

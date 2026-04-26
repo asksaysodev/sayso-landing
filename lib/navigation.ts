@@ -27,7 +27,7 @@ export const headerNav: NavSection[] = [
     links: [],
   },
   {
-    label: 'Features',
+    label: 'Products',
     href: '/features',
     links: [
       { label: 'Cue', href: '/features/cue', subtitle: 'Real time context based coaching' },
@@ -81,7 +81,7 @@ export const headerNav: NavSection[] = [
 
 export const footerNav: NavSection[] = [
   {
-    label: 'Features',
+    label: 'Products',
     links: [
       { label: 'Cue', href: '/features/cue' },
       { label: 'Smart Capture', href: '/features/smart-capture' },
