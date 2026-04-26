@@ -135,7 +135,7 @@ export function PricingSection() {
     {
       title: 'Coming Soon',
       price: '',
-      description: 'Secure your account now to include future developments and new features up to 50% off!',
+      description: 'Secure your account now to include future developments, new products, and new features up to 50% off!',
       bullets: [
         'Home value and market analysis live during calls',
         'Smart Capture: automated conversation note-taking to popular frameworks directly in your CRM in real time',
