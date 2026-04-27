@@ -114,7 +114,8 @@ export const footerNav: NavSection[] = [
       { label: 'About', href: '/about' },
       { label: 'Security', href: '/security' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Help', href: 'mailto:support@asksayso.com', external: true, dataAnalyticsId: 'contact-email' },
+      { label: 'Help Center', href: 'https://asksayso.notion.site/helpcenter', external: true, dataAnalyticsId: 'help-center' },
+      { label: 'Email Support', href: 'mailto:support@asksayso.com', external: true, dataAnalyticsId: 'contact-email' },
     ],
   },
   {
