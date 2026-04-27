@@ -97,6 +97,7 @@ export default function SaysoNavbar() {
             {/* Desktop CTA Button */}
             <a
               href="#get-started"
+              data-analytics-id="cta-get-started-navbar"
               className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-cta text-white font-medium text-sm md:text-base hover:bg-[#1e5ad8] active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cta focus:ring-offset-2 shadow-sm hover:shadow-md hover:-translate-y-[1px]"
             >
               Get Started
@@ -170,6 +171,7 @@ export default function SaysoNavbar() {
               <a
                 href="#get-started"
                 onClick={() => setIsMobileMenuOpen(false)}
+                data-analytics-id="cta-get-started-mobile-menu"
                 className="block w-full mt-3 px-4 py-3 rounded-full bg-cta text-white font-medium text-base text-center hover:bg-[#1e5ad8] active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cta focus:ring-offset-2"
               >
                 Get Started

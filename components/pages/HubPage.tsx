@@ -73,7 +73,7 @@ export function HubPage({ config }: HubPageProps) {
       {/* FAQ */}
       {config.faq && config.faq.length > 0 && <FAQ items={config.faq} />}
 
-      <ContentCTA />
+      <ContentCTA location="hub-page" />
     </>
   );
 }

@@ -121,6 +121,7 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
                 <iframe
                   src="https://subscribe-forms.beehiiv.com/e3c75a03-411f-498f-9cce-281b3845531e"
                   data-test-id="beehiiv-embed"
+                  data-analytics-id="form-newsletter-windows-waitlist"
                   scrolling="no"
                   style={{ width: '100%', maxWidth: '414px', height: '57px', border: 'none', backgroundColor: 'transparent' }}
                   title="Join Windows waitlist"

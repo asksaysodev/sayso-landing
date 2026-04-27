@@ -108,7 +108,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
           </table>
         </div>
 
-        <ContentInlineCTA />
+        <ContentInlineCTA location="comparison-page" />
 
         {/* Where Sayso Wins */}
         <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
@@ -225,7 +225,7 @@ export function ComparisonPage({ entry }: ComparisonPageProps) {
       {/* FAQ */}
       {entry.faq.length > 0 && <FAQ items={entry.faq} />}
 
-      <ContentCTA />
+      <ContentCTA location="comparison-page" />
     </>
   );
 }

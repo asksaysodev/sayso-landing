@@ -127,7 +127,7 @@ export function FeaturePage({ entry }: FeaturePageProps) {
 
       {/* Secondary CTA - after How It Works */}
       <div className="max-w-[800px] mx-auto px-6">
-        <ContentInlineCTA />
+        <ContentInlineCTA location="feature-page" />
       </div>
 
       {/* Who It's For */}
@@ -251,7 +251,7 @@ export function FeaturePage({ entry }: FeaturePageProps) {
       {/* FAQ */}
       {entry.faq.length > 0 && <FAQ items={entry.faq} />}
 
-      <ContentCTA />
+      <ContentCTA location="feature-page" />
     </>
   );
 }
