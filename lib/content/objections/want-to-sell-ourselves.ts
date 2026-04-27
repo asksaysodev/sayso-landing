@@ -81,6 +81,6 @@ export const wantToSellOurselves: ObjectionEntry = {
   },
   relatedFeature: {
     title: 'Custom Call Scripts',
-    href: '/features/playbook',
+    href: '/products/playbook',
   },
 };

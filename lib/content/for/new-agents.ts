@@ -40,25 +40,25 @@ export const newAgents: UseCaseEntry = {
       feature: 'Real-Time Objection Handling',
       description:
         'When a prospect pushes back, the right response appears on your screen instantly. You handle objections confidently from day one instead of freezing or defaulting to "Let me get back to you."',
-      href: '/features/cue',
+      href: '/products/cue',
     },
     {
       feature: 'On-Screen Scripts and Prompts',
       description:
         'See your scripts, talk tracks, and key questions on screen during every call. No memorization required. Follow along naturally and build the muscle memory over time.',
-      href: '/features/playbook',
+      href: '/products/playbook',
     },
     {
       feature: 'Automatic Call Notes',
       description:
         'Sayso captures structured notes during every conversation and syncs them to your CRM. Stop worrying about what to write down and focus on the person you are talking to.',
-      href: '/features/smart-capture',
+      href: '/products/smart-capture',
     },
     {
       feature: 'Live Market Data on Screen',
       description:
         'When a prospect asks about their neighborhood or market conditions, Sayso surfaces the relevant data in real time. Answer confidently without memorizing every zip code.',
-      href: '/features/pulse',
+      href: '/products/pulse',
     },
   ],
   faq: [
@@ -88,10 +88,10 @@ export const newAgents: UseCaseEntry = {
         'Sayso offers individual plans that work for new agents. Visit the pricing page for current plans, or book a demo to see real-time coaching in action before you commit.',
     },
   ],
-  relatedFeatures: [
-    { title: 'Real-Time Coaching', href: '/features/cue' },
-    { title: 'Custom Scripts', href: '/features/playbook' },
-    { title: 'Call Notes', href: '/features/smart-capture' },
+  relatedProducts: [
+    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Custom Scripts', href: '/products/playbook' },
+    { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
     { title: 'How to Start a Real Estate Call (Without Losing Them in 10 Seconds)', href: '/blog/how-to-start-a-real-estate-call' },

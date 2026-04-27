@@ -43,8 +43,8 @@ export const dripCampaign: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'Drip campaigns work best when they build on real conversations. Sayso\'s [Call Notes](/features/smart-capture/) automatically capture what was discussed on every call and sync it to your CRM, so your follow-up emails can reference specific details instead of sending generic templates.',
-    'When a lead re-engages after receiving your drip emails, Sayso\'s [Real-Time Coaching](/features/cue/) helps you pick up the conversation right where it left off. You see prompts based on the prospect\'s history, so you sound prepared instead of starting from scratch. [Book a demo](/demo/) to see how Sayso connects your calls to your follow-up.',
+    'Drip campaigns work best when they build on real conversations. Sayso\'s [Call Notes](/products/smart-capture/) automatically capture what was discussed on every call and sync it to your CRM, so your follow-up emails can reference specific details instead of sending generic templates.',
+    'When a lead re-engages after receiving your drip emails, Sayso\'s [Real-Time Coaching](/products/cue/) helps you pick up the conversation right where it left off. You see prompts based on the prospect\'s history, so you sound prepared instead of starting from scratch. [Book a demo](/demo/) to see how Sayso connects your calls to your follow-up.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -54,7 +54,7 @@ export const dripCampaign: GlossaryEntry = {
   ],
   relatedFeature: {
     title: 'Call Notes',
-    href: '/features/smart-capture',
+    href: '/products/smart-capture',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

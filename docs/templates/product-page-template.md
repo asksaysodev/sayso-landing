@@ -1,8 +1,8 @@
 # Feature Page Template
 
-This document is the complete reference for creating `/features/[slug]` pages. It covers SEO rules, content structure, the TypeScript data interface, internal linking requirements, and a step-by-step process for adding new feature pages at scale.
+This document is the complete reference for creating `/products/[slug]` pages. It covers SEO rules, content structure, the TypeScript data interface, internal linking requirements, and a step-by-step process for adding new feature pages at scale.
 
-**Reference implementation:** `lib/content/features/cue.ts`
+**Reference implementation:** `lib/content/products/cue.ts`
 
 ---
 
@@ -28,13 +28,13 @@ This document is the complete reference for creating `/features/[slug]` pages. I
 
 | File | Purpose |
 |------|---------|
-| `lib/content/features/types.ts` | `FeatureEntry` TypeScript interface - every content field |
-| `lib/content/features/index.ts` | Content loader - exports `getAllFeatureEntries()`, `getFeatureBySlug()`, `getAllFeatureSlugs()` |
-| `lib/content/features/*.ts` | Individual feature content files (one per feature) |
-| `components/pages/FeaturePage.tsx` | Shared page template component - renders all feature pages |
-| `app/(content)/features/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
-| `app/(content)/features/page.tsx` | Features hub listing page |
-| `lib/content/hubs/features.ts` | Hub page config - lists all child feature pages |
+| `lib/content/products/types.ts` | `ProductEntry` TypeScript interface - every content field |
+| `lib/content/products/index.ts` | Content loader - exports `getAllProductEntries()`, `getProductBySlug()`, `getAllProductSlugs()` |
+| `lib/content/products/*.ts` | Individual feature content files (one per feature) |
+| `components/pages/ProductPage.tsx` | Shared page template component - renders all feature pages |
+| `app/(content)/products/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
+| `app/(content)/products/page.tsx` | Features hub listing page |
+| `lib/content/hubs/products.ts` | Hub page config - lists all child feature pages |
 | `lib/seo/metadata.ts` | `buildMetadata()` - generates title, description, canonical, OG tags |
 | `lib/seo/schema.ts` | JSON-LD generators - `generateSoftwareAppJsonLd()`, `generateBreadcrumbJsonLd()`, `generateFAQPageJsonLd()` |
 
@@ -71,7 +71,7 @@ These rules apply to every feature page without exception.
 | **First 100 words** | The exact target keyword must appear within the first 100 words of body content (the hero paragraphs). Ideally in the first 2 sentences. | `Sayso gives you real-time sales help for real estate agents who prospect on the phone...` |
 | **Meta title** | Format: `[Target Keyword Phrase] | Sayso`. The `| Sayso` suffix is added automatically by the root layout template. Your `seoTitle` field should just be the keyword phrase portion. Max 60 characters for the `seoTitle` value. | `seoTitle: 'Real-Time Sales Help for Real Estate Agents'` (48 chars + " | Sayso" = 57 total) |
 | **Meta description** | 150-160 characters max. Must contain the target keyword. Follow the format: `[Problem]. [How Sayso solves it]. [CTA].` | `Freeze on a call and lose the listing. Sayso gives real-time sales help for real estate agents with live coaching prompts on screen. Book a demo.` |
-| **URL slug** | Short, descriptive. Does not need to match the keyword exactly. | `/features/cue/` |
+| **URL slug** | Short, descriptive. Does not need to match the keyword exactly. | `/products/cue/` |
 | **First H2** | Must contain the keyword or a strong semantic variation. Use the `howItWorksHeading` field to customize. | `How Real-Time Sales Help Works` |
 | **Image alt text** | Describe the image AND include the keyword or a variation. Reference both the feature and the real estate context. | `Sayso real-time sales help prompt appearing on screen during a live real estate prospecting call` |
 
@@ -94,7 +94,7 @@ These rules apply to every feature page without exception.
 ### Canonical URL
 
 - Built automatically by `buildMetadata()` in `lib/seo/metadata.ts`.
-- Format: `https://asksayso.com/features/[slug]/`
+- Format: `https://asksayso.com/products/[slug]/`
 - **Always includes a trailing slash.** This is enforced in the metadata builder.
 
 ### Brand Name
@@ -141,7 +141,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ## Page Structure (Section by Section)
 
-The `FeaturePage.tsx` component renders sections in this exact order:
+The `ProductPage.tsx` component renders sections in this exact order:
 
 ### 1. JSON-LD Schema (invisible)
 - `SoftwareApplication` schema with feature list
@@ -150,7 +150,7 @@ The `FeaturePage.tsx` component renders sections in this exact order:
 
 ### 2. Breadcrumb Navigation
 - Visual breadcrumb: Home > Features > [H1]
-- Links to `/` and `/features/` hub
+- Links to `/` and `/products/` hub
 
 ### 3. Hero Section
 - **H1:** Benefit-oriented title with keyword + em-dash benefit clause
@@ -193,7 +193,7 @@ The `FeaturePage.tsx` component renders sections in this exact order:
 ### 9. Related Features
 - **H2:** "Related Features"
 - List of 2-3 links to other feature pages.
-- Includes a "See all features" link to the `/features/` hub.
+- Includes a "See all features" link to the `/products/` hub.
 
 ### 10. Related Blog Posts
 - **H2:** "From the Blog"
@@ -211,10 +211,10 @@ The `FeaturePage.tsx` component renders sections in this exact order:
 
 ## TypeScript Data Interface
 
-Every feature page is defined by a `FeatureEntry` object in `lib/content/features/types.ts`:
+Every feature page is defined by a `ProductEntry` object in `lib/content/products/types.ts`:
 
 ```typescript
-export interface FeatureEntry {
+export interface ProductEntry {
   slug: string;                  // URL slug: "cue"
   keyword: string;               // Target SEO keyword
   seoTitle: string;              // Meta title (max 60 chars - "| Sayso" added by layout)
@@ -229,7 +229,7 @@ export interface FeatureEntry {
   differentiators: { title: string; body: string }[];   // 3-4 differentiator cards
   socialProof?: string;          // Testimonial or outcome-framed statement
   faq: { question: string; answer: string }[];          // 4-5 Q&A pairs
-  relatedFeatures: { title: string; slug: string }[];   // 2-3 other feature slugs
+  relatedProducts: { title: string; slug: string }[];   // 2-3 other feature slugs
   relatedBlogPosts: { title: string; href: string }[];  // 1-2 blog post links
   featureList: string[];         // For SoftwareApplication JSON-LD schema
   screenshotAlt: string;         // Alt text for hero image placeholder
@@ -255,7 +255,7 @@ export interface FeatureEntry {
 | `differentiators` | 3-4 items | Title = `<h3>`. Body = 2-3 sentences. Compare against generic approaches, not competitors. |
 | `socialProof` | - | Real testimonial preferred. Otherwise, outcome-framed statement. |
 | `faq` | 4-5 items | Must include pricing/getting-started Q. At least one Q should contain the keyword. |
-| `relatedFeatures` | 2-3 items | Link to other feature slugs. |
+| `relatedProducts` | 2-3 items | Link to other feature slugs. |
 | `relatedBlogPosts` | 1-2 items | Link to blog posts that support this feature's topic. |
 | `featureList` | 3-6 items | Short strings for SoftwareApplication schema. e.g., "Real-time call coaching" |
 | `screenshotAlt` | - | Describe the image + include keyword or variation + real estate context. |
@@ -268,10 +268,10 @@ Every feature page must include **5-8 internal links**. The component handles mo
 
 | Link Target | How It Gets There | Required? |
 |-------------|-------------------|-----------|
-| `/features/` hub | Breadcrumb + "See all features" in Related Features | Yes (automatic) |
+| `/products/` hub | Breadcrumb + "See all features" in Related Features | Yes (automatic) |
 | `/demo/` | Hero CTA button + inline CTA + closing CTA | Yes (automatic) |
 | `/pricing/` | "View Pricing" link in "Who This Is For" section | Yes (automatic) |
-| 2-3 other feature pages | `relatedFeatures` array | Yes (content file) |
+| 2-3 other feature pages | `relatedProducts` array | Yes (content file) |
 | 1-2 blog posts | `relatedBlogPosts` array | Yes (content file) |
 | 1+ persona pages | `personaLinks` array | Yes if pages exist (content file) |
 | `/` (homepage) | "Download Sayso" button in hero | Yes (automatic) |
@@ -312,15 +312,15 @@ Generated by `generateSoftwareAppJsonLd()`. Includes the `featureList` from the 
 ```
 
 ### 2. BreadcrumbList
-Generated by `generateBreadcrumbJsonLd()`. Injected in the FeaturePage component.
+Generated by `generateBreadcrumbJsonLd()`. Injected in the ProductPage component.
 ```json
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asksayso.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://asksayso.com/features" },
-    { "@type": "ListItem", "position": 3, "name": "[H1]", "item": "https://asksayso.com/features/[slug]" }
+    { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://asksayso.com/products" },
+    { "@type": "ListItem", "position": 3, "name": "[H1]", "item": "https://asksayso.com/products/[slug]" }
   ]
 }
 ```
@@ -369,7 +369,7 @@ Use this before submitting any new feature page:
 - [ ] `socialProof` is populated (outcome-framed if no testimonials)
 - [ ] 4-5 FAQ items including a pricing/getting-started question
 - [ ] `personaLinks` includes all existing `/for/` pages that are relevant
-- [ ] `relatedFeatures` has 2-3 other feature page slugs
+- [ ] `relatedProducts` has 2-3 other feature page slugs
 - [ ] `relatedBlogPosts` has 1-2 relevant blog post links
 
 ---
@@ -378,17 +378,17 @@ Use this before submitting any new feature page:
 
 ### Step 1: Create the content file
 
-Create a new TypeScript file in `lib/content/features/`:
+Create a new TypeScript file in `lib/content/products/`:
 
 ```
-lib/content/features/[slug].ts
+lib/content/products/[slug].ts
 ```
 
-Export a `FeatureEntry` object following the interface and all the rules above. Use `cue.ts` as your reference.
+Export a `ProductEntry` object following the interface and all the rules above. Use `cue.ts` as your reference.
 
 ### Step 2: Register it in the content loader
 
-Open `lib/content/features/index.ts` and:
+Open `lib/content/products/index.ts` and:
 
 1. Import your new entry:
    ```typescript
@@ -397,14 +397,14 @@ Open `lib/content/features/index.ts` and:
 
 2. Add it to the `entries` array:
    ```typescript
-   const entries: FeatureEntry[] = [realTimeCoaching, yourFeature];
+   const entries: ProductEntry[] = [realTimeCoaching, yourFeature];
    ```
 
-That is it. The dynamic route at `app/(content)/features/[slug]/page.tsx` automatically picks up new entries via `generateStaticParams()`.
+That is it. The dynamic route at `app/(content)/products/[slug]/page.tsx` automatically picks up new entries via `generateStaticParams()`.
 
 ### Step 3: Update the features hub (if needed)
 
-If your feature is not already listed in `lib/content/hubs/features.ts`, add it to the `childPages` array with:
+If your feature is not already listed in `lib/content/hubs/products.ts`, add it to the `childPages` array with:
 - `title` - display name
 - `slug` - must match your content file slug
 - `description` - one-liner for the hub listing
@@ -413,12 +413,12 @@ If your feature is not already listed in `lib/content/hubs/features.ts`, add it 
 
 ### Step 4: Update related features on other pages
 
-Open other existing feature content files and add your new page to their `relatedFeatures` array where relevant. Feature pages should cross-link to each other.
+Open other existing feature content files and add your new page to their `relatedProducts` array where relevant. Feature pages should cross-link to each other.
 
 ### Step 5: Verify
 
 1. Run `npm run build` - check for TypeScript errors and dev-mode SEO warnings.
-2. Run `npm run dev` and visit `http://localhost:3001/features/[slug]`.
+2. Run `npm run dev` and visit `http://localhost:3001/products/[slug]`.
 3. View page source and verify:
    - Meta title and description contain the keyword
    - Canonical URL has trailing slash
@@ -429,7 +429,7 @@ Open other existing feature content files and add your new page to their `relate
 
 ## Planned Feature Pages
 
-These are defined in the features hub (`lib/content/hubs/features.ts`) but not yet implemented:
+These are defined in the features hub (`lib/content/hubs/products.ts`) but not yet implemented:
 
 | Feature | Slug | Target Keyword | Status |
 |---------|------|----------------|--------|
@@ -479,7 +479,7 @@ Run through this after creating or editing any feature page:
 - [ ] Total word count 800-1,500
 
 ### Internal Links (5-8 total)
-- [ ] Link to `/features/` hub
+- [ ] Link to `/products/` hub
 - [ ] Link to `/demo/` (CTA)
 - [ ] Link to `/pricing/`
 - [ ] 2-3 links to other feature pages

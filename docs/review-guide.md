@@ -12,7 +12,7 @@ There are **8 template pages** - one per page type. Each one represents the patt
 
 | Page Type | URL to Review | What This Template Covers |
 |---|---|---|
-| Feature | `/features/cue/` | All 5 feature pages |
+| Feature | `/products/cue/` | All 5 feature pages |
 | Persona | `/for/solo-agents/` | All 4 persona pages |
 | Integration | `/integrations/follow-up-boss/` | All 3 integration pages |
 | Comparison | `/compare/sayso-vs-shilo/` | All 3 comparison pages |

@@ -79,7 +79,7 @@ That's out of scope for the attribute-only task.
 
 ## Slug granularity
 
-Dynamic-slug pages use **page-type only** in the ID, not the slug. For example, `/features/cue` and `/features/playbook` both emit `cta-book-demo-feature-page`.
+Dynamic-slug pages use **page-type only** in the ID, not the slug. For example, `/products/cue` and `/products/playbook` both emit `cta-book-demo-feature-page`.
 
 Per-slug breakdown is available in GA via the `page_path` dimension, so there's no reason to bake the slug into the ID and explode trigger count.
 
@@ -109,7 +109,7 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 ## Verification
 
 1. `npm run dev` (port 3001). Inspect elements in DevTools — confirm `data-analytics-id` is present on each rendered CTA.
-2. Visit: `/`, `/pricing`, `/agent`, `/broker`, `/isa`, `/sales-leader`, `/features/cue` (or any slug), `/compare/sayso-vs-shilo`, `/for/solo-agents`, `/blog/[any-slug]`, `/objections/[any-slug]`, `/glossary/[any-slug]`, `/integrations/follow-up-boss`, `/why-sayso`.
+2. Visit: `/`, `/pricing`, `/agent`, `/broker`, `/isa`, `/sales-leader`, `/products/cue` (or any slug), `/compare/sayso-vs-shilo`, `/for/solo-agents`, `/blog/[any-slug]`, `/objections/[any-slug]`, `/glossary/[any-slug]`, `/integrations/follow-up-boss`, `/why-sayso`.
 3. In DevTools console on each page: `document.querySelectorAll('[data-analytics-id]')` — verify expected IDs are present and no duplicates.
 4. Click each CTA and confirm behavior is unchanged (demo modal, system-select modal, or anchor jump still works).
 5. Mobile breakpoint: shrink to <768px and confirm mobile-only IDs appear (`cta-download-hero-mobile`, `cta-get-started-mobile-menu`).

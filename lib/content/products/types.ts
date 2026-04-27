@@ -1,4 +1,4 @@
-export interface FeatureEntry {
+export interface ProductEntry {
   slug: string;
   keyword: string;
   seoTitle: string;
@@ -18,7 +18,7 @@ export interface FeatureEntry {
   differentiators: { title: string; body: string }[];
   socialProof?: string;
   faq: { question: string; answer: string }[];
-  relatedFeatures: { title: string; slug: string }[];
+  relatedProducts: { title: string; slug: string }[];
   relatedBlogPosts: { title: string; href: string }[];
   /** Feature list for SoftwareApplication JSON-LD. */
   featureList: string[];

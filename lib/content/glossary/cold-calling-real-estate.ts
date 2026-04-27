@@ -43,8 +43,8 @@ export const coldCallingRealEstate: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'Cold calling gets harder when a prospect throws an unexpected objection or asks a question you are not prepared for. Sayso\'s [Real-Time Coaching](/features/cue/) listens to your calls and displays the right response on screen the moment you need it, so you never have to guess what to say next.',
-    'After each call, [Call Notes](/features/smart-capture/) captures a summary automatically and syncs it to your CRM. That means you spend less time typing between dials and more time talking to prospects. [Book a demo](/demo/) to see how Sayso helps agents turn more cold calls into booked appointments.',
+    'Cold calling gets harder when a prospect throws an unexpected objection or asks a question you are not prepared for. Sayso\'s [Real-Time Coaching](/products/cue/) listens to your calls and displays the right response on screen the moment you need it, so you never have to guess what to say next.',
+    'After each call, [Call Notes](/products/smart-capture/) captures a summary automatically and syncs it to your CRM. That means you spend less time typing between dials and more time talking to prospects. [Book a demo](/demo/) to see how Sayso helps agents turn more cold calls into booked appointments.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -62,7 +62,7 @@ export const coldCallingRealEstate: GlossaryEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/cue',
+    href: '/products/cue',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

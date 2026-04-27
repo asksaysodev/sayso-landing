@@ -316,8 +316,8 @@ Each H2 covers a distinct aspect of the topic. Rules:
 
 The product tie-in varies by category:
 
-- **crm-notes posts:** direct fit. "Sayso auto-generates call notes in real time while you're on the phone, so you never have to retype what the lead said. It syncs straight to Follow Up Boss, Sierra, or KVCore." Link to `/features/smart-capture/`.
-- **mindset posts:** subtle fit. The product tie-in should feel like relief, not a pitch. Example: "The hardest part of calling is the second of silence before you speak. Sayso removes that second by putting the next line on your screen before you need it." Link to `/features/cue/` or `/demo/`.
+- **crm-notes posts:** direct fit. "Sayso auto-generates call notes in real time while you're on the phone, so you never have to retype what the lead said. It syncs straight to Follow Up Boss, Sierra, or KVCore." Link to `/products/smart-capture/`.
+- **mindset posts:** subtle fit. The product tie-in should feel like relief, not a pitch. Example: "The hardest part of calling is the second of silence before you speak. Sayso removes that second by putting the next line on your screen before you need it." Link to `/products/cue/` or `/demo/`.
 - **data-authority posts:** authority fit. The product angle is credibility-based. Example: "The data in this post comes from analyzing calls across Sayso's agent network in 2026." Link to `/demo/` or `/case-studies/`.
 
 In all cases:
@@ -350,9 +350,9 @@ Standalone posts have no parent pillar, so their linking pattern differs from su
 3. **Link to 1 to 2 objection pages** if the topic involves calls (most do). Example: `/objections/not-interested/`, `/objections/call-me-later/`.
 
 4. **Link to 1 feature page** that fits the post's topic. Map by category:
-   - crm-notes posts → `/features/smart-capture/`
-   - mindset posts → `/features/cue/` (real-time prompts help with freezing and not knowing what to say)
-   - data-authority posts → `/features/pulse/` (data-driven feature) or `/compare/sayso-vs-shilo/`
+   - crm-notes posts → `/products/smart-capture/`
+   - mindset posts → `/products/cue/` (real-time prompts help with freezing and not knowing what to say)
+   - data-authority posts → `/products/pulse/` (data-driven feature) or `/compare/sayso-vs-shilo/`
 
 5. **Link to 1 glossary page** if an industry term appears that has a glossary entry. Example: first mention of "ISA" goes to `/glossary/isa-real-estate/`.
 

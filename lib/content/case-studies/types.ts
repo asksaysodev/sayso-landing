@@ -18,7 +18,7 @@ export interface CaseStudyEntry {
   results: string;
   whatsNext?: string;
   quotes: string[];
-  relatedFeatures: { title: string; href: string }[];
+  relatedProducts: { title: string; href: string }[];
   relatedPersona?: { title: string; href: string };
   ogImage?: string;
 }

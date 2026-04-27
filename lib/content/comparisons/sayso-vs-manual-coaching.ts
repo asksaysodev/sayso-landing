@@ -9,9 +9,9 @@ export const saysoVsManualCoaching: ComparisonEntry = {
     'Comparing AI coaching to manual coaching for real estate? Sayso delivers live guidance on every call. See how it stacks up against traditional coaching.',
   h1: 'Real Estate Coaching: AI vs Manual, Which Is Right for You? (2026)',
   tldr:
-    'If you are weighing real estate coaching AI vs manual options, the answer for most agents is both. A great coach gives you strategy, accountability, and mentorship. Sayso gives you [real-time guidance on every call](/features/cue/) you make between sessions. Manual coaching happens once a week. Sayso is there for all 20 to 40 calls you make every day. For agents who want in-the-moment help without waiting for their next session, [Sayso fills that gap](/demo/).',
+    'If you are weighing real estate coaching AI vs manual options, the answer for most agents is both. A great coach gives you strategy, accountability, and mentorship. Sayso gives you [real-time guidance on every call](/products/cue/) you make between sessions. Manual coaching happens once a week. Sayso is there for all 20 to 40 calls you make every day. For agents who want in-the-moment help without waiting for their next session, [Sayso fills that gap](/demo/).',
   whyLooking:
-    'If you are comparing real estate coaching AI vs manual approaches, you are probably running into one of the core limitations of traditional coaching: it only covers a fraction of your calls. A coach might sit in on two or three conversations per week, but the other 100 or more calls you make happen without any guidance at all.\n\nTraditional 1-on-1 coaching is valuable, but it is expensive. Most real estate coaching programs run $300 to $1,000 or more per month per agent. For solo agents, that is a significant line item. For teams, multiply that cost by headcount and the budget becomes difficult to justify, especially when each agent only gets a few hours of direct coaching time per week.\n\nThere is also the execution gap. Agents often leave coaching sessions knowing exactly what to say, but when a real prospect throws an unexpected objection mid-call, that knowledge does not always translate to performance under pressure. The gap between knowing the right script and delivering it in the moment is where most opportunities are lost.\n\nThat is why many agents start looking for tools that provide [real-time coaching](/features/cue/) during actual prospecting calls, not just feedback after the fact or preparation before the next session.',
+    'If you are comparing real estate coaching AI vs manual approaches, you are probably running into one of the core limitations of traditional coaching: it only covers a fraction of your calls. A coach might sit in on two or three conversations per week, but the other 100 or more calls you make happen without any guidance at all.\n\nTraditional 1-on-1 coaching is valuable, but it is expensive. Most real estate coaching programs run $300 to $1,000 or more per month per agent. For solo agents, that is a significant line item. For teams, multiply that cost by headcount and the budget becomes difficult to justify, especially when each agent only gets a few hours of direct coaching time per week.\n\nThere is also the execution gap. Agents often leave coaching sessions knowing exactly what to say, but when a real prospect throws an unexpected objection mid-call, that knowledge does not always translate to performance under pressure. The gap between knowing the right script and delivering it in the moment is where most opportunities are lost.\n\nThat is why many agents start looking for tools that provide [real-time coaching](/products/cue/) during actual prospecting calls, not just feedback after the fact or preparation before the next session.',
   comparisonTable: [
     { feature: 'Coaching available on every call', sayso: 'Yes, every call in real time', competitor: 'Limited to scheduled sessions' },
     { feature: 'Objection handling in the moment', sayso: 'Yes, live prompts on screen', competitor: 'Only if coach is listening live' },
@@ -27,7 +27,7 @@ export const saysoVsManualCoaching: ComparisonEntry = {
     {
       heading: 'Coaching on Every Call, Not Just Scheduled Sessions',
       body:
-        'A traditional coach might observe two or three calls per week. The rest of your conversations happen without any guidance. Sayso listens to every call and surfaces [real-time coaching prompts](/features/cue/) the moment a prospect raises an objection or the conversation shifts.\n\nThe feedback loop is immediate and continuous. Instead of reviewing what went wrong three days later in your next coaching session, you get the right response on screen while the prospect is still talking.',
+        'A traditional coach might observe two or three calls per week. The rest of your conversations happen without any guidance. Sayso listens to every call and surfaces [real-time coaching prompts](/products/cue/) the moment a prospect raises an objection or the conversation shifts.\n\nThe feedback loop is immediate and continuous. Instead of reviewing what went wrong three days later in your next coaching session, you get the right response on screen while the prospect is still talking.',
     },
     {
       heading: 'Automatic Call Notes That Save Hours',
@@ -86,6 +86,6 @@ export const saysoVsManualCoaching: ComparisonEntry = {
     { title: 'Solo Agents', href: '/for/solo-agents' },
   ],
   featureLinks: [
-    { title: 'Real-Time Coaching', href: '/features/cue' },
+    { title: 'Real-Time Coaching', href: '/products/cue' },
   ],
 };

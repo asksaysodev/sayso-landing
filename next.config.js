@@ -9,16 +9,27 @@ const nextConfig = {
       // PERSONA PAGE REDIRECTS — activate when /for/ pages are live
       // ──────────────────────────────────────────────────
       // ──────────────────────────────────────────────────
-      // FEATURE PAGE SLUG REDIRECTS
+      // PRODUCT PAGE SLUG REDIRECTS
       // ──────────────────────────────────────────────────
       {
         source: '/features/real-time-coaching/',
-        destination: '/features/cue/',
+        destination: '/products/cue/',
         permanent: true,
       },
       {
         source: '/features/call-notes/',
-        destination: '/features/smart-capture/',
+        destination: '/products/smart-capture/',
+        permanent: true,
+      },
+      // /features/* → /products/* (route was renamed)
+      {
+        source: '/features/',
+        destination: '/products/',
+        permanent: true,
+      },
+      {
+        source: '/features/:slug/',
+        destination: '/products/:slug/',
         permanent: true,
       },
       // ──────────────────────────────────────────────────

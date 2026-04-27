@@ -43,8 +43,8 @@ export const isaRealEstate: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'ISAs make dozens of calls every day, and the difference between a booked appointment and a lost lead often comes down to saying the right thing at the right moment. Sayso\'s [Real-Time Coaching](/features/cue/) gives ISAs live, on-screen prompts during every call, so when a prospect pushes back or asks a tough question, the right response is already on screen.',
-    'After each call, Sayso\'s [Call Notes](/features/smart-capture/) automatically captures a summary and syncs it to your CRM. That means ISAs spend less time logging notes and more time dialing. [Book a demo](/demo/) to see how Sayso helps ISAs book more appointments on every shift.',
+    'ISAs make dozens of calls every day, and the difference between a booked appointment and a lost lead often comes down to saying the right thing at the right moment. Sayso\'s [Real-Time Coaching](/products/cue/) gives ISAs live, on-screen prompts during every call, so when a prospect pushes back or asks a tough question, the right response is already on screen.',
+    'After each call, Sayso\'s [Call Notes](/products/smart-capture/) automatically captures a summary and syncs it to your CRM. That means ISAs spend less time logging notes and more time dialing. [Book a demo](/demo/) to see how Sayso helps ISAs book more appointments on every shift.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -59,7 +59,7 @@ export const isaRealEstate: GlossaryEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/cue',
+    href: '/products/cue',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',
