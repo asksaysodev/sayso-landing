@@ -111,7 +111,6 @@ export const playbook: ProductEntry = {
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'How to Practice Scripts for Real Estate', href: '/blog/how-to-practice-scripts' },
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
 };

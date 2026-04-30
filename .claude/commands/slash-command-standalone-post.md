@@ -40,6 +40,17 @@ Standalone posts are not part of a pillar cluster. They live in one of three con
 
 Before writing a single word, complete the Script Book check, internal content review, AND competitive research. Standalone posts have no parent pillar, so the internal review focuses on related content across the whole site.
 
+### Step 0 (Pre-flight): Check the Pending Internal Links Registry
+
+Read `docs/content/pending-internal-links.md`. This file lists blog post slugs that other site pages already reference but that have not been written yet.
+
+1. Search the registry for the post's planned slug and any close variants.
+2. If the slug appears, capture the list of source files and the suggested anchor text. These are pages that need back-links restored once this post publishes.
+3. After Phase 2 writes the new MDX, edit each source file listed in the matching registry entry to add a link back to the new post using the suggested or natural anchor text already in that paragraph.
+4. After all back-links are added, delete the matching entry from `docs/content/pending-internal-links.md`.
+
+If the slug does not appear in the registry, skip steps 3 and 4 for this run.
+
 ### Step 1: Check the Ultimate Script Book for Relevant Sections
 
 Standalone posts are off-cluster, so Script Book relevance varies by topic. Check first, then incorporate only what genuinely fits. The Script Book lives at `docs/content/Ultimate Script Book (1).md`.
@@ -358,6 +369,8 @@ Standalone posts have no parent pillar, so their linking pattern differs from su
 
 6. **Link to 1 persona page** if the post speaks to a specific role (e.g., ISAs, new agents). Example: `/for/new-agents/` for posts about mindset and skill-building.
 
+7. **Restore pending back-links.** If this post's slug appeared in `docs/content/pending-internal-links.md` during Step 0, edit every source file listed in that entry to add a link to this post, then delete the registry entry. These are in addition to the 6 to 10 forward links above.
+
 ### Total: 6 to 10 internal links per post.
 
 ### Anchor Text Rules
@@ -466,6 +479,7 @@ Before finalizing, verify:
 - [ ] At least 1 Information Gain element (verified against actual competitor content)
 - [ ] 6 to 10 internal links with descriptive anchor text
 - [ ] Links to 1 to 2 related cluster pillars
+- [ ] Pending back-links from `docs/content/pending-internal-links.md` have been added to every listed source file and the registry entry has been deleted (or the slug was not in the registry)
 - [ ] 2 CTAs (product section + end-of-post)
 - [ ] Word count is in the correct range for the category
 - [ ] No banned filler phrases
