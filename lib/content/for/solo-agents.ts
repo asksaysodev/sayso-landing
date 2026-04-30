@@ -83,7 +83,6 @@ export const soloAgents: UseCaseEntry = {
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'How to Not Freeze on Sales Calls', href: '/blog/how-to-not-freeze-on-calls' },
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
   relatedObjections: [
