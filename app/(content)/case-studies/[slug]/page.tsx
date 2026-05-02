@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: entry.seoTitle,
     description: entry.seoDescription,
     path: `/case-studies/${slug}`,
+    noindex: true,
   });
 }
 

@@ -8,7 +8,7 @@ import { getAllProductSlugs } from '@/lib/content/products';
 // import { getAllIntegrationSlugs } from '@/lib/content/integrations'; // TODO: re-enable when integrations article is published
 import { getAllUseCaseSlugs } from '@/lib/content/for';
 import { getAllComparisonSlugs } from '@/lib/content/comparisons';
-import { getAllCaseStudySlugs } from '@/lib/content/case-studies';
+// import { getAllCaseStudySlugs } from '@/lib/content/case-studies'; // TODO: re-enable when first real case study is published
 
 /** Paths that should never appear in the sitemap. */
 const EXCLUDED_PATHS = new Set([
@@ -19,6 +19,7 @@ const EXCLUDED_PATHS = new Set([
   '/paywall-preview',
   '/ui',
   '/integrations', // TODO: re-enable when integrations article is published
+  '/case-studies', // TODO: re-enable when first real case study is published
 ]);
 
 /** Priority overrides by exact path. */
@@ -86,7 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // { slugs: getAllIntegrationSlugs(), prefix: '/integrations', priority: 0.7 }, // TODO: re-enable when integrations article is published
     { slugs: getAllUseCaseSlugs(), prefix: '/for', priority: 0.7 },
     { slugs: getAllComparisonSlugs(), prefix: '/compare', priority: 0.7 },
-    { slugs: getAllCaseStudySlugs(), prefix: '/case-studies', priority: 0.7 },
+    // { slugs: getAllCaseStudySlugs(), prefix: '/case-studies', priority: 0.7 }, // TODO: re-enable when first real case study is published
   ];
 
   const contentPages: MetadataRoute.Sitemap = contentSections.flatMap(({ slugs, prefix, priority }) =>

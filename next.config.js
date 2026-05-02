@@ -33,6 +33,19 @@ const nextConfig = {
         permanent: true,
       },
       // ──────────────────────────────────────────────────
+      // LEGACY URL REDIRECTS (cleanup of GSC 404s)
+      // ──────────────────────────────────────────────────
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/demo-974294/',
+        destination: '/demo/',
+        permanent: true,
+      },
+      // ──────────────────────────────────────────────────
       // DELETED BLOG POST REDIRECTS
       // ──────────────────────────────────────────────────
       {
