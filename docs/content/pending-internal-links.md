@@ -78,18 +78,6 @@ The `/standalone-post`, `/pillar`, and `/supporting-post` slash commands all rea
 **Add internal links back from:**
 - `lib/content/products/playbook.ts` (restore entry in `relatedBlogPosts`)
 
-### `/blog/how-to-build-rapport-calls`
-**Display title:** "How to Build Rapport on Real Estate Calls"
-**Note:** existing post `how-to-build-rapport-real-estate-calls` likely covers this. If you are not writing a new separate post, instead update `lib/content/products/pulse.ts` to link to the existing post.
-**Add internal links back from:**
-- `lib/content/products/pulse.ts` (restore entry in `relatedBlogPosts`)
-
-### `/blog/how-to-qualify-leads-on-phone`
-**Display title:** "How to Qualify Real Estate Leads on the Phone"
-**Note:** existing post `how-to-qualify-real-estate-leads` likely covers this. If you are not writing a new separate post, instead update `lib/content/products/pulse.ts` to link to the existing post.
-**Add internal links back from:**
-- `lib/content/products/pulse.ts` (restore entry in `relatedBlogPosts`)
-
 ### `/blog/real-estate-call-notes-template`
 **Display title:** "Real Estate Call Notes Template"
 **Add internal links back from:**
