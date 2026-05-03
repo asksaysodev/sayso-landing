@@ -111,7 +111,6 @@ export const cue: ProductEntry = {
     { title: 'Live Market Analysis', slug: 'pulse' },
   ],
   relatedBlogPosts: [
-    { title: 'What Real-Time Call Coaching Looks Like', href: '/blog/what-real-time-call-coaching-looks-like' },
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
 };

@@ -111,7 +111,7 @@ export const pulse: ProductEntry = {
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'How to Build Rapport on Real Estate Calls', href: '/blog/how-to-build-rapport-calls' },
-    { title: 'How to Qualify Real Estate Leads on the Phone', href: '/blog/how-to-qualify-leads-on-phone' },
+    { title: 'How to Build Rapport on Real Estate Calls', href: '/blog/how-to-build-rapport-real-estate-calls' },
+    { title: 'How to Qualify Real Estate Leads', href: '/blog/how-to-qualify-real-estate-leads' },
   ],
 };

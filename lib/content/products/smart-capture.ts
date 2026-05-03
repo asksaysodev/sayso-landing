@@ -110,8 +110,5 @@ export const smartCapture: ProductEntry = {
     { title: 'Real-Time Coaching', slug: 'cue' },
     { title: 'Custom Scripts', slug: 'playbook' },
   ],
-  relatedBlogPosts: [
-    { title: 'Real Estate Call Notes Template', href: '/blog/real-estate-call-notes-template' },
-    { title: 'How to Take Notes During Sales Calls', href: '/blog/how-to-take-notes-during-calls' },
-  ],
+  relatedBlogPosts: [],
 };
