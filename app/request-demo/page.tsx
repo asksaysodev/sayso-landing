@@ -54,8 +54,7 @@ export default function RequestDemoPage() {
             <div className="max-w-[900px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
               <iframe
                 src="https://asksayso.notion.site/ebd/7725decf52724317a3b55bb2ecbbffa9"
-                className="w-full border-0"
-                style={{ height: '700px' }}
+                className="w-full border-0 h-[1700px] md:h-[1600px]"
                 title="Request a demo form"
                 allowFullScreen
                 loading="lazy"

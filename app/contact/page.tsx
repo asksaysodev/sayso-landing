@@ -54,8 +54,7 @@ export default function ContactPage() {
             <div className="max-w-[900px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
               <iframe
                 src="https://asksayso.notion.site/ebd/2f04de400468813784b3cd2d7a1290af"
-                className="w-full border-0"
-                style={{ height: '600px' }}
+                className="w-full border-0 h-[1400px] md:h-[1300px]"
                 title="Contact form"
                 allowFullScreen
                 loading="lazy"
