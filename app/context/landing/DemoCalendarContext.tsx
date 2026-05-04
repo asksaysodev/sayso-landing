@@ -6,7 +6,7 @@ import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
 import { SystemSelectModal } from '@/components/landing/SystemSelectModal';
 
 const DEMO_CALENDAR_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0eeiee8mED3XOLfAhzApvxOvHL96hIK8pNfAcZBY89TaKTa_LeVrtJr_kEbOlbQyb1juvLNPG3?gv=true';
-const CONTACT_FORM_URL = 'https://alert-tartan-008.notion.site/ebd/2f04de400468813784b3cd2d7a1290af';
+const CONTACT_FORM_URL = 'https://asksayso.notion.site/ebd/2f04de400468813784b3cd2d7a1290af';
 
 interface IDemoCalendarContext {
     openDemoCalendar: () => void;
