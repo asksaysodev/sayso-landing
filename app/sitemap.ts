@@ -29,6 +29,7 @@ const PRIORITY_MAP: Record<string, number> = {
   '/pricing': 0.8,
   '/case-studies': 0.7,
   '/contact': 0.7,
+  '/request-demo': 0.7,
 };
 
 /** Default priority by path prefix. */
