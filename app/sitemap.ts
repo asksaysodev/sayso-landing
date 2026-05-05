@@ -14,7 +14,6 @@ import { getAllComparisonSlugs } from '@/lib/content/comparisons';
 const EXCLUDED_PATHS = new Set([
   '/privacy',
   '/terms',
-  '/start',
   '/feedback',
   '/paywall-preview',
   '/ui',
