@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X } from 'lucide-react';
 
-const SIGNUP_URL = 'https://app.asksayso.com/login?signup=true';
+const MAC_DOWNLOAD_URL = 'https://app.asksayso.com/download';
 
 type Step = 'select' | 'checking' | 'waitlist';
 
@@ -34,7 +34,7 @@ export function SystemSelectModal({ onClose }: { onClose: () => void }) {
   }, [step]);
 
   const handleMac = useCallback(() => {
-    window.open(SIGNUP_URL, '_blank');
+    window.open(MAC_DOWNLOAD_URL, '_blank');
     onClose();
   }, [onClose]);
 
