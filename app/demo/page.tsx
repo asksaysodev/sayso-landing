@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
-import { DemoDownloadCTA } from './DemoDownloadCTA';
+import { DownloadButton } from '@/components/landing/DownloadButton';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 const CALENDAR_URL =
@@ -52,7 +52,7 @@ export default function DemoPage() {
               Schedule a meeting to see Sayso in action!
             </p>
             <div className="mt-8 flex flex-col items-center gap-3">
-              <DemoDownloadCTA />
+              <DownloadButton analyticsId="cta-demo-download" />
               <p className="text-sm text-[#1D4871]/60">
                 Want to try it right now? Download Sayso and start your first call in a minute.
               </p>

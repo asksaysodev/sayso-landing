@@ -1,11 +1,6 @@
-'use client';
-
-import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { LightningIcon } from '@/components/icons/LightningIcon';
+import { DownloadButton } from '@/components/landing/DownloadButton';
 
 export function DownloadPage() {
-  const { openSystemSelect } = useDemoCalendar();
-
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
       <div className="max-w-[760px] mx-auto px-6 py-20 md:py-28">
@@ -21,14 +16,7 @@ export function DownloadPage() {
             and live market data on every prospecting call. The download takes about a minute, and
             you can start your first call right after.
           </p>
-          <button
-            onClick={openSystemSelect}
-            data-analytics-id="cta-download-page"
-            className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-lg v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
-          >
-            <LightningIcon size={16} className="mr-2" />
-            Download Sayso
-          </button>
+          <DownloadButton analyticsId="cta-download-page" />
         </div>
       </div>
     </main>
