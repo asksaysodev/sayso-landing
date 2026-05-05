@@ -1,6 +1,6 @@
-import type { FeatureEntry } from './types';
+import type { ProductEntry } from './types';
 
-export const playbook: FeatureEntry = {
+export const playbook: ProductEntry = {
   slug: 'playbook',
   keyword: 'custom call scripts real estate',
   seoTitle: 'Custom Call Scripts for Real Estate Agents',
@@ -106,12 +106,11 @@ export const playbook: FeatureEntry = {
         'Sayso offers flexible plans for solo agents and teams. Visit the pricing page for current plans, or book a demo to see Playbook in action before you commit.',
     },
   ],
-  relatedFeatures: [
+  relatedProducts: [
     { title: 'Real-Time Coaching', slug: 'cue' },
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'How to Practice Scripts for Real Estate', href: '/blog/how-to-practice-scripts' },
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
 };

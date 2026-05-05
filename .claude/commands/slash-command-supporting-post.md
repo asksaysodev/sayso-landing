@@ -42,6 +42,17 @@ If no cluster is provided, attempt to infer from the keyword using the cluster r
 
 Before writing a single word, complete the Script Book read, internal content review, AND competitive research.
 
+### Step 0 (Pre-flight): Check the Pending Internal Links Registry
+
+Read `docs/content/pending-internal-links.md`. This file lists blog post slugs that other site pages already reference but that have not been written yet.
+
+1. Search the registry for the post's planned slug and any close variants.
+2. If the slug appears, capture the list of source files and the suggested anchor text. These are pages that need back-links restored once this post publishes.
+3. After Phase 2 writes the new MDX, edit each source file listed in the matching registry entry to add a link back to the new post using the suggested or natural anchor text already in that paragraph.
+4. After all back-links are added, delete the matching entry from `docs/content/pending-internal-links.md`.
+
+If the slug does not appear in the registry, skip steps 3 and 4 for this run.
+
 ### Step 1: Read the Ultimate Script Book
 
 The Ultimate Script Book (`docs/content/Ultimate Script Book (1).md`) contains real-world call scripts, follow-up cadences, and prospect psychology developed by Sayso's top-performing agents. It is the primary source for voice and framework authenticity across supporting posts. Read it FIRST, before any web research.
@@ -322,7 +333,7 @@ Example H2 structure for "how to build rapport real estate calls":
 Brief product tie-in. Rules:
 - 2-4 sentences maximum. Supporting posts are lighter on product promotion than pillars.
 - Connect this specific topic to a specific SaySo feature. Not "SaySo helps with calls" but "When you're struggling to build rapport and the lead goes quiet, SaySo suggests a conversation-starter on screen - in real time."
-- CTA: Link to `/demo/` or a relevant feature page (e.g., `/features/cue/`).
+- CTA: Link to `/demo/` or a relevant feature page (e.g., `/products/cue/`).
 
 ### 6. H2: FAQ (Optional but Recommended)
 
@@ -339,10 +350,11 @@ Supporting posts are the connective tissue of the cluster. Their linking job is 
 
 ### Required Links
 1. **Link UP to the pillar post** - within the first 300 words. Use the pillar's target keyword as anchor text. This is the most important link on the page.
-2. **Link ACROSS to 2-3 other supporting posts** in the same cluster. Use their target keywords as anchor text. Link to them even if they don't exist yet.
+2. **Link ACROSS to 2-3 other supporting posts** in the same cluster. Use their target keywords as anchor text. Only link to supporting posts that already exist; if a sibling supporting post has not been written yet, leave the phrase as plain text and add the link in the same PR that publishes that sibling (tracked via `docs/content/pending-internal-links.md`).
 3. **Link to 1-2 objection pages** if the topic involves phone calls (most do). Example: `/objections/not-interested/`, `/objections/call-me-later/`
-4. **Link to 1 feature page** if naturally relevant. Example: `/features/cue/`, `/features/smart-capture/`
+4. **Link to 1 feature page** if naturally relevant. Example: `/products/cue/`, `/products/smart-capture/`
 5. **Link to 1 glossary page** if an industry term appears that has a glossary entry. Example: first mention of "FSBO" → `/glossary/fsbo/`
+6. **Restore pending back-links.** If this post's slug appeared in `docs/content/pending-internal-links.md` during Step 0, edit every source file listed in that entry to add a link to this post, then delete the registry entry. These are in addition to the 5-8 forward links above.
 
 ### Total: 5-8 internal links per post.
 
@@ -432,6 +444,7 @@ Before finalizing, verify:
 - [ ] At least 1 Information Gain element (verified against actual competitor content)
 - [ ] 5-8 internal links with descriptive anchor text
 - [ ] Links to 2-3 other supporting posts in the same cluster
+- [ ] Pending back-links from `docs/content/pending-internal-links.md` have been added to every listed source file and the registry entry has been deleted (or the slug was not in the registry)
 - [ ] 1-2 CTAs maximum (not before delivering value)
 - [ ] Word count 1,200-1,800
 - [ ] No banned filler phrases

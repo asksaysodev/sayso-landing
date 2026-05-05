@@ -64,25 +64,25 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ---
 
-### /features/
+### /products/
 
 ```
-/features/                                  (hub - no keyword target)                                   ⚪ NONE    ✅ DONE
-├── /features/cue/                          "real time sales help"                                      🟡 MED     ✅ DONE
+/products/                                  (hub - no keyword target)                                   ⚪ NONE    ✅ DONE
+├── /products/cue/                          "real time sales help"                                      🟡 MED     ✅ DONE
 │   ⚠️  SEO NOTE (2026-04-05): H1 changed from keyword-rich "Real-Time Sales Help - AI That
 │   Coaches You Through Every Call" to branded "Cue - Real-Time Coaching" per co-founder
 │   feedback. The primary keyword "real time sales help" is no longer in the H1. It is still
 │   present in seoTitle, seoDescription, and body copy. Monitor rankings for this keyword
 │   and consider restoring keyword-rich H1 if organic traffic drops.
-├── /features/smart-capture/                "automatic call notes real estate"                          🟢 WIN     ✅ DONE
-├── /features/pulse/                        "real estate market data during calls"                      🟢 WIN     ✅ DONE
-├── /features/playbook/                     "custom call scripts real estate"                           🟢 WIN     ✅ DONE
-└── /features/roadmap/                      "request a feature / coming soon"                           ⚪ NONE    ⏸️ ON HOLD
+├── /products/smart-capture/                "automatic call notes real estate"                          🟢 WIN     ✅ DONE
+├── /products/pulse/                        "real estate market data during calls"                      🟢 WIN     ✅ DONE
+├── /products/playbook/                     "custom call scripts real estate"                           🟢 WIN     ✅ DONE
+└── /products/roadmap/                      "request a feature / coming soon"                           ⚪ NONE    ⏸️ ON HOLD
 ```
 
-**Note on `/features/roadmap/`:** Page is planned as a "Request a Feature / Coming Soon" hub where users can see upcoming features and submit requests. Build is paused for now. When resumed, confirm final URL (`/features/roadmap/` vs `/features/request/`) and decide on the submission mechanism (Canny embed vs simple form).
+**Note on `/products/roadmap/`:** Page is planned as a "Request a Feature / Coming Soon" hub where users can see upcoming features and submit requests. Build is paused for now. When resumed, confirm final URL (`/products/roadmap/` vs `/products/request/`) and decide on the submission mechanism (Canny embed vs simple form).
 
-**Note on `/features/objection-handling/`:** Removed from plan on 2026-04-19. Objection handling is already covered by the `/objections/` hub and its 14 child pages, so a dedicated feature page is redundant.
+**Note on `/products/objection-handling/`:** Removed from plan on 2026-04-19. Objection handling is already covered by the `/objections/` hub and its 14 child pages, so a dedicated feature page is redundant.
 
 ---
 

@@ -91,10 +91,10 @@ Before writing a single word, complete the research steps below.
 Scan `docs/architecture/site-architecture.md` and identify which of the following pages are marked as DONE:
 
 **Feature pages** (for `relatedFeature`):
-- `/features/cue/` - live on-screen coaching during calls
-- `/features/smart-capture/` - automatic call summaries synced to CRM
-- `/features/playbook/` - custom scripts and strategies
-- `/features/pulse/` - real-time market data during calls
+- `/products/cue/` - live on-screen coaching during calls
+- `/products/smart-capture/` - automatic call summaries synced to CRM
+- `/products/playbook/` - custom scripts and strategies
+- `/products/pulse/` - real-time market data during calls
 
 **Blog posts** (for `relatedBlogPost`):
 - `/blog/real-estate-cold-calling-guide/` (pillar)
@@ -150,10 +150,10 @@ Using the competitive brief and Script Book insights from Phase 1, write the com
 **Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
 **Key features (for use in `howSaysoHelps` and `relatedFeature`):**
-- **Real-Time Coaching** (`/features/cue/`) - live on-screen prompts during calls
-- **Call Notes** (`/features/smart-capture/`) - automatic call summaries synced to CRM
-- **Playbook** (`/features/playbook/`) - custom scripts and strategies
-- **Pulse** (`/features/pulse/`) - real-time market data during calls
+- **Real-Time Coaching** (`/products/cue/`) - live on-screen prompts during calls
+- **Call Notes** (`/products/smart-capture/`) - automatic call summaries synced to CRM
+- **Playbook** (`/products/playbook/`) - custom scripts and strategies
+- **Pulse** (`/products/pulse/`) - real-time market data during calls
 
 **Target audience:** Real estate agents (solo and team), ISAs, team leaders, and brokerage managers in the US. They make 20-100+ calls per day. Practical, time-pressed, skeptical of tools that don't immediately help them book more appointments.
 
@@ -251,10 +251,10 @@ export const camelCaseName: ObjectionEntry = {
 **`relatedBlogPost`**: Optional. Link to a relevant DONE blog post. Format: `{ title: 'Post Title', href: '/blog/post-slug' }`. If no relevant blog post exists, omit this field entirely.
 
 **`relatedFeature`**: Optional. Link to the most relevant DONE feature page. Choose based on relevance:
-- Objection handling during calls -> `/features/cue/`
-- Scripts and playbooks -> `/features/playbook/`
-- Market data objections -> `/features/pulse/`
-- Notes/follow-up -> `/features/smart-capture/`
+- Objection handling during calls -> `/products/cue/`
+- Scripts and playbooks -> `/products/playbook/`
+- Market data objections -> `/products/pulse/`
+- Notes/follow-up -> `/products/smart-capture/`
 
 **`heroImage`**: Omit for now. No images are available for objection pages yet.
 

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { getPostsByCategory, getCategories, formatCategoryName } from '@/lib/blog';
 import { BlogHeroBanner } from '@/components/blog/BlogHeroBanner';
 import { BlogCategoryPills } from '@/components/blog/BlogCategoryPills';
@@ -47,9 +48,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params;
+  const categories = getCategories();
+  if (!categories.some((c) => c.slug === slug)) notFound();
   const categoryName = formatCategoryName(slug);
   const posts = getPostsByCategory(slug);
-  const categories = getCategories();
 
   return (
     <>

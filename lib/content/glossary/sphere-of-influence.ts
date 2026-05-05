@@ -43,8 +43,8 @@ export const sphereOfInfluence: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'When you call a past client or SOI contact, the conversation can shift to real estate at any moment. Sayso\'s [Real-Time Coaching](/features/cue/) listens to your call and surfaces the right talking points the moment a prospect mentions they are thinking about selling or asks about their home\'s value. You stay helpful and informed without scrambling for data.',
-    'After each call, [Call Notes](/features/smart-capture/) automatically logs a summary and syncs it to your CRM. That means the detail your neighbor mentioned about downsizing next year is captured without you typing a word. [Book a demo](/demo/) to see how Sayso helps you turn every SOI conversation into a booked appointment.',
+    'When you call a past client or SOI contact, the conversation can shift to real estate at any moment. Sayso\'s [Real-Time Coaching](/products/cue/) listens to your call and surfaces the right talking points the moment a prospect mentions they are thinking about selling or asks about their home\'s value. You stay helpful and informed without scrambling for data.',
+    'After each call, [Call Notes](/products/smart-capture/) automatically logs a summary and syncs it to your CRM. That means the detail your neighbor mentioned about downsizing next year is captured without you typing a word. [Book a demo](/demo/) to see how Sayso helps you turn every SOI conversation into a booked appointment.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -54,7 +54,7 @@ export const sphereOfInfluence: GlossaryEntry = {
   ],
   relatedFeature: {
     title: 'Call Notes',
-    href: '/features/smart-capture',
+    href: '/products/smart-capture',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

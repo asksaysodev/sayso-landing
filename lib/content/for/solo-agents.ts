@@ -39,17 +39,17 @@ export const soloAgents: UseCaseEntry = {
     {
       feature: 'Real-Time Coaching',
       description: 'See what to say during live calls \u2014 objection responses, follow-up questions, appointment closes. No memorization needed.',
-      href: '/features/cue',
+      href: '/products/cue',
     },
     {
       feature: 'Automatic Call Notes',
       description: 'Sayso generates call notes during every conversation. Stop spending 30 minutes on notes after a calling session.',
-      href: '/features/smart-capture',
+      href: '/products/smart-capture',
     },
     {
       feature: 'Objection Handling',
       description: 'When a prospect pushes back, the right response appears on your screen \u2014 tuned to what they just said, not a generic script.',
-      href: '/features/cue',
+      href: '/products/cue',
     },
     {
       feature: "What's Working & Coaching Tips",
@@ -78,12 +78,11 @@ export const soloAgents: UseCaseEntry = {
       answer: 'Sayso offers flexible plans for solo agents and teams. Visit the pricing page for current plans, or book a demo to see real-time coaching in action before you commit.',
     },
   ],
-  relatedFeatures: [
-    { title: 'Real-Time Coaching', href: '/features/cue' },
-    { title: 'Call Notes', href: '/features/smart-capture' },
+  relatedProducts: [
+    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'How to Not Freeze on Sales Calls', href: '/blog/how-to-not-freeze-on-calls' },
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
   relatedObjections: [

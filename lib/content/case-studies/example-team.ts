@@ -28,9 +28,9 @@ export const exampleTeam: CaseStudyEntry = {
     'The call notes alone saved me an hour a day. I actually follow up on every conversation now.',
     'I used to dread objections. Now I almost look forward to them because I know exactly what to say.',
   ],
-  relatedFeatures: [
-    { title: 'Real-Time Coaching', href: '/features/cue' },
-    { title: 'Call Notes', href: '/features/smart-capture' },
+  relatedProducts: [
+    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedPersona: {
     title: 'Sayso for Team Leaders',

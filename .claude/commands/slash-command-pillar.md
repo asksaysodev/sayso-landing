@@ -11,6 +11,17 @@ When this command is invoked, follow the two-phase process below. **Phase 1** re
 
 Before writing a single word, complete the Script Book read AND the competitive research. Use the Read, Grep, WebSearch, and WebFetch tools to complete the steps below.
 
+### Step 0 (Pre-flight): Check the Pending Internal Links Registry
+
+Read `docs/content/pending-internal-links.md`. This file lists blog post slugs that other site pages already reference but that have not been written yet.
+
+1. Search the registry for the pillar's planned slug and any close variants.
+2. If the slug appears, capture the list of source files and the suggested anchor text. These are pages that need back-links restored once this pillar publishes.
+3. After Phase 2 writes the new MDX, edit each source file listed in the matching registry entry to add a link back to the new pillar using the suggested or natural anchor text already in that paragraph.
+4. After all back-links are added, delete the matching entry from `docs/content/pending-internal-links.md`.
+
+If the slug does not appear in the registry, skip steps 3 and 4 for this run.
+
 ### Step 1: Read the Ultimate Script Book
 
 The Ultimate Script Book (`docs/content/Ultimate Script Book (1).md`) contains real-world call scripts, follow-up cadences, and prospect psychology developed by Sayso's top-performing agents. It is the primary source for voice, language, and framework authenticity across all pillar posts. Read it FIRST, before any web research.
@@ -278,13 +289,14 @@ Pillar posts are the most link-dense pages on the site. Rules:
 
 - **Link DOWN to every supporting post in the cluster.** This is the pillar's #1 SEO job. Each supporting post gets at least one link with descriptive anchor text (the supporting post's target keyword).
 - **Link to 2-3 relevant objection pages** (e.g., `/objections/not-interested/`, `/objections/call-me-later/`)
-- **Link to 1-2 feature pages** (e.g., `/features/cue/`, `/features/objection-handling/`)
+- **Link to 1-2 feature pages** (e.g., `/products/cue/`, `/products/smart-capture/`)
 - **Link to 1 persona page** if relevant (e.g., `/for/new-agents/`)
 - **Link to the glossary** when industry terms appear (e.g., first mention of "circle prospecting" → `/glossary/circle-prospecting/`)
 - **Link to 1 comparison page** if naturally relevant (e.g., mentioning coaching software → `/compare/sayso-vs-shilo/`)
 - **Total: 10-18 internal links.** This is significantly more than any other page type.
 - **Anchor text must be descriptive.** Never "click here" or "read more." Use the target keyword of the destination page.
-- **Link to supporting posts even if they don't exist yet.** The broken link checker will track what's missing, and the links activate automatically when posts are published.
+- **Do NOT link to posts that do not yet exist.** Every internal link must point to a published page. If a planned supporting post is referenced in this pillar's draft, leave the phrase as plain text and add the link in the same PR that publishes the supporting post (track it in `docs/content/pending-internal-links.md`).
+- **Restore pending back-links.** If this pillar's slug appeared in `docs/content/pending-internal-links.md` during Step 0, edit every source file listed in that entry to add a link to this pillar, then delete the registry entry.
 
 Supporting posts in each cluster for reference:
 
@@ -357,6 +369,7 @@ Before finalizing, verify:
 - [ ] At least 1 Information Gain element (something not in the top 5 results)
 - [ ] 10-18 internal links with descriptive anchor text
 - [ ] Links DOWN to every supporting post in the cluster
+- [ ] Pending back-links from `docs/content/pending-internal-links.md` have been added to every listed source file and the registry entry has been deleted (or the slug was not in the registry)
 - [ ] 3 CTAs (early, product section, end-of-post)
 - [ ] Word count 2,500-3,500
 - [ ] No banned filler phrases

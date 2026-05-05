@@ -43,8 +43,8 @@ export const leadNurturing: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'Effective nurturing depends on what happens during and after each call. Sayso\'s [Real-Time Coaching](/features/cue/) helps you handle every follow-up conversation with confidence, showing you the right response when a prospect says they are still not ready or raises a new concern.',
-    'After each call, [Call Notes](/features/smart-capture/) automatically logs a detailed summary to your CRM, so you never lose context between follow-ups. When you call a lead back three months later, you have every detail from the previous conversation ready.',
+    'Effective nurturing depends on what happens during and after each call. Sayso\'s [Real-Time Coaching](/products/cue/) helps you handle every follow-up conversation with confidence, showing you the right response when a prospect says they are still not ready or raises a new concern.',
+    'After each call, [Call Notes](/products/smart-capture/) automatically logs a detailed summary to your CRM, so you never lose context between follow-ups. When you call a lead back three months later, you have every detail from the previous conversation ready.',
     'Sayso turns every nurturing touchpoint into a stronger interaction. [Book a demo](/demo/) to see how it works on a live call.',
   ],
   relatedTerms: [
@@ -56,7 +56,7 @@ export const leadNurturing: GlossaryEntry = {
   ],
   relatedFeature: {
     title: 'Call Notes',
-    href: '/features/smart-capture',
+    href: '/products/smart-capture',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

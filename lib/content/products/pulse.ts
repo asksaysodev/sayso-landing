@@ -1,6 +1,6 @@
-import type { FeatureEntry } from './types';
+import type { ProductEntry } from './types';
 
-export const pulse: FeatureEntry = {
+export const pulse: ProductEntry = {
   slug: 'pulse',
   keyword: 'real estate market data during calls',
   seoTitle: 'Real Estate Market Data During Calls',
@@ -106,12 +106,12 @@ export const pulse: FeatureEntry = {
         'Sayso offers flexible plans for solo agents and teams. Visit the pricing page for current plans, or book a demo to see Pulse in action before you commit.',
     },
   ],
-  relatedFeatures: [
+  relatedProducts: [
     { title: 'Real-Time Coaching', slug: 'cue' },
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'How to Build Rapport on Real Estate Calls', href: '/blog/how-to-build-rapport-calls' },
-    { title: 'How to Qualify Real Estate Leads on the Phone', href: '/blog/how-to-qualify-leads-on-phone' },
+    { title: 'How to Build Rapport on Real Estate Calls', href: '/blog/how-to-build-rapport-real-estate-calls' },
+    { title: 'How to Qualify Real Estate Leads', href: '/blog/how-to-qualify-real-estate-leads' },
   ],
 };

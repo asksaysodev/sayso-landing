@@ -57,7 +57,7 @@ From the programmatic SEO training: these pages follow the micro keyword princip
 - A future SEO asset for emerging "[CRM] AI integration" searches
 
 **An integration page is NOT:**
-- A feature page (that is `/features/`)
+- A feature page (that is `/products/`)
 - A competitor comparison (that is `/compare/`)
 - A persona pitch (that is `/for/`)
 - A detailed technical integration guide (keep it simple and benefit-oriented)
@@ -291,7 +291,7 @@ export interface IntegrationEntry {
 | `relatedIntegrations` | 0-3 items | **Only include integration slugs that have content files.** Set to `[]` if target pages do not exist yet. |
 | `featureList` | 3-6 items | Short strings for SoftwareApplication schema. e.g., "Follow Up Boss CRM integration", "Real-time call coaching". |
 | `logoAlt` | - | Keyword-enriched. Format: `[CRM Name] AI integration with Sayso`. |
-| `relatedLinks` | 3-5 items | Cross-section links. Only link to pages that exist. Check `lib/content/features/`, `lib/content/for/`, and `app/pricing/` before adding. |
+| `relatedLinks` | 3-5 items | Cross-section links. Only link to pages that exist. Check `lib/content/products/`, `lib/content/for/`, and `app/pricing/` before adding. |
 | `inlineCtaHeadline` | - | Format: `Ready to Connect Sayso to [CRM Name]?` |
 | `inlineCtaSubheading` | - | 1 sentence describing the key benefit + ease of setup. |
 
@@ -342,7 +342,7 @@ Before populating `relatedLinks`, verify that the target pages exist:
 
 | Link Type | Where to Check | Currently Available |
 |-----------|---------------|-------------------|
-| Feature pages | `lib/content/features/index.ts` | `/features/cue` |
+| Feature pages | `lib/content/products/index.ts` | `/products/cue` |
 | Persona pages | `lib/content/for/index.ts` | `/for/solo-agents` |
 | Pricing | `app/pricing/` directory | `/pricing` |
 | Blog posts | `content/blog/` directory | `/blog/real-estate-cold-calling-guide`, `/blog/how-to-build-rapport-calls` |
@@ -350,7 +350,7 @@ Before populating `relatedLinks`, verify that the target pages exist:
 **Never link to pages that do not exist.** As new feature and persona pages are created, update `relatedLinks` on integration pages to include them.
 
 **Priority links for integration pages:**
-1. Feature page for call notes (`/features/smart-capture/`) - when it exists, this should be the primary feature link since auto-syncing notes is a key integration benefit
+1. Feature page for call notes (`/products/smart-capture/`) - when it exists, this should be the primary feature link since auto-syncing notes is a key integration benefit
 2. Team leaders persona page (`/for/team-leaders/`) - when it exists, this is the best persona link since teams care most about CRM integration
 3. `/pricing/` - always available
 
@@ -613,7 +613,7 @@ export const yourCrm: IntegrationEntry = {
   ],
   relatedIntegrations: [],  // Populate when other integration pages exist
   relatedLinks: [
-    { label: 'Related feature', title: 'Real-Time Coaching', href: '/features/cue' },
+    { label: 'Related feature', title: 'Real-Time Coaching', href: '/products/cue' },
     { label: "Who it's for", title: 'Solo Agents', href: '/for/solo-agents' },
     { label: 'Pricing', title: 'View Pricing', href: '/pricing' },
   ],

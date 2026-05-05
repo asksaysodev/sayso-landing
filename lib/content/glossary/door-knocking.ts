@@ -47,8 +47,8 @@ export const doorKnocking: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'Door knocking generates leads, but the follow-up call is where appointments get booked. When you call back a homeowner you met in the field, Sayso\'s [Real-Time Coaching](/features/cue/) shows you exactly what to say based on the conversation, so you sound prepared and confident.',
-    'Sayso also captures call notes automatically through [Call Notes](/features/smart-capture/), so every follow-up conversation gets logged to your CRM without extra work. [Book a demo](/demo/) to see how Sayso turns your door knocking leads into booked appointments.',
+    'Door knocking generates leads, but the follow-up call is where appointments get booked. When you call back a homeowner you met in the field, Sayso\'s [Real-Time Coaching](/products/cue/) shows you exactly what to say based on the conversation, so you sound prepared and confident.',
+    'Sayso also captures call notes automatically through [Call Notes](/products/smart-capture/), so every follow-up conversation gets logged to your CRM without extra work. [Book a demo](/demo/) to see how Sayso turns your door knocking leads into booked appointments.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -61,7 +61,7 @@ export const doorKnocking: GlossaryEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/cue',
+    href: '/products/cue',
   },
   relatedPersona: {
     title: 'Sayso for Solo Agents',

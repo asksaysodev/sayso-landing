@@ -1,16 +1,16 @@
 import type { HubPageConfig } from './types';
 import { registerHub } from './index';
 
-const featuresHub: HubPageConfig = {
-  slug: 'features',
-  section: 'Features',
-  basePath: '/features',
-  seoTitle: 'Sayso Product: Real-Time Coaching for Agents',
+const productsHub: HubPageConfig = {
+  slug: 'products',
+  section: 'Products',
+  basePath: '/products',
+  seoTitle: 'Sayso Products: Real-Time Coaching for Agents',
   seoDescription:
-    'Explore the Sayso product: real-time coaching, automatic call notes, live market data, and custom scripts for real estate agents.',
-  h1: 'Features Built For You',
+    'Explore the Sayso products: real-time coaching, automatic call notes, live market data, and custom scripts for real estate agents.',
+  h1: 'Products Built For You',
   introduction:
-    'Every feature in Sayso is designed for one thing: helping you sound better on prospecting calls. Real-time coaching, automatic notes, live market data, and more.',
+    'Every product in Sayso is designed for one thing: helping you sound better on prospecting calls. Real-time coaching, automatic notes, live market data, and more.',
   childPages: [
     {
       title: 'Real-Time Coaching',
@@ -62,6 +62,6 @@ const featuresHub: HubPageConfig = {
   // }, // TODO: re-enable when feedback page is ready
 };
 
-registerHub(featuresHub);
+registerHub(productsHub);
 
-export { featuresHub };
+export { productsHub };

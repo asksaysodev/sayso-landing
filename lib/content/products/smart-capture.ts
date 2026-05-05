@@ -1,6 +1,6 @@
-import type { FeatureEntry } from './types';
+import type { ProductEntry } from './types';
 
-export const smartCapture: FeatureEntry = {
+export const smartCapture: ProductEntry = {
   slug: 'smart-capture',
   keyword: 'automatic call notes real estate',
   seoTitle: 'Automatic Call Notes for Real Estate Agents',
@@ -106,12 +106,9 @@ export const smartCapture: FeatureEntry = {
         'Sayso offers flexible plans for solo agents and teams. Visit the pricing page for current plans, or book a demo to see Smart Capture in action before you commit.',
     },
   ],
-  relatedFeatures: [
+  relatedProducts: [
     { title: 'Real-Time Coaching', slug: 'cue' },
     { title: 'Custom Scripts', slug: 'playbook' },
   ],
-  relatedBlogPosts: [
-    { title: 'Real Estate Call Notes Template', href: '/blog/real-estate-call-notes-template' },
-    { title: 'How to Take Notes During Sales Calls', href: '/blog/how-to-take-notes-during-calls' },
-  ],
+  relatedBlogPosts: [],
 };

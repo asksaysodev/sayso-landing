@@ -11,7 +11,7 @@ export const saysoVsMaverickre: ComparisonEntry = {
   tldr:
     'If you are looking for a MaverickRE alternative that coaches you during live calls, Sayso is the top pick for 2026. MaverickRE is a team analytics and AI practice platform, but its coaching happens outside of live conversations. Sayso delivers real-time objection handling prompts and automatic call notes while you are still on the phone. For agents who need in-the-moment guidance, not post-call grading, [Sayso is the better fit](/demo/).',
   whyLooking:
-    'If you are researching a MaverickRE alternative, you are probably looking for coaching that happens during live calls rather than before or after them. MaverickRE offers AI role-play practice and post-call grading, but neither of those help when a prospect raises an objection and you need the right response in the next three seconds.\n\nMaverickRE\'s AI Sales Coach lets you practice with AI personas, which is useful for building confidence. But practice and live performance are two different things. When a real prospect says "I already have an agent" or "Now is not a good time," you need guidance that appears on screen in real time, not a grading report that arrives an hour later.\n\nAnother common reason agents explore alternatives is CRM compatibility. MaverickRE\'s full platform, including analytics, lead routing, and rules-based alerts, requires Follow Up Boss or BoldTrail. Agents using kvCORE, Sierra Interactive, Chime, or other CRMs can only access the standalone AI Coach tier, missing out on the broader feature set.\n\nPricing is also a factor. MaverickRE\'s AI Sales Coach starts at $199 per user per month, and the Revenue Accelerator platform runs $375 to $1,475 per month depending on team size. For solo agents or small teams looking for [real-time coaching](/features/cue/) during actual prospecting calls, that cost structure may not align with what they need most.',
+    'If you are researching a MaverickRE alternative, you are probably looking for coaching that happens during live calls rather than before or after them. MaverickRE offers AI role-play practice and post-call grading, but neither of those help when a prospect raises an objection and you need the right response in the next three seconds.\n\nMaverickRE\'s AI Sales Coach lets you practice with AI personas, which is useful for building confidence. But practice and live performance are two different things. When a real prospect says "I already have an agent" or "Now is not a good time," you need guidance that appears on screen in real time, not a grading report that arrives an hour later.\n\nAnother common reason agents explore alternatives is CRM compatibility. MaverickRE\'s full platform, including analytics, lead routing, and rules-based alerts, requires Follow Up Boss or BoldTrail. Agents using kvCORE, Sierra Interactive, Chime, or other CRMs can only access the standalone AI Coach tier, missing out on the broader feature set.\n\nPricing is also a factor. MaverickRE\'s AI Sales Coach starts at $199 per user per month, and the Revenue Accelerator platform runs $375 to $1,475 per month depending on team size. For solo agents or small teams looking for [real-time coaching](/products/cue/) during actual prospecting calls, that cost structure may not align with what they need most.',
   comparisonTable: [
     { feature: 'Real-time coaching during live calls', sayso: 'Yes, live prompts on screen', competitor: 'No, practice role-play only' },
     { feature: 'Automatic call notes', sayso: 'Yes, synced to CRM', competitor: 'No' },
@@ -27,7 +27,7 @@ export const saysoVsMaverickre: ComparisonEntry = {
     {
       heading: 'Real-Time Coaching During Live Calls',
       body:
-        'Sayso listens to your conversation and surfaces [real-time coaching prompts](/features/cue/) directly on your screen. When a prospect says "I need to think about it" or "We are not interested right now," the right response appears immediately.\n\nMaverickRE\'s AICE coach is designed for practice sessions where you call an AI persona and receive a grading email one to two hours later. That is a different product for a different problem. Sayso is built for the live call itself, where timing is everything.',
+        'Sayso listens to your conversation and surfaces [real-time coaching prompts](/products/cue/) directly on your screen. When a prospect says "I need to think about it" or "We are not interested right now," the right response appears immediately.\n\nMaverickRE\'s AICE coach is designed for practice sessions where you call an AI persona and receive a grading email one to two hours later. That is a different product for a different problem. Sayso is built for the live call itself, where timing is everything.',
     },
     {
       heading: 'Automatic Call Notes That Sync to Your CRM',
@@ -86,6 +86,6 @@ export const saysoVsMaverickre: ComparisonEntry = {
     { title: 'Solo Agents', href: '/for/solo-agents' },
   ],
   featureLinks: [
-    { title: 'Real-Time Coaching', href: '/features/cue' },
+    { title: 'Real-Time Coaching', href: '/products/cue' },
   ],
 };

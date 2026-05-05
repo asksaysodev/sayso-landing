@@ -81,6 +81,6 @@ export const needToThinkAboutIt: ObjectionEntry = {
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
-    href: '/features/cue',
+    href: '/products/cue',
   },
 };

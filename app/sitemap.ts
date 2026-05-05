@@ -4,21 +4,21 @@ import { siteUrl } from '@/lib/config';
 import { getAllNavHrefs } from '@/lib/navigation';
 import { getAllGlossarySlugs } from '@/lib/content/glossary';
 import { getAllObjectionSlugs } from '@/lib/content/objections';
-import { getAllFeatureSlugs } from '@/lib/content/features';
+import { getAllProductSlugs } from '@/lib/content/products';
 // import { getAllIntegrationSlugs } from '@/lib/content/integrations'; // TODO: re-enable when integrations article is published
 import { getAllUseCaseSlugs } from '@/lib/content/for';
 import { getAllComparisonSlugs } from '@/lib/content/comparisons';
-import { getAllCaseStudySlugs } from '@/lib/content/case-studies';
+// import { getAllCaseStudySlugs } from '@/lib/content/case-studies'; // TODO: re-enable when first real case study is published
 
 /** Paths that should never appear in the sitemap. */
 const EXCLUDED_PATHS = new Set([
   '/privacy',
   '/terms',
-  '/start',
   '/feedback',
   '/paywall-preview',
   '/ui',
   '/integrations', // TODO: re-enable when integrations article is published
+  '/case-studies', // TODO: re-enable when first real case study is published
 ]);
 
 /** Priority overrides by exact path. */
@@ -29,12 +29,13 @@ const PRIORITY_MAP: Record<string, number> = {
   '/pricing': 0.8,
   '/case-studies': 0.7,
   '/contact': 0.7,
+  '/request-demo': 0.7,
 };
 
 /** Default priority by path prefix. */
 function getPriority(path: string): number {
   if (PRIORITY_MAP[path] !== undefined) return PRIORITY_MAP[path];
-  if (path.startsWith('/features/')) return 0.7;
+  if (path.startsWith('/products/')) return 0.7;
   if (path.startsWith('/for/')) return 0.7;
   // if (path.startsWith('/integrations')) return 0.7; // TODO: re-enable when integrations article is published
   if (path.startsWith('/compare/')) return 0.7;
@@ -82,11 +83,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const contentSections: { slugs: string[]; prefix: string; priority: number }[] = [
     { slugs: getAllGlossarySlugs(), prefix: '/glossary', priority: 0.5 },
     { slugs: getAllObjectionSlugs(), prefix: '/objections', priority: 0.7 },
-    { slugs: getAllFeatureSlugs(), prefix: '/features', priority: 0.7 },
+    { slugs: getAllProductSlugs(), prefix: '/products', priority: 0.7 },
     // { slugs: getAllIntegrationSlugs(), prefix: '/integrations', priority: 0.7 }, // TODO: re-enable when integrations article is published
     { slugs: getAllUseCaseSlugs(), prefix: '/for', priority: 0.7 },
     { slugs: getAllComparisonSlugs(), prefix: '/compare', priority: 0.7 },
-    { slugs: getAllCaseStudySlugs(), prefix: '/case-studies', priority: 0.7 },
+    // { slugs: getAllCaseStudySlugs(), prefix: '/case-studies', priority: 0.7 }, // TODO: re-enable when first real case study is published
   ];
 
   const contentPages: MetadataRoute.Sitemap = contentSections.flatMap(({ slugs, prefix, priority }) =>

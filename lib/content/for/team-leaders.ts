@@ -40,19 +40,19 @@ export const teamLeaders: UseCaseEntry = {
       feature: 'Real-Time Coaching for Every Agent',
       description:
         'Every agent on your team gets live coaching prompts during calls. Objection responses, follow-up questions, and appointment closes appear on screen in the moment. Your best coaching is available on every call, not just the ones you sit in on.',
-      href: '/features/cue',
+      href: '/products/cue',
     },
     {
       feature: 'Automatic Call Notes and CRM Sync',
       description:
         'Sayso captures structured notes during every conversation and syncs them to your CRM. Stop chasing agents for call summaries. Every lead interaction is documented automatically.',
-      href: '/features/smart-capture',
+      href: '/products/smart-capture',
     },
     {
       feature: 'Custom Scripts for Your Team',
       description:
         'Upload your team\'s scripts, frameworks, and talk tracks to Sayso. Every agent sees the same proven material on screen during calls. Roll out a new script once and your entire team has it immediately.',
-      href: '/features/playbook',
+      href: '/products/playbook',
     },
     {
       feature: 'Call Insights and Coaching Visibility',
@@ -87,10 +87,10 @@ export const teamLeaders: UseCaseEntry = {
         'Sayso offers team plans built for multi-agent organizations. Visit the pricing page for current plans, or book a demo to see how real-time coaching works across a team.',
     },
   ],
-  relatedFeatures: [
-    { title: 'Real-Time Coaching', href: '/features/cue' },
-    { title: 'Custom Scripts', href: '/features/playbook' },
-    { title: 'Call Notes', href: '/features/smart-capture' },
+  relatedProducts: [
+    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Custom Scripts', href: '/products/playbook' },
+    { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
     { title: 'Best Real Estate Call Coaching Software', href: '/blog/best-real-estate-call-coaching-software' },

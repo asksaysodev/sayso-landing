@@ -54,7 +54,7 @@ From the Bildad SEO training: competitor alternative articles drove most of the 
 - A bottom-of-funnel page - the reader is ready to switch or already comparing tools
 
 **A comparison page is NOT:**
-- A feature page (that is `/features/`)
+- A feature page (that is `/products/`)
 - A persona pitch (that is `/for/`)
 - A one-sided sales page (credibility IS the conversion strategy here)
 - A blog post or educational article
@@ -129,11 +129,11 @@ From the Bildad training, these are the rules for choosing comparison page keywo
 
 ### Inline Links
 
-Content strings support `[link text](/url/)` markdown syntax via the `renderInlineMarkdown()` utility. Internal links become Next.js `<Link>` components. Use this to embed links to `/features/`, `/for/`, `/pricing/`, and `/demo/` pages naturally within prose.
+Content strings support `[link text](/url/)` markdown syntax via the `renderInlineMarkdown()` utility. Internal links become Next.js `<Link>` components. Use this to embed links to `/products/`, `/for/`, `/pricing/`, and `/demo/` pages naturally within prose.
 
 Example in a content string:
 ```
-'Sayso surfaces [real-time coaching prompts](/features/cue/) directly on your screen.'
+'Sayso surfaces [real-time coaching prompts](/products/cue/) directly on your screen.'
 ```
 
 ### Honesty Rules
@@ -187,7 +187,7 @@ Content guidance for the TLDR:
 - Be factual and fair - state limitations without being snarky
 - Include the exact keyword in the first paragraph ("If you are researching a [competitor] alternative...")
 - Common reasons to cover: missing features, pricing concerns, integration gaps, workflow mismatches
-- Link to relevant `/features/` pages naturally (e.g., "the need for [real-time coaching](/features/cue/)")
+- Link to relevant `/products/` pages naturally (e.g., "the need for [real-time coaching](/products/cue/)")
 
 ### 6. Feature Comparison Table
 - **H2:** Rendered by the component: `{competitor} vs Sayso - Feature Comparison`
@@ -207,7 +207,7 @@ Content guidance for the TLDR:
 - **H3 subsections** from `whereSaysoWinsDetails[]` - 2-3 subsections, each with:
   - A descriptive heading (renders as `<h3>`)
   - 1-2 paragraphs explaining the advantage in detail
-  - Inline links to relevant `/features/` pages
+  - Inline links to relevant `/products/` pages
 - Focus on what matters to the searcher - they are looking for an alternative, so emphasize what is different or better
 - Use specific details, not vague claims ("saves 30-60 minutes of manual note-taking" not "saves time")
 
@@ -290,7 +290,7 @@ export interface ComparisonEntry {
   // Optional structured fields (recommended - these improve SEO and page depth)
   whereSaysoWinsDetails?: { heading: string; body: string }[];  // H3 subsections within "Where Sayso Wins"
   personaLinks?: { title: string; href: string }[];              // Links to /for/ pages after "Who It's For"
-  featureLinks?: { title: string; href: string }[];              // Links to /features/ pages after "Where Sayso Wins"
+  featureLinks?: { title: string; href: string }[];              // Links to /products/ pages after "Where Sayso Wins"
   featureList?: string[];                                         // Feature list for SoftwareApplication JSON-LD
 }
 ```
@@ -306,14 +306,14 @@ export interface ComparisonEntry {
 | `seoDescription` | 160 chars | Format: Question with keyword. Differentiator. CTA. Dev build warns if over 160. |
 | `h1` | - | Format: `Best [Keyword] for [Use Case] ([Year])`. Include the year. |
 | `tldr` | 3-5 sentences | Keyword in first 2 sentences. End with inline link to `/demo/`. Supports `[text](/url/)` links. |
-| `whyLooking` | 3-4 paragraphs | Separate with `\n\n`. Include keyword in first paragraph. Link to relevant `/features/` pages. |
+| `whyLooking` | 3-4 paragraphs | Separate with `\n\n`. Include keyword in first paragraph. Link to relevant `/products/` pages. |
 | `comparisonTable` | 5-8 rows | Be honest. Use concise, specific cell values - not just "Yes"/"No" when you can say more. |
 | `whereSaysoWins` | 2-3 sentences | Short intro paragraph. The detail goes in `whereSaysoWinsDetails`. |
 | `whereSaysoWinsDetails` | 2-3 items | Each item: `heading` (renders as H3) + `body` (1-2 paragraphs, supports inline links). Cover the key differentiators in depth. |
 | `whereCompetitorWins` | 2-3 paragraphs | Separate with `\n\n`. Be honest and fair. Keep it shorter than "Where Sayso Wins". |
 | `whoItsFor` | 2-3 paragraphs | Separate with `\n\n`. Include keyword once. Link to `/for/` persona pages using `[text](/url/)` syntax. |
 | `personaLinks` | 1-3 links | Only link to persona pages that actually exist. Check `lib/content/for/` before adding. |
-| `featureLinks` | 1-2 links | Only link to feature pages that actually exist. Check `lib/content/features/` before adding. |
+| `featureLinks` | 1-2 links | Only link to feature pages that actually exist. Check `lib/content/products/` before adding. |
 | `pricing` | 1-2 paragraphs | Separate with `\n\n`. Include Sayso pricing framing. If competitor pricing unknown, say "Contact [Competitor]". Link to `/pricing/`. |
 | `faq` | 4-6 items | Must include required questions (see FAQ rules below). Answers are 2-4 sentences each. |
 | `relatedComparisons` | 1-3 items | Link to other comparison page slugs. |
@@ -364,8 +364,8 @@ Every comparison page must include **5-8 internal links**. The component handles
 
 | Content Field | What to Link | Example |
 |--------------|-------------|---------|
-| `whyLooking` | Link to the primary feature that addresses the pain point | `[real-time coaching](/features/cue/)` |
-| `whereSaysoWinsDetails[].body` | Link to the feature being discussed in that subsection | `[real-time coaching prompts](/features/cue/)` |
+| `whyLooking` | Link to the primary feature that addresses the pain point | `[real-time coaching](/products/cue/)` |
+| `whereSaysoWinsDetails[].body` | Link to the feature being discussed in that subsection | `[real-time coaching prompts](/products/cue/)` |
 | `whoItsFor` | Link to persona pages for each audience type mentioned | `[Solo agents](/for/solo-agents/) who prospect daily...` |
 | `pricing` | Link to the pricing page inline | `Visit the [pricing page](/pricing/) for current plans` |
 | `tldr` | Optional link to demo | `[Sayso is the better fit](/demo/)` |
@@ -505,7 +505,7 @@ Use this before submitting any new comparison page:
 - [ ] "Where Sayso Wins" has 2-3 H3 subsections (`whereSaysoWinsDetails`)
 - [ ] 4-6 FAQ items including all required question patterns
 - [ ] `personaLinks` populated with relevant existing `/for/` pages
-- [ ] `featureLinks` populated with relevant existing `/features/` pages
+- [ ] `featureLinks` populated with relevant existing `/products/` pages
 - [ ] `relatedComparisons` links to 1-3 other comparison pages
 - [ ] `featureList` populated for SoftwareApplication schema
 
@@ -641,7 +641,7 @@ Run through this after creating or editing any comparison page:
 - [ ] Link to `/compare/` hub (breadcrumb)
 - [ ] Link to `/demo/` (TLDR CTA + inline CTA + closing CTA)
 - [ ] Link to `/pricing/` (standalone link + inline in pricing text)
-- [ ] 1+ links to `/features/` pages (inline in content + `featureLinks`)
+- [ ] 1+ links to `/products/` pages (inline in content + `featureLinks`)
 - [ ] 1+ links to `/for/` persona pages (inline in whoItsFor + `personaLinks`)
 - [ ] 1+ links to other comparison pages (`relatedComparisons`)
 
