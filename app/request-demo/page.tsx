@@ -6,36 +6,36 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Request a Demo',
   description:
-    'Get in touch with the Sayso team. Send us a message and we\'ll get back to you shortly.',
+    'Interested in learning more about Sayso? Fill out a quick form and the team will reach out to schedule a demo.',
   alternates: {
-    canonical: `${siteUrl}/contact/`,
+    canonical: `${siteUrl}/request-demo/`,
   },
   openGraph: {
-    title: 'Contact Us | Sayso',
+    title: 'Request a Demo | Sayso',
     description:
-      'Get in touch with the Sayso team. Send us a message and we\'ll get back to you shortly.',
-    url: `${siteUrl}/contact/`,
+      'Interested in learning more about Sayso? Fill out a quick form and the team will reach out to schedule a demo.',
+    url: `${siteUrl}/request-demo/`,
     type: 'website',
     images: [
       {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'Contact Sayso',
+        alt: 'Request a Demo with Sayso',
       },
     ],
   },
   twitter: {
-    title: 'Contact Us | Sayso',
+    title: 'Request a Demo | Sayso',
     description:
-      'Get in touch with the Sayso team. Send us a message and we\'ll get back to you shortly.',
+      'Interested in learning more about Sayso? Fill out a quick form and the team will reach out to schedule a demo.',
     images: ['/og-default.png'],
   },
 };
 
-export default function ContactPage() {
+export default function RequestDemoPage() {
   return (
     <DemoCalendarProvider>
       <div className="relative bg-white min-h-screen">
@@ -43,19 +43,19 @@ export default function ContactPage() {
         <main>
           <section className="max-w-[900px] mx-auto px-6 pt-32 pb-10 text-center">
             <h1 className="font-comic text-5xl sm:text-6xl lg:text-7xl text-[#1D4871] leading-[1.05] tracking-wide">
-              <span className="text-[#2367EE]">Contact</span> Us.
+              <span className="text-[#2367EE]">Request</span> a Demo.
             </h1>
-            <p className="mt-5 text-lg md:text-xl text-[#1D4871]/75 leading-relaxed max-w-[600px] mx-auto">
-              Send us a message and we&apos;ll get back to you shortly.
-            </p>
+            <h2 className="mt-5 text-lg md:text-xl text-[#1D4871]/75 leading-relaxed max-w-[600px] mx-auto font-normal">
+              Interested in learning more about Sayso?
+            </h2>
           </section>
 
           <section className="w-full px-4 md:px-6 pb-16">
             <div className="max-w-[900px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
               <iframe
-                src="https://asksayso.notion.site/ebd/2f04de400468813784b3cd2d7a1290af"
-                className="w-full border-0 h-[1400px] md:h-[1300px]"
-                title="Contact form"
+                src="https://asksayso.notion.site/ebd/7725decf52724317a3b55bb2ecbbffa9"
+                className="w-full border-0 h-[1700px] md:h-[1600px]"
+                title="Request a demo form"
                 allowFullScreen
                 loading="lazy"
               />
