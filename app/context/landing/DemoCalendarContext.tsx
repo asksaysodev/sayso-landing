@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useState, useCallback } from 'react';
 import { X } from 'lucide-react';
-import { OnboardingModal } from '@/components/onboarding/OnboardingModal';
 import { SystemSelectModal } from '@/components/landing/SystemSelectModal';
 
 const DEMO_CALENDAR_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0eeiee8mED3XOLfAhzApvxOvHL96hIK8pNfAcZBY89TaKTa_LeVrtJr_kEbOlbQyb1juvLNPG3?gv=true';
@@ -11,7 +10,6 @@ const CONTACT_FORM_URL = 'https://alert-tartan-008.notion.site/ebd/2f04de4004688
 interface IDemoCalendarContext {
     openDemoCalendar: () => void;
     openContactForm: () => void;
-    openOnboarding: () => void;
     openSystemSelect: () => void;
 }
 
@@ -20,15 +18,13 @@ const DemoCalendarContext = createContext<IDemoCalendarContext | null>(null);
 export function DemoCalendarProvider({ children }: { children: React.ReactNode }) {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
   const [isSystemSelectOpen, setIsSystemSelectOpen] = useState(false);
   const openDemoCalendar = useCallback(() => setIsCalendarOpen(true), []);
   const openContactForm = useCallback(() => setIsContactOpen(true), []);
-  const openOnboarding = useCallback(() => setIsOnboardingOpen(true), []);
   const openSystemSelect = useCallback(() => setIsSystemSelectOpen(true), []);
 
   return (
-    <DemoCalendarContext.Provider value={{ openDemoCalendar, openContactForm, openOnboarding, openSystemSelect }}>
+    <DemoCalendarContext.Provider value={{ openDemoCalendar, openContactForm, openSystemSelect }}>
       {children}
 
       {/* Shared Calendar Popup Modal */}
@@ -81,11 +77,6 @@ export function DemoCalendarProvider({ children }: { children: React.ReactNode }
             />
           </div>
         </div>
-      )}
-
-      {/* Onboarding Flow Modal */}
-      {isOnboardingOpen && (
-        <OnboardingModal onClose={() => setIsOnboardingOpen(false)} />
       )}
 
       {/* System Select Modal */}

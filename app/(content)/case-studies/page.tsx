@@ -6,6 +6,7 @@ export const metadata = buildMetadata({
   title: caseStudiesHub.seoTitle,
   description: caseStudiesHub.seoDescription,
   path: '/case-studies',
+  noindex: true,
 });
 
 export default function CaseStudiesHubPage() {
