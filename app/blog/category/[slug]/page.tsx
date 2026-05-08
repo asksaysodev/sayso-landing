@@ -5,6 +5,7 @@ import { BlogHeroBanner } from '@/components/blog/BlogHeroBanner';
 import { BlogCategoryPills } from '@/components/blog/BlogCategoryPills';
 import { BlogPostCard } from '@/components/blog/BlogPostCard';
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
+import { siteUrl } from '@/lib/config';
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -20,7 +21,6 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
   const { slug } = await params;
   const name = formatCategoryName(slug);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
   return {
     title: `${name} Articles | Sayso Blog`,
     description: `Read our latest articles about ${name.toLowerCase()}. Tips, strategies, and insights from the Sayso team.`,

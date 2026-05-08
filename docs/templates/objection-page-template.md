@@ -93,7 +93,7 @@ These rules apply to every objection page without exception.
 ### Canonical URL
 
 - Built automatically by `buildMetadata()` in `lib/seo/metadata.ts`.
-- Format: `https://asksayso.com/objections/[slug]/`
+- Format: `https://www.asksayso.com/objections/[slug]/`
 - **Always includes a trailing slash.** This is enforced in the metadata builder.
 
 ### Brand Name
@@ -355,8 +355,8 @@ Injected automatically by the `Breadcrumb` component.
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asksayso.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Objections", "item": "https://asksayso.com/objections" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asksayso.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Objections", "item": "https://www.asksayso.com/objections" },
     { "@type": "ListItem", "position": 3, "name": "[H1]", "item": "" }
   ]
 }
