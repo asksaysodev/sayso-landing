@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-default.png',
+        url: '/images/og-default.png',
         width: 1200,
         height: 630,
         alt: 'Book a Demo with Sayso',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Book a Demo | Sayso',
     description:
       'Schedule a meeting with the founders to see how Sayso can help your real estate team book more appointments.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

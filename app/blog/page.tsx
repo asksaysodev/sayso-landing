@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
     url: `${siteUrl}/blog/`,
     type: 'website',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'The Sayso Blog' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'The Sayso Blog' }],
   },
   twitter: {
     title: 'The Sayso Blog',
     description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

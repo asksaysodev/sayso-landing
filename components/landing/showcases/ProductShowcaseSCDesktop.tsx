@@ -31,7 +31,7 @@ export function ProductShowcaseSCDesktop() {
         >
           <div className="flex justify-center">
             <Image
-              src="/smart-capture-widget.svg"
+              src="/widgets/smart-capture-widget.svg"
               alt="Sayso Smart Capture widget showing real-time call insights with LPMAMA indicators"
               width={649}
               height={199}

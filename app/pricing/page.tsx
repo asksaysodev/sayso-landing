@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-default.png',
+        url: '/images/og-default.png',
         width: 1200,
         height: 630,
         alt: 'Sayso Pricing',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Pricing | Sayso',
     description:
       'Simple, transparent pricing for individual agents and teams. Free trial included.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

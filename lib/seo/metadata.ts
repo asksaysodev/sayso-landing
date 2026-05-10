@@ -8,7 +8,7 @@ interface BuildMetadataOptions {
   description: string;
   /** URL path, e.g. "/products/cue". Used to build canonical URL. */
   path: string;
-  /** Custom OG image path. Defaults to '/og-default.png'. */
+  /** Custom OG image path. Defaults to '/images/og-default.png'. */
   ogImage?: string;
   /** Set true to add noindex/nofollow (e.g. blog category pages). */
   noindex?: boolean;
@@ -18,7 +18,7 @@ export function buildMetadata({
   title,
   description,
   path,
-  ogImage = '/og-default.png',
+  ogImage = '/images/og-default.png',
   noindex = false,
 }: BuildMetadataOptions): Metadata {
   if (process.env.NODE_ENV === 'development') {

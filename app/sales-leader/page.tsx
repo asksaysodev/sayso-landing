@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: `${siteUrl}/sales-leader/`,
     images: [
       {
-        url: '/og-default.png',
+        url: '/images/og-default.png',
         width: 1200,
         height: 630,
         alt: 'Sayso | Real-Time AI Sales Coaching for Sales Leaders',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: 'Sayso for Sales Leaders | Turn Role-Play Into Real Results',
     description:
       'Sayso listens during prospect conversations and shows agents what to ask next, so they stay confident and in control when it matters most.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

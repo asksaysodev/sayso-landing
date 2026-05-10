@@ -6,9 +6,9 @@ import { LightningIcon } from '@/components/icons/LightningIcon';
 import type { HeroContent } from '@/lib/content/personas/types';
 
 const logos = [
-  { name: 'eXp Realty', src: '/exp realty.png' },
-  { name: 'Anderson Group', src: '/anderson group.png' },
-  { name: 'Olaf', src: '/olaf logo.png' },
+  { name: 'eXp Realty', src: '/social-proof/exp-realty.png' },
+  { name: 'Anderson Group', src: '/social-proof/anderson-group.png' },
+  { name: 'Olaf', src: '/social-proof/olaf-logo.png' },
 ];
 
 const defaultContent: HeroContent = {

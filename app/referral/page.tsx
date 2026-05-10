@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: 'Referral Program | Sayso',
     description: 'Invite someone to Sayso and you both get rewarded. Share your unique referral code and earn credits.',
     url: `${siteUrl}/referral/`,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Referral Program' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso Referral Program' }],
     type: 'website',
   },
   twitter: {
     title: 'Referral Program | Sayso',
     description: 'Invite someone to Sayso and you both get rewarded. Share your unique referral code and earn credits.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

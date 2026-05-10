@@ -17,7 +17,7 @@ export function SalesLeaderAdPage() {
           <div className="flex justify-center mb-8">
             <Link href="/" aria-label="Sayso home">
               <Image
-                src="/logo-pos-horizontal.png"
+                src="/logos/logo-pos-horizontal.png"
                 alt="Sayso"
                 width={100}
                 height={40}

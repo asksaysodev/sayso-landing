@@ -31,14 +31,14 @@ export function ProductShowcasePlaybookDesktop() {
         >
           <div className="flex flex-col items-center gap-2">
             <Image
-              src="/playbook-widget.svg"
+              src="/widgets/playbook-widget.svg"
               alt="Sayso Playbook toolbar widget for guided call scripts"
               width={649}
               height={59}
               priority
             />
             <Image
-              src="/playbook-notes.svg"
+              src="/widgets/playbook-notes.svg"
               alt="Sayso Playbook notes showing real-time call script guidance and captured insights"
               width={491}
               height={446}

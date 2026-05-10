@@ -31,7 +31,7 @@ export function ProductShowcasePulseDesktop() {
         >
           <div className="flex justify-center">
             <Image
-              src="/pulse-widget.svg"
+              src="/widgets/pulse-widget.svg"
               alt="Sayso Pulse widget showing live market analysis data for real-time call insights"
               width={656}
               height={149}

@@ -74,7 +74,7 @@ export default function SaysoNavbar() {
             className="flex items-center gap-2 text-primary font-bold text-lg md:text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-cta focus:ring-offset-2 rounded-lg px-2 -ml-2"
             aria-label="Sayso home"
           >
-            <img src="/logo-pos-horizontal.png" alt="Sayso" className="h-8" />
+            <img src="/logos/logo-pos-horizontal.png" alt="Sayso" className="h-8" />
           </a>
 
           {/* Desktop Nav Links - Center */}

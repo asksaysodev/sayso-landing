@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: 'Sayso for ISAs | Never Miss the Details That Book the Appointment',
     description: 'Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.',
     url: `${siteUrl}/isa/`,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso | Real-Time AI Coaching for ISAs' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso | Real-Time AI Coaching for ISAs' }],
     type: 'website',
   },
   twitter: {
     title: 'Sayso for ISAs | Never Miss the Details That Book the Appointment',
     description: 'Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 
