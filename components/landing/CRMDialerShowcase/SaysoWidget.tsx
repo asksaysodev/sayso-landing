@@ -51,9 +51,7 @@ export function SaysoWidget({
   timerSeconds = 0,
 }: {
   currentCycle: number;
-  showBuyerMessage: boolean;
   showPrompt: boolean;
-  promptText: string;
   timerSeconds?: number;
 }) {
   const cycle = CONVERSATION_CYCLES[currentCycle];

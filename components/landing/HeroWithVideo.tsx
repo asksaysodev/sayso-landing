@@ -62,6 +62,8 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
           >
             <video
               src="/sayso-demo.mp4"
+              poster="/sayso-demo-poster.jpg"
+              preload="auto"
               autoPlay
               muted
               loop

@@ -37,7 +37,7 @@ function ChromeTabStrip() {
           </svg>
         </div>
         <span style={{ fontSize: 11, color: '#3c4043', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-          Mojo Dialer — Alex Agent
+          Mojo Dialer - Alex Agent
         </span>
         <span style={{ fontSize: 14, color: '#9aa0a6', lineHeight: 1, cursor: 'default' }}>×</span>
       </div>
