@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { DesktopDemoFrame } from './DesktopDemoFrame';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import type { HeroContent } from '@/lib/content/personas/types';
 
@@ -56,17 +55,20 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
         </div>
 
         {/* Full-width demo showcase */}
-        <div className="mt-6 md:mt-8 max-w-[1400px] mx-auto">
-          <DesktopDemoFrame>
+        <div className="mt-6 md:mt-8 max-w-[900px] mx-auto">
+          <div
+            className="w-full rounded-2xl overflow-hidden border border-[#c4c4c4]"
+            style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08)' }}
+          >
             <video
               src="/sayso-demo.mp4"
               autoPlay
               muted
               loop
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full block"
             />
-          </DesktopDemoFrame>
+          </div>
         </div>
 
         {/* Social proof */}
