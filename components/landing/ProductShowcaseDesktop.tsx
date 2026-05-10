@@ -34,7 +34,7 @@ export function ProductShowcaseDesktop() {
 
   const isScaled = mobileScale !== null;
   const scaledHeight = isScaled
-    ? DESKTOP_RENDER_WIDTH * (10 / 16) * mobileScale
+    ? DESKTOP_RENDER_WIDTH * (9 / 16) * mobileScale
     : undefined;
 
   // Convert un-scaled widget position to visual coordinates
