@@ -13,7 +13,7 @@ const logos = [
 ];
 
 const defaultContent: HeroContent = {
-  headline: 'Book More Appointments from Your Prospecting Calls',
+  headline: 'Book 2x More Appointments from Prospecting Calls',
   tagline:
     'Real-time coaching during live calls helps agents handle objections, stay on track, and automatically log notes in your CRM.',
 };
