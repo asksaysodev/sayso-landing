@@ -7,21 +7,21 @@ export function PanelWastedOpportunity({ imgHeight = 'min-h-[240px] md:min-h-[28
   const { ref, revealed } = useRevealOnScroll();
 
   return (
-    <div
-      ref={ref}
-      className={`relative bg-white rounded-2xl v2-comic-border v2-comic-shadow v2-tilt-right overflow-hidden transition-all duration-600 ${
-        revealed ? 'v4-panel-reveal' : 'v4-panel-hidden'
-      }`}
-    >
-      <div className={`relative bg-gradient-to-br from-[#f0f2f5] to-[#e8eaed] flex items-center justify-center ${imgHeight}`}>
-        <Image
-          src="/without_sayso_part_2.png"
-          alt="Missed questions, missed appointments, missed revenue without SaySo"
-          width={500}
-          height={350}
-          className="w-full h-full object-cover"
-        />
+    <div ref={ref} className={`flex flex-col gap-4 transition-all duration-600 ${revealed ? 'v4-panel-reveal' : 'v4-panel-hidden'}`}>
+      <div className="relative bg-white rounded-2xl v2-comic-border v2-comic-shadow v2-tilt-right overflow-hidden">
+        <div className={`relative bg-gradient-to-br from-[#f0f2f5] to-[#e8eaed] flex items-center justify-center ${imgHeight}`}>
+          <Image
+            src="/without_sayso_part_2.png"
+            alt="Missed questions, missed appointments, missed revenue without Sayso"
+            width={500}
+            height={350}
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
+      <p className="text-[#1D4871] text-sm md:text-base leading-relaxed px-1 font-comic">
+        You follow up later and realize you knew exactly what to say. But the moment had passed. That appointment is gone.
+      </p>
     </div>
   );
 }
