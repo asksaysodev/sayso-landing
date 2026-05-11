@@ -152,7 +152,7 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
               Book a Demo
             </button>
           </div>
-          <p className="text-sm text-[#1D4871]/70">3-day free trial included.</p>
+          <p className="text-sm text-[#1D4871]/70">3-day free trial included</p>
         </div>
       </div>
     </section>

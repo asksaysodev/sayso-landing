@@ -94,7 +94,7 @@ export function TransformationSection({ content = defaultContent }: { content?: 
                   Book a Demo
                 </button>
               </div>
-              <p className="text-sm text-white/60">3-day free trial included.</p>
+              <p className="text-sm text-white/60">3-day free trial included</p>
               </div>
             </div>
           </div>
