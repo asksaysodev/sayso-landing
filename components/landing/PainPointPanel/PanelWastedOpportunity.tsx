@@ -19,9 +19,11 @@ export function PanelWastedOpportunity({ imgHeight = 'min-h-[240px] md:min-h-[28
           />
         </div>
       </div>
-      <p className="text-[#1D4871] text-sm md:text-base leading-relaxed px-1">
-        Later that day you realize what you should have said, but the moment passed and the appointment is gone.
-      </p>
+      <div className="bg-white rounded-xl v2-comic-border v2-comic-shadow-sm px-4 py-3">
+        <p className="text-[#1D4871] text-base md:text-lg leading-relaxed font-medium">
+          Later that day you realize what you should have said, but the moment passed and the appointment is gone.
+        </p>
+      </div>
     </div>
   );
 }
