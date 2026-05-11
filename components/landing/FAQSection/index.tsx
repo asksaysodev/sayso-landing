@@ -12,7 +12,7 @@ const faqs = [
   {
     question: 'Does Sayso record my calls?',
     answer:
-      'Sayso forwards your call activity and automatically updates your CRM after each conversation. You stay focused on the call while Sayso handles the notes.',
+      'Sayso uses the conversation transcript in real time and it is disposed immediately after the call. Sayso does not record calls or store transcripts after the call ends.',
   },
   {
     question: 'Will Sayso distract me while I am on a live call?',
@@ -27,7 +27,7 @@ const faqs = [
   {
     question: 'How fast can I get started?',
     answer:
-      'Most agents are up and coaching on calls within minutes. There is no long onboarding program, just download Sayso and start your next call.',
+      'Many agents are set up in less than 5 minutes. There is no long onboarding process. Sayso has an interactive launch guide, self-service help center, and a very responsive support team in case you need any help.',
   },
   {
     question: 'Is there a free trial?',

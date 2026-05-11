@@ -19,8 +19,8 @@ export function PanelTheStruggle({ imgHeight = 'min-h-[240px] md:min-h-[280px]' 
           />
         </div>
       </div>
-      <p className="text-[#1D4871] text-sm md:text-base leading-relaxed px-1 font-comic">
-        You&apos;re mid-call. The seller raises an objection. Your mind goes blank. You stumble. They sense it. The conversation dies. No appointment.
+      <p className="text-[#1D4871] text-sm md:text-base leading-relaxed px-1">
+        Mid call and the lead gives you an objection. Your mind goes blank, you stumble, and start to pitch. The lead tunes out and the conversation dies out.
       </p>
     </div>
   );

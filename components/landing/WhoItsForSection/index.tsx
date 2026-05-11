@@ -5,11 +5,11 @@ const personas = [
   },
   {
     label: 'Tried scripts before',
-    body: "You've tried scripts. You've taken courses. Nothing sticks when you're live with a seller. The pressure makes everything you learned disappear.",
+    body: "You've tried scripts and taken courses, but it doesn't stick when you're on a call. You can't remember all that you've learned.",
   },
   {
     label: 'Already making calls',
-    body: "You're already making calls every day and booking some appointments. But you know you're leaving opportunities on the table because a few objections still trip you up.",
+    body: "You're making calls consistently and booking some appointments, but you know you're leaving something on the table.",
   },
 ];
 
