@@ -73,7 +73,8 @@ export function TransformationSection({ content = defaultContent }: { content?: 
             </div>
 
             {/* Final CTA */}
-            <div className="mt-5 md:mt-10 flex flex-col items-center lg:items-start gap-3">
+            <div className="mt-5 md:mt-10 flex justify-center lg:justify-start">
+              <div className="inline-flex flex-col items-center gap-3">
               <div className="flex gap-3">
                 <button
                   onClick={openSystemSelect}
@@ -94,6 +95,7 @@ export function TransformationSection({ content = defaultContent }: { content?: 
                 </button>
               </div>
               <p className="text-sm text-white/60">3-day free trial included.</p>
+              </div>
             </div>
           </div>
         </div>
