@@ -34,7 +34,7 @@ export function ProductShowcaseDesktop() {
 
   const isScaled = mobileScale !== null;
   const scaledHeight = isScaled
-    ? DESKTOP_RENDER_WIDTH * (10 / 16) * mobileScale
+    ? DESKTOP_RENDER_WIDTH * (9 / 16) * mobileScale
     : undefined;
 
   // Convert un-scaled widget position to visual coordinates
@@ -68,9 +68,7 @@ export function ProductShowcaseDesktop() {
               <div className="w-full">
                 <SaysoWidget
                   currentCycle={widgetState.currentCycle}
-                  showBuyerMessage={widgetState.showBuyerMessage}
                   showPrompt={widgetState.showPrompt}
-                  promptText={widgetState.promptText}
                   timerSeconds={widgetState.timerSeconds}
                 />
               </div>
@@ -91,7 +89,7 @@ export function ProductShowcaseDesktop() {
         >
           <Image
             src="/this_is_sayso_point_up.png"
-            alt="This is SaySo"
+            alt="This is Sayso"
             width={105}
             height={105}
             className="w-[90px] sm:w-[105px] h-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.25)]"
