@@ -6,8 +6,6 @@ import SaysoNavbar from "@/components/landing/SaysoNavbar";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
 import { TransformationSection } from "@/components/landing/TransformationSection";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
 import { ProductShowcaseSection } from '@/components/landing/ProductShowcaseSection';
 import { siteUrl } from '@/lib/config';
 
