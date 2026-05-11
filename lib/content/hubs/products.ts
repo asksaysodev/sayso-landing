@@ -38,7 +38,6 @@ const productsHub: HubPageConfig = {
         'Be the expert when you know the market data for any zip or postal code live on the call.',
       keyword: 'real estate market data during calls',
       linkText: 'Explore Pulse',
-      bannerText: 'Coming soon',
     },
     {
       title: 'Custom Scripts',
@@ -48,7 +47,6 @@ const productsHub: HubPageConfig = {
         'Never be lost for words with a custom script or framework for every call.',
       keyword: 'real estate call scripts',
       linkText: 'See how Playbook works',
-      bannerText: 'Coming soon',
     },
   ],
   noKeyword: true,
