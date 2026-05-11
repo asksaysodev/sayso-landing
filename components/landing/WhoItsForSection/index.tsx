@@ -2,15 +2,15 @@ import { LightningIcon } from '@/components/icons/LightningIcon';
 
 const personas = [
   {
-    label: 'The Dreamer',
+    label: 'Just getting started',
     body: 'You want to prospect more but every call feels like starting from scratch. You know you could book more appointments if you just had more confidence on the call.',
   },
   {
-    label: 'The Wanderer',
+    label: 'Tried scripts before',
     body: "You've tried scripts. You've taken courses. Nothing sticks when you're live with a seller. The pressure makes everything you learned disappear.",
   },
   {
-    label: 'The Doer',
+    label: 'Already making calls',
     body: "You're already making calls every day and booking some appointments. But you know you're leaving opportunities on the table because a few objections still trip you up.",
   },
 ];
