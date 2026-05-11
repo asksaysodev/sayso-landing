@@ -1,5 +1,3 @@
-import { LightningIcon } from '@/components/icons/LightningIcon';
-
 const personas = [
   {
     label: 'Just getting started',
@@ -21,7 +19,6 @@ export function WhoItsForSection() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-10 md:mb-14">
           <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] mb-4 tracking-wide">
-            <LightningIcon size={24} color="#2367EE" className="inline-block mr-2 -mt-1" />
             Sound Like You?
           </h2>
           <p className="text-[1.2rem] text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">

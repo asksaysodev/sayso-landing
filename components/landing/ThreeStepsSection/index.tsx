@@ -63,7 +63,6 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] mb-4 tracking-wide">
-            <LightningIcon size={24} color="#2367EE" className="inline-block mr-2 -mt-1" />
             {content.headline}
           </h2>
           <p className="text-[1.2rem] text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
