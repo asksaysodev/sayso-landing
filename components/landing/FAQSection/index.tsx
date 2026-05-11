@@ -32,7 +32,7 @@ const faqs = [
   {
     question: 'Is there a free trial?',
     answer:
-      'Yes. Sayso includes a 3-day free trial with no credit card required. Visit the pricing page for full details.',
+      'Yes. Sayso includes a 3-day free trial. A credit card is required to start. Visit the pricing page for full details.',
   },
 ];
 
