@@ -41,7 +41,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             </p>
           )}
 
-          <div className="mt-6 md:mt-8 flex justify-center">
+          <div className="mt-6 md:mt-8 flex flex-col items-center gap-2">
             <button
               onClick={openSystemSelect}
               data-analytics-id="cta-download-hero"
@@ -51,6 +51,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
               <LightningIcon size={16} className="mr-2 flex-shrink-0" />
               Download Sayso
             </button>
+            <p className="text-sm text-[#1D4871]/70">3-day free trial included. No credit card required.</p>
           </div>
         </div>
 
