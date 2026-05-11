@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X } from 'lucide-react';
 
-const MAC_DOWNLOAD_URL = 'https://app.asksayso.com/download';
+const MAC_DOWNLOAD_URL = 'https://app.asksayso.com/login?signup=true';
 
 type Step = 'select' | 'checking' | 'waitlist';
 
