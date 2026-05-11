@@ -14,6 +14,7 @@ import { BlogClusterPosts } from '@/components/blog/BlogClusterPosts';
 // TOC sidebar and cluster nav sidebar removed - blog posts use a single centered column.
 // Do not re-add BlogTableOfContents or BlogClusterNav sidebar here.
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
+import { siteUrl } from '@/lib/config';
 
 // Revalidate hourly so scheduled posts appear on production within an hour of their publishedAt date.
 export const revalidate = 3600;
@@ -29,7 +30,6 @@ interface BlogPostPageProps {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
   if (!post) return { title: 'Post Not Found | Sayso Blog' };
 
   return {
@@ -64,7 +64,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     cluster: post.cluster,
     category: post.category,
   });
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
   const articleJsonLd = generateArticleJsonLd(post, siteUrl);
   const faqPairs = extractFaqFromContent(post.content);
   const faqJsonLd = generateFaqJsonLd(faqPairs);

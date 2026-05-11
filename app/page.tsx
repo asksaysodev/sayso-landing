@@ -8,6 +8,8 @@ import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
 import { TransformationSection } from "@/components/landing/TransformationSection";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+import { ProductShowcaseSection } from '@/components/landing/ProductShowcaseSection';
+import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
   alternates: {

@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 1. Collect all nav-registered pages + homepage + demo
   const navHrefs = getAllNavHrefs();
-  const allStaticPaths = new Set(['/', '/demo', ...navHrefs]);
+  const allStaticPaths = new Set(['/', '/demo', '/download', ...navHrefs]);
 
   // 2. Filter out excluded paths
   const staticPages: MetadataRoute.Sitemap = Array.from(allStaticPaths)

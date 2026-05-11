@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 **Rules:**
 - A page missing a canonical tag entirely is a **FAIL**.
-- A page using a hardcoded string like `https://asksayso.com/...` instead of the `siteUrl` variable or `NEXT_PUBLIC_SITE_URL` env var is a **FAIL**. It bypasses the environment variable and will produce wrong canonicals in production.
+- A page using a hardcoded string like `https://www.asksayso.com/...` instead of the `siteUrl` variable or `NEXT_PUBLIC_SITE_URL` env var is a **FAIL**. It bypasses the environment variable and will produce wrong canonicals in production.
 - A page using `https://www.asksayso.com/...` hardcoded is also a **FAIL** for the same reason.
 - Dynamic route pages (e.g., `[slug]/page.tsx`) that use `generateMetadata` and build canonical from a slug are fine as long as they use `siteUrl` or `buildMetadata`.
 - Intentionally excluded pages (listed in `EXCLUDED_PATHS` in `app/sitemap.ts`) do not need a canonical. Note them but do not flag as FAIL.

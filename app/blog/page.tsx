@@ -6,8 +6,7 @@ import { BlogCategoryPills } from '@/components/blog/BlogCategoryPills';
 import { BlogPostCard } from '@/components/blog/BlogPostCard';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+import { siteUrl } from '@/lib/config';
 
 // Revalidate hourly so scheduled posts appear on production within an hour of their publishedAt date.
 export const revalidate = 3600;

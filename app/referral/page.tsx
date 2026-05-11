@@ -3,8 +3,7 @@ import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { ReferralPageContent } from '@/components/landing/ReferralPageContent';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
   title: 'Referral Program | Sayso',
