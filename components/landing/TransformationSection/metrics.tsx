@@ -5,13 +5,13 @@ const ICON_CONSTANTS = { size: 28, color: '#2367EE' };
 export const metrics = [
   {
     icon: <CalendarCheck size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
-    title: 'More Appointments',
-    description: 'Turn better conversations into more qualified meetings.',
+    title: 'More Appointments Booked',
+    description: 'Agents using Sayso book appointments up to 12x more efficiently from the same call list.',
   },
   {
     icon: <TrendingUp size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,
-    title: 'Better Conversations',
-    description: 'Real-time guidance to help agents be the expert in every scenario.',
+    title: 'Handle Any Objection',
+    description: 'Real-time prompts surface the right response before you stumble, so the conversation keeps moving.',
   },
   {
     icon: <Rocket size={ICON_CONSTANTS.size} color={ICON_CONSTANTS.color} />,

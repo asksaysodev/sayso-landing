@@ -7,20 +7,22 @@ export function PanelTheStruggle({ imgHeight = 'min-h-[240px] md:min-h-[280px]' 
   const { ref, revealed } = useRevealOnScroll();
 
   return (
-    <div
-      ref={ref}
-      className={`relative bg-white rounded-2xl v2-comic-border v2-comic-shadow v2-tilt-left overflow-hidden transition-all duration-600 ${
-        revealed ? 'v4-panel-reveal' : 'v4-panel-hidden'
-      }`}
-    >
-      <div className={`relative bg-gradient-to-br from-[#f0f2f5] to-[#e8eaed] flex items-center justify-center ${imgHeight}`}>
-        <Image
-          src="/without_sayso_part_1.jpg"
-          alt="Agent freezes on a call without SaySo"
-          width={500}
-          height={350}
-          className="w-full h-full object-cover"
-        />
+    <div ref={ref} className={`flex flex-col gap-4 transition-all duration-600 ${revealed ? 'v4-panel-reveal' : 'v4-panel-hidden'}`}>
+      <div className="relative bg-white rounded-2xl v2-comic-border v2-comic-shadow v2-tilt-left overflow-hidden">
+        <div className={`relative bg-gradient-to-br from-[#f0f2f5] to-[#e8eaed] flex items-center justify-center ${imgHeight}`}>
+          <Image
+            src="/without_sayso_part_1.jpg"
+            alt="Agent freezes on a call without Sayso"
+            width={500}
+            height={350}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <div className="bg-white rounded-xl v2-comic-border v2-comic-shadow-sm px-4 py-3">
+        <p className="text-[#1D4871] text-base md:text-lg leading-relaxed font-medium">
+          Mid call and the lead gives you an objection. Your mind goes blank, you stumble, and start to pitch. The lead tunes out and the conversation dies out.
+        </p>
       </div>
     </div>
   );

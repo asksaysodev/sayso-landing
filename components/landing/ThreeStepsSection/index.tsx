@@ -63,7 +63,6 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] mb-4 tracking-wide">
-            <LightningIcon size={24} color="#2367EE" className="inline-block mr-2 -mt-1" />
             {content.headline}
           </h2>
           <p className="text-[1.2rem] text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
@@ -132,24 +131,27 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
         </div>
 
         {/* CTAs */}
-        <div className="mt-10 md:mt-14 flex gap-3 justify-center">
-          <button
-            onClick={openSystemSelect}
-            data-analytics-id="cta-download-three-steps-section"
-            className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
-            style={{ boxShadow: '3px 3px 0px #1D4871' }}
-          >
-            <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
-            <span className="lg:hidden">Create an Account</span>
-            <span className="hidden lg:inline">Download Sayso</span>
-          </button>
-          <button
-            onClick={openDemoCalendar}
-            data-analytics-id="cta-book-demo-three-steps-section"
-            className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
-          >
-            Book a Demo
-          </button>
+        <div className="mt-10 md:mt-14 flex flex-col items-center gap-3">
+          <div className="flex gap-3">
+            <button
+              onClick={openSystemSelect}
+              data-analytics-id="cta-download-three-steps-section"
+              className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
+              style={{ boxShadow: '3px 3px 0px #1D4871' }}
+            >
+              <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
+              <span className="lg:hidden">Create an Account</span>
+              <span className="hidden lg:inline">Download Sayso</span>
+            </button>
+            <button
+              onClick={openDemoCalendar}
+              data-analytics-id="cta-book-demo-three-steps-section"
+              className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 whitespace-nowrap"
+            >
+              Book a Demo
+            </button>
+          </div>
+          <p className="text-sm text-[#1D4871]/70">3-day free trial included</p>
         </div>
       </div>
     </section>

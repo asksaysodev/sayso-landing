@@ -3,8 +3,7 @@ import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { DownloadButton } from '@/components/landing/DownloadButton';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://asksayso.com';
+import { siteUrl } from '@/lib/config';
 const CALENDAR_URL =
   'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0eeiee8mED3XOLfAhzApvxOvHL96hIK8pNfAcZBY89TaKTa_LeVrtJr_kEbOlbQyb1juvLNPG3?gv=true';
 

@@ -73,24 +73,29 @@ export function TransformationSection({ content = defaultContent }: { content?: 
             </div>
 
             {/* Final CTA */}
-            <div className="mt-5 md:mt-10 flex gap-3 justify-center lg:justify-start">
-              <button
-                onClick={openSystemSelect}
-                data-analytics-id="cta-download-transformation-section"
-                className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
-                style={{ boxShadow: '3px 3px 0px #1D4871' }}
-              >
-                <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
-                <span className="lg:hidden">Create an Account</span>
-                <span className="hidden lg:inline">Download Sayso</span>
-              </button>
-              <button
-                onClick={openDemoCalendar}
-                data-analytics-id="cta-book-demo-transformation-section"
-                className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
-              >
-                Book a Demo
-              </button>
+            <div className="mt-5 md:mt-10 flex justify-center lg:justify-start">
+              <div className="inline-flex flex-col items-center gap-3">
+                <div className="flex gap-3">
+                  <button
+                    onClick={openSystemSelect}
+                    data-analytics-id="cta-download-transformation-section"
+                    className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
+                    style={{ boxShadow: '3px 3px 0px #1D4871' }}
+                  >
+                    <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
+                    <span className="lg:hidden">Create an Account</span>
+                    <span className="hidden lg:inline">Download Sayso</span>
+                  </button>
+                  <button
+                    onClick={openDemoCalendar}
+                    data-analytics-id="cta-book-demo-transformation-section"
+                    className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-white v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D4871] whitespace-nowrap"
+                  >
+                    Book a Demo
+                  </button>
+                </div>
+                <p className="text-sm text-white/60">3-day free trial included</p>
+              </div>
             </div>
           </div>
         </div>
