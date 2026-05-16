@@ -37,14 +37,6 @@ The `/standalone-post`, `/pillar`, and `/supporting-post` slash commands all rea
 - `content/blog/how-to-talk-to-real-estate-leads.mdx`
 - `content/blog/real-estate-follow-up-scripts.mdx`
 
-### `/blog/how-to-keep-control-of-a-call`
-**Suggested anchor text:** "how to keep control of a call"
-**Add internal links back from:**
-- `content/blog/how-to-build-rapport-real-estate-calls.mdx`
-- `content/blog/how-to-qualify-real-estate-leads.mdx`
-- `content/blog/how-to-talk-to-real-estate-leads.mdx`
-- `content/blog/how-to-guide-a-sales-conversation.mdx`
-
 ### `/blog/buyer-lead-scripts`
 **Suggested anchor text:** "buyer lead" or "buyer lead call scripts"
 **Add internal links back from:**
