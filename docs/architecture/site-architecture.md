@@ -17,9 +17,9 @@
 | Objections | 15 | 15 | 100% |
 | Glossary | 11 | 11 | 100% |
 | Case Studies | 2 | 2 | 100% |
-| Blog Posts | 14 | 43 | 33% |
+| Blog Posts | 15 | 43 | 35% |
 | Blog Category Pages | 2 | 7 | 29% |
-| **TOTAL** | **70** | **~100** | **~70%** |
+| **TOTAL** | **71** | **~100** | **~71%** |
 
 ---
 
@@ -222,7 +222,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ├── /blog/how-to-build-rapport-real-estate-calls/  (support)  "how to build rapport real estate calls"             🟢 WIN              ✅ DONE
 ├── /blog/how-to-qualify-real-estate-leads/  (support)  "how to qualify real estate leads"                        🟡 MED              ✅ DONE
 ├── /blog/questions-to-ask-real-estate-leads/   (support)  "questions to ask real estate leads"                   🟡 MED              ✅ DONE
-├── /blog/how-to-guide-a-sales-conversation/   (support)  "how to guide a sales conversation"                        🟡 MED              ❌ TODO
+├── /blog/how-to-guide-a-sales-conversation/   (support)  "how to guide a sales conversation"                        🟡 MED              ✅ DONE
 ├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED              ❌ TODO
 ├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN              ❌ TODO
 ├── /blog/how-to-improve-call-performance/ (support)  "how to improve call performance real estate"               🟡 MED              ❌ TODO
