@@ -17,9 +17,9 @@
 | Objections | 15 | 15 | 100% |
 | Glossary | 11 | 11 | 100% |
 | Case Studies | 2 | 2 | 100% |
-| Blog Posts | 15 | 43 | 35% |
+| Blog Posts | 16 | 43 | 37% |
 | Blog Category Pages | 2 | 7 | 29% |
-| **TOTAL** | **71** | **~100** | **~71%** |
+| **TOTAL** | **72** | **~100** | **~72%** |
 
 ---
 
@@ -223,9 +223,9 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ├── /blog/how-to-qualify-real-estate-leads/  (support)  "how to qualify real estate leads"                        🟡 MED              ✅ DONE
 ├── /blog/questions-to-ask-real-estate-leads/   (support)  "questions to ask real estate leads"                   🟡 MED              ✅ DONE
 ├── /blog/how-to-guide-a-sales-conversation/   (support)  "how to guide a sales conversation"                        🟡 MED              ✅ DONE
-├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED              ❌ TODO
-├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN              ❌ TODO
-├── /blog/how-to-improve-call-performance/ (support)  "how to improve call performance real estate"               🟡 MED              ❌ TODO
+├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED              ✅ DONE
+├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN              ✅ DONE
+├── /blog/how-to-improve-call-performance/ (support)  "how to improve call performance real estate"               🟡 MED              ✅ DONE
 └── /blog/what-real-time-call-coaching-looks-like/ (support)  "how does AI call coaching work"                     🟢 WIN              ❌ TODO
 ```
 
