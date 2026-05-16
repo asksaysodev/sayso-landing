@@ -173,7 +173,8 @@ author:
   avatar: "/logo-sayso.png"
 publishedAt: "2099-01-01"
 featured: false
-coverImage: "/blog/covers/[slug].jpg"
+coverImage: "/blog/covers/blog-card.jpg"
+heroImage: "/blog/covers/blog-hero-2.jpg"
 ---
 ```
 

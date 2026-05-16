@@ -133,7 +133,8 @@ author:
   avatar: "/logo-sayso.png"
 publishedAt: "[today's date YYYY-MM-DD]"
 featured: false
-coverImage: "/blog/covers/[slug].jpg"
+coverImage: "/blog/covers/blog-card.jpg"
+heroImage: "/blog/covers/blog-hero-2.jpg"
 ---
 ```
 
