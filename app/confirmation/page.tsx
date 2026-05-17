@@ -45,7 +45,7 @@ const showcaseFeatures = [
 export default function ConfirmationPage() {
   return (
     <DemoCalendarProvider>
-      <div className="relative bg-white min-h-screen">
+      <div className="relative bg-[#F4F4F5] min-h-screen">
         <SaysoNavbar />
         <main>
           {/* Hero */}
@@ -73,7 +73,8 @@ export default function ConfirmationPage() {
           </section>
 
           {/* What you'll see on the demo */}
-          <section className="max-w-[1200px] mx-auto px-6 py-16 md:py-24">
+          <section className="bg-white">
+            <div className="max-w-[1200px] mx-auto px-6 py-16 md:py-24">
             <div className="grid grid-cols-1 md:grid-cols-[5fr_7fr] gap-10 md:gap-14 items-center">
               <div>
                 <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
@@ -136,6 +137,7 @@ export default function ConfirmationPage() {
                   />
                 </div>
               </div>
+            </div>
             </div>
           </section>
 
