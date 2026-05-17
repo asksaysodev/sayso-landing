@@ -1,19 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { Check } from 'lucide-react';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
-
-const ProductShowcaseDesktop = dynamic(
-  () =>
-    import('@/components/landing/ProductShowcaseDesktop').then(
-      (m) => m.ProductShowcaseDesktop
-    ),
-  { ssr: false }
-);
 
 export const metadata: Metadata = {
   title: "You're on the calendar | Sayso",
@@ -117,8 +109,37 @@ export default function ConfirmationPage() {
                 </ul>
               </div>
 
-              <div className="relative">
-                <ProductShowcaseDesktop />
+              <div
+                className="relative rounded-3xl bg-[#F4F4F5] p-4 md:p-5 border border-[#1D4871]/10"
+                style={{ boxShadow: '0 8px 24px rgba(29, 72, 113, 0.08)' }}
+              >
+                <div className="flex flex-col gap-3 md:flex-row md:items-start">
+                  <div className="flex-1 min-w-0 flex flex-col gap-3">
+                    <Image
+                      src="/pulse-widget.svg"
+                      alt="Sayso Pulse widget showing live market data for any zip code"
+                      width={656}
+                      height={149}
+                      className="w-full h-auto"
+                      priority
+                    />
+                    <div className="self-start inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2367EE]/10 border border-[#2367EE]/25">
+                      <span className="text-xs font-semibold text-[#2367EE]">
+                        Locations near the beach
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <Image
+                      src="/playbook-notes.svg"
+                      alt="Sayso Playbook showing the next question to ask on a call"
+                      width={491}
+                      height={446}
+                      className="w-full h-auto"
+                      priority
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
