@@ -73,8 +73,8 @@ export default function ConfirmationPage() {
           </section>
 
           {/* What you'll see on the demo */}
-          <section className="max-w-[1100px] mx-auto px-6 py-16 md:py-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+          <section className="max-w-[1200px] mx-auto px-6 py-16 md:py-24">
+            <div className="grid grid-cols-1 md:grid-cols-[5fr_7fr] gap-10 md:gap-14 items-center">
               <div>
                 <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
                   What you&apos;ll see on the demo
@@ -109,37 +109,28 @@ export default function ConfirmationPage() {
                 </ul>
               </div>
 
-              <div
-                className="relative rounded-3xl bg-[#F4F4F5] p-4 md:p-5 border border-[#1D4871]/10"
-                style={{ boxShadow: '0 8px 24px rgba(29, 72, 113, 0.08)' }}
-              >
-                <div className="flex flex-col gap-3 md:flex-row md:items-start">
-                  <div className="flex-1 min-w-0 flex flex-col gap-3">
-                    <Image
-                      src="/pulse-widget.svg"
-                      alt="Sayso Pulse widget showing live market data for any zip code"
-                      width={656}
-                      height={149}
-                      className="w-full h-auto"
-                      priority
-                    />
-                    <div className="self-start inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2367EE]/10 border border-[#2367EE]/25">
-                      <span className="text-xs font-semibold text-[#2367EE]">
-                        Locations near the beach
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <Image
-                      src="/playbook-notes.svg"
-                      alt="Sayso Playbook showing the next question to ask on a call"
-                      width={491}
-                      height={446}
-                      className="w-full h-auto"
-                      priority
-                    />
-                  </div>
+              <div className="relative flex flex-col gap-5">
+                <Image
+                  src="/pulse-widget.svg"
+                  alt="Sayso Pulse widget showing live market data for any zip code"
+                  width={656}
+                  height={149}
+                  className="w-full h-auto"
+                  priority
+                />
+                <div className="self-start inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2367EE]/10 border border-[#2367EE]/25">
+                  <span className="text-xs font-semibold text-[#2367EE]">
+                    Locations near the beach
+                  </span>
                 </div>
+                <Image
+                  src="/playbook-notes.svg"
+                  alt="Sayso Playbook showing the next question to ask on a call"
+                  width={491}
+                  height={446}
+                  className="w-full h-auto max-w-[560px]"
+                  priority
+                />
               </div>
             </div>
           </section>
