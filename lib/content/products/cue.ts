@@ -112,5 +112,6 @@ export const cue: ProductEntry = {
   ],
   relatedBlogPosts: [
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
+    { title: 'What Real-Time Call Coaching Looks Like', href: '/blog/what-real-time-call-coaching-looks-like' },
   ],
 };

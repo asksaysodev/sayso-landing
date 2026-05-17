@@ -53,11 +53,6 @@ The `/standalone-post`, `/pillar`, and `/supporting-post` slash commands all rea
 **Add internal links back from:**
 - `lib/content/for/solo-agents.ts` (restore entry in `relatedBlogPosts`)
 
-### `/blog/what-real-time-call-coaching-looks-like`
-**Display title:** "What Real-Time Call Coaching Looks Like"
-**Add internal links back from:**
-- `lib/content/products/cue.ts` (restore entry in `relatedBlogPosts`)
-
 ### `/blog/how-to-practice-scripts`
 **Display title:** "How to Practice Scripts for Real Estate"
 **Note:** existing post `how-to-practice-real-estate-scripts` may already cover this. Confirm whether this is a new post or a duplicate before re-linking.

@@ -1,6 +1,6 @@
 # Sayso - Complete Site Architecture & Keyword Map
 
-**Updated:** May 16, 2026
+**Updated:** 2026-05-16
 **Total Pages:** ~100–110
 
 ---
@@ -17,9 +17,9 @@
 | Objections | 15 | 15 | 100% |
 | Glossary | 11 | 11 | 100% |
 | Case Studies | 2 | 2 | 100% |
-| Blog Posts | 16 | 43 | 37% |
+| Blog Posts | 17 | 43 | 40% |
 | Blog Category Pages | 2 | 7 | 29% |
-| **TOTAL** | **72** | **~100** | **~72%** |
+| **TOTAL** | **73** | **~100** | **~73%** |
 
 ---
 
@@ -226,7 +226,7 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 ├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED              ✅ DONE
 ├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN              ✅ DONE
 ├── /blog/how-to-improve-call-performance/ (support)  "how to improve call performance real estate"               🟡 MED              ✅ DONE
-└── /blog/what-real-time-call-coaching-looks-like/ (support)  "how does AI call coaching work"                     🟢 WIN              ❌ TODO
+└── /blog/what-real-time-call-coaching-looks-like/ (support)  "how does AI call coaching work"                     🟢 WIN              ✅ DONE
 ```
 
 #### Follow-Up Cluster
