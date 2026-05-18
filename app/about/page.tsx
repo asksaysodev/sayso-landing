@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       'Sayso was built by Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, to give real estate agents the structure they need on every call.',
     url: `${siteUrl}/about/`,
     images: [
-      { url: '/og-default.png', width: 1200, height: 630, alt: 'About Sayso' },
+      { url: '/images/og-default.png', width: 1200, height: 630, alt: 'About Sayso' },
     ],
     type: 'website',
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'About | Sayso',
     description:
       'Sayso was built by Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, to give real estate agents the structure they need on every call.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

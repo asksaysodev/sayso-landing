@@ -8,7 +8,7 @@ import { ChevronDown } from 'lucide-react';
 const CASE_STUDIES = [
   {
     id: 'exp-realty',
-    logo: '/exp realty.png',
+    logo: '/social-proof/exp-realty.png',
     name: 'Marcus Rivera',
     role: 'Team Lead',
     brokerage: 'eXp Realty',
@@ -50,7 +50,7 @@ const CASE_STUDIES = [
   },
   {
     id: 'anderson-group',
-    logo: '/anderson group.png',
+    logo: '/social-proof/anderson-group.png',
     name: 'Sarah Anderson',
     role: 'Broker / Owner',
     brokerage: 'Anderson Group Realty',

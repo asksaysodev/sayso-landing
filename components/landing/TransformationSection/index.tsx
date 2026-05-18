@@ -31,7 +31,7 @@ export function TransformationSection({ content = defaultContent }: { content?: 
             {/* Large superhero character */}
             <div className="relative z-10">
               <Image
-                src="/sayso_superhero_point_right.png"
+                src="/images/sayso-superhero-point-right.png"
                 alt="SaySo Superhero"
                 width={484}
                 height={515}

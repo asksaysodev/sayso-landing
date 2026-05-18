@@ -26,7 +26,7 @@ export function AboutPageContent() {
             {/* Photo */}
             <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-[3px] border-[#1D4871] v2-comic-shadow mb-6">
               <Image
-                src="/founder-kuvaal-patel.png"
+                src="/images/founder-kuvaal-patel.png"
                 alt="Kuvaal Patel, Founder of Sayso"
                 fill
                 className="object-cover"

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-default.png',
+        url: '/images/og-default.png',
         width: 1200,
         height: 630,
         alt: 'Contact Sayso',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Contact Us | Sayso',
     description:
       'Get in touch with the Sayso team. Send us a message and we\'ll get back to you shortly.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

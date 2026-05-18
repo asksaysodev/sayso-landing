@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | Sayso',
     description: 'Learn how AskSayso, Inc. collects, uses, and protects your personal information.',
     url: `${siteUrl}/privacy/`,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Privacy Policy' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso Privacy Policy' }],
     type: 'website',
   },
   twitter: {
     title: 'Privacy Policy | Sayso',
     description: 'Learn how AskSayso, Inc. collects, uses, and protects your personal information.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

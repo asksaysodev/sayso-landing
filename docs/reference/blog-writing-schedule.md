@@ -134,7 +134,7 @@ Complete the appointment-setting cluster before moving on. 4 supporting posts.
 - [ ] **Before writing starts:** deploy the scheduled-publishing code change (covered in [blog-publishing-plan.md](./blog-publishing-plan.md) section 3)
 - [ ] **Batch 1 (Phase 1):** write and schedule 3 pillars
 - [ ] **Batch 2 (Phase 2):** write and schedule 4 appointment-setting supporting posts
-- [ ] **Batch 3 (Phase 3):** write and schedule 8 conversation-skills supporting posts (split into 2 batches if easier: 4 + 4)
+- [x] **Batch 3 (Phase 3):** write and schedule 8 conversation-skills supporting posts (split into 2 batches if easier: 4 + 4)
 - [ ] **Batch 4 (Phase 4):** write and schedule 4 follow-up supporting posts
 - [ ] **Batch 5 (Phase 5):** write and schedule 6 CRM and Notes posts
 - [ ] **Batch 6 (Phase 6):** write and schedule 6 Struggle posts

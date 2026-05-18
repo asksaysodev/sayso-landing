@@ -28,7 +28,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'Sayso',
   url: siteUrl,
-  logo: `${siteUrl}/logo-pos-horizontal.png`,
+  logo: `${siteUrl}/logos/logo-pos-horizontal.png`,
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   sameAs: [
     'https://www.linkedin.com/company/asksayso',
@@ -74,15 +74,15 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: 'Sayso',
     type: 'website',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix the Hardest Part of Prospecting' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix the Hardest Part of Prospecting' }],
   },
   twitter: {
     card: 'summary_large_image',
   },
   icons: {
-    icon: '/logo-sayso.png',
-    apple: '/logo-sayso.png',
-    shortcut: '/logo-sayso.png',
+    icon: '/logos/logo-sayso.png',
+    apple: '/logos/logo-sayso.png',
+    shortcut: '/logos/logo-sayso.png',
   },
 }
 

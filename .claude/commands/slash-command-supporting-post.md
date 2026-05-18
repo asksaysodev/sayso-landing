@@ -199,7 +199,8 @@ author:
   avatar: "/logo-sayso.png"
 publishedAt: "[today's date YYYY-MM-DD]"
 featured: false
-coverImage: "/blog/covers/[slug].jpg"
+coverImage: "/blog/covers/blog-card.jpg"
+heroImage: "/blog/covers/blog-hero-2.jpg"
 ---
 ```
 
@@ -451,4 +452,29 @@ Before finalizing, verify:
 - [ ] No generic advice - every tip is specific to real estate calling
 - [ ] Content goes deeper than the pillar's coverage of this sub-topic
 - [ ] Frontmatter includes type: "supporting", cluster, AND pillar slug
+- [ ] `publishedAt` is set to "2099-01-01" (placeholder - real date set at merge time after review)
 - [ ] Tone is coach-like, not academic
+
+---
+
+## PHASE 3: UPDATE THE SITE ARCHITECTURE
+
+After the post is written and all back-links are in place, update `docs/architecture/site-architecture.md` to reflect that this post now exists.
+
+### Step 1: Find the entry
+
+Locate the post's slug in the `/blog/` section of `site-architecture.md`. Navigate by cluster name and keyword to find the matching row.
+
+### Step 2: Mark it DONE
+
+Change `❌ TODO` to `✅ DONE` on that line.
+
+If the slug you used in the frontmatter differs from what the architecture shows, **update the slug in the architecture to match the frontmatter**. The frontmatter is the source of truth for what exists; the architecture should reflect reality, not a stale plan.
+
+### Step 3: Update the Build Progress Summary
+
+At the top of `site-architecture.md`:
+- Increment the **Blog Posts** "Done" count by 1
+- Recalculate the percentage (Done / Total, rounded to nearest whole number)
+- Increment the **TOTAL** "Done" count by 1 and recalculate its percentage
+- Update the `**Updated:**` date at the top of the file to today's date

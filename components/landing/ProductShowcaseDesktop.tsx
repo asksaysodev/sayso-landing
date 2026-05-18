@@ -88,7 +88,7 @@ export function ProductShowcaseDesktop() {
           style={{ top: heroTop, left: heroLeft }}
         >
           <Image
-            src="/this_is_sayso_point_up.png"
+            src="/images/this-is-sayso-point-up.png"
             alt="This is Sayso"
             width={105}
             height={105}

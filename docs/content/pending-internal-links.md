@@ -37,20 +37,6 @@ The `/standalone-post`, `/pillar`, and `/supporting-post` slash commands all rea
 - `content/blog/how-to-talk-to-real-estate-leads.mdx`
 - `content/blog/real-estate-follow-up-scripts.mdx`
 
-### `/blog/how-to-keep-control-of-a-call`
-**Suggested anchor text:** "how to keep control of a call"
-**Add internal links back from:**
-- `content/blog/how-to-build-rapport-real-estate-calls.mdx`
-- `content/blog/how-to-qualify-real-estate-leads.mdx`
-- `content/blog/how-to-talk-to-real-estate-leads.mdx`
-
-### `/blog/questions-to-ask-real-estate-leads`
-**Suggested anchor text:** "questions to ask real estate leads"
-**Add internal links back from:**
-- `content/blog/how-to-qualify-real-estate-leads.mdx`
-- `content/blog/how-to-talk-to-real-estate-leads.mdx`
-- `content/blog/real-estate-follow-up-scripts.mdx`
-
 ### `/blog/buyer-lead-scripts`
 **Suggested anchor text:** "buyer lead" or "buyer lead call scripts"
 **Add internal links back from:**
@@ -66,11 +52,6 @@ The `/standalone-post`, `/pillar`, and `/supporting-post` slash commands all rea
 **Display title:** "How to Not Freeze on Sales Calls"
 **Add internal links back from:**
 - `lib/content/for/solo-agents.ts` (restore entry in `relatedBlogPosts`)
-
-### `/blog/what-real-time-call-coaching-looks-like`
-**Display title:** "What Real-Time Call Coaching Looks Like"
-**Add internal links back from:**
-- `lib/content/products/cue.ts` (restore entry in `relatedBlogPosts`)
 
 ### `/blog/how-to-practice-scripts`
 **Display title:** "How to Practice Scripts for Real Estate"
