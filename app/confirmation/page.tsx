@@ -110,32 +110,15 @@ export default function ConfirmationPage() {
                 </ul>
               </div>
 
-              <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-5">
-                <div className="flex-1 min-w-0 flex flex-col gap-4">
-                  <Image
-                    src="/pulse-widget.svg"
-                    alt="Sayso Pulse widget showing live market data for any zip code"
-                    width={656}
-                    height={149}
-                    className="w-full h-auto"
-                    priority
-                  />
-                  <div className="self-start inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2367EE]/10 border border-[#2367EE]/25">
-                    <span className="text-xs font-semibold text-[#2367EE]">
-                      Locations near the beach
-                    </span>
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <Image
-                    src="/playbook-notes.svg"
-                    alt="Sayso Playbook showing the next question to ask on a call"
-                    width={491}
-                    height={446}
-                    className="w-full h-auto"
-                    priority
-                  />
-                </div>
+              <div className="relative">
+                <Image
+                  src="/full-widget-transparent.png"
+                  alt="Sayso live call view showing the Pulse market data widget alongside the Playbook script panel"
+                  width={1778}
+                  height={792}
+                  className="w-full h-auto"
+                  priority
+                />
               </div>
             </div>
             </div>
