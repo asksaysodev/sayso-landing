@@ -36,7 +36,7 @@ export function IntegrationPage({ entry }: IntegrationPageProps) {
         {/* Partner Logos */}
         <div className="flex items-center justify-center gap-4 mt-6 mb-6">
           <Image
-            src="/logo-pos-horizontal.png"
+            src="/logos/logo-pos-horizontal.png"
             alt="Sayso"
             width={100}
             height={40}

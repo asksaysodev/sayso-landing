@@ -11,7 +11,7 @@ export function PanelWastedOpportunity({ imgHeight = 'min-h-[240px] md:min-h-[28
       <div className="relative bg-white rounded-2xl v2-comic-border v2-comic-shadow v2-tilt-right overflow-hidden">
         <div className={`relative bg-gradient-to-br from-[#f0f2f5] to-[#e8eaed] flex items-center justify-center ${imgHeight}`}>
           <Image
-            src="/without_sayso_part_2.png"
+            src="/images/without-sayso-part-2.png"
             alt="Missed questions, missed appointments, missed revenue without Sayso"
             width={500}
             height={350}

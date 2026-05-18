@@ -11,7 +11,7 @@ export function PanelTheStruggle({ imgHeight = 'min-h-[240px] md:min-h-[280px]' 
       <div className="relative bg-white rounded-2xl v2-comic-border v2-comic-shadow v2-tilt-left overflow-hidden">
         <div className={`relative bg-gradient-to-br from-[#f0f2f5] to-[#e8eaed] flex items-center justify-center ${imgHeight}`}>
           <Image
-            src="/without_sayso_part_1.jpg"
+            src="/images/without-sayso-part-1.jpg"
             alt="Agent freezes on a call without Sayso"
             width={500}
             height={350}

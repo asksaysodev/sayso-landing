@@ -173,7 +173,8 @@ author:
   avatar: "/logo-sayso.png"
 publishedAt: "2099-01-01"
 featured: false
-coverImage: "/blog/covers/[slug].jpg"
+coverImage: "/blog/covers/blog-card.jpg"
+heroImage: "/blog/covers/blog-hero-2.jpg"
 ---
 ```
 
@@ -492,3 +493,27 @@ Before finalizing, verify:
 - [ ] Frontmatter includes type: "standalone", category, NO cluster, NO pillar fields
 - [ ] `publishedAt` is set to "2099-01-01" (placeholder, real dates assigned after review)
 - [ ] Tone matches the category (practical for crm-notes, empathetic for mindset, analytical for data-authority)
+
+---
+
+## PHASE 3: UPDATE THE SITE ARCHITECTURE
+
+After the post is written and all back-links are in place, update `docs/architecture/site-architecture.md` to reflect that this post now exists.
+
+### Step 1: Find the entry
+
+Locate the post's slug in the `/blog/` section of `site-architecture.md`. Standalone posts typically appear under the **CRM & Notes**, **Struggle & Emotional**, or **Data & Authority** sections depending on the category.
+
+### Step 2: Mark it DONE
+
+Change `❌ TODO` to `✅ DONE` on that line.
+
+If the slug you used in the frontmatter differs from what the architecture shows, **update the slug in the architecture to match the frontmatter**. The frontmatter is the source of truth for what exists; the architecture should reflect reality, not a stale plan.
+
+### Step 3: Update the Build Progress Summary
+
+At the top of `site-architecture.md`:
+- Increment the **Blog Posts** "Done" count by 1
+- Recalculate the percentage (Done / Total, rounded to nearest whole number)
+- Increment the **TOTAL** "Done" count by 1 and recalculate its percentage
+- Update the `**Updated:**` date at the top of the file to today's date

@@ -127,7 +127,7 @@ function VideoCard() {
 
           <div className="absolute inset-0 flex items-center justify-center">
             <img
-              src="/Youtube_shorts_icon.svg"
+              src="/icons/youtube-shorts-icon.svg"
               alt=""
               aria-hidden="true"
               className="w-20 h-auto md:w-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)] transition-transform duration-200 group-hover:scale-110"

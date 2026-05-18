@@ -1,6 +1,6 @@
 # Sayso - Complete Site Architecture & Keyword Map
 
-**Updated:** April 19, 2026
+**Updated:** 2026-05-16
 **Total Pages:** ~100–110
 
 ---
@@ -17,9 +17,9 @@
 | Objections | 15 | 15 | 100% |
 | Glossary | 11 | 11 | 100% |
 | Case Studies | 2 | 2 | 100% |
-| Blog Posts | 9 | 43 | 21% |
+| Blog Posts | 17 | 43 | 40% |
 | Blog Category Pages | 2 | 7 | 29% |
-| **TOTAL** | **65** | **~100** | **~65%** |
+| **TOTAL** | **73** | **~100** | **~73%** |
 
 ---
 
@@ -218,21 +218,21 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 #### Conversation Skills Cluster
 
 ```
-/blog/real-estate-conversation-guide/  (main)     "how to talk to real estate leads"                          🟡 MED     ← PILLAR    ❌ TODO
-├── /blog/how-to-build-rapport-calls/    (support)    "how to build rapport real estate calls"                   🟢 WIN              ❌ TODO
-├── /blog/how-to-qualify-leads-on-phone/  (support)   "how to qualify real estate leads"                          🟡 MED              ❌ TODO
-├── /blog/questions-to-ask-real-estate-leads/   (support)  "questions to ask real estate leads"                       🟡 MED              ❌ TODO
-├── /blog/how-to-guide-a-sales-conversation/   (support)  "how to guide a sales conversation"                        🟡 MED              ❌ TODO
-├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED              ❌ TODO
-├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN              ❌ TODO
-├── /blog/how-to-improve-call-performance/ (support)  "how to improve call performance real estate"               🟡 MED              ❌ TODO
-└── /blog/what-real-time-call-coaching-looks-like/ (support)  "how does AI call coaching work"                     🟢 WIN              ❌ TODO
+/blog/how-to-talk-to-real-estate-leads/  (main)    "how to talk to real estate leads"                          🟡 MED     ← PILLAR    ✅ DONE
+├── /blog/how-to-build-rapport-real-estate-calls/  (support)  "how to build rapport real estate calls"             🟢 WIN              ✅ DONE
+├── /blog/how-to-qualify-real-estate-leads/  (support)  "how to qualify real estate leads"                        🟡 MED              ✅ DONE
+├── /blog/questions-to-ask-real-estate-leads/   (support)  "questions to ask real estate leads"                   🟡 MED              ✅ DONE
+├── /blog/how-to-guide-a-sales-conversation/   (support)  "how to guide a sales conversation"                        🟡 MED              ✅ DONE
+├── /blog/how-to-keep-control-of-a-call/  (support)   "how to keep control of a call"                            🟡 MED              ✅ DONE
+├── /blog/what-top-agents-say-on-calls/    (support)  "what top real estate agents say on calls"                  🟢 WIN              ✅ DONE
+├── /blog/how-to-improve-call-performance/ (support)  "how to improve call performance real estate"               🟡 MED              ✅ DONE
+└── /blog/what-real-time-call-coaching-looks-like/ (support)  "how does AI call coaching work"                     🟢 WIN              ✅ DONE
 ```
 
 #### Follow-Up Cluster
 
 ```
-/blog/real-estate-follow-up-guide/ (main)          "real estate follow up scripts"                             🟡 MED     ← PILLAR    ❌ TODO
+/blog/real-estate-follow-up-scripts/ (main)         "real estate follow up scripts"                             🟡 MED     ← PILLAR    ✅ DONE
 ├── /blog/follow-up-scripts-cold-leads/ (support)     "how to follow up with cold leads real estate"             🟢 WIN              ❌ TODO
 ├── /blog/how-often-follow-up-real-estate/ (support)   "how often should i follow up real estate leads"            🟢 WIN              ❌ TODO
 ├── /blog/how-to-revive-dead-leads/   (support)       "how to revive dead leads real estate"                     🟢 WIN              ❌ TODO

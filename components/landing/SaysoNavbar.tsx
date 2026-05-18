@@ -77,7 +77,7 @@ export default function SaysoNavbar() {
             className="flex items-center gap-2 text-[#1D4871] font-bold text-lg md:text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2 rounded-lg px-2 -ml-2"
             aria-label="Sayso home"
           >
-            <Image src="/logo-pos-horizontal.png" alt="Sayso" width={90} height={32} />
+            <Image src="/logos/logo-pos-horizontal.png" alt="Sayso" width={90} height={32} />
           </Link>
 
           {/* Desktop Nav - Dropdown Triggers */}

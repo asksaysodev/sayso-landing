@@ -83,7 +83,7 @@ export function ProductPage({ entry }: ProductPageProps) {
             {entry.slug === 'cue' && (
               <div className="hidden md:block absolute top-[8%] left-[-120px] xl:left-[-150px] z-10 w-[120px] xl:w-[160px] pointer-events-none">
                 <Image
-                  src="/this_is_sayso_right.png"
+                  src="/images/this-is-sayso-right.png"
                   alt="This is Sayso"
                   width={300}
                   height={300}

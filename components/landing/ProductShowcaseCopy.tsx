@@ -20,7 +20,7 @@ export function ProductShowcaseCopy() {
               Enter SaySo.
             </h2>
             <Image
-              src="/sayso_superhero_point_right.png"
+              src="/images/sayso-superhero-point-right.png"
               alt=""
               width={64}
               height={68}

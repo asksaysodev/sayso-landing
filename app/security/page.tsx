@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: 'Security | Sayso',
     description: 'Learn how Sayso protects your data, conversations, and account access at every level.',
     url: `${siteUrl}/security/`,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Security' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso Security' }],
     type: 'website',
   },
   twitter: {
     title: 'Security | Sayso',
     description: 'Learn how Sayso protects your data, conversations, and account access at every level.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

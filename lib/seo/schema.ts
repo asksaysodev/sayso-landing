@@ -8,7 +8,7 @@ export const SAYSO_PUBLISHER = {
   name: 'Sayso',
   logo: {
     '@type': 'ImageObject' as const,
-    url: `${siteUrl}/logo-pos-horizontal.png`,
+    url: `${siteUrl}/logos/logo-pos-horizontal.png`,
   },
 };
 

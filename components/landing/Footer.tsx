@@ -15,7 +15,7 @@ export function Footer() {
               className="flex items-center gap-2 text-white font-bold text-lg md:text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#FFDE59] focus:ring-offset-2 focus:ring-offset-[#1D4871] rounded-lg px-2 -ml-2 w-fit"
               aria-label="Sayso home"
             >
-              <Image src="/logo-neg-transparent-horizontal.png" alt="Sayso" height={32} width={80}/>
+              <Image src="/logos/logo-neg-transparent-horizontal.png" alt="Sayso" height={32} width={80}/>
             </Link>
             <p className="text-sm text-white/70 leading-relaxed max-w-md">
               Win the Moment, your real-time call superpower.
@@ -103,7 +103,7 @@ export function Footer() {
       {/* Subtle superhero Easter egg in corner */}
       <div className="absolute bottom-4 right-4 pointer-events-none">
         <Image
-          src="/sayso_superhero_point_right.png"
+          src="/images/sayso-superhero-point-right.png"
           alt=""
           width={48}
           height={51}

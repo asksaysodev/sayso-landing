@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: 'Affiliate Program | Sayso',
     description: 'Earn recurring commission by referring users to Sayso. Apply to become a Sayso affiliate today.',
     url: `${siteUrl}/affiliate/`,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Sayso Affiliate Program' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso Affiliate Program' }],
     type: 'website',
   },
   twitter: {
     title: 'Affiliate Program | Sayso',
     description: 'Earn recurring commission by referring users to Sayso. Apply to become a Sayso affiliate today.',
-    images: ['/og-default.png'],
+    images: ['/images/og-default.png'],
   },
 };
 

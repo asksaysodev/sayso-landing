@@ -10,7 +10,7 @@ export function VideoCallMockup() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/sayso_seller.mp4" type="video/mp4" />
+          <source src="/videos/sayso-seller.mp4" type="video/mp4" />
         </video>
         {/* Name tag */}
         <div className="absolute bottom-3 left-3 flex items-center gap-2 z-10">
@@ -30,7 +30,7 @@ export function VideoCallMockup() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/sayso_buyer.mp4" type="video/mp4" />
+          <source src="/videos/sayso-buyer.mp4" type="video/mp4" />
         </video>
         {/* Name tag */}
         <div className="absolute bottom-3 left-3 flex items-center gap-2 z-10">
