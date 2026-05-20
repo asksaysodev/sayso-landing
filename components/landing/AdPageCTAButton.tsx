@@ -8,7 +8,7 @@ export function AdPageCTAButton({ location }: AdPageCTAButtonProps) {
   return (
     <div className="flex items-center justify-center">
       <a
-        href="https://cal.com/kuvaal/meta-demo"
+        href="https://calendly.com/asksayso/demo"
         target="_blank"
         rel="noopener noreferrer"
         data-analytics-id={`cta-book-demo-persona-${location}`}
