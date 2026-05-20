@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 type Testimonial = {
   number: number;
@@ -39,8 +39,8 @@ const testimonials: Testimonial[] = [
     badgeSubtext: 'out of 82,980+ agents',
     videoId: 'ktBXjEoyvUc',
     stat: {
-      value: '6 mo',
-      label: 'faster on the phone with Sayso',
+      value: '5 stars',
+      label: 'more 5-star calls with Sayso',
     },
     quote:
       'Sayso has accelerated me by 6 months or more in skills on the phone.',
@@ -64,8 +64,13 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Testimonials grid: stacked on mobile/tablet, side-by-side on lg+ */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8">
+        {/* Mobile: swipeable carousel */}
+        <div className="md:hidden">
+          <MobileCarousel testimonials={testimonials} />
+        </div>
+
+        {/* Tablet stacked, desktop side-by-side */}
+        <div className="hidden md:grid max-w-6xl mx-auto grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8">
           {testimonials.map((t) => (
             <TestimonialBlock key={t.number} testimonial={t} />
           ))}
@@ -77,12 +82,12 @@ export function TestimonialsSection() {
 
 function TestimonialBlock({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div>
+    <div className="flex flex-col h-full">
       {/* Single wide label bar spanning both cards */}
-      <div className="mb-4 rounded-lg bg-[#2367EE]/10 border-2 border-[#2367EE]/25 px-4 py-3 md:px-5 md:py-4">
-        <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-5">
+      <div className="mb-4 rounded-lg bg-[#2367EE]/10 border-2 border-[#2367EE]/25 px-4 py-3 md:px-5 md:py-4 min-h-[140px] md:min-h-0 flex">
+        <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-5 w-full">
           {/* Identity */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 min-h-[48px] md:min-h-0">
             <p className="text-[10px] md:text-xs font-bold text-[#2367EE] mb-0.5 tracking-wider uppercase">
               Testimonial #{testimonial.number}
             </p>
@@ -96,7 +101,7 @@ function TestimonialBlock({ testimonial }: { testimonial: Testimonial }) {
           <div className="hidden md:block h-12 w-0.5 bg-[#2367EE]/25 flex-shrink-0" />
 
           {/* Stat */}
-          <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 text-[#2367EE]">
+          <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 text-[#2367EE] min-h-[44px]">
             <p className="font-comic text-3xl md:text-4xl leading-none tracking-wide">
               {testimonial.stat.value}
             </p>
@@ -122,6 +127,79 @@ function TestimonialBlock({ testimonial }: { testimonial: Testimonial }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function MobileCarousel({ testimonials }: { testimonials: Testimonial[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const idx = Math.round(el.scrollLeft / el.clientWidth);
+    if (idx !== activeIndex) setActiveIndex(idx);
+  };
+
+  const scrollTo = (idx: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollTo({ left: idx * el.clientWidth, behavior: 'smooth' });
+  };
+
+  const goPrev = () => {
+    const next = (activeIndex - 1 + testimonials.length) % testimonials.length;
+    scrollTo(next);
+  };
+
+  const goNext = () => {
+    const next = (activeIndex + 1) % testimonials.length;
+    scrollTo(next);
+  };
+
+  return (
+    <div>
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex items-stretch overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-3 [&::-webkit-scrollbar]:hidden"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {testimonials.map((t) => (
+          <div key={t.number} className="flex-none w-full snap-center px-3">
+            <TestimonialBlock testimonial={t} />
+          </div>
+        ))}
+      </div>
+
+      {/* Branded arrow nav */}
+      <div className="flex justify-center items-center gap-6 mt-6">
+        <CarouselArrow direction="prev" onClick={goPrev} />
+        <CarouselArrow direction="next" onClick={goNext} />
+      </div>
+    </div>
+  );
+}
+
+function CarouselArrow({
+  direction,
+  onClick,
+}: {
+  direction: 'prev' | 'next';
+  onClick: () => void;
+}) {
+  const Icon = direction === 'prev' ? ChevronLeft : ChevronRight;
+  const label = direction === 'prev' ? 'Previous testimonial' : 'Next testimonial';
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      className="flex items-center justify-center w-12 h-12 rounded-full bg-[#FFDE59] text-[#1D4871] v2-comic-border v2-comic-shadow transition-transform duration-150 hover:scale-105 active:translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]"
+    >
+      <Icon size={26} strokeWidth={3} aria-hidden="true" />
+    </button>
   );
 }
 
