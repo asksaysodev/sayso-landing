@@ -148,4 +148,28 @@ Use **Draft PRs** with preview deployments:
 
 ---
 
+## Component Organization
+
+Keep one component per file. When a feature has more than one component, give it its own folder using this structure:
+
+```
+FeatureName/
+  index.tsx       # composition only: imports sub-components and renders them
+  types.ts        # shared types (optional)
+  data.ts         # static data (optional)
+  components/     # one file per sub-component
+    SubComponent.tsx
+```
+
+Rules of thumb:
+
+- `index.tsx` should be composition only. No sub-component definitions inside it.
+- If a single file passes ~150 lines or defines more than one component beyond a tiny presentational helper, split it into its own file under `components/`.
+- Co-locate types in `types.ts` and static data in `data.ts` inside the feature folder, not inside the component file.
+- Add a short JSDoc comment at the top of each component file describing its role so a new reader can scan the folder and understand what each piece does.
+
+`TestimonialsSection/` is the reference example of this layout.
+
+---
+
 **Need help?** Refer to `docs/reference/dev-guide.md` or ask the team.
