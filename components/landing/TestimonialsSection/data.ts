@@ -33,4 +33,29 @@ export const testimonials: Testimonial[] = [
     quote:
       'Sayso has accelerated me by 6 months or more in skills on the phone.',
   },
+  {
+    number: 3,
+    name: 'Cynthia Mejia',
+    attribution: 'Anderson Real Estate Group, eXp Long Beach',
+    badge: 'Top 250 eXp team',
+    videoId: 'kdEouaQCWLY',
+    stat: {
+      value: '1.4',
+      label: 'conversations per booked appointment',
+    },
+    quote:
+      'Sayso has helped me stay on track [and] book more appointments.',
+  },
+  {
+    number: 4,
+    name: 'Nicholas West',
+    attribution: 'eXp California & eXp Phoenix',
+    badge: '2025 Salesperson Rookie of the Year',
+    videoId: 'cErlCTC4Li4',
+    stat: {
+      value: 'More',
+      label: 'confidence in his calls',
+    },
+    quote: 'Sayso instills more confidence in my calls.',
+  },
 ];
