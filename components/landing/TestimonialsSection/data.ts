@@ -44,7 +44,7 @@ export const testimonials: Testimonial[] = [
       label: 'conversations per booked appointment',
     },
     quote:
-      'Sayso has helped me stay on track [and] book more appointments.',
+      'Sayso has helped me stay on track and book more appointments.',
   },
   {
     number: 4,
