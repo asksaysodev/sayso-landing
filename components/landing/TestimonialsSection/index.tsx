@@ -4,7 +4,7 @@
  * Responsive layout:
  *   • Mobile (< md): MobileCarousel renders one testimonial per swipeable slide.
  *   • Tablet (md):   TestimonialBlocks stack vertically in a single column.
- *   • Desktop (lg+): TestimonialBlocks sit side-by-side in a two-column grid.
+ *   • Desktop (lg+): TestimonialBlocks sit side-by-side in a four-column row.
  *
  * All sub-components live under ./components and shared types/data under
  * ./types and ./data respectively.
@@ -34,7 +34,7 @@ export function TestimonialsSection() {
           <MobileCarousel testimonials={testimonials} />
         </div>
 
-        <div className="hidden md:grid max-w-6xl mx-auto grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8">
+        <div className="hidden md:grid max-w-6xl mx-auto grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6">
           {testimonials.map((t) => (
             <TestimonialBlock key={t.number} testimonial={t} />
           ))}
