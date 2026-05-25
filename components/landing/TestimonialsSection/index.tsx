@@ -2,8 +2,9 @@
  * TestimonialsSection composes the homepage's "What agents are saying" block.
  *
  * Responsive layout:
- *   • Mobile (< md): MobileCarousel renders one testimonial per swipeable slide.
- *   • Tablet (md):   TestimonialBlocks stack vertically in a single column.
+ *   • Below lg (< 1024px): MobileCarousel renders one testimonial per swipeable
+ *     slide. Used for both phones and tablets/half-screen browsers so users
+ *     never end up scrolling through four stacked video blocks.
  *   • Desktop (lg+): TestimonialBlocks sit side-by-side in a four-column row.
  *
  * All sub-components live under ./components and shared types/data under
@@ -30,11 +31,11 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <MobileCarousel testimonials={testimonials} />
         </div>
 
-        <div className="hidden md:grid max-w-6xl mx-auto grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6">
+        <div className="hidden lg:grid max-w-6xl mx-auto grid-cols-4 gap-6">
           {testimonials.map((t) => (
             <TestimonialBlock key={t.number} testimonial={t} />
           ))}
