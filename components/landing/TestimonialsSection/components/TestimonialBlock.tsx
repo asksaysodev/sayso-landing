@@ -44,7 +44,7 @@ export function TestimonialBlock({ testimonial }: TestimonialBlockProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 lg:flex-1 lg:grid-rows-[auto_1fr]">
         <VideoCard testimonial={testimonial} />
 
         <div className="hidden lg:block">
