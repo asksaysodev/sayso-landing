@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
       label: 'more efficient at booking appointments from his calls',
     },
     quote:
-      'The prompts were really helping me out, giving me more direction toward booking the appointment. I felt more confident about where I was going with the conversation, and I was just coming up with a solution to give the prospect for the next question.',
+      'The prompts were really helping me ... toward booking the appointment. I felt more confident about where I was going with the conversation.',
   },
   {
     number: 2,
