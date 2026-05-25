@@ -17,9 +17,9 @@ import { TestimonialBlock } from './components/TestimonialBlock';
 
 export function TestimonialsSection() {
   return (
-    <section className="relative bg-[#F4F4F5] py-12 md:py-20 lg:py-24 overflow-hidden">
+    <section className="relative bg-[#F4F4F5] py-12 md:py-16 lg:py-20 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 relative">
-        <div className="text-center mb-10 md:mb-14 max-w-2xl mx-auto">
+        <div className="text-center mb-8 md:mb-12 max-w-2xl mx-auto">
           <span className="inline-block text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
             What agents are saying
           </span>
