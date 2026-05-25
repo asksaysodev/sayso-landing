@@ -14,7 +14,7 @@ export const testimonials: Testimonial[] = [
     videoId: 'Vcxo-Gp2iOk',
     stat: {
       value: '12×',
-      label: 'more efficient at booking appointments from his calls',
+      label: 'more efficient at booking appointments',
     },
     quote:
       'The prompts were really helping me ... toward booking the appointment. I felt more confident about where I was going with the conversation.',
