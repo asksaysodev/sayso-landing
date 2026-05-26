@@ -4,8 +4,8 @@
  * Generic responsive carousel for the founder pricing page.
  *
  * Below `md`, children render as a snap-scroll row with looping arrow nav.
- * At `md` and above, children render as a CSS grid (column count controlled
- * by `desktopCols`). Modeled after TestimonialsSection's MobileCarousel.
+ * At `md` and above, children render as a 2-col CSS grid.
+ * Modeled after TestimonialsSection's MobileCarousel.
  */
 
 import { useRef, useState, type ReactNode } from 'react';
@@ -13,11 +13,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 type CarouselProps = {
   children: ReactNode[];
-  desktopCols?: 2;
   ariaLabel: string;
 };
 
-export function Carousel({ children, desktopCols = 2, ariaLabel }: CarouselProps) {
+export function Carousel({ children, ariaLabel }: CarouselProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -38,8 +37,6 @@ export function Carousel({ children, desktopCols = 2, ariaLabel }: CarouselProps
 
   const goPrev = () => scrollTo((activeIndex - 1 + slides) % slides);
   const goNext = () => scrollTo((activeIndex + 1) % slides);
-
-  const gridCols = desktopCols === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2';
 
   return (
     <div>
@@ -82,7 +79,7 @@ export function Carousel({ children, desktopCols = 2, ariaLabel }: CarouselProps
       </div>
 
       {/* Desktop: grid */}
-      <div className={`hidden md:grid ${gridCols} gap-6`}>
+      <div className="hidden md:grid md:grid-cols-2 gap-6">
         {children.map((child, i) => (
           <div key={i} className="flex">
             {child}
