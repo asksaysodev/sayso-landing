@@ -54,6 +54,7 @@ export function PricingCalculator() {
         value={index}
         onChange={(e) => setIndex(parseInt(e.target.value, 10))}
         aria-label="Plan tier"
+        aria-valuetext={`${tier.hours} conversation hours, $${formatNumber(tier.price)} per month`}
         className="founder-pricing-slider w-full"
         style={{ ['--track' as string]: trackBg }}
       />
