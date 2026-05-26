@@ -485,3 +485,49 @@
   box-shadow: 0 0 0 2px #2367EE, 0 2px 6px rgba(35, 103, 238, 0.35);
   cursor: pointer;
 }
+
+/* Custom range slider for the Founder Pricing calculator.
+   Track fill is injected via the --track CSS variable on the element. */
+.founder-pricing-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+.founder-pricing-slider::-webkit-slider-runnable-track {
+  height: 16px;
+  border-radius: 9999px;
+  border: 2.5px solid #1D4871;
+  background: var(--track, #D7DEE1);
+}
+.founder-pricing-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFDE59;
+  border: 2.5px solid #1D4871;
+  box-shadow: 2px 2px 0 #1D4871;
+  margin-top: -13px;
+}
+.founder-pricing-slider::-moz-range-track {
+  height: 16px;
+  border-radius: 9999px;
+  border: 2.5px solid #1D4871;
+  background: var(--track, #D7DEE1);
+}
+.founder-pricing-slider::-moz-range-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFDE59;
+  border: 2.5px solid #1D4871;
+  box-shadow: 2px 2px 0 #1D4871;
+}
+.founder-pricing-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 2px 2px 0 #1D4871, 0 0 0 4px rgba(35, 103, 238, 0.35);
+}

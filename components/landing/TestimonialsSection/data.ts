@@ -14,10 +14,10 @@ export const testimonials: Testimonial[] = [
     videoId: 'Vcxo-Gp2iOk',
     stat: {
       value: '12×',
-      label: 'more efficient at booking appointments from his calls',
+      label: 'more efficient at booking appointments',
     },
     quote:
-      'The prompts were really helping me out, giving me more direction toward booking the appointment. I felt more confident about where I was going with the conversation, and I was just coming up with a solution to give the prospect for the next question.',
+      'The prompts were really helping me ... toward booking the appointment. I felt more confident about where I was going with the conversation.',
   },
   {
     number: 2,
@@ -32,5 +32,30 @@ export const testimonials: Testimonial[] = [
     },
     quote:
       'Sayso has accelerated me by 6 months or more in skills on the phone.',
+  },
+  {
+    number: 3,
+    name: 'Cynthia Mejia',
+    attribution: 'Anderson Real Estate Group, eXp Long Beach',
+    badge: 'Top 250 eXp team',
+    videoId: 'kdEouaQCWLY',
+    stat: {
+      value: '1.4',
+      label: 'conversations per booked appointment',
+    },
+    quote:
+      'Sayso has helped me stay on track and book more appointments.',
+  },
+  {
+    number: 4,
+    name: 'Nicholas West',
+    attribution: 'eXp California & eXp Phoenix',
+    badge: '2025 Salesperson Rookie of the Year',
+    videoId: 'cErlCTC4Li4',
+    stat: {
+      value: 'More',
+      label: 'confidence in his calls',
+    },
+    quote: 'Sayso instills more confidence in my calls.',
   },
 ];
