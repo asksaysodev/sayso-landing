@@ -1,7 +1,7 @@
 /**
  * FounderPricingSection composes the /founderpricing page.
  *
- * Stacks six panels with consistent vertical spacing:
+ * Stacks seven panels with consistent vertical spacing:
  *   1. Hero with "Sayso for Teams" badge and intro
  *   2. PricingModelPanel explaining team-wide pricing + Founder Pricing
  *   3. HoursCaseStudy showing what an hour means with two stat cards
@@ -32,9 +32,6 @@ export function FounderPricingSection() {
         <PricingCalculator />
         <LaunchComparison />
         <CtaBlock />
-        <p className="text-center text-xs text-[#1D4871]/60 mt-2">
-          Founder Pricing shown is current as of May 2026 and changes at public launch.
-        </p>
       </div>
     </section>
   );
