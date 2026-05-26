@@ -2,9 +2,10 @@
  * TestimonialsSection composes the homepage's "What agents are saying" block.
  *
  * Responsive layout:
- *   • Mobile (< md): MobileCarousel renders one testimonial per swipeable slide.
- *   • Tablet (md):   TestimonialBlocks stack vertically in a single column.
- *   • Desktop (lg+): TestimonialBlocks sit side-by-side in a two-column grid.
+ *   • Below lg (< 1024px): MobileCarousel renders one testimonial per swipeable
+ *     slide. Used for both phones and tablets/half-screen browsers so users
+ *     never end up scrolling through four stacked video blocks.
+ *   • Desktop (lg+): TestimonialBlocks sit side-by-side in a four-column row.
  *
  * All sub-components live under ./components and shared types/data under
  * ./types and ./data respectively.
@@ -16,9 +17,9 @@ import { TestimonialBlock } from './components/TestimonialBlock';
 
 export function TestimonialsSection() {
   return (
-    <section className="relative bg-[#F4F4F5] py-12 md:py-20 lg:py-24 overflow-hidden">
+    <section className="relative bg-[#F4F4F5] py-12 md:py-16 lg:py-20 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 relative">
-        <div className="text-center mb-10 md:mb-14 max-w-2xl mx-auto">
+        <div className="text-center mb-8 md:mb-12 max-w-2xl mx-auto">
           <span className="inline-block text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
             What agents are saying
           </span>
@@ -30,11 +31,11 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <MobileCarousel testimonials={testimonials} />
         </div>
 
-        <div className="hidden md:grid max-w-6xl mx-auto grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8">
+        <div className="hidden lg:grid max-w-6xl mx-auto grid-cols-4 gap-6">
           {testimonials.map((t) => (
             <TestimonialBlock key={t.number} testimonial={t} />
           ))}
