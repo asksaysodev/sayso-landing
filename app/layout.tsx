@@ -172,6 +172,10 @@ fbq('track', 'PageView');`,
         </DemoCalendarProvider>
         <Analytics />
         <SpeedInsights />
+        <Script
+          src="https://subscribe-forms.beehiiv.com/attribution.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
