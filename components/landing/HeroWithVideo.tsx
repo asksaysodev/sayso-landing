@@ -9,7 +9,12 @@ const logos = [
   { name: 'eXp Realty', src: '/social-proof/exp-realty.png' },
   { name: 'Anderson Group', src: '/social-proof/anderson-group.png' },
   { name: 'Olaf', src: '/social-proof/olaf-logo.png' },
+  { name: 'Maxwell Properties', src: '/social-proof/maxwell-properties.png' },
 ];
+
+// Repeat the logo set so the marquee fills wide screens and loops seamlessly
+// (the track scrolls by exactly 50%, so the sequence must be duplicated).
+const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
 const defaultContent: HeroContent = {
   headline: 'Book 2x More Appointments from Prospecting Calls',
@@ -76,6 +81,38 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
 
         {/* Social proof */}
         <div className="mt-8 md:mt-10 pt-2 md:pt-4">
+          <style>{`
+            @keyframes logo-marquee {
+              from { transform: translateX(0); }
+              to { transform: translateX(-50%); }
+            }
+
+            .logo-marquee-track {
+              animation: logo-marquee 40s linear infinite;
+            }
+
+            .logo-marquee-wrapper:hover .logo-marquee-track {
+              animation-play-state: paused;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .logo-marquee-track {
+                animation: none;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+              }
+
+              .logo-marquee-wrapper {
+                overflow: visible;
+              }
+
+              .logo-marquee-fade {
+                display: none;
+              }
+            }
+          `}</style>
+
           <div className="flex justify-center mb-5">
             <span
               className="text-sm md:text-base font-bold tracking-widest uppercase text-black text-center"
@@ -84,21 +121,32 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
               Trusted by Top Teams and Agents Nationwide
             </span>
           </div>
-          <div className="flex items-center justify-center gap-10 md:gap-20">
-            {logos.map((logo) => (
-              <div
-                key={logo.name}
-                className="flex flex-1 items-center justify-center max-w-[180px] md:max-w-[260px]"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={260}
-                  height={100}
-                  className="h-16 md:h-24 w-auto object-contain"
-                />
-              </div>
-            ))}
+
+          {/* Continuous logo carousel */}
+          <div className="logo-marquee-wrapper relative overflow-hidden">
+            {/* Left fade edge */}
+            <div className="logo-marquee-fade absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+
+            <div className="logo-marquee-track flex w-max items-center gap-10 md:gap-20">
+              {marqueeLogos.map((logo, index) => (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="flex shrink-0 items-center justify-center w-[140px] md:w-[220px]"
+                  aria-hidden={index >= logos.length ? true : undefined}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={260}
+                    height={100}
+                    className="h-16 md:h-24 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Right fade edge */}
+            <div className="logo-marquee-fade absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
           </div>
         </div>
 
