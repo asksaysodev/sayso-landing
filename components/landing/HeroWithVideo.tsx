@@ -124,11 +124,11 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             {/* Left fade edge */}
             <div className="logo-marquee-fade absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
 
-            <div className="logo-marquee-track flex w-max items-center gap-10 md:gap-20">
+            <div className="logo-marquee-track flex w-max items-center gap-12 md:gap-20">
               {marqueeLogos.map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="flex shrink-0 items-center justify-center w-[140px] md:w-[220px]"
+                  className="flex shrink-0 items-center"
                   aria-hidden={index >= logos.length ? true : undefined}
                 >
                   <Image
@@ -136,7 +136,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                     alt={logo.name}
                     width={260}
                     height={100}
-                    className="h-16 md:h-24 w-auto object-contain"
+                    className="h-12 md:h-16 w-auto object-contain"
                   />
                 </div>
               ))}
