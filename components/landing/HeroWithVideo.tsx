@@ -114,10 +114,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
           `}</style>
 
           <div className="flex justify-center mb-5">
-            <span
-              className="text-sm md:text-base font-bold tracking-widest uppercase text-black text-center"
-              style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
-            >
+            <span className="text-xs md:text-sm font-medium tracking-widest uppercase text-[#1D4871]/60 text-center">
               Trusted by Top Teams and Agents Nationwide
             </span>
           </div>
