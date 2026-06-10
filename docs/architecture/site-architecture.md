@@ -1,6 +1,6 @@
 # Sayso - Complete Site Architecture & Keyword Map
 
-**Updated:** 2026-05-16
+**Updated:** 2026-06-09
 **Total Pages:** ~100–110
 
 ---
@@ -17,9 +17,9 @@
 | Objections | 15 | 15 | 100% |
 | Glossary | 11 | 11 | 100% |
 | Case Studies | 2 | 2 | 100% |
-| Blog Posts | 17 | 43 | 40% |
+| Blog Posts | 23 | 43 | 53% |
 | Blog Category Pages | 2 | 7 | 29% |
-| **TOTAL** | **73** | **~100** | **~73%** |
+| **TOTAL** | **79** | **~100** | **~79%** |
 
 ---
 
@@ -233,10 +233,10 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ```
 /blog/real-estate-follow-up-scripts/ (main)         "real estate follow up scripts"                             🟡 MED     ← PILLAR    ✅ DONE
-├── /blog/follow-up-scripts-cold-leads/ (support)     "how to follow up with cold leads real estate"             🟢 WIN              ❌ TODO
-├── /blog/how-often-follow-up-real-estate/ (support)   "how often should i follow up real estate leads"            🟢 WIN              ❌ TODO
-├── /blog/how-to-revive-dead-leads/   (support)       "how to revive dead leads real estate"                     🟢 WIN              ❌ TODO
-└── /blog/what-to-say-to-old-leads/    (support)      "what to say to old leads real estate"                     🟢 WIN              ❌ TODO
+├── /blog/follow-up-scripts-cold-leads/ (support)     "how to follow up with cold leads real estate"             🟢 WIN              ✅ DONE
+├── /blog/how-often-follow-up-real-estate/ (support)   "how often should i follow up real estate leads"            🟢 WIN              ✅ DONE
+├── /blog/how-to-revive-dead-leads/   (support)       "how to revive dead leads real estate"                     🟢 WIN              ✅ DONE
+└── /blog/what-to-say-to-old-leads/    (support)      "what to say to old leads real estate"                     🟢 WIN              ✅ DONE
 ```
 
 #### CRM & Notes Cluster (Stand alone)
@@ -253,11 +253,12 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 #### Struggle & Emotional Content (standalone)
 
 ```
-/blog/i-hate-cold-calling/                  "i hate cold calling real estate"                           🟢 WIN     ❌ TODO
+/blog/i-hate-cold-calling/                  "i hate cold calling real estate"                           🟢 WIN     ✅ DONE
+/blog/how-to-overcome-call-reluctance/      "how to overcome call reluctance"                           🟢 WIN     ✅ DONE
 /blog/why-leads-ghost-after-calls/          "why prospects ghost after calls"                           🟢 WIN     ❌ TODO
 /blog/how-to-recover-a-bad-call/            "how to recover a bad sales call"                          🟢 WIN     ❌ TODO
 /blog/how-to-not-freeze-on-calls/           "how to not freeze on sales calls"                         🟢 WIN     ❌ TODO
-/blog/how-to-not-sound-salesy/              "how to not sound salesy on calls"                          🟢 WIN     ❌ TODO
+/blog/how-to-not-sound-salesy/              "how to not sound salesy on calls"                          🟢 WIN     ✅ DONE
 /blog/how-to-think-on-your-feet-sales/      "how to think on your feet sales"                          🟢 WIN     ❌ TODO
 ```
 
