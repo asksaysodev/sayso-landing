@@ -18,6 +18,8 @@ const DemoCalendarContext = createContext<IDemoCalendarContext | null>(null);
 export function DemoCalendarProvider({ children }: { children: React.ReactNode }) {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isSystemSelectOpen, setIsSystemSelectOpen] = useState(false);
+  // "Book a Demo" now opens Calendly in a popup overlay (replaces the old
+  // Google Calendar iframe modal). See lib/calendly.ts.
   const openDemoCalendar = useCallback(() => openCalendlyPopup(), []);
   const openContactForm = useCallback(() => setIsContactOpen(true), []);
   const openSystemSelect = useCallback(() => setIsSystemSelectOpen(true), []);
