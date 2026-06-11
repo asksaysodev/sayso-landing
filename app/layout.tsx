@@ -132,6 +132,15 @@ fbq('track', 'PageView');`,
         data-version="062024"
         strategy="afterInteractive"
       />
+      <link
+        href="https://assets.calendly.com/assets/external/widget.css"
+        rel="stylesheet"
+      />
+      <Script
+        id="calendly-widget"
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+      />
       </head>
       <body>
         {gtmId && (
