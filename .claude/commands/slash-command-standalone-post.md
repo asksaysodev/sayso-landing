@@ -132,7 +132,7 @@ Using the competitive brief from Phase 1, write the complete standalone post fol
 
 ## CONTEXT: What You're Writing For
 
-**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live phone calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
+**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
 **What makes Sayso different from competitors:**
 - **Shilo AI** focuses on post-call grading and analysis. Reviews calls after they happen. Does not help the agent during the actual call.
@@ -214,24 +214,33 @@ Component use by category:
 
 ### Keyword Placement (Non-Negotiable)
 
-1. **H1:** Contains the exact target keyword. For mindset posts, a parenthetical benefit helps CTR (e.g., "I Hate Cold Calling in Real Estate (and How to Make It Suck Less)"). For crm-notes and data-authority, the keyword alone often works.
-2. **First 100 words:** Exact target keyword in sentence 1 or 2.
-3. **Meta title:** `[Target Keyword] | Sayso` or `[Target Keyword]: [Specific Value] | Sayso`. Max 60 characters.
-4. **Meta description:** 150-160 characters. Contains keyword. Format: "[Keyword context]. [Specific value this post delivers]. [CTA]."
+1. **H1:** Contains the target keyword, exact or a close natural variant. The topic must be unmistakable from the H1 alone. For mindset posts, a parenthetical benefit helps CTR (e.g., "I Hate Cold Calling in Real Estate (and How to Make It Suck Less)"). For crm-notes and data-authority, the keyword alone often works.
+2. **First 100 words:** Target keyword in sentence 1 or 2, and the opening directly answers or addresses the query before any setup.
+3. **Meta title:** The frontmatter `title` doubles as the meta title; the blog template appends " | Sayso Blog" automatically. Front-load the keyword and core promise in the first 50 characters, because Google truncates around 60 characters and frequently rewrites titles anyway.
+4. **Meta description:** 150-160 characters. Contains the keyword (Google bolds matching query terms in snippets, which helps CTR; descriptions are not a ranking factor). Format: "[Keyword context]. [Specific value this post delivers]. [CTA]."
 5. **URL slug:** Keyword in slug, lowercase, hyphens.
 6. **First H2:** Contains the keyword or a strong semantic variation.
-7. **Image alt text:** Describe image + include keyword variation naturally.
 
-### Keyword Density
+### Keyword Usage (Natural Only)
 
-- **Exact keyword:** 4 to 7 times across the full page.
-- **Semantic variations:** 8 to 12 times. Synonyms, related phrases, rephrased versions.
-- **Never stuff.** If it sounds forced, use a variation.
+Keyword density is not a ranking factor, and counting occurrences produces the stilted phrasing Google's recent core updates punish. Instead:
+
+- Use the exact keyword where it reads naturally. Everywhere else, use variations, synonyms, and related phrases.
+- Topical completeness beats repetition: cover the subtopics searchers expect (from your Phase 1 research) rather than repeating the head term.
+- If a sentence has to bend to fit the keyword, rewrite the sentence without it.
+
+### Answer-First Formatting (Featured Snippets + AI Search)
+
+AI Overviews and LLM search engines cite self-contained passages that answer a question directly, and this is now a meaningful discovery channel alongside classic rankings:
+
+- **Open every H2 section with 1 to 2 sentences that directly deliver what the heading promises.** Context, caveats, and elaboration come after the answer, never before it.
+- Each H2 section should make sense if extracted and read on its own.
+- **Include at least one concrete, citable fact, number, or specific claim per major section** where the topic supports it. Specific beats vague: "agents who call within 5 minutes are far more likely to reach the lead" beats "speed matters."
 
 ### Heading Structure
 
 - **One H1 only.**
-- **4 to 6 H2s.** Standalone posts sit between supporting (3 to 5) and pillar (5 to 8) in depth.
+- **4 to 6 H2s is the typical range.** Let the subtopics drive the count; standalone posts sit between supporting (3 to 5) and pillar (5 to 8) in depth.
 - **H3s** for subsections when needed.
 - **Never skip levels.**
 - At least one H2 should contain a semantic variation of the keyword.
@@ -243,11 +252,13 @@ Component use by category:
 
 If the topic genuinely requires more depth, data-authority posts can stretch to 3,500 words. crm-notes and mindset should stay under 2,500.
 
+These ranges are scoping targets, not floors. Word count is not a ranking factor, and padded sections actively hurt AI extraction. If the topic is fully covered below the range, stop.
+
 ---
 
 ## E-E-A-T & INFORMATION GAIN REQUIREMENTS
 
-Google's March 2026 core update rewards first-hand experience and penalizes generic content. Standalone posts are especially vulnerable because they often target practical or emotional queries where generic AI content floods the results. Your post must stand out.
+Google's 2025 and 2026 core updates reward first-hand experience and original sourcing, and penalize generic content. Standalone posts are especially vulnerable because they often target practical or emotional queries where generic AI content floods the results. Your post must stand out.
 
 ### Experience Markers (Include at Least 3)
 
@@ -344,8 +355,7 @@ In all cases:
 - Target long-tail keyword variations that did not fit in the main body.
 - First question should be a rephrasing of the H1 keyword as a question.
 - Include at least one "how long" or "how often" question (these get featured snippets).
-- Keep answers to 2 to 4 sentences each.
-- These feed the auto-generated FAQPage schema.
+- Keep answers to 2 to 4 sentences each, written so each answer makes sense on its own out of context. Google retired FAQ rich results in May 2026, so the value of the FAQ is featured snippets and AI search citation, not schema. (The template still emits FAQPage schema automatically; that is harmless, just not the goal.)
 
 ---
 
@@ -377,7 +387,7 @@ Standalone posts have no parent pillar, so their linking pattern differs from su
 ### Anchor Text Rules
 
 - **Always descriptive.** Never "click here" or "read more."
-- Use the target keyword of the destination page as the anchor text.
+- Use the target keyword of the destination page (or a natural variation) as the anchor text. Vary the wording across posts that link to the same destination instead of repeating one identical anchor string sitewide.
 - Make links feel natural within the sentence. If you have to restructure the sentence to fit the link, rewrite the sentence.
 
 ### What NOT to Include
@@ -432,7 +442,7 @@ For mindset posts specifically: keep CTAs extra light. A heavy sales pitch in a 
 ### data-authority posts
 
 - Lead with the finding, not the methodology. "The average agent asks for the appointment 1.3 times per call. Top agents ask 3.8 times." Then explain the data.
-- Use original numbers where available. If citing external data, cite the insight (not the source URL) naturally in prose.
+- Use original numbers where available. When citing external data, name the source in prose and link to it. An outbound link to an authoritative study is a credibility signal for readers, Google, and AI search engines.
 - Include at least one chart or data table (as markdown, the template renders it with proper styling).
 - Longer than other standalones. 2,000 to 3,000 words is normal. Reader is coming for depth.
 
@@ -470,11 +480,14 @@ Before finalizing, verify:
 - [ ] Related site content was reviewed for overlap or linking opportunities
 - [ ] At least 1 content gap from research is addressed in the post
 - [ ] FAQ includes at least 1 question sourced from PAA or related searches
-- [ ] H1 contains the exact target keyword
-- [ ] First 100 words contain the exact target keyword
-- [ ] Meta title is under 60 characters and keyword-first
+- [ ] H1 contains the target keyword or a close natural variant
+- [ ] First 100 words contain the target keyword and directly address the query
+- [ ] Frontmatter title front-loads the keyword and core promise in the first 50 characters
 - [ ] Meta description is 150-160 characters with keyword + value + CTA
 - [ ] 4 to 6 H2s, no skipped heading levels
+- [ ] Every H2 section opens with a direct 1 to 2 sentence answer before elaboration
+- [ ] At least one concrete, citable fact or number per major section (where the topic supports it)
+- [ ] No keyword stuffing: the keyword appears only where it reads naturally
 - [ ] ScriptExample and CalloutBox counts match the category's requirements
 - [ ] At least 3 E-E-A-T experience markers (specific scenarios, real numbers, process descriptions)
 - [ ] At least 1 Information Gain element (verified against actual competitor content)
@@ -482,7 +495,7 @@ Before finalizing, verify:
 - [ ] Links to 1 to 2 related cluster pillars
 - [ ] Pending back-links from `docs/content/pending-internal-links.md` have been added to every listed source file and the registry entry has been deleted (or the slug was not in the registry)
 - [ ] 2 CTAs (product section + end-of-post)
-- [ ] Word count is in the correct range for the category
+- [ ] Word count is in the correct range for the category, with no padding to reach it
 - [ ] No banned filler phrases
 - [ ] No em dashes
 - [ ] No generic advice, every tip is specific to real estate calling

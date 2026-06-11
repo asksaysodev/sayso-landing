@@ -10,6 +10,11 @@ import { getAllUseCaseSlugs } from '@/lib/content/for';
 import { getAllComparisonSlugs } from '@/lib/content/comparisons';
 // import { getAllCaseStudySlugs } from '@/lib/content/case-studies'; // TODO: re-enable when first real case study is published
 
+// Regenerate hourly so scheduled posts enter the sitemap when their publishedAt
+// date passes, without waiting for a manual redeploy. Matches the blog pages'
+// revalidate interval so the sitemap and the published pages stay in sync.
+export const revalidate = 3600;
+
 /** Paths that should never appear in the sitemap. */
 const EXCLUDED_PATHS = new Set([
   '/privacy',
