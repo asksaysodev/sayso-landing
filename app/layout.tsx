@@ -27,13 +27,36 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Sayso',
+  alternateName: 'Sayso for Real Estate Agents',
   url: siteUrl,
   logo: `${siteUrl}/logos/logo-pos-horizontal.png`,
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
+  slogan: 'Fix where real estate prospecting breaks down',
+  knowsAbout: [
+    'real estate prospecting',
+    'real estate agents',
+    'real estate lead conversion',
+    'objection handling',
+    'live call coaching for real estate agents',
+  ],
   sameAs: [
     'https://www.linkedin.com/company/asksayso',
     'https://www.instagram.com/asksayso',
   ],
+};
+
+const webSiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Sayso',
+  alternateName: 'Sayso Real Estate',
+  url: siteUrl,
+  description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sayso',
+    url: siteUrl,
+  },
 };
 
 const siteNavigationJsonLd = {
@@ -67,14 +90,14 @@ const siteNavigationJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sayso: Fix Where Prospecting Breaks Down',
+    default: 'Sayso: Fix Where Real Estate Prospecting Breaks Down',
     template: '%s | Sayso',
   },
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   openGraph: {
     siteName: 'Sayso',
     type: 'website',
-    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix the Hardest Part of Prospecting' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix Where Real Estate Prospecting Breaks Down' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -158,6 +181,10 @@ fbq('track', 'PageView');`,
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
         <script
           type="application/ld+json"
