@@ -76,6 +76,8 @@ export function generateHowToJsonLd(
 export function generateSoftwareAppJsonLd(options?: {
   featureList?: string[];
   offers?: { price: string; priceCurrency: string };
+  description?: string;
+  audienceType?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -85,6 +87,13 @@ export function generateSoftwareAppJsonLd(options?: {
     operatingSystem: 'Web, macOS, Windows',
     url: siteUrl,
     publisher: SAYSO_PUBLISHER,
+    ...(options?.description && { description: options.description }),
+    ...(options?.audienceType && {
+      audience: {
+        '@type': 'Audience',
+        audienceType: options.audienceType,
+      },
+    }),
     ...(options?.featureList && { featureList: options.featureList.join(', ') }),
     ...(options?.offers && {
       offers: {
