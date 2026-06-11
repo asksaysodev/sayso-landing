@@ -14,39 +14,11 @@ The `/standalone-post`, `/pillar`, and `/supporting-post` slash commands all rea
 
 ## Pending posts
 
-### `/blog/follow-up-scripts-cold-leads`
-**Suggested anchor text:** "follow-up scripts for cold leads"
-**Add internal links back from:**
-- `content/blog/circle-prospecting-scripts.mdx`
-- `content/blog/expired-listing-scripts.mdx`
-- `content/blog/how-to-talk-to-real-estate-leads.mdx`
-- `content/blog/real-estate-cold-calling-guide.mdx`
-- `content/blog/real-estate-follow-up-scripts.mdx`
-
-### `/blog/how-often-follow-up-real-estate`
-**Suggested anchor text:** "how often to follow up with real estate leads"
-**Add internal links back from:**
-- `content/blog/expired-listing-scripts.mdx`
-- `content/blog/how-to-talk-to-real-estate-leads.mdx`
-- `content/blog/real-estate-follow-up-scripts.mdx`
-
-### `/blog/how-to-revive-dead-leads`
-**Suggested anchor text:** "how to revive dead leads" or "follow-up touches"
-**Add internal links back from:**
-- `content/blog/expired-listing-scripts.mdx`
-- `content/blog/how-to-talk-to-real-estate-leads.mdx`
-- `content/blog/real-estate-follow-up-scripts.mdx`
-
 ### `/blog/buyer-lead-scripts`
 **Suggested anchor text:** "buyer lead" or "buyer lead call scripts"
 **Add internal links back from:**
 - `content/blog/how-to-talk-to-real-estate-leads.mdx`
 - `content/blog/real-estate-cold-calling-guide.mdx`
-
-### `/blog/what-to-say-to-old-leads`
-**Suggested anchor text:** "what to say to old leads"
-**Add internal links back from:**
-- `content/blog/real-estate-follow-up-scripts.mdx`
 
 ### `/blog/how-to-not-freeze-on-calls`
 **Display title:** "How to Not Freeze on Sales Calls"

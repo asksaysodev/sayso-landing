@@ -168,14 +168,26 @@ Using the competitive brief from Phase 1, write the complete supporting post fol
 
 ## CONTEXT: What You're Writing For
 
-**Product:** SaySo (asksayso.com) - an AI-powered real-time coaching tool for real estate agents and ISAs. During live phone calls, SaySo displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
+**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
-**What makes SaySo different from competitors:**
-- **Shilo AI** - focuses on post-call grading and analysis. Reviews calls AFTER they happen. Doesn't help the agent during the actual call.
-- **MaverickRE** - broader platform (lead routing, accountability, reporting) with AI role-play for practice. Agents train with simulated calls, but the AI isn't there during real calls.
-- **SaySo's edge** - real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after.
+**What makes Sayso different from competitors:**
+- **Shilo AI** focuses on post-call grading and analysis. Reviews calls after they happen. Does not help the agent during the actual call.
+- **MaverickRE** is a broader platform (lead routing, accountability, reporting) with AI role-play for practice. Agents train with simulated calls, but the AI is not there during real calls.
+- **Sayso's edge** is real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after.
 
-**Target audience:** Real estate agents (solo and team), ISAs, team leaders, and brokerage managers in the US. They make 20-100+ calls per day. Practical, time-pressed, skeptical of tools that don't immediately help them book more appointments.
+**Target audience:** Real estate agents (solo and team), ISAs, team leaders, and brokerage managers in the US. They make 20 to 100+ calls per day. Practical, time-pressed, skeptical of tools that do not immediately help them book more appointments. Sayso helps with both buyer and seller prospecting, so all content must stay lead-type agnostic unless the topic is explicitly seller-only (e.g., FSBO) or buyer-only.
+
+**Writing rules (non-negotiable, from CLAUDE.md):**
+- Brand name is always "Sayso" - never "SaySo", "SAYSO", "Say So", or "say so"
+- Never use em dashes. Use commas, colons, periods, or rephrase
+- Never use "run/running" when talking about phone calls. Use "make calls", "dial", "get on the phone"
+- Avoid "cold call(s)" as a noun. Use "call(s)" unless the topic is specifically cold calling as a concept
+- Never say "phone call(s)". Use "call(s)"
+- Never refer to real estate agents as "reps" or "representatives". Only "agents" or "real estate agents"
+- Never refer to clients or prospects as "deals". Use "prospect", "lead", "client", or "appointment"
+- Never say "close a deal" or "win/lose deals". Agents "book appointments" and turn prospects into clients
+- Never use short punchy fragmented "tagline" sentences like "Not pressure. Not pitch. Just value." Write full natural sentences
+- Never use "Not X. Not Y. Just Z." sentence structures. Rewrite affirmatively
 
 ---
 
@@ -197,12 +209,14 @@ author:
   name: "Sayso Team"
   role: "Team"
   avatar: "/logo-sayso.png"
-publishedAt: "[today's date YYYY-MM-DD]"
+publishedAt: "2099-01-01"
 featured: false
 coverImage: "/blog/covers/blog-card.jpg"
 heroImage: "/blog/covers/blog-hero-2.jpg"
 ---
 ```
+
+**Important:** Set `publishedAt` to `"2099-01-01"` (placeholder). Real publish dates are assigned after team review per [docs/reference/blog-publishing-plan.md](../../docs/reference/blog-publishing-plan.md). Do NOT put today's date or a guess at a real publish date in the frontmatter.
 
 ### Body Content
 
@@ -229,22 +243,30 @@ Use `<ScriptExample>` at least 2 times in a supporting post. These posts need to
 ## SEO RULES
 
 ### Keyword Placement (Non-Negotiable)
-1. **H1:** Contains the exact target keyword. Add a parenthetical benefit or objection-buster for CTR (e.g., "How to Build Rapport on Real Estate Calls (Without Sounding Fake)").
-2. **First 100 words:** Exact target keyword in sentence 1 or 2.
-3. **Meta title:** `[Target Keyword] | SaySo` - max 60 characters.
-4. **Meta description:** 150-160 characters. Contains keyword. Format: "[Keyword context]. [Specific value this post delivers]. [CTA]."
+1. **H1:** Contains the target keyword, exact or a close natural variant. The topic must be unmistakable from the H1 alone. Add a parenthetical benefit or objection-buster for CTR (e.g., "How to Build Rapport on Real Estate Calls (Without Sounding Fake)").
+2. **First 100 words:** Target keyword in sentence 1 or 2, and the opening directly answers or addresses the query before any setup.
+3. **Meta title:** The frontmatter `title` doubles as the meta title; the blog template appends " | Sayso Blog" automatically. Front-load the keyword and core promise in the first 50 characters, because Google truncates around 60 characters and frequently rewrites titles anyway.
+4. **Meta description:** 150-160 characters. Contains the keyword (Google bolds matching query terms in snippets, which helps CTR; descriptions are not a ranking factor). Format: "[Keyword context]. [Specific value this post delivers]. [CTA]."
 5. **URL slug:** Keyword in slug, lowercase, hyphens.
 6. **First H2:** Contains the keyword or a strong semantic variation.
-7. **Image alt text:** Describe image + include keyword variation naturally.
 
-### Keyword Density
-- **Exact keyword:** 3-6 times across the full page.
-- **Semantic variations:** 6-10 times. Keep these natural - synonyms, related phrases, rephrased versions of the keyword.
-- **Never stuff.** If it sounds forced, use a variation.
+### Keyword Usage (Natural Only)
+Keyword density is not a ranking factor, and counting occurrences produces the stilted phrasing Google's recent core updates punish. Instead:
+
+- Use the exact keyword where it reads naturally. Everywhere else, use variations, synonyms, and related phrases.
+- Topical completeness beats repetition: cover the subtopics searchers expect (from your Phase 1 research) rather than repeating the head term.
+- If a sentence has to bend to fit the keyword, rewrite the sentence without it.
+
+### Answer-First Formatting (Featured Snippets + AI Search)
+AI Overviews and LLM search engines cite self-contained passages that answer a question directly, and this is now a meaningful discovery channel alongside classic rankings:
+
+- **Open every H2 section with 1 to 2 sentences that directly deliver what the heading promises.** Context, caveats, and elaboration come after the answer, never before it.
+- Each H2 section should make sense if extracted and read on its own.
+- **Include at least one concrete, citable fact, number, or specific claim per major section** where the topic supports it. Specific beats vague: "agents who call within 5 minutes are far more likely to reach the lead" beats "speed matters."
 
 ### Heading Structure
 - **One H1 only.**
-- **3-5 H2s.** Supporting posts are focused - they don't need as many sections as pillars.
+- **3-5 H2s is the typical range.** Let the subtopics drive the count - supporting posts are focused and don't need as many sections as pillars.
 - **H3s** for subsections when needed.
 - **Never skip levels.**
 - At least one H2 should contain a semantic variation of the keyword.
@@ -253,17 +275,18 @@ Use `<ScriptExample>` at least 2 times in a supporting post. These posts need to
 - **1,200-1,800 words.** More focused than pillar posts, more substantial than objection or glossary pages.
 - Supporting posts go deep on ONE specific sub-topic. If you find yourself covering 5 different things, you're writing a pillar post.
 - If the topic genuinely requires more depth, stretch to 2,000 - but that's the ceiling.
+- These ranges are scoping targets, not floors. Word count is not a ranking factor, and padded sections actively hurt AI extraction. If the topic is fully covered below the range, stop.
 
 ---
 
 ## E-E-A-T & INFORMATION GAIN REQUIREMENTS
 
-Google's March 2026 core update rewards first-hand experience and penalizes generic content. Supporting posts are especially vulnerable because they target specific, often how-to queries where Google can easily compare your answer against competitors. Your post must stand out.
+Google's 2025 and 2026 core updates reward first-hand experience and original sourcing, and penalize generic content. Supporting posts are especially vulnerable because they target specific, often how-to queries where Google can easily compare your answer against competitors. Your post must stand out.
 
 ### Experience Markers (Include at Least 2)
 - **Walk through a specific scenario step by step** - not "you should build rapport" but "when the lead picks up and says 'who is this?', here's exactly what to say in the next 5 seconds and why it works."
 - **Include a specific mistake and its consequence** - "If you jump straight to 'I have a great listing in your area,' you've positioned yourself as a salesperson. The lead's guard goes up. Instead, start with a question about their situation."
-- **Reference a real workflow** - "You're on your third hour of cold calling from Follow Up Boss. You've hit 40 dials. Lead #41 actually picks up. Your brain freezes. Here's the framework that prevents that."
+- **Reference a real workflow** - "You're on your third hour of dialing from Follow Up Boss. You've hit 40 dials. Lead #41 actually picks up. Your brain freezes. Here's the framework that prevents that."
 - **Provide a counter-intuitive insight** - something the reader won't find in the top 5 Google results for this keyword. A specific technique, a reframe, or a "most people do X but Y actually works better" moment.
 
 ### Information Gain
@@ -329,19 +352,18 @@ Example H2 structure for "how to build rapport real estate calls":
 - H2: 3 Rapport Techniques That Work on Cold Calls (With Scripts)
 - H2: What to Do When a Lead Won't Open Up
 
-### 5. H2: How SaySo Helps
+### 5. H2: How Sayso Helps
 
 Brief product tie-in. Rules:
 - 2-4 sentences maximum. Supporting posts are lighter on product promotion than pillars.
-- Connect this specific topic to a specific SaySo feature. Not "SaySo helps with calls" but "When you're struggling to build rapport and the lead goes quiet, SaySo suggests a conversation-starter on screen - in real time."
+- Connect this specific topic to a specific Sayso feature. Not "Sayso helps with calls" but "When you're struggling to build rapport and the lead goes quiet, Sayso suggests a conversation-starter on screen - in real time."
 - CTA: Link to `/demo/` or a relevant feature page (e.g., `/products/cue/`).
 
 ### 6. H2: FAQ (Optional but Recommended)
 
 2-4 questions and answers. Rules:
 - Target long-tail keyword variations that didn't fit in the main body.
-- Keep answers to 2-3 sentences each.
-- These feed the auto-generated FAQPage schema.
+- Keep answers to 2-3 sentences each, written so each answer makes sense on its own out of context. Google retired FAQ rich results in May 2026, so the value of the FAQ is featured snippets and AI search citation, not schema. (The template still emits FAQPage schema automatically; that is harmless, just not the goal.)
 
 ---
 
@@ -352,7 +374,7 @@ Supporting posts are the connective tissue of the cluster. Their linking job is 
 ### Required Links
 1. **Link UP to the pillar post** - within the first 300 words. Use the pillar's target keyword as anchor text. This is the most important link on the page.
 2. **Link ACROSS to 2-3 other supporting posts** in the same cluster. Use their target keywords as anchor text. Only link to supporting posts that already exist; if a sibling supporting post has not been written yet, leave the phrase as plain text and add the link in the same PR that publishes that sibling (tracked via `docs/content/pending-internal-links.md`).
-3. **Link to 1-2 objection pages** if the topic involves phone calls (most do). Example: `/objections/not-interested/`, `/objections/call-me-later/`
+3. **Link to 1-2 objection pages** if the topic involves calls (most do). Example: `/objections/not-interested/`, `/objections/call-me-later/`
 4. **Link to 1 feature page** if naturally relevant. Example: `/products/cue/`, `/products/smart-capture/`
 5. **Link to 1 glossary page** if an industry term appears that has a glossary entry. Example: first mention of "FSBO" → `/glossary/fsbo/`
 6. **Restore pending back-links.** If this post's slug appeared in `docs/content/pending-internal-links.md` during Step 0, edit every source file listed in that entry to add a link to this post, then delete the registry entry. These are in addition to the 5-8 forward links above.
@@ -361,7 +383,7 @@ Supporting posts are the connective tissue of the cluster. Their linking job is 
 
 ### Anchor Text Rules
 - **Always descriptive.** Never "click here" or "read more."
-- Use the target keyword of the destination page as the anchor text.
+- Use the target keyword of the destination page (or a natural variation) as the anchor text. Vary the wording across posts that link to the same destination instead of repeating one identical anchor string sitewide.
 - Make links feel natural within the sentence. If you have to restructure the sentence to fit the link, rewrite the sentence.
 
 ---
@@ -370,8 +392,8 @@ Supporting posts are the connective tissue of the cluster. Their linking job is 
 
 Supporting posts get 1-2 CTAs. Keep them lighter than pillar posts.
 
-1. **Product section CTA (in the "How SaySo Helps" H2):** Single CTA linking to `/demo/` or a feature page.
-2. **Optional soft CTA earlier in the post** - only if a SaySo feature is directly relevant to the technique being discussed. One sentence, inline: "This is exactly what SaySo does - feeds you rapport-building prompts in real time. [See how it works →](/demo/)"
+1. **Product section CTA (in the "How Sayso Helps" H2):** Single CTA linking to `/demo/` or a feature page.
+2. **Optional soft CTA earlier in the post** - only if a Sayso feature is directly relevant to the technique being discussed. One sentence, inline: "This is exactly what Sayso does - feeds you rapport-building prompts in real time. [See how it works →](/demo/)"
 
 Do NOT put a CTA before delivering real value. The reader should get at least one useful technique before seeing any product mention.
 
@@ -433,11 +455,14 @@ Before finalizing, verify:
 - [ ] Sibling supporting posts were checked for overlap
 - [ ] At least 1 content gap from research is addressed in the post
 - [ ] FAQ includes at least 1 question sourced from PAA or related searches
-- [ ] H1 contains the exact target keyword + parenthetical benefit
-- [ ] First 100 words contain the exact target keyword
-- [ ] Meta title is under 60 characters and keyword-first
+- [ ] H1 contains the target keyword (or a close natural variant) + parenthetical benefit
+- [ ] First 100 words contain the target keyword and directly address the query
+- [ ] Frontmatter title front-loads the keyword and core promise in the first 50 characters
 - [ ] Meta description is 150-160 characters with keyword + value + CTA
 - [ ] 3-5 H2s, no skipped heading levels
+- [ ] Every H2 section opens with a direct 1-2 sentence answer before elaboration
+- [ ] At least one concrete, citable fact or number per major section (where the topic supports it)
+- [ ] No keyword stuffing: the keyword appears only where it reads naturally
 - [ ] Pillar uplink within first 300 words with descriptive anchor text
 - [ ] At least 2 `<ScriptExample>` components
 - [ ] At least 1 `<CalloutBox>` component
@@ -447,7 +472,7 @@ Before finalizing, verify:
 - [ ] Links to 2-3 other supporting posts in the same cluster
 - [ ] Pending back-links from `docs/content/pending-internal-links.md` have been added to every listed source file and the registry entry has been deleted (or the slug was not in the registry)
 - [ ] 1-2 CTAs maximum (not before delivering value)
-- [ ] Word count 1,200-1,800
+- [ ] Word count 1,200-1,800, with no padding to reach it
 - [ ] No banned filler phrases
 - [ ] No generic advice - every tip is specific to real estate calling
 - [ ] Content goes deeper than the pillar's coverage of this sub-topic
