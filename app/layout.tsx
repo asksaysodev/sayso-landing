@@ -155,6 +155,20 @@ fbq('track', 'PageView');`,
         data-version="062024"
         strategy="afterInteractive"
       />
+      {/*
+        Calendly booking widget loaded once globally: the styles + script power
+        both the inline scheduler on /demo and the "Book a Demo" popup triggered
+        from buttons across the site (see lib/calendly.ts).
+      */}
+      <link
+        href="https://assets.calendly.com/assets/external/widget.css"
+        rel="stylesheet"
+      />
+      <Script
+        id="calendly-widget"
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+      />
       </head>
       <body>
         {gtmId && (

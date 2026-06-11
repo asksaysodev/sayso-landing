@@ -3,9 +3,8 @@ import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { DownloadButton } from '@/components/landing/DownloadButton';
+import { CalendlyInlineWidget } from '@/components/CalendlyInlineWidget';
 import { siteUrl } from '@/lib/config';
-const CALENDAR_URL =
-  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0eeiee8mED3XOLfAhzApvxOvHL96hIK8pNfAcZBY89TaKTa_LeVrtJr_kEbOlbQyb1juvLNPG3?gv=true';
 
 export const metadata: Metadata = {
   title: 'Book a Demo',
@@ -60,12 +59,9 @@ export default function DemoPage() {
 
           <section className="w-full px-4 md:px-6 pb-16">
             <div className="max-w-[900px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
-              <iframe
-                src={CALENDAR_URL}
-                className="w-full border-0"
-                style={{ height: '700px' }}
-                title="Book a demo with the Sayso founders"
-                loading="lazy"
+              <CalendlyInlineWidget
+                className="w-full"
+                style={{ minWidth: '320px', height: '700px' }}
               />
             </div>
           </section>
