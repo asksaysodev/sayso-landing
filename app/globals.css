@@ -13,6 +13,15 @@
 
 /* Base Styles */
 @layer base {
+  /*
+   * Always reserve the scrollbar gutter so that locking the page scroll
+   * (Calendly popup, mobile menu) does not remove the scrollbar and shift
+   * centered content like the sticky navbar sideways.
+   */
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     @apply bg-background text-primary font-sans;
   }
