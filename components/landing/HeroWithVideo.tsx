@@ -10,6 +10,7 @@ const logos = [
   { name: 'Anderson Group', src: '/social-proof/anderson-group.png' },
   { name: 'Olaf', src: '/social-proof/olaf-logo.png' },
   { name: 'Maxwell Properties', src: '/social-proof/maxwell-properties.png' },
+  { name: 'Keller Williams Palo Alto', src: '/social-proof/kw-palo-alto.png' },
 ];
 
 // Repeat the logo set so the marquee fills wide screens and loops seamlessly
