@@ -237,7 +237,7 @@ export const camelCaseName: ObjectionEntry = {
 
 **`commonMistakes`**: Array of 4-6 strings. Each is a short, specific mistake description. Focus on mistakes that actually cost agents appointments. Not platitudes.
 
-**`howSaysoHelps`**: A single string, 2-4 sentences. Brief product tie-in connecting the objection to a specific Sayso feature (Real-Time Coaching, Call Notes, Pulse, or Playbook). This is NOT a feature page. Keep it concise.
+**`howSaysoHelps`**: A single string, 2-4 sentences. Brief product tie-in connecting the objection to a specific Sayso feature (Real-Time Coaching, Call Notes, Pulse, or Playbook). This is NOT a feature page. Keep it concise. Write it for this specific objection and do not reuse phrasing from another objection file (see Objection-Specific Writing Rule 10).
 
 **`relatedObjections`**: Array of 3-5 objects with `title`, `slug`, `keyword`. Include both live and planned objections from the hub config where they are genuinely related. The existing `not-ready-yet.ts` reference links to planned (unbuilt) objection pages, so follow this pattern.
 
@@ -273,6 +273,17 @@ Write the updated file directly. Do not just show a diff.
 
 If any existing objection entries should add the new page to their `relatedObjections` array, show the exact code change for each affected file. Only update entries where the objections are genuinely related.
 
+### Output 4: Inbound Internal Links (Required)
+
+A new page that nothing links to rarely gets crawled or indexed. The sibling `relatedObjections` cross-links in Output 3 and the objections hub do NOT count here, they are not contextual links inside published content.
+
+Before this page is done, add at least 2 contextual links pointing TO the new page from existing PUBLISHED pages, and make those edits in the same PR:
+
+- Prefer pages that are already indexed: live blog post bodies in `content/blog/`, persona modules in `lib/content/for/`, or product modules in `lib/content/products/`.
+- Each link must sit naturally inside copy that already exists, with descriptive anchor text built from the new page's topic. Never add a sentence whose only purpose is to hold the link, and never use "click here" or "read more".
+- Show the exact edit for each source file you touch.
+- If no published page can host a natural link yet, record the pending back-links in `docs/content/pending-internal-links.md` (the new slug plus the source files that should link to it once they go live) instead of skipping silently.
+
 ---
 
 ## GLOBAL WRITING RULES (from CLAUDE.md)
@@ -303,6 +314,7 @@ These are non-negotiable. Every violation must be caught before output.
 7. **String escaping:** Single quotes within TypeScript strings must be escaped with `\'`. Double-check every apostrophe and contraction (e.g., "agent\'s", "don\'t", "you\'re", "I\'m").
 8. **Total word count: 600-900 words** across all content fields combined. This is a concise practical resource, not a blog post.
 9. **Response scripts use double quotes inside the string.** The pattern from the reference implementation wraps scripts in outer single quotes (TypeScript string delimiter) with double quotes for the spoken words inside.
+10. **No recycled boilerplate.** The `howSaysoHelps` tie-in must be written for the specific moment in THIS objection. Do not reuse a sentence that already appears in another objection file. Before output, grep `lib/content/objections/` for your `howSaysoHelps` opening and its inline CTA sentence; if any sentence matches an existing file word-for-word, or matches with only the objection name swapped, rewrite it. Banned stock openers: "Tools like Sayso ...", "Sayso coaches you in real time ...".
 
 ---
 
@@ -394,6 +406,11 @@ Before finalizing, verify every item:
 - [ ] No "Not X. Not Y. Just Z." structures
 - [ ] Copy is lead type agnostic (covers buyers and sellers)
 - [ ] Tone matches not-ready-yet.ts (coach-like, practical, empathetic)
+- [ ] `howSaysoHelps` is written for this objection and reuses no sentence from another objection file (grep-checked); no banned stock openers
+
+### Internal Links
+- [ ] At least 2 contextual inbound links to this page were added from existing published pages (or registered in `docs/content/pending-internal-links.md` if none can host one yet)
+- [ ] Each inbound link sits inside existing copy with descriptive anchor text (no "click here", no link-only sentences)
 
 ### Technical
 - [ ] All single quotes in strings are escaped with `\'`

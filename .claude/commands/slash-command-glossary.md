@@ -191,6 +191,7 @@ export const camelCaseName: GlossaryEntry = {
 - Must connect the specific glossary term to a specific Sayso feature. Not "Sayso helps with calls" but "When a homeowner asks about their home's value, Sayso shows you the right response instantly."
 - Supports inline markdown: `[text](/url/)` for links. Include `[Book a demo](/demo/)` in the last paragraph.
 - Reference at least one specific Sayso feature by name (Real-Time Coaching, Call Notes, Pulse, or Playbook).
+- Write these paragraphs for this specific term and do not reuse phrasing from another glossary file (see Glossary-Specific Writing Rule 8).
 
 **`relatedTerms`**: Array of `{ term: string; slug: string }` objects. Only include glossary entries that are currently registered in `lib/content/glossary/index.ts` (confirmed live in Step 1 of research). If only circle-prospecting exists and it is relevant, include it. If no relevant live entries exist, use an empty array `[]`. Never link to unbuilt glossary pages.
 
@@ -227,6 +228,17 @@ Write the updated file directly. Do not just show a diff.
 
 If any existing glossary entries should add the new term to their `relatedTerms` array, show the exact code change for each affected file. Only update entries where the terms are genuinely related.
 
+### Output 4: Inbound Internal Links (Required)
+
+A new page that nothing links to rarely gets crawled or indexed. The sibling `relatedTerms` cross-links in Output 3 and the glossary hub do NOT count here, they are not contextual links inside published content.
+
+Before this page is done, add at least 2 contextual links pointing TO the new term page from existing PUBLISHED pages, and make those edits in the same PR:
+
+- Prefer pages that are already indexed: live blog post bodies in `content/blog/`, persona modules in `lib/content/for/`, or product modules in `lib/content/products/`.
+- Each link must sit naturally inside copy that already exists, with descriptive anchor text built from the term. Never add a sentence whose only purpose is to hold the link, and never use "click here" or "read more".
+- Show the exact edit for each source file you touch.
+- If no published page can host a natural link yet, record the pending back-links in `docs/content/pending-internal-links.md` (the new slug plus the source files that should link to it once they go live) instead of skipping silently.
+
 ---
 
 ## GLOBAL WRITING RULES (from CLAUDE.md)
@@ -255,6 +267,7 @@ These are non-negotiable. Every violation must be caught before output.
 5. **Banned phrases:** "In today's competitive market," "It's no secret that," "As a real estate professional," "In the ever-evolving world of," "Let's dive in," "Without further ado," "At the end of the day," "In this guide," "It's important to note."
 6. **String escaping:** Single quotes within TypeScript strings must be escaped with `\'`. Double-check every apostrophe and contraction (e.g., "agent\'s", "don\'t", "you\'re").
 7. **Total word count: 600-900 words** across all content fields combined. This is a glossary entry, not a blog post. Be concise.
+8. **No recycled boilerplate.** Each `howSaysoHelps` paragraph must be written for this specific term. The `[Book a demo](/demo/)` link stays required, but the sentence around it must be specific to this term, not the same closing line every entry uses. Do not reuse a sentence that already appears in another glossary file. Before output, grep `lib/content/glossary/` for your `howSaysoHelps` sentences and the CTA sentence; rewrite anything that matches an existing file word-for-word.
 
 ---
 
@@ -339,6 +352,11 @@ Before finalizing, verify every item:
 - [ ] No "Not X. Not Y. Just Z." structures
 - [ ] Copy is lead type agnostic (covers buyers and sellers)
 - [ ] Tone matches circle-prospecting.ts (coach-like, practical, clear)
+- [ ] `howSaysoHelps` paragraphs (including the CTA sentence) reuse no sentence from another glossary file (grep-checked)
+
+### Internal Links
+- [ ] At least 2 contextual inbound links to this page were added from existing published pages (or registered in `docs/content/pending-internal-links.md` if none can host one yet)
+- [ ] Each inbound link sits inside existing copy with descriptive anchor text (no "click here", no link-only sentences)
 
 ### Technical
 - [ ] All single quotes in strings are escaped with `\'`
