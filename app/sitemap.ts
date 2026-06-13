@@ -102,5 +102,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticPages, ...blogPages, ...contentPages];
+  // Dedupe by URL: persona, product, and comparison child pages are registered
+  // both in the nav (staticPages) and in the content loaders (contentPages), so
+  // they would otherwise appear twice. Keep the first occurrence of each URL.
+  const all = [...staticPages, ...blogPages, ...contentPages];
+  const seen = new Set<string>();
+  return all.filter((entry) => {
+    if (seen.has(entry.url)) return false;
+    seen.add(entry.url);
+    return true;
+  });
 }
