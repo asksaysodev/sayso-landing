@@ -43,7 +43,8 @@ sayso_landing_page/
 ├── lib/
 │   └── seo/                  # SEO utilities (metadata, structured data, OG)
 ├── docs/
-│   └── brand.md              # **Brand guidelines** (fonts, colors, usage rules)
+│   └── brand/
+│       └── sayso-design-system.md  # **Design system** (fonts, colors, comic/superhero UI)
 ├── styles/
 │   └── ...                   # [Optional] Additional stylesheets if needed
 ├── public/                   # Static assets (images, icons, fonts)
@@ -67,22 +68,24 @@ sayso_landing_page/
 
 ## 🎨 Brand Guidelines
 
-**Complete brand documentation is in [`docs/brand.md`](./docs/brand.md)**
+**The Sayso design system is the single source of truth for all UI/brand styling: [`docs/brand/sayso-design-system.md`](./docs/brand/sayso-design-system.md)**
+
+> **Keep it in sync:** any UI change made to the web app (a new color, font, utility class, component pattern, or motion) must be reflected in `docs/brand/sayso-design-system.md` in the same PR. Treat it as living documentation.
 
 ### Quick Reference
 
 **Fonts:**
-- Hero: Manrope Bold (30px)
-- Headings: Helvetica Bold (18px)
-- Body: Helvetica Regular (16px)
-- Small: Helvetica Regular (12px)
+- Hero: Manrope Bold (`font-hero`, 30px)
+- Comic headers / badges: Bangers (`font-comic`)
+- Headings / body / UI: Helvetica stack (`font-sans`, 18/16/12px)
+- Handwriting accents (ad pages only): Caveat (`font-handwriting`)
 
 **Colors:**
 - Background: `#F4F4F5`
 - Accent Background: `#D7DEE1`
-- Primary: `#1D4871`
-- CTA: `#2367EE`
-- Accent: `#FFDE59` (use sparingly!)
+- Primary (navy): `#1D4871`
+- CTA (blue): `#2367EE`
+- Accent (yellow): `#FFDE59` (use sparingly!)
 
 ## 🚀 Development
 
@@ -172,9 +175,9 @@ npm run type-check   # Run TypeScript compiler check
 
 ## 📝 Contributing Guidelines
 
-**New to the repo?** See [Developer Guide](./docs/DEV_GUIDE.md) for setup, Git workflow, branch naming, and PR process.
+**New to the repo?** See [Developer Guide](./docs/reference/dev-guide.md) for setup, Git workflow, branch naming, and PR process.
 
-1. **Follow brand guidelines**: All UI must adhere to `docs/brand.md`
+1. **Follow brand guidelines**: All UI must adhere to `docs/brand/sayso-design-system.md`
 2. **Use Tailwind tokens**: No arbitrary values - use defined tokens
 3. **TypeScript strict mode**: No `any` types
 4. **Component composition**: Build small, reusable pieces
