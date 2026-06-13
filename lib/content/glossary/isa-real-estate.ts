@@ -62,8 +62,8 @@ export const isaRealEstate: GlossaryEntry = {
     href: '/products/cue',
   },
   relatedPersona: {
-    title: 'Sayso for Solo Agents',
-    href: '/for/solo-agents',
+    title: 'Sayso for ISAs',
+    href: '/for/isas',
   },
   faq: [
     {
