@@ -1,11 +1,17 @@
 # SEO Indexing Cleanup Plan
 
-**Status:** Proposed (planning doc, no code changes yet)
+**Status:** ✅ Executed (Phases 1–4 and 6) on this branch. Phase 5 deferred, Phase 7 is manual/post-merge. See [work-completed.md](./work-completed.md) for the actual changes and a bucket-by-bucket scorecard.
 **Owner:** _unassigned_
 **Created:** 2026-06-13
 **Branch:** `chore/seo-indexing-cleanup`
 
 This plan turns the "Discovered – currently not indexed" audit (59 URLs in Google Search Console) into a prioritized, mergeable set of changes. It is the follow-on to [`docs/seo-next-steps.md`](../seo-next-steps.md), which already fixed the `www` canonical and redirect-error issues. That work is **not** repeated here.
+
+> **Execution note (2026-06-13):** This is the original plan. It has now been executed, and during execution a few of its assumptions turned out to be inaccurate against the live code and were corrected. **[work-completed.md](./work-completed.md) is the source of truth for what actually shipped;** treat the plan body below as the original intent. Key corrections:
+> - The objection `howSaysoHelps` sections were **not** near-empty and did **not** open with "Tools like Sayso…". The real boilerplate was the shared "captures your notes / syncs to your CRM" closer. The glossary `[Book a demo]` closers were already varied, and the `well-wait-for-spring` opening was already full length.
+> - Phase 2 added **9** natural inbound links, not ~25. Several proposed source→target pairs had no natural anchor and were deferred rather than stuffed.
+> - The `pending-internal-links.md` entries are for unwritten posts, unrelated to the follow-up pillar, so that file was left untouched.
+> - All work shipped as a **single branch / PR**, not one PR per phase.
 
 ---
 
@@ -119,10 +125,10 @@ Mostly handled by Phase 1's noindex of the ad pages. Remaining:
 
 The prompts produce good prose but lack enforcement. Edits:
 
-- [ ] **Mandatory back-link step** in [`.claude/skills/slash-command-objection.md`](../../.claude/skills/slash-command-objection.md) and [`slash-command-glossary.md`](../../.claude/skills/slash-command-glossary.md): before opening the PR, add ≥2 contextual links to the new page from existing published pages (edit those source files in the same PR; prefer indexed pages; otherwise register in `pending-internal-links.md`). These prompts currently only forbid linking *out* to unbuilt pages and never require links *in*.
+- [ ] **Mandatory back-link step** in [`.claude/commands/slash-command-objection.md`](../../.claude/commands/slash-command-objection.md) and [`slash-command-glossary.md`](../../.claude/commands/slash-command-glossary.md): before opening the PR, add ≥2 contextual links to the new page from existing published pages (edit those source files in the same PR; prefer indexed pages; otherwise register in `pending-internal-links.md`). These prompts currently only forbid linking *out* to unbuilt pages and never require links *in*.
 - [ ] **Anti-boilerplate rules** in the objection + glossary skills: ban the stock openers ("Tools like Sayso", "Sayso coaches you in real time", "[Book a demo](/demo/)" as the only CTA); require a grep of the cluster dir for any reused Sayso-pitch/CTA sentence before commit; require `relatedBlogPost` to be the most relevant published post, not the default guide.
 - [ ] **Keyword gate**: add step 0 to every generation skill — grep [`docs/architecture/site-architecture.md`](../architecture/site-architecture.md) for the target keyword and its head term; stop and flag if a live/planned URL already targets it.
-- [ ] **Extend [`/seo-check`](../../.claude/skills/slash-command-seo-check.md)** with three checks:
+- [ ] **Extend [`/seo-check`](../../.claude/commands/slash-command-seo-check.md)** with three checks:
   - sitemap-vs-noindex that actually inspects dynamic `generateMetadata` robots (the category-page case it currently misses);
   - "every sitemapped content URL has ≥2 content inlinks" (a ~40-line grep over `content/` and `lib/content/`);
   - "no two pages share a target keyword" against the architecture map.
