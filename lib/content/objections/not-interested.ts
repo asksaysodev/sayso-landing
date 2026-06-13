@@ -46,7 +46,7 @@ export const notInterested: ObjectionEntry = {
     'Failing to log the call, so there is no record when their circumstances change',
   ],
   howSaysoHelps:
-    'Sayso coaches you through the moment a prospect says "I\'m not interested," displaying the right follow-up question on your screen before you have time to freeze or hang up. The real-time prompts help you stay in the conversation when instinct tells you to move on. After the call, Sayso logs your notes to your CRM automatically so you can follow up when the timing is better.',
+    'The instant a prospect says they are not interested, Sayso gives you a low-pressure question that tests whether it is a real no or a reflex, so you do not hang up on a lead who was only guarding their time. The prompt is on your screen before instinct tells you to move on. Sayso saves the outcome too, so a soft no today becomes a warm callback when their situation changes.',
   relatedObjections: [
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"Just Looking"', slug: 'just-looking', keyword: 'how to respond to "just looking" real estate' },
@@ -80,8 +80,8 @@ export const notInterested: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'How to Start a Real Estate Call',
+    href: '/blog/how-to-start-a-real-estate-call',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

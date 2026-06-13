@@ -44,7 +44,7 @@ export const expiredListing: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'Calling expired listings means handling tough objections: "I\'m done with agents," "The last one wasted my time," and "I\'ll just sell it myself." Sayso\'s [Real-Time Coaching](/products/cue/) shows you the right response on screen the moment an objection comes up, so you stay composed and confident through the hardest parts of the conversation.',
-    'After every call, Sayso\'s [Call Notes](/products/smart-capture/) automatically captures what was discussed and syncs it to your CRM. When you follow up a week later, you have the full context without flipping through a notebook. [Book a demo](/demo/) to see how Sayso helps you convert more expireds into listing appointments.',
+    'After every call, Sayso\'s [Call Notes](/products/smart-capture/) writes down what the seller said and files it in your CRM, so when you follow up a week later you have the full picture without flipping through a notebook. [Book a demo](/demo/) to see how Sayso helps you convert more expireds into listing appointments.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },

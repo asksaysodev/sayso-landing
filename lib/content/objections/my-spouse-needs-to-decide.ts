@@ -46,7 +46,7 @@ export const mySpouseNeedsToDecide: ObjectionEntry = {
     'Taking the objection at face value when it may be a polite way of saying they need more information from you',
   ],
   howSaysoHelps:
-    'Sayso prompts you in real time when a prospect mentions needing to check with a spouse or partner, so you never freeze or let the conversation end without a next step. It coaches you to ask the right follow-up questions and offer a joint meeting. After the call, Sayso captures your notes and logs them to your CRM so you can follow up with full context when the second conversation happens.',
+    'When a prospect says the decision runs through a partner, Sayso prompts you to find out who else matters and to put a joint conversation on the calendar before the call ends. Instead of stalling, you leave with a clear next step. Sayso records who needs to be involved and what each person cares about, so the follow-up with both decision makers starts from a real foundation.',
   relatedObjections: [
     { title: '"Need to Think About It"', slug: 'need-to-think-about-it', keyword: 'what to say when prospect shuts down' },
     { title: '"Call Me Later"', slug: 'call-me-later', keyword: 'real estate script for "call me later"' },
@@ -76,8 +76,8 @@ export const mySpouseNeedsToDecide: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'How to Close for the Appointment',
+    href: '/blog/how-to-close-for-appointment',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

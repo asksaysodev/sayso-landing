@@ -44,7 +44,7 @@ export const listingAppointment: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'The calls that lead to listing appointments are where Sayso makes the biggest difference. When you are prospecting expired listings or following up with seller leads, Sayso\'s [Real-Time Coaching](/products/cue/) shows you what to say the moment a homeowner raises an objection or asks about pricing. That means more of your calls end with a listing appointment on the calendar.',
-    'After each call, [Call Notes](/products/smart-capture/) captures a summary of the conversation and syncs it to your CRM, so you have every detail you need to prepare for the appointment itself. [Book a demo](/demo/) to see how Sayso helps you book more listing appointments from your daily prospecting.',
+    'After each call, [Call Notes](/products/smart-capture/) saves the details that matter to your CRM, so you walk into the listing appointment already knowing what the seller cares about. [Book a demo](/demo/) to see how Sayso helps you book more listing appointments from your daily prospecting.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },

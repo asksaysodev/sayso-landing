@@ -57,7 +57,7 @@ export const saysoVsMaverickre: ComparisonEntry = {
     },
     {
       question: 'Does Sayso offer a free trial?',
-      answer: 'Yes. You can try Sayso free before committing to a paid plan. The trial includes full access to real-time coaching, automatic call notes, and CRM integrations so you can evaluate the tool on actual prospecting calls.',
+      answer: 'Yes. Sayso has a free trial with no credit card required, so you can test live coaching on your own calls before you pay. You will see how it handles objections and call notes in real conditions rather than a demo environment.',
     },
     {
       question: 'Is MaverickRE better than Sayso?',
