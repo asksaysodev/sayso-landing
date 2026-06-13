@@ -54,6 +54,10 @@ export const leadNurturing: GlossaryEntry = {
     { term: 'Listing Appointment', slug: 'listing-appointment' },
     { term: 'Sphere of Influence', slug: 'sphere-of-influence' },
   ],
+  deeperLink: {
+    title: 'Real Estate Follow Up Scripts',
+    href: '/blog/real-estate-follow-up-scripts',
+  },
   relatedFeature: {
     title: 'Call Notes',
     href: '/products/smart-capture',
