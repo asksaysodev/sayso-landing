@@ -12,7 +12,7 @@ All blog posts share the same card and hero images. To create new variations, ge
 
 ## Sayso Brand Reference
 
-All images must use the Sayso color palette on a white/light background. The feel should be clean, minimal, and professional, matching the site's "calm, crisp, confident" aesthetic (see `docs/brand/ui-style-guide.md`).
+All images must use the Sayso color palette on a white/light background. Blog cover images stay clean, minimal, and professional (lighter touch than the site's comic-book/superhero marketing pages). For the full palette and brand tokens, see `docs/brand/sayso-design-system.md`.
 
 ### Colors
 
