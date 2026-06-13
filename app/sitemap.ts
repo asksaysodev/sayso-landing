@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllPostsMeta, getCategories } from '@/lib/blog';
+import { getAllPostsMeta } from '@/lib/blog';
 import { siteUrl } from '@/lib/config';
 import { getAllNavHrefs } from '@/lib/navigation';
 import { getAllGlossarySlugs } from '@/lib/content/glossary';
@@ -24,6 +24,9 @@ const EXCLUDED_PATHS = new Set([
   '/ui',
   '/integrations', // TODO: re-enable when integrations article is published
   '/case-studies', // TODO: re-enable when first real case study is published
+  '/founderpricing', // noindex: time-limited promo overlapping /pricing/
+  '/request-demo', // noindex: duplicates the /demo/ booking page
+  '/resources', // noindex: thin gateway that only repeats nav links
 ]);
 
 /** Priority overrides by exact path. */
@@ -75,16 +78,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: post.type === 'pillar' ? 0.9 : post.type === 'supporting' ? 0.7 : 0.6,
   }));
 
-  // 4. Blog category pages (low priority, supports topic clusters)
-  const categories = getCategories();
-  const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${siteUrl}/blog/category/${cat.slug}/`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.4,
-  }));
+  // Blog category pages are intentionally omitted: they are noindex, so submitting
+  // them in the sitemap sends Google a conflicting signal and wastes crawl budget.
+  // Their internal (follow) links still let crawlers discover the posts.
 
-  // 5. Dynamic content pages from content loaders
+  // 4. Dynamic content pages from content loaders
   const contentSections: { slugs: string[]; prefix: string; priority: number }[] = [
     { slugs: getAllGlossarySlugs(), prefix: '/glossary', priority: 0.5 },
     { slugs: getAllObjectionSlugs(), prefix: '/objections', priority: 0.7 },
@@ -104,5 +102,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticPages, ...blogPages, ...categoryPages, ...contentPages];
+  return [...staticPages, ...blogPages, ...contentPages];
 }

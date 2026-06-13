@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/broker/`,
   },
+  // Paid Facebook-ad landing page (paid traffic only). Noindex so it does not
+  // compete organically with /for/team-leaders/. follow:true keeps links crawlable.
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: 'Sayso for Brokers & Team Owners | Fix Your Conversion Problem',
     description:

@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/isa/`,
   },
+  // Paid Facebook-ad landing page (paid traffic only). Noindex so it does not
+  // compete organically with /for/isas/. follow:true keeps links crawlable.
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: 'Sayso for ISAs | Never Miss the Details That Book the Appointment',
     description: 'Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.',

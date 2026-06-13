@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/agent/`,
   },
+  // Paid Facebook-ad landing page (paid traffic only). Noindex so it does not
+  // compete organically with /for/new-agents/. follow:true keeps links crawlable.
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: 'Sayso for Real Estate Agents | Know What to Say',
     description: 'Real-time guidance during prospecting calls. Ask better questions, handle objections, and book appointments that actually happen.',
