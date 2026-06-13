@@ -76,8 +76,8 @@ export const alreadyHaveAnAgent: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'How to Talk to Real Estate Leads',
+    href: '/blog/how-to-talk-to-real-estate-leads',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

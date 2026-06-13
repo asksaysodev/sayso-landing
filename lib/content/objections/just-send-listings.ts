@@ -46,7 +46,7 @@ export const justSendListings: ObjectionEntry = {
     'Treating the request as a rejection instead of recognizing it as an opportunity to redirect',
   ],
   howSaysoHelps:
-    'When a prospect says "just send me some listings," Sayso coaches you through the redirect in real time so you stay in control of the conversation. The response framework appears on your screen while you are on the call, giving you the exact words to pivot toward a meeting. After the call, Sayso logs your notes automatically so you can follow up with the right context.',
+    'When a prospect asks you to just send listings, Sayso gives you the words to turn that request into a reason to talk, so you stay in control instead of becoming an email service. The pivot toward a meeting appears on your screen while the prospect is still on the line. Sayso then logs what they are looking for, so the homes you do send afterward feel hand-picked rather than dumped.',
   relatedObjections: [
     { title: '"Just Looking"', slug: 'just-looking', keyword: 'how to respond to "just looking" real estate' },
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
@@ -76,8 +76,8 @@ export const justSendListings: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'How to Talk to Real Estate Leads',
+    href: '/blog/how-to-talk-to-real-estate-leads',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

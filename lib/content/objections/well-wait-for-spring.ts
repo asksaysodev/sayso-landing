@@ -46,7 +46,7 @@ export const wellWaitForSpring: ObjectionEntry = {
     'Waiting until spring to call back without any contact in between',
   ],
   howSaysoHelps:
-    'Sayso\'s Pulse feature gives you real-time market data on screen while you are on the call, so you can share actual numbers about inventory, pricing trends, and competition in the prospect\'s area. Instead of speaking in generalities, you can reference exactly what is happening in their neighborhood right now. That kind of specificity turns a vague timing objection into a concrete conversation.',
+    'When a prospect wants to wait for spring, Sayso\'s Pulse feature shows you what is happening in their neighborhood today: inventory, pricing trends, and how many buyers and sellers are active right now. Pointing to what is real in their area, rather than a season on the calendar, gives the prospect a concrete reason to weigh acting now against waiting. The conversation moves from a reflex to an actual decision.',
   relatedObjections: [
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"The Market Is Bad"', slug: 'market-is-bad', keyword: 'how to handle market objection real estate' },
@@ -76,8 +76,8 @@ export const wellWaitForSpring: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'Why Prospects Don\'t Commit to Meetings',
+    href: '/blog/why-prospects-dont-commit',
   },
   relatedFeature: {
     title: 'Real-Time Market Data',

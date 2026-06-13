@@ -64,6 +64,19 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 
 ---
 
+### Paid Ad Landing Pages (noindex, outside the SEO map)
+
+These pages exist for paid Facebook ad traffic only. They are set to `noindex, follow` (see SEO Phase 1) so they never compete organically with the `/for/*` persona pages, which carry the SEO intent for these audiences. Do not assign organic keyword targets to them, and keep them out of the sitemap and nav.
+
+| Ad page | Organic equivalent (owns the keyword) |
+|---|---|
+| `/agent/` | `/for/new-agents/`, `/for/solo-agents/` |
+| `/isa/` | `/for/isas/` |
+| `/broker/` | `/for/team-leaders/` |
+| `/sales-leader/` | `/for/team-leaders/` |
+
+---
+
 ### /products/
 
 ```
@@ -269,6 +282,53 @@ Every page on the site, organized by folder. Each entry shows the URL path, the 
 /blog/ai-coaching-results-study/            "ai coaching real estate results"                           🔴 HARD    ❌ TODO
 /blog/what-separates-top-agents-calls/      "what separates top agents on calls"                        🔴 HARD    ❌ TODO
 ```
+
+---
+
+## Keyword Intent & Cannibalization Map
+
+Several topics have more than one page: a glossary definition, a how-to or scripts blog post, a persona page, an objection page. That is intentional, because each targets a different search intent. This section records who owns which intent so new pages do not collide. Monthly volumes are from `sayso_keywords_volume.csv` in the repo root. The rule stays one keyword per page; when topics overlap, differentiate by intent and cross-link the pages.
+
+### Intent legend
+
+- **Definitional** ("what is X") = the glossary entry.
+- **How-to / scripts** = the blog post or pillar.
+- **Commercial / role** = the persona (`/for/*`) or product page.
+- **Objection** = the `/objections/*` page for an in-call pushback.
+
+### Overlap map
+
+**ISA** (volume: "real estate isa" 390, "isa real estate" 390, "inside sales agent real estate" 110)
+- Definitional: `/glossary/isa-real-estate/` ("what does ISA mean in real estate")
+- Commercial: `/for/isas/` ("ISA conversion scripts real estate")
+- Cross-link: glossary `relatedPersona` points to `/for/isas/` (added in Phase 4). Distinct intent, safe to coexist.
+
+**Cold calling** (volume: "cold calling real estate" / "real estate cold calling" / "real estate cold call" 390 each; "real estate cold calling scripts" / "cold calling scripts real estate" 390)
+- Definitional: `/glossary/cold-calling-real-estate/` ("what is cold calling in real estate")
+- Scripts / comprehensive (owns the head term): `/blog/real-estate-cold-calling-guide/` (pillar)
+- Skill / role: `/for/new-agents/` ("how to get better at cold calling real estate", vol 50)
+- Cross-link: glossary `deeperLink` points to the pillar. The pillar owns the head and scripts terms; the glossary stays on the "what is" framing.
+
+**Expired listing** (volume: "expired listings" 590, "expired listing scripts" / "expired listing script" 260)
+- Definitional: `/glossary/expired-listing/`
+- Scripts (owns "expired listing scripts"): `/blog/expired-listing-scripts/`
+- Cross-link: glossary `deeperLink` points to the blog post.
+
+**FSBO** (volume: "for sale by owner scripts" 70, "fsbo script" / "fsbo scripts" / "fsbo leads" 50)
+- Definitional: `/glossary/fsbo/`
+- Objection: `/objections/want-to-sell-ourselves/` ("FSBO objection handling")
+- Scripts: `/blog/fsbo-scripts/`
+- Cross-links: the blog post links the glossary entry and the commission objection; the objection links the blog post.
+
+**Lead nurturing / follow-up** (volume: "real estate follow up scripts" 50, "lead follow up real estate" 30)
+- Definitional: `/glossary/lead-nurturing/`
+- Scripts: `/blog/real-estate-follow-up-scripts/` (pillar)
+- Cross-link: glossary `deeperLink` points to the pillar (added in Phase 2).
+
+### Watch list
+
+- `/blog/real-estate-phone-script-for-leads/` vs the cold-calling pillar: "real estate phone scripts" (vol 20) sits close to the pillar's territory. If both index and compete, steer this post toward inbound-lead and online-lead phone scripts specifically.
+- Most individual `/objections/*` keywords show ~0 volume in `sayso_keywords_volume.csv` (they are long-tail in-call intent). They do not cannibalize each other, but they are low-traffic pages, so prioritize the higher-volume hubs and pillars for link equity.
 
 ---
 

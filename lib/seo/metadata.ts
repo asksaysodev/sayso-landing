@@ -10,7 +10,7 @@ interface BuildMetadataOptions {
   path: string;
   /** Custom OG image path. Defaults to '/images/og-default.png'. */
   ogImage?: string;
-  /** Set true to add noindex/nofollow (e.g. blog category pages). */
+  /** Set true to keep the page out of the index while still following its links (e.g. blog category pages, utility hubs). */
   noindex?: boolean;
 }
 
@@ -56,7 +56,7 @@ export function buildMetadata({
     ...(noindex && {
       robots: {
         index: false,
-        follow: false,
+        follow: true,
       },
     }),
   };

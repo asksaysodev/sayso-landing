@@ -46,7 +46,7 @@ export const justLooking: ObjectionEntry = {
     'Asking "when will you be ready?" which feels like a countdown, not a conversation',
   ],
   howSaysoHelps:
-    'Sayso coaches you through "just looking" conversations in real time, showing the right follow-up question on your screen the moment you hear the objection. Instead of defaulting to sending listings or ending the call, you stay in the conversation with confidence. After the call, Sayso captures your notes and syncs them to your CRM so you can follow up at exactly the right time.',
+    'The second a prospect says they are "just looking," Sayso surfaces a question that uncovers the real reason they started searching, so you stay in the conversation instead of defaulting to sending links. Every detail they share gets written into your CRM automatically, which means the browsing lead you talk to today is easy to re-engage the moment their timeline shifts.',
   relatedObjections: [
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"Already Have an Agent"', slug: 'already-have-an-agent', keyword: 'how to handle "already working with agent"' },
@@ -77,8 +77,8 @@ export const justLooking: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'How to Talk to Real Estate Leads',
+    href: '/blog/how-to-talk-to-real-estate-leads',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
