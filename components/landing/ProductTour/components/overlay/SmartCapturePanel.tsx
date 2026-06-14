@@ -9,13 +9,14 @@ import { LpmamaRow } from './LpmamaRow';
  */
 interface SmartCapturePanelProps {
   lpmama: Record<LpmamaField, string | null>;
+  recentCapture: { field: LpmamaField; label: string; value: string } | null;
   synced: boolean;
 }
 
-export function SmartCapturePanel({ lpmama, synced }: SmartCapturePanelProps) {
+export function SmartCapturePanel({ lpmama, recentCapture, synced }: SmartCapturePanelProps) {
   return (
     <div className="pt-glass pt-insights">
-      <LpmamaRow lpmama={lpmama} />
+      <LpmamaRow lpmama={lpmama} recentCapture={recentCapture} />
       <button className="pt-sync-btn" data-synced={synced} type="button">
         {synced ? (
           <>

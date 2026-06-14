@@ -41,10 +41,19 @@ export interface TranscriptEvent {
   text: string;
 }
 
-/** A Cue coaching insight that slides in at `at` ms. */
-export interface InsightEvent {
+/** A Cue coaching prompt that appears at `at` ms (stacked, stays on screen). */
+export interface PromptEvent {
   at: number;
   text: string;
+}
+
+/**
+ * Cue prompts in two forms the viewer can toggle between: condensed coaching
+ * directives, or the full suggested wording.
+ */
+export interface CuePrompts {
+  condensed: PromptEvent[];
+  full: PromptEvent[];
 }
 
 /** A Smart Capture LPMAMA field that fills in at `at` ms. */
@@ -92,7 +101,8 @@ export interface Chapter {
   /** Lead type shown in the toolbar for this chapter. */
   leadType: LeadType;
   transcript: TranscriptEvent[];
-  insights: InsightEvent[];
+  /** Cue coaching prompts (condensed + full), shown stacked. */
+  cue?: CuePrompts;
   lpmama: LpmamaEvent[];
   pulse?: PulseScene;
   playbook?: PlaybookScene;

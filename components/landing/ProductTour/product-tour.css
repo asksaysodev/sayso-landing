@@ -246,12 +246,102 @@
   margin: 0;
 }
 
+/* ---------- Cue panel: Condensed / Full toggle + stacked prompts ---------- */
+.pt-cue-panel {
+  width: 340px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pt-cue-toggle {
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.pt-cue-toggle-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.pt-cue-toggle-btn[data-active='true'] {
+  background: var(--sayso-blue);
+  color: #fff;
+}
+.pt-cue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pt-cue-arrow {
+  color: #7ea8ff;
+  font-weight: 700;
+}
+
 /* ---------- LPMAMA row ---------- */
 .pt-lpmama {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 8px 4px 2px;
+}
+.pt-lpmama-dot-wrap {
+  position: relative;
+  display: flex;
+}
+
+/* Smart Capture "just captured" bubble above the filling dot */
+.pt-capture-bubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(2, 25, 47, 0.97);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  z-index: 20;
+  animation: pt-fade-up 200ms ease-out;
+}
+.pt-capture-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(2, 25, 47, 0.97);
+}
+.pt-capture-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+.pt-capture-value {
+  font-size: 11px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.82);
 }
 .pt-lpmama-dot {
   width: 26px;

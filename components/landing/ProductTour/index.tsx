@@ -40,8 +40,9 @@ export function ProductTour() {
             See Sayso in Action
           </h2>
           <p className="mt-2 text-sm text-primary/75 sm:text-base">
-            Watch Sayso work right inside your dialer, coaching the call, capturing
-            the details, and logging notes to your CRM automatically.
+            Watch Sayso work with your existing CRM / dialer: coaching the call,
+            real-time intelligence, capturing the details, and logging notes to your
+            CRM automatically.
           </p>
         </div>
 

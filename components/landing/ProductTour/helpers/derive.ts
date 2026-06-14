@@ -1,4 +1,4 @@
-import type { Chapter, LpmamaField, Speaker } from '../types';
+import type { Chapter, LpmamaField, PromptEvent, Speaker } from '../types';
 
 /** Rough speaking duration for a transcript line, used for the speaking indicator. */
 function speakMs(text: string): number {
@@ -15,17 +15,29 @@ const LPMAMA_FIELDS: LpmamaField[] = [
   'appointment',
 ];
 
+const LPMAMA_LABELS: Record<LpmamaField, string> = {
+  location: 'Location',
+  price: 'Price',
+  motivation: 'Motivation',
+  agent: 'Agent',
+  mortgage: 'Mortgage',
+  appointment: 'Appointment',
+};
+
+/** How long a Smart Capture "just captured" bubble stays on screen. */
+const CAPTURE_BUBBLE_MS = 2200;
+
 export interface DerivedScene {
   /** Call timer value (seconds) shown in the FUB call bar and Sayso timer. */
   callSeconds: number;
   /** Who is talking right now, for the speaking indicator (null = silence). */
   speaker: Speaker | null;
-  /** The newest Cue insight, shown as a toast bubble while fresh. */
-  toastInsight: { id: string; text: string } | null;
-  /** All Cue insights that have arrived, newest first (for the eye panel). */
-  panelInsights: { id: string; text: string }[];
+  /** Cue prompts revealed so far, in both forms (null outside the Cue chapter). */
+  cuePrompts: { condensed: PromptEvent[]; full: PromptEvent[] } | null;
   /** Captured LPMAMA values keyed by field (null until captured). */
   lpmama: Record<LpmamaField, string | null>;
+  /** The field captured most recently, for the transient capture bubble. */
+  recentCapture: { field: LpmamaField; label: string; value: string } | null;
   /** True once every LPMAMA field is captured (drives the Copy state). */
   lpmamaComplete: boolean;
   /** Whether the "Sync to Follow Up Boss" button has been pressed. */
@@ -34,8 +46,6 @@ export interface DerivedScene {
   crmNoteVisible: boolean;
 }
 
-const TOAST_VISIBLE_MS = 4200;
-
 export function deriveScene(chapter: Chapter, elapsed: number): DerivedScene {
   const callSeconds = chapter.baseCallSeconds + Math.floor(elapsed / 1000);
 
@@ -43,17 +53,11 @@ export function deriveScene(chapter: Chapter, elapsed: number): DerivedScene {
     (e) => elapsed >= e.at && elapsed < e.at + speakMs(e.text),
   );
 
-  const arrivedInsights = chapter.insights.filter((e) => elapsed >= e.at);
-  const panelInsights = [...arrivedInsights]
-    .sort((a, b) => b.at - a.at)
-    .slice(0, 5)
-    .map((e) => ({ id: `${chapter.key}-${e.at}`, text: e.text }));
-
-  const freshInsight = [...arrivedInsights]
-    .reverse()
-    .find((e) => elapsed - e.at < TOAST_VISIBLE_MS);
-  const toastInsight = freshInsight
-    ? { id: `${chapter.key}-${freshInsight.at}`, text: freshInsight.text }
+  const cuePrompts = chapter.cue
+    ? {
+        condensed: chapter.cue.condensed.filter((p) => elapsed >= p.at),
+        full: chapter.cue.full.filter((p) => elapsed >= p.at),
+      }
     : null;
 
   const lpmama = LPMAMA_FIELDS.reduce(
@@ -66,15 +70,23 @@ export function deriveScene(chapter: Chapter, elapsed: number): DerivedScene {
   );
   const lpmamaComplete = LPMAMA_FIELDS.every((f) => lpmama[f] !== null);
 
+  // The most recently captured field still within the bubble display window.
+  const recentEvent = [...chapter.lpmama]
+    .filter((e) => elapsed >= e.at && elapsed - e.at < CAPTURE_BUBBLE_MS)
+    .sort((a, b) => b.at - a.at)[0];
+  const recentCapture = recentEvent
+    ? { field: recentEvent.field, label: LPMAMA_LABELS[recentEvent.field], value: recentEvent.value }
+    : null;
+
   const synced = chapter.syncAt !== undefined && elapsed >= chapter.syncAt;
   const crmNoteVisible = chapter.crmNoteAt !== undefined && elapsed >= chapter.crmNoteAt;
 
   return {
     callSeconds,
     speaker: speakingLine?.from ?? null,
-    toastInsight,
-    panelInsights,
+    cuePrompts,
     lpmama,
+    recentCapture,
     lpmamaComplete,
     synced,
     crmNoteVisible,

@@ -15,7 +15,6 @@ interface SaysoToolbarProps {
   zipActive: boolean;
   insightsActive: boolean;
   playbookActive: boolean;
-  hasUnseenInsight: boolean;
 }
 
 export function SaysoToolbar({
@@ -26,7 +25,6 @@ export function SaysoToolbar({
   zipActive,
   insightsActive,
   playbookActive,
-  hasUnseenInsight,
 }: SaysoToolbarProps) {
   return (
     <div className="pt-glass pt-toolbar">
@@ -66,7 +64,6 @@ export function SaysoToolbar({
       {/* Right side buttons */}
       <div className="pt-right-buttons">
         <span className="pt-right-btn" data-active={insightsActive}>
-          {hasUnseenInsight && <span className="pt-badge-dot" />}
           <CircleCheckBig size={15} />
         </span>
         <span className="pt-right-btn" data-active={playbookActive}>

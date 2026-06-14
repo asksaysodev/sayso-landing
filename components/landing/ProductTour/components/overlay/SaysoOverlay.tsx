@@ -2,7 +2,7 @@ import type { Chapter } from '../../types';
 import type { DerivedScene } from '../../helpers/derive';
 import { formatCallTimer } from '../../helpers/derive';
 import { SaysoToolbar } from './SaysoToolbar';
-import { CueBubble } from './CueBubble';
+import { CuePanel } from './CuePanel';
 import { SmartCapturePanel } from './SmartCapturePanel';
 import { ZipDropdown } from './ZipDropdown';
 import { PlaybookPanel } from './PlaybookPanel';
@@ -34,6 +34,8 @@ export function SaysoOverlay({ chapter, elapsed, derived }: SaysoOverlayProps) {
   // Playbook derived state
   const playbookOpen = !!chapter.playbook && elapsed >= chapter.playbook.openAt;
 
+  const cueActive = isCue && (derived.cuePrompts?.condensed.length ?? 0) > 0;
+
   return (
     <div className="pt-root flex flex-col items-end gap-1.5">
       <SaysoToolbar
@@ -42,17 +44,20 @@ export function SaysoOverlay({ chapter, elapsed, derived }: SaysoOverlayProps) {
         showZip={isPulse}
         zipValue={zipValue}
         zipActive={zipActive}
-        insightsActive={isCue ? derived.toastInsight !== null : isSmartCapture}
+        insightsActive={cueActive || isSmartCapture}
         playbookActive={playbookOpen}
-        hasUnseenInsight={isCue && derived.toastInsight !== null}
       />
 
-      {isCue && derived.toastInsight && (
-        <CueBubble key={derived.toastInsight.id} text={derived.toastInsight.text} />
+      {isCue && derived.cuePrompts && cueActive && (
+        <CuePanel prompts={derived.cuePrompts} />
       )}
 
       {isSmartCapture && (
-        <SmartCapturePanel lpmama={derived.lpmama} synced={derived.synced} />
+        <SmartCapturePanel
+          lpmama={derived.lpmama}
+          recentCapture={derived.recentCapture}
+          synced={derived.synced}
+        />
       )}
 
       {isPulse && zipDropdownOpen && chapter.pulse && (

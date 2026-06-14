@@ -8,9 +8,9 @@ export const DEMO_PROSPECT: DemoProspect = {
   name: 'Jordan Avery',
   phone: '(310) 555-0148',
   email: 'jordan.avery@example.com',
-  address: ['84 Marina Vista', 'San Pedro, CA 90731'],
-  leadSource: 'Zillow',
-  stage: 'Lead',
+  address: ['123 Main St', 'San Pedro, CA 90731'],
+  leadSource: 'Open House Visitor',
+  stage: 'Nurture',
   lastCommunication: '2 minutes ago',
   initials: 'JA',
 };

@@ -13,7 +13,7 @@ export const FEATURES: FeatureMeta[] = [
     key: 'cue',
     shortLabel: 'Cue',
     label: 'Cue · Real-Time Coaching',
-    tagline: 'Real-time coaching, exactly what to say next.',
+    tagline: 'Real-time coaching, so you never lose your words.',
     caption: 'Sayso listens to the live call and shows the agent what to say the moment an objection lands.',
   },
   {
@@ -27,14 +27,14 @@ export const FEATURES: FeatureMeta[] = [
     key: 'pulse',
     shortLabel: 'Pulse',
     label: 'Pulse · Live Market Data',
-    tagline: 'Live market data, answers on the spot.',
+    tagline: 'Live market data.',
     caption: 'Look up a zip code mid-call and answer market questions with real numbers, no tab switching.',
   },
   {
     key: 'playbook',
     shortLabel: 'Playbook',
     label: 'Playbook · Custom Scripts',
-    tagline: 'Your custom scripts, on screen during the call.',
+    tagline: 'The exact scripts you want agents following.',
     caption: 'Your own scripts stay on screen beside the live coaching, so agents stay on track without memorizing.',
   },
 ];
@@ -50,16 +50,24 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
     baseCallSeconds: 47,
     leadType: 'Seller',
     transcript: [
-      { at: 400, from: 'prospect', text: 'Honestly, we were thinking we would just wait until spring to list.' },
-      { at: 4200, from: 'agent', text: 'Totally fair. What would waiting until spring change for you?' },
-      { at: 7000, from: 'prospect', text: 'I guess we are worried about pricing it right in this market.' },
-      { at: 10600, from: 'agent', text: 'That makes sense. I can pull live numbers for your area right now so we are working from real data.' },
+      { at: 400, from: 'prospect', text: 'Honestly, we are just browsing right now, seeing what is out there.' },
+      { at: 4000, from: 'agent', text: 'Totally fair. What would make this feel more helpful for you right now?' },
+      { at: 6800, from: 'prospect', text: 'I think we want something smaller, ideally with an ocean view.' },
+      { at: 10400, from: 'agent', text: 'Love it. Would later today or tomorrow work for a quick call to explore options?' },
     ],
-    insights: [
-      { at: 1500, text: 'Acknowledge the timing, then ask what spring actually changes for them. It surfaces the real motivation.' },
-      { at: 7600, text: 'Pricing concern detected. Offer to walk them through recent numbers in their zip so they feel in control.' },
-      { at: 11400, text: 'Strong pivot. Hand this to Pulse to show live market data without leaving the call.' },
-    ],
+    cue: {
+      condensed: [
+        { at: 1200, text: 'Dig into what prompted their search now' },
+        { at: 4200, text: 'Explore their timeline for needing more space' },
+        { at: 7200, text: 'Explore how space needs affect their lifestyle' },
+        { at: 10000, text: 'Suggest an appointment today or tomorrow' },
+      ],
+      full: [
+        { at: 1200, text: 'I get it, just browsing can feel overwhelming at times. What would make this feel more relevant or helpful for you right now?' },
+        { at: 4200, text: 'That makes sense! What would a smaller house provide that you currently feel you’re missing?' },
+        { at: 7200, text: 'Given your interest in a smaller place with ocean views, how about we schedule a quick call to explore options? Does later today or tomorrow work for you?' },
+      ],
+    },
     lpmama: [],
   },
 
@@ -82,7 +90,6 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
       { at: 6000, field: 'agent', value: 'Not working with another agent yet' },
       { at: 7400, field: 'appointment', value: 'Open to next steps in about a week' },
     ],
-    insights: [],
     syncAt: 8600,
     crmNoteAt: 9400,
   },
@@ -96,7 +103,6 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
       { at: 400, from: 'prospect', text: 'How is the market around here right now?' },
       { at: 6200, from: 'agent', text: 'Homes in your zip are moving in about 38 days and prices are trending up, so timing is actually on your side.' },
     ],
-    insights: [],
     lpmama: [],
     pulse: {
       zipValidAt: 2600,
@@ -115,31 +121,80 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
 
   playbook: {
     key: 'playbook',
-    durationMs: 13000,
+    durationMs: 15000,
     baseCallSeconds: 92,
     leadType: 'Seller',
     transcript: [
-      { at: 2600, from: 'agent', text: 'Hey Jordan, this is Alex. I am calling about your home on Marina Vista. Are you still planning to sell, or waiting on something?' },
-      { at: 8000, from: 'prospect', text: 'Still planning to, we just want to get it right.' },
+      { at: 2400, from: 'agent', text: 'Hey Jordan, this is Alex. We met at the open house on Main Street. Are you still visiting open houses, or have you found the one?' },
+      { at: 8000, from: 'prospect', text: 'Still looking, honestly. Nothing has felt right yet.' },
     ],
-    insights: [],
     lpmama: [],
     playbook: {
-      openAt: 1200,
+      openAt: 1000,
       sections: [
         {
-          heading: 'Introduction',
+          heading: 'Opening',
           bullets: [
-            'Hey [Name], this is [Your first name]. I am calling about your home on [Street].',
-            'Are you still planning to sell, or waiting for something to change?',
+            'Hey [Prospect Name]?',
+            'This is [Agent Name]. We met at the open house on [Street Name]! Are you still visiting open houses or have you found the one?',
           ],
         },
         {
-          heading: 'Discovery',
+          heading: 'If still looking',
           bullets: [
-            'When you first thought about selling, where were you planning to go?',
-            'Is that move still important to you?',
-            'On a scale of 1 to 7, how ready do you feel to make it happen?',
+            'What type of home are you looking for? Tell me more about it!',
+            'Just curious what didn’t work for you about the open house that we met at?',
+          ],
+        },
+        {
+          heading: 'Location',
+          bullets: ['Are you trying to stay close to that neighborhood or open to other areas?'],
+        },
+        {
+          heading: 'Price',
+          bullets: ['Have you been looking in that same price range consistently?'],
+        },
+        {
+          heading: 'Motivation',
+          bullets: ['What’s pushing the move right now? (Lease ending? Family change? Just ready?)'],
+        },
+        {
+          heading: 'Agent',
+          bullets: ['Are you working with anyone already or still early in the process?'],
+        },
+        {
+          heading: 'Mortgage',
+          bullets: ['Have you been pre approved yet or still figuring out financing?'],
+        },
+        {
+          heading: 'Timing',
+          bullets: ['If the right home popped up, how soon would you want to move?'],
+        },
+        {
+          heading: 'Transition',
+          bullets: [
+            'Most open house visitors either need better options or better clarity. Could you relate to either? Which one?',
+            'I usually sit down for 20 to 25 minutes and map out what’s realistic in today’s market. Would that help?',
+          ],
+        },
+        {
+          heading: 'Booking',
+          bullets: [
+            'Are you more morning, afternoon, or evening people?',
+            'And would that work for [Spouse or Decision Maker] too?',
+            'We can do a quick 20 to 25 minute sit down. Office or coffee, we’ll be done before the coffee gets cold.',
+            'Zoom works if needed, but if we do that, I like the next one to be in person.',
+          ],
+        },
+        {
+          heading: 'Confirm',
+          bullets: ['Let me confirm your email. What other email should I send the invite to?'],
+        },
+        {
+          heading: 'Close',
+          bullets: [
+            'And if anything changes, just shoot me a text, even if we need to push a few minutes or reschedule.',
+            'Sound good?',
           ],
         },
       ],
