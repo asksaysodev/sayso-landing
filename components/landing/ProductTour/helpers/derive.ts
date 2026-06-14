@@ -25,7 +25,7 @@ const LPMAMA_LABELS: Record<LpmamaField, string> = {
 };
 
 /** How long a Smart Capture "just captured" bubble stays on screen. */
-const CAPTURE_BUBBLE_MS = 2200;
+const CAPTURE_BUBBLE_MS = 2800;
 
 export interface DerivedScene {
   /** Call timer value (seconds) shown in the FUB call bar and Sayso timer. */

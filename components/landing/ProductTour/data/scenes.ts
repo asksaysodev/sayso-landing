@@ -2,7 +2,7 @@ import type { Chapter, FeatureMeta } from '../types';
 
 /** Summary line Sayso writes into the CRM note alongside the Smart Capture data. */
 export const CRM_NOTE_SUMMARY =
-  'San Pedro seller, downsizing for a smaller mortgage, close to the water, open to next steps in about a week.';
+  'San Pedro buyer, looking for a smaller place with an ocean view, open to next steps in about a week.';
 
 /**
  * The four products shown in the tour, in pill order. Labels and captions echo
@@ -46,26 +46,27 @@ export const FEATURES: FeatureMeta[] = [
 export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
   cue: {
     key: 'cue',
-    durationMs: 14000,
+    // Prompts are spaced ~1s further apart, then the full stack holds ~5s.
+    durationMs: 18000,
     baseCallSeconds: 47,
-    leadType: 'Seller',
+    leadType: 'Buyer',
     transcript: [
       { at: 400, from: 'prospect', text: 'Honestly, we are just browsing right now, seeing what is out there.' },
-      { at: 4000, from: 'agent', text: 'Totally fair. What would make this feel more helpful for you right now?' },
-      { at: 6800, from: 'prospect', text: 'I think we want something smaller, ideally with an ocean view.' },
-      { at: 10400, from: 'agent', text: 'Love it. Would later today or tomorrow work for a quick call to explore options?' },
+      { at: 5200, from: 'agent', text: 'Totally fair. What would make this feel more helpful for you right now?' },
+      { at: 9200, from: 'prospect', text: 'I think we want something smaller, ideally with an ocean view.' },
+      { at: 13000, from: 'agent', text: 'Love it. Would later today or tomorrow work for a quick call to explore options?' },
     ],
     cue: {
       condensed: [
         { at: 1200, text: 'Dig into what prompted their search now' },
-        { at: 4200, text: 'Explore their timeline for needing more space' },
-        { at: 7200, text: 'Explore how space needs affect their lifestyle' },
-        { at: 10000, text: 'Suggest an appointment today or tomorrow' },
+        { at: 5200, text: 'Explore their timeline for needing more space' },
+        { at: 9200, text: 'Explore how space needs affect their lifestyle' },
+        { at: 13000, text: 'Suggest an appointment today or tomorrow' },
       ],
       full: [
         { at: 1200, text: 'I get it, just browsing can feel overwhelming at times. What would make this feel more relevant or helpful for you right now?' },
-        { at: 4200, text: 'That makes sense! What would a smaller house provide that you currently feel you’re missing?' },
-        { at: 7200, text: 'Given your interest in a smaller place with ocean views, how about we schedule a quick call to explore options? Does later today or tomorrow work for you?' },
+        { at: 5200, text: 'That makes sense! What would a smaller house provide that you currently feel you’re missing?' },
+        { at: 9200, text: 'Given your interest in a smaller place with ocean views, how about we schedule a quick call to explore options? Does later today or tomorrow work for you?' },
       ],
     },
     lpmama: [],
@@ -73,32 +74,33 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
 
   'smart-capture': {
     key: 'smart-capture',
-    durationMs: 13500,
+    // Each captured field holds ~4s before the next, so the banners don't flash.
+    durationMs: 21000,
     baseCallSeconds: 61,
-    leadType: 'Seller',
+    leadType: 'Buyer',
     transcript: [
       { at: 200, from: 'prospect', text: 'We are over in San Pedro, pretty close to the water.' },
-      { at: 2600, from: 'prospect', text: 'We want to downsize so the mortgage is smaller every month.' },
-      { at: 5400, from: 'agent', text: 'Got it. Are you working with another agent on this yet?' },
-      { at: 7000, from: 'prospect', text: 'No, not yet. We could look at next steps in the next week or so.' },
+      { at: 4200, from: 'prospect', text: 'We want something smaller so the payments are lower every month.' },
+      { at: 9000, from: 'agent', text: 'Got it. Are you working with another agent on this yet?' },
+      { at: 12600, from: 'prospect', text: 'No, not yet. We could look at next steps in the next week or so.' },
     ],
     lpmama: [
-      { at: 1000, field: 'location', value: 'San Pedro, close to the water' },
-      { at: 2200, field: 'price', value: 'Worried about pricing right in this market' },
-      { at: 3300, field: 'motivation', value: 'Downsizing for a smaller mortgage' },
-      { at: 4400, field: 'mortgage', value: 'Wants smaller monthly mortgage payments' },
-      { at: 6000, field: 'agent', value: 'Not working with another agent yet' },
-      { at: 7400, field: 'appointment', value: 'Open to next steps in about a week' },
+      { at: 900, field: 'location', value: 'San Pedro, close to the water' },
+      { at: 3700, field: 'price', value: 'Worried about pricing right in this market' },
+      { at: 6500, field: 'motivation', value: 'Wants a smaller place with an ocean view' },
+      { at: 9300, field: 'mortgage', value: 'Wants lower monthly payments' },
+      { at: 12100, field: 'agent', value: 'Not working with another agent yet' },
+      { at: 14900, field: 'appointment', value: 'Open to next steps in about a week' },
     ],
-    syncAt: 8600,
-    crmNoteAt: 9400,
+    syncAt: 16600,
+    crmNoteAt: 17600,
   },
 
   pulse: {
     key: 'pulse',
     durationMs: 13000,
     baseCallSeconds: 78,
-    leadType: 'Seller',
+    leadType: 'Buyer',
     transcript: [
       { at: 400, from: 'prospect', text: 'How is the market around here right now?' },
       { at: 6200, from: 'agent', text: 'Homes in your zip are moving in about 38 days and prices are trending up, so timing is actually on your side.' },
@@ -123,7 +125,7 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
     key: 'playbook',
     durationMs: 15000,
     baseCallSeconds: 92,
-    leadType: 'Seller',
+    leadType: 'Buyer',
     transcript: [
       { at: 2400, from: 'agent', text: 'Hey Jordan, this is Alex. We met at the open house on Main Street. Are you still visiting open houses, or have you found the one?' },
       { at: 8000, from: 'prospect', text: 'Still looking, honestly. Nothing has felt right yet.' },

@@ -1,4 +1,4 @@
-import { MoveUpRight, MoveDownRight, Minus } from 'lucide-react';
+import { MoveUpRight, MoveDownRight } from 'lucide-react';
 import type { PulseScene } from '../../types';
 
 /**
@@ -39,7 +39,6 @@ export function ZipDropdown({ pulse, showResults }: ZipDropdownProps) {
             </div>
           </>
         )}
-        <Minus size={16} className="mt-2 text-white/50" />
       </div>
     </div>
   );
