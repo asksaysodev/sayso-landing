@@ -32,7 +32,7 @@ export default function ProductTourPage() {
   return (
     <DemoCalendarProvider>
       <div className="relative bg-white">
-        <SaysoNavbar />
+        <SaysoNavbar autoHide />
         <ProductTour />
         <Footer />
       </div>

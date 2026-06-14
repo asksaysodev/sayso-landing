@@ -453,6 +453,21 @@
 .pt-trend-up { color: #4ade80; }
 .pt-trend-down { color: #f59e0b; }
 
+/* ---------- Mobile: let the feature panels fill the column ---------- */
+.pt-mobile .pt-cue-panel,
+.pt-mobile .pt-playbook,
+.pt-mobile .pt-zip-dropdown {
+  width: 100%;
+  max-width: none;
+}
+.pt-mobile .pt-playbook {
+  max-height: none;
+}
+/* Headroom so the capture bubble sits inside the panel, not over the call header */
+.pt-mobile .pt-insights {
+  padding-top: 34px;
+}
+
 /* ---------- Speaking indicator bars ---------- */
 @keyframes pt-speak {
   0%, 100% { height: 3px; }

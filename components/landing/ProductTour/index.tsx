@@ -18,6 +18,7 @@ import { TourControls } from './components/TourControls';
 import { BrowserChrome } from './components/BrowserChrome';
 import { FubFrame } from './components/fub/FubFrame';
 import { SaysoOverlay } from './components/overlay/SaysoOverlay';
+import { MobileStage } from './components/MobileStage';
 
 const DESIGN_WIDTH = 1180;
 const DESIGN_HEIGHT = 720;
@@ -29,7 +30,8 @@ export function ProductTour() {
   const { featureKey, feature, chapter, elapsed, playing, jumpTo, togglePlay, restart } =
     useTourClock();
   const derived = deriveScene(chapter, elapsed);
-  const { containerRef, scale } = useScaleToFit(DESIGN_WIDTH, DESIGN_HEIGHT);
+  const { containerRef, scale } = useScaleToFit(DESIGN_WIDTH, DESIGN_HEIGHT, 0.74);
+  const fubTimer = formatTimerForFub(derived.callSeconds);
 
   return (
     <section className="bg-white py-8">
@@ -55,8 +57,8 @@ export function ProductTour() {
           </p>
         </div>
 
-        {/* Stage: whole dialer window scaled to fit, Sayso widget on the far right */}
-        <div ref={containerRef} className="mt-4 max-w-[1000px] mx-auto">
+        {/* Desktop stage: whole dialer window scaled to fit, widget on the far right */}
+        <div ref={containerRef} className="mt-4 mx-auto hidden max-w-[1240px] lg:block">
           <div
             className="mx-auto"
             style={{ width: DESIGN_WIDTH * scale, height: DESIGN_HEIGHT * scale }}
@@ -68,7 +70,7 @@ export function ProductTour() {
               <BrowserChrome url="app.followupboss.com/people">
                 <FubFrame
                   prospect={DEMO_PROSPECT}
-                  timer={formatTimerForFub(derived.callSeconds)}
+                  timer={fubTimer}
                   speaker={derived.speaker}
                   lpmama={derived.lpmama}
                   crmNoteVisible={derived.crmNoteVisible}
@@ -81,6 +83,17 @@ export function ProductTour() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Mobile stage: focused vertical layout */}
+        <div className="mt-4">
+          <MobileStage
+            featureKey={featureKey}
+            chapter={chapter}
+            derived={derived}
+            prospect={DEMO_PROSPECT}
+            timer={fubTimer}
+          />
         </div>
 
         {/* Controls */}
