@@ -1,10 +1,8 @@
-import { Copy, Check } from 'lucide-react';
 import type { LpmamaField } from '../../types';
 
 /**
  * The Smart Capture LPMAMA row: six letter dots that fill with color as each
- * field is captured during the call, plus a Copy button. Reproduced from the
- * app's LpmamaRow / LPMAMA_CONFIG.
+ * field is captured during the call. Reproduced from the app's LPMAMA_CONFIG.
  */
 const CONFIG: { field: LpmamaField; initial: string }[] = [
   { field: 'location', initial: 'L' },
@@ -15,12 +13,7 @@ const CONFIG: { field: LpmamaField; initial: string }[] = [
   { field: 'appointment', initial: 'A' },
 ];
 
-interface LpmamaRowProps {
-  lpmama: Record<LpmamaField, string | null>;
-  copied: boolean;
-}
-
-export function LpmamaRow({ lpmama, copied }: LpmamaRowProps) {
+export function LpmamaRow({ lpmama }: { lpmama: Record<LpmamaField, string | null> }) {
   return (
     <div className="pt-lpmama">
       {CONFIG.map(({ field, initial }) => (
@@ -34,9 +27,6 @@ export function LpmamaRow({ lpmama, copied }: LpmamaRowProps) {
           {initial}
         </span>
       ))}
-      <span className="pt-lpmama-dot pt-lpmama-copy" data-copied={copied}>
-        {copied ? <Check size={14} /> : <Copy size={14} />}
-      </span>
     </div>
   );
 }

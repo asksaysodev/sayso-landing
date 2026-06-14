@@ -28,6 +28,8 @@ export interface DerivedScene {
   lpmama: Record<LpmamaField, string | null>;
   /** True once every LPMAMA field is captured (drives the Copy state). */
   lpmamaComplete: boolean;
+  /** Whether the "Sync to Follow Up Boss" button has been pressed. */
+  synced: boolean;
   /** Whether the Sayso note has been written into the FUB timeline. */
   crmNoteVisible: boolean;
 }
@@ -64,6 +66,7 @@ export function deriveScene(chapter: Chapter, elapsed: number): DerivedScene {
   );
   const lpmamaComplete = LPMAMA_FIELDS.every((f) => lpmama[f] !== null);
 
+  const synced = chapter.syncAt !== undefined && elapsed >= chapter.syncAt;
   const crmNoteVisible = chapter.crmNoteAt !== undefined && elapsed >= chapter.crmNoteAt;
 
   return {
@@ -73,6 +76,7 @@ export function deriveScene(chapter: Chapter, elapsed: number): DerivedScene {
     panelInsights,
     lpmama,
     lpmamaComplete,
+    synced,
     crmNoteVisible,
   };
 }

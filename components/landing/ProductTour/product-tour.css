@@ -272,11 +272,25 @@
 .pt-lpmama-dot[data-field='agent'][data-captured='true'] { background: #4f7e8e; }
 .pt-lpmama-dot[data-field='mortgage'][data-captured='true'] { background: #4f8e50; }
 .pt-lpmama-dot[data-field='appointment'][data-captured='true'] { background: #8b8e4f; }
-.pt-lpmama-copy {
-  margin-left: 10px;
+/* ---------- Smart Capture: Sync to CRM button ---------- */
+.pt-sync-btn {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  border: none;
+  border-radius: 100px;
+  background: var(--sayso-blue);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
   cursor: default;
+  transition: background-color 250ms ease;
 }
-.pt-lpmama-copy[data-copied='true'] {
+.pt-sync-btn[data-synced='true'] {
   background: var(--sayso-success);
 }
 

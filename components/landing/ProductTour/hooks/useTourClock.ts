@@ -7,7 +7,7 @@ import type { FeatureKey } from '../types';
 const TICK = 100; // real ms between updates
 // Playback speed: >1 plays the scripted timeline slower than real time so the
 // demo is easy to follow. Scene times in the data stay unchanged.
-const TIME_SCALE = 1.8;
+const TIME_SCALE = 1.35;
 const STEP = TICK / TIME_SCALE; // scene-ms advanced per real tick
 
 /**

@@ -29,24 +29,24 @@ export function ProductTour() {
   const { featureKey, feature, chapter, elapsed, playing, jumpTo, togglePlay, restart } =
     useTourClock();
   const derived = deriveScene(chapter, elapsed);
-  const { containerRef, scale } = useScaleToFit(DESIGN_WIDTH);
+  const { containerRef, scale } = useScaleToFit(DESIGN_WIDTH, DESIGN_HEIGHT);
 
   return (
-    <section className="bg-white py-12 sm:py-16">
+    <section className="bg-white py-8">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-comic text-4xl tracking-wide text-primary sm:text-5xl">
+          <h2 className="font-comic text-3xl tracking-wide text-primary sm:text-4xl">
             See Sayso in Action
           </h2>
-          <p className="mt-3 text-base text-primary/75 sm:text-lg">
+          <p className="mt-2 text-sm text-primary/75 sm:text-base">
             Watch Sayso work right inside your dialer, coaching the call, capturing
             the details, and logging notes to your CRM automatically.
           </p>
         </div>
 
         {/* Feature pills + short caption for the selected feature */}
-        <div className="mt-8">
+        <div className="mt-5">
           <FeatureTileBar activeKey={featureKey} onSelect={jumpTo} />
           <p className="mt-3 text-center text-sm font-semibold text-primary">
             {feature.label.split(' · ')[0]}:{' '}
@@ -54,35 +54,36 @@ export function ProductTour() {
           </p>
         </div>
 
-        {/* Stage: zoomed-out desktop frame with the Sayso widget on the far right */}
-        <div className="mx-auto mt-6 max-w-[980px]">
-          <div ref={containerRef}>
-            <div style={{ height: DESIGN_HEIGHT * scale }}>
-              <div
-                className="relative origin-top-left"
-                style={{ width: DESIGN_WIDTH, height: DESIGN_HEIGHT, transform: `scale(${scale})` }}
-              >
-                <BrowserChrome url="app.followupboss.com/people">
-                  <FubFrame
-                    prospect={DEMO_PROSPECT}
-                    timer={formatTimerForFub(derived.callSeconds)}
-                    speaker={derived.speaker}
-                    lpmama={derived.lpmama}
-                    crmNoteVisible={derived.crmNoteVisible}
-                    crmNoteSummary={CRM_NOTE_SUMMARY}
-                  />
-                </BrowserChrome>
+        {/* Stage: whole dialer window scaled to fit, Sayso widget on the far right */}
+        <div ref={containerRef} className="mt-4 max-w-[1000px] mx-auto">
+          <div
+            className="mx-auto"
+            style={{ width: DESIGN_WIDTH * scale, height: DESIGN_HEIGHT * scale }}
+          >
+            <div
+              className="relative origin-top-left"
+              style={{ width: DESIGN_WIDTH, height: DESIGN_HEIGHT, transform: `scale(${scale})` }}
+            >
+              <BrowserChrome url="app.followupboss.com/people">
+                <FubFrame
+                  prospect={DEMO_PROSPECT}
+                  timer={formatTimerForFub(derived.callSeconds)}
+                  speaker={derived.speaker}
+                  lpmama={derived.lpmama}
+                  crmNoteVisible={derived.crmNoteVisible}
+                  crmNoteSummary={CRM_NOTE_SUMMARY}
+                />
+              </BrowserChrome>
 
-                <div className="absolute" style={{ top: OVERLAY_TOP, right: OVERLAY_RIGHT }}>
-                  <SaysoOverlay chapter={chapter} elapsed={elapsed} derived={derived} />
-                </div>
+              <div className="absolute" style={{ top: OVERLAY_TOP, right: OVERLAY_RIGHT }}>
+                <SaysoOverlay chapter={chapter} elapsed={elapsed} derived={derived} />
               </div>
             </div>
           </div>
         </div>
 
         {/* Controls */}
-        <div className="mt-5">
+        <div className="mt-4">
           <TourControls playing={playing} onTogglePlay={togglePlay} onRestart={restart} />
         </div>
       </div>

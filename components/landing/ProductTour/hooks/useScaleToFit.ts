@@ -3,11 +3,15 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Scales a fixed design-width stage down to fit its container width, so the
- * desktop-shaped Follow Up Boss frame stays pixel-faithful while shrinking
- * gracefully on narrower screens (never scales above 1).
+ * Scales a fixed design-size stage to fit BOTH its container width and a share
+ * of the viewport height, so the whole Follow Up Boss window stays visible on
+ * one screen alongside the header and pills (never scales above 1).
  */
-export function useScaleToFit(designWidth: number) {
+export function useScaleToFit(
+  designWidth: number,
+  designHeight: number,
+  maxViewportHeightFraction = 0.62,
+) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [scale, setScale] = useState(1);
 
@@ -16,15 +20,20 @@ export function useScaleToFit(designWidth: number) {
     if (!el) return;
 
     const update = () => {
-      const width = el.clientWidth;
-      setScale(Math.min(1, width / designWidth));
+      const widthScale = el.clientWidth / designWidth;
+      const heightScale = (window.innerHeight * maxViewportHeightFraction) / designHeight;
+      setScale(Math.min(1, widthScale, heightScale));
     };
 
     update();
     const observer = new ResizeObserver(update);
     observer.observe(el);
-    return () => observer.disconnect();
-  }, [designWidth]);
+    window.addEventListener('resize', update);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', update);
+    };
+  }, [designWidth, designHeight, maxViewportHeightFraction]);
 
   return { containerRef, scale };
 }

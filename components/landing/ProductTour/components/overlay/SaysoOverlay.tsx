@@ -3,7 +3,7 @@ import type { DerivedScene } from '../../helpers/derive';
 import { formatCallTimer } from '../../helpers/derive';
 import { SaysoToolbar } from './SaysoToolbar';
 import { CueBubble } from './CueBubble';
-import { InsightsPanel } from './InsightsPanel';
+import { SmartCapturePanel } from './SmartCapturePanel';
 import { ZipDropdown } from './ZipDropdown';
 import { PlaybookPanel } from './PlaybookPanel';
 
@@ -34,11 +34,6 @@ export function SaysoOverlay({ chapter, elapsed, derived }: SaysoOverlayProps) {
   // Playbook derived state
   const playbookOpen = !!chapter.playbook && elapsed >= chapter.playbook.openAt;
 
-  const copied =
-    derived.lpmamaComplete &&
-    chapter.crmNoteAt !== undefined &&
-    elapsed >= chapter.crmNoteAt - 1200;
-
   return (
     <div className="pt-root flex flex-col items-end gap-1.5">
       <SaysoToolbar
@@ -57,7 +52,7 @@ export function SaysoOverlay({ chapter, elapsed, derived }: SaysoOverlayProps) {
       )}
 
       {isSmartCapture && (
-        <InsightsPanel insights={[]} lpmama={derived.lpmama} copied={copied} showLpmama />
+        <SmartCapturePanel lpmama={derived.lpmama} synced={derived.synced} />
       )}
 
       {isPulse && zipDropdownOpen && chapter.pulse && (

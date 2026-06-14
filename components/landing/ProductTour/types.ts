@@ -96,6 +96,8 @@ export interface Chapter {
   lpmama: LpmamaEvent[];
   pulse?: PulseScene;
   playbook?: PlaybookScene;
+  /** When the "Sync to Follow Up Boss" button is pressed (Smart Capture). */
+  syncAt?: number;
   /**
    * When set, the chapter ends by showing the call wrap up and the Sayso note
    * being written into the Follow Up Boss timeline (the "auto-log to CRM" payoff).

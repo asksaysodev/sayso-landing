@@ -65,25 +65,26 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
 
   'smart-capture': {
     key: 'smart-capture',
-    durationMs: 16000,
+    durationMs: 13500,
     baseCallSeconds: 61,
     leadType: 'Seller',
     transcript: [
-      { at: 400, from: 'prospect', text: 'We are over in San Pedro, pretty close to the water.' },
-      { at: 4000, from: 'prospect', text: 'We want to downsize so the mortgage is smaller every month.' },
-      { at: 8200, from: 'agent', text: 'Got it. Are you working with another agent on this yet?' },
-      { at: 10200, from: 'prospect', text: 'No, not yet. We could look at next steps in the next week or so.' },
+      { at: 200, from: 'prospect', text: 'We are over in San Pedro, pretty close to the water.' },
+      { at: 2600, from: 'prospect', text: 'We want to downsize so the mortgage is smaller every month.' },
+      { at: 5400, from: 'agent', text: 'Got it. Are you working with another agent on this yet?' },
+      { at: 7000, from: 'prospect', text: 'No, not yet. We could look at next steps in the next week or so.' },
     ],
     lpmama: [
-      { at: 1600, field: 'location', value: 'San Pedro, close to the water' },
-      { at: 3200, field: 'price', value: 'Worried about pricing right in this market' },
-      { at: 5200, field: 'motivation', value: 'Downsizing for a smaller mortgage' },
-      { at: 9000, field: 'agent', value: 'Not working with another agent yet' },
-      { at: 6400, field: 'mortgage', value: 'Wants smaller monthly mortgage payments' },
-      { at: 11200, field: 'appointment', value: 'Open to next steps in about a week' },
+      { at: 1000, field: 'location', value: 'San Pedro, close to the water' },
+      { at: 2200, field: 'price', value: 'Worried about pricing right in this market' },
+      { at: 3300, field: 'motivation', value: 'Downsizing for a smaller mortgage' },
+      { at: 4400, field: 'mortgage', value: 'Wants smaller monthly mortgage payments' },
+      { at: 6000, field: 'agent', value: 'Not working with another agent yet' },
+      { at: 7400, field: 'appointment', value: 'Open to next steps in about a week' },
     ],
     insights: [],
-    crmNoteAt: 13200,
+    syncAt: 8600,
+    crmNoteAt: 9400,
   },
 
   pulse: {
