@@ -28,7 +28,9 @@ export interface FeatureMeta {
   shortLabel: string;
   /** Product name + descriptor, e.g. "Cue · Real-Time Coaching". */
   label: string;
-  /** One-line caption shown beneath the stage while this chapter plays. */
+  /** Short line shown directly under the pills, e.g. "Custom scripts, on screen". */
+  tagline: string;
+  /** One-line caption (longer form, kept for reference / future use). */
   caption: string;
 }
 

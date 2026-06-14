@@ -13,24 +13,28 @@ export const FEATURES: FeatureMeta[] = [
     key: 'cue',
     shortLabel: 'Cue',
     label: 'Cue · Real-Time Coaching',
+    tagline: 'Real-time coaching, exactly what to say next.',
     caption: 'Sayso listens to the live call and shows the agent what to say the moment an objection lands.',
   },
   {
     key: 'smart-capture',
     shortLabel: 'Smart Capture',
     label: 'Smart Capture · Auto Notes',
+    tagline: 'Automatic notes, logged to your CRM.',
     caption: 'Key details are captured into a structured LPMAMA framework, then logged straight to the CRM.',
   },
   {
     key: 'pulse',
     shortLabel: 'Pulse',
     label: 'Pulse · Live Market Data',
+    tagline: 'Live market data, answers on the spot.',
     caption: 'Look up a zip code mid-call and answer market questions with real numbers, no tab switching.',
   },
   {
     key: 'playbook',
     shortLabel: 'Playbook',
     label: 'Playbook · Custom Scripts',
+    tagline: 'Your custom scripts, on screen during the call.',
     caption: 'Your own scripts stay on screen beside the live coaching, so agents stay on track without memorizing.',
   },
 ];

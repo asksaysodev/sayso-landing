@@ -198,29 +198,16 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ---------- Cue toast bubble ---------- */
+/* ---------- Cue coaching bubble (stacked under the toolbar) ---------- */
 .pt-toast {
   position: relative;
-  min-width: 300px;
-  max-width: 380px;
+  width: 320px;
+  max-width: 360px;
   min-height: 40px;
-  padding: 8px 14px;
-  margin-left: 12px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-}
-.pt-toast::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-right: 8px solid rgba(2, 25, 47, 0.9);
 }
 .pt-toast-text {
   color: rgba(255, 255, 255, 0.87);

@@ -1,10 +1,10 @@
 'use client';
 
 /**
- * Product Tour: an autoplaying, browser-realistic walkthrough of Sayso working
- * as an overlay on top of a Follow Up Boss-style dialer. Visitors watch each of
- * the four products (Cue, Smart Capture, Pulse, Playbook) in action and can jump
- * between them with the feature pills. Composition only; logic lives in the hook
+ * Product Tour: a walkthrough of Sayso working as an overlay on top of a
+ * Follow Up Boss-style dialer. Visitors pick a product pill (Cue, Smart Capture,
+ * Pulse, Playbook) and watch that one feature in action; the active chapter
+ * loops until another pill is chosen. Composition only; logic lives in the hook
  * and helpers, visuals in the sub-components.
  */
 import './product-tour.css';
@@ -21,12 +21,12 @@ import { SaysoOverlay } from './components/overlay/SaysoOverlay';
 
 const DESIGN_WIDTH = 1180;
 const DESIGN_HEIGHT = 720;
-// Where the floating Sayso widget sits over the CRM (within the design canvas).
-const OVERLAY_TOP = 150;
-const OVERLAY_LEFT = 300;
+// Where the floating Sayso widget sits over the CRM (anchored to the far right).
+const OVERLAY_TOP = 132;
+const OVERLAY_RIGHT = 44;
 
 export function ProductTour() {
-  const { featureKey, feature, chapter, elapsed, playing, progress, jumpTo, togglePlay, restart } =
+  const { featureKey, feature, chapter, elapsed, playing, jumpTo, togglePlay, restart } =
     useTourClock();
   const derived = deriveScene(chapter, elapsed);
   const { containerRef, scale } = useScaleToFit(DESIGN_WIDTH);
@@ -45,48 +45,45 @@ export function ProductTour() {
           </p>
         </div>
 
-        {/* Feature pills */}
+        {/* Feature pills + short caption for the selected feature */}
         <div className="mt-8">
           <FeatureTileBar activeKey={featureKey} onSelect={jumpTo} />
+          <p className="mt-3 text-center text-sm font-semibold text-primary">
+            {feature.label.split(' · ')[0]}:{' '}
+            <span className="font-medium text-primary/75">{feature.tagline}</span>
+          </p>
         </div>
 
-        {/* Stage: scaled desktop frame with the Sayso overlay floating on top */}
-        <div ref={containerRef} className="mt-6">
-          <div style={{ height: DESIGN_HEIGHT * scale }}>
-            <div
-              className="relative origin-top-left"
-              style={{ width: DESIGN_WIDTH, height: DESIGN_HEIGHT, transform: `scale(${scale})` }}
-            >
-              <BrowserChrome url="app.followupboss.com/people">
-                <FubFrame
-                  prospect={DEMO_PROSPECT}
-                  timer={formatTimerForFub(derived.callSeconds)}
-                  speaker={derived.speaker}
-                  lpmama={derived.lpmama}
-                  crmNoteVisible={derived.crmNoteVisible}
-                  crmNoteSummary={CRM_NOTE_SUMMARY}
-                />
-              </BrowserChrome>
+        {/* Stage: zoomed-out desktop frame with the Sayso widget on the far right */}
+        <div className="mx-auto mt-6 max-w-[980px]">
+          <div ref={containerRef}>
+            <div style={{ height: DESIGN_HEIGHT * scale }}>
+              <div
+                className="relative origin-top-left"
+                style={{ width: DESIGN_WIDTH, height: DESIGN_HEIGHT, transform: `scale(${scale})` }}
+              >
+                <BrowserChrome url="app.followupboss.com/people">
+                  <FubFrame
+                    prospect={DEMO_PROSPECT}
+                    timer={formatTimerForFub(derived.callSeconds)}
+                    speaker={derived.speaker}
+                    lpmama={derived.lpmama}
+                    crmNoteVisible={derived.crmNoteVisible}
+                    crmNoteSummary={CRM_NOTE_SUMMARY}
+                  />
+                </BrowserChrome>
 
-              <div className="absolute" style={{ top: OVERLAY_TOP, left: OVERLAY_LEFT }}>
-                <SaysoOverlay chapter={chapter} elapsed={elapsed} derived={derived} />
+                <div className="absolute" style={{ top: OVERLAY_TOP, right: OVERLAY_RIGHT }}>
+                  <SaysoOverlay chapter={chapter} elapsed={elapsed} derived={derived} />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Controls + active feature caption */}
+        {/* Controls */}
         <div className="mt-5">
-          <TourControls
-            playing={playing}
-            progress={progress}
-            onTogglePlay={togglePlay}
-            onRestart={restart}
-          />
-          <p className="mt-4 text-center text-sm font-medium text-primary/70">
-            <span className="font-semibold text-primary">{feature.label}.</span>{' '}
-            {feature.caption}
-          </p>
+          <TourControls playing={playing} onTogglePlay={togglePlay} onRestart={restart} />
         </div>
       </div>
     </section>
