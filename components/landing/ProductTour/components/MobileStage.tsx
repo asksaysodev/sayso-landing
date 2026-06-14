@@ -77,7 +77,7 @@ export function MobileStage({ featureKey, chapter, derived, prospect, timer }: M
       </div>
 
       <p className="mt-3 text-center text-xs text-primary/60">
-        Viewing the full Follow Up Boss dialer is best on desktop.
+        Viewing the full Sayso demo is best on desktop.
       </p>
     </div>
   );
