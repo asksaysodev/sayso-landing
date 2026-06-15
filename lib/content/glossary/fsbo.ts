@@ -43,7 +43,7 @@ export const fsbo: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'FSBO sellers often push back with objections like "I\'m saving on commission" or "I\'ve already had agents call me." Sayso\'s [Real-Time Coaching](/products/cue/) shows you the right response the moment you hear it, so you can address the objection confidently instead of scrambling for a script.',
-    'After the call, [Call Notes](/products/smart-capture/) automatically logs the conversation and syncs it to your CRM, so every FSBO contact is tracked without extra work. [Book a demo](/demo/) to see how Sayso helps you convert FSBO leads into listing appointments.',
+    'Sayso\'s [Call Notes](/products/smart-capture/) logs every FSBO conversation to your CRM for you, so a seller you reach in week one is easy to pick back up in week three when they are ready to talk. [Book a demo](/demo/) to see how Sayso helps you convert FSBO leads into listing appointments.',
   ],
   relatedTerms: [
     { term: 'Cold Calling', slug: 'cold-calling-real-estate' },

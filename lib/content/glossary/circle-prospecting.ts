@@ -44,7 +44,7 @@ export const circleProspecting: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'Sayso gives you real-time coaching during circle prospecting calls, so when a homeowner asks about their home\'s value or pushes back with "we\'re not thinking about moving," you see the right response instantly. No more freezing up or fumbling through a script binder.',
-    'Sayso also captures call notes automatically, so every conversation gets logged to your CRM without extra work. [Book a demo](/demo/) to see how it works on a real call.',
+    'Sayso also logs each circle prospecting call automatically, so the homeowner who said "maybe next year" is still in your pipeline when next year arrives. [Book a demo](/demo/) to see how Sayso turns neighborhood calls into listing appointments.',
   ],
   relatedTerms: [
     { term: 'Cold Calling', slug: 'cold-calling-real-estate' },

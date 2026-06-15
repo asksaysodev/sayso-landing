@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/request-demo/`,
   },
+  // Noindex: duplicates the higher-intent /demo/ booking page (sitemap priority 0.9).
+  // Kept live for the footer link. follow:true so crawlers still traverse its links.
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: 'Request a Demo | Sayso',
     description:

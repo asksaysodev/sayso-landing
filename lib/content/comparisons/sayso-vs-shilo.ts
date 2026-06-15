@@ -51,7 +51,7 @@ export const saysoVsShilo: ComparisonEntry = {
     },
     {
       question: 'Does Sayso offer a free trial?',
-      answer: 'Yes. You can try Sayso free before committing to a paid plan. The trial includes full access to real-time coaching, automatic call notes, and CRM integrations so you can evaluate the tool on actual prospecting calls.',
+      answer: 'Yes. Every Sayso plan starts with a free trial. You get the full real-time coaching experience on actual prospecting calls, which is the best way to see how it compares to a post-call tool like Shilo before you commit.',
     },
     {
       question: 'Is Shilo better than Sayso?',
