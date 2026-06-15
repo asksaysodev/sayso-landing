@@ -8,10 +8,13 @@ import { LightningIcon } from '@/components/icons/LightningIcon';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { headerNav } from '@/lib/navigation';
 
-export default function SaysoNavbar() {
+export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean } = {}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
+  // When autoHide is on (e.g. the Product Tour page), the bar slides away on
+  // scroll-down and returns on scroll-up to free up vertical space.
+  const [hidden, setHidden] = useState(false);
   const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
   const menuRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -46,6 +49,20 @@ export default function SaysoNavbar() {
     return () => document.removeEventListener('keydown', handleEsc);
   }, []);
 
+  // Auto-hide on scroll-down / reveal on scroll-up (opt-in via autoHide)
+  useEffect(() => {
+    if (!autoHide) return;
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > 140 && y > lastY) setHidden(true);
+      else if (y < lastY - 4 || y < 80) setHidden(false);
+      lastY = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [autoHide]);
+
   // Desktop dropdown hover handlers with delay
   const handleMouseEnter = useCallback((label: string) => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
@@ -67,7 +84,12 @@ export default function SaysoNavbar() {
   }, []);
 
   return (
-    <nav className="sticky top-4 z-50 flex justify-center px-4" aria-label="Main navigation">
+    <nav
+      className={`sticky top-4 z-50 flex justify-center px-4 transition-transform duration-300 ${
+        autoHide && hidden ? '-translate-y-[150%]' : ''
+      }`}
+      aria-label="Main navigation"
+    >
       <div ref={menuRef} className="relative w-full max-w-[1200px]">
         {/* Main Navbar - comic border style */}
         <div className="flex items-center justify-between h-14 md:h-[4.5rem] px-4 md:px-6 rounded-full bg-white border-2 border-[#1D4871] v2-comic-shadow-sm">
