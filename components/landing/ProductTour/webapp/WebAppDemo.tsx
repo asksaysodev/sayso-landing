@@ -129,6 +129,10 @@ export function WebAppDemo() {
           </BrowserChrome>
         </div>
       </div>
+
+      <p className="mt-3 text-center text-xs text-primary/60 lg:hidden">
+        Viewing the full Sayso demo is best on desktop.
+      </p>
     </div>
   );
 }
