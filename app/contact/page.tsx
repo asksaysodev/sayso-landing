@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
+import SsFormEmbed from '@/components/landing/SsFormEmbed';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
 
@@ -50,14 +51,8 @@ export default function ContactPage() {
           </section>
 
           <section className="w-full px-4 md:px-6 pb-16">
-            <div className="max-w-[600px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
-              <iframe
-                src="https://asksayso.ssforms.com/contact-us"
-                className="w-full border-0 h-[760px] md:h-[700px]"
-                title="Contact form"
-                allowFullScreen
-                loading="lazy"
-              />
+            <div className="max-w-[680px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
+              <SsFormEmbed embedCode="c7xK2u06CRJ0" />
             </div>
           </section>
         </main>
