@@ -10,13 +10,27 @@ export type ConversationTab = 'Cue' | 'Smart Capture' | 'Pulse';
 const TABS: ConversationTab[] = ['Cue', 'Smart Capture', 'Pulse'];
 
 /** The underline tab bar inside an expanded conversation. */
-export function ConversationTabs({ value }: { value: ConversationTab }) {
+export function ConversationTabs({
+  value,
+  onChange,
+}: {
+  value: ConversationTab;
+  onChange?: (tab: ConversationTab) => void;
+}) {
   return (
     <div className="conv-tabs">
       {TABS.map((tab) => (
-        <span key={tab} className={`conv-tab${value === tab ? ' conv-tab-on' : ''}`}>
+        <button
+          key={tab}
+          type="button"
+          className={`conv-tab${value === tab ? ' conv-tab-on' : ''}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            onChange?.(tab);
+          }}
+        >
           {tab}
-        </span>
+        </button>
       ))}
     </div>
   );

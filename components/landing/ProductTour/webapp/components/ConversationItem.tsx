@@ -18,16 +18,29 @@ interface Props {
   conversation: DemoConversation;
   isOpen: boolean;
   activeTab: ConversationTab;
+  onToggle?: () => void;
+  onTabChange?: (tab: ConversationTab) => void;
 }
 
 /** A single conversation row that expands to the Cue / Smart Capture / Pulse tabs. */
 export const ConversationItem = forwardRef<HTMLDivElement, Props>(
-  ({ conversation, isOpen, activeTab }, ref) => {
+  ({ conversation, isOpen, activeTab, onToggle, onTabChange }, ref) => {
     const isSeller = conversation.leadType === 'seller';
 
     return (
       <div ref={ref} className={`conv-item${isOpen ? ' conv-item-open' : ''}`}>
-        <div className="conv-head">
+        <div
+          className="conv-head"
+          role="button"
+          tabIndex={0}
+          onClick={onToggle}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              onToggle?.();
+            }
+          }}
+        >
           <div className="conv-time-col">
             <span className="conv-date">{conversation.date}</span>
             <span className="conv-time">{conversation.time}</span>
@@ -72,7 +85,7 @@ export const ConversationItem = forwardRef<HTMLDivElement, Props>(
 
         {isOpen && (
           <div className="conv-body">
-            <ConversationTabs value={activeTab} />
+            <ConversationTabs value={activeTab} onChange={onTabChange} />
             <div className="conv-tabbody">
               {activeTab === 'Cue' && <CueTab insights={conversation.insights} />}
               {activeTab === 'Smart Capture' && <SmartCaptureTab conversation={conversation} />}

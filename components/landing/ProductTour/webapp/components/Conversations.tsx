@@ -8,10 +8,12 @@ interface ConversationsProps {
   activeTab: ConversationTab;
   /** Registers each row element so the demo can scroll it into view. */
   setItemRef: (id: string, el: HTMLDivElement | null) => void;
+  onToggle: (id: string) => void;
+  onTabChange: (tab: ConversationTab) => void;
 }
 
 /** The Conversations card: header (search + date) and the collapsible list. */
-export function Conversations({ openId, activeTab, setItemRef }: ConversationsProps) {
+export function Conversations({ openId, activeTab, setItemRef, onToggle, onTabChange }: ConversationsProps) {
   return (
     <div className="conversations-container">
       <div className="conversations-header">
@@ -36,6 +38,8 @@ export function Conversations({ openId, activeTab, setItemRef }: ConversationsPr
             conversation={conv}
             isOpen={openId === conv.id}
             activeTab={activeTab}
+            onToggle={() => onToggle(conv.id)}
+            onTabChange={onTabChange}
           />
         ))}
       </div>

@@ -50,11 +50,16 @@ export function WebAppDemo() {
   const [elapsed, setElapsed] = useState(0);
   const [openId, setOpenId] = useState<string | null>(null);
   const [tab, setTab] = useState<ConversationTab>('Cue');
+  // Once the visitor clicks a conversation or tab, hand control over and stop autoplay.
+  const [userControlled, setUserControlled] = useState(false);
+  const userControlledRef = useRef(false);
+  userControlledRef.current = userControlled;
 
   useEffect(() => {
+    if (userControlled) return;
     const id = setInterval(() => setElapsed((e) => (e + TICK) % LOOP_MS), TICK);
     return () => clearInterval(id);
-  }, []);
+  }, [userControlled]);
 
   const stepIndex = useMemo(() => {
     let idx = 0;
@@ -64,6 +69,7 @@ export function WebAppDemo() {
 
   // Apply the active step: set open/tab state, then scroll after it renders.
   useEffect(() => {
+    if (userControlledRef.current) return;
     const step = STEPS[stepIndex];
     setOpenId(step.openId);
     setTab(step.tab);
@@ -105,6 +111,15 @@ export function WebAppDemo() {
                       activeTab={tab}
                       setItemRef={(id, el) => {
                         itemRefs.current[id] = el;
+                      }}
+                      onToggle={(id) => {
+                        setUserControlled(true);
+                        setOpenId((prev) => (prev === id ? null : id));
+                        setTab('Cue');
+                      }}
+                      onTabChange={(t) => {
+                        setUserControlled(true);
+                        setTab(t);
                       }}
                     />
                   </div>

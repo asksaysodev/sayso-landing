@@ -1,3 +1,4 @@
+import { AppWindow } from 'lucide-react';
 import { FEATURES } from '../data/scenes';
 import type { FeatureKey } from '../types';
 
@@ -39,12 +40,11 @@ export function FeatureTileBar({ activeKey, appActive, onSelect, onSelectApp }: 
       <button
         onClick={onSelectApp}
         aria-pressed={appActive}
-        className={`rounded-full border px-4 py-2 text-[13px] font-semibold transition-colors sm:text-sm ${
-          appActive
-            ? 'border-[#e5c100] bg-accent text-primary'
-            : 'border-accent bg-white text-primary hover:bg-accent/20'
+        className={`inline-flex items-center justify-center gap-1.5 rounded-full border-2 border-[#1D4871] bg-accent px-4 py-2 text-[13px] font-bold text-[#1D4871] v2-comic-shadow-sm transition-transform hover:-translate-y-[1px] sm:text-sm ${
+          appActive ? 'ring-2 ring-[#1D4871] ring-offset-1' : ''
         }`}
       >
+        <AppWindow size={14} />
         App
       </button>
     </div>
