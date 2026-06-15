@@ -36,10 +36,10 @@ export function Sidebar() {
         </div>
         <div className="wa-divider" />
         <div className="wa-account">
-          <div className="wa-account-icon">KP</div>
+          <div className="wa-account-icon">AM</div>
           <div>
-            <div className="wa-account-name">Kuvaal Patel</div>
-            <div className="wa-account-email">kuvaal@asksayso.com</div>
+            <div className="wa-account-name">Alex Morgan</div>
+            <div className="wa-account-email">alex.morgan@example.com</div>
           </div>
         </div>
         <div className="wa-divider" />

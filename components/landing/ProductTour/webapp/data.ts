@@ -92,7 +92,7 @@ export const CONVERSATIONS: DemoConversation[] = [
     summary:
       'San Pedro, moving in 3-4 months, downsizing for smaller mortgage, looking for ocean view condo/townhome, RPV is pricey.',
     leadType: 'buyer',
-    leadName: 'Kuvaal Patel',
+    leadName: 'Taylor Brooks',
     insights: [
       { time: '8:35 PM', message: 'I get it, just browsing can feel overwhelming at times. What would make this feel more relevant or helpful for you right now?' },
       { time: '8:36 PM', message: 'That makes sense! What would a smaller house provide for you that you currently feel you are missing?' },
