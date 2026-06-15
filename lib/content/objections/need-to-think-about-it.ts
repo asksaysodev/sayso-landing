@@ -46,7 +46,7 @@ export const needToThinkAboutIt: ObjectionEntry = {
     'Asking "what do you need to think about?" in a confrontational tone instead of a curious one',
   ],
   howSaysoHelps:
-    'When a prospect says "I need to think about it," Sayso displays the right response on your screen in real time so you can stay calm and redirect the conversation. Instead of freezing or rushing to fill the silence, you see exactly what to ask next. After the call, Sayso captures your notes and logs them to your CRM so every hesitant prospect gets a timely follow-up.',
+    'When a prospect hides behind "I need to think about it," Sayso shows you a question that separates a real concern from a polite brush-off, so you can address what is actually holding them back. You stay calm instead of rushing to fill the silence. Sayso also files what surfaced, so no hesitant prospect quietly slips off your radar before the next touch.',
   relatedObjections: [
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },
@@ -76,8 +76,8 @@ export const needToThinkAboutIt: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'Why Prospects Don\'t Commit to Meetings',
+    href: '/blog/why-prospects-dont-commit',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

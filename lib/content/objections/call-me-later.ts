@@ -46,7 +46,7 @@ export const callMeLater: ObjectionEntry = {
     'Failing to log the call and losing all context for the follow-up',
   ],
   howSaysoHelps:
-    'Sayso coaches you in real time the moment a prospect says "call me later," displaying the right response on your screen so you never freeze or hang up without a plan. After the call, Sayso captures your notes automatically and logs them to your CRM, so when you call back you have full context from the first conversation.',
+    'The moment a prospect tries to push the conversation to "later," Sayso puts a response on your screen that keeps you talking instead of scheduling a callback that never happens. Because Sayso writes up the call for you and drops it into your CRM, the day you do reach back out you can open with the exact detail they mentioned the first time.',
   relatedObjections: [
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"Need to Think About It"', slug: 'need-to-think-about-it', keyword: 'what to say when prospect shuts down' },
@@ -76,8 +76,8 @@ export const callMeLater: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'How to Keep Control of a Call',
+    href: '/blog/how-to-keep-control-of-a-call',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
