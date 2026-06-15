@@ -1,0 +1,483 @@
+/*
+ * Product Tour styles.
+ *
+ * These styles reproduce the real Sayso coach widget on a marketing surface.
+ * All values are ported verbatim from the desktop app's source
+ * (sayso-frontend `src/coachWindow/styles/*`, documented in
+ * `docs/JackStuff/widget-design-spec.md`) so the demo mimics the actual product.
+ *
+ * Everything is namespaced under `.pt-root` to keep these app-specific tokens
+ * out of the global landing-page stylesheet.
+ */
+
+.pt-root {
+  /* Sayso coach window color tokens (from Colors.css) */
+  --sayso-blue: #2367ee;
+  --sayso-indigo: #1d4871;
+  --sayso-darkgray: #18181b;
+  --sayso-destructive: #dc2626;
+  --sayso-reset-orange: #ea9e0fdc;
+  --sayso-success: #219e66;
+  --sayso-white: rgb(244, 244, 245);
+
+  /* Raw hexes used directly in components (from widget-design-spec.md) */
+  --zip-input-bg: #3c4a5c;
+  --zip-input-bg-active: #487ab3;
+  --right-side-btn-bg: #2b4a6d;
+  --insight-active-bg: #3b516c;
+
+  /* Coach window font-size tier (S / default) */
+  --cw-fs-insight: 13.5px;
+
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Shared dark glassmorphism surface ---------- */
+.pt-glass {
+  background: rgba(2, 25, 47, 0.9);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  box-shadow: inset 0 1px 0 rgba(114, 126, 137, 0.6);
+}
+
+/* ---------- Toolbar (the pill) ---------- */
+.pt-toolbar {
+  position: relative;
+  height: 48px;
+  padding: 2px 12px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+}
+
+.pt-drag {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 22px;
+  opacity: 0.85;
+}
+
+.pt-divider {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.pt-toolbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+/* Lead type pill */
+.pt-leadtype {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+.pt-leadtype-initial {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  background: var(--sayso-white);
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons */
+.pt-btn {
+  height: 32px;
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+.pt-btn-start {
+  gap: 8px;
+  padding: 0 16px 0 14px;
+  background: var(--sayso-blue);
+  font-size: 14px;
+}
+.pt-btn-start svg {
+  height: 14px;
+  fill: currentColor;
+}
+.pt-btn-icon {
+  width: 32px;
+  aspect-ratio: 1 / 1;
+}
+.pt-btn-stop {
+  background: var(--sayso-destructive);
+}
+.pt-btn-reset {
+  background: var(--sayso-reset-orange);
+}
+
+/* Call timer */
+.pt-timer {
+  height: 32px;
+  width: 90px;
+  border-radius: 100px;
+  background: var(--sayso-darkgray);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right side buttons */
+.pt-right-buttons {
+  display: flex;
+  gap: 8px;
+}
+.pt-right-btn {
+  position: relative;
+  height: 32px;
+  width: 32px;
+  aspect-ratio: 1 / 1;
+  border-radius: 100px;
+  background: var(--right-side-btn-bg);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+.pt-right-btn[data-active='true'] {
+  background: var(--zip-input-bg-active);
+  opacity: 1;
+}
+.pt-badge-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  background: var(--sayso-destructive);
+}
+
+/* ---------- Zip / Pulse pill ---------- */
+.pt-zip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--zip-input-bg);
+  border-radius: 100px;
+  padding: 0 12px;
+  height: 32px;
+}
+.pt-zip[data-active='true'] {
+  background: var(--zip-input-bg-active);
+}
+.pt-zip-icon {
+  color: #fff;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.pt-zip-value {
+  color: #fff;
+  font-size: 16px;
+}
+.pt-zip-value[data-placeholder='true'] {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- Cue coaching bubble (stacked under the toolbar) ---------- */
+.pt-toast {
+  position: relative;
+  width: 320px;
+  max-width: 360px;
+  min-height: 40px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+.pt-toast-text {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Insights vertical panel ---------- */
+.pt-insights {
+  padding: 12px 14px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+.pt-insight-item {
+  position: relative;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.pt-insight-item[data-active='true'] {
+  background: var(--insight-active-bg);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+.pt-insight-text {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: var(--cw-fs-insight);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ---------- Cue panel: Condensed / Full toggle + stacked prompts ---------- */
+.pt-cue-panel {
+  width: 340px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pt-cue-toggle {
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.pt-cue-toggle-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.pt-cue-toggle-btn[data-active='true'] {
+  background: var(--sayso-blue);
+  color: #fff;
+}
+.pt-cue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pt-cue-arrow {
+  color: #7ea8ff;
+  font-weight: 700;
+}
+
+/* ---------- LPMAMA row ---------- */
+.pt-lpmama {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 4px 2px;
+}
+/* Smart Capture "just captured" banner (full width, never clips) */
+.pt-capture-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  min-height: 38px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+.pt-capture-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+.pt-capture-value {
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
+}
+.pt-capture-idle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.pt-lpmama-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #31455d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 300ms ease;
+}
+.pt-lpmama-dot[data-field='location'][data-captured='true'] { background: #4f508e; }
+.pt-lpmama-dot[data-field='price'][data-captured='true'] { background: #754f8e; }
+.pt-lpmama-dot[data-field='motivation'][data-captured='true'] { background: #8e764f; }
+.pt-lpmama-dot[data-field='agent'][data-captured='true'] { background: #4f7e8e; }
+.pt-lpmama-dot[data-field='mortgage'][data-captured='true'] { background: #4f8e50; }
+.pt-lpmama-dot[data-field='appointment'][data-captured='true'] { background: #8b8e4f; }
+/* ---------- Smart Capture: Sync to CRM button ---------- */
+.pt-sync-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  border: none;
+  border-radius: 100px;
+  background: var(--sayso-blue);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: default;
+  transition: background-color 250ms ease;
+}
+.pt-sync-btn[data-synced='true'] {
+  background: var(--sayso-success);
+}
+
+/* ---------- Playbook panel ---------- */
+.pt-playbook {
+  width: 280px;
+  max-height: 360px;
+  overflow: hidden;
+  padding: 12px 14px;
+  border-radius: 16px;
+  color: #fff;
+}
+.pt-playbook-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.pt-playbook-section {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0 4px;
+}
+.pt-playbook-bullet {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 4px;
+}
+.pt-playbook-var {
+  color: var(--zip-input-bg-active);
+}
+
+/* ---------- Zip market-data dropdown ---------- */
+.pt-zip-dropdown {
+  margin-top: 6px;
+  padding: 9px;
+  border-radius: 16px;
+  color: #fff;
+}
+.pt-zip-inner {
+  background: rgba(255, 255, 255, 0.08);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.pt-zip-city {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.pt-zip-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 4px;
+}
+.pt-zip-fact {
+  font-size: 14px;
+  color: #c7c7c7;
+  display: flex;
+  gap: 4px;
+}
+.pt-zip-fact-value {
+  color: #fff;
+  font-weight: 500;
+}
+.pt-trend-up { color: #4ade80; }
+.pt-trend-down { color: #f59e0b; }
+
+/* ---------- Mobile: let the feature panels fill the column ---------- */
+.pt-mobile .pt-cue-panel,
+.pt-mobile .pt-playbook,
+.pt-mobile .pt-zip-dropdown {
+  width: 100%;
+  max-width: none;
+}
+.pt-mobile .pt-playbook {
+  max-height: none;
+}
+
+/* ---------- Speaking indicator bars ---------- */
+@keyframes pt-speak {
+  0%, 100% { height: 3px; }
+  50% { height: 14px; }
+}
+.pt-speaking-bar {
+  height: 14px;
+  animation: pt-speak 700ms ease-in-out infinite;
+}
+
+/* ---------- Cue toast entrance ---------- */
+@keyframes pt-toast-in {
+  from { transform: translateX(-40px) scale(0.7); opacity: 0; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+.pt-toast-enter {
+  animation: pt-toast-in 300ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ---------- Insight panel item entrance ---------- */
+@keyframes pt-insight-in {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.pt-insight-enter {
+  animation: pt-insight-in 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------- Panel slide-in (zip dropdown, playbook) ---------- */
+@keyframes pt-fade-up {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.pt-fade-up {
+  animation: pt-fade-up 280ms ease-out forwards;
+}
