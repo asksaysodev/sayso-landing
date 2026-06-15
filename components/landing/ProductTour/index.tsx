@@ -8,6 +8,7 @@
  * and helpers, visuals in the sub-components.
  */
 import './product-tour.css';
+import { useState } from 'react';
 import { useTourClock } from './hooks/useTourClock';
 import { useScaleToFit } from './hooks/useScaleToFit';
 import { deriveScene } from './helpers/derive';
@@ -19,6 +20,7 @@ import { BrowserChrome } from './components/BrowserChrome';
 import { FubFrame } from './components/fub/FubFrame';
 import { SaysoOverlay } from './components/overlay/SaysoOverlay';
 import { MobileStage } from './components/MobileStage';
+import { WebAppDemo } from './webapp/WebAppDemo';
 
 const DESIGN_WIDTH = 1180;
 const DESIGN_HEIGHT = 720;
@@ -32,6 +34,10 @@ export function ProductTour() {
   const derived = deriveScene(chapter, elapsed);
   const { containerRef, scale } = useScaleToFit(DESIGN_WIDTH, DESIGN_HEIGHT, 0.74);
   const fubTimer = formatTimerForFub(derived.callSeconds);
+
+  // 'dialer' = the four product chapters inside Follow Up Boss; 'app' = web app demo.
+  const [mode, setMode] = useState<'dialer' | 'app'>('dialer');
+  const isApp = mode === 'app';
 
   return (
     <section className="bg-white py-8">
@@ -50,13 +56,36 @@ export function ProductTour() {
 
         {/* Feature pills + short caption for the selected feature */}
         <div className="mt-5">
-          <FeatureTileBar activeKey={featureKey} onSelect={jumpTo} />
+          <FeatureTileBar
+            activeKey={isApp ? null : featureKey}
+            appActive={isApp}
+            onSelect={(key) => {
+              setMode('dialer');
+              jumpTo(key);
+            }}
+            onSelectApp={() => setMode('app')}
+          />
           <p className="mt-3 text-center text-sm font-semibold text-primary">
-            {feature.label.split(' · ')[0]}:{' '}
-            <span className="font-medium text-primary/75">{feature.tagline}</span>
+            {isApp ? (
+              <>
+                App:{' '}
+                <span className="font-medium text-primary/75">
+                  Review every conversation, the details Sayso captured, and the coaching, after the call.
+                </span>
+              </>
+            ) : (
+              <>
+                {feature.label.split(' · ')[0]}:{' '}
+                <span className="font-medium text-primary/75">{feature.tagline}</span>
+              </>
+            )}
           </p>
         </div>
 
+        {isApp ? (
+          <WebAppDemo />
+        ) : (
+          <>
         {/* Desktop stage: whole dialer window scaled to fit, widget on the far right */}
         <div ref={containerRef} className="mt-4 mx-auto hidden max-w-[1240px] lg:block">
           <div
@@ -100,6 +129,8 @@ export function ProductTour() {
         <div className="mt-4">
           <TourControls playing={playing} onTogglePlay={togglePlay} onRestart={restart} />
         </div>
+          </>
+        )}
       </div>
     </section>
   );
