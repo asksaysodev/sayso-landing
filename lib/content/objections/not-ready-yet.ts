@@ -46,7 +46,7 @@ export const notReadyYet: ObjectionEntry = {
     'Taking it personally instead of treating it as a normal part of prospecting',
   ],
   howSaysoHelps:
-    'Sayso shows you the right response framework the moment a prospect says "I\'m not ready yet," so you never freeze or default to hanging up. The coaching appears in real time on your screen while you are on the call, giving you confidence to keep the conversation going. After the call, Sayso captures your notes automatically and logs them to your CRM so you never lose track of a follow-up.',
+    'When a prospect says they are not ready, Sayso shows you how to find out what "ready" actually depends on, so a vague delay turns into a concrete timeline you can plan around. You keep the conversation going instead of retreating. Sayso then captures that timeline in your records, so the lead resurfaces at the moment they said they would be ready, not months too late.',
   relatedObjections: [
     { title: '"Just Looking"', slug: 'just-looking', keyword: 'how to respond to "just looking" real estate' },
     { title: '"Call Me Later"', slug: 'call-me-later', keyword: 'real estate script for "call me later"' },
@@ -55,8 +55,8 @@ export const notReadyYet: ObjectionEntry = {
     { title: '"We\'ll Wait for Spring"', slug: 'well-wait-for-spring', keyword: 'how to handle timing objection real estate' },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'Why Prospects Don\'t Commit to Meetings',
+    href: '/blog/why-prospects-dont-commit',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

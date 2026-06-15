@@ -147,6 +147,10 @@ Use **Draft PRs** with preview deployments:
 | `docs/reference/` | Dev guide, onboarding flow, Canny setup, UI component inventory, GTM/analytics IDs | Developer reference |
 | `docs/seo/` | Full audit report, SEO initiatives overview, indexing next steps | SEO planning & consultant handoff |
 | `docs/templates/` | Page templates (persona ad pages, etc.) plus the template review guide | Claude commands for building new pages |
+| `docs/brand/` | `sayso-design-system.md`: single source of truth for the UI/brand visual language (colors, fonts, comic/superhero system, components). Update it in the same PR as any UI change. | Design decisions, new page builds |
+| `docs/content/` | Blog writing guides, persona copy, blog design specs | Content creation commands |
+| `docs/reference/` | Dev guide, onboarding flow, Canny setup, UI component inventory | Developer reference |
+| `docs/templates/` | Page templates (persona ad pages, etc.) | Claude commands for building new pages |
 
 ---
 

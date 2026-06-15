@@ -46,7 +46,7 @@ export const marketIsBad: ObjectionEntry = {
     'Dropping the lead entirely because they seem stuck on market conditions',
   ],
   howSaysoHelps:
-    'Sayso\'s Pulse feature puts real-time market data on your screen while you are on the call, so you can reference actual numbers for the prospect\'s area without guessing or looking things up. When a prospect says the market is bad, Cue coaches you through the right response framework so you redirect the conversation with confidence instead of getting stuck debating headlines.',
+    'When a prospect says the market is bad, Sayso\'s Pulse feature puts real numbers for their specific area on your screen, so you can answer a headline with data about their street instead of generalities. Real-Time Coaching frames the response for you, so the conversation moves from debating the market to what it means for this prospect\'s decision.',
   relatedObjections: [
     { title: '"The Price Is Too High"', slug: 'price-too-high', keyword: 'how to handle price objection real estate' },
     { title: '"We\'ll Wait for Spring"', slug: 'well-wait-for-spring', keyword: 'how to handle timing objection real estate' },

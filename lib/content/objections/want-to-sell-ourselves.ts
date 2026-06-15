@@ -46,7 +46,7 @@ export const wantToSellOurselves: ObjectionEntry = {
     'Skipping follow-up because they seemed firm on selling alone',
   ],
   howSaysoHelps:
-    'Sayso coaches you through FSBO conversations in real time, displaying the right discovery questions on your screen the moment a seller mentions going it alone. Playbook lets you load your FSBO-specific scripts so the prompts match your style and strategy. After the call, Sayso captures your notes and syncs them to your CRM, making it easy to follow up at the right time.',
+    'When a seller says they want to handle the sale themselves, Sayso surfaces discovery questions that get at what is really driving the FSBO decision, whether it is commission, control, or a past experience. With Playbook, those prompts run on your own FSBO scripts, so the coaching sounds like you. Sayso also tracks where each seller stands, which matters because most FSBOs convert on the third or fourth conversation, not the first.',
   relatedObjections: [
 { title: '"How Much Is Your Commission?"', slug: 'how-much-is-your-commission', keyword: 'how to handle commission question real estate' },
     { title: '"Bad Experience with Agents"', slug: 'bad-experience-with-agents', keyword: 'how to handle bad agent experience objection' },
@@ -76,8 +76,8 @@ export const wantToSellOurselves: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'FSBO Scripts for Real Estate Agents',
+    href: '/blog/fsbo-scripts',
   },
   relatedFeature: {
     title: 'Custom Call Scripts',

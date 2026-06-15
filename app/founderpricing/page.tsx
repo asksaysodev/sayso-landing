@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/founderpricing/`,
   },
+  // Noindex: time-limited promo that overlaps /pricing/. When the program closes,
+  // replace this with a 301 redirect to /pricing/. follow:true keeps links crawlable.
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: 'Founding Team Pricing | Sayso',
     description:

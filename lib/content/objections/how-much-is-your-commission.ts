@@ -46,7 +46,7 @@ export const howMuchIsYourCommission: ObjectionEntry = {
     'Treating the question as a rejection instead of an opportunity to demonstrate value',
   ],
   howSaysoHelps:
-    'Sayso coaches you through the commission conversation in real time, showing you what to say the moment a prospect brings up fees. Instead of freezing or dropping your rate out of habit, you get a confident response on screen while you are still on the call. After the conversation, Sayso captures your notes and syncs them to your CRM so you can follow up with the right context.',
+    'When a prospect asks what you charge, Sayso shows you a confident, value-first answer on screen before you can reflexively discount your rate. You stay focused on the prospect\'s net outcome instead of defending a number. Sayso also records where the fee conversation landed, so your next touch picks up without you guessing what was already said.',
   relatedObjections: [
     { title: '"The Price Is Too High"', slug: 'price-too-high', keyword: 'how to handle price objection real estate' },
     { title: '"We Want to Sell Ourselves"', slug: 'want-to-sell-ourselves', keyword: 'FSBO objection handling' },
@@ -76,8 +76,8 @@ export const howMuchIsYourCommission: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Real Estate Cold Call Scripts: The Complete Guide',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'FSBO Scripts for Real Estate Agents',
+    href: '/blog/fsbo-scripts',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
