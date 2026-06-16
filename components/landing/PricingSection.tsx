@@ -95,7 +95,7 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 }
 
 export function PricingSection() {
-  const { openSystemSelect, openDemoCalendar } = useDemoCalendar();
+  const { openSystemSelect } = useDemoCalendar();
 
   const plans: PricingPlan[] = [
     {
