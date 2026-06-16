@@ -20,7 +20,7 @@ export function SmartCapturePanel({ lpmama, recentCapture, synced }: SmartCaptur
       <div className="pt-capture-banner">
         {recentCapture ? (
           <>
-            <span className="pt-capture-label">{recentCapture.label}:</span>{' '}
+            <span className="pt-capture-label">{recentCapture.label}</span>
             <span className="pt-capture-value">{recentCapture.value}</span>
           </>
         ) : (
