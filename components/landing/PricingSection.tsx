@@ -104,8 +104,12 @@ export function PricingSection() {
       priceNote: '*Billed annually, save $120. Or $79/month.',
       description: 'For agents who want daily consistency.',
       freeTrialBadge: '3 day Free Trial included',
+      bulletHeader: 'Every Sayso product included, for a limited time:',
       bullets: [
         'Cue: real-time conversation intelligence',
+        'Smart Capture: automatic call notes sorted into LPMAMA and synced to your CRM',
+        'Pulse: live market data mid-call, including prices, days on market, and inventory',
+        'Playbook: your custom scripts on screen, right next to Cue',
         'Dashboard analytics',
         'Email Support',
         'Up to 50% off new features',
@@ -154,11 +158,17 @@ export function PricingSection() {
     <section id="pricing" className="bg-[#F8F8FA] py-16 md:py-20 v2-halftone relative">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
+          <span className="v2-pow-badge inline-block px-4 py-1.5 rounded-full text-xs md:text-sm tracking-widest mb-5">
+            Early Access Pricing
+          </span>
           <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] mb-4 tracking-wide">
             Simple Pricing.
           </h2>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
             Free Trial. Custom Set Up. Included Training.
+          </p>
+          <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed mt-3">
+            Every Sayso product is included at this price for a limited time, so secure your early access pricing now.
           </p>
         </div>
 

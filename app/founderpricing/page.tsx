@@ -6,9 +6,9 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Founding Team Pricing',
+  title: 'Early Access Pricing',
   description:
-    'One price for your whole team, all Sayso products included for every agent. Lock in lifetime Founder Pricing before public launch.',
+    'One price for your whole team, all Sayso products included for every agent. Lock in lifetime Early Access Pricing before public launch.',
   alternates: {
     canonical: `${siteUrl}/founderpricing/`,
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Founding Team Pricing | Sayso',
+    title: 'Early Access Pricing | Sayso',
     description:
-      'One price for your whole team, all Sayso products included for every agent. Lock in lifetime Founder Pricing before public launch.',
+      'One price for your whole team, all Sayso products included for every agent. Lock in lifetime Early Access Pricing before public launch.',
     url: `${siteUrl}/founderpricing/`,
     type: 'website',
     images: [
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
         url: '/images/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'Sayso Founding Team Pricing',
+        alt: 'Sayso Early Access Pricing',
       },
     ],
   },
   twitter: {
-    title: 'Founding Team Pricing | Sayso',
+    title: 'Early Access Pricing | Sayso',
     description:
-      'One price for your whole team, all Sayso products included for every agent. Lock in lifetime Founder Pricing before public launch.',
+      'One price for your whole team, all Sayso products included for every agent. Lock in lifetime Early Access Pricing before public launch.',
     images: ['/images/og-default.png'],
   },
 };

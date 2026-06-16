@@ -85,7 +85,7 @@ export function PricingCalculator() {
             {tier.hours} conversation hours
           </div>
           <span className="text-[11px] font-bold uppercase tracking-widest text-[#1D4871] bg-[#FFDE59] border-2 border-[#1D4871] rounded-full px-3 py-1 whitespace-nowrap">
-            Founder Pricing
+            Early Access Pricing
           </span>
         </div>
         <div className="flex items-baseline gap-2 px-6 pb-4">

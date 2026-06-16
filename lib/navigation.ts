@@ -127,7 +127,7 @@ export const footerNav: NavSection[] = [
   {
     label: 'Programs',
     links: [
-      { label: 'Founding Team Pricing', href: '/founderpricing' },
+      { label: 'Early Access Pricing', href: '/founderpricing' },
       { label: 'Referral Program', href: '/referral' },
       { label: 'Affiliate Program', href: '/affiliate' },
     ],
