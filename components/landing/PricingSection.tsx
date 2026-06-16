@@ -136,22 +136,6 @@ export function PricingSection() {
       buttonVariant: 'secondary',
       analyticsId: 'cta-signup-pricing-teams',
     },
-    {
-      title: 'Coming Soon',
-      price: '',
-      description: 'Secure your account now to include future developments, new products, and new features up to 50% off!',
-      bullets: [
-        'Home value and market analysis live during calls',
-        'Smart Capture: automated conversation note-taking to popular frameworks directly in your CRM in real time',
-        'Custom script upload',
-        'Additional note capture frameworks',
-        'And much more!',
-      ],
-      buttonLabel: 'Questions? Chat with our team',
-      buttonOnClick: () => { window.location.href = '/demo'; },
-      buttonVariant: 'secondary',
-      analyticsId: 'cta-book-demo-pricing-coming-soon',
-    },
   ];
 
   return (
@@ -172,10 +156,20 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 max-w-[820px] mx-auto">
           {plans.map((plan) => (
             <PricingCardV4 key={plan.title} plan={plan} />
           ))}
+        </div>
+
+        <div className="text-center mb-6">
+          <button
+            onClick={() => { window.location.href = '/demo'; }}
+            data-analytics-id="cta-book-demo-pricing-coming-soon"
+            className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-base font-bold border-2 border-[#1D4871] bg-white text-[#1D4871] v2-comic-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
+          >
+            Questions? Chat with our team
+          </button>
         </div>
 
         <p className="text-center text-xs text-[#1D4871]/50">
