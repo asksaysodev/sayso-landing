@@ -108,9 +108,9 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
     ],
     lpmama: [],
     pulse: {
-      zipValidAt: 2600,
-      openAt: 3200,
-      resultsAt: 5400,
+      zipValidAt: 1600,
+      openAt: 2200,
+      resultsAt: 4400,
       zip: '90731',
       city: 'San Pedro, CA',
       facts: [

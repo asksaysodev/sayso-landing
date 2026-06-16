@@ -22,7 +22,7 @@ interface SaysoNoteTimelineProps {
 
 export function SaysoNoteTimeline({ lpmama, summary }: SaysoNoteTimelineProps) {
   return (
-    <div className="pt-fade-up flex gap-3">
+    <div className="pt-note-logged flex gap-3">
       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-400 text-white">
         <Pin className="h-3.5 w-3.5" />
       </div>

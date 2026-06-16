@@ -486,3 +486,14 @@
 .pt-fade-up {
   animation: pt-fade-up 280ms ease-out forwards;
 }
+
+/* ---------- Sayso note logged to CRM: subtle highlight as it lands ---------- */
+@keyframes pt-note-glow {
+  0% { background-color: rgba(35, 103, 238, 0.16); }
+  70% { background-color: rgba(35, 103, 238, 0.07); }
+  100% { background-color: rgba(35, 103, 238, 0); }
+}
+.pt-note-logged {
+  border-radius: 8px;
+  animation: pt-fade-up 280ms ease-out, pt-note-glow 2.8s ease-out;
+}

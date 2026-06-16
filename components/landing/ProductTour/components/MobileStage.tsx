@@ -19,9 +19,10 @@ interface MobileStageProps {
   derived: DerivedScene;
   prospect: DemoProspect;
   timer: string;
+  elapsed: number;
 }
 
-export function MobileStage({ featureKey, chapter, derived, prospect, timer }: MobileStageProps) {
+export function MobileStage({ featureKey, chapter, derived, prospect, timer, elapsed }: MobileStageProps) {
   return (
     <div className="lg:hidden">
       <div className="pt-root pt-mobile mx-auto flex max-w-[400px] flex-col gap-3">
@@ -46,7 +47,9 @@ export function MobileStage({ featureKey, chapter, derived, prospect, timer }: M
 
         {/* Active Sayso element */}
         <div className="flex flex-col gap-3">
-          {featureKey === 'cue' && derived.cuePrompts && <CuePanel prompts={derived.cuePrompts} />}
+          {featureKey === 'cue' && derived.cuePrompts && (
+            <CuePanel prompts={derived.cuePrompts} elapsed={elapsed} />
+          )}
           {featureKey === 'smart-capture' && (
             <SmartCapturePanel
               lpmama={derived.lpmama}
