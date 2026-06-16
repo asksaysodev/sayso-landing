@@ -2,17 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
+import { HeroObjectionMoment } from '@/components/landing/HeroObjectionMoment';
 import type { HeroContent } from '@/lib/content/personas/types';
-
-// The live demo (Follow Up Boss dialer + Sayso overlay) renders client-side
-// only: it measures the viewport/container to scale, so SSR would mismatch.
-const HeroTourDemo = dynamic(
-  () => import('@/components/landing/ProductTour/HeroTourDemo').then((m) => m.HeroTourDemo),
-  { ssr: false }
-);
 
 const logos = [
   { name: 'eXp Realty', src: '/social-proof/exp-realty.png' },
@@ -27,9 +20,10 @@ const logos = [
 const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
 const defaultContent: HeroContent = {
-  headline: 'Book 2x More Appointments from Prospecting Calls',
+  headline: 'When a prospect pushes back, do you know what to say next?',
+  headlineSize: 'text-4xl sm:text-5xl lg:text-6xl',
   tagline:
-    'Real-time coaching during live calls helps agents handle objections, stay on track, and automatically log notes in your CRM.',
+    'Sayso listens during your live calls and shows you the right thing to say the moment an objection lands, so you stay in control and book more appointments.',
 };
 
 export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
@@ -70,12 +64,17 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
           </div>
         </div>
 
-        {/* Full-width live demo: Sayso overlay on a Follow Up Boss dialer */}
-        <div className="mt-6 md:mt-8 max-w-[1100px] mx-auto">
-          <HeroTourDemo />
+        {/* The wow moment: an objection lands, then Sayso shows what to say next */}
+        <div className="mt-8 md:mt-10 max-w-[640px] mx-auto">
+          <HeroObjectionMoment />
+
+          {/* Proof line directly under the moment, the way the category leaders do it */}
+          <p className="mt-5 text-center text-sm font-semibold text-[#1D4871]/70 max-w-[460px] mx-auto">
+            Agents using Sayso book appointments up to 12x more efficiently from the same call list.
+          </p>
 
           {/* Secondary CTA into the full product tour */}
-          <div className="mt-6 flex justify-center">
+          <div className="mt-5 flex justify-center">
             <Link
               href="/product-tour"
               data-analytics-id="cta-product-tour-hero"
