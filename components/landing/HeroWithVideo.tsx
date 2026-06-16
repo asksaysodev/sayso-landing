@@ -7,10 +7,10 @@ import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import type { HeroContent } from '@/lib/content/personas/types';
 
-// The live demo (dialer + auto-typing Sayso widget) renders client-side only:
-// it measures its container to scale on mobile, so SSR would mismatch.
-const ProductShowcaseDesktop = dynamic(
-  () => import('@/components/landing/ProductShowcaseDesktop').then((m) => m.ProductShowcaseDesktop),
+// The live demo (Follow Up Boss dialer + Sayso overlay) renders client-side
+// only: it measures the viewport/container to scale, so SSR would mismatch.
+const HeroTourDemo = dynamic(
+  () => import('@/components/landing/ProductTour/HeroTourDemo').then((m) => m.HeroTourDemo),
   { ssr: false }
 );
 
@@ -70,9 +70,9 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
           </div>
         </div>
 
-        {/* Full-width live demo: Sayso coaching widget over a live dialer */}
-        <div className="mt-6 md:mt-8 max-w-[900px] mx-auto">
-          <ProductShowcaseDesktop />
+        {/* Full-width live demo: Sayso overlay on a Follow Up Boss dialer */}
+        <div className="mt-6 md:mt-8 max-w-[1100px] mx-auto">
+          <HeroTourDemo />
 
           {/* Secondary CTA into the full product tour */}
           <div className="mt-6 flex justify-center">
