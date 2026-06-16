@@ -1,9 +1,18 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import type { HeroContent } from '@/lib/content/personas/types';
+
+// The live demo (dialer + auto-typing Sayso widget) renders client-side only:
+// it measures its container to scale on mobile, so SSR would mismatch.
+const ProductShowcaseDesktop = dynamic(
+  () => import('@/components/landing/ProductShowcaseDesktop').then((m) => m.ProductShowcaseDesktop),
+  { ssr: false }
+);
 
 const logos = [
   { name: 'eXp Realty', src: '/social-proof/exp-realty.png' },
@@ -61,22 +70,34 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
           </div>
         </div>
 
-        {/* Full-width demo showcase */}
+        {/* Full-width live demo: Sayso coaching widget over a live dialer */}
         <div className="mt-6 md:mt-8 max-w-[900px] mx-auto">
-          <div
-            className="w-full rounded-2xl overflow-hidden border border-[#c4c4c4]"
-            style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08)' }}
-          >
-            <video
-              src="/sayso-demo.mp4"
-              poster="/sayso-demo-poster.jpg"
-              preload="auto"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full block"
-            />
+          <ProductShowcaseDesktop />
+
+          {/* Secondary CTA into the full product tour */}
+          <div className="mt-6 flex justify-center">
+            <Link
+              href="/product-tour"
+              data-analytics-id="cta-product-tour-hero"
+              className="inline-flex items-center justify-center rounded-full bg-transparent px-6 py-3 text-base font-semibold text-[#1D4871] border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2"
+            >
+              See more of Sayso
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ml-2 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
 
