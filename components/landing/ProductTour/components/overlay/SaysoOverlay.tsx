@@ -49,7 +49,7 @@ export function SaysoOverlay({ chapter, elapsed, derived }: SaysoOverlayProps) {
       />
 
       {isCue && derived.cuePrompts && cueActive && (
-        <CuePanel prompts={derived.cuePrompts} />
+        <CuePanel prompts={derived.cuePrompts} elapsed={elapsed} />
       )}
 
       {isSmartCapture && (

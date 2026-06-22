@@ -1,6 +1,6 @@
 /**
  * The dark navy panel that explains the team-wide pricing model and
- * introduces the Founder Pricing offer in a yellow callout.
+ * introduces the Early Access Pricing offer in a yellow callout.
  */
 
 import { FOUNDER_PRICING_CONFIG } from '../data';
@@ -47,7 +47,7 @@ export function PricingModelPanel() {
 
       <div className="bg-[#FFDE59] border-2 border-[#1D4871] rounded-xl p-5 md:p-6 mt-5">
         <h3 className="font-comic text-xl text-[#1D4871] tracking-wide mb-2">
-          What is Founder Pricing?
+          What is Early Access Pricing?
         </h3>
         <p className="text-sm md:text-[15px] text-[#1D4871] font-medium leading-relaxed">
           A significant lifetime discount for believing in Sayso&apos;s version 1. When Sayso hard launches to the public ({FOUNDER_PRICING_CONFIG.launchWindow}), pricing goes up and moves to a la carte per product. Locking in now keeps your pricing for good.

@@ -74,26 +74,27 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
 
   'smart-capture': {
     key: 'smart-capture',
-    // Each captured field holds ~4s before the next, so the banners don't flash.
-    durationMs: 21000,
+    // The first four fields land already captured; only the last two animate in,
+    // then it syncs to the CRM right away so the sync is the clear payoff.
+    durationMs: 6500,
     baseCallSeconds: 61,
     leadType: 'Buyer',
     transcript: [
-      { at: 200, from: 'prospect', text: 'We are over in San Pedro, pretty close to the water.' },
-      { at: 4200, from: 'prospect', text: 'We want something smaller so the payments are lower every month.' },
-      { at: 9000, from: 'agent', text: 'Got it. Are you working with another agent on this yet?' },
-      { at: 12600, from: 'prospect', text: 'No, not yet. We could look at next steps in the next week or so.' },
+      { at: 200, from: 'prospect', text: 'We want something smaller so the payments are lower every month.' },
+      { at: 2400, from: 'agent', text: 'Got it. Let me capture all of this and sync it straight to your CRM.' },
     ],
     lpmama: [
-      { at: 900, field: 'location', value: 'San Pedro, close to the water' },
-      { at: 3700, field: 'price', value: '$800k-825k budget with a monthly payment of $5k-6k. Spoke with lender.' },
-      { at: 6500, field: 'motivation', value: 'Downsizing, kids off to college, does not want to pay for all the space they are not using and needs to save money for retirement.' },
-      { at: 9300, field: 'mortgage', value: 'Has $400k saved for downpayment, spoke to lender, first time home buyer.' },
-      { at: 12100, field: 'agent', value: 'Not working with another agent yet' },
-      { at: 14900, field: 'appointment', value: '2pm booked tomorrow. Starbucks on Gaffey/3rd.' },
+      // Negative times = already captured when the chapter opens (no bubble).
+      { at: -3000, field: 'location', value: 'San Pedro, close to the water' },
+      { at: -3000, field: 'price', value: '$800k-825k budget with a monthly payment of $5k-6k. Spoke with lender.' },
+      { at: -3000, field: 'motivation', value: 'Downsizing, kids off to college, does not want to pay for all the space they are not using and needs to save money for retirement.' },
+      { at: -3000, field: 'agent', value: 'Not working with another agent yet' },
+      // The last two animate in quickly.
+      { at: 600, field: 'mortgage', value: 'Has $400k saved for downpayment, spoke to lender, first time home buyer.' },
+      { at: 1800, field: 'appointment', value: '2pm booked tomorrow. Starbucks on Gaffey/3rd.' },
     ],
-    syncAt: 16600,
-    crmNoteAt: 17600,
+    syncAt: 2900,
+    crmNoteAt: 3600,
   },
 
   pulse: {
@@ -107,9 +108,9 @@ export const CHAPTERS: Record<FeatureMeta['key'], Chapter> = {
     ],
     lpmama: [],
     pulse: {
-      zipValidAt: 2600,
-      openAt: 3200,
-      resultsAt: 5400,
+      zipValidAt: 1600,
+      openAt: 2200,
+      resultsAt: 4400,
       zip: '90731',
       city: 'San Pedro, CA',
       facts: [

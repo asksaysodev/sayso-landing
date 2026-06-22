@@ -7,10 +7,10 @@ export function CtaBlock() {
   return (
     <section className="bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-8 md:p-10 text-center">
       <h2 className="font-comic text-3xl md:text-4xl text-white tracking-wide mb-3">
-        Lock in Founder Pricing
+        Lock in Early Access Pricing
       </h2>
       <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-6 leading-relaxed">
-        Founder Pricing is available for a limited number of teams until Sayso&apos;s hard launch, expected fall 2026, and the rate you lock in now is yours for good. If you want your team on Sayso, now is the time to start.
+        Early Access Pricing is available for a limited number of teams until Sayso&apos;s hard launch, expected fall 2026, and the rate you lock in now is yours for good. If you want your team on Sayso, now is the time to start.
       </p>
       <a
         href="https://calendly.com/asksayso/demo"

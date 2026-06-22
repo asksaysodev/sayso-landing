@@ -45,7 +45,7 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-download-persona-page-get-started` | Opens system-select modal | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
 | `cta-download-pricing-individual` | Opens system-select modal | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Individual Agent plan |
 | `cta-signup-pricing-teams` | Opens app.asksayso.com signup | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Teams & Brokerages plan |
-| `cta-book-demo-pricing-coming-soon` | Redirects to `/demo` | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | "Coming Soon" plan |
+| `cta-book-demo-pricing-coming-soon` | Redirects to `/demo` | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | "Questions? Chat with our team" CTA below the pricing cards |
 | `cta-onboarding-get-started` | Starts onboarding flow | [components/onboarding/OnboardingFlow.tsx](../../components/onboarding/OnboardingFlow.tsx) | Welcome screen start button |
 | `cta-book-demo-onboarding-complete` | Opens demo calendar | [components/onboarding/OnboardingNavButtons.tsx](../../components/onboarding/OnboardingNavButtons.tsx) | Terminal CTA after onboarding |
 | `form-newsletter-footer` | (iframe wrapper) | [components/landing/Footer.tsx](../../components/landing/Footer.tsx) | Beehiiv iframe, see footnote |

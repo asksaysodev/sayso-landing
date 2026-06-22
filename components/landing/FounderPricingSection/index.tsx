@@ -3,7 +3,7 @@
  *
  * Stacks seven panels with consistent vertical spacing:
  *   1. Hero with "Sayso for Teams" badge and intro
- *   2. PricingModelPanel explaining team-wide pricing + Founder Pricing
+ *   2. PricingModelPanel explaining team-wide pricing + Early Access Pricing
  *   3. HoursCaseStudy showing what an hour means with two stat cards
  *   4. IncludedProducts listing Cue, Smart Capture, Pulse, Playbook
  *   5. PricingCalculator with slider + tier band selector

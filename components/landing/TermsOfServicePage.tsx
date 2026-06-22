@@ -11,7 +11,7 @@ export function TermsOfServicePage() {
           <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
             Terms and Conditions
           </h1>
-          <p className="text-sm text-[#1D4871]/50">Last updated: November 19, 2025</p>
+          <p className="text-sm text-[#1D4871]/50">Last updated: June 19, 2026</p>
           <div className="mt-6 border-t-2 border-[#FFDE59]" />
         </div>
 
@@ -246,6 +246,48 @@ export function TermsOfServicePage() {
             These Terms are governed by the laws of the State of Delaware, without regard to
             conflict of law rules. All disputes will be resolved exclusively in the state or federal
             courts located in Delaware, subject to the arbitration terms above.
+          </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* SMS Terms of Service */}
+        <section className="mt-10 space-y-4">
+          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+            SMS Terms of Service
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            <span className="font-semibold text-[#1D4871]">Program:</span> Sayso Text Messaging
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            By providing your phone number and opting in, you consent to receive SMS/text messages
+            from Sayso. Messages may include appointment and demo confirmations, scheduling
+            reminders, account and service updates, event and webinar reminders, and promotional
+            offers.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Message frequency varies. Message and data rates may apply.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            To cancel at any time, reply STOP to any message. After you reply STOP, we will send a
+            one-time confirmation message, and you will no longer receive SMS messages from us.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            For help, reply HELP at any time or contact us at{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>
+            .
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Carriers are not liable for delayed or undelivered messages.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            For details on how we handle your data, see our{' '}
+            <a href="https://www.asksayso.com/privacy/" className="text-[#2367EE] hover:underline">
+              Privacy Policy
+            </a>
+            .
           </p>
         </section>
 

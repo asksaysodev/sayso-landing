@@ -3,6 +3,22 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
 
+  // The sitemap (app/sitemap.ts) uses `revalidate`, so it regenerates in a
+  // serverless function at runtime, not just at build time. The blog posts are
+  // loaded with a raw `fs.readdirSync(content/blog)` (the .mdx files are never
+  // imported as modules), which Next.js output file tracing cannot detect, so
+  // those files were excluded from the function bundle. On every revalidation
+  // getAllPosts() saw an empty directory, returned [], and silently dropped all
+  // blog URLs from the live sitemap. Forcing the blog content into the trace
+  // keeps the hourly scheduled-post behavior working. (Glossary/objection/etc.
+  // slugs come from static imports in their index.ts files, so they are bundled
+  // automatically and were never affected.)
+  experimental: {
+    outputFileTracingIncludes: {
+      '/sitemap.xml': ['./content/blog/**/*'],
+    },
+  },
+
   async redirects() {
     return [
       // ──────────────────────────────────────────────────

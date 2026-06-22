@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
+import { HeroObjectionMoment } from '@/components/landing/HeroObjectionMoment';
 import type { HeroContent } from '@/lib/content/personas/types';
 
 const logos = [
@@ -18,9 +20,10 @@ const logos = [
 const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
 const defaultContent: HeroContent = {
-  headline: 'Book 2x More Appointments from Prospecting Calls',
+  headline: 'When a prospect pushes back, do you know what to say next?',
+  headlineSize: 'text-4xl sm:text-5xl lg:text-6xl',
   tagline:
-    'Real-time coaching during live calls helps agents handle objections, stay on track, and automatically log notes in your CRM.',
+    'Sayso listens during your live calls and shows you the right thing to say the moment an objection lands, so you stay in control and book more appointments.',
 };
 
 export function HeroWithVideo({ content = defaultContent }: { content?: HeroContent }) {
@@ -61,22 +64,39 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
           </div>
         </div>
 
-        {/* Full-width demo showcase */}
-        <div className="mt-6 md:mt-8 max-w-[900px] mx-auto">
-          <div
-            className="w-full rounded-2xl overflow-hidden border border-[#c4c4c4]"
-            style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08)' }}
-          >
-            <video
-              src="/sayso-demo.mp4"
-              poster="/sayso-demo-poster.jpg"
-              preload="auto"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full block"
-            />
+        {/* The wow moment: an objection lands, then Sayso shows what to say next */}
+        <div className="mt-8 md:mt-10 max-w-[640px] mx-auto">
+          <HeroObjectionMoment />
+
+          {/* Proof line directly under the moment, the way the category leaders do it */}
+          <p className="mt-5 text-center text-sm font-semibold text-[#1D4871]/70 max-w-[460px] mx-auto">
+            Agents using Sayso book appointments up to 12x more efficiently from the same call list.
+          </p>
+
+          {/* Secondary CTA into the full product tour */}
+          <div className="mt-5 flex justify-center">
+            <Link
+              href="/product-tour"
+              data-analytics-id="cta-product-tour-hero"
+              className="inline-flex items-center justify-center rounded-full bg-transparent px-6 py-3 text-base font-semibold text-[#1D4871] border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2"
+            >
+              See more of Sayso
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ml-2 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
 

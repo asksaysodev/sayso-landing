@@ -58,7 +58,7 @@ export function LaunchComparison() {
           What changes after our hard launch
         </h2>
         <p className="text-base md:text-lg text-[#1D4871]/75 leading-relaxed">
-          Three things change when Sayso hard launches ({FOUNDER_PRICING_CONFIG.launchWindow}): Founder Pricing closes, prices increase, and instead of one rate, each product has its own cost.
+          Three things change when Sayso hard launches ({FOUNDER_PRICING_CONFIG.launchWindow}): Early Access Pricing closes, prices increase, and instead of one rate, each product has its own cost.
         </p>
       </div>
 
