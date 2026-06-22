@@ -11,7 +11,7 @@ export function PrivacyPolicyPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
             Privacy Policy
           </h1>
-          <p className="text-sm text-[#1D4871]/50">Last updated: November 7, 2025</p>
+          <p className="text-sm text-[#1D4871]/50">Last updated: June 19, 2026</p>
           <div className="mt-6 border-t-2 border-[#FFDE59]" />
         </div>
 
@@ -291,6 +291,40 @@ export function PrivacyPolicyPage() {
             We may update this Privacy Policy from time to time. If we make material changes, we
             will post the updated version on this page and update the "Last updated" date. Your
             continued use of the Service after changes means you accept the revised Policy.
+          </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* SMS/Text Messaging */}
+        <section className="mt-10 space-y-4">
+          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+            SMS/Text Messaging
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            From time to time, Sayso may send SMS/text messages to users who have provided consent.
+            These messages may include appointment and demo confirmations, scheduling reminders,
+            account and service updates, event and webinar reminders, and promotional offers.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Message frequency varies. Message and data rates may apply.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            You may opt out at any time by replying STOP to any message. Reply HELP for assistance
+            or contact us at{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>
+            .
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Carriers are not liable for delayed or undelivered messages.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We do not share SMS opt-in consent data or mobile phone numbers with third parties or
+            affiliates for marketing or promotional purposes. Text messaging originator opt-in data
+            and consent will not be shared with any third parties, excluding aggregators and
+            providers of the Text Message services.
           </p>
         </section>
 
