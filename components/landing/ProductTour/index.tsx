@@ -122,6 +122,7 @@ export function ProductTour() {
             derived={derived}
             prospect={DEMO_PROSPECT}
             timer={fubTimer}
+            elapsed={elapsed}
           />
         </div>
 

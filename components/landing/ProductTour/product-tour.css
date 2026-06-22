@@ -218,6 +218,8 @@
 
 /* ---------- Insights vertical panel ---------- */
 .pt-insights {
+  /* Fixed width so long captured values wrap (grow taller), never widen the panel. */
+  width: 300px;
   padding: 12px 14px;
   border-radius: 16px;
   display: flex;
@@ -301,10 +303,11 @@
 }
 /* Smart Capture "just captured" banner (full width, never clips) */
 .pt-capture-banner {
+  /* Stack label over value so long text grows downward, not sideways. */
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
   min-height: 38px;
   padding: 8px 10px;
   border-radius: 10px;
@@ -320,6 +323,7 @@
   font-size: 12px;
   line-height: 1.35;
   color: rgba(255, 255, 255, 0.82);
+  overflow-wrap: anywhere;
 }
 .pt-capture-idle {
   font-size: 12px;
@@ -437,7 +441,8 @@
 /* ---------- Mobile: let the feature panels fill the column ---------- */
 .pt-mobile .pt-cue-panel,
 .pt-mobile .pt-playbook,
-.pt-mobile .pt-zip-dropdown {
+.pt-mobile .pt-zip-dropdown,
+.pt-mobile .pt-insights {
   width: 100%;
   max-width: none;
 }
@@ -480,4 +485,15 @@
 }
 .pt-fade-up {
   animation: pt-fade-up 280ms ease-out forwards;
+}
+
+/* ---------- Sayso note logged to CRM: subtle highlight as it lands ---------- */
+@keyframes pt-note-glow {
+  0% { background-color: rgba(35, 103, 238, 0.16); }
+  70% { background-color: rgba(35, 103, 238, 0.07); }
+  100% { background-color: rgba(35, 103, 238, 0); }
+}
+.pt-note-logged {
+  border-radius: 8px;
+  animation: pt-fade-up 280ms ease-out, pt-note-glow 2.8s ease-out;
 }
