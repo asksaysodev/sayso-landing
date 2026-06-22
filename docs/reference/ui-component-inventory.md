@@ -193,10 +193,10 @@
 
 ### PricingSection
 - **Path:** `components/landing/PricingSection.tsx`
-- **Description:** Pricing page with three tiers (Individual Agent, Teams, Coming Soon) and feature bullets.
+- **Description:** Pricing page with two tiers (Individual Agent, Teams & Brokerages) and feature bullets, plus a "Questions? Chat with our team" CTA below the cards.
 - **Used on:** Pricing (`/pricing`), UI catalog (`/(marketing)/ui`)
 - **Props:** None (uses internal state and DemoCalendarContext)
-- **Visual behavior:** Light gray background with halftone pattern, 3-column card grid (1-col mobile), popular plan highlighted with blue shadow/accent, checkmark icons for features, free trial badge.
+- **Visual behavior:** Light gray background with halftone pattern, 2-column card grid (1-col mobile), popular plan highlighted with blue shadow/accent, checkmark icons for features, free trial badge.
 
 ### Card
 - **Path:** `components/ui/Card.tsx`

@@ -25,22 +25,22 @@ export function CaseStudyCard({ card }: CaseStudyCardProps) {
     : 'text-sm md:text-[15px] text-[#1D4871]/80 leading-relaxed';
 
   const statWrapCls = isDark
-    ? 'bg-white/[0.07] border-2 border-white/30 rounded-xl p-3 text-center'
-    : 'bg-[#F4F4F5] border-2 border-[#1D4871] rounded-xl p-3 text-center';
+    ? 'bg-white/[0.07] border-2 border-white/30 rounded-xl px-2 py-3 md:p-3 text-center'
+    : 'bg-[#F4F4F5] border-2 border-[#1D4871] rounded-xl px-2 py-3 md:p-3 text-center';
 
   const statNumCls = isDark
-    ? 'font-comic text-2xl md:text-[26px] text-[#FFDE59] tracking-wide leading-none'
-    : 'font-comic text-2xl md:text-[26px] text-[#1D4871] tracking-wide leading-none';
+    ? 'font-comic text-xl md:text-[26px] text-[#FFDE59] tracking-wide leading-none'
+    : 'font-comic text-xl md:text-[26px] text-[#1D4871] tracking-wide leading-none';
 
   const statLblCls = isDark
-    ? 'text-[10.5px] font-bold uppercase tracking-wide text-white/80 mt-2 leading-tight'
-    : 'text-[10.5px] font-bold uppercase tracking-wide text-[#1D4871]/70 mt-2 leading-tight';
+    ? 'text-[10px] md:text-[10.5px] font-bold uppercase tracking-tight md:tracking-wide text-white/80 mt-2 leading-tight'
+    : 'text-[10px] md:text-[10.5px] font-bold uppercase tracking-tight md:tracking-wide text-[#1D4871]/70 mt-2 leading-tight';
 
   return (
     <div className={wrapperCls}>
       <h3 className={titleCls}>{card.title}</h3>
       <p className={bodyCls}>{card.body}</p>
-      <div className="grid grid-cols-3 gap-2.5 mt-5">
+      <div className="grid grid-cols-3 gap-2 md:gap-2.5 mt-5">
         {card.stats.map((s) => (
           <div key={s.label} className={statWrapCls}>
             <div className={statNumCls}>{s.value}</div>

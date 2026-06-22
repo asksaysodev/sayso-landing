@@ -75,7 +75,7 @@ export const INCLUDED_PRODUCTS: IncludedProduct[] = [
 
 export const LAUNCH_COMPARISON: ComparisonColumn[] = [
   {
-    tag: 'Founder Pricing · now',
+    tag: 'Early Access Pricing · now',
     title: 'One price, one org',
     variant: 'now',
     bullets: [
