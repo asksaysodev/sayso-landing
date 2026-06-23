@@ -3,10 +3,8 @@
  *
  * Content model for the conversion-focused "Sayso + {Partner}" integration
  * landing pages (modeled on partner co-marketing pages like fello.ai/integrations/sierra).
- *
- * These are intentionally separate from the SEO content pages under
- * lib/content/integrations. Those are text/FAQ pages for search; these are
- * marketing pages built for a demo conversion with UTM tracking.
+ * These are marketing pages built for demo conversion; each partner page lives
+ * at /integrations/partners/[slug].
  */
 export interface PartnerIntegrationEntry {
   /** URL slug, e.g. "suresend" -> /integrations/partners/suresend */
