@@ -1,7 +1,8 @@
 import type { PartnerIntegrationEntry } from './types';
 import { suresend } from './suresend';
+import { followUpBoss } from './follow-up-boss';
 
-const entries: PartnerIntegrationEntry[] = [suresend];
+const entries: PartnerIntegrationEntry[] = [followUpBoss, suresend];
 
 export function getAllPartnerIntegrations(): PartnerIntegrationEntry[] {
   return entries;
