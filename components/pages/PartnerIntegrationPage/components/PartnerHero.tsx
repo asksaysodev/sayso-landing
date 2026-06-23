@@ -20,7 +20,7 @@ export function PartnerHero({ entry }: PartnerHeroProps) {
         {/* Paired logos */}
         <div className="flex items-center justify-center gap-4 md:gap-6 mb-8">
           <Image
-            src="/logos/logo-pos-horizontal.png"
+            src="/logos/logo-pos-transparent-horizontal.png"
             alt="Sayso"
             width={140}
             height={48}
