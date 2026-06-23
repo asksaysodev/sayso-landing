@@ -5,6 +5,8 @@ export interface NavLink {
   external?: boolean;
   /** Optional subtitle displayed below the label (e.g. feature description) */
   subtitle?: string;
+  /** If true, render indented as a child of the item above (e.g. an integration partner under "Integrations"). */
+  indent?: boolean;
   /** Optional data-analytics-id rendered on the link for GTM trigger targeting */
   dataAnalyticsId?: string;
 }
@@ -46,7 +48,8 @@ export const headerNav: NavSection[] = [
       { label: 'Team Leaders', href: '/for/team-leaders' },
       { label: 'New Agents', href: '/for/new-agents' },
       { label: 'ISAs', href: '/for/isas' },
-      // { label: 'Integrations', href: '/integrations' }, // TODO: re-enable when integrations article is published
+      { label: 'Integrations', href: '/integrations' },
+      { label: 'SureSend', href: '/integrations/partners/suresend', subtitle: 'CRM integration', indent: true },
     ],
   },
   {
@@ -102,7 +105,8 @@ export const footerNav: NavSection[] = [
       { label: 'Team Leaders', href: '/for/team-leaders' },
       { label: 'New Agents', href: '/for/new-agents' },
       { label: 'ISAs', href: '/for/isas' },
-      // { label: 'Integrations', href: '/integrations' }, // TODO: re-enable when integrations article is published
+      { label: 'Integrations', href: '/integrations' },
+      { label: 'SureSend', href: '/integrations/partners/suresend', indent: true },
     ],
   },
   {
