@@ -15,7 +15,7 @@ export const followUpBoss: PartnerIntegrationEntry = {
 
   seoTitle: 'Sayso + Follow Up Boss Integration | Real-Time Coaching',
   seoDescription:
-    'Sayso integrates with Follow Up Boss to coach your agents live on every call. Real-time conversation intelligence, automatic notes, and more booked appointments.',
+    'Sayso integrates with Follow Up Boss to coach agents live on every call: real-time conversation intelligence, automatic notes, and more booked appointments.',
 
   eyebrow: 'Integrations',
   h1: 'Keep your agents from losing opportunities with real-time conversation intelligence',
