@@ -106,26 +106,43 @@ Do not start writing until the brief is complete.
 Write a complete guest post in GEB's voice. The author is a real person sharing real learnings, not "the Sayso team."
 
 ### Voice & point of view
-- **First person, confident, opinionated.** Open with a thesis or a contrarian framing the reader will want to argue with or nod along to.
+- **Measured, plain-spoken, and explanatory.** Open with a clear thesis or a reframe, but make the point through reasoning, not hot takes. The voice is calm and confident, never contrarian-for-effect, punchy, or breathless.
+- **Reader-facing register.** Address the reader as "you" and write about "an agent" in general. Keep first-person "I" rare or absent; the authority comes from how specifically the post understands the agent's day, not from "from where I sit" assertions. (GEB authors often write in first person; for this series we deliberately favor the reader-facing register, which still fits GEB's essay format.)
 - **Practitioner register.** Write like someone who has been close to thousands of real estate calls and has watched AI change the workflow, talking to peers who already know the industry.
-- **Conversational but credible.** Grounded, occasionally blunt. Not academic, not clickbait, not motivational.
+- **Grounded and useful.** Full, natural sentences with normal flow. Not academic, not clickbait, not motivational.
 
 ### Structure
-- **Hook/thesis intro** (2-4 sentences). State the argument or the shift. No "In today's market" throat-clearing.
+- **Hook/thesis intro** (a few short paragraphs). Name the problem or the shift in plain terms. The reference pillar opens on the "strange problem" that AI can make a five-minute task take two hours, then narrows to the real point. No "In today's market" throat-clearing.
+- **A framing section before the list** (pillar role). After the intro, include a short section that defines the lens (the reference pillar uses "What an AI-native agent actually looks like") so the list lands inside an argument, not as a bare listicle.
 - **Descriptive subheads** (H2, and H3 where useful). A reader skimming headings should get the argument.
 - **Occasional bullet lists** within sections where they aid scanning. Don't turn the whole post into a listicle unless the title is explicitly a numbered list (pillar role).
-- **Forward-looking conclusion** — a takeaway about where this is heading, in the GEB style ("As X matures, Y is becoming more valuable than Z").
+- **Forward-looking conclusion** — a takeaway about where this is heading. The reference pillar closes with "The advantage is not the tool": the point is the workflow and the judgment, not the software.
+
+### Pillar list-item format (pillar role only)
+
+Each numbered workflow is a tight, self-contained mini-section that follows the reference pillar's pattern:
+- An H3 with a short, plain name: `### 1. The five-minute lead` (not a keyword-stuffed heading).
+- **Lead with one sentence stating what AI does here**, usually in the form "Use AI to [outcome]."
+- Follow with a clarifier that draws the line between the shallow version and the real one ("This is not about sending an instant generic text, but instead about ...") and names the underlying process.
+- Keep each item to roughly 2-4 short sentences. Breadth over depth; the deep-dives carry the detail.
+- Where a sibling deep-dive covers the item, end the item with a plain-text pointer on its own line, in italics: `*Supporting article: [Sibling Title]*`. This is a label, not a hyperlink (the siblings are not published yet), so it stays compatible with the no-body-links rule and is easy to keep or strip at submission time.
 
 ### Length
 - **deep-dive:** 900-1,400 words. Go deep on one idea.
 - **pillar:** 1,300-1,800 words. Survey breadth; each list item is a tight, self-contained mini-section with one concrete example.
 - Word count is a scoping target, not a floor. If the argument is fully made, stop.
 
-### First-hand experience (include at least 2, this is non-negotiable for GEB)
+### First-hand experience (calibrated by role, non-negotiable for GEB)
+
+Draw from at least one of these per post; the bar scales with the role:
 - A specific scenario walked through step by step (what an agent actually does, not "agents should").
 - A real number or benchmark with the texture of experience behind it.
 - A specific mistake and its consequence.
 - A counter-intuitive insight from having watched this play out repeatedly.
+
+**Deep-dive:** include at least 2 of the above. Depth and specificity are the whole point of a deep-dive.
+
+**Pillar:** the breadth format means lighter depth per item, so credibility comes from one or two grounding data points up front (the reference pillar uses the 82% adoption vs. 17% impact vs. 46% no-difference split) plus the specific texture of each workflow, rather than a full scenario inside every list item. Do not pad each item with invented numbers to hit a quota.
 
 ### Promotional discipline (the core rule)
 - The **body is vendor-neutral.** Do not pitch Sayso. Do not link to Sayso in the body.
@@ -198,9 +215,10 @@ After writing the file, give the user a short summary in chat: the title, word c
 ## QUALITY CHECKLIST (self-audit before output)
 
 - [ ] GEB read live this run (index + contribute page + 3-5 posts); voice matched
-- [ ] Post has a clear, opinionated thesis, not just a topic
-- [ ] Written in confident first-person practitioner voice (the named author, not "Sayso Team")
-- [ ] At least 2 first-hand experience markers (specific scenario, real number, real mistake, or earned insight)
+- [ ] Post has a clear point of view, not just a topic, argued calmly rather than as a hot take
+- [ ] Written in a measured, reader-facing practitioner voice ("you"/general agent, first-person "I" rare or absent; the named author, not "Sayso Team")
+- [ ] Pillar role: includes the framing section before the list, and each item follows the "Use AI to ..." mini-section pattern with a `*Supporting article: ...*` pointer where a sibling deep-dive exists
+- [ ] First-hand experience present and calibrated to role (deep-dive: at least 2 markers; pillar: grounding data up front plus specific workflow texture)
 - [ ] At least 1 information-gain element beyond the obvious top results
 - [ ] Audience is industry pros, not consumers; register assumes industry knowledge
 - [ ] Body is vendor-neutral; Sayso appears in the body only on ★ topics, only once, with no link (or not at all)
