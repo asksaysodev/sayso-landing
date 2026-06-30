@@ -69,6 +69,31 @@
   }
 }
 
+/* Soft one-shot ring pulse, used by the "On a live call" recording dot in the
+   hero intro. */
+@keyframes liveRingPulse {
+  0% { transform: scale(0.7); opacity: 0.45; }
+  70% { opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.live-ring-pulse {
+  animation: liveRingPulse 2.4s ease-out infinite;
+}
+
+/* Typing-indicator dots for the "On a live call" hero intro bubbles. */
+@keyframes typingDot {
+  0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-2px); }
+}
+.typing-dot {
+  animation: typingDot 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-ring-pulse { animation: none; opacity: 0; }
+  .typing-dot { animation: none; opacity: 0.6; }
+}
+
 /* Fade in for signal quotes */
 .showcase-fade-in {
   animation: fadeIn 400ms ease-out forwards;
