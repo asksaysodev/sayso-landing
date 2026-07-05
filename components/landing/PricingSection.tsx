@@ -3,13 +3,17 @@
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 
+interface BulletGroup {
+  header?: string;
+  bullets: string[];
+}
+
 interface PricingPlan {
   title: string;
   price: string;
   priceNote?: string;
   description: string;
-  bulletHeader?: string;
-  bullets: string[];
+  groups: BulletGroup[];
   freeTrialBadge?: string;
   buttonLabel: string;
   buttonOnClick: () => void;
@@ -58,23 +62,29 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
       )}
 
       <ul className="flex-1 space-y-3 mb-6">
-        {plan.bulletHeader && (
-          <li className="text-sm font-semibold text-[#1D4871]/80 italic mb-1">
-            {plan.bulletHeader}
-          </li>
-        )}
-        {plan.bullets.map((bullet) => (
-          <li key={bullet} className="flex items-start gap-2">
-            <svg
-              className="w-5 h-5 text-[#2367EE] flex-shrink-0 mt-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="text-base text-[#1D4871]/70 leading-relaxed">{bullet}</span>
+        {plan.groups.map((group, groupIndex) => (
+          <li key={group.header ?? `group-${groupIndex}`}>
+            {group.header && (
+              <p className={`text-sm font-semibold text-[#1D4871]/80 italic mb-3 ${groupIndex > 0 ? 'mt-5' : ''}`}>
+                {group.header}
+              </p>
+            )}
+            <ul className="space-y-3">
+              {group.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-2">
+                  <svg
+                    className="w-5 h-5 text-[#2367EE] flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base text-[#1D4871]/70 leading-relaxed">{bullet}</span>
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
@@ -100,21 +110,35 @@ export function PricingSection() {
   const plans: PricingPlan[] = [
     {
       title: 'Individual Agent',
-      price: '$69 / month',
-      priceNote: '*Billed annually, save $120. Or $79/month.',
+      // TODO: confirm headline price with Franco (implied $250/mo billed annually)
+      price: '$250 / month',
+      priceNote: '*Billed annually, save $1,200. Or $350/month.',
       description: 'For agents who want daily consistency.',
-      freeTrialBadge: '3 day Free Trial included',
-      bulletHeader: 'Every Sayso product included, for a limited time:',
-      bullets: [
-        'Cue: real-time conversation intelligence',
-        'Smart Capture: automatic call notes sorted into LPMAMA and synced to your CRM',
-        'Pulse: live market data mid-call, including prices, days on market, and inventory',
-        'Playbook: your custom scripts on screen, right next to Cue',
-        'Dashboard analytics',
-        'Email Support',
-        'Up to 50% off new features',
+      groups: [
+        {
+          header: 'Sayso:',
+          bullets: [
+            'Cue: real-time conversation intelligence',
+            'Smart Capture: automatic call notes sorted and synced to your CRM',
+            'Pulse: live market data mid-call, including prices, days on market, and inventory',
+            'Playbook: your custom scripts on screen, right next to Cue',
+            'Composer: custom script generator, built on NLP, psychology, proven frameworks',
+          ],
+        },
+        {
+          header: 'Agent Support:',
+          bullets: [
+            'Weekly group coaching call for conversations & conversion',
+            '1-on-1 onboarding',
+            'Leads list',
+            'Added to Ranked Agent Referral Network',
+            'Dashboard analytics',
+            'Email Support',
+          ],
+        },
       ],
-      buttonLabel: 'Start your free trial',
+      buttonLabel: 'Claim early access',
+      // TODO: swap to new Stripe link from Franco once received
       buttonOnClick: openSystemSelect,
       buttonVariant: 'primary',
       analyticsId: 'cta-download-pricing-individual',
@@ -124,15 +148,22 @@ export function PricingSection() {
       title: 'Teams & Brokerages',
       price: 'Custom based on team size',
       description: 'For teams and brokerages.',
-      bulletHeader: "Every agent gets what's in Individual Agent, plus:",
-      bullets: [
-        'Custom team onboarding + enablement',
-        'Dedicated Team Success Manager',
-        'Unlimited agents and team members',
-        'Admin controls + reporting',
+      groups: [
+        {
+          header: 'Every agent gets what’s in Individual Agent, plus team gets:',
+          bullets: [
+            'Custom team implementation + train-the-trainer',
+            'Leadership dashboard with unlimited teams and groups',
+            'Priority Support',
+            'Dedicated CSM',
+            '1-on-1 quarterly impact reviews with leadership',
+            'Added to Ranked Team Referral Network',
+            'Conversion Benchmarking',
+          ],
+        },
       ],
       buttonLabel: 'Assemble your team',
-      buttonOnClick: () => { window.open('https://app.asksayso.com/login?signup=true', '_blank'); },
+      buttonOnClick: () => { window.open('https://calendly.com/asksayso/demo', '_blank'); },
       buttonVariant: 'secondary',
       analyticsId: 'cta-signup-pricing-teams',
     },
@@ -149,10 +180,10 @@ export function PricingSection() {
             Simple Pricing.
           </h2>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
-            Free Trial. Custom Set Up. Included Training.
+            Custom Set Up. Training Included.
           </p>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed mt-3">
-            Every Sayso product is included at this price for a limited time, so secure your early access pricing now.
+            Founding member &amp; Early access pricing is locked for life. As long as your subscription stays active, your rate will never increase.
           </p>
         </div>
 
