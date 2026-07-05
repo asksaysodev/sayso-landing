@@ -11,6 +11,9 @@ const logos = [
   { name: 'Olaf', src: '/social-proof/olaf-logo.png' },
   { name: 'Maxwell Properties', src: '/social-proof/maxwell-properties.png' },
   { name: 'Keller Williams Palo Alto', src: '/social-proof/kw-palo-alto.png' },
+  { name: 'Harcourts', src: '/social-proof/harcourts.png' },
+  { name: 'Yvans Cator Jr. Real Estate', src: '/social-proof/yvans-cator-real-estate.png' },
+  { name: 'Keller Williams Executive', src: '/social-proof/kw-executive.png' },
 ];
 
 // Repeat the logo set so the marquee fills wide screens and loops seamlessly
