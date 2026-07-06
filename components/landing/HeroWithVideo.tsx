@@ -1,8 +1,15 @@
 'use client';
 
+/**
+ * Homepage hero. Same copy and CTA as before, but the demo video is replaced
+ * with the live Sayso coach widget (the Option 7 "Real Widget, Split" element:
+ * the genuine coach UI plus the quiet Follow Up Boss sync chip). On desktop the
+ * copy sits left and the widget right; on mobile they stack, copy then widget.
+ */
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
+import { RealWidgetPanel } from '@/components/landing/RealWidgetPanel';
 import type { HeroContent } from '@/lib/content/personas/types';
 
 const logos = [
@@ -11,6 +18,9 @@ const logos = [
   { name: 'Olaf', src: '/social-proof/olaf-logo.png' },
   { name: 'Maxwell Properties', src: '/social-proof/maxwell-properties.png' },
   { name: 'Keller Williams Palo Alto', src: '/social-proof/kw-palo-alto.png' },
+  { name: 'Harcourts', src: '/social-proof/harcourts.png' },
+  { name: 'Yvans Cator Jr. Real Estate', src: '/social-proof/yvans-cator-real-estate.png' },
+  { name: 'Keller Williams Executive', src: '/social-proof/kw-executive.png' },
 ];
 
 // Repeat the logo set so the marquee fills wide screens and loops seamlessly
@@ -27,61 +37,54 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
   const { openSystemSelect } = useDemoCalendar();
 
   return (
-    <section className="relative bg-white pt-[50px] lg:pt-[60px] pb-[40px] lg:pb-[60px] overflow-x-hidden v2-halftone">
-      <div className="max-w-[1600px] mx-auto px-6">
+    <section className="relative bg-white pt-7 lg:pt-10 pb-8 lg:pb-12 overflow-x-hidden v2-halftone">
+      {/* Match the navbar / site container (max-w-[1200px]) so the hero aligns
+          with the rest of the page instead of spilling to the edges. */}
+      <div className="max-w-[1200px] mx-auto px-6">
 
-        {/* Centered headline + tagline + CTA */}
-        <div className="text-center max-w-[820px] mx-auto">
-          <h1
-            className={`font-comic tracking-wide leading-[1.05] text-[#1D4871] v4-slide-in-left ${content.headlineSize ?? 'text-4xl sm:text-5xl lg:text-6xl xl:text-7xl'}`}
-          >
-            {content.headline}
-          </h1>
-
-          <p className="mt-4 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-2xl mx-auto">
-            {content.tagline}
-          </p>
-          {content.taglineSub && (
-            <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-2xl mx-auto">
-              {content.taglineSub}
-            </p>
-          )}
-
-          <div className="mt-6 md:mt-8 flex flex-col items-center gap-2">
-            <button
-              onClick={openSystemSelect}
-              data-analytics-id="cta-download-hero"
-              className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 sm:px-9 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
-              style={{ boxShadow: '3px 3px 0px #1D4871' }}
+        {/* Split hero: copy left, live Sayso widget right. Stacks on mobile.
+            Headline, tagline, and CTA are centered within the left block. */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+          {/* Left: headline + tagline + CTA, centered in the block */}
+          <div className="text-center">
+            <h1
+              className={`font-comic tracking-wide leading-[1.05] text-[#1D4871] v4-slide-in-left ${content.headlineSize ?? 'text-4xl sm:text-5xl lg:text-6xl'}`}
             >
-              <LightningIcon size={16} className="mr-2 flex-shrink-0" />
-              Download Sayso
-            </button>
-            <p className="text-sm text-[#1D4871]/70">3-day free trial included</p>
-          </div>
-        </div>
+              {content.headline}
+            </h1>
 
-        {/* Full-width demo showcase */}
-        <div className="mt-6 md:mt-8 max-w-[900px] mx-auto">
-          <div
-            className="w-full rounded-2xl overflow-hidden border border-[#c4c4c4]"
-            style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08)' }}
-          >
-            <video
-              src="/sayso-demo.mp4"
-              poster="/sayso-demo-poster.jpg"
-              preload="auto"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full block"
-            />
+            <p className="mt-4 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-2xl mx-auto">
+              {content.tagline}
+            </p>
+            {content.taglineSub && (
+              <p className="mt-2 text-base md:text-lg lg:text-xl leading-relaxed text-[#1D4871]/80 max-w-2xl mx-auto">
+                {content.taglineSub}
+              </p>
+            )}
+
+            {/* CTA, directly under the text and centered */}
+            <div className="mt-6 md:mt-8 flex flex-col items-center gap-2">
+              <button
+                onClick={openSystemSelect}
+                data-analytics-id="cta-download-hero"
+                className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 sm:px-9 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
+                style={{ boxShadow: '3px 3px 0px #1D4871' }}
+              >
+                <LightningIcon size={16} className="mr-2 flex-shrink-0" />
+                Download Sayso
+              </button>
+              <p className="text-sm text-[#1D4871]/70">3-day free trial included</p>
+            </div>
+          </div>
+
+          {/* Right: the genuine Sayso coach, live on a call */}
+          <div className="w-full">
+            <RealWidgetPanel />
           </div>
         </div>
 
         {/* Social proof */}
-        <div className="mt-8 md:mt-10 pt-2 md:pt-4">
+        <div className="mt-8 md:mt-10 pt-1 md:pt-2">
           <style>{`
             @keyframes logo-marquee {
               from { transform: translateX(0); }

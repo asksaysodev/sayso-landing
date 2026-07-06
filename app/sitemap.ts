@@ -59,9 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const navHrefs = getAllNavHrefs();
   const allStaticPaths = new Set(['/', '/demo', '/download', ...navHrefs]);
 
-  // 2. Filter out excluded paths
+  // 2. Filter out excluded paths. The whole /integrations area (hub + partner
+  // pages) is intentionally kept out of the sitemap for now; the nav links to
+  // the partner pages would otherwise leak them in. Remove this prefix guard
+  // when integrations are ready to be indexed.
   const staticPages: MetadataRoute.Sitemap = Array.from(allStaticPaths)
-    .filter((path) => !EXCLUDED_PATHS.has(path))
+    .filter((path) => !EXCLUDED_PATHS.has(path) && !path.startsWith('/integrations'))
     .map((path) => ({
       url: `${siteUrl}${path.replace(/\/?$/, '/')}`,
       lastModified: now,

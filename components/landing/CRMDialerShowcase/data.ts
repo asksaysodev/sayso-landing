@@ -1,32 +1,71 @@
+export type MarketOverlay = {
+  /** Property-type pills shown above the facts, with one selected. */
+  propertyTypes: string[];
+  selectedType: string;
+  /** Two-column market facts (rendered as bullets). */
+  facts: { label: string; value: string }[];
+  /** L90D price trend direction, rendered with an arrow. */
+  trend: 'up' | 'down';
+};
+
 export const CONVERSATION_CYCLES = [
   {
     leadType: 'B' as const,
     leadLabel: 'Buyer',
-    location: { zip: '33331', city: 'Miami, FL' },
+    location: { zip: '33131', city: 'Miami, FL' },
+    // Legacy market list used by the 'glass' widget variant (product showcase).
     marketData: [
-      { label: 'Average Days on Market of zip', value: '90' },
+      { label: 'Average Days on Market of zip', value: '58' },
       { label: 'Last 90 days price trend', value: 'Up' },
-      { label: 'Average Price ft2 of zip', value: '$120' },
-      { label: 'Inventory level', value: 'Low' },
+      { label: 'Average Price ft2 of zip', value: '$682' },
+      { label: 'Inventory level', value: 'Balanced' },
     ],
-    buyerMessage: "We're thinking about the beach area — great for the schools.",
-    sellerMessage: "Got it. Which neighborhoods are you considering?",
-    saysoPrompt: "It sounds like that bigger house by the beach could really enhance your family's lifestyle. What would that change bring you that you're missing now?",
-    locationChip: 'Location: Near the beach.',
+    // Richer overlay used by the 'app' widget variant (hero), modeled on the
+    // real Sayso market panel.
+    marketOverlay: {
+      propertyTypes: ['Single Family', 'Multi-Family', 'Condo'],
+      selectedType: 'Condo',
+      facts: [
+        { label: 'Median Price', value: '$640,000' },
+        { label: 'Median Price / Sq Ft', value: '$682' },
+        { label: 'Median Days on Market', value: '58' },
+        { label: 'New Listings', value: '24' },
+        { label: 'Market', value: 'Balanced' },
+      ],
+      trend: 'up',
+    } satisfies MarketOverlay,
+    buyerMessage: "We love downtown Brickell, walkable and right on the bay.",
+    sellerMessage: "Brickell is a great pick. What draws you there?",
+    saysoPrompt:
+      "It sounds like a condo in downtown Brickell would put you right by the water and the restaurants you mentioned. What would living there change for you day to day?",
+    locationChip: 'Looking in downtown Brickell, Miami',
   },
   {
     leadType: 'S' as const,
     leadLabel: 'Seller',
     location: { zip: '90401', city: 'Santa Monica, CA' },
     marketData: [
-      { label: 'Average Days on Market of zip', value: '45' },
-      { label: 'Last 90 days price trend', value: 'Stable' },
-      { label: 'Average Price ft2 of zip', value: '$890' },
-      { label: 'Inventory level', value: 'High' },
+      { label: 'Average Days on Market of zip', value: '41' },
+      { label: 'Last 90 days price trend', value: 'Up' },
+      { label: 'Average Price ft2 of zip', value: '$1,180' },
+      { label: 'Inventory level', value: 'Low' },
     ],
-    buyerMessage: "I'm not sure if now is the right time to sell...",
-    sellerMessage: "What got you thinking about making a move?",
-    saysoPrompt: "It is understandable to feel unsure about timing. What got you thinking about moving, and what would that change bring you?",
-    locationChip: 'Stage: Considering Listing',
+    marketOverlay: {
+      propertyTypes: ['Single Family', 'Multi-Family', 'Condo'],
+      selectedType: 'Single Family',
+      facts: [
+        { label: 'Median Price', value: '$1,750,000' },
+        { label: 'Median Price / Sq Ft', value: '$1,180' },
+        { label: 'Median Days on Market', value: '41' },
+        { label: 'New Listings', value: '14' },
+        { label: 'Market', value: "Seller's" },
+      ],
+      trend: 'up',
+    } satisfies MarketOverlay,
+    buyerMessage: "Our place is two blocks from the Third Street Promenade.",
+    sellerMessage: "That location is in demand. What's prompting the move?",
+    saysoPrompt:
+      "Selling near the Third Street Promenade puts you in one of Santa Monica's strongest pockets. What's making you think about moving now, and what would the next place need to have?",
+    locationChip: 'Listing near the Third Street Promenade, Santa Monica',
   },
 ];

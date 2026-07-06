@@ -233,6 +233,15 @@ export function TermsOfServicePage() {
             express or implied. We do not guarantee that the Service will be error-free,
             uninterrupted, or free from harmful components.
           </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            By creating a Sayso account, you grant Sayso permission to display your name, logo,
+            and/or affiliated brokerage logo on our website and marketing materials. You may
+            request removal at any time by emailing{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>
+            .
+          </p>
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />

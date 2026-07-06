@@ -1,11 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getIntegrationBySlug, getAllIntegrationSlugs } from '@/lib/content/integrations';
+import {
+  getPartnerIntegrationBySlug,
+  getAllPartnerIntegrationSlugs,
+} from '@/lib/content/partner-integrations';
 import { buildMetadata } from '@/lib/seo/metadata';
-import { IntegrationPage } from '@/components/pages/IntegrationPage';
+import { PartnerIntegrationPage } from '@/components/pages/PartnerIntegrationPage';
 
 export async function generateStaticParams() {
-  return getAllIntegrationSlugs().map((slug) => ({ slug }));
+  return getAllPartnerIntegrationSlugs().map((slug) => ({ slug }));
 }
 
 interface PageProps {
@@ -14,18 +17,19 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const entry = getIntegrationBySlug(slug);
+  const entry = getPartnerIntegrationBySlug(slug);
   if (!entry) return { title: 'Not Found' };
   return buildMetadata({
     title: entry.seoTitle,
     description: entry.seoDescription,
-    path: `/integrations/${slug}`,
+    path: `/integrations/partners/${slug}`,
+    ogImage: entry.ogImage,
   });
 }
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const entry = getIntegrationBySlug(slug);
+  const entry = getPartnerIntegrationBySlug(slug);
   if (!entry) notFound();
-  return <IntegrationPage entry={entry} />;
+  return <PartnerIntegrationPage entry={entry} />;
 }
