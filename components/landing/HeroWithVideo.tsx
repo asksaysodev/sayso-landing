@@ -93,7 +93,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             }
 
             .logo-marquee-track {
-              animation: logo-marquee 60s linear infinite;
+              animation: logo-marquee 90s linear infinite;
             }
 
             .logo-marquee-wrapper:hover .logo-marquee-track {
