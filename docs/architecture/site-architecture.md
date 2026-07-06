@@ -1,6 +1,6 @@
 # Sayso - Complete Site Architecture & Keyword Map
 
-**Updated:** 2026-06-09
+**Updated:** 2026-06-28
 **Total Pages:** ~100–110
 
 ---
@@ -17,9 +17,9 @@
 | Objections | 15 | 15 | 100% |
 | Glossary | 11 | 11 | 100% |
 | Case Studies | 2 | 2 | 100% |
-| Blog Posts | 23 | 43 | 53% |
+| Blog Posts | 30 | 50 | 60% |
 | Blog Category Pages | 2 | 7 | 29% |
-| **TOTAL** | **79** | **~100** | **~79%** |
+| **TOTAL** | **86** | **~107** | **~80%** |
 
 ---
 
@@ -252,6 +252,20 @@ These pages exist for paid Facebook ad traffic only. They are set to `noindex, f
 └── /blog/what-to-say-to-old-leads/    (support)      "what to say to old leads real estate"                     🟢 WIN              ✅ DONE
 ```
 
+#### Objection Handling Cluster
+
+```
+/blog/real-estate-objection-handling/ (main)         "real estate objection handling"                            🟡 MED     ← PILLAR    ✅ DONE
+├── /blog/price-too-high-objection/ (support)         "price too high objection real estate"                      🟢 WIN                 ✅ DONE
+├── /blog/commission-too-high-objection/ (support)    "real estate commission objection"                          🟢 WIN                 ✅ DONE
+├── /blog/think-about-it-objection/ (support)         "i need to think about it objection real estate"            🟢 WIN                 ✅ DONE
+├── /blog/wait-until-spring-objection/ (support)      "wait until spring to sell objection"                       🟢 WIN                 ✅ DONE
+├── /blog/market-uncertain-objection/ (support)       "market too uncertain objection real estate"                🟢 WIN                 ✅ DONE
+└── /blog/already-have-an-agent-objection/ (support)  "i already have an agent objection real estate"             🟢 WIN                 ✅ DONE
+```
+
+**Note:** Category is `cold-calling` (these roll up to the existing Cold Calling category page, so no new category page is needed); the `cluster: objection-handling` field groups them as a pillar cluster. These are long-form scripts/how-to posts, intentionally distinct from the short in-call `/objections/*` reference pages (see the Cannibalization Map below). Scheduled to publish Tue/Thu, Jul 9–30, 2026 (pillar first); they exist in the codebase but stay hidden in production until each `publishedAt` date passes.
+
 #### CRM & Notes Cluster (Stand alone)
 
 ```
@@ -325,6 +339,11 @@ Several topics have more than one page: a glossary definition, a how-to or scrip
 - Scripts: `/blog/real-estate-follow-up-scripts/` (pillar)
 - Cross-link: glossary `deeperLink` points to the pillar (added in Phase 2).
 
+**Objection handling** (the `/objections/*` hub vs the blog objection cluster, head term "real estate objection handling")
+- Objection / in-call reference (owns "real estate phone objection examples"): the `/objections/` hub and its 15 child pages. Short, scannable, one pushback each, "how to handle 'X'" framing for the moment on the call.
+- How-to / scripts pillar (owns "real estate objection handling"): `/blog/real-estate-objection-handling/` plus its 6 supporting posts. Deeper scripts, psychology, and follow-up for the same pushbacks.
+- Six topics appear in both places (price-too-high, commission, think-about-it, wait-for-spring, already-have-an-agent, market). They do NOT cannibalize because intent and phrasing differ: the `/objections/*` page targets the short "how to handle 'X'" phrasing; the blog post targets the longer "X objection real estate / scripts" phrasing. Keep it that way and cross-link each pair (objection page → blog post for the full script; blog post → objection page for the quick in-call version).
+
 ### Watch list
 
 - `/blog/real-estate-phone-script-for-leads/` vs the cold-calling pillar: "real estate phone scripts" (vol 20) sits close to the pillar's territory. If both index and compete, steer this post toward inbound-lead and online-lead phone scripts specifically.
@@ -336,8 +355,8 @@ Several topics have more than one page: a glossary definition, a how-to or scrip
 
 | Difficulty | Count | % of Keyword-Targeted Pages |
 |---|---|---|
-| 🟢 WIN - Winnable today | ~58 pages | ~68% |
-| 🟡 MED - 3–6 months | ~18 pages | ~21% |
+| 🟢 WIN - Winnable today | ~64 pages | ~70% |
+| 🟡 MED - 3–6 months | ~19 pages | ~20% |
 | 🔴 HARD - 6–12 months | ~5 pages | ~6% |
 | ⚪ NONE - No keyword target | ~24 pages | N/A (conversion/trust/legal/nav) |
 
