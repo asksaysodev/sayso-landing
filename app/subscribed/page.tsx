@@ -9,7 +9,7 @@ import { siteUrl } from '@/lib/config';
 import BookDemoCTA from './BookDemoCTA';
 
 export const metadata: Metadata = {
-  title: "You're subscribed | Sayso",
+  title: "You're subscribed",
   description:
     "You're subscribed to the Sayso newsletter. Here's a quick look at what Sayso does on every call.",
   alternates: {
@@ -112,8 +112,8 @@ export default function SubscribedPage() {
                   alt="Sayso live call view showing the Pulse market data widget alongside the Playbook script panel"
                   width={1778}
                   height={792}
+                  sizes="(min-width: 768px) 640px, 100vw"
                   className="w-full h-auto"
-                  priority
                 />
               </div>
             </div>
