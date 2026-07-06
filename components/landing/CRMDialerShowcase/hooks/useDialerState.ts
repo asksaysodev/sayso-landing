@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { CONVERSATION_CYCLES } from '../data';
 
-const CYCLE_DURATION = 11000;
+const CYCLE_DURATION = 16000;
 
 export function useDialerState() {
   const [currentCycle, setCurrentCycle] = useState(0);
@@ -40,11 +40,11 @@ export function useDialerState() {
     timeoutIds.current = [
       setTimeout(() => setBuyerSpeaking(true), 300),
       setTimeout(() => setShowBuyerMessage(true), 800),
-      setTimeout(() => setBuyerSpeaking(false), 3200),
-      setTimeout(() => setShowPrompt(true), 3500),
-      setTimeout(() => setSellerSpeaking(true), 5500),
-      setTimeout(() => setShowSellerMessage(true), 6000),
-      setTimeout(() => setSellerSpeaking(false), 8500),
+      setTimeout(() => setBuyerSpeaking(false), 3500),
+      setTimeout(() => setShowPrompt(true), 3800),
+      setTimeout(() => setSellerSpeaking(true), 9500),
+      setTimeout(() => setShowSellerMessage(true), 10000),
+      setTimeout(() => setSellerSpeaking(false), 12500),
     ];
   }, [clearAllTimeouts]);
 
