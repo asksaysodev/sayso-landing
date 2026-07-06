@@ -60,17 +60,9 @@ export default function SubscribedPage() {
                   aria-hidden="true"
                 />
               </div>
-              <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
-                Subscribed
-              </p>
               <h1 className="font-comic text-4xl sm:text-5xl lg:text-6xl text-[#1D4871] leading-[1.05] tracking-wide">
                 You&apos;re subscribed.
               </h1>
-              <p className="mt-5 text-base md:text-lg text-[#1D4871]/75 leading-relaxed max-w-[560px] mx-auto">
-                Real-world tips for making better calls and booking more
-                appointments are on their way to your inbox. Until then,
-                here&apos;s a quick look at what Sayso does on every call.
-              </p>
 
               <BookDemoCTA />
             </div>
