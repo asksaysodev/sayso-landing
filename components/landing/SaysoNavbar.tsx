@@ -136,7 +136,9 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="block px-4 py-2.5 hover:bg-[#FFDE59]/20 transition-colors"
+                          className={`block py-2.5 hover:bg-[#FFDE59]/20 transition-colors ${
+                            link.indent ? 'pl-8 pr-4' : 'px-4'
+                          }`}
                           onClick={() => setActiveDropdown(null)}
                         >
                           <span className="text-[#1D4871] font-medium text-sm hover:text-[#2367EE]">
@@ -230,7 +232,9 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
                             key={link.href}
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block px-4 py-2.5 rounded-lg hover:bg-[#FFDE59]/10 transition-colors"
+                            className={`block py-2.5 rounded-lg hover:bg-[#FFDE59]/10 transition-colors ${
+                              link.indent ? 'pl-8 pr-4' : 'px-4'
+                            }`}
                           >
                             <span className="text-[#1D4871]/80 font-medium text-sm hover:text-[#2367EE]">
                               {link.label}

@@ -14,7 +14,7 @@ There are **8 template pages** - one per page type. Each one represents the patt
 |---|---|---|
 | Feature | `/products/cue/` | All 5 feature pages |
 | Persona | `/for/solo-agents/` | All 4 persona pages |
-| Integration | `/integrations/follow-up-boss/` | All 3 integration pages |
+| Integration | `/integrations/partners/follow-up-boss/` | All partner integration pages |
 | Comparison | `/compare/sayso-vs-shilo/` | All 3 comparison pages |
 | Objection | `/objections/not-ready-yet/` | All 15 objection pages |
 | Glossary | `/glossary/circle-prospecting/` | All 10 glossary pages |
