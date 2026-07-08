@@ -160,6 +160,21 @@ Draw from at least one of these per post; the bar scales with the role:
 - Avoid "phone call(s)" and "cold call(s)" as throwaway nouns; use "call(s)" (cold calling as a *topic* is fine).
 - Don't use "run/running" for making calls; use natural language ("make calls", "dial", "get on the phone").
 
+### Human-writing rules (anti-AI sentence patterns, non-negotiable)
+
+Reviewer feedback on the first drafts was that the content was solid but the prose read as AI-written. The tells were sentence-level rhythm devices, not vocabulary. These rules are adapted from the blader/humanizer skill (github.com/blader/humanizer, built on Wikipedia's "Signs of AI writing" guide) plus the specific structures the reviewer flagged. Treat every one as a hard rule for the post body, the bio, and the pitch blurb.
+
+1. **No reframe pairs.** Never write "X is not A. It is B." or "The point is not A, it is B." or "They don't have an A problem. They have a B problem." This two-beat correction rhythm is the single strongest AI tell in the first drafts. Make the positive claim in one normal sentence and, if the contrast matters, attach it with "rather than" or "instead of" inside the same sentence, or just explain why the common view is wrong in plain terms.
+2. **No manufactured punchlines.** Do not end paragraphs or sections on a short quotable zinger ("You have automated the easy part of being wrong." "That is the race now."). A human essayist lets a section end on substance, sometimes even on a mundane practical note. If a closing line would look at home on a slide, rewrite it as an ordinary sentence with a subject, a verb, and some detail.
+3. **No staccato drama.** Avoid runs of very short sentences or fragments used for effect ("Then they get on a live call."). Vary sentence length the way explanation naturally varies it: mostly medium and long sentences that connect ideas with "because," "so," "which," and "and," with an occasional short one where it genuinely helps.
+4. **No aphorism formulas.** Ban "X is the language/currency/price/architecture of Y," "X becomes a trap," "a story you tell yourself," and similar coined-proverb shapes. Replace the metaphor with the actual concrete claim.
+5. **No authority tropes or throat-clearing pivots.** Ban "The real question is," "Here is the part worth being honest about," "at its core," "what really matters is," "It is worth being honest about both," "Let's be clear." Just say the thing.
+6. **No forced rule-of-three.** Do not package ideas into neat triads ("faster, more confident, and harder to question") as a default rhythm. Use however many items the idea actually has, and prefer folding them into flowing prose.
+7. **No copula avoidance.** Prefer "is," "are," "has" over "serves as," "stands as," "represents," "boasts," "features."
+8. **No false ranges** ("from open houses to closing tables") and no vague attributions ("experts say," "studies show") without a nameable source.
+9. **Every sentence must add new information.** AI drafts restate the previous sentence in fancier words; that is the "wordy" feeling reviewers flag. If a sentence only re-says or dramatizes the one before it, cut it. Trust the reader to get the point the first time.
+10. **Read-aloud test.** Before finishing, read the draft as if speaking to a colleague. Anywhere you would naturally smooth a beat, connect two sentences, or feel embarrassed saying the line out loud, rewrite it. The target is the register of a knowledgeable person explaining something in an email to a peer, with normal connected paragraphs and no performance.
+
 ### What to avoid
 - Generic advice that could apply to any industry ("AI is transforming everything").
 - Consumer-facing framing (this audience is industry pros, not buyers/sellers).
@@ -197,7 +212,7 @@ word_count: [approx]
 
 ---
 
-## Author bio (for submission — this carries the backlink)
+## Author bio (for submission: this carries the backlink)
 
 [2-3 sentence first-person bio establishing the author's real estate / AI credibility, ending with a single natural link to Sayso. Example shape: "Kuvaal Patel works on AI tools for real estate teams at [Sayso](https://asksayso.com), where ..."]
 
@@ -226,6 +241,7 @@ After writing the file, give the user a short summary in chat: the title, word c
 - [ ] Essay structure: hook intro, descriptive subheads, forward-looking close
 - [ ] Length on target for the series role
 - [ ] No em dashes; "Sayso" spelled correctly; no fragmented tagline sentences; no "Not X. Not Y." structures
+- [ ] **Humanize pass done as a separate final step:** re-read the finished draft hunting only for the ten human-writing rules (reframe pairs, punchline closers, staccato drama, aphorism formulas, authority tropes, forced triads, copula avoidance, false ranges, restatement sentences, read-aloud failures) and rewrite every hit before saving
 - [ ] No content overlap with sibling series posts; siblings referenced in prose only, never linked
 - [ ] Original and exclusive to GEB (stated in submission notes)
 - [ ] Saved to content/guest-posts/geek-estate/[slug].md as plain markdown with the submission packet
