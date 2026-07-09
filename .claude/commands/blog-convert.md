@@ -6,6 +6,23 @@ This is a 5-phase pipeline. Run all phases in sequence without pausing between t
 
 ---
 
+## Human-writing rules (anti-AI sentence patterns, non-negotiable)
+
+Team review of earlier Sayso drafts flagged prose that read as AI-written even when the substance was solid. The tells were sentence-level rhythm devices, not vocabulary. These rules are adapted from the blader/humanizer skill (github.com/blader/humanizer, built on Wikipedia's "Signs of AI writing" guide). Treat every one as a hard rule for all output.
+
+1. **No reframe pairs.** Never write "X is not A. It is B." or "The point is not A, it is B." or "They don't have an A problem. They have a B problem." This two-beat correction rhythm is the strongest AI tell. Make the positive claim in one normal sentence and, if the contrast matters, attach it with "rather than" or "instead of" inside the same sentence, or just explain why the common view is wrong in plain terms.
+2. **No manufactured punchlines.** Do not end paragraphs or sections on a short quotable zinger. A human essayist lets a section end on substance, sometimes even on a mundane practical note. If a closing line would look at home on a slide, rewrite it as an ordinary sentence with a subject, a verb, and some detail.
+3. **No staccato drama.** Avoid runs of very short sentences or fragments used for effect. Vary sentence length the way explanation naturally varies it: mostly medium and long sentences that connect ideas with "because," "so," "which," and "and," with an occasional short one where it genuinely helps.
+4. **No aphorism formulas.** Ban "X is the language/currency/price/architecture of Y," "X becomes a trap," "a story you tell yourself," and similar coined-proverb shapes. Replace the metaphor with the actual concrete claim.
+5. **No authority tropes or throat-clearing pivots.** Ban "The real question is," "Here is the part worth being honest about," "at its core," "what really matters is," "It is worth being honest about both," "Let's be clear." Just say the thing.
+6. **No forced rule-of-three.** Do not package ideas into neat triads ("faster, more confident, and harder to question") as a default rhythm. Use however many items the idea actually has, and prefer folding them into flowing prose.
+7. **No copula avoidance.** Prefer "is," "are," "has" over "serves as," "stands as," "represents," "boasts," "features."
+8. **No false ranges** ("from open houses to closing tables") and no vague attributions ("experts say," "studies show") without a nameable source.
+9. **Every sentence must add new information.** AI drafts restate the previous sentence in fancier words; that is the "wordy" feeling reviewers flag. If a sentence only re-says or dramatizes the one before it, cut it. Trust the reader to get the point the first time.
+10. **Read-aloud test.** Before finishing, read the draft as if speaking to a colleague. Anywhere you would naturally smooth a beat, connect two sentences, or feel embarrassed saying the line out loud, rewrite it. The target is the register of a knowledgeable person explaining something to a peer, with normal connected paragraphs and no performance.
+
+---
+
 ## Phase 1 - Setup
 
 ### 1.1 Find the draft file
@@ -48,6 +65,8 @@ Flag any missing sections. Flag if the TLDR has no CTA.
 - Content must be scannable - short paragraphs compensate for longer sentences
 
 Flag any paragraph over 3 sentences. Flag any section that reads as a wall of text.
+
+Also audit the draft against the ten human-writing rules (see the "Human-writing rules" section above). Flag every instance of: reframe pairs, manufactured punchline closers, staccato drama, aphorism formulas, authority tropes or throat-clearing pivots, forced rule-of-three triads, copula avoidance ("serves as," "boasts," "represents"), false ranges or vague attributions, sentences that only restate the previous sentence, and any line that fails the read-aloud test. Each hit is an issue to list in the audit report.
 
 ### 2.3 Required Content Elements Check
 Every article must include:
@@ -132,6 +151,8 @@ Apply ALL audit findings to the content. Do not skip any issue. Work through cor
 - Break any paragraph over 3 sentences into multiple paragraphs
 - Shorten any sentence over 30 words by splitting or tightening
 - Ensure all sections are scannable
+- Rewrite every human-writing rule violation flagged in the audit, following the fixes prescribed in the "Human-writing rules" section above (fold reframe pairs into one sentence with "rather than", replace punchline closers with ordinary sentences, connect staccato runs, replace aphorisms with the concrete claim, cut throat-clearing, unbundle forced triads, restore plain copulas, remove false ranges and unsourced attributions, cut restatement sentences)
+- After all other Phase 3 corrections are applied, do a humanize pass as a separate final step: re-read the fully corrected draft hunting only for the ten human-writing rules (reframe pairs, punchline closers, staccato drama, aphorism formulas, authority tropes, forced triads, copula avoidance, false ranges, restatement sentences, read-aloud failures) and rewrite every remaining hit before moving to Phase 4
 
 ### 3.3 Content Element Corrections
 - Add explicit "Pros" and "Cons" headers where tools/products are discussed but lack them

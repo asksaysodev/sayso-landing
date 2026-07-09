@@ -324,10 +324,27 @@ Pillar posts get 3 CTAs because they're long enough to warrant it:
 ## FORMATTING RULES
 
 - **Paragraphs:** Max 3-4 sentences. Pillar posts can breathe slightly more than micro pages, but keep them scannable. Agents read between calls - on mobile, on the go.
-- **Short sentences.** Vary length but lean short. Punch over polish.
+- **Vary sentence length naturally.** Mostly medium and long sentences that connect ideas, with an occasional short one where it genuinely helps. Never lean on short punchy fragments for effect (see the human-writing rules below).
 - **Tone:** Authoritative but conversational. You're an experienced coach sharing everything you know over coffee - confident, direct, not academic.
 - **Banned phrases:** "In today's competitive market," "It's no secret that," "As a real estate professional," "In the ever-evolving world of," "Let's dive in," "Without further ado." Any sentence that could be deleted without losing information should be deleted.
 - **Use bold sparingly** - only for key terms or phrases a scanner's eye should catch. Not every other sentence.
+
+---
+
+## HUMAN-WRITING RULES (ANTI-AI SENTENCE PATTERNS, NON-NEGOTIABLE)
+
+Team review of earlier Sayso drafts flagged prose that read as AI-written even when the substance was solid. The tells were sentence-level rhythm devices, not vocabulary. These rules are adapted from the blader/humanizer skill (github.com/blader/humanizer, built on Wikipedia's "Signs of AI writing" guide). Treat every one as a hard rule for all output.
+
+1. **No reframe pairs.** Never write "X is not A. It is B." or "The point is not A, it is B." or "They don't have an A problem. They have a B problem." This two-beat correction rhythm is the strongest AI tell. Make the positive claim in one normal sentence and, if the contrast matters, attach it with "rather than" or "instead of" inside the same sentence, or just explain why the common view is wrong in plain terms.
+2. **No manufactured punchlines.** Do not end paragraphs or sections on a short quotable zinger. A human essayist lets a section end on substance, sometimes even on a mundane practical note. If a closing line would look at home on a slide, rewrite it as an ordinary sentence with a subject, a verb, and some detail.
+3. **No staccato drama.** Avoid runs of very short sentences or fragments used for effect. Vary sentence length the way explanation naturally varies it: mostly medium and long sentences that connect ideas with "because," "so," "which," and "and," with an occasional short one where it genuinely helps.
+4. **No aphorism formulas.** Ban "X is the language/currency/price/architecture of Y," "X becomes a trap," "a story you tell yourself," and similar coined-proverb shapes. Replace the metaphor with the actual concrete claim.
+5. **No authority tropes or throat-clearing pivots.** Ban "The real question is," "Here is the part worth being honest about," "at its core," "what really matters is," "It is worth being honest about both," "Let's be clear." Just say the thing.
+6. **No forced rule-of-three.** Do not package ideas into neat triads ("faster, more confident, and harder to question") as a default rhythm. Use however many items the idea actually has, and prefer folding them into flowing prose.
+7. **No copula avoidance.** Prefer "is," "are," "has" over "serves as," "stands as," "represents," "boasts," "features."
+8. **No false ranges** ("from open houses to closing tables") and no vague attributions ("experts say," "studies show") without a nameable source.
+9. **Every sentence must add new information.** AI drafts restate the previous sentence in fancier words; that is the "wordy" feeling reviewers flag. If a sentence only re-says or dramatizes the one before it, cut it. Trust the reader to get the point the first time.
+10. **Read-aloud test.** Before finishing, read the draft as if speaking to a colleague. Anywhere you would naturally smooth a beat, connect two sentences, or feel embarrassed saying the line out loud, rewrite it. The target is the register of a knowledgeable person explaining something to a peer, with normal connected paragraphs and no performance.
 
 ---
 
@@ -378,6 +395,7 @@ Before finalizing, verify:
 - [ ] Frontmatter includes type: "pillar", cluster, and no pillar field
 - [ ] `publishedAt` is set to "2099-01-01" (placeholder - real date set at merge time after review)
 - [ ] Tone is coach-like, not academic
+- [ ] **Humanize pass done as a separate final step:** re-read the finished draft hunting only for the ten human-writing rules (reframe pairs, punchline closers, staccato drama, aphorism formulas, authority tropes, forced triads, copula avoidance, false ranges, restatement sentences, read-aloud failures) and rewrite every hit before saving
 
 ---
 
