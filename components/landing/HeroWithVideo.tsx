@@ -21,6 +21,7 @@ const logos = [
   { name: 'Harcourts', src: '/social-proof/harcourts.png' },
   { name: 'Yvans Cator Jr. Real Estate', src: '/social-proof/yvans-cator-real-estate.png' },
   { name: 'Keller Williams Executive', src: '/social-proof/kw-executive.png' },
+  { name: 'EXIT Realty', src: '/social-proof/exit-realty.png' },
 ];
 
 // Repeat the logo set so the marquee fills wide screens and loops seamlessly
