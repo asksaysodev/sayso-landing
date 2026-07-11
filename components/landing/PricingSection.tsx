@@ -1,7 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { LightningIcon } from '@/components/icons/LightningIcon';
+
+type BillingPeriod = 'annual' | 'monthly';
 
 interface BulletGroup {
   header?: string;
@@ -20,6 +23,48 @@ interface PricingPlan {
   buttonVariant: 'primary' | 'secondary';
   analyticsId: string;
   isPopular?: boolean;
+}
+
+function BillingToggle({
+  billing,
+  onChange,
+}: {
+  billing: BillingPeriod;
+  onChange: (billing: BillingPeriod) => void;
+}) {
+  return (
+    <div
+      role="group"
+      aria-label="Billing period"
+      className="inline-flex items-center gap-1 bg-white rounded-full v2-comic-border v2-comic-shadow-sm p-1.5"
+    >
+      <button
+        type="button"
+        onClick={() => onChange('annual')}
+        aria-pressed={billing === 'annual'}
+        data-analytics-id="pricing-billing-toggle-annual"
+        className={`inline-flex items-center gap-2 rounded-full px-4 md:px-5 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] ${
+          billing === 'annual' ? 'bg-[#2367EE] text-white' : 'bg-transparent text-[#1D4871] hover:bg-[#F8F8FA]'
+        }`}
+      >
+        Annual
+        <span className="bg-[#FFDE59] text-[#1D4871] border border-[#1D4871] rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide whitespace-nowrap">
+          SAVE $1,200
+        </span>
+      </button>
+      <button
+        type="button"
+        onClick={() => onChange('monthly')}
+        aria-pressed={billing === 'monthly'}
+        data-analytics-id="pricing-billing-toggle-monthly"
+        className={`rounded-full px-4 md:px-5 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] ${
+          billing === 'monthly' ? 'bg-[#2367EE] text-white' : 'bg-transparent text-[#1D4871] hover:bg-[#F8F8FA]'
+        }`}
+      >
+        Monthly
+      </button>
+    </div>
+  );
 }
 
 function PricingCardV4({ plan }: { plan: PricingPlan }) {
@@ -106,13 +151,15 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 
 export function PricingSection() {
   const { openSystemSelect } = useDemoCalendar();
+  const [billing, setBilling] = useState<BillingPeriod>('annual');
+  const isAnnual = billing === 'annual';
 
   const plans: PricingPlan[] = [
     {
       title: 'Individual Agent',
-      // TODO: confirm headline price with Franco (implied $250/mo billed annually)
-      price: '$250 / month',
-      priceNote: '*Billed annually, save $1,200. Or $350/month.',
+      // TODO: confirm headline prices with Franco ($250/mo billed annually, $350/mo billed monthly)
+      price: isAnnual ? '$250 / month' : '$350 / month',
+      priceNote: isAnnual ? '*Billed annually, save $1,200.' : '*Billed monthly, cancel anytime.',
       description: 'For agents who want daily consistency.',
       groups: [
         {
@@ -185,6 +232,10 @@ export function PricingSection() {
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed mt-3">
             Founding member &amp; Early access pricing is locked for life. As long as your subscription stays active, your rate will never increase.
           </p>
+        </div>
+
+        <div className="flex justify-center mb-10">
+          <BillingToggle billing={billing} onChange={setBilling} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 max-w-[820px] mx-auto">
