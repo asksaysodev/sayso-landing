@@ -21,6 +21,7 @@ const logos = [
   { name: 'Harcourts', src: '/social-proof/harcourts.png' },
   { name: 'Yvans Cator Jr. Real Estate', src: '/social-proof/yvans-cator-real-estate.png' },
   { name: 'Keller Williams Executive', src: '/social-proof/kw-executive.png' },
+  { name: 'Around Town Properties', src: '/social-proof/around-town-properties.png' },
 ];
 
 // Repeat the logo set so the marquee fills wide screens and loops seamlessly
@@ -92,7 +93,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             }
 
             .logo-marquee-track {
-              animation: logo-marquee 40s linear infinite;
+              animation: logo-marquee 90s linear infinite;
             }
 
             .logo-marquee-wrapper:hover .logo-marquee-track {

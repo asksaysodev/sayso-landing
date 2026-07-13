@@ -13,6 +13,7 @@ const logos: { src: string; alt: string }[] = [
   { src: '/social-proof/anderson-group.png', alt: 'Anderson Group' },
   { src: '/social-proof/maxwell-properties.png', alt: 'Maxwell Properties' },
   { src: '/social-proof/olaf-logo.png', alt: 'Olaf' },
+  { src: '/social-proof/around-town-properties.png', alt: 'Around Town Properties' },
 ];
 
 export function PartnerLogoCarousel() {
