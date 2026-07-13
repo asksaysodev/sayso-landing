@@ -48,6 +48,7 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-pricing-coming-soon` | Redirects to `/demo` | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | "Questions? Chat with our team" CTA below the pricing cards |
 | `cta-onboarding-get-started` | Starts onboarding flow | [components/onboarding/OnboardingFlow.tsx](../../components/onboarding/OnboardingFlow.tsx) | Welcome screen start button |
 | `cta-book-demo-onboarding-complete` | Opens demo calendar | [components/onboarding/OnboardingNavButtons.tsx](../../components/onboarding/OnboardingNavButtons.tsx) | Terminal CTA after onboarding |
+| `cta-book-demo-subscribed` | Opens demo calendar | [app/subscribed/BookDemoCTA.tsx](../../app/subscribed/BookDemoCTA.tsx) | Hero CTA on /subscribed confirmation page |
 | `form-newsletter-footer` | (iframe wrapper) | [components/landing/Footer.tsx](../../components/landing/Footer.tsx) | Beehiiv iframe, see footnote |
 | `form-newsletter-blog` | (iframe wrapper) | [components/blog/BlogNewsletterCTA.tsx](../../components/blog/BlogNewsletterCTA.tsx) | Beehiiv iframe, see footnote |
 | `form-newsletter-windows-waitlist` | (iframe wrapper) | [components/landing/SystemSelectModal.tsx](../../components/landing/SystemSelectModal.tsx) | Beehiiv iframe inside modal |
@@ -119,4 +120,4 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 
 ## Total count
 
-37 unique `data-analytics-id` values (counting page-type family IDs as one row each per `{page-type}` substitution).
+38 unique `data-analytics-id` values (counting page-type family IDs as one row each per `{page-type}` substitution).
