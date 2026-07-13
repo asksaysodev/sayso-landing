@@ -71,6 +71,17 @@ const nextConfig = {
         destination: '/demo/',
         permanent: true,
       },
+      // /newsletter-confirmation superseded by /subscribed
+      {
+        source: '/newsletter-confirmation',
+        destination: '/subscribed/',
+        permanent: true,
+      },
+      {
+        source: '/newsletter-confirmation/',
+        destination: '/subscribed/',
+        permanent: true,
+      },
       // ──────────────────────────────────────────────────
       // DELETED BLOG POST REDIRECTS
       // ──────────────────────────────────────────────────
