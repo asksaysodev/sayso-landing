@@ -1,7 +1,6 @@
 'use client';
 
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { LightningIcon } from '@/components/icons/LightningIcon';
 
 interface PricingPlan {
   title: string;
@@ -10,7 +9,6 @@ interface PricingPlan {
   description: string;
   bulletHeader?: string;
   bullets: string[];
-  freeTrialBadge?: string;
   buttonLabel: string;
   buttonOnClick: () => void;
   buttonVariant: 'primary' | 'secondary';
@@ -47,15 +45,6 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
       <p className="text-base text-[#1D4871]/70 mb-4 leading-relaxed">
         {plan.description}
       </p>
-
-      {plan.freeTrialBadge && (
-        <div className="-mx-6 md:-mx-7 mb-5 px-6 py-2.5 bg-[#FFDE59] text-center">
-          <span className="font-comic text-sm tracking-wide text-[#1D4871] inline-flex items-center gap-1.5">
-            <LightningIcon size={14} color="#2367EE" />
-            {plan.freeTrialBadge}
-          </span>
-        </div>
-      )}
 
       <ul className="flex-1 space-y-3 mb-6">
         {plan.bulletHeader && (
@@ -103,7 +92,6 @@ export function PricingSection() {
       price: '$69 / month',
       priceNote: '*Billed annually, save $120. Or $79/month.',
       description: 'For agents who want daily consistency.',
-      freeTrialBadge: '3 day Free Trial included',
       bulletHeader: 'Every Sayso product included, for a limited time:',
       bullets: [
         'Cue: real-time conversation intelligence',
@@ -114,7 +102,7 @@ export function PricingSection() {
         'Email Support',
         'Up to 50% off new features',
       ],
-      buttonLabel: 'Start your free trial',
+      buttonLabel: 'Download Sayso',
       buttonOnClick: openSystemSelect,
       buttonVariant: 'primary',
       analyticsId: 'cta-download-pricing-individual',
@@ -149,7 +137,7 @@ export function PricingSection() {
             Simple Pricing.
           </h2>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
-            Free Trial. Custom Set Up. Included Training.
+            Custom Set Up. Included Training.
           </p>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed mt-3">
             Every Sayso product is included at this price for a limited time, so secure your early access pricing now.

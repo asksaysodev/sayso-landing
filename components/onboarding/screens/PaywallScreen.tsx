@@ -119,7 +119,6 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
   const individualBullets = [
     'Cue: real-time conversation intelligence',
     'Priority support',
-    'Free trial included',
     'Coming soon: Smart Capture, automated structured note-taking',
     'Coming soon: Recall, context recall engine',
   ];
@@ -161,7 +160,7 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
             SaySo is perfect for you!
           </h1>
           <p className="text-sm md:text-base text-[#1D4871]/70 max-w-md mx-auto mt-2 leading-relaxed">
-            Based on your goals, you&apos;re ready to go. Start your 3-day free trial below.
+            Based on your goals, you&apos;re ready to go. Get started below.
           </p>
         </div>
       )}
@@ -189,7 +188,7 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
             priceNote="Billed annually, save $120. Or $79/month."
             description="For agents who want daily consistency."
             bullets={individualBullets}
-            buttonLabel="Start your free trial"
+            buttonLabel="Download Sayso"
             isPopular
             onCTA={() => triggerToast('Individual Agent - checkout would launch here.')}
           />

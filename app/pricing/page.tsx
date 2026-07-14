@@ -8,14 +8,14 @@ import { siteUrl } from '@/lib/config';
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'Simple, transparent pricing for individual agents and teams. Free trial included.',
+    'Simple, transparent pricing for individual agents and teams. Cancel anytime, no contracts.',
   alternates: {
     canonical: `${siteUrl}/pricing/`,
   },
   openGraph: {
     title: 'Pricing | Sayso',
     description:
-      'Simple, transparent pricing for individual agents and teams. Free trial included.',
+      'Simple, transparent pricing for individual agents and teams. Cancel anytime, no contracts.',
     url: `${siteUrl}/pricing/`,
     type: 'website',
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Pricing | Sayso',
     description:
-      'Simple, transparent pricing for individual agents and teams. Free trial included.',
+      'Simple, transparent pricing for individual agents and teams. Cancel anytime, no contracts.',
     images: ['/images/og-default.png'],
   },
 };
