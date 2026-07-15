@@ -29,11 +29,6 @@ const faqs = [
     answer:
       'Many agents are set up in less than 5 minutes. There is no long onboarding process. Sayso has an interactive launch guide, self-service help center, and a very responsive support team in case you need any help.',
   },
-  {
-    question: 'Is there a free trial?',
-    answer:
-      'Yes. Sayso includes a 3-day free trial. A credit card is required to start. Visit the pricing page for full details.',
-  },
 ];
 
 export function FAQSection() {

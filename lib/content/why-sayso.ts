@@ -85,9 +85,5 @@ export const whySaysoContent: WhySaysoContent = {
       question: 'How fast can I get started?',
       answer: 'Most agents are set up and coaching on calls within minutes. There is no training period or onboarding program, just open Sayso and start your next call.',
     },
-    {
-      question: 'Is there a free trial?',
-      answer: 'Yes. You can try Sayso free before committing. Visit the pricing page for details.',
-    },
   ],
 };

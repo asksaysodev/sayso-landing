@@ -362,7 +362,7 @@ export function LandingButtonsSection() {
           {/* A) Primary CTA Button */}
           <ButtonCategoryCard
             title="Primary CTA Button"
-            description="Use for: 'Get Started', 'Start Free Trial', 'Book a Demo'"
+            description="Use for: 'Get Started', 'Download Sayso', 'Book a Demo'"
           >
             {/* Sizes */}
             <div>

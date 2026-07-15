@@ -120,7 +120,7 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
       <ContentCTA
         location="why-sayso-page"
         headline="Get Started Today"
-        subheading="Try Sayso free and see the difference real-time coaching makes."
+        subheading="See the difference real-time coaching makes on your calls."
       />
     </>
   );

@@ -24,6 +24,7 @@ These rules apply to **all** copy and content across the entire site:
 8. **Never use em dashes (—).** Use commas, periods, colons, or rephrase instead.
 9. **Sayso helps agents with both buyers and sellers.** All copy must be lead type agnostic (do not assume the prospect is only buying or only selling).
 10. **Never write short, punchy, fragmented "tagline" sentences that sound like AI content.** Avoid staccato structures like "No pressure. No pitch. Just value." or "More calls. More clients. More growth." Write like a real person writing a blog post: use full, natural sentences with normal flow. No tweet-style one-liners, no stage catchphrases, no motivational poster copy.
+11. **Never mention or promise a free trial.** Sayso does not offer a free trial. Do not use "free trial", "3-day free trial", "try Sayso free", "try it free", "start (your) free trial", "free plan", or "no credit card" anywhere in copy, metadata, CTAs, or content. Use accurate CTAs instead, such as "Book a demo", "Download Sayso", or "See how Sayso helps".
 
 ---
 

@@ -60,10 +60,6 @@ export const saysoVsManualCoaching: ComparisonEntry = {
       answer: 'Traditional 1-on-1 real estate coaching typically runs $300 to $1,000 or more per month per agent. Group coaching programs range from $100 to $500 per month. For Sayso pricing, visit the pricing page where all plans are published with no hidden fees.',
     },
     {
-      question: 'Does Sayso offer a free trial?',
-      answer: 'Yes. You can try Sayso free before committing to a paid plan. The trial includes full access to real-time coaching, automatic call notes, and CRM integrations so you can evaluate the tool on actual prospecting calls.',
-    },
-    {
       question: 'Can I use Sayso and a coach at the same time?',
       answer: 'Yes, and many agents do. Your coach sets the strategy, reviews your progress, and helps with big-picture decisions. Sayso helps you execute on every call between sessions by surfacing the right prompts in real time and automating your call notes.',
     },
