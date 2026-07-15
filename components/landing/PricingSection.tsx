@@ -1,19 +1,68 @@
 'use client';
 
+import { useState } from 'react';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
+
+type BillingPeriod = 'annual' | 'monthly';
+
+interface BulletGroup {
+  header?: string;
+  bullets: string[];
+}
 
 interface PricingPlan {
   title: string;
   price: string;
   priceNote?: string;
   description: string;
-  bulletHeader?: string;
-  bullets: string[];
+  groups: BulletGroup[];
   buttonLabel: string;
   buttonOnClick: () => void;
   buttonVariant: 'primary' | 'secondary';
   analyticsId: string;
   isPopular?: boolean;
+}
+
+function BillingToggle({
+  billing,
+  onChange,
+}: {
+  billing: BillingPeriod;
+  onChange: (billing: BillingPeriod) => void;
+}) {
+  return (
+    <div
+      role="group"
+      aria-label="Billing period"
+      className="inline-flex items-center gap-1 bg-white rounded-full v2-comic-border v2-comic-shadow-sm p-1.5"
+    >
+      <button
+        type="button"
+        onClick={() => onChange('annual')}
+        aria-pressed={billing === 'annual'}
+        data-analytics-id="pricing-billing-toggle-annual"
+        className={`inline-flex items-center gap-2 rounded-full px-4 md:px-5 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] ${
+          billing === 'annual' ? 'bg-[#2367EE] text-white' : 'bg-transparent text-[#1D4871] hover:bg-[#F8F8FA]'
+        }`}
+      >
+        Annual
+        <span className="bg-[#FFDE59] text-[#1D4871] border border-[#1D4871] rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide whitespace-nowrap">
+          SAVE $1,200
+        </span>
+      </button>
+      <button
+        type="button"
+        onClick={() => onChange('monthly')}
+        aria-pressed={billing === 'monthly'}
+        data-analytics-id="pricing-billing-toggle-monthly"
+        className={`rounded-full px-4 md:px-5 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] ${
+          billing === 'monthly' ? 'bg-[#2367EE] text-white' : 'bg-transparent text-[#1D4871] hover:bg-[#F8F8FA]'
+        }`}
+      >
+        Monthly
+      </button>
+    </div>
+  );
 }
 
 function PricingCardV4({ plan }: { plan: PricingPlan }) {
@@ -47,23 +96,29 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
       </p>
 
       <ul className="flex-1 space-y-3 mb-6">
-        {plan.bulletHeader && (
-          <li className="text-sm font-semibold text-[#1D4871]/80 italic mb-1">
-            {plan.bulletHeader}
-          </li>
-        )}
-        {plan.bullets.map((bullet) => (
-          <li key={bullet} className="flex items-start gap-2">
-            <svg
-              className="w-5 h-5 text-[#2367EE] flex-shrink-0 mt-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="text-base text-[#1D4871]/70 leading-relaxed">{bullet}</span>
+        {plan.groups.map((group, groupIndex) => (
+          <li key={group.header ?? `group-${groupIndex}`}>
+            {group.header && (
+              <p className={`text-sm font-semibold text-[#1D4871]/80 italic mb-3 ${groupIndex > 0 ? 'mt-5' : ''}`}>
+                {group.header}
+              </p>
+            )}
+            <ul className="space-y-3">
+              {group.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-2">
+                  <svg
+                    className="w-5 h-5 text-[#2367EE] flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base text-[#1D4871]/70 leading-relaxed">{bullet}</span>
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
@@ -84,25 +139,42 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 }
 
 export function PricingSection() {
-  const { openSystemSelect } = useDemoCalendar();
+  const { openSystemSelect, openDemoCalendar } = useDemoCalendar();
+  const [billing, setBilling] = useState<BillingPeriod>('annual');
+  const isAnnual = billing === 'annual';
 
   const plans: PricingPlan[] = [
     {
-      title: 'Individual Agent',
-      price: '$69 / month',
-      priceNote: '*Billed annually, save $120. Or $79/month.',
+      title: 'Individual Agent+',
+      // TODO: confirm headline prices with Franco ($250/mo billed annually, $350/mo billed monthly)
+      price: isAnnual ? '$250 / month' : '$350 / month',
+      priceNote: isAnnual ? '*Billed annually, save $1,200.' : '*Billed monthly, cancel anytime.',
       description: 'For agents who want daily consistency.',
-      bulletHeader: 'Every Sayso product included, for a limited time:',
-      bullets: [
-        'Cue: real-time conversation intelligence',
-        'Smart Capture: automatic call notes sorted into LPMAMA and synced to your CRM',
-        'Pulse: live market data mid-call, including prices, days on market, and inventory',
-        'Playbook: your custom scripts on screen, right next to Cue',
-        'Dashboard analytics',
-        'Email Support',
-        'Up to 50% off new features',
+      groups: [
+        {
+          header: 'Sayso:',
+          bullets: [
+            'Cue: real-time conversation intelligence',
+            'Smart Capture: automatic call notes sorted and synced to your CRM',
+            'Pulse: live market data mid-call, including prices, days on market, and inventory',
+            'Playbook: your custom scripts on screen, right next to Cue',
+            'Composer: custom script generator, built on NLP, psychology, proven frameworks',
+          ],
+        },
+        {
+          header: 'Agent Support:',
+          bullets: [
+            'Weekly group coaching call for conversations & conversion',
+            '1-on-1 onboarding',
+            'Leads list',
+            'Added to Ranked Agent Referral Network',
+            'Dashboard analytics',
+            'Email Support',
+          ],
+        },
       ],
-      buttonLabel: 'Download Sayso',
+      buttonLabel: 'Claim early access',
+      // TODO: swap to new Stripe link from Franco once received
       buttonOnClick: openSystemSelect,
       buttonVariant: 'primary',
       analyticsId: 'cta-download-pricing-individual',
@@ -112,15 +184,22 @@ export function PricingSection() {
       title: 'Teams & Brokerages',
       price: 'Custom based on team size',
       description: 'For teams and brokerages.',
-      bulletHeader: "Every agent gets what's in Individual Agent, plus:",
-      bullets: [
-        'Custom team onboarding + enablement',
-        'Dedicated Team Success Manager',
-        'Unlimited agents and team members',
-        'Admin controls + reporting',
+      groups: [
+        {
+          header: 'Every agent gets what’s in Individual Agent+, and the team gets:',
+          bullets: [
+            'Custom team implementation + train-the-trainer',
+            'Leadership dashboard with unlimited teams and groups',
+            'Priority Support',
+            'Dedicated CSM',
+            '1-on-1 quarterly impact reviews with leadership',
+            'Added to Ranked Team Referral Network',
+            'Conversion Benchmarking',
+          ],
+        },
       ],
       buttonLabel: 'Assemble your team',
-      buttonOnClick: () => { window.open('https://app.asksayso.com/login?signup=true', '_blank'); },
+      buttonOnClick: openDemoCalendar,
       buttonVariant: 'secondary',
       analyticsId: 'cta-signup-pricing-teams',
     },
@@ -137,11 +216,15 @@ export function PricingSection() {
             Simple Pricing.
           </h2>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed">
-            Custom Set Up. Included Training.
+            Custom Set Up. Training Included.
           </p>
           <p className="text-base md:text-lg text-[#1D4871]/70 max-w-2xl mx-auto leading-relaxed mt-3">
-            Every Sayso product is included at this price for a limited time, so secure your early access pricing now.
+            Founding member &amp; Early access pricing is locked for life. As long as your subscription stays active, your rate will never increase.
           </p>
+        </div>
+
+        <div className="flex justify-center mb-10">
+          <BillingToggle billing={billing} onChange={setBilling} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 max-w-[820px] mx-auto">
