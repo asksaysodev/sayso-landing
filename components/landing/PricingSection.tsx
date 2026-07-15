@@ -150,13 +150,13 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 }
 
 export function PricingSection() {
-  const { openSystemSelect } = useDemoCalendar();
+  const { openSystemSelect, openDemoCalendar } = useDemoCalendar();
   const [billing, setBilling] = useState<BillingPeriod>('annual');
   const isAnnual = billing === 'annual';
 
   const plans: PricingPlan[] = [
     {
-      title: 'Individual Agent',
+      title: 'Individual Agent+',
       // TODO: confirm headline prices with Franco ($250/mo billed annually, $350/mo billed monthly)
       price: isAnnual ? '$250 / month' : '$350 / month',
       priceNote: isAnnual ? '*Billed annually, save $1,200.' : '*Billed monthly, cancel anytime.',
@@ -197,7 +197,7 @@ export function PricingSection() {
       description: 'For teams and brokerages.',
       groups: [
         {
-          header: 'Every agent gets what’s in Individual Agent, plus team gets:',
+          header: 'Every agent gets what’s in Individual Agent+, and the team gets:',
           bullets: [
             'Custom team implementation + train-the-trainer',
             'Leadership dashboard with unlimited teams and groups',
@@ -210,7 +210,7 @@ export function PricingSection() {
         },
       ],
       buttonLabel: 'Assemble your team',
-      buttonOnClick: () => { window.open('https://calendly.com/asksayso/demo', '_blank'); },
+      buttonOnClick: openDemoCalendar,
       buttonVariant: 'secondary',
       analyticsId: 'cta-signup-pricing-teams',
     },
