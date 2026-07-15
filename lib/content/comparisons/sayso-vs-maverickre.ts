@@ -56,10 +56,6 @@ export const saysoVsMaverickre: ComparisonEntry = {
       answer: 'Yes. Sayso works with any dialer and integrates with the major real estate CRMs including Follow Up Boss, kvCORE, and Sierra Interactive. There is no data migration needed. Sign up, connect your CRM, and start your next call with live coaching.',
     },
     {
-      question: 'Does Sayso offer a free trial?',
-      answer: 'Yes. Sayso has a free trial with no credit card required, so you can test live coaching on your own calls before you pay. You will see how it handles objections and call notes in real conditions rather than a demo environment.',
-    },
-    {
       question: 'Is MaverickRE better than Sayso?',
       answer: 'It depends on what you need. MaverickRE is better for team management, analytics dashboards, and structured AI practice sessions. Sayso is better if you want real-time coaching during live calls and automatic CRM notes. Most agents who switch to Sayso do so because they want help in the moment, not after.',
     },

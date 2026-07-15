@@ -154,7 +154,7 @@ export default function UIPage() {
               <strong>File:</strong> <code className="text-sm bg-[#F4F4F5] px-2 py-1 rounded">components/landing/PricingSection.tsx</code>
             </p>
             <p className="text-base text-[#1D4871]/70">
-              Pricing cards with three tiers (Free Trial, Standard, Enterprise). Includes &quot;Most Popular&quot; badge and feature lists.
+              Pricing cards with two tiers (Individual Agent, Teams &amp; Brokerages). Includes &quot;Most Popular&quot; badge and feature lists.
             </p>
           </div>
           <PricingSection />

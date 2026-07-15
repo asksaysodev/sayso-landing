@@ -237,7 +237,7 @@ Content guidance for the TLDR:
 ### 13. Pricing
 - **H2:** `Pricing`
 - 1-2 paragraphs from `pricing` field - split on `\n\n`
-- Include Sayso pricing framing (transparent, free trial, no hidden fees)
+- Include Sayso pricing framing (transparent, no setup costs, no hidden fees)
 - For competitor pricing: if you know it, compare it. If not, write "Contact [Competitor] for pricing" - never guess.
 - Link to `/pricing/` using inline markdown
 - The component also renders a standalone "See Sayso pricing →" link below the pricing text
@@ -331,7 +331,6 @@ Every comparison page FAQ must include these question patterns:
 | "How much does [Competitor] cost?" | "How much does Shilo cost?" | Captures pricing-related searches |
 
 Additional recommended questions (pick 1-2):
-- "Does Sayso offer a free trial?"
 - "What is the best [competitor] alternative for real estate agents?" (includes the keyword)
 - "Does Sayso work with [specific integration]?"
 

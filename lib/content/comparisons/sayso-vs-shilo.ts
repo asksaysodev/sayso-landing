@@ -11,13 +11,13 @@ export const saysoVsShilo: ComparisonEntry = {
   tldr:
     'If you are looking for a Shilo alternative that coaches you during live calls, not after, Sayso is the top pick for 2026. Where Shilo focuses on post-call analysis, Sayso delivers real-time objection handling prompts and automatic call notes while you are still on the phone. For prospecting-heavy agents who want in-the-moment guidance and less time spent on admin, [Sayso is the better fit](/demo/).',
   whyLooking:
-    'If you are researching a Shilo alternative, you are probably looking for one of a few things: better coaching during live calls, automatic call notes that sync to your CRM, or a tool that works with your existing dialer without requiring a platform switch.\n\nMany agents start comparing options when they realize their current tool only reviews calls after the fact. Post-call analysis has its place, but it does not help when a prospect says "I already have an agent" and you need the right response in the next three seconds. The gap between knowing what to say and knowing it in time is where most deals are lost.\n\nReal estate conversations move fast. A prospect who raises a pricing objection or says they want to wait until next year is not going to pause while you consult a playbook. Agents need guidance that shows up on screen while the conversation is happening, not a scorecard they review after hanging up.\n\nOther common reasons agents look for an alternative to Shilo include pricing concerns, limited CRM integrations, or the need for [real-time coaching](/products/cue/) that adapts to what the prospect is actually saying, not just a static script.',
+    'If you are researching a Shilo alternative, you are probably looking for one of a few things: better coaching during live calls, automatic call notes that sync to your CRM, or a tool that works with your existing dialer without requiring a platform switch.\n\nMany agents start comparing options when they realize their current tool only reviews calls after the fact. Post-call analysis has its place, but it does not help when a prospect says "I already have an agent" and you need the right response within seconds. The gap between knowing what to say and knowing it in time is where most opportunities are lost.\n\nReal estate conversations move fast. A prospect who raises a pricing objection or says they want to wait until next year is not going to pause while you consult a playbook. Agents need guidance that shows up on screen while the conversation is happening, not only a scorecard they review after hanging up.\n\nOther common reasons agents look for an alternative to Shilo include pricing, CRM integrations, or the need for [real-time coaching](/products/cue/) that adapts to what the prospect is actually saying, not just a static script.',
   comparisonTable: [
     { feature: 'Real-time coaching during calls', sayso: 'Yes, live prompts on screen', competitor: 'Limited' },
     { feature: 'Automatic call notes', sayso: 'Yes, synced to CRM', competitor: 'Varies' },
-    { feature: 'Objection handling prompts', sayso: 'Real-time, context-aware', competitor: 'Script-based' },
-    { feature: 'CRM integrations', sayso: 'Follow Up Boss, Sierra, kvCORE', competitor: 'Varies' },
-    { feature: 'Works with any dialer', sayso: 'Yes', competitor: 'No' },
+    { feature: 'Objection handling prompts', sayso: 'Real-time, context-aware', competitor: 'Varies' },
+    { feature: 'CRM integrations', sayso: 'Yes', competitor: 'Varies' },
+    { feature: 'Works with any dialer', sayso: 'Yes', competitor: 'Varies' },
     { feature: 'Post call analytics', sayso: 'Yes', competitor: 'Yes' },
   ],
   whereSaysoWins:
@@ -26,7 +26,7 @@ export const saysoVsShilo: ComparisonEntry = {
     {
       heading: 'Real-Time Coaching During Live Calls',
       body:
-        'Sayso listens to your conversation and surfaces [real-time coaching prompts](/products/cue/) directly on your screen. When a prospect raises an objection like "I need to think about it" or "We are happy with our current agent," the right response appears immediately, not in a post-call report you review an hour later.\n\nThis is the core difference compared to Shilo. Post-call tools tell you what you should have done. Sayso tells you what to do right now, while the prospect is still on the line.',
+        'Sayso listens to your conversation and surfaces [real-time coaching prompts](/products/cue/) directly on your screen. When a prospect raises an objection like "I need to think about it" or "We are happy with our current agent," the right response appears immediately, not in a post-call report you review an hour later.\n\nThis is the core difference compared to Shilo. Post-call tools are very helpful and tell you what you should have done. Sayso tells you what to do right now, while the prospect is still on the line. Sayso has limited post call coaching as the focus is real time conversion.',
     },
     {
       heading: 'Automatic Call Notes That Sync to Your CRM',
@@ -43,27 +43,19 @@ export const saysoVsShilo: ComparisonEntry = {
   faq: [
     {
       question: 'Is Sayso a good alternative to Shilo?',
-      answer: 'Yes. Sayso is a strong Shilo alternative because it coaches you during live calls rather than only reviewing them after. If your priority is in-the-moment guidance on objection handling, appointment setting, and call flow, Sayso is purpose-built for that.',
+      answer: 'Yes. Sayso is a strong Shilo alternative because it coaches you during live calls rather than only reviewing them afterward. If your priority is in-the-moment guidance on objection handling, appointment setting, and call flow, Sayso is purpose-built for that.',
     },
     {
       question: 'Can I switch from Shilo to Sayso easily?',
-      answer: 'Yes. Sayso works with any dialer and integrates with the major real estate CRMs including Follow Up Boss, kvCORE, and Sierra Interactive. There is no data migration needed, just sign up, connect your CRM, and start your next call with live coaching.',
-    },
-    {
-      question: 'Does Sayso offer a free trial?',
-      answer: 'Yes. Every Sayso plan starts with a free trial. You get the full real-time coaching experience on actual prospecting calls, which is the best way to see how it compares to a post-call tool like Shilo before you commit.',
+      answer: 'Yes. Sayso works with any dialer and integrates directly with your CRMs. There is no data migration needed, just sign up, connect your CRM, and start your next call with live coaching. Teams can use both tools together; there is a great use case for both.',
     },
     {
       question: 'Is Shilo better than Sayso?',
-      answer: 'It depends on what you need. Sayso is better if you want real-time coaching during live calls and automatic CRM notes. Most agents who switch to Sayso do so because they want help in the moment, not after.',
-    },
-    {
-      question: 'How much does Shilo cost?',
-      answer: 'Shilo pricing may vary by plan and team size. We recommend contacting Shilo directly for their current rates. For Sayso pricing, visit the pricing page, where all plans are published with no hidden fees.',
+      answer: 'It depends on what you need. Sayso helps with in-the-moment coaching during live calls.',
     },
     {
       question: 'What is the best Shilo alternative for real estate agents?',
-      answer: 'Sayso is the top-rated option for real estate agents who want coaching during live calls instead of post-call review. It includes real-time objection handling prompts and automatic call notes synced to your CRM, features designed specifically for prospecting-heavy agents.',
+      answer: 'Sayso is for real estate agents who want coaching during live calls instead of post-call review. It includes real-time objection handling prompts and automatic call notes synced to your CRM, features designed specifically for prospecting-heavy agents.',
     },
   ],
   relatedComparisons: [

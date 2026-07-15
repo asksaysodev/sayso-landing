@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { LightningIcon } from '@/components/icons/LightningIcon';
 
 type BillingPeriod = 'annual' | 'monthly';
 
@@ -17,7 +16,6 @@ interface PricingPlan {
   priceNote?: string;
   description: string;
   groups: BulletGroup[];
-  freeTrialBadge?: string;
   buttonLabel: string;
   buttonOnClick: () => void;
   buttonVariant: 'primary' | 'secondary';
@@ -96,15 +94,6 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
       <p className="text-base text-[#1D4871]/70 mb-4 leading-relaxed">
         {plan.description}
       </p>
-
-      {plan.freeTrialBadge && (
-        <div className="-mx-6 md:-mx-7 mb-5 px-6 py-2.5 bg-[#FFDE59] text-center">
-          <span className="font-comic text-sm tracking-wide text-[#1D4871] inline-flex items-center gap-1.5">
-            <LightningIcon size={14} color="#2367EE" />
-            {plan.freeTrialBadge}
-          </span>
-        </div>
-      )}
 
       <ul className="flex-1 space-y-3 mb-6">
         {plan.groups.map((group, groupIndex) => (

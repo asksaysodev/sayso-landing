@@ -75,7 +75,6 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                 <LightningIcon size={16} className="mr-2 flex-shrink-0" />
                 Download Sayso
               </button>
-              <p className="text-sm text-[#1D4871]/70">3-day free trial included</p>
             </div>
           </div>
 
