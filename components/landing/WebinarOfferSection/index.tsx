@@ -29,7 +29,7 @@ export function WebinarOfferSection() {
         <ClaimCta />
         <WhatYouGet />
         <NextSteps />
-        <ClaimCta />
+        <ClaimCta withGuarantee />
       </div>
     </section>
   );

@@ -8,12 +8,16 @@
  *
  * Falls back to opening the calendar in a new tab if the Calendly widget script
  * has not loaded yet, so the click is never a dead end.
+ *
+ * Pass withGuarantee on the closing CTA to repeat the money-back guarantee
+ * right next to the final button.
  */
 
+import { ShieldCheck } from 'lucide-react';
 import { openCalendlyPopup } from '@/lib/calendly';
-import { CLAIM_CALENDAR_URL } from '../data';
+import { CLAIM_CALENDAR_URL, GUARANTEE_TEXT } from '../data';
 
-export function ClaimCta() {
+export function ClaimCta({ withGuarantee = false }: { withGuarantee?: boolean }) {
   return (
     <section className="text-center">
       <button
@@ -25,8 +29,22 @@ export function ClaimCta() {
         Claim your offer
       </button>
       <p className="text-sm text-[#1D4871]/60 mt-4">
-        Spots are limited to webinar attendees. Book your time before you leave.
+        Limited to webinar attendees.
       </p>
+      {withGuarantee && (
+        <p className="inline-flex items-start gap-2 text-sm md:text-base text-[#1D4871] mt-3 max-w-xl mx-auto text-left">
+          <ShieldCheck
+            size={18}
+            strokeWidth={2.25}
+            className="shrink-0 text-[#2367EE] mt-0.5"
+            aria-hidden="true"
+          />
+          <span>
+            <span className="font-bold text-[#2367EE]">The guarantee:</span>{' '}
+            {GUARANTEE_TEXT}
+          </span>
+        </p>
+      )}
     </section>
   );
 }

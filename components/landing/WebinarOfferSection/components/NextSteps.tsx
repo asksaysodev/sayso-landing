@@ -1,21 +1,21 @@
 /**
- * "What happens after you claim." Three quick steps so people know the flow
- * before they click: claim, book a time, create their account. Keeps the CTA
- * from feeling like a mystery box.
+ * "What happens next." Three quick steps so people know the flow before they
+ * click: claim, create their account, then book onboarding. Keeps the CTA from
+ * feeling like a mystery box.
  */
 
 const STEPS: { title: string; body: string }[] = [
   {
     title: 'Claim your offer',
-    body: 'Tap the button above to lock in the webinar price for the full year.',
-  },
-  {
-    title: 'Book your time',
-    body: 'Pick a slot in the next two days to get on a call and get set up.',
+    body: 'Tap the button to lock in the webinar price forever.',
   },
   {
     title: 'Create your account',
-    body: 'Once your time is confirmed, you go straight to setting up Sayso.',
+    body: "We'll get to work on getting you leads.",
+  },
+  {
+    title: 'Book your onboarding',
+    body: "You'll get the full setup and your curated leads list.",
   },
 ];
 
@@ -23,7 +23,7 @@ export function NextSteps() {
   return (
     <section>
       <h2 className="font-comic text-2xl md:text-3xl text-[#1D4871] tracking-wide text-center mb-7">
-        What happens after you claim
+        What happens next
       </h2>
       <ol className="grid gap-4 md:grid-cols-3">
         {STEPS.map((step, i) => (

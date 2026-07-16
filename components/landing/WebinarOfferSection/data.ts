@@ -52,7 +52,7 @@ export const OFFER_COLUMNS: OfferColumn[] = [PLATFORM_COLUMN, WEBINAR_COLUMN];
 
 /** The money-back guarantee, shown as its own banner under the columns. */
 export const GUARANTEE_TEXT =
-  'close at least one home using Sayso this year, or you get your money back.';
+  'close at least one home using Sayso, or you get your money back.';
 
 /** The one-time webinar price for the full year, everything included. */
 export const TODAY_PRICE = 3000;

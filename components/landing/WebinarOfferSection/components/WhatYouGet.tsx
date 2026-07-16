@@ -22,8 +22,8 @@ function OfferCard({ column }: { column: OfferColumn }) {
     ? 'bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-7'
     : 'bg-white v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-7';
   const labelCls = isDark
-    ? 'text-[11px] md:text-xs font-bold uppercase tracking-widest text-white/70'
-    : 'text-[11px] md:text-xs font-bold uppercase tracking-widest text-[#1D4871]/70';
+    ? 'text-[11px] font-bold uppercase tracking-wide whitespace-nowrap text-white/70'
+    : 'text-[11px] font-bold uppercase tracking-wide whitespace-nowrap text-[#1D4871]/70';
   const pillCls = isDark
     ? 'shrink-0 text-[11px] font-bold rounded-full px-2.5 py-1 bg-[#FFDE59] text-[#1D4871]'
     : 'shrink-0 text-[11px] font-bold rounded-full px-2.5 py-1 bg-[#EEF3FF] text-[#2367EE] border border-[#2367EE]/20';
@@ -32,7 +32,7 @@ function OfferCard({ column }: { column: OfferColumn }) {
 
   return (
     <div className={cardCls}>
-      <div className="flex items-start justify-between gap-3 mb-5">
+      <div className="flex items-center justify-between gap-3 mb-5">
         <span className={labelCls}>{column.label}</span>
         <span className={pillCls}>{formatUsd(column.value)} value</span>
       </div>
