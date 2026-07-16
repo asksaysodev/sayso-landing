@@ -11,11 +11,11 @@ const STEPS: { title: string; body: string }[] = [
   },
   {
     title: 'Create your account',
-    body: "We'll get to work on getting you leads.",
+    body: "We'll get to work on getting you leads!",
   },
   {
     title: 'Book your onboarding',
-    body: "You'll get the full setup and your curated leads list.",
+    body: "You'll get the full setup and curated leads list.",
   },
 ];
 
