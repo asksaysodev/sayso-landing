@@ -4,12 +4,13 @@
  * bonuses on the dark card, with a money-back guarantee banner underneath.
  *
  * Each card also shows its combined dollar value, so the amounts stay clear and
- * tie back to the savings callout above (platform + bonuses = full value).
+ * tie back to the savings callout below (platform + bonuses = full value).
  */
 
-import { Check, ShieldCheck } from 'lucide-react';
-import { OFFER_COLUMNS, GUARANTEE_TEXT } from '../data';
+import { Check } from 'lucide-react';
+import { OFFER_COLUMNS } from '../data';
 import type { OfferColumn } from '../types';
+import { Guarantee } from './Guarantee';
 
 function formatUsd(value: number): string {
   return `$${value.toLocaleString('en-US')}`;
@@ -73,18 +74,7 @@ export function WhatYouGet() {
         ))}
       </div>
 
-      <div className="mt-5 flex items-start gap-3.5 bg-[#EEF1FF] v2-comic-border rounded-2xl p-5 md:p-6">
-        <ShieldCheck
-          size={26}
-          strokeWidth={2.25}
-          className="shrink-0 text-[#2367EE] mt-0.5"
-          aria-hidden="true"
-        />
-        <p className="text-sm md:text-base leading-relaxed text-[#1D4871]">
-          <span className="font-bold text-[#2367EE]">The guarantee:</span>{' '}
-          {GUARANTEE_TEXT}
-        </p>
-      </div>
+      <Guarantee className="mt-5" />
     </section>
   );
 }

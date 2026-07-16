@@ -67,16 +67,11 @@ export const TOTAL_SAVINGS = TOTAL_VALUE - TODAY_PRICE;
 export const SAVINGS_PERCENT = Math.round((TOTAL_SAVINGS / TOTAL_VALUE) * 100);
 
 /**
- * Where "Claim your offer" sends people. The intended flow is:
- *   1. Claim offer on this page
- *   2. Book a time on the calendar (within the next 2 days)
- *   3. After confirming the time, Calendly redirects to create their account
+ * Where "Claim your offer" sends people: straight to the create-account page.
+ * After they sign up, onboarding (and its calendar step) is handled by email,
+ * so the button no longer opens a calendar.
  *
- * Step 3 is configured as a redirect on the Calendly event itself, pointed at
- * ACCOUNT_CREATION_URL below. Swap CLAIM_CALENDAR_URL for the dedicated webinar
- * booking event once it exists; it currently points at the standard demo event.
+ * This should be the direct create-account page, not the longer question flow.
+ * Confirm the exact URL with the app team and swap it here if it differs.
  */
-export const CLAIM_CALENDAR_URL = 'https://calendly.com/asksayso/demo?hide_gdpr_banner=1';
-
-/** Where the booking flow lands people to create their Sayso account. */
 export const ACCOUNT_CREATION_URL = 'https://app.asksayso.com/login?signup=true';

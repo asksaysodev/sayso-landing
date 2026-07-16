@@ -15,7 +15,7 @@ const STEPS: { title: string; body: string }[] = [
   },
   {
     title: 'Book your onboarding',
-    body: "You'll get the full setup and curated leads list.",
+    body: "After you sign up, you'll get an email to schedule onboarding. In onboarding you'll get the full setup and curated leads list.",
   },
 ];
 
