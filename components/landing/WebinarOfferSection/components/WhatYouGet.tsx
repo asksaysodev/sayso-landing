@@ -62,9 +62,6 @@ export function WhatYouGet() {
   return (
     <section>
       <div className="text-center mb-7">
-        <span className="block text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-2">
-          The full offer
-        </span>
         <h2 className="font-comic text-2xl md:text-3xl text-[#1D4871] tracking-wide">
           Everything you get, and what it&apos;s worth
         </h2>
