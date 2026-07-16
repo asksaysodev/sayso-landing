@@ -13,9 +13,9 @@ export function Hero() {
         The math, out loud
       </h1>
       <p className="text-base md:text-lg text-[#1D4871]/75 max-w-2xl mx-auto leading-relaxed">
-        This is the full offer we walked through on the webinar, every piece laid
-        out with what it is actually worth. Add it up, then look at what you pay
-        today.
+        This is the full offer we walked through on the webinar. Here is what you
+        pay today next to what it is actually worth, then every piece that goes
+        into that value.
       </p>
     </section>
   );
