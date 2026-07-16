@@ -15,10 +15,6 @@ export function SavingsCallout() {
   return (
     <section className="bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-7 md:p-10 text-center v2-halftone relative overflow-hidden">
       <div className="relative z-10">
-        <span className="block text-xs md:text-sm font-bold tracking-widest uppercase text-[#FFDE59] mb-5">
-          Webinar Exclusive
-        </span>
-
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 mb-6">
           <span className="text-2xl md:text-3xl font-bold text-white/45 tabular-nums line-through decoration-2">
             {formatUsd(TOTAL_VALUE)}
