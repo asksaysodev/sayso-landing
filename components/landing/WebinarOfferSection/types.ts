@@ -2,16 +2,19 @@
  * Shared types for the webinar-exclusive offer page.
  */
 
-export interface OfferLineItem {
-  /** What the attendee is getting. */
+export interface OfferItem {
+  /** The product or bonus name, shown in bold. */
   name: string;
-  /** Optional supporting detail shown under the name. */
+  /** Optional supporting line shown after the name. */
   detail?: string;
-  /**
-   * Dollar value counted toward the total. Use null for non-priced items
-   * (like the guarantee) that should not add to the value total.
-   */
-  value: number | null;
-  /** Text shown on the right when value is null (e.g. "Risk: $0"). */
-  displayValue?: string;
+}
+
+export interface OfferColumn {
+  /** Card heading (e.g. "The full Sayso platform, 12 months"). */
+  label: string;
+  /** Light card sits on white, dark card sits on navy. */
+  variant: 'light' | 'dark';
+  /** Combined dollar value of this column, shown as a pill and summed for totals. */
+  value: number;
+  items: OfferItem[];
 }

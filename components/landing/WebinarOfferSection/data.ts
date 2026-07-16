@@ -1,47 +1,64 @@
-import type { OfferLineItem } from './types';
+import type { OfferColumn } from './types';
 
 /**
- * Edit the offer here. The value total, savings, and percent-off shown on the
- * page are all derived from these numbers (see totals below), so changing a
- * price in one place keeps the whole page consistent.
+ * The offer, split into two columns like the webinar slide:
+ *   - PLATFORM_COLUMN: the Sayso product itself, included for 12 months
+ *   - WEBINAR_COLUMN:  the bonuses you only get by buying on the webinar
+ *
+ * Each column carries a combined dollar value. The full value, savings, and
+ * percent-off shown on the page are all derived from these numbers (see totals
+ * below), so changing a value in one place keeps the whole page consistent.
  */
-export const OFFER_LINE_ITEMS: OfferLineItem[] = [
-  {
-    name: 'Full Sayso platform, 12 months',
-    detail: 'Cue, Smart Capture, Pulse, Playbook, Composer, and Analytics',
-    value: 3500,
-  },
-  {
-    name: 'Weekly live coaching, all year',
-    detail: 'Every week for a full year, plus the private Skool group',
-    value: 7500,
-  },
-  {
-    name: '1-on-1 onboarding',
-    detail: 'A dedicated setup session so you get value on day one',
-    value: 175,
-  },
-  {
-    name: 'Lead list + preferred realtor list',
-    detail: 'A starting list of leads and a preferred realtor list to work',
-    value: 6000,
-  },
-  {
-    name: 'Close-a-home money-back guarantee',
-    detail: "If you don't close, you don't pay. All the upside, none of the risk.",
-    value: null,
-    displayValue: 'Risk: $0',
-  },
-];
+export const PLATFORM_COLUMN: OfferColumn = {
+  label: 'The full Sayso platform, 12 months',
+  variant: 'light',
+  value: 3500,
+  items: [
+    { name: 'Cue', detail: 'real-time conversation intelligence on every call' },
+    {
+      name: 'Smart Capture',
+      detail: 'automatic call notes sorted into LPMAMA, synced to your CRM',
+    },
+    {
+      name: 'Pulse',
+      detail: 'live market data mid-call: prices, days on market, inventory',
+    },
+    { name: 'Playbook', detail: 'your custom scripts on screen, right next to Cue' },
+    { name: 'Composer', detail: 'generate custom scripts on the fly' },
+    { name: 'Dashboard analytics + email support' },
+  ],
+};
+
+export const WEBINAR_COLUMN: OfferColumn = {
+  label: 'When you buy on this webinar',
+  variant: 'dark',
+  value: 13675,
+  items: [
+    { name: 'Weekly coaching', detail: 'live group coaching, every week, all year' },
+    {
+      name: '1-on-1 onboarding',
+      detail: "personal setup so you're live on your next call block",
+    },
+    { name: 'Lead list', detail: 'so the coaching has calls to point at' },
+    {
+      name: 'Skool community',
+      detail: 'scripts, practice, call breakdown, reviews, and more',
+    },
+    { name: 'Preferred realtor list', detail: 'placement on the list we refer from' },
+  ],
+};
+
+export const OFFER_COLUMNS: OfferColumn[] = [PLATFORM_COLUMN, WEBINAR_COLUMN];
+
+/** The money-back guarantee, shown as its own banner under the columns. */
+export const GUARANTEE_TEXT =
+  'close at least one home using Sayso this year, or you get your money back.';
 
 /** The one-time webinar price for the full year, everything included. */
 export const TODAY_PRICE = 3000;
 
-/** Sum of every priced line item. This is the real value of the offer. */
-export const TOTAL_VALUE = OFFER_LINE_ITEMS.reduce(
-  (sum, item) => sum + (item.value ?? 0),
-  0,
-);
+/** Sum of every column's value. This is the real value of the offer. */
+export const TOTAL_VALUE = OFFER_COLUMNS.reduce((sum, col) => sum + col.value, 0);
 
 /** What the attendee saves by claiming on the webinar. */
 export const TOTAL_SAVINGS = TOTAL_VALUE - TODAY_PRICE;
