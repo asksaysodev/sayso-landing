@@ -37,6 +37,7 @@ export const headerNav: NavSection[] = [
       { label: 'Pulse', href: '/products/pulse', subtitle: 'Live market analysis mid-call' },
       { label: 'Playbook', href: '/products/playbook', subtitle: 'Custom scripts for every scenario' },
       // { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' }, // TODO: re-enable when feedback page is ready
+      { label: 'Why Sayso', href: '/why-sayso' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },
@@ -60,16 +61,6 @@ export const headerNav: NavSection[] = [
       { label: 'Blog', href: '/blog' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
-    ],
-  },
-  {
-    label: 'Compare',
-    href: '/compare',
-    links: [
-      { label: 'Sayso vs Shilo', href: '/compare/sayso-vs-shilo' },
-      { label: 'Sayso vs MaverickRE', href: '/compare/sayso-vs-maverickre' },
-      { label: 'Sayso vs Manual Coaching', href: '/compare/sayso-vs-manual-coaching' },
-      { label: 'Why Sayso', href: '/why-sayso' },
     ],
   },
   {

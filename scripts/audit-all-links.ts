@@ -63,7 +63,6 @@ function buildKnownRoutes(): Set<string> {
     { dir: 'products', prefix: '/products' },
     { dir: 'integrations', prefix: '/integrations' },
     { dir: 'for', prefix: '/for' },
-    { dir: 'comparisons', prefix: '/compare' },
     { dir: 'case-studies', prefix: '/case-studies' },
   ];
   for (const { dir, prefix } of sections) {

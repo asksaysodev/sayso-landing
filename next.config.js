@@ -87,12 +87,37 @@ const nextConfig = {
       // ──────────────────────────────────────────────────
       {
         source: '/blog/best-real-estate-call-coaching-software-alternatives/',
-        destination: '/compare/sayso-vs-shilo/',
+        destination: '/why-sayso/',
         permanent: true,
       },
       {
         source: '/blog/shilo-ai-alternatives-real-estate-call-coaching/',
-        destination: '/compare/sayso-vs-shilo/',
+        destination: '/why-sayso/',
+        permanent: true,
+      },
+      // ──────────────────────────────────────────────────
+      // REMOVED COMPARISON PAGES → Why Sayso
+      // The /compare/ hub and its child pages were retired. They were indexed,
+      // so 301 them to the positioning page to preserve equity and avoid 404s.
+      // ──────────────────────────────────────────────────
+      {
+        source: '/compare',
+        destination: '/why-sayso/',
+        permanent: true,
+      },
+      {
+        source: '/compare/',
+        destination: '/why-sayso/',
+        permanent: true,
+      },
+      {
+        source: '/compare/:slug',
+        destination: '/why-sayso/',
+        permanent: true,
+      },
+      {
+        source: '/compare/:slug/',
+        destination: '/why-sayso/',
         permanent: true,
       },
       // ──────────────────────────────────────────────────
