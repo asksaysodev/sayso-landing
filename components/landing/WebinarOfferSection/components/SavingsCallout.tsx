@@ -12,7 +12,7 @@ function formatUsd(value: number): string {
 
 export function SavingsCallout() {
   return (
-    <section className="bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-8 text-center v2-halftone relative overflow-hidden max-w-xl mx-auto w-full">
+    <section className="bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-8 text-center v2-halftone relative overflow-hidden max-w-2xl mx-auto w-full">
       <div className="relative z-10">
         <span className="block font-comic text-5xl md:text-6xl text-[#FFDE59] tracking-wide leading-none">
           {formatUsd(TODAY_PRICE)}
@@ -27,10 +27,9 @@ export function SavingsCallout() {
           </span>
         </div>
 
-        <p className="text-xs md:text-sm text-white/70 mt-4 max-w-md mx-auto leading-relaxed">
-          One closing covers this several times over. And if you don&apos;t close,
+        <p className="text-xs md:text-sm text-white/70 mt-4 leading-relaxed">
+          One closing covers this several times over, and if you don&apos;t close,
           you don&apos;t pay.
-          <span className="block">That is the guarantee.</span>
         </p>
       </div>
     </section>
