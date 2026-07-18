@@ -4,6 +4,8 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
+// PREVIEW / DO NOT MERGE: floating Calendly "Book a Demo" badge on every page.
+import { CalendlyBadge } from '@/components/CalendlyBadge'
 import { headerNav } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
 import './globals.css'
@@ -211,6 +213,8 @@ fbq('track', 'PageView');`,
         <DemoCalendarProvider>
           {children}
         </DemoCalendarProvider>
+        {/* PREVIEW / DO NOT MERGE: floating Calendly "Book a Demo" badge widget. */}
+        <CalendlyBadge />
         <Analytics />
         <SpeedInsights />
         <Script
