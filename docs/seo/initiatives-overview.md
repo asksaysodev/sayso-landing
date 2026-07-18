@@ -52,16 +52,15 @@ Counts are derived from the live sitemap generator and content loaders as of thi
 |---|---|---|---|
 | Homepage | 1 | Yes | priority 1.0 |
 | Core / conversion pages | ~9 | Yes | demo, download, pricing, about, security, contact, request-demo, why-sayso, plus utility |
-| Hub / category landing pages | 7 | Yes | /products, /for, /compare, /objections, /glossary, /resources, /blog |
+| Hub / category landing pages | 6 | Yes | /products, /for, /objections, /glossary, /resources, /blog |
 | Product (feature) pages | 4 | Yes | cue, smart-capture, pulse, playbook |
 | Solution / persona use-case pages (`/for/`) | 4 | Yes | solo-agents, team-leaders, new-agents, isas |
-| Comparison pages (`/compare/`) | 3 | Yes | vs Shilo, vs MaverickRE, vs Manual Coaching |
 | Objection-handling pages (`/objections/`) | 14 | Yes | one per common seller/buyer objection |
 | Glossary pages (`/glossary/`) | 10 | Yes | real estate prospecting terms |
 | Blog posts | 24 | Yes | 4 pillars + 20 supporting |
 | Blog category pages | 4 | In sitemap but `noindex` | see hygiene note below |
 
-**Approximate total indexable URLs:** ~75 (excluding the 4 `noindex` category pages, which are still listed in the sitemap).
+**Approximate total indexable URLs:** ~71 (excluding the 4 `noindex` category pages, which are still listed in the sitemap).
 
 **Explicitly excluded / gated (not in sitemap):**
 - `/privacy`, `/terms`, `/feedback`, `/paywall-preview`, `/ui` (excluded by design).
@@ -72,12 +71,11 @@ Counts are derived from the live sitemap generator and content loaders as of thi
 
 ## 4. Landing-Page Layer (Methodology & Topic Selection)
 
-**Important framing:** Sayso is a SaaS product, not a local/brick-and-mortar business, so there are **no geographic "location" pages** (no city/state landing pages). Treating the prompt's "location/landing page" section accurately: the programmatic landing-page layer is **intent- and persona-based**, not geo-based. It has four families:
+**Important framing:** Sayso is a SaaS product, not a local/brick-and-mortar business, so there are **no geographic "location" pages** (no city/state landing pages). Treating the prompt's "location/landing page" section accurately: the programmatic landing-page layer is **intent- and persona-based**, not geo-based. It has three families:
 
 1. **Persona / "Solutions" pages (`/for/`, 4 pages):** solo agents, team leaders, new agents, ISAs. Each targets a buyer segment and maps that segment's pain to product capabilities.
 2. **Objection-handling pages (`/objections/`, 14 pages):** one page per real objection an agent hears on a call (e.g., "already have an agent", "just looking", "price too high", "we'll wait for spring"). These target bottom-of-funnel, high-intent "how do I respond to X" search behavior and double as product demonstrations.
 3. **Glossary pages (`/glossary/`, 10 pages):** definitional terms (circle prospecting, FSBO, expired listing, ISA, sphere of influence, door knocking, drip campaign, lead nurturing, listing appointment, cold calling). Top-of-funnel, definition-intent capture with `DefinedTerm` schema.
-4. **Comparison pages (`/compare/`, 3 pages):** Sayso vs named competitors (Shilo, MaverickRE) and vs manual coaching. Bottom-of-funnel, commercial-investigation intent.
 
 **Methodology / how topics were selected:** topic selection is driven by the keyword research file (`sayso_keywords_volume.csv`), which organizes ~205 keywords into 8 named clusters (A-H). Each landing-page family maps to one or more clusters:
 - Objection pages → cluster D (Objection handling, 24 keywords).

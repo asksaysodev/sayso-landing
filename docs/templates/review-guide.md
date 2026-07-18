@@ -8,14 +8,13 @@ Once these templates are approved, we'll use them as the blueprint to build out 
 
 ## What to Review
 
-There are **8 template pages** - one per page type. Each one represents the pattern that every page of that type will follow.
+There are **7 template pages** - one per page type. Each one represents the pattern that every page of that type will follow.
 
 | Page Type | URL to Review | What This Template Covers |
 |---|---|---|
 | Feature | `/products/cue/` | All 5 feature pages |
 | Persona | `/for/solo-agents/` | All 4 persona pages |
 | Integration | `/integrations/partners/follow-up-boss/` | All partner integration pages |
-| Comparison | `/compare/sayso-vs-shilo/` | All 3 comparison pages |
 | Objection | `/objections/not-ready-yet/` | All 15 objection pages |
 | Glossary | `/glossary/circle-prospecting/` | All 10 glossary pages |
 | Blog (pillar) | `/blog/real-estate-cold-calling-guide/` | All pillar blog posts |
@@ -25,7 +24,7 @@ There are **8 template pages** - one per page type. Each one represents the patt
 
 ## How to Review
 
-For each of the 8 pages above, please do two passes:
+For each of the 7 pages above, please do two passes:
 
 ### 1. Content Review
 

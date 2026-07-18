@@ -52,7 +52,7 @@ Feature pages sit at the **mid-to-bottom of the funnel**. The visitor is solutio
 **A feature page is NOT:**
 - A how-to guide or tutorial (that is a blog post)
 - An educational article (that is a glossary page)
-- A competitor comparison (that is a `/compare/` page)
+- A named-competitor comparison (Sayso does not publish competitor comparison pages)
 - A persona pitch (that is a `/for/` page)
 
 If you find yourself writing a "how to" guide, you are writing a blog post, not a feature page. Keep the focus on what Sayso does, how it works, and why it matters.
@@ -115,7 +115,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 ### Differentiators
 
 - Compare against the **generic way** agents handle this problem (manual scripts, post-call reviews, memorization).
-- Do NOT compare against specific competitors - that is what `/compare/` pages are for.
+- Do NOT compare against specific named competitors.
 - Each differentiator should be 2-3 sentences.
 - Differentiator titles render as `<h3>` tags for proper heading hierarchy.
 

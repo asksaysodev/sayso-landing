@@ -158,8 +158,8 @@ Using the competitive brief and Script Book insights from Phase 1, write the com
 **Target audience:** Real estate agents (solo and team), ISAs, team leaders, and brokerage managers in the US. They make 20-100+ calls per day. Practical, time-pressed, skeptical of tools that don't immediately help them book more appointments.
 
 **What makes Sayso different:**
-- **Shilo AI** - post-call grading and analysis. Reviews calls AFTER they happen.
-- **MaverickRE** - broader platform with AI role-play for practice. Not present during real calls.
+- **Post-call analysis tools** - grade and analyze calls AFTER they happen.
+- **Role-play and practice tools** - let agents rehearse with simulated calls. Not present during real calls.
 - **Sayso's edge** - real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after.
 
 ---
