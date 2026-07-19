@@ -6,8 +6,10 @@
  * the popup helper below.
  */
 
+// hide_event_type_details=1 drops Calendly's left info panel so the popup is
+// just the calendar: narrower and far less internal scrolling.
 export const CALENDLY_DEMO_URL =
-  'https://calendly.com/asksayso/demo?hide_gdpr_banner=1';
+  'https://calendly.com/asksayso/demo?hide_gdpr_banner=1&hide_event_type_details=1';
 
 declare global {
   interface Window {

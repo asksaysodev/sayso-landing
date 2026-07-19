@@ -162,6 +162,9 @@ fbq('track', 'PageView');`,
         both the inline scheduler on /demo and the "Book a Demo" popup triggered
         from buttons across the site (see lib/calendly.ts).
       */}
+      {/* Warm up the connection to Calendly so the popup iframe loads faster. */}
+      <link rel="preconnect" href="https://calendly.com" />
+      <link rel="preconnect" href="https://assets.calendly.com" />
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
