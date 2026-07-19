@@ -87,7 +87,7 @@ const nextConfig = {
       // ──────────────────────────────────────────────────
       {
         source: '/blog/best-real-estate-call-coaching-software-alternatives/',
-        destination: '/why-sayso/',
+        destination: '/blog/best-real-estate-call-coaching-software/',
         permanent: true,
       },
       {
@@ -99,24 +99,11 @@ const nextConfig = {
       // REMOVED COMPARISON PAGES → Why Sayso
       // The /compare/ hub and its child pages were retired. They were indexed,
       // so 301 them to the positioning page to preserve equity and avoid 404s.
+      // :path* matches zero or more segments, so this one rule covers the hub,
+      // every child page, and any deeper legacy URL a crawler may have indexed.
       // ──────────────────────────────────────────────────
       {
-        source: '/compare',
-        destination: '/why-sayso/',
-        permanent: true,
-      },
-      {
-        source: '/compare/',
-        destination: '/why-sayso/',
-        permanent: true,
-      },
-      {
-        source: '/compare/:slug',
-        destination: '/why-sayso/',
-        permanent: true,
-      },
-      {
-        source: '/compare/:slug/',
+        source: '/compare/:path*',
         destination: '/why-sayso/',
         permanent: true,
       },
