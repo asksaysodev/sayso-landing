@@ -3,14 +3,12 @@
 /**
  * DemoLiftCard  —  PREVIEW / DO NOT MERGE
  *
- * A floating "book a demo" launcher that expands into a rich card, styled after
- * the iClosed "LIFT" widget the team liked (avatar + name/title, headline, a
- * row of date pills, and a primary CTA).
+ * A floating "book a demo" launcher that expands into a compact card, styled
+ * after the iClosed "LIFT" widget the team liked (avatar + name/title,
+ * headline, and a single primary CTA).
  *
- * IMPORTANT: this is a custom UI mock backed by Calendly. It does NOT show real
- * Calendly availability. The date pills and the "Schedule a demo" button all
- * open the existing Calendly popup (see lib/calendly.ts). Showing genuine open
- * slots inside the pills would require Calendly's paid scheduling API.
+ * IMPORTANT: this is a custom UI mock backed by Calendly. The "Book a time"
+ * button opens the existing Calendly popup (see lib/calendly.ts).
  *
  * Experimental preview only; intentionally scoped to a do-not-merge branch.
  */
@@ -22,35 +20,13 @@ import { openCalendlyPopup } from '@/lib/calendly';
 // Auto-open the card this many ms after load so the preview is easy to see.
 const AUTO_OPEN_MS = 2500;
 
-const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-interface DayPill {
-  weekday: string;
-  day: number;
-}
-
-function buildNextDays(count: number): DayPill[] {
-  const days: DayPill[] = [];
-  const base = new Date();
-  for (let i = 0; i < count; i += 1) {
-    const d = new Date(base);
-    d.setDate(base.getDate() + i);
-    days.push({ weekday: WEEKDAYS[d.getDay()], day: d.getDate() });
-  }
-  return days;
-}
-
 export function DemoLiftCard() {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
-  const [days, setDays] = useState<DayPill[]>([]);
-  const [selected, setSelected] = useState(0);
   const autoOpenedRef = useRef(false);
 
-  // Build the date pills on the client only (avoids SSR/hydration date mismatch).
   useEffect(() => {
     setMounted(true);
-    setDays(buildNextDays(5));
   }, []);
 
   // Auto-open once, shortly after mount.
@@ -103,28 +79,6 @@ export function DemoLiftCard() {
             See how Sayso helps agents say the right thing on every call and turn
             more conversations into booked appointments.
           </p>
-
-          {/* Date pills (cosmetic: any pill opens the Calendly popup) */}
-          <div className="mb-3 grid grid-cols-5 gap-1.5 sm:mb-4 sm:gap-2">
-            {days.map((d, i) => (
-              <button
-                key={`${d.weekday}-${d.day}`}
-                type="button"
-                onClick={() => {
-                  setSelected(i);
-                  book();
-                }}
-                className={`flex flex-col items-center rounded-lg border-2 py-1.5 transition-colors sm:py-2 ${
-                  selected === i
-                    ? 'border-primary bg-primary/5'
-                    : 'border-primary/15 hover:border-primary/40'
-                }`}
-              >
-                <span className="text-[10px] text-primary/60 sm:text-xs">{d.weekday}</span>
-                <span className="text-sm font-bold leading-tight sm:text-base">{d.day}</span>
-              </button>
-            ))}
-          </div>
 
           {/* Primary CTA */}
           <button
