@@ -1,48 +1,42 @@
 'use client';
 
 /**
- * DemoLiftCard  —  PREVIEW / DO NOT MERGE
+ * DemoLiftCard (PREVIEW / DO NOT MERGE)
  *
  * A floating "book a demo" launcher that expands into a compact card, styled
  * after the iClosed "LIFT" widget the team liked (avatar + name/title,
  * headline, and a single primary CTA).
  *
- * IMPORTANT: this is a custom UI mock backed by Calendly. The "Book a time"
- * button opens the existing Calendly popup (see lib/calendly.ts).
+ * Rendered on the homepage only (app/page.tsx). It is a custom UI mock backed
+ * by Calendly: the "Book a time" button opens the existing Calendly popup
+ * (see lib/calendly.ts).
  *
  * Experimental preview only; intentionally scoped to a do-not-merge branch.
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Calendar, ChevronDown, X } from 'lucide-react';
 import { openCalendlyPopup } from '@/lib/calendly';
 
 // Auto-open the card this many ms after load so the preview is easy to see.
 const AUTO_OPEN_MS = 2500;
 
 export function DemoLiftCard() {
-  const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
-  const autoOpenedRef = useRef(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Auto-open once, shortly after mount.
   useEffect(() => {
-    if (!mounted || autoOpenedRef.current) return;
-    autoOpenedRef.current = true;
     const t = window.setTimeout(() => setOpen(true), AUTO_OPEN_MS);
     return () => window.clearTimeout(t);
-  }, [mounted]);
-
-  if (!mounted) return null;
+  }, []);
 
   const book = () => openCalendlyPopup();
 
   return (
-    <div className="fixed bottom-4 right-4 z-[9999] flex flex-col items-end gap-2.5 sm:bottom-5 sm:right-5 sm:gap-3">
+    // z-40 keeps the card above page content but below the navbar + mobile
+    // menu (z-50) and the site modals (z-[100]), so open overlays cover it.
+    <div className="fixed bottom-4 right-4 z-40 flex flex-col items-end gap-2.5 sm:bottom-5 sm:right-5 sm:gap-3">
       {open && (
         <div className="v2-comic-border v2-comic-shadow w-[270px] max-w-[calc(100vw-2rem)] rounded-2xl bg-white p-4 text-primary sm:w-[340px] sm:p-5">
           {/* Header: avatar + name/title + close */}
@@ -67,9 +61,7 @@ export function DemoLiftCard() {
               aria-label="Close"
               className="-mr-1 -mt-1 rounded-full p-1 text-primary/50 transition-colors hover:text-primary"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M18 6 6 18M6 6l12 12" />
-              </svg>
+              <X size={18} strokeWidth={2} />
             </button>
           </div>
 
@@ -84,6 +76,7 @@ export function DemoLiftCard() {
           <button
             type="button"
             onClick={book}
+            data-analytics-id="cta-book-demo-lift-card"
             className="w-full rounded-xl bg-cta py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1b54c7] sm:py-3 sm:text-base"
           >
             Book a time
@@ -96,17 +89,13 @@ export function DemoLiftCard() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? 'Close demo booking' : 'Book a demo'}
+        data-analytics-id="cta-lift-card-toggle"
         className="v2-comic-border v2-comic-shadow-sm flex h-12 w-12 items-center justify-center rounded-full bg-cta text-white transition-transform hover:scale-105 sm:h-14 sm:w-14"
       >
         {open ? (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m6 9 6 6 6-6" />
-          </svg>
+          <ChevronDown size={24} strokeWidth={2.5} />
         ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" />
-            <path d="M16 2v4M8 2v4M3 10h18" />
-          </svg>
+          <Calendar size={24} strokeWidth={2} />
         )}
       </button>
     </div>

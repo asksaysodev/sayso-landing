@@ -4,8 +4,6 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
-// PREVIEW / DO NOT MERGE: floating "book a demo" card (LIFT-style) on every page.
-import { DemoLiftCard } from '@/components/DemoLiftCard'
 import { headerNav } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
 import './globals.css'
@@ -162,9 +160,10 @@ fbq('track', 'PageView');`,
         both the inline scheduler on /demo and the "Book a Demo" popup triggered
         from buttons across the site (see lib/calendly.ts).
       */}
-      {/* Warm up the connection to Calendly so the popup iframe loads faster. */}
+      {/* Warm up the connection to calendly.com so the popup iframe loads
+          faster. assets.calendly.com needs no hint: the stylesheet link below
+          already opens that connection in the same parse pass. */}
       <link rel="preconnect" href="https://calendly.com" />
-      <link rel="preconnect" href="https://assets.calendly.com" />
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
@@ -216,8 +215,6 @@ fbq('track', 'PageView');`,
         <DemoCalendarProvider>
           {children}
         </DemoCalendarProvider>
-        {/* PREVIEW / DO NOT MERGE: floating "book a demo" card (LIFT-style). */}
-        <DemoLiftCard />
         <Analytics />
         <SpeedInsights />
         <Script

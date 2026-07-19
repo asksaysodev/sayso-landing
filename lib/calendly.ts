@@ -6,10 +6,8 @@
  * the popup helper below.
  */
 
-// hide_event_type_details=1 drops Calendly's left info panel so the popup is
-// just the calendar: narrower and far less internal scrolling.
 export const CALENDLY_DEMO_URL =
-  'https://calendly.com/asksayso/demo?hide_gdpr_banner=1&hide_event_type_details=1';
+  'https://calendly.com/asksayso/demo?hide_gdpr_banner=1';
 
 declare global {
   interface Window {
@@ -18,13 +16,6 @@ declare global {
       initInlineWidget: (options: {
         url: string;
         parentElement: HTMLElement;
-      }) => void;
-      initBadgeWidget: (options: {
-        url: string;
-        text: string;
-        color?: string;
-        textColor?: string;
-        branding?: boolean;
       }) => void;
     };
   }
@@ -40,7 +31,12 @@ export function openCalendlyPopup(url: string = CALENDLY_DEMO_URL): void {
   if (typeof window === 'undefined') return;
 
   if (window.Calendly) {
-    window.Calendly.initPopupWidget({ url });
+    // hide_event_type_details=1 drops Calendly's left info panel so the popup
+    // is just the calendar: narrower and far less internal scrolling. Applied
+    // to the popup only; full-page surfaces (the /demo inline embed and the
+    // new-tab fallback below) keep the event details for context.
+    const popupUrl = `${url}${url.includes('?') ? '&' : '?'}hide_event_type_details=1`;
+    window.Calendly.initPopupWidget({ url: popupUrl });
     return;
   }
 
