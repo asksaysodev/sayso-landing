@@ -7,17 +7,18 @@
  * after the iClosed "LIFT" widget the team liked (avatar + name/title,
  * headline, and a single primary CTA).
  *
- * Rendered on the homepage only (app/page.tsx). It is a custom UI mock backed
- * by Calendly: the "Book a time" button opens the existing Calendly popup
- * (see lib/calendly.ts).
+ * Rendered on the homepage only (app/page.tsx). The "Book a time" button links
+ * to the internal /demo page (which hosts the scheduler), rather than opening
+ * the Calendly popup: the in-page navigation is instant and prefetched, where
+ * the popup waits on Calendly's script.
  *
  * Experimental preview only; intentionally scoped to a do-not-merge branch.
  */
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Calendar, ChevronDown, X } from 'lucide-react';
-import { openCalendlyPopup } from '@/lib/calendly';
 
 // Auto-open the card this many ms after load so the preview is easy to see.
 const AUTO_OPEN_MS = 2500;
@@ -30,8 +31,6 @@ export function DemoLiftCard() {
     const t = window.setTimeout(() => setOpen(true), AUTO_OPEN_MS);
     return () => window.clearTimeout(t);
   }, []);
-
-  const book = () => openCalendlyPopup();
 
   return (
     // z-40 keeps the card above page content but below the navbar + mobile
@@ -72,15 +71,14 @@ export function DemoLiftCard() {
             more conversations into booked appointments.
           </p>
 
-          {/* Primary CTA */}
-          <button
-            type="button"
-            onClick={book}
+          {/* Primary CTA: navigate to the internal /demo scheduler page. */}
+          <Link
+            href="/demo"
             data-analytics-id="cta-book-demo-lift-card"
-            className="w-full rounded-xl bg-cta py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1b54c7] sm:py-3 sm:text-base"
+            className="block w-full rounded-xl bg-cta py-2.5 text-center text-sm font-bold text-white transition-colors hover:bg-[#1b54c7] sm:py-3 sm:text-base"
           >
             Book a time
-          </button>
+          </Link>
         </div>
       )}
 
