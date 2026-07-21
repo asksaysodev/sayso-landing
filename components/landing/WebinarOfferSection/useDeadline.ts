@@ -28,36 +28,83 @@ export interface DeadlineState {
  */
 export const MOCKUP_MODE = true;
 
-/** Milliseconds to shift a locally-built wall-clock time onto the PT instant. */
-function ptSkew(now: Date): number {
-  const pt = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-  return now.getTime() - pt.getTime();
+const PT = 'America/Los_Angeles';
+
+/**
+ * How far ahead of UTC the timezone is (ms) at a given instant. Uses the
+ * browser's IANA timezone database, so it is correct for both PST and PDT.
+ */
+function zoneOffsetMs(utcMs: number, timeZone: string): number {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    hourCycle: 'h23',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).formatToParts(new Date(utcMs));
+  const get = (type: string) => Number(parts.find((p) => p.type === type)!.value);
+  const asUtc = Date.UTC(
+    get('year'),
+    get('month') - 1,
+    get('day'),
+    get('hour'),
+    get('minute'),
+    get('second'),
+  );
+  return asUtc - utcMs;
+}
+
+/**
+ * The exact UTC instant whose Pacific wall clock is the given date at 5:00 PM.
+ * We treat the wall time as UTC, then subtract Pacific's offset at that instant,
+ * iterating once so it stays correct right across a DST change. This does not
+ * depend on the viewer's timezone at all: everyone resolves the same moment.
+ */
+function ptFivePmToUtc(year: number, month: number, day: number): number {
+  const naive = Date.UTC(year, month - 1, day, 17, 0, 0);
+  let utc = naive - zoneOffsetMs(naive, PT);
+  utc = naive - zoneOffsetMs(utc, PT);
+  return utc;
 }
 
 /** The instant of a YYYY-MM-DD date at 5:00 PM PT, or null if the string is invalid. */
-function deadlineFromParam(str: string | null, now: Date): number | null {
+function deadlineFromParam(str: string | null): number | null {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str ?? '');
   if (!m) return null;
-  const wall = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 17, 0, 0, 0);
-  return wall.getTime() + ptSkew(now);
+  return ptFivePmToUtc(Number(m[1]), Number(m[2]), Number(m[3]));
 }
 
 /** Demo fallback only: the next Friday 5:00 PM PT. */
-function nextFridayPt(now: Date): number {
-  const pt = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-  const t = new Date(pt.getTime());
-  t.setDate(t.getDate() + ((5 - pt.getDay() + 7) % 7));
-  t.setHours(17, 0, 0, 0);
-  if (t.getTime() <= pt.getTime()) t.setDate(t.getDate() + 7);
-  return t.getTime() + ptSkew(now);
+function nextFridayPt(): number {
+  // Read today's date in Pacific to find this/next Friday's calendar date.
+  const ptNow = new Date(new Date().toLocaleString('en-US', { timeZone: PT }));
+  ptNow.setDate(ptNow.getDate() + ((5 - ptNow.getDay() + 7) % 7));
+
+  let deadline = ptFivePmToUtc(
+    ptNow.getFullYear(),
+    ptNow.getMonth() + 1,
+    ptNow.getDate(),
+  );
+  // If it is already Friday past 5 PM PT, roll to next Friday.
+  if (deadline <= Date.now()) {
+    ptNow.setDate(ptNow.getDate() + 7);
+    deadline = ptFivePmToUtc(
+      ptNow.getFullYear(),
+      ptNow.getMonth() + 1,
+      ptNow.getDate(),
+    );
+  }
+  return deadline;
 }
 
 /** Resolve the deadline instant from the URL, or null when there is none. */
 function resolveDeadline(params: URLSearchParams): number | null {
-  const now = new Date();
   const dParam = params.get('d');
-  if (dParam) return deadlineFromParam(dParam, now);
-  if (MOCKUP_MODE && !params.get('expired')) return nextFridayPt(now);
+  if (dParam) return deadlineFromParam(dParam);
+  if (MOCKUP_MODE && !params.get('expired')) return nextFridayPt();
   return null;
 }
 
