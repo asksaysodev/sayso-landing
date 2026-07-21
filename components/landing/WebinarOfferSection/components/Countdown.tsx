@@ -2,16 +2,17 @@
 
 /**
  * The live countdown display: four tabular boxes (days / hrs / min / sec) that
- * tick down to the next Friday 5:00 PM PT. Shows "--" until mounted to avoid a
- * hydration mismatch. Used in the sticky deadline bar (sm) and final CTA (lg).
+ * tick down to the webinar deadline (5:00 PM PT). Shows "--" until mounted to
+ * avoid a hydration mismatch. Used in the sticky deadline bar (sm) and final
+ * CTA (lg).
  */
 
-import { useFridayCountdown } from '../useFridayCountdown';
+import { useDeadline } from '../useDeadline';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
 export function Countdown({ size = 'sm' }: { size?: 'sm' | 'lg' }) {
-  const t = useFridayCountdown();
+  const { timeLeft: t } = useDeadline();
 
   const cells: [string, string][] = [
     [t ? String(t.days) : '--', 'days'],

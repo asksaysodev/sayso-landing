@@ -1,12 +1,12 @@
 /**
- * The reusable "Claim your offer" button. Links to the create-account page so
- * attendees sign up right after the webinar (see ACCOUNT_CREATION_URL).
+ * The reusable "Claim your offer" button. Links to the webinar claim
+ * destination (see CLAIM_URL: the $2,700 checkout once wired, with UTM).
  *
  * Variants: primary (big hero/price button), mini (sticky bar), block (full
  * width for the mobile sticky bar).
  */
 
-import { ACCOUNT_CREATION_URL } from '../data';
+import { CLAIM_URL } from '../data';
 
 type Variant = 'primary' | 'mini' | 'block';
 
@@ -27,7 +27,7 @@ export function ClaimButton({
 }) {
   return (
     <a
-      href={ACCOUNT_CREATION_URL}
+      href={CLAIM_URL}
       data-analytics-id="cta-claim-offer-webinar"
       className={`inline-flex items-center justify-center rounded-full bg-[#2367EE] font-bold text-white v2-comic-border focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]/40 ${VARIANT_CLS[variant]} ${className}`}
     >

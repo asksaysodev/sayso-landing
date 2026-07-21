@@ -1,6 +1,7 @@
 import { WebinarOfferSection } from '@/components/landing/WebinarOfferSection';
 import { Header } from '@/components/landing/WebinarOfferSection/components/Header';
 import { DeadlineBar } from '@/components/landing/WebinarOfferSection/components/DeadlineBar';
+import { DeadlineGate } from '@/components/landing/WebinarOfferSection/components/DeadlineGate';
 import { MobileCta } from '@/components/landing/WebinarOfferSection/components/MobileCta';
 import { buildMetadata } from '@/lib/seo/metadata';
 
@@ -18,12 +19,16 @@ export default function WebinarOfferPage() {
   return (
     // pb on mobile clears the fixed bottom claim bar (MobileCta).
     <div className="relative bg-[#F4F4F5] min-h-screen pb-20 sm:pb-0">
-      <DeadlineBar />
-      <Header />
-      <main>
-        <WebinarOfferSection />
-      </main>
-      <MobileCta />
+      {/* DeadlineGate hides everything and shows the expired state once the
+          Friday 5:00 PM PT deadline (from ?d=) has passed. */}
+      <DeadlineGate>
+        <DeadlineBar />
+        <Header />
+        <main>
+          <WebinarOfferSection />
+        </main>
+        <MobileCta />
+      </DeadlineGate>
     </div>
   );
 }

@@ -1,10 +1,16 @@
 import type { Bonus, PriceAnchor, StackItem, Step } from './types';
 
 /**
- * Where "Claim your offer" sends people: the create-account page. Confirm the
- * exact URL with the app team and swap it here if it differs.
+ * Where every "Claim your offer" button points. This should be the live $2,700
+ * annual checkout (Stripe or whatever checkout is live), tagged with
+ * utm_source=webinar so webinar revenue is attributable. Until that checkout URL
+ * is provided it points at the create-account page with the UTM tag in place.
  */
-export const ACCOUNT_CREATION_URL = 'https://app.asksayso.com/login?signup=true';
+export const CLAIM_URL =
+  'https://app.asksayso.com/login?signup=true&utm_source=webinar';
+
+/** Where the expired state sends people (regular, non-webinar pricing). */
+export const REGULAR_PRICING_URL = 'https://www.asksayso.com/pricing/';
 
 /** Link for the "talk it through" CTA in the FAQ. */
 export const KUVAAL_CALL_URL = 'https://calendly.com/asksayso/sayso-webinar';
