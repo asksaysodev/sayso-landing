@@ -1,48 +1,33 @@
 /**
- * "What happens next." Three quick steps so people know the flow before they
- * click: claim, create their account, then book onboarding. Keeps the CTA from
- * feeling like a mystery box.
+ * "What happens next": three numbered steps from claiming the offer to booking
+ * onboarding, laid out as a simple timeline.
  */
 
-const STEPS: { title: string; body: string }[] = [
-  {
-    title: 'Claim your offer',
-    body: 'Tap the button to lock in the webinar price forever.',
-  },
-  {
-    title: 'Create your account',
-    body: "We'll get to work on getting you leads!",
-  },
-  {
-    title: 'Book your onboarding',
-    body: "After you sign up, you'll get an email to schedule onboarding. In onboarding you'll get the full setup and curated leads list.",
-  },
-];
+import { STEPS } from '../data';
 
 export function NextSteps() {
   return (
-    <section>
-      <h2 className="font-comic text-2xl md:text-3xl text-[#1D4871] tracking-wide text-center mb-7">
-        What happens next
-      </h2>
-      <ol className="grid gap-4 md:grid-cols-3">
-        {STEPS.map((step, i) => (
-          <li
-            key={step.title}
-            className="bg-white v2-comic-border v2-comic-shadow-sm rounded-2xl p-6"
-          >
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#FFDE59] text-[#1D4871] font-comic text-lg v2-comic-border mb-4">
-              {i + 1}
-            </span>
-            <p className="font-bold text-[#1D4871] text-base md:text-lg mb-1.5">
-              {step.title}
-            </p>
-            <p className="text-sm text-[#1D4871]/65 leading-relaxed">
-              {step.body}
-            </p>
-          </li>
-        ))}
-      </ol>
+    <section className="py-12 md:py-14">
+      <div className="max-w-[880px] mx-auto px-5 md:px-6">
+        <h2 className="font-comic text-3xl md:text-4xl text-[#1D4871] text-center tracking-wide mb-9">
+          What happens next
+        </h2>
+        <ol className="grid gap-8 md:grid-cols-3">
+          {STEPS.map((step, i) => (
+            <li key={step.title} className="text-center px-2">
+              <span className="mx-auto mb-4 grid place-items-center w-12 h-12 rounded-full bg-[#FFDE59] border-2 border-[#1D4871] font-comic text-xl text-[#1D4871] v2-comic-shadow-sm">
+                {i + 1}
+              </span>
+              <p className="font-bold text-[#1D4871] text-base md:text-lg mb-1.5">
+                {step.title}
+              </p>
+              <p className="text-sm text-[#1D4871]/65 leading-relaxed">
+                {step.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </section>
   );
 }

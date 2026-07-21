@@ -1,77 +1,95 @@
-import type { OfferColumn } from './types';
+import type { Bonus, PriceAnchor, StackItem, Step } from './types';
 
 /**
- * The offer, split into two columns like the webinar slide:
- *   - PLATFORM_COLUMN: the Sayso product itself, included for 12 months
- *   - WEBINAR_COLUMN:  the bonuses you only get by buying on the webinar
- *
- * Each column carries a combined dollar value. The full value, savings, and
- * percent-off shown on the page are all derived from these numbers (see totals
- * below), so changing a value in one place keeps the whole page consistent.
- */
-export const PLATFORM_COLUMN: OfferColumn = {
-  label: 'The full Sayso platform, 12 months',
-  variant: 'light',
-  value: 3500,
-  items: [
-    { name: 'Cue', detail: 'real-time conversation intelligence on every call' },
-    {
-      name: 'Smart Capture',
-      detail: 'automatic call notes sorted into LPMAMA, synced to your CRM',
-    },
-    {
-      name: 'Pulse',
-      detail: 'live market data mid-call: prices, days on market, inventory',
-    },
-    { name: 'Playbook', detail: 'your custom scripts on screen, right next to Cue' },
-    { name: 'Composer', detail: 'generate custom scripts on the fly' },
-    { name: 'Dashboard analytics + email support' },
-  ],
-};
-
-export const WEBINAR_COLUMN: OfferColumn = {
-  label: 'When you buy on this webinar',
-  variant: 'dark',
-  value: 13675,
-  items: [
-    { name: 'Weekly coaching', detail: 'live group coaching, every week, all year' },
-    {
-      name: '1-on-1 onboarding',
-      detail: "personal setup so you're live on your next call block",
-    },
-    { name: 'Lead list', detail: 'so the coaching has calls to point at' },
-    {
-      name: 'Skool community',
-      detail: 'scripts, practice, call breakdown, reviews, and more',
-    },
-    { name: 'Preferred realtor list', detail: 'placement on the list we refer from' },
-  ],
-};
-
-export const OFFER_COLUMNS: OfferColumn[] = [PLATFORM_COLUMN, WEBINAR_COLUMN];
-
-/** The money-back guarantee, shown as its own banner under the columns. */
-export const GUARANTEE_TEXT =
-  'close at least one home using Sayso, or you get your money back.';
-
-/** The one-time webinar price for the full year, everything included. */
-export const TODAY_PRICE = 3000;
-
-/** Sum of every column's value. This is the real value of the offer. */
-export const TOTAL_VALUE = OFFER_COLUMNS.reduce((sum, col) => sum + col.value, 0);
-
-/** What the attendee saves by claiming on the webinar. */
-export const TOTAL_SAVINGS = TOTAL_VALUE - TODAY_PRICE;
-
-/** Savings as a whole-number percent, for the "X% off" badge. */
-export const SAVINGS_PERCENT = Math.round((TOTAL_SAVINGS / TOTAL_VALUE) * 100);
-
-/**
- * Where "Claim your offer" sends people: straight to the create-account page.
- * After they sign up, onboarding (and its calendar step) is handled by email,
- * so the button no longer opens a calendar.
- *
- * This should be the direct create-account page, not the longer question flow.
- * Confirm the exact URL with the app team and swap it here if it differs.
+ * Where "Claim your offer" sends people: the create-account page. Confirm the
+ * exact URL with the app team and swap it here if it differs.
  */
 export const ACCOUNT_CREATION_URL = 'https://app.asksayso.com/login?signup=true';
+
+/** Link for the "talk it through" CTA in the FAQ. */
+export const KUVAAL_CALL_URL = 'https://calendly.com/asksayso/sayso-webinar';
+/** Link for the team / brokerage inquiry in the FAQ. */
+export const REQUEST_DEMO_URL = 'https://www.asksayso.com/request-demo/';
+
+/** The webinar price and total anchor value. Edit here to update the page. */
+export const PRICE = '$2,700';
+export const TOTAL_VALUE = '$8,350+';
+
+/** Everything included, each with its standalone value. */
+export const STACK_ITEMS: StackItem[] = [
+  {
+    name: 'Sayso, full platform, full year',
+    detail:
+      'Cue live guidance, Smart Capture notes synced to your CRM, Pulse market data, Playbook frameworks, Composer custom scripts, dashboard analytics, post-call coaching',
+    value: '$4,200',
+  },
+  {
+    name: 'Weekly live group coaching, every week, all year',
+    detail: 'Real call breakdowns, script drills, objection work. 48+ live sessions',
+    value: '$2,850',
+  },
+  {
+    name: 'Curated lead list',
+    detail: 'You leave onboarding with real numbers loaded and ready to dial',
+    value: '$500',
+  },
+  {
+    name: '1-on-1 onboarding',
+    detail: "Personal setup with our team so you're live on your very next call block",
+    value: '$300',
+  },
+  {
+    name: 'Referral map, preferred realtor placement',
+    detail: 'Placement on the list we refer from. Not sold separately',
+    value: 'Included',
+  },
+  {
+    name: 'Skool community access',
+    detail: 'Scripts, practice partners, call reviews between sessions',
+    value: '$500',
+  },
+  {
+    name: 'Email support + dashboard analytics',
+    detail: 'Direct line to the team, performance tracking on every call',
+    value: 'Included',
+  },
+];
+
+/** The three webinar-only bonuses. */
+export const BONUSES: Bonus[] = [
+  {
+    title: '2x your lead list',
+    body: 'Everyone gets a curated lead list, but claiming the webinar offer means we double the number of leads you get.',
+  },
+  {
+    title: '$300 discount',
+    body: 'The full year at $2,700 instead of $3,000, and your price stays locked in and does not increase.',
+  },
+  {
+    title: 'The signed-client guarantee',
+    body: 'Sign 1 client, a buyer agreement or listing agreement, in your first 12 months as a Sayso user, or your money back.',
+  },
+];
+
+/** Value comparisons shown above the price. */
+export const PRICE_ANCHORS: PriceAnchor[] = [
+  { label: 'Value with bonuses', value: '$8,850+' },
+  { label: 'Paid monthly', value: '$4,200/yr' },
+  { label: 'Regular annual', value: '$3,000' },
+];
+
+/** The three-step "what happens next" flow. */
+export const STEPS: Step[] = [
+  {
+    title: 'Claim your offer',
+    body: 'Tap the button and lock in the webinar price before Friday 5:00 PM PT.',
+  },
+  {
+    title: 'Create your account',
+    body: 'Takes two minutes. We start building your lead list immediately.',
+  },
+  {
+    title: 'Book your onboarding',
+    body: "You'll get an email to schedule your 1-on-1 setup right after creating your account.",
+  },
+];
