@@ -45,7 +45,7 @@ export function TheStack() {
           </div>
           <div className="flex items-center justify-between gap-4 bg-[#1D4871] px-5 md:px-6 pb-5 text-white">
             <span className="font-bold">Your price with the webinar offer</span>
-            <span className="font-comic text-3xl text-[#FFDE59] tabular-nums">
+            <span className="font-black italic text-3xl text-[#FFDE59] tabular-nums">
               {PRICE}
             </span>
           </div>

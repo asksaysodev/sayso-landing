@@ -14,7 +14,7 @@ function Cell({ n, l, good = false }: { n: string; l: string; good?: boolean }) 
   return (
     <div className="bg-[#F4F4F5] rounded-xl p-4 text-center">
       <div
-        className={`font-comic text-2xl tabular-nums ${good ? 'text-[#1E7F4F]' : 'text-[#1D4871]'}`}
+        className={`font-black italic text-2xl tabular-nums ${good ? 'text-[#1E7F4F]' : 'text-[#1D4871]'}`}
       >
         {n}
       </div>

@@ -23,7 +23,7 @@ export function Hero() {
         </p>
         <p className="text-[17px] text-[#1D4871]/65 mb-7">
           <s className="opacity-85">{TOTAL_VALUE} total value</s>
-          <b className="inline-block ml-2.5 align-middle font-comic text-2xl text-[#1D4871]">
+          <b className="inline-block ml-2.5 align-middle font-black italic text-2xl text-[#1D4871] tabular-nums">
             {PRICE} for the year
           </b>
         </p>

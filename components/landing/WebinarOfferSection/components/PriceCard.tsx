@@ -20,7 +20,7 @@ export function PriceCard() {
             ))}
           </div>
 
-          <div className="font-comic text-6xl md:text-7xl text-[#FFDE59] leading-none">
+          <div className="font-black italic tracking-tight text-6xl md:text-7xl text-[#FFDE59] leading-none tabular-nums">
             {PRICE}
           </div>
           <p className="mt-3 text-base md:text-lg">
