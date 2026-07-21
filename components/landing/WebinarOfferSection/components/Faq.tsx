@@ -7,7 +7,13 @@
 import type { ReactNode } from 'react';
 import { Plus } from 'lucide-react';
 import { RoiCalculator } from './RoiCalculator';
-import { KUVAAL_CALL_URL, REQUEST_DEMO_URL } from '../data';
+import {
+  KUVAAL_CALL_URL,
+  PRICE,
+  REGULAR_MONTHLY,
+  REQUEST_DEMO_URL,
+  WEBINAR_MONTHLY,
+} from '../data';
 
 const linkCls = 'font-bold text-[#2367EE] hover:underline';
 
@@ -16,11 +22,11 @@ const FAQ_ITEMS: { q: string; a: ReactNode }[] = [
     q: 'Can I pay monthly instead?',
     a: (
       <p>
-        Yes. At checkout you can split the discounted $2,700 into monthly
-        payments, around $225/mo, using Affirm or Klarna, subject to their
-        approval. You still get the full webinar offer. Alternatively you can go
-        month-to-month at $350/mo, but the webinar discount, 2x lead list, and
-        signed-client guarantee stay with the webinar offer.
+        Yes. At checkout you can split the discounted {PRICE} into monthly
+        payments, around {WEBINAR_MONTHLY}, using Affirm or Klarna, subject to
+        their approval. You still get the full webinar offer. Alternatively you
+        can go month-to-month at {REGULAR_MONTHLY}, but the webinar discount, 2x
+        lead list, and signed-client guarantee stay with the webinar offer.
       </p>
     ),
   },
@@ -85,7 +91,7 @@ const FAQ_ITEMS: { q: string; a: ReactNode }[] = [
     ),
   },
   {
-    q: "What's my return if I close just one deal?",
+    q: "What's my return if I sign just one client?",
     a: <RoiCalculator />,
   },
   {

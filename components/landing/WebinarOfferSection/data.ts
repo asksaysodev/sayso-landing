@@ -17,9 +17,20 @@ export const KUVAAL_CALL_URL = 'https://calendly.com/asksayso/sayso-webinar';
 /** Link for the team / brokerage inquiry in the FAQ. */
 export const REQUEST_DEMO_URL = 'https://www.asksayso.com/request-demo/';
 
-/** The webinar price and total anchor value. Edit here to update the page. */
-export const PRICE = '$2,700';
+/**
+ * The webinar price and total anchor value. Edit the numbers here and the whole
+ * page follows: everything below derives from these, and every component imports
+ * them rather than hardcoding a figure.
+ */
+export const PRICE_AMOUNT = 2700;
+export const PRICE = `$${PRICE_AMOUNT.toLocaleString('en-US')}`;
 export const TOTAL_VALUE = '$8,350+';
+
+/** Regular (non-webinar) pricing, shown in the FAQ and the expired state. */
+export const REGULAR_PRICE = '$3,000';
+export const REGULAR_MONTHLY = '$350/mo';
+/** Monthly split of the discounted webinar price (Affirm/Klarna). */
+export const WEBINAR_MONTHLY = '$225/mo';
 
 /** Everything included, each with its standalone value. */
 export const STACK_ITEMS: StackItem[] = [
@@ -69,7 +80,7 @@ export const BONUSES: Bonus[] = [
   },
   {
     title: '$300 discount',
-    body: 'The full year at $2,700 instead of $3,000, and your price stays locked in and does not increase.',
+    body: `The full year at ${PRICE} instead of ${REGULAR_PRICE}, and your price stays locked in and does not increase.`,
   },
   {
     title: 'The signed-client guarantee',
@@ -81,7 +92,7 @@ export const BONUSES: Bonus[] = [
 export const PRICE_ANCHORS: PriceAnchor[] = [
   { label: 'Value with bonuses', value: '$8,850+' },
   { label: 'Paid monthly', value: '$4,200/yr' },
-  { label: 'Regular annual', value: '$3,000' },
+  { label: 'Regular annual', value: REGULAR_PRICE },
 ];
 
 /** The three-step "what happens next" flow. */

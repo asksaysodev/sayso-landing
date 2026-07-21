@@ -4,6 +4,7 @@
  */
 
 import { ClaimButton } from './ClaimButton';
+import { PRICE } from '../data';
 
 export function Guarantee() {
   return (
@@ -20,8 +21,8 @@ export function Guarantee() {
             <p className="text-[15px] text-[#1D4871]/70 leading-relaxed">
               Signed means a buyer agreement or a listing agreement. Your part?
               Have 20 conversations a week through Sayso and show up to the weekly
-              training. If you haven&apos;t signed a client, we refund the full
-              $2,700.
+              training. If you haven&apos;t signed a client, we refund the full{' '}
+              {PRICE}.
             </p>
           </div>
         </div>

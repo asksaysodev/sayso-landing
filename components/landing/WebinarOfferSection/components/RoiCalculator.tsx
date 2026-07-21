@@ -6,8 +6,8 @@
  */
 
 import { useState } from 'react';
+import { PRICE_AMOUNT } from '../data';
 
-const PRICE = 2700;
 const fmt = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 function Cell({ n, l, good = false }: { n: string; l: string; good?: boolean }) {
@@ -27,8 +27,8 @@ function Cell({ n, l, good = false }: { n: string; l: string; good?: boolean }) 
 
 export function RoiCalculator() {
   const [gci, setGci] = useState(10000);
-  const roiX = (gci / PRICE).toFixed(1);
-  const net = gci - PRICE;
+  const roiX = (gci / PRICE_AMOUNT).toFixed(1);
+  const net = gci - PRICE_AMOUNT;
 
   return (
     <div>
@@ -51,7 +51,7 @@ export function RoiCalculator() {
         </span>
       </div>
       <div className="grid gap-3 sm:grid-cols-3">
-        <Cell n={fmt(PRICE)} l="Sayso, all-in, 1 year" />
+        <Cell n={fmt(PRICE_AMOUNT)} l="Sayso, all-in, 1 year" />
         <Cell n={`${roiX}x`} l="Return on ONE closing" good />
         <Cell n={`+${fmt(net)}`} l="Your net on that closing" good />
       </div>

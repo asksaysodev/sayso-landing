@@ -3,7 +3,12 @@
  * offer is hidden and replaced with this, pointing people to regular pricing.
  */
 
-import { REGULAR_PRICING_URL } from '../data';
+import {
+  PRICE,
+  REGULAR_MONTHLY,
+  REGULAR_PRICE,
+  REGULAR_PRICING_URL,
+} from '../data';
 
 export function ExpiredState() {
   return (
@@ -13,9 +18,10 @@ export function ExpiredState() {
           The webinar offer for your session has ended.
         </h1>
         <p className="text-lg text-[#1D4871]/70 mb-8 leading-relaxed">
-          The $2,700 webinar price, the 2x lead list, and the signed-client
+          The {PRICE} webinar price, the 2x lead list, and the signed-client
           guarantee were only available until the Friday after your webinar. Sayso
-          is still here, at the regular price of $3,000/yr or $350/mo.
+          is still here, at the regular price of {REGULAR_PRICE}/yr or{' '}
+          {REGULAR_MONTHLY}.
         </p>
         <a
           href={REGULAR_PRICING_URL}

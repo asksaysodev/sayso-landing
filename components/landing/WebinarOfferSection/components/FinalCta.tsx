@@ -5,6 +5,7 @@
 
 import { Countdown } from './Countdown';
 import { ClaimButton } from './ClaimButton';
+import { PRICE } from '../data';
 
 export function FinalCta() {
   return (
@@ -16,7 +17,7 @@ export function FinalCta() {
           Friday at 5:00 PM PT
         </h2>
         <p className="mt-4 text-[#B9C6D6]">
-          $2,700 for the year, everything included, backed by the signed-client
+          {PRICE} for the year, everything included, backed by the signed-client
           guarantee.
         </p>
         <div className="flex justify-center my-7">
