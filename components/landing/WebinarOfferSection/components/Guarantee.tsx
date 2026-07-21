@@ -19,7 +19,7 @@ export function Guarantee() {
             </h3>
             <p className="text-[15px] text-[#1D4871]/70 leading-relaxed">
               Signed means a buyer agreement or a listing agreement. Your part?
-              Have 10 conversations a week through Sayso and show up to the weekly
+              Have 20 conversations a week through Sayso and show up to the weekly
               training. If you haven&apos;t signed a client, we refund the full
               $2,700.
             </p>

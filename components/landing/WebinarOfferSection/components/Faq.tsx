@@ -94,7 +94,7 @@ const FAQ_ITEMS: { q: string; a: ReactNode }[] = [
       <p>
         Then we give you all your money back. Sign at least 1 client, a buyer
         agreement or listing agreement, in your first 12 months with Sayso or get
-        a full refund. The risk is on us, not you. All you need to do is have 10
+        a full refund. The risk is on us, not you. All you need to do is have 20
         conversations a week through Sayso and show up to the weekly training.
       </p>
     ),
