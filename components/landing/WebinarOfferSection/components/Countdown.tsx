@@ -7,7 +7,7 @@
  * CTA (lg).
  */
 
-import { useDeadline } from '../useDeadline';
+import { useDeadline } from './DeadlineProvider';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
