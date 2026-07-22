@@ -54,7 +54,7 @@ Glossary pages sit at the **top of the funnel**. The visitor is searching for th
 - A product page (that is a `/products/` page)
 - A how-to guide (that is a blog post)
 - An objection-handling script (that is an `/objections/` page)
-- A competitor comparison (that is a `/compare/` page)
+- A named-competitor comparison (Sayso does not publish competitor comparison pages)
 
 If you find yourself describing Sayso features in detail, you are writing a feature page. The product gets one brief section near the end. Keep the focus on the term, the definition, and practical context.
 

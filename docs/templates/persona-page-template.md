@@ -54,7 +54,7 @@ Persona pages are **mid-funnel**. The visitor knows they have a problem (efficie
 
 **A persona page is NOT:**
 - A product brochure (that is a `/products/` page)
-- A competitor comparison (that is a `/compare/` page)
+- A named-competitor comparison (Sayso does not publish competitor comparison pages)
 - A tutorial or how-to guide (that is a blog post)
 - An ad landing page (that is `/broker`, `/agent`, etc. - see `persona-ad-page-template.md`)
 

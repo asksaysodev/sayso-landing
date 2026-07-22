@@ -33,12 +33,10 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-persona-sales-leader-footer` | Opens demo calendar | [components/landing/SalesLeaderAdPage.tsx](../../components/landing/SalesLeaderAdPage.tsx) | /sales-leader footer |
 | `cta-book-demo-{page-type}` | Opens demo calendar | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | `{page-type}` ∈ `feature-page`, `comparison-page`, `case-study-page`, `glossary-page`, `hub-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
 | `cta-download-{page-type}` | Opens system-select modal | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | Same 9 page-types as above |
-| `cta-book-demo-{page-type}-inline` | Opens demo calendar | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | `{page-type}` ∈ `comparison-page`, `feature-page`, `glossary-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
-| `cta-download-{page-type}-inline` | Opens system-select modal | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | Same 7 page-types as above |
+| `cta-book-demo-{page-type}-inline` | Opens demo calendar | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | `{page-type}` ∈ `feature-page`, `glossary-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
+| `cta-download-{page-type}-inline` | Opens system-select modal | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | Same 6 page-types as above |
 | `cta-book-demo-feature-page-inline` | Opens demo calendar | [components/pages/FeatureCTAButtons.tsx](../../components/pages/FeatureCTAButtons.tsx) | Feature-page inline pair |
 | `cta-download-feature-page-inline` | Opens system-select modal | [components/pages/FeatureCTAButtons.tsx](../../components/pages/FeatureCTAButtons.tsx) | Feature-page inline pair |
-| `cta-book-demo-comparison-page-tldr` | Opens demo calendar | [components/pages/TldrButtons.tsx](../../components/pages/TldrButtons.tsx) | TL;DR pair on /compare/[slug] |
-| `cta-download-comparison-page-tldr` | Opens system-select modal | [components/pages/TldrButtons.tsx](../../components/pages/TldrButtons.tsx) | TL;DR pair on /compare/[slug] |
 | `cta-book-demo-blog-article` | Opens demo calendar | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
 | `cta-download-blog-article` | Opens system-select modal | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
 | `cta-book-demo-persona-page-get-started` | Opens demo calendar | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
@@ -110,7 +108,7 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 ## Verification
 
 1. `npm run dev` (port 3001). Inspect elements in DevTools — confirm `data-analytics-id` is present on each rendered CTA.
-2. Visit: `/`, `/pricing`, `/agent`, `/broker`, `/isa`, `/sales-leader`, `/products/cue` (or any slug), `/compare/sayso-vs-shilo`, `/for/solo-agents`, `/blog/[any-slug]`, `/objections/[any-slug]`, `/glossary/[any-slug]`, `/integrations/partners/follow-up-boss`, `/why-sayso`.
+2. Visit: `/`, `/pricing`, `/agent`, `/broker`, `/isa`, `/sales-leader`, `/products/cue` (or any slug), `/for/solo-agents`, `/blog/[any-slug]`, `/objections/[any-slug]`, `/glossary/[any-slug]`, `/integrations/partners/follow-up-boss`, `/why-sayso`.
 3. In DevTools console on each page: `document.querySelectorAll('[data-analytics-id]')` — verify expected IDs are present and no duplicates.
 4. Click each CTA and confirm behavior is unchanged (demo modal, system-select modal, or anchor jump still works).
 5. Mobile breakpoint: shrink to <768px and confirm mobile-only IDs appear (`cta-download-hero-mobile`, `cta-get-started-mobile-menu`).

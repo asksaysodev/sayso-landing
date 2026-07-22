@@ -105,10 +105,10 @@ Using the competitive brief from Phase 1, write the complete pillar post followi
 
 **Product:** SaySo (asksayso.com) - an AI-powered real-time coaching tool for real estate agents and ISAs. During live phone calls, SaySo displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
-**What makes SaySo different from competitors:**
-- **Shilo AI** - focuses on post-call grading and analysis. Reviews calls AFTER they happen. Good for team leaders who want reports, but doesn't help the agent during the actual call.
-- **MaverickRE** - broader platform (lead routing, accountability, reporting) with AI role-play for practice. Agents train with simulated calls, but again, the AI isn't there during real calls.
-- **SaySo's edge** - real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after. This is the key differentiator.
+**What makes Sayso different from other coaching tools:**
+- **Post-call analysis tools** focus on grading and analysis. They review calls AFTER they happen. Good for team leaders who want reports, but they don't help the agent during the actual call.
+- **Role-play and practice tools** let agents train with simulated calls before dialing. Helpful for preparation, but the AI isn't there during real calls.
+- **Sayso's edge** - real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after. This is the key differentiator.
 
 **Target audience:** Real estate agents (solo and team), ISAs (Inside Sales Agents), team leaders, and brokerage managers in the US. They make 20-100+ calls per day. They're practical, time-pressed, and skeptical of tools that don't immediately help them book more appointments.
 
@@ -293,7 +293,7 @@ Pillar posts are the most link-dense pages on the site. Rules:
 - **Link to 1-2 feature pages** (e.g., `/products/cue/`, `/products/smart-capture/`)
 - **Link to 1 persona page** if relevant (e.g., `/for/new-agents/`)
 - **Link to the glossary** when industry terms appear (e.g., first mention of "circle prospecting" → `/glossary/circle-prospecting/`)
-- **Link to 1 comparison page** if naturally relevant (e.g., mentioning coaching software → `/compare/sayso-vs-shilo/`)
+- **Link to the [why Sayso page](/why-sayso/)** if naturally relevant (e.g., mentioning how real-time coaching differs from post-call analysis)
 - **Total: 10-18 internal links.** This is significantly more than any other page type.
 - **Anchor text must be descriptive.** Never "click here" or "read more." Use the target keyword of the destination page.
 - **Do NOT link to posts that do not yet exist.** Every internal link must point to a published page. If a planned supporting post is referenced in this pillar's draft, leave the phrase as plain text and add the link in the same PR that publishes the supporting post (track it in `docs/content/pending-internal-links.md`).

@@ -126,17 +126,6 @@ These pages exist for paid Facebook ad traffic only. They are set to `noindex, f
 
 ---
 
-### /compare/
-
-```
-/compare/                                   (hub - no keyword target)                                   ⚪ NONE    ✅ DONE
-├── /compare/sayso-vs-shilo/               "shilo alternative"                                         🟢 WIN     ✅ DONE
-├── /compare/sayso-vs-maverickre/          "maverickre alternative"                                    🟢 WIN     ✅ DONE
-└── /compare/sayso-vs-manual-coaching/      "real estate coaching AI vs manual"                          🟡 MED     ✅ DONE
-```
-
----
-
 ### /objections/
 
 ```
@@ -370,7 +359,7 @@ These are the only existing URLs that change during the restructure:
 
 | Old URL | New URL | Reason |
 |---|---|---|
-| `/blog/shilo-ai-alternatives-real-estate-call-coaching` | `/compare/sayso-vs-shilo/` | Content merges into comparison page |
+| `/blog/shilo-ai-alternatives-real-estate-call-coaching` | `/why-sayso/` | Comparison pages retired; redirects to the positioning page |
 | `/blog/best-real-estate-call-coaching-software-alternatives` | `/blog/best-real-estate-call-coaching-software/` | Cleaner URL, same content |
 
 All other existing pages (homepage, pricing, demo, privacy, terms, security, contact, referral, affiliate) keep their current URLs unchanged.
@@ -384,19 +373,19 @@ All other existing pages (homepage, pricing, demo, privacy, terms, security, con
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                  │
-│  [Logo → /]    Product ▾    Solutions ▾    Resources ▾    Compare ▾    [Demo]    │
+│  [Logo → /]    Product ▾    Solutions ▾    Resources ▾    About    [Demo]    │
 │                                                                                  │
 └──────────────────────────────────────────────────────────────────────────────────┘
 
-Product ▾                       Solutions ▾                  Resources ▾                  Compare ▾
-┌─────────────────────┐         ┌──────────────────────┐     ┌──────────────────────┐     ┌──────────────────────────┐
-│ Real-Time Coaching   │         │ Solo Agents           │     │ Blog                  │     │ Sayso vs Shilo           │
-│ Objection Handling   │         │ Team Leaders          │     │ Objection Library      │     │ Sayso vs MaverickRE      │
-│ Call Notes           │         │ New Agents            │     │ Glossary               │     │ Sayso vs Manual Coaching │
-│ ─────────────────    │         │ ISAs                  │     │ Case Studies           │     │ Why Sayso                │
-│ Pricing              │         │ ─────────────────     │     └──────────────────────┘     └──────────────────────────┘
-└─────────────────────┘         │ Integrations          │
-                                └──────────────────────┘
+Product ▾                       Solutions ▾                  Resources ▾
+┌─────────────────────┐         ┌──────────────────────┐     ┌──────────────────────┐
+│ Real-Time Coaching   │         │ Solo Agents           │     │ Blog                  │
+│ Objection Handling   │         │ Team Leaders          │     │ Objection Library      │
+│ Call Notes           │         │ New Agents            │     │ Glossary               │
+│ ─────────────────    │         │ ISAs                  │     └──────────────────────┘
+│ Why Sayso            │         │ ─────────────────     │
+│ Pricing              │         │ Integrations          │
+└─────────────────────┘         └──────────────────────┘
 
 CTAs (always visible):
   [Download Sayso]  - primary action button
