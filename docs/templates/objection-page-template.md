@@ -53,7 +53,7 @@ Objection pages sit at the **top-to-mid funnel**. The visitor is searching for h
 - A product page (that is a `/products/` page)
 - A general how-to guide (that is a blog post)
 - A definition page (that is a `/glossary/` page)
-- A competitor comparison (that is a `/compare/` page)
+- A named-competitor comparison (Sayso does not publish competitor comparison pages)
 
 If you find yourself describing Sayso features in detail, you are writing a feature page. Keep the focus on the objection, the psychology behind it, and the response scripts. Sayso gets a single brief section near the end.
 

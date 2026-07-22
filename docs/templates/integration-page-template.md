@@ -58,7 +58,7 @@ From the programmatic SEO training: these pages follow the micro keyword princip
 
 **An integration page is NOT:**
 - A feature page (that is `/products/`)
-- A competitor comparison (that is `/compare/`)
+- A named-competitor comparison (Sayso does not publish competitor comparison pages)
 - A persona pitch (that is `/for/`)
 - A detailed technical integration guide (keep it simple and benefit-oriented)
 

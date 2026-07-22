@@ -35,17 +35,22 @@ function getContentSlugs(dir: string): string[] {
 function getStaticPages(): string[] {
   const appDir = path.join(ROOT, 'app');
   const pages: string[] = ['/demo', '/pricing', '/contact', '/blog', '/about'];
-  // Scan top-level app directories for page.tsx
-  if (fs.existsSync(appDir)) {
-    for (const entry of fs.readdirSync(appDir, { withFileTypes: true })) {
-      if (entry.isDirectory() && !entry.name.startsWith('(') && !entry.name.startsWith('[')) {
-        const pagePath = path.join(appDir, entry.name, 'page.tsx');
-        if (fs.existsSync(pagePath)) {
-          pages.push(`/${entry.name}`);
-        }
+  // Scan app directories for page.tsx. Route groups like `(content)` do not add a
+  // path segment, so descend through them (that is where /why-sayso lives).
+  const scan = (dir: string, prefix: string) => {
+    if (!fs.existsSync(dir)) return;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (!entry.isDirectory() || entry.name.startsWith('[')) continue;
+      if (entry.name.startsWith('(')) {
+        scan(path.join(dir, entry.name), prefix);
+        continue;
+      }
+      if (fs.existsSync(path.join(dir, entry.name, 'page.tsx'))) {
+        pages.push(`${prefix}/${entry.name}`);
       }
     }
-  }
+  };
+  scan(appDir, '');
   return [...new Set(pages)];
 }
 
@@ -74,7 +79,6 @@ function buildKnownRoutes(): Set<string> {
     { dir: 'products', prefix: '/products' },
     { dir: 'integrations', prefix: '/integrations' },
     { dir: 'for', prefix: '/for' },
-    { dir: 'comparisons', prefix: '/compare' },
     { dir: 'case-studies', prefix: '/case-studies' },
   ];
 

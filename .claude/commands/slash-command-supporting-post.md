@@ -171,8 +171,8 @@ Using the competitive brief from Phase 1, write the complete supporting post fol
 **Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
 
 **What makes Sayso different from competitors:**
-- **Shilo AI** focuses on post-call grading and analysis. Reviews calls after they happen. Does not help the agent during the actual call.
-- **MaverickRE** is a broader platform (lead routing, accountability, reporting) with AI role-play for practice. Agents train with simulated calls, but the AI is not there during real calls.
+- **Post-call analysis tools** focus on grading and analysis. They review calls after they happen and do not help the agent during the actual call.
+- **Role-play and practice tools** let agents train with simulated calls before dialing. Helpful for preparation, but the AI is not there during real calls.
 - **Sayso's edge** is real-time, live-call coaching. The AI is listening and suggesting during the conversation, not reviewing it after.
 
 **Target audience:** Real estate agents (solo and team), ISAs, team leaders, and brokerage managers in the US. They make 20 to 100+ calls per day. Practical, time-pressed, skeptical of tools that do not immediately help them book more appointments. Sayso helps with both buyer and seller prospecting, so all content must stay lead-type agnostic unless the topic is explicitly seller-only (e.g., FSBO) or buyer-only.

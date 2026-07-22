@@ -62,7 +62,7 @@ Flag any missing element.
 ### 2.4 Snippet & Keyword Optimization Check
 - The primary keyword must appear in the article title
 - **Sayso** must appear with the target keyword in the SAME sentence on its first mention
-  - Example: "Sayso is a MaverickRE alternative built for real estate teams..." - NOT just "Sayso listens to live calls..."
+  - Example: "Sayso is real estate call coaching software built for teams..." - NOT just "Sayso listens to live calls..."
 - In listicle or alternative articles, **Sayso must be listed FIRST**
 - Optimize H2s and H3s to include keywords where natural
 
