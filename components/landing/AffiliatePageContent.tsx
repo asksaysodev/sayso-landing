@@ -55,7 +55,7 @@ export function AffiliatePageContent() {
           </p>
           <div className="rounded-xl overflow-hidden border border-[#1D4871]/10 shadow-sm">
             <iframe
-              src="https://alert-tartan-008.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
+              src="https://asksayso.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
               width="100%"
               height="600"
               style={{ border: 'none' }}
@@ -66,7 +66,7 @@ export function AffiliatePageContent() {
           <p className="text-sm text-[#1D4871]/60">
             Form not loading?{' '}
             <a
-              href="https://alert-tartan-008.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
+              href="https://asksayso.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-[#1D4871] transition-colors"
