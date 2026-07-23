@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * DemoLiftCard (PREVIEW / DO NOT MERGE)
+ * DemoLiftCard
  *
  * A floating "book a demo" launcher that expands into a compact card, styled
  * after the iClosed "LIFT" widget the team liked (avatar + name/title,
@@ -11,8 +11,6 @@
  * to the internal /demo page (which hosts the scheduler), rather than opening
  * the Calendly popup: the in-page navigation is instant and prefetched, where
  * the popup waits on Calendly's script.
- *
- * Experimental preview only; intentionally scoped to a do-not-merge branch.
  */
 
 import { useEffect, useState } from 'react';
@@ -20,7 +18,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, ChevronDown, X } from 'lucide-react';
 
-// Auto-open the card this many ms after load so the preview is easy to see.
+// Auto-open the card this many ms after load, giving the visitor a moment to
+// orient on the page before the card appears.
 const AUTO_OPEN_MS = 2500;
 
 export function DemoLiftCard() {
