@@ -11,7 +11,7 @@ export function TermsOfServicePage() {
           <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
             Terms and Conditions
           </h1>
-          <p className="text-sm text-[#1D4871]/50">Last updated: June 19, 2026</p>
+          <p className="text-sm text-[#1D4871]/50">Last updated: July 20, 2026</p>
           <div className="mt-6 border-t-2 border-[#FFDE59]" />
         </div>
 
@@ -298,6 +298,113 @@ export function TermsOfServicePage() {
             </a>
             .
           </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Refunds and Cancellations */}
+        <section className="mt-10 space-y-4">
+          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+            Refunds and Cancellations
+          </h2>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-[#1D4871]">1. Billing and Cancellation</h3>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              Sayso subscriptions are billed in advance on a recurring basis, either monthly or
+              annual, depending on the plan you select. You may cancel at any time from your account
+              settings. Cancellation stops future billing at the end of your current billing period.
+              Cancelling does not, by itself, entitle you to a refund of fees already paid, except as
+              expressly set out below.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-[#1D4871]">2. No Refunds for Past Periods</h3>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              We do not refund subscription fees for any billing period that has already elapsed, in
+              whole or in part. This includes any period during which you had access to Sayso but
+              chose not to use it. Once a billing period has passed, the fee for that period is
+              non-refundable, except where a specific written guarantee applies (see Section 4).
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-[#1D4871]">
+              3. Referral and Affiliate Purchases
+            </h3>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              If you started your subscription through a referral or affiliate partner, your refund
+              eligibility is the same as for any other subscriber under the standard policy above. If
+              your purchase is refunded, any commission, credit, or reward paid to the referring or
+              affiliate partner in connection with that purchase may be reversed.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-[#1D4871]">
+              4. Promotional and Webinar Guarantee Offers
+            </h3>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              If you activated a Sayso subscription through a webinar, live training, or other
+              promotional offer that included a specific written performance guarantee, the terms of
+              that guarantee govern your refund eligibility for that purchase and apply in addition
+              to the policy above. Except where a specific written guarantee applies, webinar and
+              promotional purchases follow the standard refund policy.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-[#1D4871]">
+              5. Annual Results Guarantee (Webinar Offer)
+            </h3>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              If, within twelve (12) months of your Sayso account activation, you have not signed a
+              client to a representation agreement, AskSayso, Inc. will refund your full annual
+              subscription fee upon request. To be eligible, you must have:
+            </p>
+            <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-none">
+              <li>
+                (a) Completed at least twenty (20) conversations per week through the Sayso platform
+                throughout the guarantee period;
+              </li>
+              <li>(b) Attended the weekly live training sessions; and</li>
+              <li>
+                (c) Submitted your refund request in writing to{' '}
+                <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+                  support@asksayso.com
+                </a>{' '}
+                within seven (7) days after the end of the twelve-month guarantee period.
+              </li>
+            </ul>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              Refunds under this guarantee are limited to the annual subscription fees you paid to
+              AskSayso, Inc. They do not include add-ons, applicable taxes, or any third-party costs
+              such as dialers, lead sources, or CRM subscriptions. This guarantee is non-transferable
+              and applies only to the account that activated under the qualifying offer.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-[#1D4871]">6. How to Request a Refund</h3>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              To request a refund under this section, email{' '}
+              <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+                support@asksayso.com
+              </a>{' '}
+              from the email address on your account and include your account details and the reason
+              for the request.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-[#1D4871]">7. Changes to This Policy</h3>
+            <p className="text-base text-[#1D4871]/80 leading-relaxed">
+              We may update this refund policy from time to time. The version in effect at the time
+              of your purchase or renewal governs that purchase or renewal. Material changes will be
+              posted to this page with an updated effective date.
+            </p>
+          </div>
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
