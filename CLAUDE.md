@@ -120,6 +120,14 @@ Use **Draft PRs** with preview deployments:
 3. Share the preview URL with your team
 4. Convert to "Ready for Review" when ready for formal review
 
+### Preview and "do not merge" markers
+
+Merge status lives in GitHub, never in the code:
+
+- Mark preview-only or experimental work with a **Draft PR** and, if needed, a "DO NOT MERGE" note in the **PR title or description only**.
+- **Never** write "DO NOT MERGE", "PREVIEW ONLY", or similar status markers in code comments, JSDoc, or commit messages. Previews often get promoted to production, and those markers become leftover noise that confuses reviewers.
+- Before converting a preview to "Ready for Review", sweep the branch for leftovers: `git grep -in "do not merge"` and `git grep -in "preview only"` should return nothing.
+
 ---
 
 ## Repository Info

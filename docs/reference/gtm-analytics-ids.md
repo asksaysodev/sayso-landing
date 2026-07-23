@@ -23,6 +23,8 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-three-steps-section` | Opens demo calendar | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Home page "3 Easy Steps" |
 | `cta-download-transformation-section` | Opens system-select modal | [components/landing/TransformationSection/index.tsx](../../components/landing/TransformationSection/index.tsx) | Home page "You're Unstoppable" |
 | `cta-book-demo-transformation-section` | Opens demo calendar | [components/landing/TransformationSection/index.tsx](../../components/landing/TransformationSection/index.tsx) | Home page "You're Unstoppable" |
+| `cta-book-demo-lift-card` | Navigates to `/demo` | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | "Book a time" in the floating demo card, homepage only (preview) |
+| `cta-lift-card-toggle` | Opens/closes the floating card | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | Round launcher button, homepage only (preview) |
 | `cta-book-demo-persona-agent-hero` | Opens demo calendar | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent hero |
 | `cta-book-demo-persona-agent-footer` | Opens demo calendar | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent footer CTA |
 | `cta-book-demo-persona-broker-hero` | Opens demo calendar | [components/landing/BrokerAdPage.tsx](../../components/landing/BrokerAdPage.tsx) | /broker hero |
@@ -31,8 +33,8 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-persona-isa-footer` | Opens demo calendar | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa footer |
 | `cta-book-demo-persona-sales-leader-hero` | Opens demo calendar | [components/landing/SalesLeaderAdPage.tsx](../../components/landing/SalesLeaderAdPage.tsx) | /sales-leader hero |
 | `cta-book-demo-persona-sales-leader-footer` | Opens demo calendar | [components/landing/SalesLeaderAdPage.tsx](../../components/landing/SalesLeaderAdPage.tsx) | /sales-leader footer |
-| `cta-book-demo-{page-type}` | Opens demo calendar | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | `{page-type}` ∈ `feature-page`, `comparison-page`, `case-study-page`, `glossary-page`, `hub-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
-| `cta-download-{page-type}` | Opens system-select modal | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | Same 9 page-types as above |
+| `cta-book-demo-{page-type}` | Opens demo calendar | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | `{page-type}` ∈ `feature-page`, `case-study-page`, `glossary-page`, `hub-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
+| `cta-download-{page-type}` | Opens system-select modal | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | Same 8 page-types as above |
 | `cta-book-demo-{page-type}-inline` | Opens demo calendar | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | `{page-type}` ∈ `feature-page`, `glossary-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
 | `cta-download-{page-type}-inline` | Opens system-select modal | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | Same 6 page-types as above |
 | `cta-book-demo-feature-page-inline` | Opens demo calendar | [components/pages/FeatureCTAButtons.tsx](../../components/pages/FeatureCTAButtons.tsx) | Feature-page inline pair |

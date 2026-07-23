@@ -8,6 +8,7 @@ import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
 import { TransformationSection } from "@/components/landing/TransformationSection";
 import { WhoItsForSection } from '@/components/landing/WhoItsForSection';
 import { FAQSection } from '@/components/landing/FAQSection';
+import { DemoLiftCard } from '@/components/DemoLiftCard';
 import { siteUrl } from '@/lib/config';
 import { generateSoftwareAppJsonLd } from '@/lib/seo/schema';
 
@@ -51,6 +52,7 @@ export default function Home() {
             <ThreeStepsSection />
             <FAQSection />
             <Footer />
+            <DemoLiftCard />
         </div>
     );
 }
