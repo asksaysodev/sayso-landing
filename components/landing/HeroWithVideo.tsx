@@ -29,8 +29,15 @@ const logos = [
   { name: 'RISE Los Angeles', src: '/social-proof/rise-los-angeles.png' },
 ];
 
-// Repeat the logo set so the marquee fills wide screens and loops seamlessly
-// (the track scrolls by exactly 50%, so the sequence must be duplicated).
+// Repeat the logo set so the marquee fills wide screens and loops seamlessly.
+// Three things keep the loop from visibly jumping, all of them load-bearing:
+//   1. The copy count must stay EVEN. The track scrolls by exactly 50%, so an odd
+//      count puts the halfway point mid-sequence instead of on a repeat boundary.
+//   2. Spacing is padding on each item, never flex `gap`. A flex row has one fewer
+//      gap than it has items, so 50% of the track lands half a gap short of the seam.
+//   3. Each logo gets a fixed-width box (not `w-auto`). Widths that depend on the
+//      loaded image change the track width as images decode, and since the scroll
+//      distance is a percentage of that width, the animation shifts underneath itself.
 const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
 const defaultContent: HeroContent = {
@@ -92,12 +99,16 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
         <div className="mt-8 md:mt-10 pt-1 md:pt-2">
           <style>{`
             @keyframes logo-marquee {
-              from { transform: translateX(0); }
-              to { transform: translateX(-50%); }
+              from { transform: translate3d(0, 0, 0); }
+              to { transform: translate3d(-50%, 0, 0); }
             }
 
             .logo-marquee-track {
               animation: logo-marquee 90s linear infinite;
+              /* Promote to its own compositor layer so the scroll runs on the
+                 GPU instead of repainting on the main thread. */
+              will-change: transform;
+              backface-visibility: hidden;
             }
 
             .logo-marquee-wrapper:hover .logo-marquee-track {
@@ -133,11 +144,11 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             {/* Left fade edge */}
             <div className="logo-marquee-fade absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
 
-            <div className="logo-marquee-track flex w-max items-center gap-12 md:gap-20">
+            <div className="logo-marquee-track flex w-max items-center">
               {marqueeLogos.map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="flex shrink-0 items-center"
+                  className="flex shrink-0 items-center justify-center pr-8 md:pr-12"
                   aria-hidden={index >= logos.length ? true : undefined}
                 >
                   <Image
@@ -145,7 +156,11 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                     alt={logo.name}
                     width={260}
                     height={100}
-                    className="h-12 md:h-16 w-auto object-contain"
+                    // Eager: these sit in the hero and repeat, so lazy loading made
+                    // them pop in mid-scroll. Only 14 unique files, so the browser
+                    // still makes just 14 requests across all copies.
+                    loading="eager"
+                    className="h-14 md:h-16 w-[150px] md:w-[190px] object-contain"
                   />
                 </div>
               ))}

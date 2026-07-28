@@ -22,16 +22,22 @@ const logos: { src: string; alt: string }[] = [
 ];
 
 export function PartnerLogoCarousel() {
+  // Keep this an EVEN number of copies: the track scrolls by exactly 50%, so an
+  // odd count would land the halfway point mid-sequence and the loop would jump.
   const duplicated = [...logos, ...logos];
 
   return (
     <section aria-label="Trusted by" className="border-y border-[#1D4871]/10 bg-white/60">
       <style>{`
         @keyframes partner-marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-50%, 0, 0); }
         }
-        .partner-marquee-track { animation: partner-marquee 28s linear infinite; }
+        .partner-marquee-track {
+          animation: partner-marquee 45s linear infinite;
+          will-change: transform;
+          backface-visibility: hidden;
+        }
         .partner-marquee-track:hover { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce) {
           .partner-marquee-track {
@@ -53,16 +59,20 @@ export function PartnerLogoCarousel() {
         <div className="partner-marquee-wrapper relative overflow-hidden">
           <div className="partner-marquee-fade absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F4F4F5] to-transparent pointer-events-none z-10" />
 
-          <div className="partner-marquee-track flex items-center gap-10 md:gap-14 w-max">
+          <div className="partner-marquee-track flex items-center w-max">
             {duplicated.map((logo, index) => (
-              <Image
+              <div
                 key={`partner-logo-${index}`}
-                src={logo.src}
-                alt={logo.alt}
-                width={140}
-                height={48}
-                className="h-8 md:h-10 w-auto object-contain opacity-60 grayscale transition-all duration-200 hover:opacity-90 hover:grayscale-0"
-              />
+                className="flex shrink-0 items-center justify-center pr-10 md:pr-14"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={140}
+                  height={48}
+                  className="h-8 md:h-10 w-[110px] md:w-[130px] object-contain opacity-60 grayscale transition-all duration-200 hover:opacity-90 hover:grayscale-0"
+                />
+              </div>
             ))}
           </div>
 
