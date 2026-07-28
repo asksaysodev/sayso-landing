@@ -14,6 +14,11 @@ const logos: { src: string; alt: string }[] = [
   { src: '/social-proof/maxwell-properties.png', alt: 'Maxwell Properties' },
   { src: '/social-proof/olaf-logo.png', alt: 'Olaf' },
   { src: '/social-proof/around-town-properties.png', alt: 'Around Town Properties' },
+  { src: '/social-proof/coldwell-banker.png', alt: 'Coldwell Banker' },
+  { src: '/social-proof/real-people-realty.png', alt: 'Real People Realty' },
+  { src: '/social-proof/team-borham.png', alt: 'Team Borham' },
+  { src: '/social-proof/secure-home-finder-team.png', alt: 'Secure Home Finder Team at LPT Realty' },
+  { src: '/social-proof/rise-los-angeles.png', alt: 'RISE Los Angeles' },
 ];
 
 export function PartnerLogoCarousel() {
