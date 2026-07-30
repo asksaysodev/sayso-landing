@@ -1,0 +1,257 @@
+# /geek-estate-post Slash Command - Production Prompt
+
+**Usage:** `/geek-estate-post "[post title or topic]" [author:Name] [series:pillar|deep-dive]`
+
+**Examples:**
+- `/geek-estate-post "The AI-Native Agent: 10 Workflows Worth Stealing" series:pillar`
+- `/geek-estate-post "The 5-Minute Lead: Winning the Speed-to-Lead Race With AI" series:deep-dive`
+- `/geek-estate-post "Where AI Hurts the Sale" author:Jack Drechsler`
+
+This command writes a **guest post for Geek Estate Blog** (geekestateblog.com) — an external, value-first proptech publication where Sayso is contributing articles to build authority and earn a backlink. This is **not** a post for Sayso's own site. The whole point is to write something genuinely useful for *their* audience, in *their* voice, that earns the right to a backlink rather than reading like a Sayso ad.
+
+Read this entire prompt before doing anything. Then follow the phases in order.
+
+---
+
+## WHY THIS COMMAND EXISTS (read first)
+
+Geek Estate Blog (GEB) is a bylined, guest-contributed real estate technology blog for **industry professionals** (agents, brokers, proptech founders, vendors, investors), not consumers. Sayso has an opening to contribute a series of value-adding articles. The strategic goal is a backlink to Sayso, but GEB's editorial rules make the path very specific:
+
+1. **Value-first, never pitchy.** GEB's stated rule: vendors may contribute but must write "without pimping their own products or clients." Obvious self-promotion gets rejected.
+2. **In-body links are earned, not given.** GEB explicitly states: "No text links within the body of the post will be given unless you write at least 2-3 quality posts first." So the backlink lives in the **author bio**, not the article body.
+3. **First-hand experience is required.** GEB rejects generic content: "If you don't have real world real estate experience and learnings to share, this is the wrong outlet." Posts must read like a practitioner sharing what they've actually learned.
+4. **Original only.** Content must not be posted anywhere else on the web first. These drafts are for GEB exclusively.
+
+Because of this, the post body is **vendor-neutral and value-dense**, and Sayso shows up (if at all) only as one illustrative example among others, with no link. The backlink is delivered cleanly through the byline/bio. This is also the SEO-safe play: a contextual bio link from a relevant, established industry site passes link value, while a body stuffed with optimized anchor links to Sayso reads as a paid-link scheme and risks both rejection and a Google penalty.
+
+---
+
+## PHASE 0: INPUTS & CONFIG
+
+Parse the command input:
+
+1. **Topic / working title** — the quoted string. May be a full title or a loose topic.
+2. **Author** — the value after `author:`. **Default: Kuvaal Patel.** Override per run when Jack (or anyone else) is the submitting author.
+3. **Series role** — the value after `series:`:
+   - `pillar` — the hub/overview piece that surveys many workflows at a breadth level (e.g. "10 Workflows Worth Stealing"). Slightly longer, list-framed, each item a tight section.
+   - `deep-dive` — a spin-off that takes ONE idea from the pillar and goes deep with first-hand detail. This is the default if not specified.
+
+If the topic is ambiguous about which series role it plays, infer from the title shape (a numbered "N things" title is almost always `pillar`; a single-concept title is `deep-dive`).
+
+### The Sayso content series (for context and cross-referencing)
+
+This is the planned GEB series. Knowing the full map keeps each post distinct and lets you reference sibling ideas naturally (in prose only — never as a link, since none are published yet).
+
+**Pillar:** The AI-Native Agent: 10 Workflows Worth Stealing
+
+**Spin-off deep dives:**
+1. The 5-Minute Lead: Winning the Speed-to-Lead Race With AI
+2. What to Say Next: Real-Time Call Coaching and the Death of the Sales Script ★
+3. The Follow-Up Problem: How AI Turns Cold Leads Into Booked Appointments ★
+4. The Objection Playbook: Training New Agents With AI Instead of Role-Play ★
+5. AI for Listing Marketing: Copy, Photos, and Video That Used to Take All Day
+6. Your CRM Is Lying to You: AI and the Truth About Your Pipeline
+7. Where AI Hurts the Sale: The Conversations That Have to Stay Human
+
+★ marks the topics where Sayso (real-time, live-call coaching for real estate agents) is the most natural illustrative example. On those posts you may reference Sayso once in the body as one example among others; on the rest, keep Sayso out of the body entirely and let the bio carry it.
+
+---
+
+## PHASE 1: RESEARCH (do this before writing a single word)
+
+### Step 1: Re-read Geek Estate Blog live
+
+GEB's voice and current themes shift over time, so read it fresh each run rather than trusting a stale summary. Use WebFetch.
+
+- Fetch the index: `https://geekestateblog.com/blog/`
+- Fetch the contributor rules: `https://geekestateblog.com/contribute/`
+- Read **3-5 recent full posts**, prioritizing analytical/thought-leadership pieces over community announcements.
+
+Extract and hold onto:
+- **House voice:** confident first-person, opinionated, grounded in experience. Authors make definitive market claims ("From where I sit, the proptech market is entering a period of transition") rather than neutral how-tos.
+- **Structure norms:** essay with descriptive subheads, occasional bullet lists, a hook/thesis intro, a forward-looking conclusion. Roughly 900-1,500 words for analytical posts.
+- **Register:** assumes the reader knows the industry (MLS, IDX, CRM, proptech VC). No beginner hand-holding, no consumer framing.
+- **How product mentions are handled** in practice: woven in as illustrative evidence, with the author's company surfacing in the bio, never as a CTA.
+
+### Step 2: Ground the post in real Sayso domain experience
+
+The author writes from first-hand experience in real estate AI and calling. Pull authentic, specific detail to draw on (paraphrase, never copy verbatim, and keep it vendor-neutral in the body):
+
+- `docs/content/ultimate-script-book.md` — real call dynamics, objection patterns, follow-up cadences, prospect psychology. This is what lets the post describe what *actually* happens on calls instead of theorizing.
+- `docs/content/blog-content-guide.md` — Sayso's understanding of the agent's day and pain points.
+
+The goal: the post should contain specifics only a practitioner would know (real numbers, real scenarios, the actual texture of an agent's workflow), which is exactly the first-hand experience GEB demands.
+
+### Step 3: Research the topic on the open web
+
+- WebSearch the core topic, plus a variant with "2026" for recency.
+- Read 3-5 of the strongest sources to understand current thinking, recent data, and what's already been said.
+- Capture concrete, citable facts/numbers worth referencing (cite the insight naturally in prose; link to a primary source only where GEB-style posts do, e.g. a stat from NAR, the Fed, or a named study).
+
+### Step 4: Build a brief (for your own reference, not part of the output)
+
+1. **GEB voice notes** — 3-4 specifics about their current tone to match.
+2. **The thesis** — the single opinionated argument this post makes. GEB posts have a point of view, not just a topic.
+3. **First-hand specifics to use** — the concrete scenarios/numbers from Step 2 that make this credible.
+4. **Information gain** — at least one angle, framework, or claim a reader won't get from the obvious top results.
+5. **Series fit** — what this post owns and what it deliberately leaves to sibling posts, so the series doesn't repeat itself.
+6. **Where (if anywhere) Sayso fits** as an illustrative example — only on ★ topics, only once, no link.
+
+Do not start writing until the brief is complete.
+
+---
+
+## PHASE 2: WRITE THE POST
+
+Write a complete guest post in GEB's voice. The author is a real person sharing real learnings, not "the Sayso team."
+
+### Voice & point of view
+- **Measured, plain-spoken, and explanatory.** Open with a clear thesis or a reframe, but make the point through reasoning, not hot takes. The voice is calm and confident, never contrarian-for-effect, punchy, or breathless.
+- **Reader-facing register.** Address the reader as "you" and write about "an agent" in general. Keep first-person "I" rare or absent; the authority comes from how specifically the post understands the agent's day, not from "from where I sit" assertions. (GEB authors often write in first person; for this series we deliberately favor the reader-facing register, which still fits GEB's essay format.)
+- **Practitioner register.** Write like someone who has been close to thousands of real estate calls and has watched AI change the workflow, talking to peers who already know the industry.
+- **Grounded and useful.** Full, natural sentences with normal flow. Not academic, not clickbait, not motivational.
+
+### Structure
+- **Hook/thesis intro** (a few short paragraphs). Name the problem or the shift in plain terms. The reference pillar opens on the "strange problem" that AI can make a five-minute task take two hours, then narrows to the real point. No "In today's market" throat-clearing.
+- **A framing section before the list** (pillar role). After the intro, include a short section that defines the lens (the reference pillar uses "What an AI-native agent actually looks like") so the list lands inside an argument, not as a bare listicle.
+- **Descriptive subheads** (H2, and H3 where useful). A reader skimming headings should get the argument.
+- **Occasional bullet lists** within sections where they aid scanning. Don't turn the whole post into a listicle unless the title is explicitly a numbered list (pillar role).
+- **Forward-looking conclusion** — a takeaway about where this is heading. The reference pillar closes with "The advantage is not the tool": the point is the workflow and the judgment, not the software.
+
+### Pillar list-item format (pillar role only)
+
+Each numbered workflow is a tight, self-contained mini-section that follows the reference pillar's pattern:
+- An H3 with a short, plain name: `### 1. The five-minute lead` (not a keyword-stuffed heading).
+- **Lead with one sentence stating what AI does here**, usually in the form "Use AI to [outcome]."
+- Follow with a clarifier that draws the line between the shallow version and the real one ("This is not about sending an instant generic text, but instead about ...") and names the underlying process.
+- Keep each item to roughly 2-4 short sentences. Breadth over depth; the deep-dives carry the detail.
+- Where a sibling deep-dive covers the item, end the item with a plain-text pointer on its own line, in italics: `*Supporting article: [Sibling Title]*`. This is a label, not a hyperlink (the siblings are not published yet), so it stays compatible with the no-body-links rule and is easy to keep or strip at submission time.
+
+### Length
+- **deep-dive:** 900-1,400 words. Go deep on one idea.
+- **pillar:** 1,300-1,800 words. Survey breadth; each list item is a tight, self-contained mini-section with one concrete example.
+- Word count is a scoping target, not a floor. If the argument is fully made, stop.
+
+### First-hand experience (calibrated by role, non-negotiable for GEB)
+
+Draw from at least one of these per post; the bar scales with the role:
+- A specific scenario walked through step by step (what an agent actually does, not "agents should").
+- A real number or benchmark with the texture of experience behind it.
+- A specific mistake and its consequence.
+- A counter-intuitive insight from having watched this play out repeatedly.
+
+**Deep-dive:** include at least 2 of the above. Depth and specificity are the whole point of a deep-dive.
+
+**Pillar:** the breadth format means lighter depth per item, so credibility comes from one or two grounding data points up front (the reference pillar uses the 82% adoption vs. 17% impact vs. 46% no-difference split) plus the specific texture of each workflow, rather than a full scenario inside every list item. Do not pad each item with invented numbers to hit a quota.
+
+### Promotional discipline (the core rule)
+- The **body is vendor-neutral.** Do not pitch Sayso. Do not link to Sayso in the body.
+- On ★ topics only, Sayso may appear **once** as one illustrative example among others (e.g. naming it alongside other tools in the category), with no link and no superlatives. If it would feel like an ad, cut it.
+- The backlink is delivered entirely through the author bio (see Output).
+- Never frame the post as building toward Sayso. It should be useful and complete even if Sayso did not exist.
+
+### Global writing rules (from CLAUDE.md — apply everywhere)
+- Brand name is always **Sayso** (capital S only). Never "SaySo", "SAYSO", "Say So", or "say so".
+- **Never use em dashes (—).** Use commas, colons, periods, or rephrase.
+- **Never write short, punchy, fragmented "tagline" sentences** ("Faster leads. Smarter calls. More clients."). Write full, natural sentences with normal flow, like a real person writing an essay.
+- **Never use "Not X. Not Y. Just Z." structures.** Rewrite affirmatively.
+- When discussing real estate agents, call them "agents" or "real estate agents", never "reps" or "representatives".
+- Don't call prospects or clients "deals". Agents book appointments and turn prospects into clients.
+- Avoid "phone call(s)" and "cold call(s)" as throwaway nouns; use "call(s)" (cold calling as a *topic* is fine).
+- Don't use "run/running" for making calls; use natural language ("make calls", "dial", "get on the phone").
+
+### Human-writing rules (anti-AI sentence patterns, non-negotiable)
+
+Reviewer feedback on the first drafts was that the content was solid but the prose read as AI-written. The tells were sentence-level rhythm devices, not vocabulary. These rules are adapted from the blader/humanizer skill (github.com/blader/humanizer, built on Wikipedia's "Signs of AI writing" guide) plus the specific structures the reviewer flagged. Treat every one as a hard rule for the post body, the bio, and the pitch blurb.
+
+1. **No reframe pairs.** Never write "X is not A. It is B." or "The point is not A, it is B." or "They don't have an A problem. They have a B problem." This two-beat correction rhythm is the single strongest AI tell in the first drafts. Make the positive claim in one normal sentence and, if the contrast matters, attach it with "rather than" or "instead of" inside the same sentence, or just explain why the common view is wrong in plain terms.
+2. **No manufactured punchlines.** Do not end paragraphs or sections on a short quotable zinger ("You have automated the easy part of being wrong." "That is the race now."). A human essayist lets a section end on substance, sometimes even on a mundane practical note. If a closing line would look at home on a slide, rewrite it as an ordinary sentence with a subject, a verb, and some detail.
+3. **No staccato drama.** Avoid runs of very short sentences or fragments used for effect ("Then they get on a live call."). Vary sentence length the way explanation naturally varies it: mostly medium and long sentences that connect ideas with "because," "so," "which," and "and," with an occasional short one where it genuinely helps.
+4. **No aphorism formulas.** Ban "X is the language/currency/price/architecture of Y," "X becomes a trap," "a story you tell yourself," and similar coined-proverb shapes. Replace the metaphor with the actual concrete claim.
+5. **No authority tropes or throat-clearing pivots.** Ban "The real question is," "Here is the part worth being honest about," "at its core," "what really matters is," "It is worth being honest about both," "Let's be clear." Just say the thing.
+6. **No forced rule-of-three.** Do not package ideas into neat triads ("faster, more confident, and harder to question") as a default rhythm. Use however many items the idea actually has, and prefer folding them into flowing prose.
+7. **No copula avoidance.** Prefer "is," "are," "has" over "serves as," "stands as," "represents," "boasts," "features."
+8. **No false ranges** ("from open houses to closing tables") and no vague attributions ("experts say," "studies show") without a nameable source.
+9. **Every sentence must add new information.** AI drafts restate the previous sentence in fancier words; that is the "wordy" feeling reviewers flag. If a sentence only re-says or dramatizes the one before it, cut it. Trust the reader to get the point the first time.
+10. **Read-aloud test.** Before finishing, read the draft as if speaking to a colleague. Anywhere you would naturally smooth a beat, connect two sentences, or feel embarrassed saying the line out loud, rewrite it. The target is the register of a knowledgeable person explaining something in an email to a peer, with normal connected paragraphs and no performance.
+
+### What to avoid
+- Generic advice that could apply to any industry ("AI is transforming everything").
+- Consumer-facing framing (this audience is industry pros, not buyers/sellers).
+- Restating the obvious top search results without adding a point of view.
+- Any sentence that could be deleted without losing information.
+
+---
+
+## PHASE 3: OUTPUT
+
+Produce a single markdown file saved to:
+
+```
+content/guest-posts/geek-estate/[slug].md
+```
+
+Use a kebab-case slug derived from the title. The file is **plain markdown** (GEB does not use Sayso's MDX components — no `<ScriptExample>`, no `<CalloutBox>`). Structure the file as a submission packet:
+
+```markdown
+---
+title: "[Final post title]"
+proposed_titles:
+  - "[Alt title option 1]"
+  - "[Alt title option 2]"
+author: "[Author name]"
+target: "Geek Estate Blog (geekestateblog.com)"
+series: "[pillar | deep-dive]"
+status: "draft"
+word_count: [approx]
+---
+
+# [Post title]
+
+[Full post body in plain markdown, GEB voice, value-first.]
+
+---
+
+## Author bio (for submission: this carries the backlink)
+
+[2-3 sentence first-person bio establishing the author's real estate / AI credibility, ending with a single natural link to Sayso. Example shape: "Kuvaal Patel works on AI tools for real estate teams at [Sayso](https://asksayso.com), where ..."]
+
+## Submission notes (not for publication)
+
+- **Suggested GEB category:** [Founders and Tech | Agents and Brokers | etc.]
+- **Pitch email blurb to Drew Meyers:** [3-4 sentence pitch the author can paste into an email: who they are, what the post argues, why it fits GEB's audience, confirmation it's original and exclusive to GEB.]
+- **Originality:** Confirm this draft has not been published elsewhere and must not be cross-posted before GEB runs it.
+```
+
+After writing the file, give the user a short summary in chat: the title, word count, the one-line thesis, whether Sayso appears in the body, and the file path.
+
+---
+
+## QUALITY CHECKLIST (self-audit before output)
+
+- [ ] GEB read live this run (index + contribute page + 3-5 posts); voice matched
+- [ ] Post has a clear point of view, not just a topic, argued calmly rather than as a hot take
+- [ ] Written in a measured, reader-facing practitioner voice ("you"/general agent, first-person "I" rare or absent; the named author, not "Sayso Team")
+- [ ] Pillar role: includes the framing section before the list, and each item follows the "Use AI to ..." mini-section pattern with a `*Supporting article: ...*` pointer where a sibling deep-dive exists
+- [ ] First-hand experience present and calibrated to role (deep-dive: at least 2 markers; pillar: grounding data up front plus specific workflow texture)
+- [ ] At least 1 information-gain element beyond the obvious top results
+- [ ] Audience is industry pros, not consumers; register assumes industry knowledge
+- [ ] Body is vendor-neutral; Sayso appears in the body only on ★ topics, only once, with no link (or not at all)
+- [ ] Backlink lives only in the author bio, as a single natural link
+- [ ] Essay structure: hook intro, descriptive subheads, forward-looking close
+- [ ] Length on target for the series role
+- [ ] No em dashes; "Sayso" spelled correctly; no fragmented tagline sentences; no "Not X. Not Y." structures
+- [ ] **Humanize pass done as a separate final step:** re-read the finished draft hunting only for the ten human-writing rules (reframe pairs, punchline closers, staccato drama, aphorism formulas, authority tropes, forced triads, copula avoidance, false ranges, restatement sentences, read-aloud failures) and rewrite every hit before saving
+- [ ] No content overlap with sibling series posts; siblings referenced in prose only, never linked
+- [ ] Original and exclusive to GEB (stated in submission notes)
+- [ ] Saved to content/guest-posts/geek-estate/[slug].md as plain markdown with the submission packet
+
+---
+
+## NOTE ON THE BACKLINK + AUTHOR-IDENTITY QUESTION
+
+A guest-post backlink from a relevant, established industry site like GEB does pass link value. Having the same person named as the author on both the Sayso site and the GEB post does **not** cause Google to "suppress" the link; co-authorship is not a negative ranking signal. The real constraints are the ones this command is built around:
+
+1. GEB only grants in-body links after 2-3 quality posts, so the early backlink belongs in the **author bio**, which is a normal, accepted guest-author convention.
+2. Link value at scale comes from the posts being genuinely good and the link being natural. Guest posts that exist only to drop optimized anchor-text links into the body are what Google's link-spam systems target. A clean bio link from a real, useful article is the safe and effective play.
+3. Vary the bio link's anchor text across the series (the author's name or "Sayso", not a keyword-stuffed phrase), and keep every post genuinely useful on its own.
