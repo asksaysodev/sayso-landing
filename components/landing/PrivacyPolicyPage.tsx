@@ -172,8 +172,8 @@ export function PrivacyPolicyPage() {
 
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">What We Do Not Do</h3>
           <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
-            <li>We do not sell conversation data</li>
-            <li>We do not use your conversations to train our own AI models</li>
+            <li>We do not sell confidential personally identifiable information (PII)</li>
+            <li>We do not use your conversations to train general AI models</li>
             <li>
               We do not share your transcripts, notes, or session records with anyone outside
               Sayso, except the service providers that help us operate the Service (such as hosting
@@ -185,9 +185,10 @@ export function PrivacyPolicyPage() {
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">People You Speak With</h3>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Transcripts include what the people you speak with say during a conversation. We protect
-            that information under this Policy the same way we protect yours. As the account holder,
-            you are responsible for complying with any laws that apply to your conversations,
-            including any notice or consent requirements in your area.
+            that information under this Policy the same way we protect yours. By using Sayso, you
+            agree to comply with your state's call recording consent rules, including obtaining
+            consent in states that require it. As the account holder, you are responsible for any
+            notice or consent requirements that apply to your conversations.
           </p>
 
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">Retention &amp; Deletion</h3>
