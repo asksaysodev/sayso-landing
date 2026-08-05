@@ -11,7 +11,7 @@ export function PrivacyPolicyPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
             Privacy Policy
           </h1>
-          <p className="text-sm text-[#1D4871]/50">Last updated: June 19, 2026</p>
+          <p className="text-sm text-[#1D4871]/50">Last updated: August 4, 2026</p>
           <div className="mt-6 border-t-2 border-[#FFDE59]" />
         </div>
 
@@ -109,6 +109,96 @@ export function PrivacyPolicyPage() {
               You can adjust cookie settings in your browser.
             </li>
           </ul>
+
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            When you use Sayso during calls, we also collect and store conversation data. Because
+            this is central to how the Service works, we describe it in its own section below.
+          </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Conversation Data */}
+        <section className="mt-10 space-y-4">
+          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+            Conversation Data
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            When you use Sayso during a call, the Service processes the conversation in real time to
+            surface live cues and capture notes. To provide these features and your session history,
+            we create and store a record of each session in your account. A session record may
+            include:
+          </p>
+          <ul className="space-y-3 text-base text-[#1D4871]/80 leading-relaxed list-none">
+            <li>
+              <span className="font-semibold text-[#1D4871]">Transcripts:</span> A written,
+              speaker-labeled transcript of the conversation, with timestamps.
+            </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">Cues &amp; Insights:</span> The live
+              cues Sayso surfaced during the call and the conversation signals that triggered them.
+            </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">Signal Activity:</span> A log of which
+              conversation signals were screened and detected during the call, and when.
+            </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">Notes &amp; Summaries:</span> Notes
+              Sayso captured during the conversation and a short summary of the call.
+            </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">Session Details:</span> Date,
+              duration, conversation stages, features used, and, if you connect your CRM, the lead
+              the session was linked to.
+            </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">Market Context:</span> Local market
+              statistics for areas discussed during the conversation.
+            </li>
+          </ul>
+
+          <h3 className="text-base font-semibold text-[#1D4871] pt-2">
+            How We Use Conversation Data
+          </h3>
+          <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
+            <li>To provide the Service, including live cues, captured notes, and session history</li>
+            <li>To review, test, and improve how Sayso's signals and cues perform</li>
+            <li>
+              To create de-identified, aggregated insights about conversation patterns. This data
+              does not identify you or the people you speak with, and we may use it to improve the
+              Service and develop new features
+            </li>
+          </ul>
+
+          <h3 className="text-base font-semibold text-[#1D4871] pt-2">What We Do Not Do</h3>
+          <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
+            <li>We do not sell conversation data</li>
+            <li>We do not use your conversations to train our own AI models</li>
+            <li>
+              We do not share your transcripts, notes, or session records with anyone outside
+              Sayso, except the service providers that help us operate the Service (such as hosting
+              and AI processing) under confidentiality and data protection obligations, or when
+              required by law
+            </li>
+          </ul>
+
+          <h3 className="text-base font-semibold text-[#1D4871] pt-2">People You Speak With</h3>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Transcripts include what the people you speak with say during a conversation. We protect
+            that information under this Policy the same way we protect yours. As the account holder,
+            you are responsible for complying with any laws that apply to your conversations,
+            including any notice or consent requirements in your area.
+          </p>
+
+          <h3 className="text-base font-semibold text-[#1D4871] pt-2">Retention &amp; Deletion</h3>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We retain session records while your account is active. You can request a copy of your
+            conversation data, or ask us to delete it, by emailing{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>
+            . See "Your Rights &amp; Choices" below for details.
+          </p>
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
@@ -123,6 +213,7 @@ export function PrivacyPolicyPage() {
           </p>
           <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
             <li>Provide, maintain, and improve the Service</li>
+            <li>Generate live cues, notes, and session history when you use Sayso on calls</li>
             <li>Process transactions and manage your account</li>
             <li>Respond to inquiries and provide support</li>
             <li>Send service updates, security alerts, and relevant product communications</li>
