@@ -11,7 +11,7 @@ export function PrivacyPolicyPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
             Privacy Policy
           </h1>
-          <p className="text-sm text-[#1D4871]/50">Last updated: August 4, 2026</p>
+          <p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>
           <div className="mt-6 border-t-2 border-[#FFDE59]" />
         </div>
 
@@ -143,6 +143,12 @@ export function PrivacyPolicyPage() {
               conversation signals were screened and detected during the call, and when.
             </li>
             <li>
+              <span className="font-semibold text-[#1D4871]">Interaction &amp; Reaction Data:</span>{' '}
+              The cues and signals Sayso shows during a call, whether they were used, and how call
+              participants responded, including timing, sentiment, and shifts in conversation
+              signals after a cue. We use this to learn which prompts change conversations.
+            </li>
+            <li>
               <span className="font-semibold text-[#1D4871]">Notes &amp; Summaries:</span> Notes
               Sayso captured during the conversation and a short summary of the call.
             </li>
@@ -152,10 +158,24 @@ export function PrivacyPolicyPage() {
               the session was linked to.
             </li>
             <li>
+              <span className="font-semibold text-[#1D4871]">Outcome Data:</span> Whether an
+              appointment was booked, held, signed, or closed, and, where your CRM is connected,
+              transaction and commission values plus lead name and record identifiers. We link
+              Outcome Data to session records to learn which cues worked.
+            </li>
+            <li>
               <span className="font-semibold text-[#1D4871]">Market Context:</span> Local market
               statistics for areas discussed during the conversation.
             </li>
           </ul>
+
+          <h3 className="text-base font-semibold text-[#1D4871] pt-2">Automated Processing</h3>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso uses automated processing to analyze, in real time, how you and the people you
+            speak with respond to prompts and cues, and to score conversation signals. We use this
+            to guide the agent and improve our models. This processing does not make legal or
+            similarly significant decisions about you.
+          </p>
 
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">
             How We Use Conversation Data
@@ -164,37 +184,74 @@ export function PrivacyPolicyPage() {
             <li>To provide the Service, including live cues, captured notes, and session history</li>
             <li>To review, test, and improve how Sayso's signals and cues perform</li>
             <li>
-              To create de-identified, aggregated insights about conversation patterns. This data
-              does not identify you or the people you speak with, and we may use it to improve the
-              Service and develop new features
+              To train, tune, evaluate, and improve Sayso's own proprietary signal, cue, and
+              coaching models, using conversation, interaction, reaction, and outcome data
+            </li>
+            <li>
+              To create de-identified and aggregated data, as described in "De-identified &amp;
+              Aggregated Data" below
             </li>
           </ul>
 
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">What We Do Not Do</h3>
           <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
-            <li>We do not sell confidential personally identifiable information (PII)</li>
-            <li>We do not use your conversations to train general AI models</li>
+            <li>We do not sell your identifiable personal information or raw transcripts</li>
+            <li>
+              We do not use your conversations to train third-party or general-purpose foundation
+              models
+            </li>
             <li>
               We do not share your transcripts, notes, or session records with anyone outside
               Sayso, except the service providers that help us operate the Service (such as hosting
-              and AI processing) under confidentiality and data protection obligations, or when
-              required by law
+              and AI processing) under confidentiality and data protection obligations, except
+              de-identified and aggregated derivatives as described in "De-identified &amp;
+              Aggregated Data" below, or when required by law
             </li>
           </ul>
+
+          <h3 className="text-base font-semibold text-[#1D4871] pt-2">
+            De-identified &amp; Aggregated Data
+          </h3>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We may create, own, license, sell, and disclose de-identified and aggregated data and
+            derivatives of conversation, interaction, reaction, and outcome data, including
+            cue-and-reaction patterns, benchmarks, and market intelligence, and including in
+            industries beyond real estate. We de-identify this data so it can no longer reasonably
+            be used to identify you or the people you speak with, and we contractually prohibit
+            recipients from attempting to re-identify it.
+          </p>
 
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">People You Speak With</h3>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Transcripts include what the people you speak with say during a conversation. We protect
-            that information under this Policy the same way we protect yours. By using Sayso, you
-            agree to comply with your state's call recording consent rules, including obtaining
-            consent in states that require it. As the account holder, you are responsible for any
-            notice or consent requirements that apply to your conversations.
+            that information under this Policy the same way we protect yours.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            By using Sayso, you agree to provide any notice and obtain any consent required by
+            applicable law before using Sayso on a call. This covers both the recording or
+            transcription of the conversation and the analysis and commercial use of conversation
+            data described in this Policy, including in states that require all parties to consent.
+            A simple verbal disclosure at the start of a call works, for example: "Just so you
+            know, I use software that transcribes and analyzes our conversation so I can serve you
+            better. Is that okay with you?"
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            If you spoke with a Sayso user and would like to know what information we hold about
+            that conversation, or would like it corrected or deleted, email{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>
+            . We will handle your request under this Policy whether or not you have a Sayso
+            account.
           </p>
 
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">Retention &amp; Deletion</h3>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            We retain session records while your account is active. You can request a copy of your
-            conversation data, or ask us to delete it, by emailing{' '}
+            We retain session records while your account is active. After account closure, we
+            delete raw identifiable records within 30 days, except de-identified interaction,
+            reaction, signal, and outcome records, and any data already incorporated into trained
+            models or aggregates, which we retain. You can request a copy of your conversation
+            data, or ask us to delete it, by emailing{' '}
             <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
               support@asksayso.com
             </a>
@@ -222,7 +279,8 @@ export function PrivacyPolicyPage() {
             <li>Comply with legal obligations</li>
           </ul>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            We do not sell or rent your personal information to third-party marketers.
+            For how we handle data from your conversations, including de-identified and aggregated
+            data, see the "Conversation Data" section above.
           </p>
         </section>
 
@@ -282,6 +340,14 @@ export function PrivacyPolicyPage() {
             </a>
             . We may need to verify your identity before processing requests. You can also opt out
             of marketing emails by clicking "unsubscribe" in the email footer.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            If you live in a state that gives you the right to opt out of the sale or sharing of
+            personal information and you would like to opt out, email your request to{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>{' '}
+            with the subject line "Opt Out Request."
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             You have the right to request that we delete personal data we've collected from you.
