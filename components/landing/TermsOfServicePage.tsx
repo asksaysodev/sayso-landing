@@ -11,7 +11,7 @@ export function TermsOfServicePage() {
           <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
             Terms and Conditions
           </h1>
-          <p className="text-sm text-[#1D4871]/50">Last updated: July 20, 2026</p>
+          <p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>
           <div className="mt-6 border-t-2 border-[#FFDE59]" />
         </div>
 
@@ -90,9 +90,11 @@ export function TermsOfServicePage() {
               with SOC 2 principles in mind.
             </li>
             <li>
-              <span className="font-semibold text-[#1D4871]">Retention:</span> Meeting recordings,
-              transcripts, and summaries stored only as long as needed for functionality, then
-              securely deleted.
+              <span className="font-semibold text-[#1D4871]">Retention:</span> Session records,
+              including transcripts, notes, and summaries, are retained as described in our Privacy
+              Policy. After account closure, raw identifiable records are deleted within 30 days,
+              except de-identified records and data already incorporated into trained models or
+              aggregates.
             </li>
           </ul>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -101,6 +103,42 @@ export function TermsOfServicePage() {
               Privacy Policy
             </a>
             , which explains how we collect, store, and use your information.
+          </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Conversation Data License */}
+        <section className="mt-10 space-y-4">
+          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+            Conversation Data License
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            When you use Sayso during calls, the Service generates conversation data as described
+            in our{' '}
+            <a href="/privacy" className="text-[#2367EE] hover:underline">
+              Privacy Policy
+            </a>
+            , including transcripts, cues, interaction and reaction data, notes, summaries, and
+            outcome data (collectively, "Conversation Data").
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            You grant Sayso a worldwide, royalty-free, sublicensable license to collect, store,
+            process, and use Conversation Data to provide, maintain, secure, and improve the
+            Service, and to train, tune, evaluate, and improve Sayso's own proprietary signal, cue,
+            and coaching models.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso owns all de-identified and aggregated data and derivatives created from
+            Conversation Data, and may use, license, sell, and disclose them for any lawful
+            purpose, as described in our Privacy Policy. De-identified data no longer identifies
+            you or the people you speak with.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            You are responsible for providing any notice and obtaining any consent required by
+            applicable law from the people you speak with before using Sayso on a call, covering
+            both the recording or transcription of the conversation and the analysis and commercial
+            use of Conversation Data described here and in our Privacy Policy.
           </p>
         </section>
 
