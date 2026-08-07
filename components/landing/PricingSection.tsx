@@ -47,7 +47,7 @@ function BillingToggle({
       >
         Annual
         <span className="bg-[#FFDE59] text-[#1D4871] border border-[#1D4871] rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide whitespace-nowrap">
-          SAVE $1,200
+          SAVE $649
         </span>
       </button>
       <button
@@ -146,9 +146,8 @@ export function PricingSection() {
   const plans: PricingPlan[] = [
     {
       title: 'Individual Agent+',
-      // TODO: confirm headline prices with Franco ($250/mo billed annually, $350/mo billed monthly)
-      price: isAnnual ? '$250 / month' : '$350 / month',
-      priceNote: isAnnual ? '*Billed annually, save $1,200.' : '*Billed monthly, cancel anytime.',
+      price: isAnnual ? '$1,499 / year' : '$179 / month',
+      priceNote: isAnnual ? '*Billed annually, save $649.' : '*Billed monthly, cancel anytime.',
       description: 'For agents who want daily consistency.',
       groups: [
         {
