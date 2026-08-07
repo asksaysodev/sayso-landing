@@ -393,6 +393,15 @@ export function PrivacyPolicyPage() {
             Please note that deleting your data may limit or disable your access to certain Sayso
             products or services that rely on that data.
           </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            You can withdraw your consent at any time by closing your account. Because recording,
+            transcription, and analysis are core to how Sayso works, withdrawing consent means we
+            can no longer provide the Service to you.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We will respond to access and correction requests within 30 days, at little or no cost
+            to you. If we need more time or cannot fully honor a request, we will explain why.
+          </p>
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
@@ -444,6 +453,12 @@ export function PrivacyPolicyPage() {
             While we take reasonable measures to protect your information, no system can be
             completely secure.
           </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            If a breach of our security safeguards creates a real risk of significant harm to you,
+            we will notify you and, where required, the Office of the Privacy Commissioner of
+            Canada as soon as feasible, and no later than 72 hours after we determine the breach
+            has occurred. We will keep records of the breach as required by law.
+          </p>
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
@@ -457,6 +472,38 @@ export function PrivacyPolicyPage() {
             If you access the Service from outside the United States, your information may be
             transferred to and processed in the U.S. By using the Service, you consent to this
             transfer in accordance with applicable laws.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            If you are located in Canada, your personal information is stored and processed in the
+            United States. This means it is subject to U.S. law and may be accessible to U.S.
+            courts, law enforcement, and government authorities. By using Sayso, you consent to
+            this transfer and processing.
+          </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Canada */}
+        <section className="mt-10 space-y-4">
+          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">Canada</h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            If you are in Canada, you have the right to access and correct your personal
+            information, and to know how it is used and disclosed. To exercise these rights or
+            raise a privacy concern, contact our Privacy Officer at{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>
+            . If you are not satisfied with our response, you may file a complaint with the Office
+            of the Privacy Commissioner of Canada at{' '}
+            <a
+              href="https://www.priv.gc.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2367EE] hover:underline"
+            >
+              priv.gc.ca
+            </a>
+            .
           </p>
         </section>
 
@@ -513,6 +560,16 @@ export function PrivacyPolicyPage() {
         {/* Contact Us */}
         <section className="mt-10 space-y-4">
           <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">Contact Us</h2>
+
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso is accountable for the personal information under its control. Our Privacy
+            Officer is responsible for our compliance with this Policy and with applicable privacy
+            laws, and can be reached at{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>
+            .
+          </p>
 
           <div className="space-y-6">
             <div>
