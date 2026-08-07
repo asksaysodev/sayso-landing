@@ -108,6 +108,19 @@ export function PrivacyPolicyPage() {
               analyze usage. We use tools like Google Analytics to better understand user behavior.
               You can adjust cookie settings in your browser.
             </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">Advertising Measurement:</span> We use
+              advertising tools, such as the Meta pixel, that collect information about your visit
+              and share it with advertising partners to measure and target our advertising. Some
+              state laws treat this as "sharing" personal information, and you can opt out as
+              described in "Your Rights &amp; Choices" below.
+            </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">Visitor Identification:</span> We use
+              a visitor identification service that may associate your visit with business contact
+              information, such as a name, company, or business email, to help us understand who is
+              interested in Sayso.
+            </li>
           </ul>
 
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -299,6 +312,15 @@ export function PrivacyPolicyPage() {
               <span className="font-semibold text-[#1D4871]">Vendors &amp; Service Providers:</span>{' '}
               With trusted third parties who perform services for us (e.g., hosting, analytics,
               payment processing) under contractual confidentiality and data protection obligations.
+            </li>
+            <li>
+              <span className="font-semibold text-[#1D4871]">
+                Analytics &amp; Advertising Partners:
+              </span>{' '}
+              With analytics and advertising partners, such as Google and Meta, who collect
+              information about your visit through cookies and similar technologies to help us
+              analyze site usage and measure and target advertising. You can opt out of this
+              sharing as described in "Your Rights &amp; Choices" below.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">Legal Requirements:</span> When
