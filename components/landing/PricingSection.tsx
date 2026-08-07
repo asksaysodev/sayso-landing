@@ -163,10 +163,8 @@ export function PricingSection() {
         {
           header: 'Agent Support:',
           bullets: [
-            'Weekly group coaching call for conversations & conversion',
+            'Weekly Virtual Office Hours',
             '1-on-1 onboarding',
-            'Leads list',
-            'Added to Ranked Agent Referral Network',
             'Dashboard analytics',
             'Email Support',
           ],
@@ -192,7 +190,6 @@ export function PricingSection() {
             'Priority Support',
             'Dedicated CSM',
             '1-on-1 quarterly impact reviews with leadership',
-            'Added to Ranked Team Referral Network',
             'Conversion Benchmarking',
           ],
         },
