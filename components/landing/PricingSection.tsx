@@ -146,7 +146,7 @@ export function PricingSection() {
   const plans: PricingPlan[] = [
     {
       title: 'Individual Agent+',
-      price: isAnnual ? '$1,499 / year' : '$179 / month',
+      price: isAnnual ? '$125 / month' : '$179 / month',
       priceNote: isAnnual ? '*Billed annually, save $649.' : '*Billed monthly, cancel anytime.',
       description: 'For agents who want daily consistency.',
       groups: [
