@@ -12,7 +12,9 @@ export function HomeworkSection() {
     <section className="bg-white py-16 md:py-24 relative">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
         <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] tracking-wide max-w-3xl mx-auto">
-          Everything else requires work, and then you hope it sticks.
+          Everything else requires work.
+          <br />
+          And then you hope it sticks.
         </h2>
 
         <ul className="mt-12 mx-auto max-w-[820px] grid md:grid-cols-2 md:grid-rows-4 md:grid-flow-col gap-x-9 text-left">

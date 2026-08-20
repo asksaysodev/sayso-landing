@@ -13,7 +13,7 @@ export function TimelineSection() {
     <section className="bg-[#F8F8FA] py-16 md:py-24 v2-halftone relative">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
         <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] tracking-wide max-w-4xl mx-auto">
-          Using recordings after the fact is not the same as understanding the conversation live.
+          Recordings after the fact is not the same as assisting the conversation when it can still be won.
         </h2>
 
         <div className="mx-auto max-w-[960px] mt-12">

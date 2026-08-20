@@ -1,5 +1,5 @@
 /**
- * Dark "how Sayso works while you are talking" section. A three-pill
+ * Dark "How does Sayso work?" section. A three-pill
  * pipeline (they say something, Sayso understands it, you see what to
  * say) over a grid of glassy cards covering speed, understanding, and
  * the real estate focus, on the standard navy dark-section shell.
@@ -13,7 +13,7 @@ export function EngineSection() {
       <div className="absolute top-0 left-0 right-0 h-3 md:h-4 bg-[#FFDE59]" />
       <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
         <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-white tracking-wide max-w-3xl mx-auto">
-          Here&apos;s how Sayso works while you are talking.
+          How does Sayso work?
         </h2>
 
         <div className="mt-11">

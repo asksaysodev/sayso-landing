@@ -3,30 +3,33 @@
 /**
  * Slot-machine drum that fills the blank in the hero question. Three rows
  * are visible through a fixed-height window; the middle (highlighted) row
- * spins to the next name every couple of seconds with a springy easing,
- * then snaps invisibly from the duplicated last row back to the first so
- * the loop never reverses. The drum is sized once to the widest word so
- * the sentence around it never shifts while it spins. Screen readers get
- * a single static phrase, and reduced-motion users get instant swaps.
+ * spins to the next name every second with a springy easing. The strip
+ * holds three copies of the word list, and once the drum crosses into the
+ * last copy it snaps invisibly one full list-length backward, so the loop
+ * spins forever without a visible reset and always has rows above and
+ * below the window. The drum is sized once to the widest word so the
+ * sentence around it never shifts while it spins. Screen readers get a
+ * single static phrase, and reduced-motion users get instant swaps.
  */
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-const STEP_INTERVAL_MS = 2050;
-const SPIN_MS = 620;
-const SNAP_DELAY_MS = 580;
+const STEP_INTERVAL_MS = 1000;
+const SPIN_MS = 560;
+const SNAP_DELAY_MS = 620;
 
 interface DrumWheelProps {
   words: string[];
 }
 
 export function DrumWheel({ words }: DrumWheelProps) {
-  // Duplicate the first word at the end so the wrap-around spin looks continuous.
-  const list = [...words, words[0]];
+  // Three copies of the list so the window always has neighbors on both
+  // sides, and the mid-loop snap lands on an identical row.
+  const list = [...words, ...words, ...words];
   const wheelRef = useRef<HTMLSpanElement>(null);
   const stripRef = useRef<HTMLSpanElement>(null);
   const prefersReducedMotion = useRef(false);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(words.length);
   const [animate, setAnimate] = useState(false);
   const [dims, setDims] = useState({ width: 0, rowHeight: 0, height: 0 });
 
@@ -89,32 +92,41 @@ export function DrumWheel({ words }: DrumWheelProps) {
     };
   }, [layout]);
 
-  // After landing on the duplicated last row, snap back to the real first row.
+  // Once the drum crosses into the last copy of the list, wait for the spin
+  // to settle, then snap one full list-length back onto the identical row.
   useEffect(() => {
-    if (index !== list.length - 1) return;
+    if (index < words.length * 2) return;
     const timeout = setTimeout(() => {
       setAnimate(false);
-      setIndex(0);
+      setIndex((prev) => prev - words.length);
     }, SNAP_DELAY_MS);
     return () => clearTimeout(timeout);
-  }, [index, list.length]);
+  }, [index, words.length]);
 
   const offset = dims.rowHeight ? (dims.height - dims.rowHeight) / 2 - index * dims.rowHeight : 0;
 
   return (
     <span
       ref={wheelRef}
-      className="relative inline-block align-middle overflow-hidden rounded-xl border-2 border-[#1D4871] px-[0.28em]"
+      className="relative inline-block align-middle overflow-hidden px-[0.28em]"
       style={{
-        background: 'linear-gradient(180deg,#EDF0F4,#FCFDFE 42%,#FCFDFE 58%,#EDF0F4)',
-        boxShadow: 'inset 0 2px 5px rgba(22,32,46,.09), inset 0 -2px 5px rgba(22,32,46,.09)',
         width: dims.width || undefined,
         height: dims.height || undefined,
         visibility: dims.width ? 'visible' : 'hidden',
       }}
     >
       <span className="sr-only">your current tools</span>
-      <span aria-hidden="true" className="block overflow-hidden" style={{ height: dims.height || undefined }}>
+      <span
+        aria-hidden="true"
+        className="block overflow-hidden"
+        style={{
+          height: dims.height || undefined,
+          WebkitMaskImage:
+            'linear-gradient(180deg, transparent 0%, black 32%, black 68%, transparent 100%)',
+          maskImage:
+            'linear-gradient(180deg, transparent 0%, black 32%, black 68%, transparent 100%)',
+        }}
+      >
         <span
           ref={stripRef}
           className="block will-change-transform"
@@ -127,7 +139,7 @@ export function DrumWheel({ words }: DrumWheelProps) {
             <span
               key={`${word}-${n}`}
               className={`block whitespace-nowrap text-center transition-[color,opacity,transform] duration-300 ${
-                n === index ? 'text-[#2367EE] opacity-100' : 'text-[#7E8B9C] opacity-60 scale-y-90'
+                n === index ? 'text-[#2367EE] opacity-100' : 'text-[#9AA5B1] opacity-40 scale-y-90'
               }`}
               style={{
                 height: dims.rowHeight || undefined,
@@ -139,16 +151,6 @@ export function DrumWheel({ words }: DrumWheelProps) {
           ))}
         </span>
       </span>
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute left-0 right-0 top-0 h-[26%] z-10"
-        style={{ background: 'linear-gradient(180deg, rgba(238,241,246,.92), rgba(238,241,246,0))' }}
-      />
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute left-0 right-0 bottom-0 h-[26%] z-10"
-        style={{ background: 'linear-gradient(0deg, rgba(238,241,246,.92), rgba(238,241,246,0))' }}
-      />
     </span>
   );
 }

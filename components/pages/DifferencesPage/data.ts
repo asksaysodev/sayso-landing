@@ -6,12 +6,14 @@ import type { TechCard } from './types';
  * Keep entries short so the drum stays a sane width.
  */
 export const DRUM_WORDS: string[] = [
-  'Shilo',
   'MaverickRE',
   'ChatGPT',
+  'Shilo',
   'call recording',
+  'coaching',
   'role play',
   'scripts',
+  'CRM products',
   'a coach',
   'training',
   'call reviews',
@@ -20,12 +22,12 @@ export const DRUM_WORDS: string[] = [
 
 /** The homework every other approach assigns before it can help. */
 export const HOMEWORK_ITEMS: string[] = [
-  'Watch your recordings',
+  'Listen to your recordings',
   'Read your scores',
   'Book a coaching call',
   'Sit through training',
-  'Practice role plays',
-  'Memorize the script',
+  'Role play',
+  'Memorize scripts',
   'Remember all of it three weeks later',
   'On a call that already went sideways',
 ];
@@ -42,12 +44,12 @@ export const TECH_CARDS: TechCard[] = [
   {
     title: 'Sayso keeps up with the conversation',
     description:
-      'There is no pause, no button to press, and nothing to go look up. The words go from their mouth to directions on your screen fast enough that you can use them in the same breath.',
+      'The words go from their mouth to directions on your screen fast enough that you can use them in the next sentence.',
   },
   {
     title: 'Sayso understands what they mean',
     description:
-      'Sayso listens for meaning, not just keywords. It can tell an objection from a condition from a polite way of dismissing the caller, and Sayso can answer each one differently.',
+      'Sayso listens for meaning, not just keywords. It can tell the difference between an objection, a condition, and a polite way of dismissing the caller, because each one is different.',
   },
   {
     title: 'Sayso speaks real estate',
@@ -59,7 +61,7 @@ export const TECH_CARDS: TechCard[] = [
 /** Copy for the two cards under the timeline bar. */
 export const TIMELINE_CARDS = {
   sayso:
-    'Sayso understands the conversation as it happens and displays what to say while you are still on the phone. Sayso also takes notes for you in real time, structured for CRM entry.',
+    'Sayso understands the conversation as it happens and displays what to say while you are still on the call. Sayso also takes notes for you in real time, structured for CRM entry.',
   everyoneElse:
     'They analyze the recording later and tell you what you should have said.',
 };
