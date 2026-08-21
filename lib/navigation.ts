@@ -38,6 +38,7 @@ export const headerNav: NavSection[] = [
       { label: 'Playbook', href: '/products/playbook', subtitle: 'Custom scripts for every scenario' },
       // { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' }, // TODO: re-enable when feedback page is ready
       { label: 'Why Sayso', href: '/why-sayso' },
+      { label: 'How Sayso Compares', href: '/differences' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },
