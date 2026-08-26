@@ -373,19 +373,20 @@ All other existing pages (homepage, pricing, demo, privacy, terms, security, con
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                  │
-│  [Logo → /]    Product ▾    Solutions ▾    Resources ▾    About    [Demo]    │
+│  [Logo → /]  Home  Products ▾  Solutions ▾  Resources ▾  About  Log In  [Demo]   │
 │                                                                                  │
 └──────────────────────────────────────────────────────────────────────────────────┘
 
-Product ▾                       Solutions ▾                  Resources ▾
-┌─────────────────────┐         ┌──────────────────────┐     ┌──────────────────────┐
-│ Real-Time Coaching   │         │ Solo Agents           │     │ Blog                  │
-│ Objection Handling   │         │ Team Leaders          │     │ Objection Library      │
-│ Call Notes           │         │ New Agents            │     │ Glossary               │
-│ ─────────────────    │         │ ISAs                  │     └──────────────────────┘
-│ Why Sayso            │         │ ─────────────────     │
-│ Pricing              │         │ Integrations          │
-└─────────────────────┘         └──────────────────────┘
+Products ▾                      Solutions ▾                  Resources ▾
+┌──────────────────────┐        ┌──────────────────────┐     ┌──────────────────────┐
+│ Cue                  │        │ Solo Agents          │     │ Blog                 │
+│ Smart Capture        │        │ Team Leaders         │     │ Objection Library    │
+│ Pulse                │        │ New Agents           │     │ Glossary             │
+│ Playbook             │        │ ISAs                 │     │ Why Sayso            │
+└──────────────────────┘        │ Integrations         │     │ How Sayso Compares   │
+                                │   Follow Up Boss     │     │ Pricing              │
+                                │   SureSend           │     └──────────────────────┘
+                                └──────────────────────┘
 
 CTAs (always visible):
   [Download Sayso]  - primary action button
@@ -400,16 +401,18 @@ CTAs (always visible):
 │  [Logo]                                                                              │
 │  "Win the Moment - your real-time call superpower."                                 │
 │                                                                                      │
-│  Product              Solutions            Resources            Company              │
-│  ├─ Real-Time Coach   ├─ Solo Agents       ├─ Blog              ├─ About             │
-│  ├─ Objection Handle  ├─ Team Leaders      ├─ Objection Library ├─ Security          │
-│  ├─ Call Notes        ├─ New Agents        ├─ Glossary          ├─ Contact            │
-│  └─ Pricing           ├─ ISAs             ├─ Case Studies      └─ Help (email)       │
-│                       └─ Integrations                                                │
+│  Products             Solutions            Resources            Company              │
+│  ├─ Cue               ├─ Solo Agents       ├─ Blog              ├─ About             │
+│  ├─ Smart Capture     ├─ Team Leaders      ├─ Objection Library ├─ Security          │
+│  ├─ Pulse             ├─ New Agents        ├─ Glossary          ├─ Contact           │
+│  └─ Playbook          ├─ ISAs              ├─ Why Sayso         ├─ Request a Demo    │
+│                       └─ Integrations      ├─ How Sayso Compares├─ Help Center       │
+│                                            └─ Pricing           └─ Email Support     │
 │                                                                                      │
-│  Programs             Legal                                                          │
-│  ├─ Referral Program  ├─ Privacy                                                     │
-│  └─ Affiliate Program └─ Terms                                                       │
+│  Programs                  Legal                                                     │
+│  ├─ Early Access Pricing   ├─ Privacy                                                │
+│  ├─ Referral Program       └─ Terms                                                  │
+│  └─ Affiliate Program                                                                │
 │                                                                                      │
 │  [Newsletter Signup]                                                                 │
 │  [Social Links]                                                                      │

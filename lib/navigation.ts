@@ -37,9 +37,6 @@ export const headerNav: NavSection[] = [
       { label: 'Pulse', href: '/products/pulse', subtitle: 'Live market analysis mid-call' },
       { label: 'Playbook', href: '/products/playbook', subtitle: 'Custom scripts for every scenario' },
       // { label: '& More', href: '/feedback', subtitle: 'Submit a feature request' }, // TODO: re-enable when feedback page is ready
-      { label: 'Why Sayso', href: '/why-sayso' },
-      { label: 'How Sayso Compares', href: '/differences' },
-      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
@@ -62,6 +59,9 @@ export const headerNav: NavSection[] = [
       { label: 'Blog', href: '/blog' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
+      { label: 'Why Sayso', href: '/why-sayso' },
+      { label: 'How Sayso Compares', href: '/differences' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
@@ -88,7 +88,6 @@ export const footerNav: NavSection[] = [
       { label: 'Smart Capture', href: '/products/smart-capture' },
       { label: 'Pulse', href: '/products/pulse' },
       { label: 'Playbook', href: '/products/playbook' },
-      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
@@ -109,6 +108,9 @@ export const footerNav: NavSection[] = [
       { label: 'Blog', href: '/blog' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
+      { label: 'Why Sayso', href: '/why-sayso' },
+      { label: 'How Sayso Compares', href: '/differences' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
