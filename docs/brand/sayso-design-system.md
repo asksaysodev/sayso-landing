@@ -7,6 +7,16 @@
 
 ---
 
+## Homepage clarity redesign (September 2026)
+
+The homepage uses `components/landing/Homepage/` and its scoped `homepage.module.css`. The navy, blue, yellow, and neutral palette remains unchanged. Manrope leads the homepage typography: the hero scales from 36px on narrow screens to 58px on desktop; section headings scale from 30px to 44px. Bangers is retained for the numbered workflow accents. Shared navigation, customer testimonials, and the footer keep their existing components.
+
+The hero uses a two-column layout from 768px, stacking on smaller screens. Category, promise, description, and actions precede a clearly labeled illustrative call example. Primary download buttons use CTA blue, white text, a navy border, and a small hard navy shadow. Secondary actions use white with neutral borders. Yellow is a short headline underline and a small accent on navy panels. New surfaces use the established background and accent-background tokens, including a neutral offset shadow around the demonstration.
+
+The call example is visitor-controlled with three native buttons, `aria-pressed` state, and a polite announcement region. Content is visible immediately; it has no autoplay or typewriter effect. Stable panel heights avoid shifting content when examples change. A static customer-logo row replaces the homepage marquee. Native FAQ disclosures work with a keyboard and without client-side JavaScript. Homepage focus indicators and reduced-motion styles are scoped to this composition.
+
+Read [the research and copy rationale](./homepage-redesign-research.md) for the page sequence, sources, claim boundaries, and verification steps. Other routes continue using the existing shared hero and section components.
+
 ## 1. Brand Identity & Vibe
 
 Sayso is real-time, in-call guidance that helps real estate agents say the right thing at the right moment. The site turns that promise into a **comic-book / superhero** visual language: bold panels, hard offset shadows, halftone dot textures, action starbursts, and a friendly superhero character. The agent is the hero; Sayso is the sidekick in their ear.
