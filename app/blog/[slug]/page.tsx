@@ -30,10 +30,12 @@ interface BlogPostPageProps {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return { title: 'Post Not Found | Sayso Blog' };
+  if (!post) return { title: 'Post Not Found' };
 
   return {
-    title: `${post.title} | Sayso Blog`,
+    // The root layout appends "| Sayso". Keep the visible article headline
+    // independent so search titles can stay concise without changing the H1.
+    title: post.seoTitle || post.title,
     description: post.description,
     alternates: {
       canonical: `${siteUrl}/blog/${slug}/`,
