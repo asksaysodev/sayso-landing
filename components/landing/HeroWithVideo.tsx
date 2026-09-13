@@ -162,7 +162,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                     width={260}
                     height={100}
                     // Eager: these sit in the hero and repeat, so lazy loading made
-                    // them pop in mid-scroll. Only 14 unique files, so the browser
+                    // them pop in mid-scroll. Only 19 unique files, so the browser
                     // still makes just 14 requests across all copies.
                     loading="eager"
                     className="h-14 md:h-16 w-[150px] md:w-[190px] object-contain"
