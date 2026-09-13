@@ -13,19 +13,26 @@ import { siteUrl } from '@/lib/config';
 import { generateSoftwareAppJsonLd } from '@/lib/seo/schema';
 
 export const metadata: Metadata = {
+  title: {
+    absolute: 'Real-Time AI Call Coaching for Real Estate Agents | Sayso',
+  },
+  description:
+    'Sayso gives real estate agents live call coaching, objection prompts, and automatic CRM notes so more prospecting conversations become appointments.',
   alternates: {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
-    title: 'Sayso: Fix Where Real Estate Prospecting Breaks Down',
-    description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
+    title: 'Real-Time AI Call Coaching for Real Estate Agents | Sayso',
+    description:
+      'Sayso gives real estate agents live call coaching, objection prompts, and automatic CRM notes so more prospecting conversations become appointments.',
     url: `${siteUrl}/`,
-    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix Where Real Estate Prospecting Breaks Down' }],
+    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso real-time AI call coaching for real estate agents' }],
     type: 'website',
   },
   twitter: {
-    title: 'Sayso: Fix Where Real Estate Prospecting Breaks Down',
-    description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
+    title: 'Real-Time AI Call Coaching for Real Estate Agents | Sayso',
+    description:
+      'Sayso gives real estate agents live call coaching, objection prompts, and automatic CRM notes so more prospecting conversations become appointments.',
     images: ['/images/og-default.png'],
   },
 };

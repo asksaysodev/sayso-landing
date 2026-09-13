@@ -1,288 +1,208 @@
-# Sayso: SEO Initiatives Overview
+# Sayso SEO Overview
 
-**Prepared for:** External SEO consultant evaluation
+**Updated:** September 13, 2026
+
 **Site:** https://www.asksayso.com
-**Business:** Sayso is a real-time call-coaching and prospecting assistant for residential real estate agents and teams. It listens during live prospecting calls and surfaces context, scripts, objection responses, and structured notes so agents book more appointments. Sold to solo agents, team leaders, new agents, and inside sales agents (ISAs), US-focused.
-**Document date:** June 8, 2026
-**Method:** Facts below were pulled directly from the production codebase (Next.js App Router source, sitemap/robots generators, JSON-LD builders, MDX content, and a keyword research file). Google Search Console figures are quoted from an internal audit dated May 8, 2026 and are explicitly labeled as such.
 
+**Purpose:** Current organic-search baseline, priorities, and implementation plan
 
----
+## Executive summary
 
-## 1. Executive Summary
+Sayso does not need more long articles simply to increase its page count. It already has 38 blog posts, and the average article is roughly 2,100 words. Google is also indexing most submitted URLs. The immediate constraint is that too few pages earn strong positions for non-brand, product-relevant searches, and the pages that do appear often have weak click-through rates.
 
-**What Sayso is, honestly, in SEO terms:** a well-built, technically clean, content-rich site on a brand-new domain with effectively zero organic authority. The engineering is ahead of the results, which is normal for a site this young. The gap between "this site is well-made" and "this site gets traffic" is almost entirely domain age and backlinks, not on-page quality.
+The highest-priority work is:
 
-**Strengths**
-- Modern, fast, statically generated Next.js stack with clean URL structure and trailing-slash consistency.
-- A genuine topic-cluster content model: 4 pillar blog posts with 20 supporting posts, all interlinked, plus programmatic page layers (objections, glossary, comparisons, products, personas).
-- Structured data is wired up per page type (Article, FAQ, HowTo, DefinedTerm, SoftwareApplication, WebPage, BreadcrumbList, Organization, SiteNavigation).
-- Meta hygiene is centralized and enforced (single helper builds titles/descriptions/canonicals/OG with length warnings in dev).
-- Keyword research is real and organized into 8 named clusters (~205 keywords with volume, difficulty, CPC, competition, and an opportunity score).
-- No Google manual actions or penalties. Clean slate.
+1. Improve titles, descriptions, introductions, and internal links on pages already receiving impressions.
+2. Remove unsupported performance claims that weaken trust and make the content difficult to substantiate.
+3. Fix metadata and sitemap signals that can make search snippets or recrawl decisions less reliable.
+4. Publish narrower, problem-led content that maps directly to prospecting calls, appointment setting, objection handling, and call coaching.
+5. Build authority through real estate partnerships, expert contributions, original data, and customer evidence.
+6. Repair organic conversion attribution so SEO can be judged by qualified demos, not traffic alone.
 
-**The real reasons traffic is low (candid)**
-- **Domain age.** Google first read the sitemap on April 21, 2026. From Google's perspective the site is only a couple of months old. Per the May 8 audit, GSC showed **17 clicks and 163 impressions over 3 months** — essentially zero.
-- **Zero authoritative backlinks.** The May 8 audit found only 3 referring domains: the founder's personal site (jackdrechsler.com), a RocketReach profile, and a Skool community page. No industry, tech, or comparison-site links. This is the single biggest ranking blocker.
-- **Visibility is brand-only.** Every query producing impressions was either branded ("sayso", "sayso ai", "sayso reviews") or buried at position 39-41 ("expired listing script" family). The site is invisible for any non-brand term a new customer would actually type.
-- **Index coverage errors.** The May 8 audit noted 8 pages with indexing errors in GSC that were not yet diagnosed.
-- **No first-party analytics confirmed in-repo.** GA4 / GTM / Meta Pixel are wired but environment-gated (see Section 11), so it cannot be verified from code that they are firing in production.
+The Cut Brush result is useful as a content-model lesson, not as a template to copy literally. Its growth came from concrete pages that answer a specific, high-intent problem. Sayso should apply the same principle to real estate prospecting rather than publishing broad sales advice.
 
-**Bottom line for the consultant conversation:** the content and technical foundation are above average for a startup. The growth lever is off-page (links, digital PR, partnerships) plus patience for indexation and authority to accrue. A consultant who leads with "you need a technical overhaul" is misreading the site; the honest priority is authority-building and link acquisition.
+## Current first-party baseline
 
----
+The figures below come from the September 13, 2026 portfolio audit using Google Search Console and GA4 data.
 
-## 2. Technology & Architecture
+### Google Search Console
 
-- **Framework:** Next.js 14 (App Router) with React 18 and TypeScript.
-- **Rendering:** Predominantly static site generation. Dynamic route segments (blog posts, glossary, objections, products, use-cases, comparisons) use `generateStaticParams`, so pages are pre-rendered to static HTML at build time. This is ideal for SEO crawlability and speed.
-- **Styling:** Tailwind CSS 3, with Manrope and Bangers (Google Fonts via `next/font`, `display: swap`).
-- **Content pipeline:** Blog posts are MDX (`next-mdx-remote`, `gray-matter`, `remark-gfm`, `rehype-slug`, `rehype-autolink-headings`, `reading-time`). Programmatic page content (objections, glossary, products, etc.) lives in typed TypeScript data modules under `lib/content/`, rendered by shared React page components under `components/pages/`.
-- **Hosting:** Vercel (inferred from `@vercel/analytics` and `@vercel/speed-insights` integration; the analytics/CWV instrumentation is Vercel-native).
-- **URL conventions:** `trailingSlash: true` is enforced globally, and canonicals are normalized to match. Permanent (301) redirects are configured for legacy paths, renamed routes (`/features/* → /products/*`), and deleted blog posts.
-- **Image handling:** `next/image` is used widely (≈29 components) for automatic optimization; only one raw `<img>` remains. `sharp` is installed for build-time image processing.
+| Period | Clicks | Impressions | Interpretation |
+|---|---:|---:|---|
+| Last 12 weeks | 143 | 13,009 | The site has visibility, but it is not compounding yet. |
+| First week in the 12-week range | 17 | 1,978 | Starting comparison point. |
+| Latest week in the 12-week range | 7 | 521 | Both discovery and clicks have declined. |
+| Latest 28 days | 34 | 2,510 | Current short-term baseline. |
+| Prior 28 days | 54 | 4,276 | Clicks and impressions were higher in the preceding period. |
 
----
+Recent visibility by page type reinforces the opportunity:
 
-## 3. Page Inventory (Indexable)
+| Page type | Impressions | Clicks | Primary issue |
+|---|---:|---:|---|
+| Blog | 611 | 3 | Rankings and snippets are not converting visibility into visits. |
+| Glossary | 620 | 1 | Some queries are informational but have limited product fit. |
+| Objections | 180 | 0 | The topic fits Sayso, but the pages need stronger rankings and search framing. |
+| Homepage | 197 | 13 | Brand and direct product demand still produce most meaningful search traffic. |
 
-Counts are derived from the live sitemap generator and content loaders as of this document's date. Note the May 8 GSC reading recorded **73 URLs submitted** in the sitemap; the content has grown since, so the current generated count is slightly higher.
+### Index coverage
 
-| Page type | Count | Indexed in sitemap | Notes |
-|---|---|---|---|
-| Homepage | 1 | Yes | priority 1.0 |
-| Core / conversion pages | ~9 | Yes | demo, download, pricing, about, security, contact, request-demo, why-sayso, plus utility |
-| Hub / category landing pages | 6 | Yes | /products, /for, /objections, /glossary, /resources, /blog |
-| Product (feature) pages | 4 | Yes | cue, smart-capture, pulse, playbook |
-| Solution / persona use-case pages (`/for/`) | 4 | Yes | solo-agents, team-leaders, new-agents, isas |
-| Objection-handling pages (`/objections/`) | 14 | Yes | one per common seller/buyer objection |
-| Glossary pages (`/glossary/`) | 10 | Yes | real estate prospecting terms |
-| Blog posts | 24 | Yes | 4 pillars + 20 supporting |
-| Blog category pages | 4 | In sitemap but `noindex` | see hygiene note below |
+Google reported 80 of 86 sitemap URLs indexed, about 93 percent. This is healthy enough that indexing is not the main growth explanation, but the six exceptions should be handled deliberately.
 
-**Approximate total indexable URLs:** ~71 (excluding the 4 `noindex` category pages, which are still listed in the sitemap).
+**Crawled, currently not indexed**
 
-**Explicitly excluded / gated (not in sitemap):**
-- `/privacy`, `/terms`, `/feedback`, `/paywall-preview`, `/ui` (excluded by design).
-- `/integrations` and its one article (`follow-up-boss`) and `/case-studies` and its one entry (`example-team`) are built but **commented out / gated** pending real content.
-- Standalone legacy persona pages (`/agent`, `/broker`, `/isa`, `/sales-leader`) and campaign/utility pages (`/affiliate`, `/referral`, `/founderpricing`, `/confirmation`, `/newsletter-confirmation`, `/export/*`) exist in the app but are not registered in nav and therefore are not in the sitemap. These should be audited for orphan/duplication risk (see Sections 8 and 13).
+- `/blog/best-real-estate-call-coaching-software/`
+- `/blog/how-to-book-appointments-real-estate/`
 
----
+**Discovered, currently not indexed**
 
-## 4. Landing-Page Layer (Methodology & Topic Selection)
+- `/blog/real-estate-phone-script-for-leads/`
+- `/blog/wait-until-spring-objection/`
+- `/objections/not-ready-yet/`
 
-**Important framing:** Sayso is a SaaS product, not a local/brick-and-mortar business, so there are **no geographic "location" pages** (no city/state landing pages). Treating the prompt's "location/landing page" section accurately: the programmatic landing-page layer is **intent- and persona-based**, not geo-based. It has three families:
+**Duplicate without a user-selected canonical**
 
-1. **Persona / "Solutions" pages (`/for/`, 4 pages):** solo agents, team leaders, new agents, ISAs. Each targets a buyer segment and maps that segment's pain to product capabilities.
-2. **Objection-handling pages (`/objections/`, 14 pages):** one page per real objection an agent hears on a call (e.g., "already have an agent", "just looking", "price too high", "we'll wait for spring"). These target bottom-of-funnel, high-intent "how do I respond to X" search behavior and double as product demonstrations.
-3. **Glossary pages (`/glossary/`, 10 pages):** definitional terms (circle prospecting, FSBO, expired listing, ISA, sphere of influence, door knocking, drip campaign, lead nurturing, listing appointment, cold calling). Top-of-funnel, definition-intent capture with `DefinedTerm` schema.
+- `/glossary/isa-real-estate/`
 
-**Methodology / how topics were selected:** topic selection is driven by the keyword research file (`sayso_keywords_volume.csv`), which organizes ~205 keywords into 8 named clusters (A-H). Each landing-page family maps to one or more clusters:
-- Objection pages → cluster D (Objection handling, 24 keywords).
-- Glossary pages → clusters B/C (Cold calling / prospecting; Scripts and lead types).
-- Persona pages → cluster F (Personas and roles, 18 keywords).
-- Comparison pages → cluster H (Competitors, brand, and feature, 24 keywords).
-- Product pages → cluster A (Product category / software, 30 keywords).
-
-Pages are written as original, structured editorial content (not spun templates): each has a unique SEO title/description, breadcrumb, page-type-specific schema, and internal links into the blog and product layers.
+The first two URLs are commercially relevant and should receive the strongest refresh and internal-link support. The discovered URLs should be checked again after deployment and submitted for recrawl. The ISA duplicate needs a rendered canonical inspection before changing the page route or content.
 
----
+### GA4 and conversion attribution
 
-## 5. Product / Service Pages
+GA4 recorded 72 Organic Search sessions in the recent three-week view and no attributed conversions. Seventeen `invitee_meeting_scheduled` events were attributed to Direct, while Calendly `/asksayso/demo?...` URLs appeared as landing pages.
 
-Sayso markets four named product capabilities, each with its own page under `/products/` (plus a `/products` hub):
+This suggests an attribution break or self-referral-style handoff between Sayso and Calendly. It does not prove that organic search generated no demos. Before using organic conversion rate as a decision metric, preserve the original source and campaign information across the scheduling flow and verify the event in GA4 DebugView and acquisition reports.
 
-| Page | URL | Positioning |
-|---|---|---|
-| Cue | `/products/cue/` | Real-time, context-based coaching during the call |
-| Smart Capture | `/products/smart-capture/` | Structured call notes captured automatically |
-| Pulse | `/products/pulse/` | Live market analysis surfaced mid-call |
-| Playbook | `/products/playbook/` | Custom scripts for every prospecting scenario |
-| Pricing | `/pricing/` | Plans / conversion page |
+## What Cut Brush teaches us
 
-Each product page emits `SoftwareApplication` + `BreadcrumbList` JSON-LD. An `/integrations/` layer exists in code (with a Follow Up Boss article) but is currently gated out of nav and sitemap.
+Cut Brush generated 370 clicks and 35,679 impressions in the comparable 12-week audit. Weekly clicks increased from 6 to 61, and weekly impressions increased from 1,222 to 5,110. Its recent blog pages produced 106 clicks from 8,390 impressions.
 
----
-
-## 6. Content / Blog Strategy
+The transferable lessons are:
 
-The blog runs a strict **pillar-and-cluster** model. There are **24 posts**: 4 pillar guides and 20 supporting posts, grouped into 4 topic clusters. Schema reinforces the structure: pillars emit `hasPart` referencing supporting posts; supporting posts emit `isPartOf` referencing their pillar.
+- Specific problems outperform broad category essays. Cost, permits, service decisions, and local questions give the searcher a clear reason to click.
+- A page should resolve one intent before it tries to introduce the business.
+- Useful detail and decision support are stronger differentiators than word count.
+- Internal links work best when the next page is a natural next question, not merely a related keyword.
+- Search success compounds when pages earn references and links from relevant sites.
 
-**Cluster 1 — Cold Calling / Prospecting** (pillar: *Real Estate Cold Call Scripts: The Complete Guide for 2026*)
-- real-estate-cold-calling-guide (pillar)
-- expired-listing-scripts
-- fsbo-scripts
-- circle-prospecting-scripts
-- how-to-practice-real-estate-scripts
-- how-to-start-a-real-estate-call
-- real-estate-phone-script-for-leads
-- appointment-setting-script
-- best-real-estate-call-coaching-software
+For Sayso, the equivalent topics are specific moments in a real estate conversation: what to ask a new lead, how to respond to an objection, when to suggest an appointment, how to follow up, and how live coaching differs from role-play or post-call review.
 
-**Cluster 2 — Appointment Setting** (pillar: *How to Book Appointments in Real Estate: 2026 Guide*)
-- how-to-book-appointments-real-estate (pillar)
-- how-many-times-ask-for-appointment
-- how-to-close-for-appointment
-- how-to-get-same-day-appointments
-- why-prospects-dont-commit
+## Search opportunities already visible
 
-**Cluster 3 — Conversation Skills** (pillar: *How to Talk to Real Estate Leads: The 2026 Playbook*)
-- how-to-talk-to-real-estate-leads (pillar)
-- how-to-build-rapport-real-estate-calls
-- how-to-guide-a-sales-conversation
-- how-to-improve-call-performance
-- how-to-keep-control-of-a-call
-- how-to-qualify-real-estate-leads
-- questions-to-ask-real-estate-leads
-- what-real-time-call-coaching-looks-like
-- what-top-agents-say-on-calls
+These are observed queries, not forecasts. Position values are averages and can vary by device and location.
 
-**Cluster 4 — Follow-Up** (pillar: *Real Estate Follow Up Scripts: The Complete Guide for 2026*)
-- real-estate-follow-up-scripts (pillar) — **no supporting posts yet** (cluster is a stub; see gaps)
+| Query or theme | Impressions | Average position | Recommended destination and action |
+|---|---:|---:|---|
+| guided sales conversation | 50 | 13.5 | Refresh the existing conversation guide around the framework and its real estate use case. |
+| listing appointment | 27 | 14.2 | Improve the glossary definition, FAQ, and link to the appointment-setting guide. |
+| real estate objection handling scripts | 26 | 24.2 | Strengthen the pillar and objection hub, then support it with narrower objection pages. |
+| FSBO objection scripts | 18 | 28.9 | Refresh the existing FSBO material and link it into the objection cluster. |
+| best time to call expired listings | 17 | 19.3 | Answer directly in the expired-listing guide and support the answer with practical context. |
+| expired listings scripts | 13 | 30.0 | Improve the existing script guide rather than creating a competing page. |
+| how to get listing appointments | 10 | 18.6 | Consolidate authority around the existing appointment guide. |
+| how to respond to real estate leads | 7 | 13.3 to 23.6 | Align the lead-conversation guide with buyer and seller response intent. |
 
-**Funnel logic:** glossary (definition/awareness) → blog (how-to/consideration) → objections and comparisons (decision) → product/pricing/demo (conversion). Pillars target the broad head term; supporting posts capture long-tail and question-intent queries and funnel link equity up to the pillar and across to product pages. Publishing cadence is roughly weekly (posts dated March through June 2026).
+The query `what does BATVAI mean` produced 28 impressions at an average position of 19.4, currently landing on the glossary hub. BATVAI means Buyer's Agent To Verify All Information and is mainly an MLS disclaimer query. It has weak alignment with Sayso's product and likely low conversion intent, so a dedicated BATVAI page is not a current priority. That decision avoids optimizing for traffic that is unlikely to become a qualified demo.
 
----
+## Work included in this SEO refresh
 
-## 7. Keyword Strategy
+### Technical and metadata
 
-Keyword architecture comes from `sayso_keywords_volume.csv` (~205 keywords) split into 8 strategic clusters:
+- Give blog posts an optional short `seoTitle` while preserving descriptive on-page headings.
+- Stop the blog template from producing duplicated title suffixes.
+- Rewrite homepage search metadata around real-time AI call coaching for real estate agents.
+- Remove synthetic current timestamps from sitemap entries. Blog entries continue to use real content update dates.
+- Mark affiliate and referral campaign pages `noindex,follow` while preserving their crawlable links.
 
-| Cluster | Theme | Keywords | Example head terms (monthly volume) |
-|---|---|---|---|
-| A | Product category / software | 30 | conversation intelligence software (590), ai sales coaching (390), real estate ai tools (320) |
-| B | Cold calling / prospecting | 20 | real estate cold calling (390), real estate prospecting (260) |
-| C | Scripts and lead types | 41 | real estate cold calling scripts (390), expired listing scripts (260), real estate scripts (210) |
-| D | Objection handling | 24 | (maps to the 14 objection pages) |
-| E | Call skills and conversion | 25 | how to get listings (140), how to get more listings (140) |
-| F | Personas and roles | 18 | real estate agent training (14,800), real estate isa (390) |
-| G | Adjacent tools and category | 23 | redx (60,500), follow up boss (60,500), mojo dialer (9,900), vulcan7 (5,400) |
-| H | Competitors, brand, and feature | 24 | sayso (8,100), shilo ai (320), maverickre (170), ai sales training (260) |
+### Existing content refreshes
 
-**Primary / secondary / question-intent architecture:**
-- **Primary (head) terms** map to pillars and hub pages (e.g., "real estate cold calling scripts" → cold-calling pillar; "conversation intelligence software" → product category).
-- **Secondary terms** map to supporting blog posts and persona/comparison pages.
-- **Question-intent** ("how to start a real estate call", "how many times to ask for the appointment", "why prospects don't commit") map directly to supporting posts and are reinforced with FAQ schema.
+- Real estate call coaching software
+- Expired listing scripts
+- How to book real estate appointments
+- Guided sales conversations
+- How to talk to real estate leads
+- Questions to ask real estate leads
+- Real estate objection handling
+- Listing appointment glossary entry
+- Objection library introduction
 
-**Honest read on the keyword set:** the highest-volume terms (redx, follow up boss at 60.5k; real estate agent training at 14.8k) sit in cluster G (adjacent/competitor tools) and F (training) — these are aspirational, high-difficulty, and mostly navigational toward other brands. The realistic near-term wins are the low-difficulty, lower-volume script/objection/question terms in clusters C, D, and E, where difficulty scores are frequently 0-10. The brand term "sayso" (8,100 volume, difficulty 4) is also contested by unrelated entities (the May 8 audit flagged "Ask Sage, Inc." brand confusion).
+The refreshes focus on direct answers, accurate claims, buyer and seller coverage, concise search titles, and relevant internal paths. They do not add filler solely to make pages longer.
 
----
+## Recommended publishing roadmap
 
-## 8. Technical SEO
+New articles should be approved only when the intent is distinct from an existing URL. Where the site already has the right page, refresh and consolidate instead of creating keyword cannibalization.
 
-**Structured data (schema)** — wired per page type via dedicated builders:
-| Page type | Schema emitted |
-|---|---|
-| Site-wide (root layout) | Organization, ItemList/SiteNavigationElement |
-| Blog post | BlogPosting (with hasPart/isPartOf), FAQPage (parsed from `## FAQ`), BreadcrumbList |
-| Objection | HowTo (response framework) |
-| Glossary | DefinedTerm (in a DefinedTermSet) |
-| Product | SoftwareApplication + BreadcrumbList |
-| Comparison | WebPage + SoftwareApplication |
-| Persona (`/for/`) | WebPage + BreadcrumbList |
-| FAQ component | FAQPage |
-
-**Meta hygiene:** centralized `buildMetadata()` helper produces title, description, canonical (trailing-slash-normalized), Open Graph (1200×630 default OG image), and Twitter `summary_large_image` for every programmatic page. Dev-mode console warnings fire when titles exceed 60 chars or descriptions exceed 160. Root layout sets a global title template (`%s | Sayso`), `metadataBase`, favicons, and default OG. *(Note: this uses `|` as the title separator and avoids em dashes, consistent with house style.)*
-
-**Canonical / OG:** canonicals are explicit and self-referential on programmatic pages; OG/Twitter present site-wide.
-
-**Sitemap:** dynamically generated (`/sitemap.xml`) from nav registry + blog posts + category pages + all content loaders, with per-type priority and weekly change frequency. Excludes privacy/terms/feedback/paywall-preview/ui and the gated integrations/case-studies sections.
+### Priority 1: strengthen existing demand
 
-**Robots:** allows all, disallows `/api/`, `/feedback`, `/paywall-preview`, `/ui`; references the sitemap. Clean and conventional.
+1. Finish the refresh and recrawl cycle for call coaching software and appointment setting.
+2. Refresh the FSBO cluster around the specific objections a seller gives an agent.
+3. Improve the real estate phone script page that is discovered but not indexed.
+4. Add contextual links from relevant product, persona, and glossary pages into the refreshed pillars.
+5. Review the pages after 28 days using query-level clicks, impressions, position, and CTR.
 
-**Redirects:** 301s configured for `/features/* → /products/*`, legacy `/index.html`, an old `/demo-974294` path, and two deleted blog posts → comparison pages. Persona-page redirects (`/agent → /for/solo-agents`, etc.) are staged but commented out.
+### Priority 2: publish narrow problem-led resources
 
-**Core Web Vitals / performance:** static generation + `next/image` + `next/font` with `swap` gives a strong performance baseline. **However**, the May 8 audit reported GSC showed *"not enough usage data"* for CWV on both mobile and desktop — a direct consequence of low real-user traffic, not a performance defect. Lab data (PageSpeed Insights) should be used until field data accumulates. `@vercel/speed-insights` is instrumented.
+Suggested briefs, subject to query overlap review:
 
-**Image optimization:** `next/image` across ~29 components; `sharp` installed; only one raw `<img>` remaining.
+1. **Real estate prospecting call checklist**: preparation, permission, discovery, next step, notes, and follow-up.
+2. **Expired listing follow-up plan**: what to do after the first conversation, with timing based on the seller's stated situation rather than unsupported universal benchmarks.
+3. **Buyer lead qualification questions**: financing, timeline, location, motivation, and next-step signals.
+4. **Real estate call notes template**: a practical CRM handoff template for buyer and seller conversations.
+5. **Live call coaching vs role-play vs post-call review**: a decision page with transparent strengths and limitations.
+6. **Real estate ISA call coaching guide**: team workflow, quality review, handoffs, and manager visibility.
 
-**Crawl / spam / hygiene issues to flag candidly:**
-- **8 index-coverage errors** were reported in GSC (May 8) and have not been diagnosed in this review.
-- **Conflicting signal on blog category pages:** they are emitted in the sitemap (priority 0.4) but carry `robots: noindex`. Including `noindex` URLs in a sitemap is a mild inconsistency worth cleaning up (either drop them from the sitemap or make them indexable).
-- **Multiple third-party tracking scripts** load on every page (see Section 11) — worth auditing for performance/privacy and redundancy.
-- **Orphaned/legacy pages** (`/agent`, `/broker`, `/isa`, `/sales-leader`, `/export/*`, campaign pages) exist outside nav and sitemap; confirm they are intentionally `noindex` or redirected to avoid thin-content/duplication signals.
+Each new resource should include an original example, a clear answer near the top, one primary query family, two to five useful internal links, and a product connection that follows naturally from the problem.
 
----
+### Priority 3: earn authority
 
-## 9. AI Search / Answer-Engine Optimization (AEO)
+- Publish a small original benchmark using anonymized, aggregated product data only after privacy and methodology review.
+- Contribute expert commentary to real estate publications, brokerage education programs, and industry podcasts.
+- Build integration and workflow pages with CRM and dialer partners where there is a real supported relationship.
+- Turn verified customer outcomes into case studies that explain the starting point, workflow change, time period, and measured result.
+- Pursue links from relevant real estate and sales-technology sources rather than general directories.
 
-- **`llms.txt` / `llms-full.txt`: NOT present.** This is a clear, easy gap. Adding an `llms.txt` that summarizes what Sayso is, its key pages, and product positioning would help AI answer engines extract accurate information.
-- **Schema that AI engines can extract: strong.** FAQPage, HowTo, DefinedTerm, SoftwareApplication, and BreadcrumbList are exactly the structured formats LLM-based search surfaces favor. The objection pages (HowTo) and glossary pages (DefinedTerm) are particularly well-suited to being quoted in AI answers.
-- **Content format is AEO-friendly:** question-intent post titles, explicit `## FAQ` sections parsed into FAQ schema, and definitional glossary entries align well with how answer engines pull extractive snippets.
-- **Opportunity:** publish `llms.txt`, expand FAQ blocks across more page types, and ensure the Organization schema includes richer `description`/`sameAs` for entity recognition (currently LinkedIn + Instagram only).
+The May 2026 audit found only three referring domains. A current backlink crawl was not available for this update, so that old count should not be treated as the present total.
 
----
+## 90-day execution plan
 
-## 10. Internal Linking
+### Days 1 to 30
 
-- **Topic-cluster interlinking** is the backbone: every supporting post links up to its pillar (and opens with an explicit "part of our complete guide" link); pillars reference supporting posts via schema and body links.
-- **Cross-layer linking:** blog posts link into glossary terms (e.g., FSBO posts link to `/glossary/fsbo/`) and toward product/demo CTAs.
-- **Global nav and footer** provide site-wide links from a centralized navigation registry (header: Home, Products, Solutions, Resources, Compare, About; footer: Products, Solutions, Resources, Company, plus more), which also feeds the sitemap and SiteNavigation schema, keeping nav, sitemap, and structured data in sync.
-- **Breadcrumbs** on programmatic pages add hierarchical internal links and BreadcrumbList schema.
-- A `check-blog-links` script exists for link validation.
+- Ship this technical and on-page refresh.
+- Inspect the rendered canonical for the ISA glossary URL.
+- Request recrawls for the five currently non-indexed, product-relevant pages after deployment.
+- Validate GA4 and Calendly source preservation end to end.
+- Record query and page baselines for every refreshed URL.
 
-This is a genuinely good internal-linking design. The limiting factor is **external** links into the site, not internal structure.
+### Days 31 to 60
 
----
+- Publish two narrow problem-led resources after cannibalization checks.
+- Refresh the FSBO and real estate phone-script clusters.
+- Add internal links from product and persona pages where they answer the reader's next question.
+- Begin a focused real estate partnership and expert-contribution campaign.
 
-## 11. Analytics & Google Connections
+### Days 61 to 90
 
-| Tool | Status (from code) | Notes |
-|---|---|---|
-| Vercel Analytics | **Active** | `@vercel/analytics` mounted in root layout |
-| Vercel Speed Insights | **Active** | `@vercel/speed-insights` mounted (CWV/RUM) |
-| Google Tag Manager | **Conditional** | Loads only if `NEXT_PUBLIC_GTM_ID` env var is set; container ID is not in the repo. The May 8 audit referenced a live GTM workspace, so it is likely configured in production. |
-| Meta (Facebook) Pixel | **Conditional** | Loads only if `NEXT_PUBLIC_META_PIXEL_ID` env var is set |
-| GA4 | **Not directly in code** | No standalone GA4 snippet; if present, it is fired via GTM. Treat GA4 as "verify in GTM," not confirmed from source. |
-| Google Search Console | **Connected** | Per May 8 audit: sitemap submitted April 18, first read April 21, 2026; performance and coverage data flowing |
-| Google Business Profile | **N/A / not applicable** | Sayso is a SaaS product, not a local business |
-| Bing Webmaster Tools | **Not verifiable from code** | No evidence either way; flag as "confirm" |
-| Other third-party scripts | **Active** | Leadsy.ai visitor-identification tag, Vector.co pixel, Beehiiv newsletter attribution |
+- Publish two more validated resources or one resource plus one evidence-backed case study.
+- Compare refreshed URLs against their 28-day baseline.
+- Improve snippets for pages with stable impressions and below-expected CTR.
+- Expand only the clusters that show qualified non-brand impressions or assisted conversions.
 
-**Gaps / verify-with-owner:** confirm GA4 is actually firing (via GTM) and that conversion events (demo booked, download, request-demo) are tracked; confirm GTM and Meta Pixel env vars are populated in the production environment; confirm whether Bing Webmaster Tools is set up. *(Per the no-sensitive-data rule, no container IDs, pixel IDs, property IDs, or verification tokens are reproduced in this document, even where they appear in client-side code.)*
+## Measurement framework
 
----
+Review these metrics by landing page and query, not only sitewide:
 
-## 12. Off-Page / Authority Plan
+- Non-brand clicks and impressions
+- Number of relevant queries in positions 1 through 10 and 11 through 20
+- CTR for refreshed pages at comparable positions
+- Organic demo starts and completed bookings after attribution is repaired
+- Assisted conversions from organic landing pages
+- Index status of the six exception URLs
+- Relevant referring domains and links to priority pages
 
-This is the **highest-leverage area** and the site's biggest weakness.
+No single metric should determine success. Impressions without relevant clicks can indicate poor snippets or weak intent fit, while traffic without qualified actions can indicate that the topic is too far from the product.
 
-- **Backlinks (critical):** the May 8 audit found only 3 referring domains, none authoritative. Priorities: digital PR in real estate / proptech publications, guest posts and expert quotes (HARO-style), partnerships with CRM/dialer ecosystems (Follow Up Boss, REDX, Vulcan7 adjacency is already mapped in cluster G), inclusion in "best real estate AI tools" roundups and software directories (G2, Capterra, Product Hunt), and comparison/alternative pages on third-party sites.
-- **Brand entity / disambiguation:** the brand term "sayso" competes with unrelated entities ("Ask Sage, Inc." confusion was flagged). Strengthen entity signals: consistent NAP-style brand info, richer Organization schema, Crunchbase/LinkedIn/Wikipedia-style citations, and consistent "Sayso" + "asksayso.com" co-occurrence.
-- **Local SEO:** **not applicable** — Sayso is a national SaaS product, not a local business, so Google Business Profile and citation-building are out of scope (the audience is real estate agents nationwide, but Sayso itself has no local service area to optimize).
-- **Reviews / social proof:** software-directory reviews (G2/Capterra) double as authoritative backlinks and conversion assets.
+## Data boundaries
 
----
-
-## 13. Strengths, Gaps, and Questions for the Consultant
-
-**Strengths to preserve**
-- Clean, fast, statically generated architecture with disciplined URL/canonical/redirect hygiene.
-- Mature topic-cluster content model with correct schema reinforcement.
-- Centralized, enforced meta and sitemap generation (low risk of drift).
-- Real, well-organized keyword research already mapped to page types.
-
-**Gaps / weaknesses (a consultant will find these anyway)**
-- **Authority:** ~3 referring domains, none authoritative — the core ranking blocker.
-- **Domain age:** only weeks old in Google's eyes at last reading; results lag.
-- **8 unresolved GSC index-coverage errors.**
-- **No `llms.txt`** for AI answer engines.
-- **Sitemap/noindex conflict** on blog category pages.
-- **Follow-up cluster is a stub** (1 pillar, 0 supporting posts).
-- **Gated/orphan pages** (integrations, case-studies, legacy persona pages, export pages) need an explicit index/redirect decision.
-- **Conversion tracking not confirmed from source** (GA4 via GTM, event setup).
-- **No confirmed Bing presence.**
-
-**Good questions to ask the consultant (to evaluate them)**
-1. Given the domain is new with ~3 backlinks, what is your 90-day vs 6-month plan, and how do you separate "indexation maturing" from "your work"?
-2. What is your specific link-acquisition strategy for proptech/real estate, and roughly how many authoritative links per month do you target?
-3. How would you resolve the "Sayso" brand-confusion / entity-disambiguation problem?
-4. Which keyword clusters would you prioritize first, and why? (Listen for whether they pick the low-difficulty C/D/E terms over the vanity G/F head terms.)
-5. How would you diagnose and clear the 8 index-coverage errors?
-6. What's your approach to AI/answer-engine optimization (llms.txt, schema, extractive content)?
-7. How will you instrument and report on conversions (demo, download), not just rankings/traffic?
-8. What would you change about the existing topic-cluster structure, if anything? (A good answer is "little — focus on links.")
-9. How do you measure ROI on this engagement, and what does success look like at 3, 6, and 12 months?
-
----
-
+- Search Console and GA4 figures are first-party observations from the September 13, 2026 audit.
+- Cut Brush figures are first-party comparison data from the same audit period.
+- Average positions are directional and should not be presented as fixed rankings.
+- A current backlink total was not verified in this update.
+- Content claims should use Sayso's own measured evidence or a cited, credible source. Unsupported percentages and universal performance promises should be removed.

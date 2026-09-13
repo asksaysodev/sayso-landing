@@ -10,7 +10,7 @@ const objectionsHub: HubPageConfig = {
     'Scripts and response frameworks for every common real estate objection, "not ready yet," "already have an agent," "call me later," and more.',
   h1: 'Real Estate Objection Library',
   introduction:
-    'Every common objection real estate agents hear on prospecting calls, with proven response scripts you can use today. Each page breaks down why prospects say it, how to respond at three confidence levels, and what to say next with confidence.',
+    'Practical response scripts for common objections real estate agents hear on prospecting calls. Each page explains what the concern may mean, how to respond without arguing, and which follow-up question can keep the conversation useful.',
   childPages: [
     {
       title: '"I\'m Not Ready Yet"',
