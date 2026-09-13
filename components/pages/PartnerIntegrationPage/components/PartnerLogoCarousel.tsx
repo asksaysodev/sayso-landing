@@ -19,11 +19,6 @@ const logos: { src: string; alt: string }[] = [
   { src: '/social-proof/team-borham.png', alt: 'Team Borham' },
   { src: '/social-proof/secure-home-finder-team.png', alt: 'Secure Home Finder Team at LPT Realty' },
   { src: '/social-proof/rise-los-angeles.png', alt: 'RISE Los Angeles' },
-  { src: '/social-proof/k2-omni-group.png', alt: 'K2 Omni Group' },
-  { src: '/social-proof/obsidian-group.png', alt: 'Obsidian Group' },
-  { src: '/social-proof/fidelity-national-title.png', alt: 'Fidelity National Title' },
-  { src: '/social-proof/team-minik.png', alt: 'Team Minik' },
-  { src: '/social-proof/roa-realty-of-america.png', alt: 'ROA Realty of America' },
 ];
 
 export function PartnerLogoCarousel() {
