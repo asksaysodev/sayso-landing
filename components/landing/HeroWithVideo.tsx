@@ -27,6 +27,11 @@ const logos = [
   { name: 'Around Town Properties', src: '/social-proof/around-town-properties.png' },
   { name: 'Secure Home Finder Team at LPT Realty', src: '/social-proof/secure-home-finder-team.png' },
   { name: 'RISE Los Angeles', src: '/social-proof/rise-los-angeles.png' },
+  { name: 'K2 Omni Group', src: '/social-proof/k2-omni-group.png' },
+  { name: 'Obsidian Group', src: '/social-proof/obsidian-group.png' },
+  { name: 'Fidelity National Title', src: '/social-proof/fidelity-national-title.png' },
+  { name: 'Team Minik', src: '/social-proof/team-minik.png' },
+  { name: 'ROA Realty of America', src: '/social-proof/roa-realty-of-america.png' },
 ];
 
 // Repeat the logo set so the marquee fills wide screens and loops seamlessly.
@@ -157,7 +162,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
                     width={260}
                     height={100}
                     // Eager: these sit in the hero and repeat, so lazy loading made
-                    // them pop in mid-scroll. Only 14 unique files, so the browser
+                    // them pop in mid-scroll. Only 19 unique files, so the browser
                     // still makes just 14 requests across all copies.
                     loading="eager"
                     className="h-14 md:h-16 w-[150px] md:w-[190px] object-contain"
