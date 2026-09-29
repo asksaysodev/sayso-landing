@@ -4,9 +4,9 @@ export const listingAppointment: GlossaryEntry = {
   slug: 'listing-appointment',
   term: 'Listing Appointment',
   keyword: 'what is a listing appointment',
-  seoTitle: 'What Is a Listing Appointment in Real Estate',
+  seoTitle: 'What Is a Listing Appointment? Checklist + Questions',
   seoDescription:
-    'A listing appointment is a meeting where a real estate agent presents their strategy to a seller and earns the listing. Learn how it works and how Sayso helps.',
+    'A listing appointment is a meeting where an agent presents a pricing and marketing plan to a seller. See how it works, plus a prep checklist and questions.',
   h1: 'What Is a Listing Appointment?',
   definition:
     'A listing appointment is a face-to-face meeting between a real estate agent and a homeowner where the agent presents their marketing strategy, reviews comparable sales, and makes the case to represent the seller. It is the moment where prospecting turns into business, and the outcome depends on how well the agent prepared, built rapport, and addressed the seller\'s concerns.',
@@ -44,7 +44,7 @@ export const listingAppointment: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'The calls that lead to listing appointments are where Sayso makes the biggest difference. When you are prospecting expired listings or following up with seller leads, Sayso\'s [Real-Time Coaching](/products/cue/) shows you what to say the moment a homeowner raises an objection or asks about pricing. That means more of your calls end with a listing appointment on the calendar.',
-    'After each call, [Call Notes](/products/smart-capture/) saves the details that matter to your CRM, so you walk into the listing appointment already knowing what the seller cares about. [Book a demo](/demo/) to see how Sayso helps you book more listing appointments from your daily prospecting.',
+    'After each call, [Call Notes](/products/smart-capture/) saves the details that matter to your CRM, so you walk into the listing appointment already knowing what the seller cares about. For the exact questions to ask on that confirmation call and a prep checklist, see our guide to [listing appointment questions](/blog/listing-appointment-questions/). [Book a demo](/demo/) to see how Sayso helps you book more listing appointments from your daily prospecting.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -55,8 +55,8 @@ export const listingAppointment: GlossaryEntry = {
     { term: 'Lead Nurturing', slug: 'lead-nurturing' },
   ],
   deeperLink: {
-    title: 'What to Say to Expired Listings: Scripts That Get Callbacks',
-    href: '/blog/expired-listing-scripts',
+    title: 'Listing Appointment Questions and Checklist',
+    href: '/blog/listing-appointment-questions',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
@@ -85,7 +85,7 @@ export const listingAppointment: GlossaryEntry = {
     {
       question: 'How many listing appointments does it take to get a listing?',
       answer:
-        'Conversion rates vary, but well-prepared agents typically convert 40-60% of their listing appointments into signed agreements. The biggest factors are preparation, pricing accuracy, and how well you address the seller\'s specific concerns.',
+        'There is no universal conversion rate. Track signed agreements divided by completed listing appointments for your own business, then review lead source, preparation, pricing accuracy, and unresolved seller concerns when the number changes.',
     },
   ],
 };
