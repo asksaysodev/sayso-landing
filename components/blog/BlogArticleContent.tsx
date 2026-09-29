@@ -2,6 +2,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeSlug from 'rehype-slug';
 
 import remarkGfm from 'remark-gfm';
+import { ScriptSheet } from '@/components/blog/ScriptSheet';
 
 interface BlogArticleContentProps {
   content: string;
@@ -76,6 +77,8 @@ const mdxComponents = {
       <div className="text-[#1D4871] italic font-sans leading-relaxed">{children}</div>
     </div>
   ),
+
+  ScriptSheet,
 };
 
 export function BlogArticleContent({ content }: BlogArticleContentProps) {

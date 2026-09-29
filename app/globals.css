@@ -565,3 +565,25 @@
 .founder-pricing-slider:focus-visible::-webkit-slider-thumb {
   box-shadow: 2px 2px 0 #1D4871, 0 0 0 4px rgba(35, 103, 238, 0.35);
 }
+
+/* Blog ScriptSheet: "Print this sheet" prints only the sheet, not the whole post. */
+@media print {
+  body.printing-script-sheet * {
+    visibility: hidden;
+  }
+  body.printing-script-sheet .script-sheet,
+  body.printing-script-sheet .script-sheet * {
+    visibility: visible;
+  }
+  body.printing-script-sheet .script-sheet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+  body.printing-script-sheet .script-sheet-print {
+    display: none;
+  }
+}
