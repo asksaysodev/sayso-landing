@@ -1,38 +1,19 @@
-import type { Metadata } from 'next';
 import { Footer } from "@/components/landing/Footer";
-import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
-import { PainPointPanel } from "@/components/landing/PainPointPanel";
+import { Homepage } from '@/components/landing/Homepage';
 import SaysoNavbar from "@/components/landing/SaysoNavbar";
-import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
-import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
-import { TransformationSection } from "@/components/landing/TransformationSection";
-import { WhoItsForSection } from '@/components/landing/WhoItsForSection';
-import { FAQSection } from '@/components/landing/FAQSection';
-import { DemoLiftCard } from '@/components/DemoLiftCard';
-import { siteUrl } from '@/lib/config';
+import { buildMetadata } from '@/lib/seo/metadata';
 import { generateSoftwareAppJsonLd } from '@/lib/seo/schema';
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: `${siteUrl}/`,
-  },
-  openGraph: {
-    title: 'Sayso: Fix Where Real Estate Prospecting Breaks Down',
-    description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
-    url: `${siteUrl}/`,
-    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Sayso | Fix Where Real Estate Prospecting Breaks Down' }],
-    type: 'website',
-  },
-  twitter: {
-    title: 'Sayso: Fix Where Real Estate Prospecting Breaks Down',
-    description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
-    images: ['/images/og-default.png'],
-  },
-};
+export const metadata = buildMetadata({
+  title: 'Real-Time Guidance for Real Estate Agents and Teams',
+  description:
+    'Sayso gives real estate agents live guidance during prospecting calls: what to say next, how to handle objections, and when to ask for the appointment.',
+  path: '/',
+});
 
 const softwareAppJsonLd = generateSoftwareAppJsonLd({
   description:
-    'Sayso is live call coaching software for real estate agents. It helps agents handle objections during prospecting calls, stay on track, and turn more conversations into booked appointments.',
+    'Real-time guidance for residential real estate agents and teams. Live prompts during prospecting calls, automatic call notes, and in-call market data.',
   audienceType: 'Real estate agents',
 });
 
@@ -44,15 +25,8 @@ export default function Home() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
             />
             <SaysoNavbar />
-            <HeroWithVideo />
-            <TestimonialsSection />
-            <WhoItsForSection />
-            <PainPointPanel />
-            <TransformationSection />
-            <ThreeStepsSection />
-            <FAQSection />
+            <Homepage />
             <Footer />
-            <DemoLiftCard />
         </div>
     );
 }
