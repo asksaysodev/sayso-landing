@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import { cache } from 'react';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 const POSTS_PER_PAGE = 9;
@@ -110,6 +111,20 @@ export function getAllPosts(): BlogPost[] {
 
 export function getAllPostsMeta(): BlogPostMeta[] {
   return getAllPosts().map(({ content, ...meta }) => meta);
+}
+
+// Slugs of posts visible right now. Cached per request so a page with many links reads the posts once.
+const getLiveSlugs = cache(() => new Set(getAllPosts().map((p) => p.slug)));
+
+/**
+ * False only when `href` points at a blog post that is not live yet (future
+ * publishedAt in production). Callers render plain text instead, so scheduled
+ * posts never show up as 404 links; the link appears on the next hourly
+ * revalidation after the post publishes. Any other href returns true.
+ */
+export function isLiveBlogHref(href: string): boolean {
+  const match = href.match(/^\/blog\/([a-z0-9-]+)\/?(?:[?#].*)?$/);
+  return !match || getLiveSlugs().has(match[1]);
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {

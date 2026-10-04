@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { isLiveBlogHref } from '@/lib/blog';
 
 /**
  * Lightweight inline markdown renderer for content strings.
  * Supports: [link text](/url/) syntax only.
- * Internal links (starting with /) use Next.js <Link>.
+ * Internal links (starting with /) use Next.js <Link>, or plain text while
+ * the target blog post is still scheduled.
  * External links use <a target="_blank">.
  */
 export function renderInlineMarkdown(text: string): ReactNode {
@@ -19,6 +21,8 @@ export function renderInlineMarkdown(text: string): ReactNode {
 
     const [, linkText, href] = match;
     const isInternal = href.startsWith('/');
+
+    if (isInternal && !isLiveBlogHref(href)) return <span key={i}>{linkText}</span>;
 
     if (isInternal) {
       return (

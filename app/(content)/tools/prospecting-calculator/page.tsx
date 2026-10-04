@@ -4,6 +4,17 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { ProspectingCalculator } from '@/components/tools/ProspectingCalculator';
+import { isLiveBlogHref } from '@/lib/blog';
+
+// Hourly, so guide links to scheduled blog posts appear once those posts publish.
+export const revalidate = 3600;
+
+const guideLinks = [
+  { href: '/blog/real-estate-cold-calling-guide/', label: 'Real estate cold calling scripts' },
+  { href: '/blog/real-estate-isa-scripts/', label: 'ISA scripts for the calls an ISA makes every day' },
+  { href: '/blog/listing-appointment-questions/', label: 'Listing appointment questions and checklist' },
+  { href: '/objections/', label: 'The objection library' },
+];
 
 export const metadata = buildMetadata({
   title: 'Real Estate Prospecting Calculator: Dials to Listings',
@@ -77,10 +88,11 @@ export default function ProspectingCalculatorPage() {
             calls that matter most:
           </p>
           <ul className="list-disc pl-6 mb-5 space-y-2">
-            <li><Link className="text-[#2367EE] hover:underline font-bold" href="/blog/real-estate-cold-calling-guide/">Real estate cold calling scripts</Link></li>
-            <li><Link className="text-[#2367EE] hover:underline font-bold" href="/blog/real-estate-isa-scripts/">ISA scripts for the calls an ISA makes every day</Link></li>
-            <li><Link className="text-[#2367EE] hover:underline font-bold" href="/blog/listing-appointment-questions/">Listing appointment questions and checklist</Link></li>
-            <li><Link className="text-[#2367EE] hover:underline font-bold" href="/objections/">The objection library</Link></li>
+            {guideLinks.filter((guide) => isLiveBlogHref(guide.href)).map((guide) => (
+              <li key={guide.href}>
+                <Link className="text-[#2367EE] hover:underline font-bold" href={guide.href}>{guide.label}</Link>
+              </li>
+            ))}
           </ul>
           <p className="mb-5">
             Sayso helps with that step on the live call. It shows you the next line as the prospect talks and{' '}
