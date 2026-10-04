@@ -7,6 +7,14 @@
 
 ---
 
+## Homepage redesign (October 2026)
+
+The homepage body lives in `components/landing/Homepage/` and is styled with Tailwind only, using the existing `primary`, `cta`, `accent`, and `accent-bg` tokens. Bangers carries the headings; Manrope carries everything else on the page. Shared navigation and footer are unchanged.
+
+Cards are flat: a 2px navy border, 16px radius, and no offset shadow. Homepage CTA buttons use a 6px radius: "Get Sayso" is yellow with navy text and opens the system picker, and "Book a Demo" is CTA blue and opens Calendly. The hero headline highlights its last line with a yellow marker band rather than an underline.
+
+Below 768px, card rows become a centered snap carousel (`PeekCarousel`) with neighbors peeking at both edges and looping arrows that reuse `CarouselArrow`. The customer-logo row is a static grayscale grid fed by `lib/content/social-proof-logos.ts`, the same list the hero marquee uses.
+
 ## 1. Brand Identity & Vibe
 
 Sayso is real-time, in-call guidance that helps real estate agents say the right thing at the right moment. The site turns that promise into a **comic-book / superhero** visual language: bold panels, hard offset shadows, halftone dot textures, action starbursts, and a friendly superhero character. The agent is the hero; Sayso is the sidekick in their ear.
