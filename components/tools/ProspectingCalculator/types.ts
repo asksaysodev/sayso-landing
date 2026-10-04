@@ -15,6 +15,9 @@ export interface CalculatorInputs {
   daysPerWeek: number;
 }
 
+/** Field values as typed, so a field can be cleared and retyped. */
+export type CalculatorDraft = Record<keyof CalculatorInputs, string>;
+
 export type CalculatorField = {
   key: keyof CalculatorInputs;
   label: string;

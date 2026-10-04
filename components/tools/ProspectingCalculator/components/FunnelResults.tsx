@@ -4,17 +4,21 @@
 import type { FunnelStage } from '../types';
 
 interface FunnelResultsProps {
-  stages: FunnelStage[];
+  /** Null while any input is empty or out of range. */
+  stages: FunnelStage[] | null;
 }
 
 function fmt(n: number) {
-  if (!Number.isFinite(n)) return '0';
   if (n >= 100) return Math.round(n).toLocaleString('en-US');
   if (n >= 10) return n.toFixed(0);
   return n.toFixed(1);
 }
 
 export function FunnelResults({ stages }: FunnelResultsProps) {
+  if (!stages) {
+    return <p className="text-sm text-[#1D4871]/70">Fix the highlighted fields to see your numbers.</p>;
+  }
+
   const [dials, conversations, appointments] = stages;
 
   return (

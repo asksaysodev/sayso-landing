@@ -52,7 +52,6 @@ export default function ProspectingCalculatorPage() {
       <Breadcrumb
         items={[
           { label: 'Home', href: '/' },
-          { label: 'Tools' },
           { label: 'Prospecting Calculator' },
         ]}
       />

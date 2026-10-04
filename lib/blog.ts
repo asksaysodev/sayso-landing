@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { cache } from 'react';
+import { siteUrl } from '@/lib/config';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 const POSTS_PER_PAGE = 9;
@@ -123,7 +124,8 @@ const getLiveSlugs = cache(() => new Set(getAllPosts().map((p) => p.slug)));
  * revalidation after the post publishes. Any other href returns true.
  */
 export function isLiveBlogHref(href: string): boolean {
-  const match = href.match(/^\/blog\/([a-z0-9-]+)\/?(?:[?#].*)?$/);
+  const path = (href.startsWith(siteUrl) ? href.slice(siteUrl.length) : href).toLowerCase();
+  const match = path.match(/^\/blog\/([a-z0-9-]+)\/?(?:[?#].*)?$/);
   return !match || getLiveSlugs().has(match[1]);
 }
 

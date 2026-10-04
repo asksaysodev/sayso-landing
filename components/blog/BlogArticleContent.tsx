@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeSlug from 'rehype-slug';
 
@@ -19,12 +20,19 @@ const mdxComponents = {
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p className="text-[#1D4871]/80 text-base leading-relaxed mb-5 font-sans" {...props} />
   ),
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) =>
-    props.href && !isLiveBlogHref(props.href) ? (
-      <>{props.children}</>
-    ) : (
-      <a className="text-[#2367EE] hover:underline font-bold" {...props} />
-    ),
+  a: ({ href = '', children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    const className = 'text-[#2367EE] hover:underline font-bold';
+    if (href.startsWith('/')) {
+      // Scheduled posts render as plain text until they publish.
+      if (!isLiveBlogHref(href)) return <>{children}</>;
+      return <Link href={href} className={className}>{children}</Link>;
+    }
+    if (/^https?:\/\//.test(href)) {
+      const rel = [props.rel, 'noopener', 'noreferrer'].filter(Boolean).join(' ');
+      return <a {...props} href={href} target="_blank" rel={rel} className={className}>{children}</a>;
+    }
+    return <a {...props} href={href} className={className}>{children}</a>;
+  },
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul className="list-disc pl-6 mb-5 space-y-2 text-[#1D4871]/80 font-sans" {...props} />
   ),

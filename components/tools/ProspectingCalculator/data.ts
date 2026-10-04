@@ -1,4 +1,4 @@
-import type { CalculatorField, CalculatorInputs, FunnelStage } from './types';
+import type { CalculatorDraft, CalculatorField, CalculatorInputs, FunnelStage } from './types';
 
 /** Starting numbers only. The page tells agents to replace them with their own CRM or dialer data. */
 export const DEFAULT_INPUTS: CalculatorInputs = {
@@ -21,16 +21,38 @@ export const FIELDS: CalculatorField[] = [
   { key: 'daysPerWeek', label: 'Prospecting days per week', hint: 'Days you block time for calls', min: 1, max: 7, step: 1 },
 ];
 
+export const DEFAULT_DRAFT = Object.fromEntries(
+  FIELDS.map((field) => [field.key, String(DEFAULT_INPUTS[field.key])]),
+) as CalculatorDraft;
+
+/** The typed value as a number, or null when it is empty or outside the field's min and max. */
+export function parseField(raw: string, field: CalculatorField): number | null {
+  if (raw.trim() === '') return null;
+  const value = Number(raw);
+  return Number.isFinite(value) && value >= field.min && value <= field.max ? value : null;
+}
+
+/** All inputs as numbers, or null while any field is empty or out of range. */
+export function parseDraft(draft: CalculatorDraft): CalculatorInputs | null {
+  const inputs = { ...DEFAULT_INPUTS };
+  for (const field of FIELDS) {
+    const value = parseField(draft[field.key], field);
+    if (value === null) return null;
+    inputs[field.key] = value;
+  }
+  return inputs;
+}
+
 /** Works backward from the yearly goal to the dials, conversations and appointments it takes. */
 export function calculateFunnel(inputs: CalculatorInputs): FunnelStage[] {
-  const pct = (v: number) => Math.max(v, 0.01) / 100;
+  const pct = (v: number) => v / 100;
   const closed = inputs.goalClients;
   const signed = closed / pct(inputs.closeRate);
   const appointments = signed / pct(inputs.signRate);
   const conversations = appointments / pct(inputs.appointmentRate);
   const dials = conversations / pct(inputs.contactRate);
-  const weeks = Math.max(inputs.weeks, 1);
-  const days = weeks * Math.max(inputs.daysPerWeek, 1);
+  const weeks = inputs.weeks;
+  const days = weeks * inputs.daysPerWeek;
 
   return [
     { label: 'Dials', perYear: dials, perWeek: dials / weeks, perDay: dials / days },

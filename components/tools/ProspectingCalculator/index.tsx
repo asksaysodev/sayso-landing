@@ -8,15 +8,18 @@
 import { useMemo, useState } from 'react';
 import { CalculatorInputs } from './components/CalculatorInputs';
 import { FunnelResults } from './components/FunnelResults';
-import { DEFAULT_INPUTS, calculateFunnel } from './data';
-import type { CalculatorInputs as Inputs } from './types';
+import { DEFAULT_DRAFT, calculateFunnel, parseDraft } from './data';
+import type { CalculatorDraft } from './types';
 
 export function ProspectingCalculator() {
-  const [values, setValues] = useState<Inputs>(DEFAULT_INPUTS);
-  const stages = useMemo(() => calculateFunnel(values), [values]);
+  const [draft, setDraft] = useState<CalculatorDraft>(DEFAULT_DRAFT);
+  const stages = useMemo(() => {
+    const inputs = parseDraft(draft);
+    return inputs ? calculateFunnel(inputs) : null;
+  }, [draft]);
 
-  function handleChange(key: keyof Inputs, value: number) {
-    setValues((prev) => ({ ...prev, [key]: Number.isFinite(value) ? value : 0 }));
+  function handleChange(key: keyof CalculatorDraft, value: string) {
+    setDraft((prev) => ({ ...prev, [key]: value }));
   }
 
   return (
@@ -26,10 +29,10 @@ export function ProspectingCalculator() {
         <p className="text-sm text-[#1D4871]/60 mb-5">
           These are starting numbers. Replace them with your own from your CRM or dialer.
         </p>
-        <CalculatorInputs values={values} onChange={handleChange} />
+        <CalculatorInputs values={draft} onChange={handleChange} />
         <button
           type="button"
-          onClick={() => setValues(DEFAULT_INPUTS)}
+          onClick={() => setDraft(DEFAULT_DRAFT)}
           className="mt-5 text-sm font-bold text-[#2367EE] hover:underline"
         >
           Reset to starting numbers
