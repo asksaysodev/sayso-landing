@@ -6,7 +6,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Security | Sayso',
+  title: 'Security',
   description: 'Learn how Sayso protects your data, conversations, and account access at every level.',
   alternates: {
     canonical: `${siteUrl}/security/`,

@@ -23,10 +23,6 @@ export const metadata: Metadata = {
     description: 'Invite someone to Sayso and you both get rewarded. Share your unique referral code and earn credits.',
     images: ['/images/og-default.png'],
   },
-  robots: {
-    index: false,
-    follow: true,
-  },
 };
 
 export default function ReferralPage() {

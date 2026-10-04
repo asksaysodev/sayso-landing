@@ -110,7 +110,7 @@ The query `what does BATVAI mean` produced 28 impressions at an average position
 - Stop the blog template from producing duplicated title suffixes.
 - Rewrite homepage search metadata around real-time AI call coaching for real estate agents.
 - Remove synthetic current timestamps from sitemap entries. Blog entries continue to use real content update dates.
-- Mark affiliate and referral campaign pages `noindex,follow` while preserving their crawlable links.
+- Keep the affiliate and referral pages indexable so people searching for those programs can find them.
 
 ### Existing content refreshes
 

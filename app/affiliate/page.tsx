@@ -23,10 +23,6 @@ export const metadata: Metadata = {
     description: 'Earn recurring commission by referring users to Sayso. Apply to become a Sayso affiliate today.',
     images: ['/images/og-default.png'],
   },
-  robots: {
-    index: false,
-    follow: true,
-  },
 };
 
 export default function AffiliatePage() {
