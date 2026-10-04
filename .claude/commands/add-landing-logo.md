@@ -27,7 +27,8 @@ and you are unsure which to add).
   git grep -l "social-proof/" -- '*.tsx'
   ```
   The two maintained rotating lists to update are:
-  - **`components/landing/HeroWithVideo.tsx`** — homepage hero marquee. Shape:
+  - **`lib/content/social-proof-logos.ts`** — shared list used by the homepage hero
+    marquee and other social-proof sections. Shape:
     `{ name: 'Brand', src: '/social-proof/brand.png' }`
   - **`components/pages/PartnerIntegrationPage/components/PartnerLogoCarousel.tsx`** —
     partner page carousel. Shape: `{ src: '/social-proof/brand.png', alt: 'Brand' }`
@@ -115,7 +116,7 @@ Flag these to the user rather than silently shipping them:
 Add the new logo to **both** maintained lists (Phase-0 locations), using each file's
 own object shape and the correct, well-spelled brand name:
 
-- `HeroWithVideo.tsx`: `{ name: 'Brand Name', src: '/social-proof/<slug>.png' }`
+- `social-proof-logos.ts`: `{ name: 'Brand Name', src: '/social-proof/<slug>.png' }`
 - `PartnerLogoCarousel.tsx`: `{ src: '/social-proof/<slug>.png', alt: 'Brand Name' }`
 
 Placement:
@@ -169,7 +170,7 @@ Follow the repo conventions in `CLAUDE.md`:
 # 1. process (writes public/social-proof/<slug>.png + preview strips)
 node scripts/process-logo.mjs ./dropped-logo.png <slug>
 # 2. read the two preview PNGs it prints, verify on white + gray
-# 3. add to HeroWithVideo.tsx  -> { name, src }
+# 3. add to lib/content/social-proof-logos.ts -> { name, src }
 #    add to PartnerLogoCarousel.tsx -> { src, alt }
 # 4. rm the original drop, commit, PR into development
 ```
