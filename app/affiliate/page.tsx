@@ -6,7 +6,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Affiliate Program | Sayso',
+  title: 'Affiliate Program',
   description: 'Earn recurring commission by referring users to Sayso. Apply to become a Sayso affiliate today.',
   alternates: {
     canonical: `${siteUrl}/affiliate/`,

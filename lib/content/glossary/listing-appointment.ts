@@ -6,7 +6,7 @@ export const listingAppointment: GlossaryEntry = {
   keyword: 'what is a listing appointment',
   seoTitle: 'What Is a Listing Appointment in Real Estate',
   seoDescription:
-    'A listing appointment is a meeting where a real estate agent presents their strategy to a seller and earns the listing. Learn how it works and how Sayso helps.',
+    'Learn what a listing appointment is, how long it takes, what agents should prepare, and what happens before, during, and after the seller meeting.',
   h1: 'What Is a Listing Appointment?',
   definition:
     'A listing appointment is a face-to-face meeting between a real estate agent and a homeowner where the agent presents their marketing strategy, reviews comparable sales, and makes the case to represent the seller. It is the moment where prospecting turns into business, and the outcome depends on how well the agent prepared, built rapport, and addressed the seller\'s concerns.',
@@ -55,8 +55,8 @@ export const listingAppointment: GlossaryEntry = {
     { term: 'Lead Nurturing', slug: 'lead-nurturing' },
   ],
   deeperLink: {
-    title: 'What to Say to Expired Listings: Scripts That Get Callbacks',
-    href: '/blog/expired-listing-scripts',
+    title: 'How to Book More Real Estate Appointments',
+    href: '/blog/how-to-book-appointments-real-estate',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
@@ -85,7 +85,7 @@ export const listingAppointment: GlossaryEntry = {
     {
       question: 'How many listing appointments does it take to get a listing?',
       answer:
-        'Conversion rates vary, but well-prepared agents typically convert 40-60% of their listing appointments into signed agreements. The biggest factors are preparation, pricing accuracy, and how well you address the seller\'s specific concerns.',
+        'There is no universal conversion rate. Track signed agreements divided by completed listing appointments for your own business, then review lead source, preparation, pricing accuracy, and unresolved seller concerns when the number changes.',
     },
   ],
 };

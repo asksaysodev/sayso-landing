@@ -16,6 +16,8 @@ export interface BlogAuthor {
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Short search-result title. The visible article heading remains `title`. */
+  seoTitle?: string;
   description: string;
   category: string;
   tags: string[];
@@ -43,6 +45,7 @@ function parseMdxFile(filePath: string): BlogPost {
   return {
     slug,
     title: data.title || 'Untitled',
+    seoTitle: data.seoTitle || undefined,
     description: data.description || '',
     category: data.category || 'general',
     tags: data.tags || [],

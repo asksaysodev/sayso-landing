@@ -6,7 +6,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'About | Sayso',
+  title: 'About',
   description:
     'Sayso was built by Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, to give real estate agents the structure they need on every call.',
   alternates: {

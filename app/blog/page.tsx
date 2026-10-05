@@ -12,7 +12,7 @@ import { siteUrl } from '@/lib/config';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Blog | Sayso',
+  title: 'Blog',
   description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
   alternates: {
     canonical: `${siteUrl}/blog/`,
