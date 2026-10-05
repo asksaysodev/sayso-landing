@@ -3,48 +3,49 @@ import type { GlossaryEntry } from './types';
 export const isaRealEstate: GlossaryEntry = {
   slug: 'isa-real-estate',
   term: 'ISA (Inside Sales Agent)',
-  keyword: 'what does ISA mean in real estate',
-  seoTitle: 'What Does ISA Mean in Real Estate',
+  keyword: 'what is an isa in real estate',
+  seoTitle: 'What Is an ISA in Real Estate? Role, Pay and Scripts',
   seoDescription:
-    'ISA stands for Inside Sales Agent, a dedicated role for generating and qualifying real estate leads. Learn how ISAs work, why they matter, and how Sayso helps.',
-  h1: 'What Does ISA Mean in Real Estate?',
+    'An ISA in real estate is an inside sales agent who calls, qualifies, and books appointments for a team. Learn the role, how ISAs are paid, and their KPIs.',
+  h1: 'What Is an ISA in Real Estate?',
   definition:
-    'An ISA, or Inside Sales Agent, is a dedicated role on a real estate team responsible for generating leads, qualifying prospects, and booking appointments through outbound and inbound calls. ISAs handle the front end of the sales pipeline so that licensed agents can spend their time on face-to-face meetings and client service.',
+    'An ISA in real estate is an inside sales agent who calls leads, qualifies them, and books appointments for the agents on a team. The ISA owns the front of the pipeline, from the first call to a new lead through follow-up, so licensed agents can spend their time in listing appointments, buyer consultations, and showings.',
   howItWorks: [
-    'If you have ever wondered what ISA means in real estate, the answer is straightforward: it is the person who handles the calls. An inside sales agent spends most of the day dialing new leads, following up with past contacts, and booking appointments for the agents on their team. The ISA owns the early stages of the pipeline so licensed agents can focus on meeting clients in person.',
-    'Most ISAs work from a list pulled from the team\'s CRM. They follow a structured call schedule, often making 50-200 dials per day, and use scripts to determine whether a lead is ready for an appointment. When a lead qualifies, the ISA hands them off to a licensed agent.',
-    'Some ISAs are licensed agents themselves, while others are unlicensed salespeople who strictly handle prospecting and follow-up. The role varies by team, but the core function is always the same: turn raw leads into booked appointments.',
+    'A typical ISA day is spent on the phone inside the team\'s CRM. The ISA calls new online leads as soon as they register, follows up with leads who have not answered, re-engages older leads, confirms upcoming appointments, and hands each booked appointment to an agent with notes on the lead\'s motivation, timeline, financing, and agent status.',
+    'There are two common types of ISA. An inbound ISA works leads that came to the team, such as website registrations, portal inquiries, and sign calls, where speed to lead matters most. An outbound ISA calls people who did not raise their hand, such as expired listings, FSBOs, circle prospecting lists, and past clients, where volume and persistence matter most. Many ISAs on smaller teams do both.',
+    'Some ISAs are licensed and some are not. A licensed ISA can usually discuss pricing, property details, and market specifics, while an unlicensed ISA is generally limited to setting appointments and gathering basic information, so check your state\'s rules and your brokerage\'s policy before deciding.',
+    'Pay is usually a mix of base and incentive. Common structures include an hourly wage or salary plus a bonus for each appointment that is held, a bonus for each appointment that turns into a closed transaction, or a percentage of the team\'s commission on those closings. The exact mix varies by market, team size, and whether the ISA is licensed.',
   ],
   whyItMatters: [
-    'Most real estate leads go cold because nobody follows up fast enough. An ISA solves that by calling every new lead within minutes and staying on top of follow-up for weeks or months. Speed to lead is one of the biggest predictors of conversion, and a dedicated inside sales agent makes sure no opportunity slips through.',
-    'For agents making 20-100 calls a day on their own, adding an ISA frees up hours that can go toward listing presentations, showings, and client meetings. Instead of splitting attention between prospecting and service, agents can focus on what they do best while the ISA keeps the pipeline full.',
-    'Teams that invest in a strong ISA typically see more consistent appointment flow and shorter lead response times. The result is a more predictable business with fewer missed opportunities.',
+    'Many real estate leads go cold because nobody follows up fast enough or long enough. An ISA fixes both problems by calling every new lead within minutes and staying on a consistent follow-up cadence, which protects the money a team spends on lead generation.',
+    'ISAs are measured on a short list of KPIs: conversations or contacts made, appointments set, appointments held, and appointments that turn into signed clients. Held appointments matter more than set appointments, because a booked meeting that never happens does nothing for the agent.',
+    'A team is usually ready to hire an ISA when agents have more leads than they can call back quickly, when follow-up is slipping, or when the team leader is spending prime hours on the phone instead of in appointments. If the team does not yet have steady lead flow or agents with open calendars, an ISA will not have enough to work with.',
   ],
   tips: [
     {
-      title: 'Respond to new leads within five minutes',
-      body: 'ISAs who call a lead within five minutes of receiving it convert at significantly higher rates than those who wait even an hour. Speed to lead is the single most important metric for an inside sales agent.',
+      title: 'Call new leads within five minutes',
+      body: 'Many teams aim to call every new online lead within five minutes of registration. The lead is still on the site and remembers filling out the form, which makes the first conversation warmer and easier.',
     },
     {
-      title: 'Use a structured call schedule',
-      body: 'Block specific times for new lead calls, follow-ups, and prospecting. Without a schedule, urgent calls crowd out the follow-up calls that generate the most long-term appointments.',
+      title: 'Use one script per call type',
+      body: 'ISAs make the same seven calls over and over: new lead, no-answer follow-up, old lead, qualifying, appointment set, warm handoff, and past client check-in. A short script for each keeps every call pointed at a clear next step.',
     },
     {
-      title: 'Track your calls-to-appointment ratio',
-      body: 'Knowing how many dials it takes to book one appointment helps you diagnose problems early. If the ratio spikes, it usually means the script needs work or lead quality has shifted.',
+      title: 'Block the day by call type',
+      body: 'Block specific times for new leads, follow-up, old leads, and confirmations. Without a schedule, urgent calls crowd out the follow-up calls that generate the most long-term appointments.',
     },
     {
-      title: 'Qualify before you transfer',
-      body: 'A lead handed off too early wastes the agent\'s time. A lead held too long goes cold. Define clear qualification criteria so both the ISA and the agent know exactly when a handoff should happen.',
+      title: 'Track appointments held, not just set',
+      body: 'Book appointments for today or tomorrow whenever possible and confirm them the day before. A high set rate with a low held rate usually means meetings are being booked too far out or the lead was not qualified.',
     },
     {
-      title: 'Record and review calls weekly',
-      body: 'Listening to real calls is the fastest way to improve. Focus on the first 30 seconds and the appointment ask, since those two moments determine most outcomes.',
+      title: 'Make every handoff complete',
+      body: 'The agent should walk into the appointment knowing the lead\'s motivation, timeline, location, price range, financing, and any objections raised. A lead should never have to answer the same question twice.',
     },
   ],
   howSaysoHelps: [
-    'ISAs make dozens of calls every day, and the difference between a booked appointment and a lost lead often comes down to saying the right thing at the right moment. Sayso\'s [Real-Time Coaching](/products/cue/) gives ISAs live, on-screen prompts during every call, so when a prospect pushes back or asks a tough question, the right response is already on screen.',
-    'After each call, Sayso\'s [Call Notes](/products/smart-capture/) handles the write-up and the CRM entry, so ISAs spend their shift dialing instead of documenting. [Book a demo](/demo/) to see how Sayso helps ISAs book more appointments on every shift.',
+    'ISAs make dozens of calls every day, and the difference between a booked appointment and a lost lead often comes down to saying the right thing at the right moment. Sayso\'s [Real-Time Coaching](/products/cue/) gives ISAs live, on-screen guidance during every call, so when a prospect pushes back or asks a tough question, the next line is already on screen. For the talk tracks themselves, see our [real estate ISA scripts](/blog/real-estate-isa-scripts/).',
+    'After each call, Sayso\'s [Call Notes](/products/smart-capture/) handles the write-up and the CRM entry, so ISAs spend their shift dialing instead of documenting and agents get a clean handoff. [Book a demo](/demo/) to see how Sayso helps ISAs book more appointments on every shift.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -54,8 +55,8 @@ export const isaRealEstate: GlossaryEntry = {
     { term: 'Listing Appointment', slug: 'listing-appointment' },
   ],
   deeperLink: {
-    title: 'The Complete Guide to Real Estate Cold Calling',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'Real Estate ISA Scripts: 7 Calls Your ISA Makes Every Day',
+    href: '/blog/real-estate-isa-scripts',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
@@ -67,24 +68,34 @@ export const isaRealEstate: GlossaryEntry = {
   },
   faq: [
     {
-      question: 'What does ISA mean in real estate?',
+      question: 'What is an ISA in real estate?',
       answer:
-        'ISA stands for Inside Sales Agent. It is a dedicated role focused on lead generation, qualification, and follow-up. The ISA handles prospecting calls so licensed agents can focus on appointments and client relationships.',
+        'An ISA, or inside sales agent, is a team member who calls leads, qualifies them, and books appointments for the team\'s agents. The ISA handles the first call and the follow-up so licensed agents can focus on appointments and client service.',
+    },
+    {
+      question: 'What is the difference between an ISA and a buyer\'s agent?',
+      answer:
+        'An ISA works the phone and books appointments, while a buyer\'s agent meets with clients, shows homes, writes offers, and guides the transaction. The ISA hands a qualified lead to the agent, and from that point the agent owns the relationship.',
     },
     {
       question: 'Does a real estate ISA need a license?',
       answer:
-        'It depends on your state and what the ISA does. If the ISA discusses pricing, property details, or negotiates on behalf of clients, most states require a license. Many teams prefer licensed ISAs to avoid compliance issues.',
+        'It depends on your state and what the ISA does. If the ISA discusses pricing, property details, or represents clients, most states require a license. Many teams prefer licensed ISAs to avoid compliance issues, so check your state\'s rules and your brokerage\'s policy.',
+    },
+    {
+      question: 'How are real estate ISAs paid?',
+      answer:
+        'Most ISAs earn a base, either hourly or salary, plus an incentive. Common incentives are a bonus per appointment held, a bonus per closed transaction, or a percentage of the team\'s commission on the clients they booked. Some teams test the role with a part-time or virtual ISA first.',
+    },
+    {
+      question: 'What KPIs does an ISA track?',
+      answer:
+        'The core numbers are contacts made, appointments set, appointments held, and appointments that become signed clients. Held appointments are the most important, because they show both that the ISA booked a real meeting and that the lead was properly qualified.',
     },
     {
       question: 'How many calls should an ISA make per day?',
       answer:
-        'Most ISAs dial between 50 and 200 contacts per day, depending on whether they focus on new leads, follow-ups, or a mix. Quality matters more than volume, so track your calls-to-appointment ratio rather than just dial count.',
-    },
-    {
-      question: 'How much does it cost to hire an ISA?',
-      answer:
-        'Base salaries for ISAs typically range from $30,000 to $50,000, plus a per-appointment bonus or commission split of 5-15%. Some teams start with a virtual or part-time ISA to test the role before committing to a full-time hire.',
+        'It depends on the mix of new leads, follow-up, and outbound lists, and full-time outbound ISAs often dial far more than inbound ISAs. Quality matters more than volume, so track appointments held per conversation rather than dial count alone.',
     },
   ],
 };

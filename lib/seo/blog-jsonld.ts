@@ -101,6 +101,14 @@ export function extractFaqFromContent(content: string): { question: string; answ
   return pairs;
 }
 
+/** Turns markdown links and bold/italic markers into plain text for structured data. */
+function stripInlineMarkdown(text: string): string {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1');
+}
+
 export function generateFaqJsonLd(pairs: { question: string; answer: string }[]) {
   if (pairs.length === 0) return null;
   return {
@@ -108,10 +116,10 @@ export function generateFaqJsonLd(pairs: { question: string; answer: string }[])
     '@type': 'FAQPage',
     mainEntity: pairs.map((item) => ({
       '@type': 'Question',
-      name: item.question,
+      name: stripInlineMarkdown(item.question),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: stripInlineMarkdown(item.answer),
       },
     })),
   };

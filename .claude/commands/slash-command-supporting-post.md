@@ -168,7 +168,7 @@ Using the competitive brief from Phase 1, write the complete supporting post fol
 
 ## CONTEXT: What You're Writing For
 
-**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
+**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to Follow Up Boss and Sierra Interactive. Sayso works alongside any CRM, including KVCore, without needing a direct integration. Never describe KVCore as a native integration or sync.
 
 **What makes Sayso different from competitors:**
 - **Post-call analysis tools** focus on grading and analysis. They review calls after they happen and do not help the agent during the actual call.
@@ -402,7 +402,7 @@ Do NOT put a CTA before delivering real value. The reader should get at least on
 ## FORMATTING RULES
 
 - **Paragraphs:** Max 3 sentences. Agents read between calls on mobile.
-- **Short sentences.** Punch over polish. Vary length but lean short.
+- **Sentence length.** Vary it. Write full, natural sentences with normal flow. Never write fragmented tagline lines (see CLAUDE.md rule 10).
 - **Tone:** Practical, coach-like, direct. You're someone who's made 10,000 calls and is sharing what actually works. Not a professor, not a marketer - a coach.
 - **Banned phrases:** "In today's competitive market," "It's no secret that," "As a real estate professional," "In the ever-evolving world of," "Let's dive in," "Without further ado," "At the end of the day." Any sentence that could be deleted without losing information should be deleted.
 - **Bold sparingly** - only for key terms or phrases a scanner's eye should catch.

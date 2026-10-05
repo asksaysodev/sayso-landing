@@ -132,7 +132,7 @@ Using the competitive brief from Phase 1, write the complete standalone post fol
 
 ## CONTEXT: What You're Writing For
 
-**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
+**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to Follow Up Boss and Sierra Interactive. Sayso works alongside any CRM, including KVCore, without needing a direct integration. Never describe KVCore as a native integration or sync.
 
 **What makes Sayso different from competitors:**
 - **Post-call analysis tools** focus on grading and analysis. They review calls after they happen and do not help the agent during the actual call.
@@ -339,7 +339,7 @@ Each H2 covers a distinct aspect of the topic. Rules:
 
 The product tie-in varies by category:
 
-- **crm-notes posts:** direct fit. "Sayso auto-generates call notes in real time while you're on the phone, so you never have to retype what the lead said. It syncs straight to Follow Up Boss, Sierra, or KVCore." Link to `/products/smart-capture/`.
+- **crm-notes posts:** direct fit. "Sayso auto-generates call notes in real time while you're on the phone, so you never have to retype what the lead said. It syncs straight to Follow Up Boss or Sierra Interactive." Link to `/products/smart-capture/`.
 - **mindset posts:** subtle fit. The product tie-in should feel like relief, not a pitch. Example: "The hardest part of calling is the second of silence before you speak. Sayso removes that second by putting the next line on your screen before you need it." Link to `/products/cue/` or `/demo/`.
 - **data-authority posts:** authority fit. The product angle is credibility-based. Example: "The data in this post comes from analyzing calls across Sayso's agent network in 2026." Link to `/demo/` or `/case-studies/`.
 
@@ -367,7 +367,7 @@ Standalone posts have no parent pillar, so their linking pattern differs from su
 
 1. **Link to 1 to 2 related cluster pillars** from other clusters. Example: a CRM/Notes post about call notes might link to the cold-calling pillar (`/blog/real-estate-cold-calling-guide/`) and the conversation-skills pillar (`/blog/real-estate-conversation-guide/`). Use the pillar's target keyword as anchor text.
 
-2. **Link to 2 to 3 other standalone posts or supporting posts** in related topic areas. Link to them even if they do not exist yet. The broken link checker will track missing ones, and links activate when posts publish.
+2. **Link to 2 to 3 other standalone posts or supporting posts** in related topic areas. Only link to posts that already exist. If a related post has not been written yet, leave the phrase as plain text and record it in `docs/content/pending-internal-links.md` so the link is added in the PR that publishes that post.
 
 3. **Link to 1 to 2 objection pages** if the topic involves calls (most do). Example: `/objections/not-interested/`, `/objections/call-me-later/`.
 
@@ -402,7 +402,7 @@ Standalone posts have no parent pillar, so their linking pattern differs from su
 Standalone posts get 2 CTAs:
 
 1. **Product section CTA (in the "How Sayso Helps" H2):** Primary CTA linking to `/demo/` or a feature page.
-2. **End-of-post CTA (after the FAQ):** Standalone call to action. One sentence. Example for a CRM post: "Stop retyping what the lead just told you. See how Sayso auto-captures every call. [Book a demo](/demo/)."
+2. **End-of-post CTA (after the FAQ):** Standalone call to action. One sentence. Write it as a full, natural sentence, never a slogan. Example for a CRM post: "If you would rather approve a finished note than retype what the lead just told you, [book a demo](/demo/) and see how Sayso captures every call."
 
 Do NOT put a CTA before delivering real value. The reader must get at least one useful technique, template, or insight before seeing any product mention.
 

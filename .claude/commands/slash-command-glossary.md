@@ -108,7 +108,7 @@ Using the competitive brief from Phase 1, write the complete glossary entry foll
 
 ## CONTEXT: What You're Writing For
 
-**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
+**Product:** Sayso (asksayso.com) is an AI-powered real-time coaching tool for real estate agents and ISAs. During live calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to Follow Up Boss and Sierra Interactive. Sayso works alongside any CRM, including KVCore, without needing a direct integration. Never describe KVCore as a native integration or sync.
 
 **Key features (for linking in `howSaysoHelps`):**
 - **Real-Time Coaching** (`/products/cue/`) - live on-screen prompts during calls

@@ -51,8 +51,6 @@ function getPriority(path: string): number {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   // 1. Collect all nav-registered pages + homepage + demo
   const navHrefs = getAllNavHrefs();
   const allStaticPaths = new Set(['/', '/demo', '/download', ...navHrefs]);
@@ -65,7 +63,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((path) => !EXCLUDED_PATHS.has(path) && !path.startsWith('/integrations'))
     .map((path) => ({
       url: `${siteUrl}${path.replace(/\/?$/, '/')}`,
-      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: getPriority(path),
     }));
@@ -96,7 +93,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const contentPages: MetadataRoute.Sitemap = contentSections.flatMap(({ slugs, prefix, priority }) =>
     slugs.map((slug) => ({
       url: `${siteUrl}${prefix}/${slug}/`,
-      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority,
     })),

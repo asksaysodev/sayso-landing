@@ -11,6 +11,7 @@ Every blog post starts with a YAML frontmatter block. Here is the full schema fo
 ```yaml
 ---
 title: "Your Article Title"
+seoTitle: "Shorter Search Title"     # Optional. Overrides only the <title> tag (template adds " | Sayso"). The H1 always uses title.
 slug: "your-article-slug"           # Becomes the URL: /blog/your-article-slug
 description: "1–2 sentence SEO summary shown in search results and post previews."
 category: "cold-calling"            # See categories below
