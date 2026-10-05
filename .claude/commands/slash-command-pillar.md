@@ -103,7 +103,7 @@ Using the competitive brief from Phase 1, write the complete pillar post followi
 
 ## CONTEXT: What You're Writing For
 
-**Product:** SaySo (asksayso.com) - an AI-powered real-time coaching tool for real estate agents and ISAs. During live phone calls, SaySo displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to CRMs (Follow Up Boss, Sierra Interactive, KVCore).
+**Product:** Sayso (asksayso.com) - an AI-powered real-time coaching tool for real estate agents and ISAs. During live phone calls, Sayso displays on-screen prompts telling agents what to say, how to handle objections, and when to ask for the appointment. It also auto-generates call notes and syncs them to Follow Up Boss and Sierra Interactive. Sayso works alongside any CRM, including KVCore, without needing a direct integration. Never describe KVCore as a native integration or sync.
 
 **What makes Sayso different from other coaching tools:**
 - **Post-call analysis tools** focus on grading and analysis. They review calls AFTER they happen. Good for team leaders who want reports, but they don't help the agent during the actual call.
@@ -131,12 +131,14 @@ author:
   name: "Sayso Team"
   role: "Team"
   avatar: "/logo-sayso.png"
-publishedAt: "[today's date YYYY-MM-DD]"
+publishedAt: "2099-01-01"
 featured: false
 coverImage: "/blog/covers/blog-card.jpg"
 heroImage: "/blog/covers/blog-hero-2.jpg"
 ---
 ```
+
+**Important:** Set `publishedAt` to `"2099-01-01"` (placeholder). Production hides posts with a future `publishedAt`, so the post stays invisible until the team assigns a real publish date after review, per [docs/reference/blog-publishing-plan.md](../../docs/reference/blog-publishing-plan.md).
 
 Cluster reference - use the correct cluster name:
 | Cluster | Slug |
@@ -173,7 +175,7 @@ Use `<ScriptExample>` at least 3 times in a pillar post. Agents come to these pa
 ### Keyword Placement (Non-Negotiable)
 1. **H1:** Contains the exact target keyword. Front-load it. Signal comprehensiveness (e.g., "The Complete Guide," "Everything You Need to Know").
 2. **First 100 words:** Exact target keyword in sentence 1 or 2.
-3. **Meta title:** `[Target Keyword]: [Benefit or Scope] | SaySo` - max 60 characters.
+3. **Meta title:** The frontmatter `title` doubles as the meta title; the blog template appends " | Sayso Blog" automatically, so do not add it yourself. Front-load the keyword and keep the title under 50 characters.
 4. **Meta description:** 150-160 characters. Contains keyword. Format: "[Keyword context]. [What this guide covers]. [CTA]."
 5. **URL slug:** Keyword in slug, lowercase, hyphens.
 6. **First H2:** Contains the keyword or a strong semantic variation.
@@ -245,7 +247,7 @@ Bad examples:
 - State what this guide covers and who it's for
 - Include a "what you'll learn" signal so the reader knows this is worth scrolling
 - **No fluff.** Open with the problem or the promise, not background context
-- End with a subtle product mention if natural: "These are the scripts we built SaySo's real-time coaching around."
+- End with a subtle product mention if natural: "These are the scripts we built Sayso's real-time coaching around."
 
 ### 3. H2 Sections - The Core Content (5-8 Sections)
 
@@ -264,12 +266,12 @@ A synthesis section tying everything together. Options:
 - "What separates good [topic] from great [topic]"
 - A framework summary
 
-### 5. H2: How SaySo Helps
+### 5. H2: How Sayso Helps
 
 Product tie-in section. Rules:
 - 4-6 sentences maximum
-- Connect the pillar topic directly to SaySo's real-time coaching: "Instead of memorizing all these scripts, SaySo feeds you the right words while you're on the call."
-- Be specific about what SaySo does - not "SaySo helps with calls" but "When a lead says 'I'm not interested,' SaySo shows you a proven response on screen in under 2 seconds."
+- Connect the pillar topic directly to Sayso's real-time coaching: "Instead of memorizing all these scripts, Sayso feeds you the right words while you're on the call."
+- Be specific about what Sayso does - not "Sayso helps with calls" but "When a lead says 'I'm not interested,' Sayso shows you a proven response on screen in under 2 seconds."
 - CTA: Link to `/demo/`
 - Do NOT make this a product brochure. One focused paragraph about the specific value, one CTA.
 
@@ -315,16 +317,16 @@ Supporting posts in each cluster for reference:
 
 Pillar posts get 3 CTAs because they're long enough to warrant it:
 
-1. **Early CTA (after the first H2 section):** One-liner. Example: "SaySo coaches you through scripts like these in real time. [See how it works →](/demo/)"
-2. **Product section CTA (in the "How SaySo Helps" H2):** The primary CTA linking to `/demo/`.
-3. **End-of-post CTA (after the FAQ):** Standalone call to action. Example: "Stop memorizing scripts. Start winning calls. [Book a demo →](/demo/)"
+1. **Early CTA (after the first H2 section):** One-liner. Example: "Sayso coaches you through scripts like these in real time. [See how it works →](/demo/)"
+2. **Product section CTA (in the "How Sayso Helps" H2):** The primary CTA linking to `/demo/`.
+3. **End-of-post CTA (after the FAQ):** Standalone call to action. Write one or two full, natural sentences tied to the post topic. Never use a slogan or a tagline pair. Example: "If you want help remembering these scripts while you're on the call, [book a demo](/demo/) and we'll show you how Sayso puts the next line on your screen."
 
 ---
 
 ## FORMATTING RULES
 
 - **Paragraphs:** Max 3-4 sentences. Pillar posts can breathe slightly more than micro pages, but keep them scannable. Agents read between calls - on mobile, on the go.
-- **Short sentences.** Vary length but lean short. Punch over polish.
+- **Sentence length.** Vary it. Write full, natural sentences with normal flow. Never write fragmented tagline lines (see CLAUDE.md rule 10).
 - **Tone:** Authoritative but conversational. You're an experienced coach sharing everything you know over coffee - confident, direct, not academic.
 - **Banned phrases:** "In today's competitive market," "It's no secret that," "As a real estate professional," "In the ever-evolving world of," "Let's dive in," "Without further ado." Any sentence that could be deleted without losing information should be deleted.
 - **Use bold sparingly** - only for key terms or phrases a scanner's eye should catch. Not every other sentence.
