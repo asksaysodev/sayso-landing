@@ -6,7 +6,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Referral Program | Sayso',
+  title: 'Referral Program',
   description: 'Invite someone to Sayso and you both get rewarded. Share your unique referral code and earn credits.',
   alternates: {
     canonical: `${siteUrl}/referral/`,
