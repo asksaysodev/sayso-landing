@@ -124,8 +124,8 @@ const getLiveSlugs = cache(() => new Set(getAllPosts().map((p) => p.slug)));
  * revalidation after the post publishes. Any other href returns true.
  */
 export function isLiveBlogHref(href: string): boolean {
-  const path = (href.startsWith(siteUrl) ? href.slice(siteUrl.length) : href).toLowerCase();
-  const match = path.match(/^\/blog\/([a-z0-9-]+)\/?(?:[?#].*)?$/);
+  const pathname = (href.startsWith(siteUrl) ? href.slice(siteUrl.length) : href).toLowerCase();
+  const match = pathname.match(/^\/blog\/([a-z0-9-]+)\/?(?:[?#].*)?$/);
   return !match || getLiveSlugs().has(match[1]);
 }
 
