@@ -4,9 +4,9 @@ export const circleProspecting: GlossaryEntry = {
   slug: 'circle-prospecting',
   term: 'Circle Prospecting',
   keyword: 'what is circle prospecting',
-  seoTitle: 'What Is Circle Prospecting in Real Estate',
+  seoTitle: 'What Is Circle Prospecting in Real Estate?',
   seoDescription:
-    'Circle prospecting is calling homeowners near a recent listing or sale to generate new leads. Learn how it works, why it matters, and tips to do it right. See how Sayso coaches you through every call in real time.',
+    'Circle prospecting is calling homeowners near a recent listing or sale to start conversations. Learn how it works and get tips, plus word-for-word scripts.',
   h1: 'What Is Circle Prospecting?',
   definition:
     'Circle prospecting is the practice of calling homeowners in a specific geographic area, usually around a recent listing, sale, or open house, to generate new buyer and seller leads. It gives agents a natural reason to call and a predictable way to build pipeline from a geographic farm.',
@@ -55,8 +55,8 @@ export const circleProspecting: GlossaryEntry = {
     { term: 'Listing Appointment', slug: 'listing-appointment' },
   ],
   deeperLink: {
-    title: 'The Complete Guide to Real Estate Cold Calling',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'Circle Prospecting Scripts for Real Estate Agents',
+    href: '/blog/circle-prospecting-scripts',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

@@ -565,3 +565,19 @@
 .founder-pricing-slider:focus-visible::-webkit-slider-thumb {
   box-shadow: 2px 2px 0 #1D4871, 0 0 0 4px rgba(35, 103, 238, 0.35);
 }
+
+/* Blog ScriptSheet: "Print this sheet" prints only the sheet, not the whole post. */
+@media print {
+  /* Remove everything except the call sheet and the elements that contain it, so the
+     printout is the sheet alone. visibility:hidden kept the article's height and printed blank pages. */
+  body.printing-script-sheet *:not(:has(.script-sheet)):not(.script-sheet):not(.script-sheet *) {
+    display: none;
+  }
+  body.printing-script-sheet .script-sheet {
+    margin: 0;
+    border: 0;
+  }
+  body.printing-script-sheet .script-sheet-print {
+    display: none;
+  }
+}

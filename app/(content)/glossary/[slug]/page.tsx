@@ -4,6 +4,9 @@ import { getGlossaryBySlug, getAllGlossarySlugs } from '@/lib/content/glossary';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { GlossaryPage } from '@/components/pages/GlossaryPage';
 
+// Hourly, so links to scheduled blog posts switch on once the post publishes.
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   return getAllGlossarySlugs().map((slug) => ({ slug }));
 }

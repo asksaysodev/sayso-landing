@@ -6,6 +6,7 @@ import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { generateDefinedTermJsonLd } from '@/lib/seo/schema';
 import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
+import { isLiveBlogHref } from '@/lib/blog';
 import type { GlossaryEntry } from '@/lib/content/glossary/types';
 
 interface GlossaryPageProps {
@@ -192,7 +193,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         )}
 
         {/* Deeper Content Link */}
-        {entry.deeperLink && (
+        {entry.deeperLink && isLiveBlogHref(entry.deeperLink.href) && (
           <div className="bg-white border-2 border-[#1D4871]/10 rounded-xl p-5 mb-6">
             <p className="text-sm text-[#1D4871]/60 font-sans mb-1">
               Go deeper:
