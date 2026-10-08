@@ -14,7 +14,7 @@ export function PainPointPanel() {
         {/* Comic narrator box */}
         <div className="flex justify-center mb-8 md:mb-12">
           <div className="bg-[#1D4871] text-white px-5 py-2 rounded-lg v2-comic-shadow-sm transform -rotate-1">
-            <span className="font-comic text-lg md:text-xl tracking-wide">Without SaySo...</span>
+            <span className="font-comic text-lg md:text-xl tracking-wide">Without Sayso...</span>
           </div>
         </div>
 

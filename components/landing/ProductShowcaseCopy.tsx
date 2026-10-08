@@ -17,7 +17,7 @@ export function ProductShowcaseCopy() {
           <div className="flex items-center justify-center gap-3 mb-3 md:mb-4">
             <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] tracking-wide">
               <LightningIcon size={28} color="#2367EE" className="inline-block mr-1 -mt-1" />
-              Enter SaySo.
+              Enter Sayso.
             </h2>
             <Image
               src="/images/sayso-superhero-point-right.png"

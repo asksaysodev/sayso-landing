@@ -8,7 +8,7 @@ import { HeroStarburst } from './HeroStarburst';
 import type { TransformationContent } from '@/lib/content/personas/types';
 
 const defaultContent: TransformationContent = {
-  headline: "With SaySo, You're Unstoppable",
+  headline: "With Sayso, You're Unstoppable",
   subheading: 'Transform every prospecting call into a winning conversation.',
   metrics: defaultMetrics,
 };
@@ -32,7 +32,7 @@ export function TransformationSection({ content = defaultContent }: { content?: 
             <div className="relative z-10">
               <Image
                 src="/images/sayso-superhero-point-right.png"
-                alt="SaySo Superhero"
+                alt="Sayso Superhero"
                 width={484}
                 height={515}
                 className="w-48 md:w-64 lg:w-72 xl:w-80 h-auto drop-shadow-2xl v4-hero-float"

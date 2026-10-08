@@ -10,7 +10,7 @@ export const salesLeaderContent: PersonaContent = {
       'Sayso listens during prospect conversations and shows agents what to ask next, so they stay confident and in control when it matters most.',
   },
   transformation: {
-    headline: 'With SaySo, Role-Play Finally Pays Off',
+    headline: 'With Sayso, Role-Play Finally Pays Off',
     subheading:
       'Stop watching great role-play fall apart the moment a real prospect pushes back.',
     metrics: [

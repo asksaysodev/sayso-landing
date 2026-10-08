@@ -10,7 +10,7 @@ export const agentContent: PersonaContent = {
       'Sayso helps you ask better questions, handle objections, and turn conversations into appointments.',
   },
   transformation: {
-    headline: 'With SaySo, You Sound Like a Pro',
+    headline: 'With Sayso, You Sound Like a Pro',
     subheading:
       'Stop guessing what to say. Start booking appointments like the top agents do.',
     metrics: [
