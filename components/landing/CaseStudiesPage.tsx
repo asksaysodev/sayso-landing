@@ -240,7 +240,7 @@ function CaseStudySection({ study }: { study: (typeof CASE_STUDIES)[number] }) {
 
           {/* ─── Before Sayso ─── */}
           <div className="px-6 md:px-10 py-8 border-b-2 border-[#1D4871]/10">
-            <SectionLabel>BEFORE SAYSO</SectionLabel>
+            <SectionLabel>BEFORE Sayso</SectionLabel>
             <div className="space-y-4 max-w-3xl">
               <div>
                 <h4 className="font-bold text-[#1D4871] text-sm uppercase tracking-wide mb-1">The Problem</h4>
@@ -259,7 +259,7 @@ function CaseStudySection({ study }: { study: (typeof CASE_STUDIES)[number] }) {
 
           {/* ─── How They Use Sayso ─── */}
           <div className="px-6 md:px-10 py-8 border-b-2 border-[#1D4871]/10">
-            <SectionLabel>HOW THEY USE SAYSO</SectionLabel>
+            <SectionLabel>HOW THEY USE Sayso</SectionLabel>
             <div className="max-w-3xl space-y-3">
               <div className="flex flex-wrap gap-2">
                 {[study.howTheyUseSayso.leadType, study.howTheyUseSayso.callTypes].map((tag) => (
