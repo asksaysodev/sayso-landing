@@ -10,7 +10,7 @@ export const brokerContent: PersonaContent = {
       'Sayso guides agents during live prospecting calls so they ask better questions, handle objections confidently, and convert more conversations into appointments.',
   },
   transformation: {
-    headline: "With SaySo, Your Whole Team Wins",
+    headline: "With Sayso, Your Whole Team Wins",
     subheading: 'Turn wasted leads into booked appointments, across every agent, every call.',
     metrics: [
       {

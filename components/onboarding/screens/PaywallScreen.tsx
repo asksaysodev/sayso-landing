@@ -144,7 +144,7 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
             Lock in your early access rate.
           </h1>
           <p className="text-sm md:text-base text-[#1D4871]/70 max-w-md mx-auto mt-2 leading-relaxed">
-            SaySo is coming to PC. Sign up now and secure 50% off for your first 3 months.
+            Sayso is coming to PC. Sign up now and secure 50% off for your first 3 months.
           </p>
           {/* Early access banner */}
           <div className="mt-4 inline-flex items-center gap-2 bg-[#FFDE59] text-[#1D4871] font-bold text-sm px-4 py-2 rounded-full border-2 border-[#1D4871]">
@@ -157,7 +157,7 @@ export function PaywallScreen({ computerType, isPathB }: PaywallScreenProps) {
       ) : (
         <div className="text-center mb-5">
           <h1 className="text-2xl md:text-3xl font-bold text-[#1D4871]">
-            SaySo is perfect for you!
+            Sayso is perfect for you!
           </h1>
           <p className="text-sm md:text-base text-[#1D4871]/70 max-w-md mx-auto mt-2 leading-relaxed">
             Based on your goals, you&apos;re ready to go. Get started below.

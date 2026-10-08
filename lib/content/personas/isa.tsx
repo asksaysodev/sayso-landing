@@ -10,7 +10,7 @@ export const isaContent: PersonaContent = {
       'Sayso gives you live prompts during prospecting calls so you always know what question to ask next.',
   },
   transformation: {
-    headline: "With SaySo, You Always Know What to Say",
+    headline: "With Sayso, You Always Know What to Say",
     subheading: 'Stay confident and in control, even when prospects push back.',
     metrics: [
       {
