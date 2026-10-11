@@ -2,14 +2,16 @@
 
 import { createContext, useContext, useState, useCallback } from 'react';
 import { X } from 'lucide-react';
-import { SystemSelectModal } from '@/components/landing/SystemSelectModal';
 import { openCalendlyPopup } from '@/lib/calendly';
 
 const CONTACT_FORM_URL = 'https://asksayso.notion.site/ebd/2f04de400468813784b3cd2d7a1290af';
+// Mac and Windows users sign up and download through the same web app flow.
+const SIGNUP_URL = 'https://app.asksayso.com/login?signup=true';
 
 interface IDemoCalendarContext {
     openDemoCalendar: () => void;
     openContactForm: () => void;
+    /** Opens signup and download in a new tab. Name kept from the retired OS picker so callers stay unchanged. */
     openSystemSelect: () => void;
 }
 
@@ -17,12 +19,11 @@ const DemoCalendarContext = createContext<IDemoCalendarContext | null>(null);
 
 export function DemoCalendarProvider({ children }: { children: React.ReactNode }) {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isSystemSelectOpen, setIsSystemSelectOpen] = useState(false);
   // "Book a Demo" now opens Calendly in a popup overlay (replaces the old
   // Google Calendar iframe modal). See lib/calendly.ts.
   const openDemoCalendar = useCallback(() => openCalendlyPopup(), []);
   const openContactForm = useCallback(() => setIsContactOpen(true), []);
-  const openSystemSelect = useCallback(() => setIsSystemSelectOpen(true), []);
+  const openSystemSelect = useCallback(() => window.open(SIGNUP_URL, '_blank', 'noopener,noreferrer'), []);
 
   return (
     <DemoCalendarContext.Provider value={{ openDemoCalendar, openContactForm, openSystemSelect }}>
@@ -52,11 +53,6 @@ export function DemoCalendarProvider({ children }: { children: React.ReactNode }
             />
           </div>
         </div>
-      )}
-
-      {/* System Select Modal */}
-      {isSystemSelectOpen && (
-        <SystemSelectModal onClose={() => setIsSystemSelectOpen(false)} />
       )}
     </DemoCalendarContext.Provider>
   );
