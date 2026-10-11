@@ -31,9 +31,8 @@ and you are unsure which to add).
     `{ name: 'Brand', src: '/social-proof/brand.png' }`
   - **`components/pages/PartnerIntegrationPage/components/PartnerLogoCarousel.tsx`** —
     partner page carousel. Shape: `{ src: '/social-proof/brand.png', alt: 'Brand' }`
-  - Do **not** auto-add to `app/export/cta-branding/page.tsx` (a curated subset for a
-    marketing export) or `components/landing/CaseStudiesPage.tsx` (specific named case
-    studies). Mention them only if the user asks.
+  - Do **not** auto-add to `components/landing/CaseStudiesPage.tsx` (specific named case
+    studies). Mention it only if the user asks.
 - The marquee renders each logo at a **fixed height** (`h-12 md:h-16`, `w-auto`,
   `object-contain`), so consistent visual weight comes from **trimming whitespace**,
   not from resizing. The processing script handles this.

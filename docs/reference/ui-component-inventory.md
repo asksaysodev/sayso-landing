@@ -56,10 +56,10 @@
 
 ### DemoCalendarProvider
 - **Path:** `app/context/landing/DemoCalendarContext.tsx`
-- **Description:** React context provider that manages demo calendar, contact form, onboarding, and system select modals.
+- **Description:** React context provider that manages the demo calendar popup, the contact form popup, and the download link.
 - **Used on:** Blog layout, Affiliate, Case Studies, Contact, Demo, Pricing, Privacy, Terms, Referral, Security (~12 pages)
 - **Props:** `children: ReactNode`
-- **Visual behavior:** Renders no visible UI itself; provides modal management context. When triggered, renders OnboardingModal, SystemSelectModal, demo calendar popup, or contact form popup.
+- **Visual behavior:** Renders no visible UI itself; provides modal management context. Opens the Calendly popup or the contact form popup; `openSystemSelect` opens signup and download in a new tab.
 
 ### Container
 - **Path:** `components/ui/Container.tsx`
@@ -124,28 +124,21 @@
 ### ThreeStepsSection
 - **Path:** `components/landing/ThreeStepsSection/index.tsx`
 - **Description:** 3-step process section showing how Sayso works with visual cards and mobile carousel.
-- **Used on:** Homepage (`/`), UI catalog (`/(marketing)/ui`)
+- **Used on:** Homepage (`/`)
 - **Props:** `content?: ThreeStepsContent` (headline, subheading, steps array)
 - **Visual behavior:** Mobile: carousel with prev/next buttons and dot indicators. Desktop: all 3 steps horizontal with comic arrow connectors. Dual CTAs at bottom.
-
-### ProductShowcaseSection
-- **Path:** `components/landing/ProductShowcaseSection/index.tsx`
-- **Description:** Demonstrates real-time product features with animated video mockup, suggestions, and signal indicators.
-- **Used on:** Homepage (`/`), UI catalog (`/(marketing)/ui`)
-- **Props:** None (internal state hook)
-- **Visual behavior:** White background, centered copy with eyebrow text, ProductShowcaseVideo with typewriter suggestions and signal indicators.
 
 ### ProductShowcaseCopy
 - **Path:** `components/landing/ProductShowcaseCopy.tsx`
 - **Description:** "Enter Sayso" hero intro copy block.
-- **Used on:** Used inside ProductShowcaseSection
+- **Used on:** Not currently used
 - **Props:** None
 - **Visual behavior:** Centered text block with headline and subtext.
 
 ### ProductShowcaseDesktop
 - **Path:** `components/landing/ProductShowcaseDesktop.tsx`
 - **Description:** Responsive desktop demo frame with widget overlay showing product in action.
-- **Used on:** Used inside ProductShowcaseSection
+- **Used on:** Product pages (`/products/[slug]`)
 - **Props:** Internal state (scaling, widget position)
 - **Visual behavior:** Desktop mockup frame displaying live product demo with responsive scaling.
 
@@ -177,13 +170,6 @@
 - **Props:** `stats: Array<{ value, label }>`
 - **Visual behavior:** 3 large numbers/values centered with labels beneath each.
 
-### SocialProofStrip
-- **Path:** `components/landing/SocialProofStrip.tsx`
-- **Description:** Marquee-scrolling logo strip showing partner/client logos.
-- **Used on:** UI catalog (`/(marketing)/ui`)
-- **Props:** None
-- **Visual behavior:** Horizontally scrolling infinite marquee of logos.
-
 ### FAQAccordion
 - **Path:** `components/sections/FAQAccordion.tsx`
 - **Description:** Collapsible FAQ section with expand/collapse state management.
@@ -194,7 +180,7 @@
 ### PricingSection
 - **Path:** `components/landing/PricingSection.tsx`
 - **Description:** Pricing page with two tiers (Individual Agent, Teams & Brokerages) and feature bullets, plus a "Questions? Chat with our team" CTA below the cards.
-- **Used on:** Pricing (`/pricing`), UI catalog (`/(marketing)/ui`)
+- **Used on:** Pricing (`/pricing`)
 - **Props:** None (uses internal state and DemoCalendarContext)
 - **Visual behavior:** Light gray background with halftone pattern, 2-column card grid (1-col mobile), popular plan highlighted with blue shadow/accent, checkmark icons for features.
 
@@ -243,17 +229,6 @@
 - **Used on:** Blog post (`/blog/[slug]`)
 - **Props:** None
 - **Visual behavior:** Gradient background (dark blue to blue), white text, rounded corners, two buttons (Book Demo white, Download white outline).
-
-### SearchSuggestionPill
-- **Path:** `components/ui/SearchSuggestionPill.tsx`
-- **Description:** Pill-shaped element with lightning icon and "sayso" text.
-- **Used on:** UI catalog (`/(marketing)/ui`)
-- **Props:** None
-- **Visual behavior:** Small rounded pill with lightning icon and branded text.
-
----
-
-## 4. Blog / Article Components
 
 ### BlogHeroBanner
 - **Path:** `components/blog/BlogHeroBanner.tsx`
@@ -401,7 +376,7 @@
 ### LightningIcon
 - **Path:** `components/icons/LightningIcon.tsx`
 - **Description:** SVG lightning bolt icon.
-- **Used on:** Used in SearchSuggestionPill and other branded elements
+- **Used on:** Used in branded elements
 - **Props:** `size?: number`, `color?: string`, `className?: string`
 - **Visual behavior:** Lightning bolt SVG rendered at specified size and color.
 
@@ -529,7 +504,6 @@ Used exclusively on `/demo-vid`. Each scene is hardcoded with specific copy and 
 | **FeelingCheckScreen** | `components/onboarding/screens/FeelingCheckScreen.tsx` | 5 emoji anxiety-to-confidence buttons |
 | **LeadTypeScreen** | `components/onboarding/screens/LeadTypeScreen.tsx` | Multi-select lead type chips |
 | **LeadChipGrid** | `components/onboarding/screens/LeadChipGrid.tsx` | Sellers/Buyers/All chip sub-component |
-| **PaywallScreen** | `components/onboarding/screens/PaywallScreen.tsx` | Pricing/paywall presentation |
 | **SaysoHelpScreen** | `components/onboarding/screens/SaysoHelpScreen.tsx` | How Sayso helps |
 | **SupportTechScreen** | `components/onboarding/screens/SupportTechScreen.tsx` | Tech stack selection |
 | **TeamSizeScreen** | `components/onboarding/screens/TeamSizeScreen.tsx` | Team size selection |
@@ -541,12 +515,6 @@ Used exclusively on `/demo-vid`. Each scene is hardcoded with specific copy and 
 
 Used exclusively in the onboarding flow (`/start` and via DemoCalendarProvider modals). Individual screens accept props (value/onChange) but are designed for this specific flow.
 
-### SystemSelectModal
-- **Path:** `components/landing/SystemSelectModal.tsx`
-- **Description:** Modal for OS selection (Mac/Windows) before download.
-- **Props:** `onClose: () => void`
-- **Visual behavior:** Dark modal overlay, 3 steps (select OS → checking eligibility → Windows waitlist), auto-advances.
-
 ### Demo/Reference Components (UI Kit)
 
 | Component | Path | Description |
@@ -555,7 +523,7 @@ Used exclusively in the onboarding flow (`/start` and via DemoCalendarProvider m
 | **LandingCardsAndSectionsSection** | `components/sections/LandingCardsAndSectionsSection.tsx` | Demo page showing card/container styles |
 | **LandingTypographySection** | `components/sections/LandingTypographySection.tsx` | Typography scale reference |
 
-Developer reference components for the UI catalog at `/(marketing)/ui`. Not used in production pages.
+Developer reference components. Not used in production pages.
 
 ---
 

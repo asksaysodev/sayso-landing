@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "export-assets": "npx tsx scripts/export-assets.ts",
     "check-links": "npx tsx scripts/check-blog-links.ts"
   },
   "dependencies": {

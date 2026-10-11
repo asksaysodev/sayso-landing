@@ -1,5 +1,7 @@
 # Sayso Onboarding Flow - Implementation Reference
 
+> **Historical reference.** The onboarding screens described here are no longer in this repo, and the paywall now lives in the web app. Windows is supported, so the "Windows coming soon" variants below no longer apply.
+
 ## Overview
 
 A branching onboarding flow that launches at `/start`. Users are routed into one of two paths based on their role:
