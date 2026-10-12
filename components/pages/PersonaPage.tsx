@@ -15,7 +15,7 @@ interface PersonaPageProps {
 }
 
 export function PersonaPage({ entry }: PersonaPageProps) {
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   const webPageJsonLd = generateWebPageJsonLd(
     entry.seoTitle,
@@ -139,7 +139,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
                 Book a Demo
               </button>
               <button
-                onClick={openSystemSelect}
+                onClick={openSignup}
                 data-analytics-id="cta-download-persona-page-get-started"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
               >

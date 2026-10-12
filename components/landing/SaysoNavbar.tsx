@@ -15,7 +15,7 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
   // When autoHide is on (e.g. the Product Tour page), the bar slides away on
   // scroll-down and returns on scroll-up to free up vertical space.
   const [hidden, setHidden] = useState(false);
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
   const menuRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -176,7 +176,7 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
               Book a Demo
             </button>
             <button
-              onClick={openSystemSelect}
+              onClick={openSignup}
               data-analytics-id="cta-download-navbar"
               className="hidden lg:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
             >
@@ -271,7 +271,7 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
                   Book a Demo
                 </button>
                 <button
-                  onClick={() => { setIsMobileMenuOpen(false); openSystemSelect(); }}
+                  onClick={() => { setIsMobileMenuOpen(false); openSignup(); }}
                   data-analytics-id="cta-download-mobile-menu"
                   className="block w-full px-4 py-3 rounded-full bg-[#2367EE] text-white font-bold text-lg text-center v2-comic-btn border-2 border-[#1D4871]"
                 >

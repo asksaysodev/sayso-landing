@@ -3,6 +3,8 @@
  * that opens the Sayso demo calendar.
  */
 
+import { FOUNDER_PRICING_CONFIG } from '../data';
+
 export function CtaBlock() {
   return (
     <section className="bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-8 md:p-10 text-center">
@@ -10,7 +12,7 @@ export function CtaBlock() {
         Lock in Early Access Pricing
       </h2>
       <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-6 leading-relaxed">
-        Early Access Pricing is available for a limited number of teams until Sayso&apos;s hard launch, expected fall 2026, and the rate you lock in now is yours for good. If you want your team on Sayso, now is the time to start.
+        Early Access Pricing is available for a limited number of teams until Sayso&apos;s hard launch, {FOUNDER_PRICING_CONFIG.launchWindow}, and the rate you lock in now is yours for good. If you want your team on Sayso, now is the time to start.
       </p>
       <a
         href="https://calendly.com/asksayso/demo"

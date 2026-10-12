@@ -9,7 +9,7 @@ import { LightningIcon } from '@/components/icons/LightningIcon';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 export function CloseSection() {
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
     <section className="bg-white py-20 md:py-28">
@@ -27,7 +27,7 @@ export function CloseSection() {
             Book a Demo
           </button>
           <button
-            onClick={openSystemSelect}
+            onClick={openSignup}
             data-analytics-id="cta-download-differences-close"
             className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#1D4871] v2-comic-btn"
             style={{ boxShadow: '3px 3px 0px #1D4871' }}

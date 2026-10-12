@@ -4,7 +4,7 @@ import { LightningIcon } from '@/components/icons/LightningIcon';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 export function BlogInArticleCTA() {
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
     <div className="my-10 bg-gradient-to-r from-[#1D4871] to-[#2367EE] rounded-2xl border-2 border-[#1D4871] v2-comic-shadow overflow-hidden">
@@ -24,7 +24,7 @@ export function BlogInArticleCTA() {
             Book a Demo
           </button>
           <button
-            onClick={openSystemSelect}
+            onClick={openSignup}
             data-analytics-id="cta-download-blog-article"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
           >

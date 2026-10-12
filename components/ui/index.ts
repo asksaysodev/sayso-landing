@@ -8,4 +8,3 @@ export { Badge } from './Badge';
 export { Divider } from './Divider';
 export { IconWrapper } from './IconWrapper';
 export { MomentCard } from './MomentCard';
-export { SearchSuggestionPill } from './SearchSuggestionPill';
