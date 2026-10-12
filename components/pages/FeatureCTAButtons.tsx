@@ -4,7 +4,7 @@ import { LightningIcon } from '@/components/icons/LightningIcon';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 export function FeatureCTAButtons() {
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
     <div className="flex items-center gap-4 flex-wrap mb-8">
@@ -16,7 +16,7 @@ export function FeatureCTAButtons() {
         Book a Demo
       </button>
       <button
-        onClick={openSystemSelect}
+        onClick={openSignup}
         data-analytics-id="cta-download-feature-page-inline"
         className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#2367EE] text-white font-bold text-sm v4-hero-glow border-2 border-[#1D4871]"
       >

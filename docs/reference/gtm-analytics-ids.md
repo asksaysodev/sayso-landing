@@ -51,14 +51,13 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-subscribed` | Opens demo calendar | [app/subscribed/BookDemoCTA.tsx](../../app/subscribed/BookDemoCTA.tsx) | Hero CTA on /subscribed confirmation page |
 | `form-newsletter-footer` | (iframe wrapper) | [components/landing/Footer.tsx](../../components/landing/Footer.tsx) | Beehiiv iframe, see footnote |
 | `form-newsletter-blog` | (iframe wrapper) | [components/blog/BlogNewsletterCTA.tsx](../../components/blog/BlogNewsletterCTA.tsx) | Beehiiv iframe, see footnote |
-| `form-newsletter-windows-waitlist` | (iframe wrapper) | [components/landing/SystemSelectModal.tsx](../../components/landing/SystemSelectModal.tsx) | Beehiiv iframe inside modal |
 | `contact-email` | `mailto:support@asksayso.com` | [lib/navigation.ts](../../lib/navigation.ts) (rendered by [components/landing/Footer.tsx](../../components/landing/Footer.tsx)) | Footer "Help" link |
 
 ---
 
 ## Newsletter iframe footnote
 
-Form submissions happen inside Beehiiv's cross-origin iframe. GTM cannot observe them via `data-analytics-id`. These three IDs (`form-newsletter-footer`, `form-newsletter-blog`, `form-newsletter-windows-waitlist`) are only useful for view/click-on-wrapper tracking.
+Form submissions happen inside Beehiiv's cross-origin iframe. GTM cannot observe them via `data-analytics-id`. These two IDs (`form-newsletter-footer`, `form-newsletter-blog`) are only useful for view/click-on-wrapper tracking.
 
 To capture actual newsletter subscribes, you'll need:
 1. Beehiiv webhook → server endpoint (e.g. a Next.js API route)

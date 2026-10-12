@@ -14,7 +14,7 @@ export function ContentCTA({
   headline = 'Ready to Win the Moment?',
   subheading = 'See how Sayso gives you real-time coaching on every call.',
 }: ContentCTAProps) {
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-10">
@@ -35,7 +35,7 @@ export function ContentCTA({
               Book a Demo
             </button>
             <button
-              onClick={openSystemSelect}
+              onClick={openSignup}
               data-analytics-id={`cta-download-${location}`}
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#FFDE59] hover:bg-[#FFDE59]/90 transition-colors"
             >

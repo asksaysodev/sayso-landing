@@ -19,8 +19,6 @@ const EXCLUDED_PATHS = new Set([
   '/privacy',
   '/terms',
   '/feedback',
-  '/paywall-preview',
-  '/ui',
   '/integrations', // TODO: re-enable when integrations article is published
   '/case-studies', // TODO: re-enable when first real case study is published
   '/founderpricing', // noindex: time-limited promo overlapping /pricing/

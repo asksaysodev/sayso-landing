@@ -13,7 +13,7 @@ import type {
  *                (67,782 dials / 1,079 conversation hours)
  */
 export const FOUNDER_PRICING_CONFIG: FounderPricingConfig = {
-  launchWindow: 'expected fall 2026',
+  launchWindow: 'expected spring 2027',
   callsPerHour: 63,
   tiers: [
     { hours: 150, price: 369 },

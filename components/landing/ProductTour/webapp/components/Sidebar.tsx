@@ -32,7 +32,7 @@ export function Sidebar() {
         </div>
         <div className="wa-download">
           <Download size={15} />
-          Download for Mac
+          Download Sayso
         </div>
         <div className="wa-divider" />
         <div className="wa-account">

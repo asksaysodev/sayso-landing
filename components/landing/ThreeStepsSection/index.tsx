@@ -30,7 +30,7 @@ const defaultContent: ThreeStepsContent = {
 
 export function ThreeStepsSection({ content = defaultContent }: { content?: ThreeStepsContent }) {
   const [currentStep, setCurrentStep] = useState(0);
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   const steps = [
     {
@@ -134,7 +134,7 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
         <div className="mt-10 md:mt-14 flex flex-col items-center gap-3">
           <div className="flex gap-3">
             <button
-              onClick={openSystemSelect}
+              onClick={openSignup}
               data-analytics-id="cta-download-three-steps-section"
               className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-4 py-2.5 md:px-6 md:py-3.5 text-sm md:text-[1.1rem] font-bold text-[#1D4871] border-2 border-[#1D4871] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4871] focus-visible:ring-offset-2 whitespace-nowrap"
               style={{ boxShadow: '3px 3px 0px #1D4871' }}
