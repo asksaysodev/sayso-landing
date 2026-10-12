@@ -1,7 +1,7 @@
 # UI Component Inventory - Sayso Landing Page
 
 > Generated: 2026-04-03
-> Total components cataloged: **95+**
+> Total components cataloged: **64**
 
 ---
 
@@ -59,7 +59,7 @@
 - **Description:** React context provider that manages the demo calendar popup, the contact form popup, and the download link.
 - **Used on:** Blog layout, Affiliate, Case Studies, Contact, Demo, Pricing, Privacy, Terms, Referral, Security (~12 pages)
 - **Props:** `children: ReactNode`
-- **Visual behavior:** Renders no visible UI itself; provides modal management context. Opens the Calendly popup or the contact form popup; `openSystemSelect` opens signup and download in a new tab.
+- **Visual behavior:** Renders no visible UI itself; provides modal management context. Opens the Calendly popup or the contact form popup; `openSignup` opens signup and download in a new tab.
 
 ### Container
 - **Path:** `components/ui/Container.tsx`
@@ -127,13 +127,6 @@
 - **Used on:** Homepage (`/`)
 - **Props:** `content?: ThreeStepsContent` (headline, subheading, steps array)
 - **Visual behavior:** Mobile: carousel with prev/next buttons and dot indicators. Desktop: all 3 steps horizontal with comic arrow connectors. Dual CTAs at bottom.
-
-### ProductShowcaseCopy
-- **Path:** `components/landing/ProductShowcaseCopy.tsx`
-- **Description:** "Enter Sayso" hero intro copy block.
-- **Used on:** Not currently used
-- **Props:** None
-- **Visual behavior:** Centered text block with headline and subtext.
 
 ### ProductShowcaseDesktop
 - **Path:** `components/landing/ProductShowcaseDesktop.tsx`
@@ -230,6 +223,10 @@
 - **Props:** None
 - **Visual behavior:** Gradient background (dark blue to blue), white text, rounded corners, two buttons (Book Demo white, Download white outline).
 
+---
+
+## 4. Blog / Article Components
+
 ### BlogHeroBanner
 - **Path:** `components/blog/BlogHeroBanner.tsx`
 - **Description:** Hero banner for the blog landing page with title, subtitle, and search input.
@@ -271,13 +268,6 @@
 - **Used on:** Blog list (`/blog`), Blog category (`/blog/category/[slug]`)
 - **Props:** `categories: string[]`, `activeCategory?: string`
 - **Visual behavior:** Horizontal row of pill-shaped buttons, active category highlighted, "All" button always present.
-
-### BlogFeaturedPost
-- **Path:** `components/blog/BlogFeaturedPost.tsx`
-- **Description:** Large featured blog post card displayed prominently on the blog index.
-- **Used on:** Blog list (`/blog`, page 1 only)
-- **Props:** `post: BlogPostMeta`
-- **Visual behavior:** Large card with cover image, title, excerpt, and metadata. Stands out from regular post cards.
 
 ### BlogPostCard
 - **Path:** `components/blog/BlogPostCard.tsx`
@@ -380,20 +370,6 @@
 - **Props:** `size?: number`, `color?: string`, `className?: string`
 - **Visual behavior:** Lightning bolt SVG rendered at specified size and color.
 
-### HighlightText
-- **Path:** `components/demovideo/shared/HighlightText.tsx`
-- **Description:** Animated text with word-level highlight effects.
-- **Used on:** Demo video scenes
-- **Props:** `text: string`, `highlights: string[]`, `highlightColor?: string`, `className?: string`, `delay?: number`
-- **Visual behavior:** Renders text with specified words highlighted with animated color/background effect.
-
-### TypewriterText
-- **Path:** `components/demovideo/shared/TypewriterText.tsx`
-- **Description:** Character-by-character typing animation.
-- **Used on:** Demo video scenes, product showcase
-- **Props:** `text: string`, `speed?: number`, `delay?: number`, `className?: string`, `cursorColor?: string`
-- **Visual behavior:** Text appears character by character with blinking cursor.
-
 ### AudioWaveform
 - **Path:** `components/landing/CRMDialerShowcase/AudioWaveform.tsx`
 - **Description:** 5-bar animated audio waveform visualization.
@@ -468,63 +444,6 @@ Static content pages with no props. Content is hardcoded in the component.
 
 Used exclusively in the product showcase on the homepage. While individual sub-components accept props, the composite is tightly coupled to the homepage demo flow.
 
-### Demo Video Scenes
-
-| Component | Path | Description |
-|-----------|------|-------------|
-| **DemoPlayer** | `components/demovideo/DemoPlayer.tsx` | Main demo orchestrator with keyboard controls |
-| **Stage** | `components/demovideo/Stage.tsx` | Full-screen container for scenes |
-| **Scene0WhiteScreen** | `components/demovideo/scenes/Scene0WhiteScreen.tsx` | Blank intro screen |
-| **Scene1Problem** | `components/demovideo/scenes/Scene1Problem.tsx` | "Mid-call, you freeze" with phone animation |
-| **Scene2Consequences** | `components/demovideo/scenes/Scene2Consequences.tsx` | 4 consequence cards with stagger |
-| **Scene3Dream** | `components/demovideo/scenes/Scene3Dream.tsx` | "What if..." dream scenario |
-| **Scene4Reveal** | `components/demovideo/scenes/Scene4Reveal.tsx` | Logo reveal with glow and tagline |
-| **Scene5Carousel** | `components/demovideo/scenes/Scene5Carousel.tsx` | 3 sequential step cards |
-| **Scene7LivePrompt** | `components/demovideo/scenes/Scene7LivePrompt.tsx` | Split call view with waveform and coach panel |
-| **Scene8Signals** | `components/demovideo/scenes/Scene8Signals.tsx` | Large text: "say the right thing" |
-| **Scene9Payoff** | `components/demovideo/scenes/Scene9Payoff.tsx` | Appointment confirmation + particle burst |
-| **Scene10Transform** | `components/demovideo/scenes/Scene10Transform.tsx` | "More appointments, no freezing" |
-| **Scene11CTA** | `components/demovideo/scenes/Scene11CTA.tsx` | Final logo, tagline, and "Book a Demo" |
-
-Used exclusively on `/demo-vid`. Each scene is hardcoded with specific copy and animations.
-
-### Onboarding Flow
-
-| Component | Path | Description |
-|-----------|------|-------------|
-| **OnboardingFlow** | `components/onboarding/OnboardingFlow.tsx` | Multi-step onboarding orchestrator |
-| **OnboardingModal** | `components/onboarding/OnboardingModal.tsx` | Modal wrapper with close/backdrop |
-| **OnboardingProgress** | `components/onboarding/OnboardingProgress.tsx` | Step counter and progress bar |
-| **OnboardingNavButtons** | `components/onboarding/OnboardingNavButtons.tsx` | Back/Next navigation buttons |
-| **RoleScreen** | `components/onboarding/screens/RoleScreen.tsx` | Role selection |
-| **CallFrequencyScreen** | `components/onboarding/screens/CallFrequencyScreen.tsx` | "How often do you call?" |
-| **ComputerScreen** | `components/onboarding/screens/ComputerScreen.tsx` | Mac/PC/Mix selection |
-| **ConfidenceScreen** | `components/onboarding/screens/ConfidenceScreen.tsx` | 5-emoji confidence scale |
-| **ContactInfoScreen** | `components/onboarding/screens/ContactInfoScreen.tsx` | Name/email/phone/company form |
-| **FeelingCheckScreen** | `components/onboarding/screens/FeelingCheckScreen.tsx` | 5 emoji anxiety-to-confidence buttons |
-| **LeadTypeScreen** | `components/onboarding/screens/LeadTypeScreen.tsx` | Multi-select lead type chips |
-| **LeadChipGrid** | `components/onboarding/screens/LeadChipGrid.tsx` | Sellers/Buyers/All chip sub-component |
-| **SaysoHelpScreen** | `components/onboarding/screens/SaysoHelpScreen.tsx` | How Sayso helps |
-| **SupportTechScreen** | `components/onboarding/screens/SupportTechScreen.tsx` | Tech stack selection |
-| **TeamSizeScreen** | `components/onboarding/screens/TeamSizeScreen.tsx` | Team size selection |
-| **TeamCallFrequencyScreen** | `components/onboarding/screens/TeamCallFrequencyScreen.tsx` | Team call frequency |
-| **TeamLeadTypeScreen** | `components/onboarding/screens/TeamLeadTypeScreen.tsx` | Team lead type |
-| **TeamSupportTechScreen** | `components/onboarding/screens/TeamSupportTechScreen.tsx` | Team support tech |
-| **AnalyzingScreen** | `components/onboarding/screens/AnalyzingScreen.tsx` | Loading screen with cycling messages |
-| **VerdictScreen** | `components/onboarding/screens/VerdictScreen.tsx` | Success + Stripe checkout |
-
-Used exclusively in the onboarding flow (`/start` and via DemoCalendarProvider modals). Individual screens accept props (value/onChange) but are designed for this specific flow.
-
-### Demo/Reference Components (UI Kit)
-
-| Component | Path | Description |
-|-----------|------|-------------|
-| **LandingButtonsSection** | `components/sections/LandingButtonsSection.tsx` | Demo page showing all button variants |
-| **LandingCardsAndSectionsSection** | `components/sections/LandingCardsAndSectionsSection.tsx` | Demo page showing card/container styles |
-| **LandingTypographySection** | `components/sections/LandingTypographySection.tsx` | Typography scale reference |
-
-Developer reference components. Not used in production pages.
-
 ---
 
 ## Design System Constants
@@ -547,10 +466,10 @@ Developer reference components. Not used in production pages.
 | Category | Reusable | Page-Specific | Total |
 |----------|----------|---------------|-------|
 | Layout | 8 | 0 | 8 |
-| Content | 18 | 0 | 18 |
-| CTA | 5 | 0 | 5 |
-| Blog/Article | 12 | 0 | 12 |
+| Content | 16 | 0 | 16 |
+| CTA | 4 | 0 | 4 |
+| Blog/Article | 11 | 0 | 11 |
 | SEO/Meta | 0 (utilities) | 0 | 0 |
-| Shared UI | 12 | 0 | 12 |
-| Page-Specific | - | ~45 | ~45 |
-| **Total** | **~55** | **~45** | **~100** |
+| Shared UI | 10 | 0 | 10 |
+| Page-Specific | - | 15 | 15 |
+| **Total** | **49** | **15** | **64** |
