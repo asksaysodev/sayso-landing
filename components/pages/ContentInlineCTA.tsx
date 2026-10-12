@@ -12,7 +12,7 @@ export function ContentInlineCTA({
   location,
   headline = 'See It in Action',
 }: ContentInlineCTAProps) {
-  const { openDemoCalendar, openSystemSelect } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
     <div className="my-10 bg-[#FFDE59]/10 border-2 border-[#1D4871] rounded-2xl v2-comic-shadow-sm overflow-hidden">
@@ -29,7 +29,7 @@ export function ContentInlineCTA({
             Book a Demo
           </button>
           <button
-            onClick={openSystemSelect}
+            onClick={openSignup}
             data-analytics-id={`cta-download-${location}-inline`}
             className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-transparent text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-[#FFDE59]/20 transition-colors"
           >

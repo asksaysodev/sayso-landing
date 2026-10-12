@@ -139,7 +139,7 @@ function PricingCardV4({ plan }: { plan: PricingPlan }) {
 }
 
 export function PricingSection() {
-  const { openSystemSelect, openDemoCalendar } = useDemoCalendar();
+  const { openSignup, openDemoCalendar } = useDemoCalendar();
   const [billing, setBilling] = useState<BillingPeriod>('annual');
   const isAnnual = billing === 'annual';
 
@@ -172,7 +172,7 @@ export function PricingSection() {
       ],
       buttonLabel: 'Claim early access',
       // TODO: swap to new Stripe link from Franco once received
-      buttonOnClick: openSystemSelect,
+      buttonOnClick: openSignup,
       buttonVariant: 'primary',
       analyticsId: 'cta-download-pricing-individual',
       isPopular: true,

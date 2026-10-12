@@ -11,8 +11,8 @@ const SIGNUP_URL = 'https://app.asksayso.com/login?signup=true';
 interface IDemoCalendarContext {
     openDemoCalendar: () => void;
     openContactForm: () => void;
-    /** Opens signup and download in a new tab. Name kept from the retired OS picker so callers stay unchanged. */
-    openSystemSelect: () => void;
+    /** Opens signup and download in a new tab. */
+    openSignup: () => void;
 }
 
 const DemoCalendarContext = createContext<IDemoCalendarContext | null>(null);
@@ -23,10 +23,10 @@ export function DemoCalendarProvider({ children }: { children: React.ReactNode }
   // Google Calendar iframe modal). See lib/calendly.ts.
   const openDemoCalendar = useCallback(() => openCalendlyPopup(), []);
   const openContactForm = useCallback(() => setIsContactOpen(true), []);
-  const openSystemSelect = useCallback(() => window.open(SIGNUP_URL, '_blank', 'noopener,noreferrer'), []);
+  const openSignup = useCallback(() => window.open(SIGNUP_URL, '_blank', 'noopener'), []);
 
   return (
-    <DemoCalendarContext.Provider value={{ openDemoCalendar, openContactForm, openSystemSelect }}>
+    <DemoCalendarContext.Provider value={{ openDemoCalendar, openContactForm, openSignup }}>
       {children}
 
       {/* Shared Contact Form Popup Modal */}
