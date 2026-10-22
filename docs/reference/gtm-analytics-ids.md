@@ -41,6 +41,7 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-download-feature-page-inline` | Opens system-select modal | [components/pages/FeatureCTAButtons.tsx](../../components/pages/FeatureCTAButtons.tsx) | Feature-page inline pair |
 | `cta-book-demo-blog-article` | Opens demo calendar | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
 | `cta-download-blog-article` | Opens system-select modal | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
+| `cta-inline-blog-<variant>` | Link to the variant's page (/demo/, /why-sayso/, /integrations/, Follow Up Boss partner page, /for/team-leaders/) | [components/blog/BlogInlineCTA.tsx](../../components/blog/BlogInlineCTA.tsx) | One-line CTA after paragraph two on posts that set `ctaVariant`; variant is script, coaching, dialer, crm, leads, prospecting or team |
 | `cta-book-demo-persona-page-get-started` | Opens demo calendar | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
 | `cta-download-persona-page-get-started` | Opens system-select modal | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
 | `cta-download-pricing-individual` | Opens system-select modal | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Individual Agent plan |
