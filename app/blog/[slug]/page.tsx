@@ -205,7 +205,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <BlogArticleHeader post={post} />
 
       {/* Content area - single centered column for all post types */}
-      <div className="max-w-[800px] mx-auto px-6 pb-10">
+      <div className="max-w-[800px] mx-auto px-6 pt-10 pb-10">
         <article>
           {articleContent}
         </article>
