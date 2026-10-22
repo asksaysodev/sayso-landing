@@ -51,7 +51,7 @@ The Cut Brush template.
 3. One `<ScriptExample>` per situation, each followed by "what they say next" branches: the common replies and what to say to each.
 4. Voicemail versions where it fits.
 5. Mistakes that kill the call.
-6. In-context mention: practising or keeping the script on screen during the call.
+6. In-context mention: practicing or keeping the script on screen during the call.
 7. Closing section, FAQ.
 
 Scripts come from `docs/content/ultimate-script-book.md` where it covers the situation. Keep them buyer and seller neutral unless the post is about one side.

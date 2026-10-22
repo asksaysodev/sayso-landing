@@ -106,6 +106,7 @@ Existing categories: appointment-setting, cold-calling, conversation-skills, fol
 Run these checks and fix every failure:
 
 - Brand rules from the repo CLAUDE.md: "Sayso" spelling; no em dashes (search for the character); no "Not X. Not Y. Just Z"; no "run/running" for calls; "calls", never "phone calls"; "cold call" only when the topic is cold calling; agents, never "reps"; prospects, leads and clients, never "deals" or "close a deal"; works for buyer and seller leads; no tagline fragments; no free trial, "try free" or "no credit card" anywhere.
+- American spelling (practice, practicing, organize), matching the rest of the site.
 - Every number has a source in the brief; competitor programs and products are described fairly and only with published facts; prices carry a "checked <month year>" note.
 - seoTitle 55 to 60 characters; description 150 to 160 characters; main search in title, first 100 words, one H2, description.
 - Three to six internal links, all to existing pages; external links only to sources.

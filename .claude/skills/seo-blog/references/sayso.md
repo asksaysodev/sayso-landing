@@ -28,7 +28,7 @@ Live AI coaching for real estate agents during their calls. While the agent is t
    | prospecting | prospecting posts | live prompts that keep calls on track |
    | team | team leader posts | coaching every agent without listening in |
 
-2. **One in-context mention** in the section where Sayso solves that exact problem. One to three sentences, written as advice, linking one product page. Example for a role play post: "Role play builds the habit, but the real test is a live call. Some agents keep the script on screen during calls with a tool like [Sayso's Playbook](/products/playbook/), so the practised line is there when the seller pushes back."
+2. **One in-context mention** in the section where Sayso solves that exact problem. One to three sentences, written as advice, linking one product page. Example for a role play post: "Role play builds the habit, but the real test is a live call. Some agents keep the script on screen during calls with a tool like [Sayso's Playbook](/products/playbook/), so the practiced line is there when the seller pushes back."
 
 3. **A short closing section** (three or four sentences) about the reader's next call, titled for the reader ("Make your next call easier", "Before your next listing appointment"), with one link to `/demo/` or a product page.
 
