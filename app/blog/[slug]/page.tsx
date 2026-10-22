@@ -8,6 +8,7 @@ import { BlogArticleContent } from '@/components/blog/BlogArticleContent';
 import { BlogAuthorCard } from '@/components/blog/BlogAuthorCard';
 import { BlogInArticleCTA } from '@/components/blog/BlogInArticleCTA';
 import { BlogEarlyCTA } from '@/components/blog/BlogEarlyCTA';
+import { BlogInlineCTA } from '@/components/blog/BlogInlineCTA';
 import { BlogPillarUplink } from '@/components/blog/BlogPillarUplink';
 import { BlogRelatedPosts } from '@/components/blog/BlogRelatedPosts';
 import { BlogClusterPosts } from '@/components/blog/BlogClusterPosts';
@@ -21,6 +22,32 @@ export const revalidate = 3600;
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
+}
+
+/**
+ * Line index just after the second prose paragraph, or -1 if the post has fewer than two.
+ * Headings, lists, tables, quotes, code fences and JSX blocks do not count as prose.
+ */
+function afterSecondParagraph(lines: string[]): number {
+  let paragraphs = 0;
+  let inParagraph = false;
+  let inFence = false;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('```')) {
+      inFence = !inFence;
+      continue;
+    }
+    const isProse = !inFence && line !== '' && !/^(#|\||[-*+] |>|<|!\[|\d+\. |\{)/.test(line);
+    if (isProse) {
+      inParagraph = true;
+    } else if (inParagraph) {
+      inParagraph = false;
+      paragraphs += 1;
+      if (paragraphs === 2) return i;
+    }
+  }
+  return -1;
 }
 
 interface BlogPostPageProps {
@@ -119,6 +146,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const firstHalf = contentLines.slice(0, splitIndex).join('\n');
   const secondHalf = contentLines.slice(splitIndex).join('\n');
 
+  // Opt-in inline CTA (frontmatter `ctaVariant`): placed after the second prose paragraph,
+  // so the reader gets the opening answer before any product mention.
+  const ctaIndex = post.ctaVariant ? afterSecondParagraph(contentLines) : -1;
+  const showInlineCta = ctaIndex > 0 && ctaIndex < splitIndex;
+  const openingPart = showInlineCta ? contentLines.slice(0, ctaIndex).join('\n') : firstHalf;
+  const restOfFirstHalf = showInlineCta ? contentLines.slice(ctaIndex, splitIndex).join('\n') : '';
+
   // Article content block (shared between layouts)
   const articleContent = (
     <>
@@ -130,7 +164,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <BlogPillarUplink pillar={pillarPost} />
       )}
 
-      <BlogArticleContent content={firstHalf} />
+      <BlogArticleContent content={openingPart} />
+      {showInlineCta && post.ctaVariant && (
+        <>
+          <BlogInlineCTA variant={post.ctaVariant} />
+          <BlogArticleContent content={restOfFirstHalf} />
+        </>
+      )}
       <BlogInArticleCTA />
       <BlogArticleContent content={secondHalf} />
 
@@ -165,7 +205,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <BlogArticleHeader post={post} />
 
       {/* Content area - single centered column for all post types */}
-      <div className="max-w-[800px] mx-auto px-6 pb-10">
+      <div className="max-w-[800px] mx-auto px-6 pt-10 pb-10">
         <article>
           {articleContent}
         </article>

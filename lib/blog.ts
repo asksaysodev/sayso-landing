@@ -16,6 +16,9 @@ export interface BlogAuthor {
   linkedin?: string;
 }
 
+/** Which one-line call to action follows the second paragraph (see BlogInlineCTA). */
+export type BlogCtaVariant = 'script' | 'coaching' | 'dialer' | 'crm' | 'leads' | 'prospecting' | 'team';
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -34,6 +37,7 @@ export interface BlogPost {
   type: 'pillar' | 'supporting' | 'standalone';
   cluster?: string;
   pillar?: string;
+  ctaVariant?: BlogCtaVariant;
   content: string;
 }
 
@@ -62,6 +66,7 @@ function parseMdxFile(filePath: string): BlogPost {
     type: data.type || 'standalone',
     cluster: data.cluster || undefined,
     pillar: data.pillar || undefined,
+    ctaVariant: data.ctaVariant || undefined,
     content,
   };
 }
