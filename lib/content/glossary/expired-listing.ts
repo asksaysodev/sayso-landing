@@ -13,7 +13,7 @@ export const expiredListing: GlossaryEntry = {
   howItWorks: [
     'When a seller signs a listing agreement with an agent, the contract includes an expiration date, typically three to six months out. If the home does not sell and the seller does not renew, the listing expires and is removed from the MLS. At that point, the original agent no longer represents the seller, and other agents can reach out.',
     'Listings expire for a variety of reasons: overpricing, poor marketing, limited showing availability, or a mismatch between the agent and the seller. In many cases, the home itself is perfectly sellable with the right strategy and pricing adjustment.',
-    'Most agents find expireds through their MLS system, which flags properties the morning after the agreement ends. Speed matters because multiple agents will be contacting the same homeowner, so preparation makes the difference.',
+    'Most agents find expireds through their MLS, where a listing shows an expired status once the agreement ends (exactly when depends on your MLS). Speed matters because multiple agents will be contacting the same homeowner, so preparation makes the difference.',
   ],
   whyItMatters: [
     'Expired listings are valuable because the seller has already committed to selling. Unlike a cold lead who may or may not be interested, a homeowner whose listing expired has signed paperwork, staged their home, and gone through showings. They want results.',
@@ -43,6 +43,7 @@ export const expiredListing: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
+    'To find expireds worth calling, see [how to find expired listings](/blog/how-to-find-expired-listings/). Related scripts include [voicemail scripts](/blog/real-estate-voicemail-scripts/), [withdrawn listing scripts](/blog/withdrawn-listing-scripts/) for sellers who took the home off the market, and [FSBO scripts](/blog/fsbo-scripts/) for owners who decided to sell it themselves.',
     'Calling expired listings means handling tough objections: "I\'m done with agents," "The last one wasted my time," and "I\'ll just sell it myself." Sayso\'s [Real-Time Coaching](/products/cue/) shows you the right response on screen the moment an objection comes up, so you stay composed and confident through the hardest parts of the conversation.',
     'After every call, Sayso\'s [Call Notes](/products/smart-capture/) writes down what the seller said and files it in your CRM, so when you follow up a week later you have the full picture without flipping through a notebook. [Book a demo](/demo/) to see how Sayso helps you convert more expireds into listing appointments.',
   ],
@@ -55,7 +56,7 @@ export const expiredListing: GlossaryEntry = {
   ],
   deeperLink: {
     title: 'Expired Listing Scripts That Get Callbacks',
-    href: '/blog/expired-listing-scripts',
+    href: '/blog/expired-listing-scripts/',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

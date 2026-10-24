@@ -76,8 +76,8 @@ export const justSendListings: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'How to Talk to Real Estate Leads',
-    href: '/blog/how-to-talk-to-real-estate-leads',
+    title: 'Buyer Scripts: What to Say to a New Buyer Lead',
+    href: '/blog/buyer-lead-scripts',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

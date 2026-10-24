@@ -13,6 +13,13 @@ const guideLinks = [
   { href: '/blog/real-estate-cold-calling-guide/', label: 'Real estate cold calling scripts' },
   { href: '/blog/real-estate-isa-scripts/', label: 'ISA scripts for the calls an ISA makes every day' },
   { href: '/blog/listing-appointment-questions/', label: 'Listing appointment questions and checklist' },
+  { href: '/blog/real-estate-prospecting-plan/', label: 'A weekly prospecting plan and tracker template' },
+  { href: '/blog/real-estate-prospecting-strategies/', label: 'Prospecting strategies compared' },
+  { href: '/blog/real-estate-cold-calling-services/', label: 'Calling services vs making the calls yourself' },
+  { href: '/blog/how-to-get-listing-appointments/', label: 'How to get more listing appointments' },
+  { href: '/blog/how-to-convert-real-estate-leads/', label: 'How to convert real estate leads' },
+  { href: '/blog/real-estate-prospecting-tools/', label: 'Types of prospecting tools and when you need each' },
+  { href: '/blog/real-estate-coaching-cost/', label: 'What real estate coaching costs and the closings needed to cover it' },
   { href: '/objections/', label: 'The objection library' },
 ];
 
