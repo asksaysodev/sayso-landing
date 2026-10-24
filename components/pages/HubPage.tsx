@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FAQ } from '@/components/pages/FAQ';
+import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { HubPageConfig } from '@/lib/content/hubs/types';
 
 interface HubPageProps {
@@ -28,6 +29,37 @@ export function HubPage({ config }: HubPageProps) {
           {config.introduction}
         </p>
       </section>
+
+      {/* Quick answers: scannable list with a one-line answer per child page */}
+      {config.quickAnswers && (
+        <section className="max-w-[800px] mx-auto px-6 pb-10">
+          <h2 className="font-comic text-2xl md:text-3xl text-[#1D4871] tracking-wide mb-3">
+            {config.quickAnswers.heading}
+          </h2>
+          {config.quickAnswers.intro && (
+            <p className="text-[#1D4871]/70 text-base leading-relaxed font-sans mb-5">
+              {config.quickAnswers.intro}
+            </p>
+          )}
+          <ul className="divide-y divide-[#1D4871]/10 border-2 border-[#1D4871]/10 rounded-2xl bg-white overflow-hidden">
+            {config.quickAnswers.items.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  href={`${config.basePath}/${item.slug}`}
+                  className="group block px-5 py-4 hover:bg-[#2367EE]/5 transition-colors"
+                >
+                  <span className="block font-bold text-[#1D4871] font-sans group-hover:text-[#2367EE] transition-colors">
+                    {item.phrase}
+                  </span>
+                  <span className="block text-sm text-[#1D4871]/70 font-sans leading-relaxed mt-1">
+                    {item.answer}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Card Grid */}
       <section className="max-w-[1200px] mx-auto px-6 pb-10">
@@ -57,6 +89,22 @@ export function HubPage({ config }: HubPageProps) {
           </div>
         )}
       </section>
+
+      {/* Related reading */}
+      {config.relatedReading && (
+        <section className="max-w-[800px] mx-auto px-6 pb-10">
+          <h2 className="font-comic text-2xl md:text-3xl text-[#1D4871] tracking-wide mb-4">
+            {config.relatedReading.heading}
+          </h2>
+          <div className="space-y-4">
+            {config.relatedReading.paragraphs.map((paragraph, index) => (
+              <p key={index} className="text-[#1D4871]/70 text-base leading-relaxed font-sans">
+                {renderInlineMarkdown(paragraph)}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* How Sayso Helps */}
       {config.howSaysoHelps && (

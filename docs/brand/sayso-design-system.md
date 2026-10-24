@@ -286,6 +286,7 @@ Widget surface treatment: `border-radius: 16px`, `backdrop-filter: blur(200px)`,
 | **Pricing cards** | Light surface with halftone, 3-column grid, popular plan highlighted with blue shadow/accent, `v4-accent-top` yellow top border, checkmark feature lists. |
 | **Blog content** | Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables, yellow bottom border on the blog hero banner. |
 | **Blog inline CTA** | A compact version of the mid-article CTA: navy-to-blue gradient card with the comic shadow, a white Bangers heading, one line of white body text (full white for contrast) and a white pill button with navy text. Sits after a post's second paragraph when the post sets `ctaVariant`. |
+| **Hub quick answers and related reading** | Optional blocks on hub pages (`HubPage.tsx`, set by `quickAnswers` and `relatedReading` in the hub config). Quick answers is a white rounded list with thin navy dividers: each row is a bold navy phrase over a one-line muted answer, the whole row links to the child page and turns blue on hover. Related reading is a Bangers heading over muted navy paragraphs with inline links. Both use the 800px content column. |
 
 There is a fuller catalog of the actual React components in `docs/reference/ui-component-inventory.md`. This design-system doc covers the reusable visual language; that inventory lists the specific components that implement it.
 
