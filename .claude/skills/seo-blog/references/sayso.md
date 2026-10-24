@@ -18,17 +18,27 @@ Live AI coaching for real estate agents during their calls. While the agent is t
 
 1. **Inline call to action after paragraph two.** Automatic from the `ctaVariant` frontmatter; do not write it into the body.
 
-   | ctaVariant | Use for | What it says |
+   | ctaVariant | Use for | Button goes to |
    |---|---|---|
-   | script | script posts | the next line on screen during the call |
-   | coaching | coaching posts | how live call coaching compares |
-   | dialer | dialer posts | live coaching on the calls your dialer makes |
-   | crm | CRM posts | call notes written into the CRM |
-   | leads | lead and appointment posts | the next question while the lead is talking |
-   | prospecting | prospecting posts | live prompts that keep calls on track |
-   | team | team leader posts | coaching every agent without listening in |
+   | script | script posts | /products/playbook/ (your scripts on screen during the call) |
+   | coaching | coaching posts | /why-sayso/ |
+   | leads | lead and appointment posts | /products/cue/ (real-time coaching) |
+   | prospecting | prospecting posts | /products/cue/ |
+   | team | team leader posts | /for/team-leaders/ |
+
+   Posts with an inline CTA do not show the generic mid-article block, so the post carries three Sayso touches at most.
 
 2. **One in-context mention** in the section where Sayso solves that exact problem. One to three sentences, written as advice, linking one product page. Example for a role play post: "Role play builds the habit, but the real test is a live call. Some agents keep the script on screen during calls with a tool like [Sayso's Playbook](/products/playbook/), so the practiced line is there when the seller pushes back."
+
+   Which feature to link, by topic:
+
+   | Topic | Link |
+   |---|---|
+   | Scripts, role play, new agents, voicemail | Playbook `/products/playbook/` |
+   | Objections, negotiation, seller and buyer conversations | Cue `/products/cue/` |
+   | Listing appointments, pricing conversations | Pulse `/products/pulse/` |
+   | Follow-up, referrals, converting leads | Smart Capture `/products/smart-capture/` |
+   | Coaching and team leaders | `/why-sayso/` and `/for/team-leaders/` |
 
 3. **A short closing section** (three or four sentences) about the reader's next call, titled for the reader ("Make your next call easier", "Before your next listing appointment"), with one link to `/demo/` or a product page.
 
@@ -38,3 +48,4 @@ Live AI coaching for real estate agents during their calls. While the agent is t
 - Rank Sayso inside a "best X" list as if it were neutral; label it "Sayso (our product)" if it appears at all.
 - Claim results, percentages or customer outcomes that are not published on the Sayso site.
 - Use "free trial", "try free", "no credit card" or similar.
+- Write about, review, rate or price another company's product (dialers, CRMs, lead tools and similar). Coaching programs are the one approved exception, using each program's own published facts.
