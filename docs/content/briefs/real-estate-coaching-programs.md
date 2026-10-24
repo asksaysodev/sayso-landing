@@ -92,3 +92,14 @@ Left out because they could not be verified in this run: Icenhower Coaching & Co
 - **ctaVariant:** coaching ("Coaching between calls helps. Coaching during the call is a different tool." linking to /why-sayso/), rendered after paragraph two.
 - **In-context mention:** the "Where live call coaching fits" section. Coaching programs work on the business between calls; live call coaching works inside the call. Fair framing as a complement, Sayso named as our product with its published price.
 - **Closing section:** "Before you sign a coaching agreement": test what you would be paying for, then one link to /demo/.
+
+## Corrections after the outside review (checked October 24, 2026)
+
+| Fact | Status | Source |
+|---|---|---|
+| Tim and Julie Harris New Premier Coaching: $997 a year, or three monthly payments of $367 | confirmed | https://www.timandjulieharris.com/real-estate-coaching |
+| Tom Ferry Team Growth $2,999/month or $33,649/year (72 sessions a year); InnerCircle $4,999/month | confirmed | https://www.tomferry.com/real-estate-coaching/team-plans/ |
+| Diamond+: $1,500/month, 60-day commitment then month to month, no refunds in the first 60 days, or $8,000 paid up front for the first six months | confirmed | https://zerotodiamond.com |
+| Buffini One2One: $549/month; shipping, tax and add-ons billed in month one; no minimum term stated | confirmed | https://www.buffini.com/coaching/one2one/ |
+
+Other changes: added a "How we compared" section with a disclosure, scoped the price range to the programs compared, replaced the commission test with a worked example, softened the claims about what coaches do on calls, and shortened the Sayso section. The post is now the hub (pillar) of the new coaching cluster and carries the launch date.
