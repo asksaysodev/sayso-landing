@@ -10,9 +10,9 @@ import type { BlogCtaVariant } from '@/lib/blog';
 const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: string; href: string }> = {
   script: {
     heading: 'Want the next line on screen while you are on the call?',
-    body: 'Sayso shows scripts and objection responses in real time, so the right words are there when you need them.',
-    label: 'See how Sayso works',
-    href: '/demo/',
+    body: 'Sayso shows your scripts and objection responses in real time, so the right words are there when you need them.',
+    label: 'See Playbook',
+    href: '/products/playbook/',
   },
   coaching: {
     heading: 'Want help during the call, not just between calls?',
@@ -20,29 +20,17 @@ const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: s
     label: 'See how it compares',
     href: '/why-sayso/',
   },
-  dialer: {
-    heading: 'Already using a dialer? Add live coaching to every call.',
-    body: 'Sayso works alongside the dialers and CRMs agents already use and shows prompts on screen while you talk.',
-    label: 'See the integrations',
-    href: '/integrations/',
-  },
-  crm: {
-    heading: 'Want your call notes written for you?',
-    body: 'Sayso writes structured notes into Follow Up Boss while you talk, so nothing gets lost after the call.',
-    label: 'See the integration',
-    href: '/integrations/partners/follow-up-boss/',
-  },
   leads: {
     heading: 'Want to know what to ask next while the lead is talking?',
-    body: 'Sayso suggests the next question on screen in real time, so every conversation moves toward an appointment.',
-    label: 'See how Sayso works',
-    href: '/demo/',
+    body: 'Sayso suggests the next question on screen in real time, so the conversation keeps moving toward an appointment.',
+    label: 'See real-time coaching',
+    href: '/products/cue/',
   },
   prospecting: {
     heading: 'Want every prospecting call to end with a next step?',
     body: 'Sayso keeps the conversation on track with live prompts on screen as you talk.',
-    label: 'See how Sayso works',
-    href: '/demo/',
+    label: 'See real-time coaching',
+    href: '/products/cue/',
   },
   team: {
     heading: 'Want to coach every agent without listening in on every call?',
@@ -60,7 +48,7 @@ export function BlogInlineCTA({ variant }: { variant: BlogCtaVariant }) {
       <div className="px-6 py-7 md:px-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
         <div className="flex-1 text-center md:text-left">
           <p className="font-hero text-lg md:text-xl text-white leading-snug mb-2">{v.heading}</p>
-          <p className="text-sm text-white/75 font-sans">{v.body}</p>
+          <p className="text-sm text-white font-sans">{v.body}</p>
         </div>
         <Link
           href={v.href}

@@ -17,7 +17,7 @@ export interface BlogAuthor {
 }
 
 /** Which one-line call to action follows the second paragraph (see BlogInlineCTA). */
-export type BlogCtaVariant = 'script' | 'coaching' | 'dialer' | 'crm' | 'leads' | 'prospecting' | 'team';
+export type BlogCtaVariant = 'script' | 'coaching' | 'leads' | 'prospecting' | 'team';
 
 export interface BlogPost {
   slug: string;

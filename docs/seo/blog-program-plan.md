@@ -1,7 +1,7 @@
-# Sayso blog program: two-week execution plan
+# Sayso blog program: execution plan
 
 **Prepared:** October 24, 2026
-**Goal:** over the next two weeks, write the new blog posts and refresh the existing ones from the October 21 keyword research, using one repeatable skill, one style and one call-to-action system.
+**Goal:** write every new blog post and refresh every existing one from the October 21 keyword research in a single autonomous run, using one skill, one style and one call-to-action system, then launch them all at once.
 **Source data:** `docs/seo/keyword-map/` (backlog, search groups, page-one results). Research method and findings: the "Sayso keyword map" dashboard and `GAME-PLAN.md` in the research folder.
 
 ---
@@ -11,7 +11,7 @@
 | Decision | What it means for the work |
 |---|---|
 | Blogs are the strategy | New posts plus refreshes of existing posts; no separate landing pages |
-| Written over two weeks | About 38 pieces of work in 10 working days (section 9) |
+| One run, one launch | All 38 pieces are written in one autonomous run and launch together when the launch PR is merged; no drip schedule (section 10) |
 | No posts about other companies' products | The 7 dialer and CRM posts are removed (section 5). The coaching program posts stay: they compare programs agents buy, using each program's own published facts, as approved in PR #117 |
 | No demo-booking attribution work | Success is measured in Search Console (impressions, positions, clicks), not demos |
 | Nothing merges without the owner | Every batch goes up as a draft PR to `development`; Jack merges |
@@ -248,26 +248,22 @@ The site already builds links within a cluster: a post marked `type: "supporting
 
 ---
 
-## 10. Two-week schedule
+## 10. The run
 
-About 38 pieces in 10 working days: about 3 new posts and 2 refreshes a day on days 2 to 8, with the skill drafting and a person reviewing.
+The whole program runs in one pass, start to finish, without stopping for approval. Order matters only where later work depends on earlier work.
 
-| Day | Work | PR |
-|---|---|---|
-| 1 (Mon Oct 26) | Skill upgrades and code fixes (section 2); keyword map fixes (remove wrong-meaning searches, one owner URL per topic); correct post 1 from the review | Update PR #117 |
-| 2 | Coaching cluster: posts 3, 25, 39; refreshes 32 and 4 | New PR: coaching cluster |
-| 3 | Scripts: 9, 15, 27; refreshes 2, 12 | New PR: scripts batch 1 |
-| 4 | Scripts: 31, 33, 42; refreshes 6, 8 | Same PR |
-| 5 | Scripts: 44, 45, 46; refreshes 14, 18 | Same PR |
-| 6 | Leads and appointments: 19, 23, 34; refreshes 10, 16 | New PR: leads and appointments |
-| 7 | Leads and prospecting: 38, 41, 29; refreshes 24, 30 | Same PR |
-| 8 | Prospecting: 36, 37, 43 (and 35 if approved); refreshes 20, 22 | New PR: prospecting |
-| 9 | Refreshes 26, 28; links pass: hub links to every new post, glossary, objection and persona pages link in, pending-links registry | New PR: internal links |
-| 10 | Review day: facts and prices rechecked, brand-rule check across all posts, publish dates set | Final updates to open PRs |
+| Step | Work |
+|---|---|
+| 1. Foundations | Skill upgrades and code fixes (section 2); remove the dialer and CRM posts and the wrong-meaning searches from the backlog; correct post 1 from the outside review |
+| 2. New posts | Write all 22 new posts with the skill (coaching, scripts, leads and appointments, prospecting) |
+| 3. Refreshes | Refresh all 16 existing posts and glossary pages |
+| 4. Links pass | Hubs link to every post in their cluster; glossary, objection and persona pages link in; pending-links registry restored |
+| 5. Quality pass | Brand-rule and fact check across every post, type check and full build |
+| 6. Launch PR | One draft PR with all content, opened against `development` after PR #117 |
 
-Each PR branches from the latest `development` after the previous one is merged, so later PRs can link to earlier posts.
+**Publish dates:** every new post and refresh carries the same launch date, so everything goes live together the moment the launch PR is merged. Posts already queued for October and November keep their own dates.
 
----
+**Review:** one human read of the whole set in the launch PR before it is merged. Facts and prices carry their check date in each brief.
 
 ## 11. Measuring it
 
@@ -277,10 +273,12 @@ Each PR branches from the latest `development` after the previous one is merged,
 
 ---
 
-## 12. Decisions needed from you
+## 12. Defaults used for the run
 
-1. **Post 35 (prospecting tools):** drop it, or write it as a guide to the *types* of tools without naming any company?
-2. **Publish dates:** publish everything on one day, or schedule the posts two or three a week? The site publishes scheduled posts automatically.
-3. **Reviewer:** who checks facts and prices before each batch goes live, and should a named person appear as the author or reviewer instead of "Sayso Team"?
-4. **Review capacity:** about 38 pieces in two weeks means reviewing roughly four a day. Is that realistic, or should the refreshes spill into week three?
-5. **Mid-article block:** OK to show the existing "Ready to Win the Moment" block only on posts without an inline CTA?
+Change any of these in review and the affected posts are updated.
+
+1. **Post 35 (prospecting tools):** written about the types of tools, with no company named.
+2. **Publishing:** one launch; every post carries the same date.
+3. **Reviewer:** one human review of the full set in the launch PR; author stays "Sayso Team" until a named reviewer is chosen.
+4. **Review load:** handled in that single review rather than daily.
+5. **Mid-article block:** shown only on posts without the inline CTA card.
