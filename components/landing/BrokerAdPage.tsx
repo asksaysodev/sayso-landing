@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { Check, TrendingUp, Users, Zap } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
+import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
+import { PersonaConsentNotice } from '@/components/landing/PersonaAdShared/PersonaConsentNotice';
 import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
 
 export function BrokerAdPage() {
@@ -12,29 +12,11 @@ export function BrokerAdPage() {
     <div className="bg-white min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="pt-10 pb-8 px-6 text-center">
-        <div className="max-w-xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <Link href="/" aria-label="Sayso home">
-              <Image
-                src="/logos/logo-pos-horizontal.png"
-                alt="Sayso"
-                width={100}
-                height={40}
-                className="h-8 w-auto"
-              />
-            </Link>
-          </div>
-          <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-4">
-            Your brokerage doesn&apos;t have a lead problem. It has a conversation problem.
-          </h1>
-          <p className="text-base text-[#1D4871]/70 mb-8 leading-relaxed">
-            Real-time guidance during prospecting calls that helps agents handle objections, ask
-            better questions, book more appointments, and capture their notes automatically.
-          </p>
-          <AdPageCTAButton location="broker-hero" />
-        </div>
-      </section>
+      <PersonaAdHero
+        persona="broker"
+        headline="For brokerages who want to increase agent production and attract talent, Sayso provides real-time guidance during live prospecting calls to help agents book more qualified appointments."
+        body="Unlike traditional training and post-call coaching, Sayso helps agents improve while prospects are still on the phone, supporting agent development and recruiting."
+      />
 
       {/* ── Trust strip ── */}
       <div className="max-w-xl mx-auto px-6 pb-10">
@@ -142,6 +124,7 @@ export function BrokerAdPage() {
         <AdPageCTAButton location="broker-footer" />
       </section>
 
+      <PersonaConsentNotice />
       <Footer />
     </div>
   );

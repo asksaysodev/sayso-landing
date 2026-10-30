@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { Check, MessageCircle, Zap, FileText } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
+import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
+import { PersonaConsentNotice } from '@/components/landing/PersonaAdShared/PersonaConsentNotice';
 import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
 
 function HandwrittenNote() {
@@ -47,32 +47,11 @@ export function AgentAdPage() {
     <div className="bg-white min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="pt-10 pb-8 px-6 text-center">
-        <div className="max-w-xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <Link href="/" aria-label="Sayso home">
-              <Image
-                src="/logos/logo-pos-horizontal.png"
-                alt="Sayso"
-                width={100}
-                height={40}
-                className="h-8 w-auto"
-              />
-            </Link>
-          </div>
-          <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-2">
-            Know what to say
-          </h1>
-          <p className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-6 leading-snug">
-            when the conversation goes off script.
-          </p>
-          <p className="text-base text-[#1D4871]/70 mb-8 leading-relaxed">
-            Real-time guidance during prospecting calls. Ask better questions, handle objections,
-            and book appointments that actually happen.
-          </p>
-          <AdPageCTAButton location="agent-hero" />
-        </div>
-      </section>
+      <PersonaAdHero
+        persona="agent"
+        headline="For real estate agents who want to book more appointments, Sayso provides real-time guidance during live prospecting calls to ask better questions, handle objections, and navigate conversations."
+        body="Unlike scripts and post-call coaching, Sayso helps agents improve while prospects are still on the phone."
+      />
 
       {/* ── Trust strip ── */}
       <div className="max-w-xl mx-auto px-6 pb-10">
@@ -216,6 +195,7 @@ export function AgentAdPage() {
         <AdPageCTAButton location="agent-footer" />
       </section>
 
+      <PersonaConsentNotice />
       <Footer />
     </div>
   );
