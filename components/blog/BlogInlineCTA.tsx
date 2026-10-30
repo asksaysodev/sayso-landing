@@ -2,10 +2,11 @@
  * BlogInlineCTA: a compact call to action placed after a post's second paragraph.
  * Opt-in per post via the `ctaVariant` frontmatter field; the copy and destination
  * match the post type, so the product mention reads as a natural next step.
- * Styled as a smaller version of BlogInArticleCTA (navy-to-blue gradient card).
+ * Shares the BlogCtaCard shell with BlogInArticleCTA.
  */
 import Link from 'next/link';
 import type { BlogCtaVariant } from '@/lib/blog';
+import { BlogCtaCard } from './BlogCtaCard';
 
 const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: string; href: string }> = {
   script: {
@@ -42,9 +43,8 @@ const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: s
 
 export function BlogInlineCTA({ variant }: { variant: BlogCtaVariant }) {
   const v = VARIANTS[variant];
-  if (!v) return null;
   return (
-    <aside className="my-10 bg-gradient-to-r from-[#1D4871] to-[#2367EE] rounded-2xl border-2 border-[#1D4871] v2-comic-shadow overflow-hidden">
+    <BlogCtaCard as="aside">
       <div className="px-6 py-7 md:px-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
         <div className="flex-1 text-center md:text-left">
           <p className="font-hero text-lg md:text-xl text-white leading-snug mb-2">{v.heading}</p>
@@ -58,6 +58,6 @@ export function BlogInlineCTA({ variant }: { variant: BlogCtaVariant }) {
           {v.label} &rarr;
         </Link>
       </div>
-    </aside>
+    </BlogCtaCard>
   );
 }
