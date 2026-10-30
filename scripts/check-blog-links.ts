@@ -35,7 +35,8 @@ function getContentSlugs(dir: string): string[] {
 function getStaticPages(): string[] {
   const appDir = path.join(ROOT, 'app');
   const pages: string[] = ['/demo', '/pricing', '/contact', '/blog', '/about'];
-  // Scan app directories for page.tsx. Route groups like `(content)` do not add a
+  // Scan app directories for page.tsx, including nested routes such as
+  // /tools/prospecting-calculator. Route groups like `(content)` do not add a
   // path segment, so descend through them (that is where /why-sayso lives).
   const scan = (dir: string, prefix: string) => {
     if (!fs.existsSync(dir)) return;
@@ -48,6 +49,7 @@ function getStaticPages(): string[] {
       if (fs.existsSync(path.join(dir, entry.name, 'page.tsx'))) {
         pages.push(`${prefix}/${entry.name}`);
       }
+      scan(path.join(dir, entry.name), `${prefix}/${entry.name}`);
     }
   };
   scan(appDir, '');

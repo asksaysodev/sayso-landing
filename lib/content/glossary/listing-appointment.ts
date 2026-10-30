@@ -13,11 +13,11 @@ export const listingAppointment: GlossaryEntry = {
   howItWorks: [
     'A listing appointment typically begins with a conversation about the seller\'s goals, timeline, and expectations. The agent then walks through the property, noting its condition, features, and anything that could affect pricing or marketability.',
     'After the walkthrough, the agent sits down with the seller to present a comparative market analysis, or CMA, showing recent sales of similar homes in the area. This is where pricing strategy gets discussed and the agent explains their marketing plan, from photography and staging to how they will attract qualified buyers.',
-    'The appointment usually ends with a decision. Some sellers sign a listing agreement on the spot, while others take a day or two to decide. Either way, the listing appointment is the agent\'s single best opportunity to earn the business.',
+    'A first listing appointment commonly takes 45 to 90 minutes, depending on the size of the property, how complex the pricing is, and how many questions the seller has. It usually ends with a decision. Some sellers sign a listing agreement on the spot, while others take a day or two to decide. Either way, the listing appointment is the agent\'s single best opportunity to earn the business.',
   ],
   whyItMatters: [
     'Every listing starts with a listing appointment. No matter how many calls an agent makes or how many leads they generate, none of it converts into business until they sit down with a seller and earn the listing.',
-    'Agents who prepare well for listing presentations convert at higher rates and spend less time chasing new leads. A strong appointment builds trust quickly, sets clear expectations, and positions the agent as the obvious choice.',
+    'Agents who prepare well for listing presentations walk in able to answer pricing questions with data, which helps a seller trust them quickly. A strong appointment sets clear expectations and positions the agent as the obvious choice.',
     'For agents and ISAs who prospect daily, the listing appointment is the payoff for all those calls. Treating it as the most important meeting of the week, and preparing accordingly, is what separates consistent producers from agents who struggle to grow.',
   ],
   tips: [
@@ -44,7 +44,8 @@ export const listingAppointment: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'The calls that lead to listing appointments are where Sayso makes the biggest difference. When you are prospecting expired listings or following up with seller leads, Sayso\'s [Real-Time Coaching](/products/cue/) shows you what to say the moment a homeowner raises an objection or asks about pricing. That means more of your calls end with a listing appointment on the calendar.',
-    'After each call, [Call Notes](/products/smart-capture/) saves the details that matter to your CRM, so you walk into the listing appointment already knowing what the seller cares about. For the exact questions to ask on that confirmation call and a prep checklist, see our guide to [listing appointment questions](/blog/listing-appointment-questions/). [Book a demo](/demo/) to see how Sayso helps you book more listing appointments from your daily prospecting.',
+    'After each call, [Call Notes](/products/smart-capture/) saves the details that matter to your CRM, so you walk into the listing appointment already knowing what the seller cares about. [Book a demo](/demo/) to see how Sayso helps you book more listing appointments from your daily prospecting.',
+    'To get ready for the meeting itself, work through the [listing appointment checklist](/blog/listing-appointment-checklist/) and the [listing appointment questions](/blog/listing-appointment-questions/) to ask on the confirmation call. To fill your calendar with more of them, read [how to get listing appointments](/blog/how-to-get-listing-appointments/), for what to say once the conversation turns to the seller\'s plans see [seller scripts for real estate agents](/blog/seller-scripts-real-estate/), and see the [appointment-setting guide](/blog/how-to-book-appointments-real-estate/) for the call-side steps.',
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
@@ -75,7 +76,7 @@ export const listingAppointment: GlossaryEntry = {
     {
       question: 'How long does a listing appointment last?',
       answer:
-        'Most listing appointments last between one and two hours. The time covers a property walkthrough, a discussion of the seller\'s goals, a comparative market analysis, and a review of the agent\'s marketing plan.',
+        'A first listing appointment commonly lasts 45 to 90 minutes, and it can run longer for larger properties or complicated pricing. The time covers a property walkthrough, a discussion of the seller\'s goals, a comparative market analysis, and a review of the agent\'s marketing plan.',
     },
     {
       question: 'How do I prepare for a listing appointment?',

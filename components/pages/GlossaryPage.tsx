@@ -80,7 +80,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
               key={index}
               className="text-[#1D4871]/80 text-base leading-relaxed font-sans"
             >
-              {paragraph}
+              {renderInlineMarkdown(paragraph)}
             </p>
           ))}
         </div>
@@ -95,7 +95,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
               key={index}
               className="text-[#1D4871]/80 text-base leading-relaxed font-sans"
             >
-              {paragraph}
+              {renderInlineMarkdown(paragraph)}
             </p>
           ))}
         </div>

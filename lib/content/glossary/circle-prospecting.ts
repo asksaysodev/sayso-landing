@@ -4,14 +4,14 @@ export const circleProspecting: GlossaryEntry = {
   slug: 'circle-prospecting',
   term: 'Circle Prospecting',
   keyword: 'what is circle prospecting',
-  seoTitle: 'What Is Circle Prospecting in Real Estate?',
+  seoTitle: 'What Is Circle Prospecting in Real Estate? Meaning and Tips',
   seoDescription:
-    'Circle prospecting is calling homeowners near a recent listing or sale to start conversations. Learn how it works and get tips, plus word-for-word scripts.',
+    'Circle prospecting, also called circle calling or circle dialing, is calling homeowners near a recent listing or sale. Learn how it works plus tips and scripts.',
   h1: 'What Is Circle Prospecting?',
   definition:
-    'Circle prospecting is the practice of calling homeowners in a specific geographic area, usually around a recent listing, sale, or open house, to generate new buyer and seller leads. It gives agents a natural reason to call and a predictable way to build pipeline from a geographic farm.',
+    'Circle prospecting, also called circle calling or circle dialing, is the practice of calling homeowners in a specific geographic area, usually around a recent listing, sale, or open house, to generate new buyer and seller leads. It gives agents a natural reason to call and a predictable way to build pipeline from a geographic farm.',
   howItWorks: [
-    'When a home sells or gets listed in a neighborhood, nearby homeowners pay attention. Circle prospecting takes advantage of that awareness by reaching out while the topic is top of mind. You typically pull a list of 50–200 homeowners within a half-mile radius of the property, then call them with a simple script that references the recent activity.',
+    'When a home sells or gets listed in a neighborhood, nearby homeowners pay attention. Circle prospecting takes advantage of that awareness by reaching out while the topic is top of mind. A common approach is to pull a list of nearby homeowners, often within a half-mile radius of the property, then call them with a simple script that references the recent activity.',
     'The goal is to start a conversation. You mention the listing or sale, ask if they have thought about their own home\'s value, and listen for signals of interest.',
     'Most calls are short. The ones that matter turn into listing appointments weeks or months later.',
   ],
@@ -35,7 +35,7 @@ export const circleProspecting: GlossaryEntry = {
     },
     {
       title: 'Track every conversation in your CRM',
-      body: 'Most circle prospecting leads convert 3–6 months later. If you do not log the conversation, you will forget to follow up when it matters.',
+      body: 'Many circle prospecting conversations turn into appointments months later. If you do not log the conversation, you will forget to follow up when it matters.',
     },
     {
       title: 'Pair it with a follow-up drip',
@@ -43,6 +43,7 @@ export const circleProspecting: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
+    'If you want word-for-word openers for a just-sold, just-listed or market milestone call, plus a voicemail script and a worked example, read our [circle prospecting scripts](/blog/circle-prospecting-scripts/) and the [just listed and just sold scripts](/blog/just-listed-just-sold-scripts/). To see how circle prospecting stacks up against other lead sources, read [prospecting strategies compared](/blog/real-estate-prospecting-strategies/), and for the software side, see the [types of real estate prospecting tools](/blog/real-estate-prospecting-tools/).',
     'Sayso gives you real-time coaching during circle prospecting calls, so when a homeowner asks about their home\'s value or pushes back with "we\'re not thinking about moving," you see the right response instantly. No more freezing up or fumbling through a script binder.',
     'Sayso also logs each circle prospecting call automatically, so the homeowner who said "maybe next year" is still in your pipeline when next year arrives. [Book a demo](/demo/) to see how Sayso turns neighborhood calls into listing appointments.',
   ],
@@ -56,7 +57,7 @@ export const circleProspecting: GlossaryEntry = {
   ],
   deeperLink: {
     title: 'Circle Prospecting Scripts for Real Estate Agents',
-    href: '/blog/circle-prospecting-scripts',
+    href: '/blog/circle-prospecting-scripts/',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
@@ -75,12 +76,17 @@ export const circleProspecting: GlossaryEntry = {
     {
       question: 'How many homes should I call when circle prospecting?',
       answer:
-        'Most agents call 50–200 homeowners within a half-mile radius of the trigger property. Start with the closest homes and work outward.',
+        'Pick a list size you can finish in one or two calling blocks. Start with the closest homes and work outward.',
     },
     {
       question: 'What do you say when circle prospecting?',
       answer:
         'Lead with the neighborhood event: "A home just sold on your street for $X and I wanted to let you know." Then ask if they have thought about their own home\'s value. Keep it conversational.',
+    },
+    {
+      question: 'What is circle dialing?',
+      answer:
+        'Circle dialing is another name for circle prospecting. Agents also say circle calling. All three mean calling the homeowners around a recent sale, listing, or open house to start a conversation about the neighborhood.',
     },
     {
       question: 'How do I get started with circle prospecting?',

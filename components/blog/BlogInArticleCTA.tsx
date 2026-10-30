@@ -2,12 +2,13 @@
 
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
+import { BlogCtaCard } from './BlogCtaCard';
 
 export function BlogInArticleCTA() {
   const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
-    <div className="my-10 bg-gradient-to-r from-[#1D4871] to-[#2367EE] rounded-2xl border-2 border-[#1D4871] v2-comic-shadow overflow-hidden">
+    <BlogCtaCard>
       <div className="px-8 py-10 text-center">
         <h3 className="font-hero text-xl md:text-2xl text-white mb-3">
           Ready to Win the Moment?
@@ -33,6 +34,6 @@ export function BlogInArticleCTA() {
           </button>
         </div>
       </div>
-    </div>
+    </BlogCtaCard>
   );
 }
