@@ -45,4 +45,5 @@ next-env.d.ts
 # Claude Code
 .claude/*
 !.claude/commands/
+!.claude/skills/
 

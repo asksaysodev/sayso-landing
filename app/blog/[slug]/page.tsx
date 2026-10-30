@@ -8,6 +8,8 @@ import { BlogArticleContent } from '@/components/blog/BlogArticleContent';
 import { BlogAuthorCard } from '@/components/blog/BlogAuthorCard';
 import { BlogInArticleCTA } from '@/components/blog/BlogInArticleCTA';
 import { BlogEarlyCTA } from '@/components/blog/BlogEarlyCTA';
+import { BlogInlineCTA } from '@/components/blog/BlogInlineCTA';
+import { findInlineCtaLine } from '@/lib/blog-content';
 import { BlogPillarUplink } from '@/components/blog/BlogPillarUplink';
 import { BlogRelatedPosts } from '@/components/blog/BlogRelatedPosts';
 import { BlogClusterPosts } from '@/components/blog/BlogClusterPosts';
@@ -119,6 +121,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const firstHalf = contentLines.slice(0, splitIndex).join('\n');
   const secondHalf = contentLines.slice(splitIndex).join('\n');
 
+  // Opt-in inline CTA (frontmatter `ctaVariant`): placed after the second prose paragraph,
+  // so the reader gets the opening answer before any product mention.
+  const ctaIndex = post.ctaVariant ? findInlineCtaLine(contentLines) : -1;
+  const showInlineCta = ctaIndex > 0 && ctaIndex < splitIndex;
+  const openingPart = showInlineCta ? contentLines.slice(0, ctaIndex).join('\n') : firstHalf;
+  const restOfFirstHalf = showInlineCta ? contentLines.slice(ctaIndex, splitIndex).join('\n') : '';
+
   // Article content block (shared between layouts)
   const articleContent = (
     <>
@@ -130,8 +139,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <BlogPillarUplink pillar={pillarPost} />
       )}
 
-      <BlogArticleContent content={firstHalf} />
-      <BlogInArticleCTA />
+      <BlogArticleContent content={openingPart} />
+      {showInlineCta && post.ctaVariant && (
+        <>
+          <BlogInlineCTA variant={post.ctaVariant} />
+          <BlogArticleContent content={restOfFirstHalf} />
+        </>
+      )}
+      {/* Posts with the inline CTA skip the generic mid-article block, so a post never carries three product blocks */}
+      {!showInlineCta && <BlogInArticleCTA />}
       <BlogArticleContent content={secondHalf} />
 
       {/* Author card */}
@@ -165,7 +181,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <BlogArticleHeader post={post} />
 
       {/* Content area - single centered column for all post types */}
-      <div className="max-w-[800px] mx-auto px-6 pb-10">
+      <div className="max-w-[800px] mx-auto px-6 pt-10 pb-10">
         <article>
           {articleContent}
         </article>
