@@ -14,8 +14,10 @@ export function SalesLeaderAdPage() {
       {/* ── Hero ── */}
       <PersonaAdHero
         persona="sales-leader"
-        headline="For leaders who want to increase agent production, Sayso provides real-time guidance during live prospecting calls to help agents book more qualified appointments."
-        body="Unlike traditional coaching and call reviews, Sayso helps agents improve while prospects are still on the phone."
+        label="SALES LEADERS"
+        headline="Want to increase agent production?"
+        subheadline="Sayso provides real-time guidance during live prospecting calls to help your agents book more qualified appointments."
+        proof="Unlike traditional call reviews, Sayso helps agents improve while prospects are still on the phone."
       />
 
       {/* ── Trust strip ── */}

@@ -49,8 +49,10 @@ export function AgentAdPage() {
       {/* ── Hero ── */}
       <PersonaAdHero
         persona="agent"
-        headline="For real estate agents who want to book more appointments, Sayso provides real-time guidance during live prospecting calls to ask better questions, handle objections, and navigate conversations."
-        body="Unlike scripts and post-call coaching, Sayso helps agents improve while prospects are still on the phone."
+        label="REAL ESTATE AGENTS"
+        headline="Want to book more appointments?"
+        subheadline="Sayso provides real-time guidance during live prospecting calls to help you ask better questions, handle objections and navigate conversations."
+        proof="Unlike scripts and post-call coaching, Sayso helps you improve while the prospect is still on the phone."
       />
 
       {/* ── Trust strip ── */}

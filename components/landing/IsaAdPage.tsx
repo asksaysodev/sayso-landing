@@ -52,8 +52,10 @@ export function IsaAdPage() {
       {/* ── Hero ── */}
       <PersonaAdHero
         persona="isa"
-        headline="For ISAs who want to book more qualified appointments, Sayso provides real-time guidance during live prospecting calls to improve questions, objection handling, and conversion."
-        body="Unlike scripts and post-call coaching, Sayso helps ISAs improve while prospects are still on the phone."
+        label="ISAs"
+        headline="Want to book more qualified appointments?"
+        subheadline="Sayso provides real-time guidance during live prospecting calls to sharpen your questions, objection handling and conversion."
+        proof="Unlike scripts and post-call coaching, Sayso helps you improve while the prospect is still on the phone."
       />
 
       {/* ── Trust strip ── */}

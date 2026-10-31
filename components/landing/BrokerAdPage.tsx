@@ -14,8 +14,10 @@ export function BrokerAdPage() {
       {/* ── Hero ── */}
       <PersonaAdHero
         persona="broker"
-        headline="For brokerages who want to increase agent production and attract talent, Sayso provides real-time guidance during live prospecting calls to help agents book more qualified appointments."
-        body="Unlike traditional training and post-call coaching, Sayso helps agents improve while prospects are still on the phone, supporting agent development and recruiting."
+        label="BROKERS"
+        headline="Want to grow agent production and attract talent?"
+        subheadline="Sayso provides real-time guidance during live prospecting calls to help agents book more qualified appointments."
+        proof="Unlike traditional training, Sayso helps agents improve while prospects are still on the phone, supporting agent development and recruiting."
       />
 
       {/* ── Trust strip ── */}
