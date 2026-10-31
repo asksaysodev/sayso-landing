@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const badExperienceWithAgents: ObjectionEntry = {
   slug: 'bad-experience-with-agents',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle bad agent experience objection',
   seoTitle: 'How to Handle the Bad Agent Experience Objection',
   seoDescription:

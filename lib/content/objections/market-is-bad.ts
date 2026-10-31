@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const marketIsBad: ObjectionEntry = {
   slug: 'market-is-bad',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle market objection real estate',
   seoTitle: 'How to Handle Market Objections in Real Estate',
   seoDescription:

@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const isaRealEstate: GlossaryEntry = {
   slug: 'isa-real-estate',
+  updatedAt: '2026-09-29',
   term: 'ISA (Inside Sales Agent)',
   keyword: 'what is an isa in real estate',
   seoTitle: 'What Is an ISA in Real Estate? Role, Pay and Scripts',

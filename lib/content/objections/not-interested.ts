@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const notInterested: ObjectionEntry = {
   slug: 'not-interested',
+  updatedAt: '2026-06-13',
   keyword: 'what to say when lead is not interested',
   seoTitle: 'What to Say When a Lead Is Not Interested',
   seoDescription:

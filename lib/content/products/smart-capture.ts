@@ -2,6 +2,7 @@ import type { ProductEntry } from './types';
 
 export const smartCapture: ProductEntry = {
   slug: 'smart-capture',
+  updatedAt: '2026-04-29',
   keyword: 'automatic call notes real estate',
   seoTitle: 'Automatic Call Notes for Real Estate Agents',
   seoDescription:

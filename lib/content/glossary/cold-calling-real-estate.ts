@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const coldCallingRealEstate: GlossaryEntry = {
   slug: 'cold-calling-real-estate',
+  updatedAt: '2026-06-13',
   term: 'Cold Calling',
   keyword: 'what is cold calling in real estate',
   seoTitle: 'What Is Cold Calling in Real Estate',

@@ -8,6 +8,7 @@ import type { PartnerIntegrationEntry } from './types';
  */
 export const suresend: PartnerIntegrationEntry = {
   slug: 'suresend',
+  updatedAt: '2026-06-22',
   partnerName: 'SureSend',
   partnerLogo: '/integrations/suresend-logo-horizontal-blue.png',
   partnerLogoAlt: 'SureSend CRM logo',

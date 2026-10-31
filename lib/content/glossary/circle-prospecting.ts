@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const circleProspecting: GlossaryEntry = {
   slug: 'circle-prospecting',
+  updatedAt: '2026-09-29',
   term: 'Circle Prospecting',
   keyword: 'what is circle prospecting',
   seoTitle: 'What Is Circle Prospecting in Real Estate?',

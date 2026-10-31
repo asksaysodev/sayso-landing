@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const callMeLater: ObjectionEntry = {
   slug: 'call-me-later',
+  updatedAt: '2026-06-13',
   keyword: 'real estate script for "call me later"',
   seoTitle: 'Real Estate Script for "Call Me Later"',
   seoDescription:
