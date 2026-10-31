@@ -2,6 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const isas: UseCaseEntry = {
   slug: 'isas',
+  updatedAt: '2026-09-29',
   persona: 'ISAs',
   keyword: 'how to improve ISA conversion rates in real estate',
   seoTitle: 'Improve ISA Conversion Rates in Real Estate - ISAs',

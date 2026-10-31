@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const expiredListing: GlossaryEntry = {
   slug: 'expired-listing',
+  updatedAt: '2026-06-13',
   term: 'Expired Listing',
   keyword: 'what is an expired listing real estate',
   seoTitle: 'What Is an Expired Listing in Real Estate',

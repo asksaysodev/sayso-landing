@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const needToThinkAboutIt: ObjectionEntry = {
   slug: 'need-to-think-about-it',
+  updatedAt: '2026-06-13',
   keyword: 'what to say when prospect shuts down',
   seoTitle: 'What to Say When a Prospect Shuts Down',
   seoDescription:

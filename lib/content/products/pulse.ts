@@ -2,6 +2,7 @@ import type { ProductEntry } from './types';
 
 export const pulse: ProductEntry = {
   slug: 'pulse',
+  updatedAt: '2026-05-02',
   keyword: 'real estate market data during calls',
   seoTitle: 'Real Estate Market Data During Calls',
   seoDescription:

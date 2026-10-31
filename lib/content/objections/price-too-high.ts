@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const priceTooHigh: ObjectionEntry = {
   slug: 'price-too-high',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle price objection real estate',
   seoTitle: 'How to Handle Price Objections in Real Estate',
   seoDescription:

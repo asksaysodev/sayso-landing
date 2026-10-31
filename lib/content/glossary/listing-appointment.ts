@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const listingAppointment: GlossaryEntry = {
   slug: 'listing-appointment',
+  updatedAt: '2026-09-29',
   term: 'Listing Appointment',
   keyword: 'what is a listing appointment',
   seoTitle: 'What Is a Listing Appointment? Checklist + Questions',

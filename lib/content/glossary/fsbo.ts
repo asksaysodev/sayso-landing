@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const fsbo: GlossaryEntry = {
   slug: 'fsbo',
+  updatedAt: '2026-06-13',
   term: 'FSBO (For Sale By Owner)',
   keyword: 'what does FSBO mean',
   seoTitle: 'What Does FSBO Mean in Real Estate',

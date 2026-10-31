@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const notReadyYet: ObjectionEntry = {
   slug: 'not-ready-yet',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle "not ready yet" real estate',
   seoTitle: 'How to Handle "Not Ready Yet" in Real Estate',
   seoDescription:

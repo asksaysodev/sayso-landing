@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const doorKnocking: GlossaryEntry = {
   slug: 'door-knocking',
+  updatedAt: '2026-06-13',
   term: 'Door Knocking',
   keyword: 'what is door knocking real estate',
   seoTitle: 'What Is Door Knocking in Real Estate',

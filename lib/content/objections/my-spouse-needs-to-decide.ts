@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const mySpouseNeedsToDecide: ObjectionEntry = {
   slug: 'my-spouse-needs-to-decide',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle third-party objection real estate',
   seoTitle: 'How to Handle the Third-Party Objection in Real Estate',
   seoDescription:
