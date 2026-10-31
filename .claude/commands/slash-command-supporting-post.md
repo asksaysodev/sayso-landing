@@ -30,7 +30,7 @@ If no cluster is provided, attempt to infer from the keyword using the cluster r
 
 **Cold Calling:** expired-listing-scripts, fsbo-scripts, circle-prospecting-scripts, buyer-lead-scripts, how-to-start-a-real-estate-call, appointment-setting-script, best-real-estate-call-coaching-software
 
-**Appointment Setting:** how-to-close-for-appointment, how-many-times-ask-for-appointment, why-prospects-dont-commit, how-to-get-same-day-appointments
+**Appointment Setting:** how-to-close-for-appointment, how-many-times-ask-for-appointment, how-to-get-same-day-appointments
 
 **Conversation Skills:** how-to-build-rapport-calls, how-to-qualify-leads-on-phone, questions-to-ask-real-estate-leads, how-to-guide-a-sales-conversation, how-to-keep-control-of-a-call, what-top-agents-say-on-calls, what-real-time-call-coaching-looks-like
 
@@ -80,7 +80,6 @@ Use this table to locate the most relevant sections for the specific supporting 
 | `appointment-setting-script` | Appt Setting previous conversation (line 793), Book the Meeting (line 29) | Strong |
 | `how-to-close-for-appointment` | Book the Meeting (line 29), Commitment Standard (line 192), Urgency Creates Action (line 181), Confirm Listing Appt (line 1575) | Strong |
 | `how-many-times-ask-for-appointment` | Keep the Calls Moving (line 222), Book the Meeting (line 29), Your Three Limited Resources (line 201) | Partial |
-| `why-prospects-dont-commit` | Three Layers of Motivation (line 96), Motivation FIRST (line 631), Urgency Creates Action (line 181) | Strong |
 | `how-to-get-same-day-appointments` | Urgency Creates Action (line 181), Book the Meeting (line 29) | Partial |
 | `how-to-build-rapport-real-estate-calls` | Buyer Openers (line 730), opener sections throughout call-script library | Partial |
 | `how-to-qualify-real-estate-leads` | Full LPMAMA (lines 516-630), Motivation FIRST (line 631), Three Layers of Motivation (line 96) | Strong |
