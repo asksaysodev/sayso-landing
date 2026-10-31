@@ -90,6 +90,18 @@ const nextConfig = {
         destination: '/blog/best-real-estate-call-coaching-software/',
         permanent: true,
       },
+      // Merged into the cold calling guide (overlapping content, not indexed)
+      {
+        source: '/blog/i-hate-cold-calling/',
+        destination: '/blog/real-estate-cold-calling-guide/',
+        permanent: true,
+      },
+      // Merged into the think-about-it objection post (overlapping content, not indexed)
+      {
+        source: '/blog/why-prospects-dont-commit/',
+        destination: '/blog/think-about-it-objection/',
+        permanent: true,
+      },
       {
         source: '/blog/shilo-ai-alternatives-real-estate-call-coaching/',
         destination: '/why-sayso/',
