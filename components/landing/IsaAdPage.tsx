@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { Check, MessageCircle, Clock, Users } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
+import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
+import { PersonaConsentNotice } from '@/components/landing/PersonaAdShared/PersonaConsentNotice';
 import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
 
 function HandwrittenNote() {
@@ -50,31 +50,13 @@ export function IsaAdPage() {
     <div className="bg-white min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="pt-10 pb-8 px-6 text-center">
-        <div className="max-w-xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <Link href="/" aria-label="Sayso home">
-              <Image
-                src="/logos/logo-pos-horizontal.png"
-                alt="Sayso"
-                width={100}
-                height={40}
-                className="h-8 w-auto"
-              />
-            </Link>
-          </div>
-          <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-2">
-            Don&apos;t miss the details
-          </h1>
-          <p className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-6 leading-snug">
-            that could book the appointment
-          </p>
-          <p className="text-base text-[#1D4871]/70 mb-8 leading-relaxed">
-            Stay organized, never miss the important details, and have cleaner lead hand-offs to your agents.
-          </p>
-          <AdPageCTAButton location="isa-hero" />
-        </div>
-      </section>
+      <PersonaAdHero
+        persona="isa"
+        label="ISAs"
+        headline="Want to book more qualified appointments?"
+        subheadline="Sayso provides real-time guidance during live prospecting calls to sharpen your questions, objection handling and conversion."
+        proof="Unlike scripts and post-call coaching, Sayso helps you improve while the prospect is still on the phone."
+      />
 
       {/* ── Trust strip ── */}
       <div className="max-w-xl mx-auto px-6 pb-10">
@@ -215,6 +197,7 @@ export function IsaAdPage() {
         <AdPageCTAButton location="isa-footer" />
       </section>
 
+      <PersonaConsentNotice />
       <Footer />
     </div>
   );
