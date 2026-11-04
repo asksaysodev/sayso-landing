@@ -17,10 +17,10 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
     '@type': 'BlogPosting',
     headline: post.title,
     image: `${siteUrl}${post.coverImage}`,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-    },
+    // "Sayso Team" is the company's editorial byline, so describe it as an Organization
+    author: post.author.name === 'Sayso Team'
+      ? { '@type': 'Organization', name: 'Sayso', url: siteUrl }
+      : { '@type': 'Person', name: post.author.name },
     publisher: SAYSO_PUBLISHER,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,

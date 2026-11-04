@@ -278,6 +278,7 @@ Same layout as the blog index, but:
 | `BlogRelatedPosts`       | `components/blog/BlogRelatedPosts` | 3-column related posts grid                           |
 | `BlogBreadcrumb`         | `components/blog/BlogBreadcrumb`   | Breadcrumb navigation                                 |
 | `BlogInArticleCTA`       | `components/blog/BlogInArticleCTA` | Mid-article CTA banner for demo/activation            |
+| `BlogInlineCTA`          | `components/blog/BlogInlineCTA`    | Compact gradient CTA after paragraph two, chosen by the post's `ctaVariant` frontmatter (opt-in); posts that use it skip `BlogInArticleCTA` |
 
 ---
 
