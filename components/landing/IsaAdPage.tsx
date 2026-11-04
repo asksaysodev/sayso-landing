@@ -4,7 +4,6 @@ import { Check, MessageCircle, Clock, Users } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
-import { PersonaConsentNotice } from '@/components/landing/PersonaAdShared/PersonaConsentNotice';
 import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
 
 function HandwrittenNote() {
@@ -197,7 +196,6 @@ export function IsaAdPage() {
         <AdPageCTAButton location="isa-footer" />
       </section>
 
-      <PersonaConsentNotice />
       <Footer />
     </div>
   );

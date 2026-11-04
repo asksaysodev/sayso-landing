@@ -4,7 +4,6 @@ import { Check, TrendingUp, Users, Zap } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
-import { PersonaConsentNotice } from '@/components/landing/PersonaAdShared/PersonaConsentNotice';
 import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
 
 export function SalesLeaderAdPage() {
@@ -129,7 +128,6 @@ export function SalesLeaderAdPage() {
         </p>
       </section>
 
-      <PersonaConsentNotice />
       <Footer />
     </div>
   );
