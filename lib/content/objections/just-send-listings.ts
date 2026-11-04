@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const justSendListings: ObjectionEntry = {
   slug: 'just-send-listings',
+  updatedAt: '2026-06-13',
   keyword: 'how to redirect a conversation real estate',
   seoTitle: 'How to Redirect a Conversation in Real Estate',
   seoDescription:
@@ -76,8 +77,8 @@ export const justSendListings: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'How to Talk to Real Estate Leads',
-    href: '/blog/how-to-talk-to-real-estate-leads',
+    title: 'Buyer Scripts: What to Say to a New Buyer Lead',
+    href: '/blog/buyer-lead-scripts',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

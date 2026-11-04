@@ -2,6 +2,7 @@ import type { ProductEntry } from './types';
 
 export const cue: ProductEntry = {
   slug: 'cue',
+  updatedAt: '2026-05-16',
   keyword: 'real-time sales help for real estate agents',
   seoTitle: 'Real-Time Sales Help for Real Estate Agents',
   seoDescription:
@@ -113,5 +114,6 @@ export const cue: ProductEntry = {
   relatedBlogPosts: [
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
     { title: 'What Real-Time Call Coaching Looks Like', href: '/blog/what-real-time-call-coaching-looks-like' },
+    { title: 'Real Estate Call Coaching Software for Teams', href: '/blog/best-real-estate-call-coaching-software' },
   ],
 };

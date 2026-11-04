@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const wellWaitForSpring: ObjectionEntry = {
   slug: 'well-wait-for-spring',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle timing objection real estate',
   seoTitle: 'How to Handle the Timing Objection in Real Estate',
   seoDescription:

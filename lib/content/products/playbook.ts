@@ -2,6 +2,7 @@ import type { ProductEntry } from './types';
 
 export const playbook: ProductEntry = {
   slug: 'playbook',
+  updatedAt: '2026-04-29',
   keyword: 'custom call scripts real estate',
   seoTitle: 'Custom Call Scripts for Real Estate Agents',
   seoDescription:
@@ -112,5 +113,6 @@ export const playbook: ProductEntry = {
   ],
   relatedBlogPosts: [
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
+    { title: 'Real Estate Role Play: Scenarios and Scripts to Practice', href: '/blog/real-estate-role-play' },
   ],
 };

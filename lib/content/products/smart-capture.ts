@@ -2,6 +2,7 @@ import type { ProductEntry } from './types';
 
 export const smartCapture: ProductEntry = {
   slug: 'smart-capture',
+  updatedAt: '2026-04-29',
   keyword: 'automatic call notes real estate',
   seoTitle: 'Automatic Call Notes for Real Estate Agents',
   seoDescription:
@@ -110,5 +111,8 @@ export const smartCapture: ProductEntry = {
     { title: 'Real-Time Coaching', slug: 'cue' },
     { title: 'Custom Scripts', slug: 'playbook' },
   ],
-  relatedBlogPosts: [],
+  relatedBlogPosts: [
+    { title: 'Real Estate Follow Up Scripts: The Complete Guide', href: '/blog/real-estate-follow-up-scripts' },
+    { title: 'How to Revive Dead Leads', href: '/blog/how-to-revive-dead-leads' },
+  ],
 };

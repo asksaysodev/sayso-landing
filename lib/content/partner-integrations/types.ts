@@ -9,6 +9,8 @@
 export interface PartnerIntegrationEntry {
   /** URL slug, e.g. "suresend" -> /integrations/partners/suresend */
   slug: string;
+  /** Date of the last meaningful content change (YYYY-MM-DD). Used as the sitemap lastmod. */
+  updatedAt: string;
   /** Display name of the partner CRM, e.g. "SureSend" */
   partnerName: string;
   /** Public path to the partner's horizontal logo (works on a light background). */

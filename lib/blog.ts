@@ -16,6 +16,10 @@ export interface BlogAuthor {
   linkedin?: string;
 }
 
+/** Which one-line call to action follows the second paragraph (see BlogInlineCTA). */
+export const BLOG_CTA_VARIANTS = ['script', 'coaching', 'leads', 'prospecting', 'team'] as const;
+export type BlogCtaVariant = (typeof BLOG_CTA_VARIANTS)[number];
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -34,6 +38,7 @@ export interface BlogPost {
   type: 'pillar' | 'supporting' | 'standalone';
   cluster?: string;
   pillar?: string;
+  ctaVariant?: BlogCtaVariant;
   content: string;
 }
 
@@ -44,6 +49,10 @@ function parseMdxFile(filePath: string): BlogPost {
   const { data, content } = matter(raw);
   const stats = readingTime(content);
   const slug = data.slug || path.basename(filePath, '.mdx');
+  if (data.ctaVariant && !BLOG_CTA_VARIANTS.includes(data.ctaVariant)) {
+    // Fail the build: an unknown variant would otherwise drop both mid-article CTAs silently.
+    throw new Error(`Invalid ctaVariant "${data.ctaVariant}" in ${filePath}. Use one of: ${BLOG_CTA_VARIANTS.join(', ')}.`);
+  }
 
   return {
     slug,
@@ -62,6 +71,7 @@ function parseMdxFile(filePath: string): BlogPost {
     type: data.type || 'standalone',
     cluster: data.cluster || undefined,
     pillar: data.pillar || undefined,
+    ctaVariant: data.ctaVariant || undefined,
     content,
   };
 }

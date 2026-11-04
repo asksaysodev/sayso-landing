@@ -55,7 +55,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
   const { openSignup } = useDemoCalendar();
 
   return (
-    <section className="relative bg-white pt-7 lg:pt-10 pb-8 lg:pb-12 overflow-x-hidden v2-halftone">
+    <section className="relative bg-white pt-16 lg:pt-28 pb-8 lg:pb-12 overflow-x-hidden v2-halftone">
       {/* Match the navbar / site container (max-w-[1200px]) so the hero aligns
           with the rest of the page instead of spilling to the edges. */}
       <div className="max-w-[1200px] mx-auto px-6">
@@ -101,7 +101,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
         </div>
 
         {/* Social proof */}
-        <div className="mt-8 md:mt-10 pt-1 md:pt-2">
+        <div className="mt-20 md:mt-28">
           <style>{`
             @keyframes logo-marquee {
               from { transform: translate3d(0, 0, 0); }
@@ -109,7 +109,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             }
 
             .logo-marquee-track {
-              animation: logo-marquee 90s linear infinite;
+              animation: logo-marquee 120s linear infinite;
               /* Promote to its own compositor layer so the scroll runs on the
                  GPU instead of repainting on the main thread. */
               will-change: transform;
@@ -138,7 +138,7 @@ export function HeroWithVideo({ content = defaultContent }: { content?: HeroCont
             }
           `}</style>
 
-          <div className="flex justify-center mb-5">
+          <div className="flex justify-center mb-7">
             <span className="font-comic text-2xl md:text-3xl text-[#1D4871] tracking-wide text-center">
               Trusted by Top Teams and Agents Nationwide
             </span>

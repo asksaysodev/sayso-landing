@@ -22,10 +22,12 @@ declare global {
 interface SsFormEmbedProps {
   /** Sure Send embed code, e.g. "LmIZLgSzGPfy" */
   embedCode: string;
+  /** Optional id for the wrapper, e.g. an in-page anchor target. */
+  id?: string;
   className?: string;
 }
 
-export default function SsFormEmbed({ embedCode, className }: SsFormEmbedProps) {
+export default function SsFormEmbed({ embedCode, id, className }: SsFormEmbedProps) {
   useEffect(() => {
     // The embed script self-guards against double init via window.SSFormLoaded.
     // Clear the flag so the form re-renders on client-side navigation back here.
@@ -46,5 +48,9 @@ export default function SsFormEmbed({ embedCode, className }: SsFormEmbedProps) 
     };
   }, [embedCode]);
 
-  return <div id={`ss-form-${embedCode}`} className={className} />;
+  return (
+    <div id={id} className={className}>
+      <div id={`ss-form-${embedCode}`} />
+    </div>
+  );
 }

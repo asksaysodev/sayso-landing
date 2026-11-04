@@ -1,5 +1,7 @@
 export interface GlossaryEntry {
   slug: string;
+  /** Date of the last meaningful content change (YYYY-MM-DD). Used as the sitemap lastmod. */
+  updatedAt: string;
   term: string;
   keyword: string;
   seoTitle: string;

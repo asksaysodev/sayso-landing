@@ -82,7 +82,7 @@ export function AboutPageContent() {
             walk you through it.
           </p>
           <a
-            href="/demo"
+            href="/demo/"
             className="inline-flex items-center gap-2 bg-[#FFDE59] hover:bg-[#f5d400] text-[#1D4871] font-bold px-6 py-3 rounded-lg transition-colors text-sm uppercase tracking-wide"
           >
             Book a Demo

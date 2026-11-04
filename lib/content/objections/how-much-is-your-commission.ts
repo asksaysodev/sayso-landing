@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const howMuchIsYourCommission: ObjectionEntry = {
   slug: 'how-much-is-your-commission',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle commission question real estate',
   seoTitle: 'How to Handle the Commission Question in Real Estate',
   seoDescription:
@@ -76,8 +77,8 @@ export const howMuchIsYourCommission: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'FSBO Scripts for Real Estate Agents',
-    href: '/blog/fsbo-scripts',
+    title: 'Real Estate Negotiation Scripts: Price, Commission and Terms',
+    href: '/blog/real-estate-negotiation-scripts',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

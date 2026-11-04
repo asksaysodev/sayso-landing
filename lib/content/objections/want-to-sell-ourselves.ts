@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const wantToSellOurselves: ObjectionEntry = {
   slug: 'want-to-sell-ourselves',
+  updatedAt: '2026-06-13',
   keyword: 'FSBO objection handling',
   seoTitle: 'FSBO Objection Handling: 3 Proven Response Scripts',
   seoDescription:

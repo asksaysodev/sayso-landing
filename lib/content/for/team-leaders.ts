@@ -2,6 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const teamLeaders: UseCaseEntry = {
   slug: 'team-leaders',
+  updatedAt: '2026-04-26',
   persona: 'Team Leaders',
   keyword: 'how to coach real estate agents on calls at scale',
   seoTitle: 'Coach Real Estate Agents on Calls at Scale - Team Leaders',
@@ -93,7 +94,8 @@ export const teamLeaders: UseCaseEntry = {
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'Best Real Estate Call Coaching Software', href: '/blog/best-real-estate-call-coaching-software' },
+    { title: 'Real Estate Call Coaching Software for Teams', href: '/blog/best-real-estate-call-coaching-software' },
+    { title: 'How to Coach Real Estate Agents on Their Calls', href: '/blog/how-to-coach-real-estate-agents-on-calls' },
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
   relatedObjections: [

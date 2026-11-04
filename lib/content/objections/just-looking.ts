@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const justLooking: ObjectionEntry = {
   slug: 'just-looking',
+  updatedAt: '2026-06-13',
   keyword: 'how to respond to "just looking" real estate',
   seoTitle: 'How to Respond to "Just Looking" in Real Estate',
   seoDescription:
@@ -77,8 +78,8 @@ export const justLooking: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'How to Talk to Real Estate Leads',
-    href: '/blog/how-to-talk-to-real-estate-leads',
+    title: 'Agent and Client Conversation Examples',
+    href: '/blog/agent-client-conversation-examples',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

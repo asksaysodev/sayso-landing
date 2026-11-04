@@ -72,7 +72,7 @@ export function DemoLiftCard() {
 
           {/* Primary CTA: navigate to the internal /demo scheduler page. */}
           <Link
-            href="/demo"
+            href="/demo/"
             data-analytics-id="cta-book-demo-lift-card"
             className="block w-full rounded-xl bg-cta py-2.5 text-center text-sm font-bold text-white transition-colors hover:bg-[#1b54c7] sm:py-3 sm:text-base"
           >

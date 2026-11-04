@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const doorKnocking: GlossaryEntry = {
   slug: 'door-knocking',
+  updatedAt: '2026-06-13',
   term: 'Door Knocking',
   keyword: 'what is door knocking real estate',
   seoTitle: 'What Is Door Knocking in Real Estate',
@@ -47,6 +48,7 @@ export const doorKnocking: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
+    'For scripts you can use at the door and on the follow-up call, see the [just listed and just sold scripts](/blog/just-listed-just-sold-scripts/).',
     'Door knocking generates leads, but the follow-up call is where appointments get booked. When you call back a homeowner you met in the field, Sayso\'s [Real-Time Coaching](/products/cue/) shows you exactly what to say based on the conversation, so you sound prepared and confident.',
     'Sayso\'s [Call Notes](/products/smart-capture/) also records each door knocking follow-up for you, so the conversation you had on the porch is in your CRM before you reach the next street. [Book a demo](/demo/) to see how Sayso turns your door knocking leads into booked appointments.',
   ],

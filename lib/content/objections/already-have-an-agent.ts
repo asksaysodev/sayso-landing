@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const alreadyHaveAnAgent: ObjectionEntry = {
   slug: 'already-have-an-agent',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle "already working with agent"',
   seoTitle: 'How to Handle "Already Working with Agent"',
   seoDescription:

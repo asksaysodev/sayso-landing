@@ -11,6 +11,89 @@ const objectionsHub: HubPageConfig = {
   h1: 'Real Estate Objection Library',
   introduction:
     'Practical response scripts for common objections real estate agents hear on prospecting calls. Each page explains what the concern may mean, how to respond without arguing, and which follow-up question can keep the conversation useful.',
+  quickAnswers: {
+    heading: 'Common Real Estate Objections and a One-Line Answer to Each',
+    intro:
+      'Each line below is the short version of the response on that objection\'s page. Open a page for the full scripts, the reasoning behind them, and what to say next.',
+    items: [
+      {
+        slug: 'not-ready-yet',
+        phrase: '"I\'m not ready yet."',
+        answer: 'Agree without pushing, then ask whether they mean not ready this month or not ready this year.',
+      },
+      {
+        slug: 'already-have-an-agent',
+        phrase: '"I already have an agent."',
+        answer: 'Respect it, then ask whether they have signed an agreement and how the experience has been so far.',
+      },
+      {
+        slug: 'just-looking',
+        phrase: '"I\'m just looking."',
+        answer: 'Ask what caught their eye, which turns browsing into a conversation about their timing and needs.',
+      },
+      {
+        slug: 'call-me-later',
+        phrase: '"Can you call me later?"',
+        answer: 'Offer to be quick, or agree on a specific time and set a reminder to call then.',
+      },
+      {
+        slug: 'price-too-high',
+        phrase: '"The price is too high."',
+        answer: 'Ask what they are comparing it to before you defend anything.',
+      },
+      {
+        slug: 'want-to-sell-ourselves',
+        phrase: '"We want to sell it ourselves."',
+        answer: 'Say you are not calling to change their mind, then ask how it has been going so far.',
+      },
+      {
+        slug: 'need-to-think-about-it',
+        phrase: '"I need to think about it."',
+        answer: 'Ask whether it is about timing or about making sure it is the right move.',
+      },
+      {
+        slug: 'not-interested',
+        phrase: '"I\'m not interested."',
+        answer: 'Accept it, then ask whether anything in their situation has them considering a change.',
+      },
+      {
+        slug: 'bad-experience-with-agents',
+        phrase: '"I had a bad experience with an agent."',
+        answer: 'Thank them for telling you and ask what happened before you say anything about yourself.',
+      },
+      {
+        slug: 'market-is-bad',
+        phrase: '"The market is bad right now."',
+        answer: 'Ask what specifically concerns them: prices, rates, or the general uncertainty.',
+      },
+      {
+        slug: 'just-send-listings',
+        phrase: '"Just send me some listings."',
+        answer: 'Agree, then ask what is behind the move so what you send is relevant.',
+      },
+      {
+        slug: 'how-much-is-your-commission',
+        phrase: '"How much is your commission?"',
+        answer: 'Call it a fair question, promise to walk through it, and first ask what matters most to them in an agent.',
+      },
+      {
+        slug: 'well-wait-for-spring',
+        phrase: '"We\'ll wait for spring."',
+        answer: 'Ask whether spring is when they want to move or when they want to start exploring options.',
+      },
+      {
+        slug: 'my-spouse-needs-to-decide',
+        phrase: '"My spouse needs to decide."',
+        answer: 'Agree it should be a joint decision and offer a short summary they can share at home.',
+      },
+    ],
+  },
+  relatedReading: {
+    heading: 'Go Deeper on Objection Handling',
+    paragraphs: [
+      'For the framework behind all of these responses, read our [real estate objection handling guide](/blog/real-estate-objection-handling/), which walks through a response for each common pushback. When the pushback comes up during a conversation about price, terms, or commission, see our [real estate negotiation scripts](/blog/real-estate-negotiation-scripts/).',
+    ],
+  },
   childPages: [
     {
       title: '"I\'m Not Ready Yet"',
@@ -92,7 +175,7 @@ const objectionsHub: HubPageConfig = {
     {
       title: '"How Much Is Your Commission?"',
       slug: 'how-much-is-your-commission',
-      description: 'Scripts for handling the commission question without losing the deal.',
+      description: 'Scripts for handling the commission question without losing the prospect.',
       keyword: 'how to handle commission question real estate',
       linkText: 'Navigate the commission question',
     },
@@ -117,7 +200,7 @@ const objectionsHub: HubPageConfig = {
     {
       question: 'What are the most common real estate objections?',
       answer:
-        '"Not ready yet," "already have an agent," "not interested," and "call me later" are the four most frequent objections agents hear on prospecting calls.',
+        '"Not ready yet," "already have an agent," "not interested," and "call me later" come up constantly on prospecting calls. The list at the top of this page covers 14 common objections with a one-line answer to each.',
     },
     {
       question: 'How do you handle objections in real estate?',

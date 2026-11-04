@@ -2,6 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const soloAgents: UseCaseEntry = {
   slug: 'solo-agents',
+  updatedAt: '2026-04-29',
   persona: 'Solo Agents',
   keyword: 'how to have better prospecting conversations in real estate',
   seoTitle: 'Better Prospecting Conversations in Real Estate \u2014 Solo Agents',
@@ -84,6 +85,16 @@ export const soloAgents: UseCaseEntry = {
   ],
   relatedBlogPosts: [
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
+    { title: 'Real Estate Follow Up Scripts: The Complete Guide', href: '/blog/real-estate-follow-up-scripts' },
+    { title: 'Referral Scripts: Asking Past Clients and Your Sphere', href: '/blog/real-estate-referral-scripts' },
+    { title: 'Real Estate Prospecting Strategies and How to Choose Your Mix', href: '/blog/real-estate-prospecting-strategies' },
+    { title: 'Cold Calling Services vs. Making the Calls Yourself', href: '/blog/real-estate-cold-calling-services' },
+    { title: 'How to Get More Listing Appointments', href: '/blog/how-to-get-listing-appointments' },
+    { title: 'How to Prepare for a Listing Appointment: A Checklist', href: '/blog/listing-appointment-checklist' },
+    { title: 'How to Find Expired Listings', href: '/blog/how-to-find-expired-listings' },
+    { title: 'Realtor Voicemail Scripts for Every Situation', href: '/blog/real-estate-voicemail-scripts' },
+    { title: 'How Much Does Real Estate Coaching Cost?', href: '/blog/real-estate-coaching-cost' },
+    { title: 'Types of Real Estate Prospecting Tools', href: '/blog/real-estate-prospecting-tools' },
   ],
   relatedObjections: [
     { title: '"I\'m Not Ready Yet" \u2014 How to Respond', href: '/objections/not-ready-yet' },

@@ -24,6 +24,14 @@ export interface HubPageConfig {
   childPages: HubChildPage[];
   groups?: { label: string; slugs: string[] }[];
   howSaysoHelps?: string;
+  /** Optional scannable list shown above the card grid: each item pairs a phrase with a one-line answer and links to its page at `basePath/slug`. */
+  quickAnswers?: {
+    heading: string;
+    intro?: string;
+    items: { slug: string; phrase: string; answer: string }[];
+  };
+  /** Optional related-reading block shown after the card grid. Each paragraph supports [text](/url/) inline markdown. */
+  relatedReading?: { heading: string; paragraphs: string[] };
   faq?: { question: string; answer: string }[];
   /** Set true for hubs without a keyword target. */
   noKeyword?: boolean;
