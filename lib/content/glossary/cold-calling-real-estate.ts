@@ -43,6 +43,7 @@ export const coldCallingRealEstate: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
+    'To choose which lists to work and how cold calling compares with other lead sources, read [prospecting strategies compared](/blog/real-estate-prospecting-strategies/). If you are weighing outsourcing, see [calling services vs. making the calls yourself](/blog/real-estate-cold-calling-services/).',
     'Cold calling gets harder when a prospect throws an unexpected objection or asks a question you are not prepared for. Sayso\'s [Real-Time Coaching](/products/cue/) listens to your calls and displays the right response on screen the moment you need it, so you never have to guess what to say next.',
     'After each call, [Call Notes](/products/smart-capture/) writes the summary for you and drops it into your CRM, so you spend less time typing between dials and more time talking to prospects. [Book a demo](/demo/) to see how Sayso helps agents turn more cold calls into booked appointments.',
   ],
@@ -57,8 +58,8 @@ export const coldCallingRealEstate: GlossaryEntry = {
     { term: 'Sphere of Influence', slug: 'sphere-of-influence' },
   ],
   deeperLink: {
-    title: 'The Complete Guide to Real Estate Cold Calling',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'Cold Calling Real Estate: Scripts for Every Lead Source',
+    href: '/blog/real-estate-cold-calling-guide/',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',

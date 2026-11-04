@@ -14,12 +14,6 @@ The `/standalone-post`, `/pillar`, and `/supporting-post` slash commands all rea
 
 ## Pending posts
 
-### `/blog/buyer-lead-scripts`
-**Suggested anchor text:** "buyer lead" or "buyer lead call scripts"
-**Add internal links back from:**
-- `content/blog/how-to-talk-to-real-estate-leads.mdx`
-- `content/blog/real-estate-cold-calling-guide.mdx`
-
 ### `/blog/how-to-not-freeze-on-calls`
 **Display title:** "How to Not Freeze on Sales Calls"
 **Add internal links back from:**

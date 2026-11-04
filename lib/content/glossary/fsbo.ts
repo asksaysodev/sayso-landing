@@ -4,19 +4,20 @@ export const fsbo: GlossaryEntry = {
   slug: 'fsbo',
   term: 'FSBO (For Sale By Owner)',
   keyword: 'what does FSBO mean',
-  seoTitle: 'What Does FSBO Mean in Real Estate',
+  seoTitle: 'FSBO Meaning in Real Estate: What It Is and How It Works',
   seoDescription:
-    'FSBO stands for For Sale By Owner, where homeowners sell without an agent. Learn what FSBO means, why it matters for agents, and tips to convert FSBO leads.',
+    'FSBO means For Sale By Owner: a home sold without a listing agent. See what it means for sellers, buyers and agents, with the numbers from NAR.',
   h1: 'What Does FSBO Mean?',
   definition:
-    'FSBO, pronounced "fizz-bo," stands for For Sale By Owner and refers to homeowners who sell their property without hiring a real estate agent, typically to avoid paying commission. For agents, FSBO listings are a consistent source of motivated seller leads because many of these homeowners eventually seek professional help with pricing, marketing, and negotiations.',
+    'FSBO stands for For Sale By Owner, and it describes a home that the owner sells without hiring a listing agent. The owner handles the pricing, marketing, showings, and negotiation, and the term is pronounced "fizz-bo."',
   howItWorks: [
-    'When a homeowner decides to sell FSBO, they take on everything an agent would normally handle: pricing the home, marketing the listing, scheduling showings, negotiating offers, and managing closing paperwork. Most FSBO sellers are motivated by the desire to save on commission, which typically ranges from 5% to 6% of the sale price.',
-    'The challenge is that selling a home requires market knowledge, legal awareness, and time that most homeowners underestimate. Industry data consistently shows that for sale by owner homes tend to sell for less than agent-assisted properties, even after accounting for commission savings. This gap is one reason many FSBO sellers eventually list with an agent.',
+    'When a homeowner sells FSBO, they take on everything a listing agent would normally handle: pricing the home, marketing the listing, scheduling showings, negotiating offers, and managing the paperwork through closing. [NAR reports](https://www.nar.realtor/news/real-estate-news/fsbos-reach-all-time-low-more-sellers-rely-on-agents) that the most common reasons owners sell this way are selling to a friend or relative and avoiding agent commission fees.',
+    'If you are a buyer, a FSBO means you negotiate directly with the owner instead of a listing agent. You can still bring your own agent to represent you, and it is worth agreeing in writing how that agent will be paid before you tour.',
+    'FSBO sales are a small and shrinking share of the market. In its [2025 Profile of Home Buyers and Sellers](https://www.nar.realtor/news/real-estate-news/fsbos-reach-all-time-low-more-sellers-rely-on-agents), NAR reported that FSBO sales were 5% of home sales and that a record 91% of sellers worked with an agent. NAR also reported a median sale price of $360,000 for FSBO homes and $425,000 for agent-assisted homes. Those are different homes, so the gap is not a like-for-like comparison.',
   ],
   whyItMatters: [
-    'FSBO sellers are one of the most reliable prospecting categories for real estate agents. These homeowners have already decided to sell, so the motivation is there. The conversation shifts from "are you thinking about selling?" to "how can I help you get the best result?"',
-    'Agents who consistently prospect for sale by owner listings build a pipeline of motivated sellers who often need help with the hardest parts of the transaction: pricing accurately, marketing beyond a yard sign, and negotiating without leaving money on the table.',
+    'For agents, a FSBO is a seller who has already decided to sell, so the first call is about how the sale is going rather than whether they might sell. Many of these owners are open to help with the hardest parts of the sale: pricing accurately, marketing beyond a yard sign, and negotiating well.',
+    'The agent\'s angle is to offer something useful before asking for anything. Recent comparable sales, an honest read on the price, or an open house for the seller give the owner a reason to talk, and the listing conversation can follow from there. The scripts guide linked below walks through a complete first call and the objections sellers raise most.',
     'Reaching out early, before frustration sets in, positions you as a resource rather than a last resort.',
   ],
   tips: [
@@ -42,6 +43,7 @@ export const fsbo: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
+    'If you are calling FSBO sellers, start with the complete call script, the branches for common replies, and the voicemail and text versions in our [FSBO scripts](/blog/fsbo-scripts/) guide, and see the [realtor voicemail scripts](/blog/real-estate-voicemail-scripts/) for when nobody picks up. For the objection you will hear most, see [what to say when a seller wants to sell it themselves](/objections/want-to-sell-ourselves/).',
     'FSBO sellers often push back with objections like "I\'m saving on commission" or "I\'ve already had agents call me." Sayso\'s [Real-Time Coaching](/products/cue/) shows you the right response the moment you hear it, so you can address the objection confidently instead of scrambling for a script.',
     'Sayso\'s [Call Notes](/products/smart-capture/) logs every FSBO conversation to your CRM for you, so a seller you reach in week one is easy to pick back up in week three when they are ready to talk. [Book a demo](/demo/) to see how Sayso helps you convert FSBO leads into listing appointments.',
   ],
@@ -53,8 +55,8 @@ export const fsbo: GlossaryEntry = {
     { term: 'Listing Appointment', slug: 'listing-appointment' },
   ],
   deeperLink: {
-    title: 'The Complete Guide to Real Estate Cold Calling',
-    href: '/blog/real-estate-cold-calling-guide',
+    title: 'FSBO Scripts for Real Estate Agents',
+    href: '/blog/fsbo-scripts/',
   },
   relatedFeature: {
     title: 'Real-Time Coaching',
@@ -76,14 +78,24 @@ export const fsbo: GlossaryEntry = {
         'FSBO is pronounced "fizz-bo." You\'ll hear this pronunciation used widely among real estate agents, ISAs, and brokerages.',
     },
     {
+      question: 'What does FSBO mean for buyers?',
+      answer:
+        'It means you deal directly with the owner instead of a listing agent. You can still hire your own agent to represent you, and it is worth agreeing in writing how that agent is paid before you tour the home.',
+    },
+    {
+      question: 'How common is FSBO?',
+      answer:
+        'NAR\'s 2025 Profile of Home Buyers and Sellers reported that FSBO sales made up 5% of home sales, the smallest share NAR has recorded, and that 91% of sellers worked with an agent.',
+    },
+    {
       question: 'Why do homeowners sell FSBO?',
       answer:
-        'The primary reason is to avoid paying agent commission, which typically runs 5% to 6% of the sale price. Some sellers also want more control over the process or believe their home will sell quickly without professional marketing.',
+        'The primary reason is to avoid paying a commission to a listing agent. Some sellers also want more control over the process or believe their home will sell quickly without professional marketing.',
     },
     {
       question: 'How do agents convert FSBO leads into listings?',
       answer:
-        'The most effective approach is to lead with value rather than a sales pitch. Offer a comparable market analysis, share neighborhood data, and follow up consistently. Most FSBO sellers list with an agent within 30 to 60 days when they realize how much work is involved.',
+        'The most effective approach is to lead with value rather than a sales pitch. Offer recent comparable sales, share neighborhood data, and follow up consistently. Many FSBO sellers become open to help once they see how much work and negotiation the sale involves.',
     },
   ],
 };

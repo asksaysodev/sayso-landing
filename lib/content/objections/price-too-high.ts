@@ -77,8 +77,8 @@ export const priceTooHigh: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'What to Say to Expired Listings',
-    href: '/blog/expired-listing-scripts',
+    title: 'Real Estate Negotiation Scripts: Price, Commission and Terms',
+    href: '/blog/real-estate-negotiation-scripts',
   },
   relatedFeature: {
     title: 'Real-Time Market Data',

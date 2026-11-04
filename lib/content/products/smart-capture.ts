@@ -110,5 +110,8 @@ export const smartCapture: ProductEntry = {
     { title: 'Real-Time Coaching', slug: 'cue' },
     { title: 'Custom Scripts', slug: 'playbook' },
   ],
-  relatedBlogPosts: [],
+  relatedBlogPosts: [
+    { title: 'Real Estate Follow Up Scripts: The Complete Guide', href: '/blog/real-estate-follow-up-scripts' },
+    { title: 'How to Revive Dead Leads', href: '/blog/how-to-revive-dead-leads' },
+  ],
 };

@@ -112,5 +112,6 @@ export const playbook: ProductEntry = {
   ],
   relatedBlogPosts: [
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
+    { title: 'Real Estate Role Play: Scenarios and Scripts to Practice', href: '/blog/real-estate-role-play' },
   ],
 };

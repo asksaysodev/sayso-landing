@@ -43,6 +43,7 @@ export const leadNurturing: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
+    'When a lead goes quiet, see how to [revive dead leads](/blog/how-to-revive-dead-leads/), and for the speed and follow-up habits that turn new inquiries into appointments, read [how to convert real estate leads](/blog/how-to-convert-real-estate-leads/).',
     'Effective nurturing depends on what happens during and after each call. Sayso\'s [Real-Time Coaching](/products/cue/) helps you handle every follow-up conversation with confidence, showing you the right response when a prospect says they are still not ready or raises a new concern.',
     'After each call, [Call Notes](/products/smart-capture/) automatically logs a detailed summary to your CRM, so you never lose context between follow-ups. When you call a lead back three months later, you have every detail from the previous conversation ready.',
     'Whether you are reconnecting after months of quiet or following up on a fresh inquiry, Sayso gives you the context and the words to make each nurturing touch land. [Book a demo](/demo/) to see how it works on a live call.',

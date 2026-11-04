@@ -94,9 +94,12 @@ export const isas: UseCaseEntry = {
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
-    { title: 'Real Estate ISA Scripts: 7 Calls Your ISA Makes Every Day', href: '/blog/real-estate-isa-scripts' },
-    { title: 'Real Estate Appointment Setting Script (Plus the Close Most Agents Never Try)', href: '/blog/appointment-setting-script' },
-    { title: 'Real Estate Phone Script for Leads (That Actually Book Appointments)', href: '/blog/real-estate-phone-script-for-leads' },
+    { title: 'Real Estate ISA Scripts: 7 Calls Your ISA Makes Every Day', href: '/blog/real-estate-isa-scripts/' },
+    { title: 'Real Estate Appointment Setting Script (Plus the Close Most Agents Never Try)', href: '/blog/appointment-setting-script/' },
+    { title: 'Real Estate Prospecting Scripts and Phone Scripts for Leads', href: '/blog/real-estate-phone-script-for-leads/' },
+    { title: 'How to Book Appointments in Real Estate: 2026 Guide', href: '/blog/how-to-book-appointments-real-estate/' },
+    { title: 'How to Convert Real Estate Leads: Speed, the First Call and Follow-Up', href: '/blog/how-to-convert-real-estate-leads/' },
+    { title: 'Real Estate Cold Calling Services vs. Making the Calls Yourself', href: '/blog/real-estate-cold-calling-services/' },
   ],
   relatedObjections: [
     { title: '"Call Me Later" \u2014 How to Respond', href: '/objections/call-me-later' },

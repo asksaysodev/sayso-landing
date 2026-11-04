@@ -96,6 +96,13 @@ export const newAgents: UseCaseEntry = {
   relatedBlogPosts: [
     { title: 'How to Start a Real Estate Call (Without Losing Them in 10 Seconds)', href: '/blog/how-to-start-a-real-estate-call' },
     { title: 'How to Practice Real Estate Scripts (So You Sound Like a Pro, Not a Robot)', href: '/blog/how-to-practice-real-estate-scripts' },
+    { title: 'Real Estate Scripts for New Agents (With Examples)', href: '/blog/real-estate-scripts-for-new-agents' },
+    { title: 'Agent and Client Conversation Examples', href: '/blog/agent-client-conversation-examples' },
+    { title: 'Real Estate Prospecting Plan: A Weekly Template and Tracker', href: '/blog/real-estate-prospecting-plan' },
+    { title: 'How to Set Appointments as a New Agent', href: '/blog/appointment-setting-script' },
+    { title: 'Real Estate Phone Script for Leads', href: '/blog/real-estate-phone-script-for-leads' },
+    { title: 'Real Estate Role Play: Scenarios and Scripts to Practice', href: '/blog/real-estate-role-play' },
+    { title: 'Do You Need a Real Estate Coach?', href: '/blog/real-estate-coach' },
   ],
   relatedObjections: [
     { title: '"I\'m Not Interested" \u2014 How to Respond', href: '/objections/not-interested' },

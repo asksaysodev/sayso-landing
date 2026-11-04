@@ -13,10 +13,10 @@ export const sphereOfInfluence: GlossaryEntry = {
   howItWorks: [
     'Your sphere of influence includes everyone who would recognize your name: past clients, friends, neighbors, former coworkers, and local business owners. These are people who already trust you, which means conversations about real estate happen naturally. The key is making sure they think of you first when they or someone they know is ready to buy or sell.',
     'Building an SOI starts with organizing your contacts in a CRM and creating a consistent touchpoint schedule. Most agents aim for at least four meaningful contacts per year with each person, whether that is a call, a market update, or a face-to-face meetup.',
-    'The payoff compounds over time. One strong referral from a past client often leads to another, and agents who maintain their sphere consistently report that 40-80% of their annual business comes from people they already know.',
+    'The payoff compounds over time. One strong referral from a past client often leads to another, and agents who stay in touch with their sphere often find that a large share of their business comes from people they already know.',
   ],
   whyItMatters: [
-    'Referrals convert at a significantly higher rate than cold outreach because the prospect already trusts the person who recommended you. Industry data shows that over 80% of real estate transactions come from referrals, repeat clients, or personal contacts. That makes your sphere one of the most reliable sources of booked appointments.',
+    'Referrals convert at a significantly higher rate than cold outreach because the prospect already trusts the person who recommended you. That makes your sphere one of the most reliable sources of booked appointments.',
     'For solo agents especially, a strong sphere of influence reduces dependence on paid advertising and purchased lead lists. The cost of staying in touch with people who already know you is minimal compared to the cost of acquiring a new lead from scratch.',
     'Agents who neglect their sphere often find themselves starting over every quarter, chasing new prospects instead of receiving warm introductions. Consistent SOI outreach creates a steady, predictable pipeline.',
   ],
@@ -43,6 +43,7 @@ export const sphereOfInfluence: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
+    'For word-for-word scripts, see [referral scripts for past clients and your sphere](/blog/real-estate-referral-scripts/), and to see where sphere calls fit next to other lead sources, read [prospecting strategies compared](/blog/real-estate-prospecting-strategies/).',
     'When you call a past client or SOI contact, the conversation can shift to real estate at any moment. Sayso\'s [Real-Time Coaching](/products/cue/) listens to your call and surfaces the right talking points the moment a prospect mentions they are thinking about selling or asks about their home\'s value. You stay helpful and informed without scrambling for data.',
     'After each call, [Call Notes](/products/smart-capture/) records the personal details for you, so the neighbor who mentioned downsizing next year is captured without you typing a word. [Book a demo](/demo/) to see how Sayso helps you turn every SOI conversation into a booked appointment.',
   ],
