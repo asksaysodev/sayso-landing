@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const dripCampaign: GlossaryEntry = {
   slug: 'drip-campaign',
+  updatedAt: '2026-06-13',
   term: 'Drip Campaign',
   keyword: 'what is a drip campaign real estate',
   seoTitle: 'What Is a Drip Campaign in Real Estate',

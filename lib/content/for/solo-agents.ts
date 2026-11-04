@@ -2,6 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const soloAgents: UseCaseEntry = {
   slug: 'solo-agents',
+  updatedAt: '2026-04-29',
   persona: 'Solo Agents',
   keyword: 'how to have better prospecting conversations in real estate',
   seoTitle: 'Better Prospecting Conversations in Real Estate \u2014 Solo Agents',

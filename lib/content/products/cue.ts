@@ -2,6 +2,7 @@ import type { ProductEntry } from './types';
 
 export const cue: ProductEntry = {
   slug: 'cue',
+  updatedAt: '2026-05-16',
   keyword: 'real-time sales help for real estate agents',
   seoTitle: 'Real-Time Sales Help for Real Estate Agents',
   seoDescription:

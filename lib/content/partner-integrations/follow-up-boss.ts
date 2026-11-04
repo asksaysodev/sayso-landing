@@ -9,6 +9,7 @@ import type { PartnerIntegrationEntry } from './types';
  */
 export const followUpBoss: PartnerIntegrationEntry = {
   slug: 'follow-up-boss',
+  updatedAt: '2026-06-23',
   partnerName: 'Follow Up Boss',
   partnerLogo: '/integrations/follow-up-boss-logo.png',
   partnerLogoAlt: 'Follow Up Boss logo',

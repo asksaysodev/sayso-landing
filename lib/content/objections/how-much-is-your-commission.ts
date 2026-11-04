@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const howMuchIsYourCommission: ObjectionEntry = {
   slug: 'how-much-is-your-commission',
+  updatedAt: '2026-06-13',
   keyword: 'how to handle commission question real estate',
   seoTitle: 'How to Handle the Commission Question in Real Estate',
   seoDescription:

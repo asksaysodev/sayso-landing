@@ -1,5 +1,7 @@
 export interface UseCaseEntry {
   slug: string;
+  /** Date of the last meaningful content change (YYYY-MM-DD). Used as the sitemap lastmod. */
+  updatedAt: string;
   persona: string;
   keyword: string;
   seoTitle: string;

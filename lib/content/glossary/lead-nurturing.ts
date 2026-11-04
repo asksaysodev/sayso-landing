@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const leadNurturing: GlossaryEntry = {
   slug: 'lead-nurturing',
+  updatedAt: '2026-06-13',
   term: 'Lead Nurturing',
   keyword: 'what is lead nurturing real estate',
   seoTitle: 'What Is Lead Nurturing in Real Estate',

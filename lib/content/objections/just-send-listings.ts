@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const justSendListings: ObjectionEntry = {
   slug: 'just-send-listings',
+  updatedAt: '2026-06-13',
   keyword: 'how to redirect a conversation real estate',
   seoTitle: 'How to Redirect a Conversation in Real Estate',
   seoDescription:

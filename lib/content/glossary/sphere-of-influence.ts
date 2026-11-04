@@ -2,6 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const sphereOfInfluence: GlossaryEntry = {
   slug: 'sphere-of-influence',
+  updatedAt: '2026-06-13',
   term: 'Sphere of Influence',
   keyword: 'what is sphere of influence real estate',
   seoTitle: 'What Is Sphere of Influence in Real Estate',

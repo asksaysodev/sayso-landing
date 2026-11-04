@@ -2,6 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const justLooking: ObjectionEntry = {
   slug: 'just-looking',
+  updatedAt: '2026-06-13',
   keyword: 'how to respond to "just looking" real estate',
   seoTitle: 'How to Respond to "Just Looking" in Real Estate',
   seoDescription:

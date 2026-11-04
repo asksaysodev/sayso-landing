@@ -2,6 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const newAgents: UseCaseEntry = {
   slug: 'new-agents',
+  updatedAt: '2026-04-26',
   persona: 'New Agents',
   keyword: 'how to get better at cold calling in real estate',
   seoTitle: 'Get Better at Cold Calling in Real Estate - New Agents',

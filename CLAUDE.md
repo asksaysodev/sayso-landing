@@ -163,6 +163,19 @@ Merge status lives in GitHub, never in the code:
 
 ---
 
+## Page Dates (Sitemap lastmod)
+
+Every URL in the sitemap carries a last-updated date. Google uses it to decide when to recrawl, so keep it accurate. In the same PR as any page you create or change:
+
+- **Blog post:** set `updatedAt` in the frontmatter to the date of the change. New posts set both `publishedAt` and `updatedAt`.
+- **Glossary, objection, product, `/for/` or integration partner page:** set `updatedAt` in the entry file under `lib/content/` (format `YYYY-MM-DD`). New entries must include it; the type requires it.
+- **Any other page in the sitemap** (homepage, hubs, pricing, about and so on): update or add its date in `STATIC_PAGE_UPDATED_AT` in `app/sitemap.ts`. The build fails if a sitemap page has no date there, with an error naming the page.
+- **`/blog/`** uses the newest post's date automatically. No action needed.
+
+Only bump a date for a meaningful content change (copy, structure, data). Do not bump it for refactors, styling or shared navbar/footer changes.
+
+---
+
 ## Component Organization
 
 Keep one component per file. When a feature has more than one component, give it its own folder using this structure:
