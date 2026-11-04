@@ -25,14 +25,11 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-transformation-section` | Opens demo calendar | [components/landing/TransformationSection/index.tsx](../../components/landing/TransformationSection/index.tsx) | Home page "You're Unstoppable" |
 | `cta-book-demo-lift-card` | Navigates to `/demo` | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | "Book a time" in the floating demo card, homepage only (preview) |
 | `cta-lift-card-toggle` | Opens/closes the floating card | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | Round launcher button, homepage only (preview) |
-| `cta-book-demo-persona-agent-hero` | Opens demo calendar | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent hero |
-| `cta-book-demo-persona-agent-footer` | Opens demo calendar | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent footer CTA |
-| `cta-book-demo-persona-broker-hero` | Opens demo calendar | [components/landing/BrokerAdPage.tsx](../../components/landing/BrokerAdPage.tsx) | /broker hero |
-| `cta-book-demo-persona-broker-footer` | Opens demo calendar | [components/landing/BrokerAdPage.tsx](../../components/landing/BrokerAdPage.tsx) | /broker footer |
-| `cta-book-demo-persona-isa-hero` | Opens demo calendar | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa hero |
-| `cta-book-demo-persona-isa-footer` | Opens demo calendar | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa footer |
-| `cta-book-demo-persona-sales-leader-hero` | Opens demo calendar | [components/landing/SalesLeaderAdPage.tsx](../../components/landing/SalesLeaderAdPage.tsx) | /sales-leader hero |
-| `cta-book-demo-persona-sales-leader-footer` | Opens demo calendar | [components/landing/SalesLeaderAdPage.tsx](../../components/landing/SalesLeaderAdPage.tsx) | /sales-leader footer |
+| `cta-book-demo-persona-agent-footer` | Scrolls to the demo form in the hero | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent footer CTA |
+| `cta-book-demo-persona-broker-footer` | Scrolls to the demo form in the hero | [components/landing/BrokerAdPage.tsx](../../components/landing/BrokerAdPage.tsx) | /broker footer |
+| `cta-book-demo-persona-isa-footer` | Scrolls to the demo form in the hero | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa footer |
+| `cta-book-demo-persona-sales-leader-footer` | Scrolls to the demo form in the hero | [components/landing/SalesLeaderAdPage.tsx](../../components/landing/SalesLeaderAdPage.tsx) | /sales-leader footer |
+| `cta-watch-video-persona-{persona}` | Opens the 2.6× customer result video (new tab) | [components/landing/PersonaAdShared/PersonaAdHero.tsx](../../components/landing/PersonaAdShared/PersonaAdHero.tsx) | Hero proof line on /agent, /broker, /isa, /sales-leader; `{persona}` ∈ `agent`, `broker`, `isa`, `sales-leader` |
 | `cta-book-demo-{page-type}` | Opens demo calendar | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | `{page-type}` ∈ `feature-page`, `case-study-page`, `glossary-page`, `hub-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
 | `cta-download-{page-type}` | Opens system-select modal | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | Same 8 page-types as above |
 | `cta-book-demo-{page-type}-inline` | Opens demo calendar | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | `{page-type}` ∈ `feature-page`, `glossary-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
