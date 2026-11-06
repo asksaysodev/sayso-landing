@@ -8,6 +8,7 @@
  * button starts a new call on the same step.
  */
 import type { SaysoWidgetProps, WidgetControl } from '@/components/SaysoWidget/types';
+import { useRef } from 'react';
 import { prefersReducedMotion } from '@/lib/utils/motion';
 import { PHASE_B, PHASE_C, STEPS, STOPPED } from '../data';
 import type { StepKey } from '../types';
@@ -26,16 +27,25 @@ const scrollToDemo = () => {
 };
 
 export function useDemoTour() {
+  /** The step already counting down to the next one (hover, tap and Show me fire hit more than once). */
+  const advancing = useRef(-1);
   const stepKey = (): StepKey | undefined => STEPS[engine.s.current.step]?.key;
 
   const engine = useCallEngine({
-    onPhaseADone: () => stepKey() === 'watch' && goStep(engine.s.current.step + 1),
+    // Let the last cue settle before the card moves on to Smart Capture.
+    onPhaseADone: () => {
+      const at = engine.s.current.step;
+      if (stepKey() === 'watch') engine.later(() => engine.s.current.step === at && goStep(at + 1), 1600);
+    },
+    // L's note waits for the visitor on step 3, so it does not pop open on its own first.
+    autoTip: (i) => i !== 0 || !(stepKey() === 'watch' || stepKey() === 'dot'),
     // On the last step, reset leaves an empty call (timer running, cues closed); elsewhere the call replays.
     replayOnReset: () => stepKey() !== 'reset',
   });
   const { s, set, later, run, actions, openInsight, cancelAll, restart, newCall } = engine;
 
   const goStep = (n: number) => {
+    advancing.current = -1;
     const key = STEPS[n]?.key;
     // Step 3 shows L's note only when the visitor hovers or taps L.
     set(key === 'dot' ? { step: n, tip: null } : { step: n });
@@ -43,16 +53,27 @@ export function useDemoTour() {
     if (key === 'reset') run(PHASE_C);
   };
 
+  /**
+   * How long the result of each step stays on screen before the card moves on:
+   * long enough to read L's note, and for Pulse to open and the agent to answer.
+   */
+  const SETTLE: Partial<Record<StepKey, number>> = { dot: 2800, zip: 3200, play: 900, reset: 900 };
+
   /** Advance when the visitor did what the current step asks. */
   const hit = (key: StepKey) => {
     const at = s.current.step;
-    if (STEPS[at]?.key !== key) return;
+    if (STEPS[at]?.key !== key || advancing.current === at) return;
     if (key === 'start') return goStep(at + 1);
-    later(() => s.current.step === at && goStep(at + 1), key === 'dot' ? 1200 : 600);
-    if (key === 'dot') later(() => s.current.tip === 0 && set({ tip: null }), 2400);
+    advancing.current = at;
+    later(() => {
+      if (s.current.step !== at) return;
+      if (key === 'dot' && s.current.tip === 0) set({ tip: null });
+      goStep(at + 1);
+    }, SETTLE[key] ?? 600);
   };
 
   const onAction = (control: WidgetControl) => {
+    if (control === 'stop') advancing.current = -1;
     actions[control]();
     if (control === 'start' || control === 'zip' || control === 'play' || control === 'reset') hit(control);
   };
@@ -135,6 +156,9 @@ export function useDemoTour() {
     caption: st.caption,
     showMe,
     skip,
-    restart,
+    restart: () => {
+      advancing.current = -1;
+      restart();
+    },
   };
 }

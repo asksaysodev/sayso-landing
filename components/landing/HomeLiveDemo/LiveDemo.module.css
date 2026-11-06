@@ -35,6 +35,13 @@
   background: #2367ee;
   transition: width 0.4s;
 }
+.stepIn {
+  animation: stepIn 0.45s ease-out;
+}
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
 .coachBody {
   display: flex;
   gap: 16px;
@@ -245,6 +252,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .coach,
+  .stepIn,
   .captionPill,
   .bars i,
   .pointer,

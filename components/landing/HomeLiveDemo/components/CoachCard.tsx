@@ -78,7 +78,7 @@ export function CoachCard({ stepIndex, phaseADone, onShowMe, onSkip, onRestart }
         </span>
       </div>
       <div className={styles.coachBody}>
-        <div className={styles.coachCopy}>
+        <div key={stepIndex} className={cx(styles.coachCopy, styles.stepIn)}>
           <p ref={titleRef} tabIndex={-1} className={styles.coachTitle}>
             {step.title}
           </p>
