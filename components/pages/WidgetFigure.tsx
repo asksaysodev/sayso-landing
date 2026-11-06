@@ -8,16 +8,19 @@ import SaysoWidget, { WidgetScaler } from '@/components/SaysoWidget';
 import { WIDGET_PRESETS, type WidgetPreset } from '@/components/SaysoWidget/data';
 import { panel, shot } from '@/components/landing/HomeShared/styles';
 
-/** Rough rendered height of each preset at full size, reserved before the first measurement. */
+/** Rendered height of each preset at full size (measured), used to reserve space before the first measurement. */
 const PRESET_HEIGHT: Record<WidgetPreset, number> = {
   alert: 90,
-  bar: 70,
-  cues: 330,
-  notes: 330,
-  smartCapture: 330,
-  pulse: 250,
-  playbook: 560,
+  bar: 58,
+  cues: 264,
+  notes: 199,
+  smartCapture: 199,
+  pulse: 153,
+  playbook: 410,
 };
+
+/** Presets that show a note bubble, which hangs below the widget and needs extra room. */
+const NOTE_PRESETS: WidgetPreset[] = ['notes', 'smartCapture'];
 
 interface WidgetFigureProps {
   preset: WidgetPreset;
@@ -32,9 +35,13 @@ export function WidgetFigure({ preset, label, caption, className = '' }: WidgetF
   return (
     <figure className={className}>
       <div className={`${panel} p-2.5 sm:p-3.5`}>
-        <div role="img" aria-label={label} className={`${shot} rounded-[14px] px-3 py-6 sm:px-10 sm:py-10`}>
+        <div
+          role="img"
+          aria-label={label}
+          className={`${shot} rounded-[14px] px-3 py-6 sm:px-10 sm:py-10 ${NOTE_PRESETS.includes(preset) ? 'pb-12 sm:pb-16' : ''}`}
+        >
           <div className="relative mx-auto max-w-[604px]">
-            <WidgetScaler width={604} initialHeight={PRESET_HEIGHT[preset] * 0.6}>
+            <WidgetScaler width={604} initialHeight={`min(${PRESET_HEIGHT[preset]}px, calc((100vw - 56px) * ${(PRESET_HEIGHT[preset] / 604).toFixed(3)}))`}>
               <SaysoWidget {...WIDGET_PRESETS[preset]} />
             </WidgetScaler>
           </div>

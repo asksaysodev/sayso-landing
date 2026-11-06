@@ -40,7 +40,7 @@ export function ProductTour() {
   const isApp = mode === 'app';
 
   return (
-    <section className="py-8 md:py-12">
+    <section className="overflow-x-clip py-8 md:py-12">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
