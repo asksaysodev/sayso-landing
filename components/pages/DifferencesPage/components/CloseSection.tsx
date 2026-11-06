@@ -5,38 +5,29 @@
  * a short social-proof note underneath.
  */
 
-import { LightningIcon } from '@/components/icons/LightningIcon';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
+import { Button } from '@/components/ui/Button';
+import { section } from '@/components/landing/HomeShared/styles';
+import { sectionTitle, sectionWrap } from '../styles';
 
 export function CloseSection() {
   const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
-    <section className="bg-white py-20 md:py-28">
-      <div className="max-w-[1200px] mx-auto px-6 text-center">
-        <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] tracking-wide">
+    <section className={section}>
+      <div className={sectionWrap}>
+        <h2 className={sectionTitle}>
           The next call is the one that counts.
         </h2>
-        <div className="mt-9 flex items-center justify-center gap-4 flex-wrap">
-          <button
-            onClick={openDemoCalendar}
-            data-analytics-id="cta-book-demo-differences-close"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#2367EE] text-white font-bold text-base border-2 border-[#1D4871] v2-comic-btn"
-            style={{ boxShadow: '3px 3px 0px #1D4871' }}
-          >
-            Book a Demo
-          </button>
-          <button
-            onClick={openSignup}
-            data-analytics-id="cta-download-differences-close"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#1D4871] v2-comic-btn"
-            style={{ boxShadow: '3px 3px 0px #1D4871' }}
-          >
-            <LightningIcon size={14} className="mr-1.5" />
+        <div className="mt-9 flex items-center justify-center gap-x-3 gap-y-2.5 flex-wrap">
+          <Button withArrow onClick={openDemoCalendar} data-analytics-id="cta-book-demo-differences-close">
+            Book a demo
+          </Button>
+          <Button variant="secondary" onClick={openSignup} data-analytics-id="cta-download-differences-close">
             Download Sayso
-          </button>
+          </Button>
         </div>
-        <p className="mt-8 text-sm font-bold tracking-wide uppercase text-[#9AA5B1]">
+        <p className="mt-8 text-sm font-bold tracking-wide uppercase text-[#7f92aa]">
           Used by RealTrends ranked teams every day
         </p>
       </div>

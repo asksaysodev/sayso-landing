@@ -6,31 +6,32 @@
  */
 
 import Image from 'next/image';
+import { panel, section, wash } from '@/components/landing/HomeShared/styles';
 import { TIMELINE_CARDS } from '../data';
+import { sectionTitle, sectionWrap } from '../styles';
 
 export function TimelineSection() {
   return (
-    <section className="bg-[#F8F8FA] py-16 md:py-24 v2-halftone relative">
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
-        <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-[#1D4871] tracking-wide max-w-4xl mx-auto">
+    <section className={`${wash} ${section}`}>
+      <div className={sectionWrap}>
+        <h2 className={`${sectionTitle} max-w-4xl mx-auto`}>
           Recordings after the fact is not the same as assisting the conversation when it can still be won.
         </h2>
 
         <div className="mx-auto max-w-[960px] mt-12">
           <div className="grid grid-cols-1 md:grid-cols-[1.55fr_1fr] gap-2">
             <div
-              className="h-[78px] flex items-center justify-center rounded-xl border-2 border-[#1D4871] text-white font-extrabold text-[15px] v2-comic-shadow-sm"
-              style={{ background: 'linear-gradient(90deg, #2367EE, #4A83F5)' }}
+              className="h-[78px] flex items-center justify-center rounded-2xl bg-[#2367EE] text-white font-extrabold text-[15px] shadow-[0_1px_2px_rgba(16,35,58,0.18),0_8px_20px_-8px_rgba(35,103,238,0.55)]"
             >
               The call is happening
             </div>
-            <div className="h-[78px] flex items-center justify-center rounded-xl border-2 border-[#1D4871]/20 bg-[#E8EBEF] text-[#8B95A2] font-extrabold text-[15px]">
+            <div className="h-[78px] flex items-center justify-center rounded-2xl border border-[rgba(16,35,58,0.12)] bg-[#EEF1F4] text-[#7f92aa] font-extrabold text-[15px]">
               The call is over
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-[1.55fr_1fr] gap-2 mt-4 text-left">
-            <div className="bg-white rounded-2xl v2-comic-border v2-comic-shadow-blue p-6">
+            <div className={`${panel} p-6`}>
               <p className="flex items-center gap-2.5 mb-2.5">
                 <Image
                   src="/logos/logo-pos-horizontal.png"
@@ -41,11 +42,11 @@ export function TimelineSection() {
                 />
                 <span className="font-extrabold text-[#2367EE] text-lg">lives here</span>
               </p>
-              <p className="text-[#5B6674] leading-relaxed">{TIMELINE_CARDS.sayso}</p>
+              <p className="text-[#556B86] leading-relaxed">{TIMELINE_CARDS.sayso}</p>
             </div>
-            <div className="bg-white rounded-2xl v2-comic-border-light p-6">
-              <p className="font-extrabold text-[#8B95A2] text-lg mb-2.5">Everyone else works here</p>
-              <p className="text-[#5B6674] leading-relaxed">{TIMELINE_CARDS.everyoneElse}</p>
+            <div className={`${panel} p-6`}>
+              <p className="font-extrabold text-[#7f92aa] text-lg mb-2.5">Everyone else works here</p>
+              <p className="text-[#556B86] leading-relaxed">{TIMELINE_CARDS.everyoneElse}</p>
             </div>
           </div>
         </div>
