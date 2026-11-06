@@ -354,7 +354,7 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 
 `app/page.tsx` composes these sections, in order. Each lives in its own folder under `components/landing/`:
 
-1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens Calendly in a new tab.
+1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens the Calendly demo pop-up (`openDemoCalendar`, `cta-team-platform-strip`).
 2. **Navbar** (shared, `SaysoNavbar`).
 3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Download Sayso / Book a demo / Try it live / Watch the demo (Loom pop-out), meta line, centered social proof with a rotating quote, Ask AI links.
 4. **Guided live demo** (`HomeLiveDemo`, `#demo`): step card above the stage, then the live widget. Six steps: Start, watch cues, Smart Capture note, Pulse, Playbook, hang up. Ends with the superhero card.
@@ -370,7 +370,7 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 ### Layout rules
 
 - Page column: 1160px max with a 16px gutter (`wrap` in `components/landing/HomeShared/styles.ts`). Sections use `section` (96px vertical, 68px at 640px and below) and alternate the page background `#F4F4F5` with the `wash` background `#E3E8EC` plus faint halftone dots.
-- Section headers: yellow Bangers label, Manrope 800 headline with a muted second half (`#7f92aa`).
+- Section headers: yellow Bangers label, Manrope 800 headline with a muted second half (`#6b7f99`, at least 3:1 on `#F4F4F5` and the `#E3E8EC` wash).
 - Breakpoints: 960px (grids become carousels, Features stacks), 640px (tighter spacing).
 - **Carousels** (`components/ui/Carousel`): a grid on desktop; at 960px and below a swipeable scroll-snap row with peeking edges and prev/next arrows. Finite for How it works and Compare, infinite (`loop`) for Made to fit and Reviews. Arrow presses use a timer-based tween because smooth scrolling is unreliable with scroll-snap. Clones are aria-hidden and their links are out of the tab order.
 - Section ids `#how`, `#features`, `#pricing` and `#faq` are linked from the navbar; keep them.

@@ -15,13 +15,15 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Desktop navbar, visible on every page |
 | `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile hamburger menu, only in DOM when menu open |
 | `cta-get-started-navbar-minimal` | → `#cta` anchor | [components/layout/NavbarMinimal.tsx](../../components/layout/NavbarMinimal.tsx) | Minimal-navbar pages |
-| `cta-book-demo-top-strip` | Opens the Calendly demo page in a new tab | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar |
+| `cta-team-platform-strip` | Opens demo calendar | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar ("see the team platform") |
 | `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-watch-video-hero` | Opens the demo video pop-out | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo |
-| `cta-founder-pricing-home-pricing` | Link to `/founderpricing/` | [components/landing/HomePricing/components/PricingCards.tsx](../../components/landing/HomePricing/components/PricingCards.tsx) | Homepage pricing, Claim early access |
+| `cta-download-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/components/PricingCards.tsx](../../components/landing/HomePricing/components/PricingCards.tsx), [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Individual Agent+ Claim early access, same id on the homepage and on /pricing and /founderpricing |
 | `cta-book-demo-home-pricing-teams` | Opens demo calendar | [components/landing/HomePricing/components/PricingCards.tsx](../../components/landing/HomePricing/components/PricingCards.tsx) | Homepage pricing, Assemble your team |
+| `pricing-billing-toggle-annual` | Switches prices to annual billing | [components/landing/HomePricing/components/BillingToggle.tsx](../../components/landing/HomePricing/components/BillingToggle.tsx), [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Same id on the homepage and on /pricing and /founderpricing; split by page path in GTM |
+| `pricing-billing-toggle-monthly` | Switches prices to monthly billing | Same as above | Same as above |
 | `cta-download-final-cta` | Opens signup and download | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-book-demo-final-cta` | Opens demo calendar | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-download-three-steps-section` | Opens system-select modal | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Ad pages "3 Easy Steps" |
@@ -128,4 +130,4 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 
 ## Total count
 
-35 unique `data-analytics-id` values (38 before the three retired ids above were removed) (counting page-type family IDs as one row each per `{page-type}` substitution).
+41 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The three ids under Retired IDs are no longer on the site.
