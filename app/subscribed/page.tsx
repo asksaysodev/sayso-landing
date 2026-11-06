@@ -77,7 +77,7 @@ export default function SubscribedPage() {
                   What Sayso does on every call
                 </p>
                 <h2 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[30px] md:text-[42px] leading-[1.1] mb-4">
-                  A coach on every call, not after.
+                  Guidance on every call, not after.
                 </h2>
                 <p className="text-[#1D4871]/80 text-base md:text-lg leading-relaxed font-sans">
                   Sayso listens to your call in real time and surfaces the

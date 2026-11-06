@@ -29,7 +29,7 @@ export const soloAgents: UseCaseEntry = {
   ],
   betterApproachHeading: 'A Better Approach to Prospecting Conversations',
   betterApproach: [
-    'What if you could have a coach in your ear during every call, not after? Real-time guidance changes the equation. Instead of preparing for every possible scenario before the conversation, you get guidance during the conversation when it actually matters.',
+    'What if you had help on your screen during every call, not after? Real-time guidance changes the equation. Instead of preparing for every possible scenario before the conversation, you get guidance during the conversation when it actually matters.',
     'Sayso listens to your live prospecting calls and shows you what to say next on your screen. When a prospect pushes back, the right response appears. When the conversation stalls, Sayso suggests the next question to keep it moving. This is how solo agents have better prospecting conversations in real estate without memorizing a binder full of scripts.',
     'Picture this: a lead says "I already have an agent." Instead of stammering through a generic reply, you see a proven response on your screen, tailored to what they just said. You deliver it naturally, the conversation continues, and you book the appointment. That is the difference real-time guidance makes.',
     'Sayso captures your notes automatically and syncs them to your CRM, so the admin work that used to take an hour now takes zero. You move straight to the next dial with your conversation details already logged.',
