@@ -8,7 +8,7 @@
  * button starts a new call on the same step.
  */
 import type { SaysoWidgetProps, WidgetControl } from '@/components/SaysoWidget/types';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { prefersReducedMotion } from '@/lib/utils/motion';
 import { PHASE_B, PHASE_C, STEPS, STOPPED } from '../data';
 import type { StepKey } from '../types';
@@ -29,6 +29,8 @@ const scrollToDemo = () => {
 export function useDemoTour() {
   /** The step already counting down to the next one (hover, tap and Show me fire hit more than once). */
   const advancing = useRef(-1);
+  /** Step whose action the visitor already did (hides Click here until the next step). */
+  const [acted, setActed] = useState(-1);
   const stepKey = (): StepKey | undefined => STEPS[engine.s.current.step]?.key;
 
   const engine = useCallEngine({
@@ -63,6 +65,8 @@ export function useDemoTour() {
   const hit = (key: StepKey) => {
     const at = s.current.step;
     if (STEPS[at]?.key !== key || advancing.current === at) return;
+    // The visitor did the step: the Click here pointer goes away at once.
+    setActed(at);
     if (key === 'start') return goStep(at + 1);
     advancing.current = at;
     const wait = SETTLE[key] ?? 600;
@@ -76,7 +80,10 @@ export function useDemoTour() {
   };
 
   const onAction = (control: WidgetControl) => {
-    if (control === 'stop') advancing.current = -1;
+    if (control === 'stop') {
+      advancing.current = -1;
+      setActed(-1);
+    }
     actions[control]();
     if (control === 'start' || control === 'zip' || control === 'play' || control === 'reset') hit(control);
   };
@@ -158,8 +165,15 @@ export function useDemoTour() {
     onDotHover,
   };
 
+  /**
+   * Click here shows only while the current step waits for the visitor: on
+   * the control the step points at, or on L once its note is ready (step 3).
+   */
+  const pointer = !st.starting && acted !== st.step && (key === 'dot' ? !!st.caps[0] : !!(key && HIGHLIGHT[key]));
+
   return {
     widget,
+    pointer,
     narrowWidth: showAlert ? 480 : 604,
     stepIndex: st.step,
     stepKey: key,
@@ -170,6 +184,7 @@ export function useDemoTour() {
     skip,
     restart: () => {
       advancing.current = -1;
+      setActed(-1);
       restart();
     },
   };

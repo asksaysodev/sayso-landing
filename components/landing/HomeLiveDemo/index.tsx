@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 /**
  * Homepage guided live demo: the step card above a stage that holds the live,
@@ -12,15 +12,15 @@
  * any direction shrinks or grows everything evenly. Narrow screens (phones)
  * lay out at their own width and scroll.
  */
-import { inter } from "@/components/SaysoWidget/font";
-import { useEffect, useRef, useState } from "react";
-import SaysoWidget, { WidgetScaler } from "@/components/SaysoWidget";
-import styles from "./LiveDemo.module.css";
-import { CoachCard } from "./components/CoachCard";
-import { StageCaption } from "./components/StageCaption";
-import { TourPointer } from "./components/TourPointer";
-import { useDemoTour } from "./hooks/useDemoTour";
-import { useStageFit } from "./hooks/useStageFit";
+import { inter } from '@/components/SaysoWidget/font';
+import { useEffect, useRef, useState } from 'react';
+import SaysoWidget, { WidgetScaler } from '@/components/SaysoWidget';
+import styles from './LiveDemo.module.css';
+import { CoachCard } from './components/CoachCard';
+import { StageCaption } from './components/StageCaption';
+import { TourPointer } from './components/TourPointer';
+import { useDemoTour } from './hooks/useDemoTour';
+import { useStageFit } from './hooks/useStageFit';
 
 /** Desktop layout width of the whole demo (the section's 1160px max minus its 16px gutters). */
 const DESIGN_WIDTH = 1128;
@@ -37,11 +37,7 @@ function useContentWidth(ref: React.RefObject<HTMLElement>) {
     if (!el) return;
     const read = () => {
       const cs = getComputedStyle(el);
-      setW(
-        el.clientWidth -
-          parseFloat(cs.paddingLeft) -
-          parseFloat(cs.paddingRight),
-      );
+      setW(el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight));
     };
     read();
     const ro = new ResizeObserver(read);
@@ -60,26 +56,17 @@ export function HomeLiveDemo() {
   const fit = useStageFit(padRef, captionRef);
   const contentWidth = useContentWidth(outerRef);
   const block = contentWidth === null || contentWidth >= BLOCK_BELOW;
-  const pointerActive = !demo.starting && !!demo.widget.highlight;
+  const pointerActive = demo.pointer;
   const w = demo.widget;
-  const layoutKey = [
-    demo.stepIndex,
-    w.view,
-    w.live,
-    w.insightOpen,
-    w.pulseOpen,
-    w.zipText ?? "",
-    w.playbookOpen,
-    w.cues?.length,
-    w.note,
-  ].join("|");
+  // Only what moves the pointer's target: toolbar buttons move with the view, the zip pill and Playbook;
+  // L moves with the panels above it and the cue list.
+  const layoutKey =
+    demo.stepKey === 'dot'
+      ? [demo.stepIndex, w.view, w.insightOpen, w.pulseOpen, w.cues?.length].join('|')
+      : [demo.stepIndex, w.view, w.live, w.zipText ?? '', w.pulseOpen, w.playbookOpen].join('|');
 
   return (
-    <div
-      ref={outerRef}
-      id="demo"
-      className={`${inter.variable} mx-auto mt-12 w-full max-w-[1160px] scroll-mt-20 px-4 pb-3`}
-    >
+    <div ref={outerRef} id="demo" className={`${inter.variable} mx-auto mt-12 w-full max-w-[1160px] scroll-mt-20 px-4 pb-3`}>
       <WidgetScaler
         width={block ? DESIGN_WIDTH : (contentWidth ?? DESIGN_WIDTH)}
         fitViewport={block ? VIEWPORT_RESERVE : undefined}
@@ -95,29 +82,14 @@ export function HomeLiveDemo() {
           />
         </div>
         <div ref={stageRef} className={styles.stage}>
-          <div
-            ref={padRef}
-            className={styles.stagePad}
-            data-fit={fit ? "" : undefined}
-            style={fit ? { height: fit.height } : undefined}
-          >
+          <div ref={padRef} className={styles.stagePad} data-fit={fit ? '' : undefined} style={fit ? { height: fit.height } : undefined}>
             <StageCaption ref={captionRef} caption={demo.caption} />
-            <WidgetScaler
-              width={1010}
-              narrowWidth={demo.narrowWidth}
-              initialHeight="min(62px, calc((100vw - 54px) * 0.1292))"
-            >
+            <WidgetScaler width={1010} narrowWidth={demo.narrowWidth} initialHeight="min(62px, calc((100vw - 54px) * 0.1292))">
               <SaysoWidget {...demo.widget} />
             </WidgetScaler>
-            <span className={styles.sampleNote}>
-              Sample call and market data
-            </span>
+            <span className={styles.sampleNote}>Sample call and market data</span>
           </div>
-          <TourPointer
-            stageRef={stageRef}
-            active={pointerActive}
-            layoutKey={layoutKey}
-          />
+          <TourPointer stageRef={stageRef} active={pointerActive} layoutKey={layoutKey} />
         </div>
       </WidgetScaler>
     </div>

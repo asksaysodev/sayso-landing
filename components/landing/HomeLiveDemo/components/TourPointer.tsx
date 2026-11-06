@@ -1,15 +1,16 @@
 'use client';
 
 /**
- * The yellow "Click here" pointer that floats above the control the current
- * tour step wants pressed. It finds the widget's highlighted control inside
- * the stage and re-measures only when needed: after each demo layout change
- * (with a short per-frame burst to follow the widget's transitions, only while
- * the stage is on screen) and when the stage resizes.
+ * The yellow "Click here" pointer above the control the current tour step
+ * wants pressed. It never moves on screen: when the widget's layout changes
+ * it disappears, waits for the widget to settle, then appears in its new
+ * place. It hides the moment the step is done (the tour turns `active` off).
  */
-import { useRef, useState, type RefObject } from 'react';
-import { useTrackLayout } from '@/lib/hooks/useTrackLayout';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import styles from '../LiveDemo.module.css';
+
+/** Longest widget open/close transition, so the pointer only appears once things stop moving. */
+const SETTLE_MS = 450;
 
 interface TourPointerProps {
   stageRef: RefObject<HTMLDivElement>;
@@ -40,7 +41,30 @@ export function TourPointer({ stageRef, active, layoutKey }: TourPointerProps) {
     setPos((p) => (p && Math.abs(p.left - left) < 0.5 && Math.abs(p.top - top) < 0.5 ? p : { left, top }));
   };
 
-  useTrackLayout(stageRef, place, { enabled: active, layoutKey, follow: true });
+  // Hide on every layout change, then show once the widget has settled.
+  useEffect(() => {
+    setPos(null);
+    if (!active) return;
+    const id = setTimeout(place, SETTLE_MS);
+    return () => clearTimeout(id);
+  }, [active, layoutKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // A window resize scales the demo: hide, then re-place when resizing stops.
+  useEffect(() => {
+    if (!active) return;
+    let id: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      setPos(null);
+      clearTimeout(id);
+      id = setTimeout(place, 150);
+    };
+    window.addEventListener('resize', onResize);
+    return () => {
+      clearTimeout(id);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const shown = active ? pos : null;
 
   return (
