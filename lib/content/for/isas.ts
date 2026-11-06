@@ -2,7 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const isas: UseCaseEntry = {
   slug: 'isas',
-  updatedAt: '2026-09-29',
+  updatedAt: '2026-11-05',
   persona: 'ISAs',
   keyword: 'how to improve ISA conversion rates in real estate',
   seoTitle: 'Improve ISA Conversion Rates in Real Estate - ISAs',
@@ -103,8 +103,8 @@ export const isas: UseCaseEntry = {
     { title: 'Real Estate Cold Calling Services vs. Making the Calls Yourself', href: '/blog/real-estate-cold-calling-services/' },
   ],
   relatedObjections: [
-    { title: '"Call Me Later" \u2014 How to Respond', href: '/objections/call-me-later' },
-    { title: '"I\'m Not Interested" \u2014 How to Respond', href: '/objections/not-interested' },
-    { title: '"I\'m Not Ready Yet" \u2014 How to Respond', href: '/objections/not-ready-yet' },
+    { title: '"Call Me Later": How to Respond', href: '/objections/call-me-later' },
+    { title: '"I\'m Not Interested": How to Respond', href: '/objections/not-interested' },
+    { title: '"I\'m Not Ready Yet": How to Respond', href: '/objections/not-ready-yet' },
   ],
 };
