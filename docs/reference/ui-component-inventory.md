@@ -79,12 +79,23 @@
 
 ## 2. Content Components
 
-### HeroWithVideo
-- **Path:** `components/landing/HeroWithVideo.tsx`
-- **Description:** Main hero section with headline, tagline, CTA buttons, product showcase video, and social proof logos.
-- **Used on:** Homepage (`/`)
-- **Props:** `content?: HeroContent` (optional `headline`, `tagline`, `taglineSub`, `headlineSize`)
-- **Visual behavior:** 3-column layout (text | superhero character | video), responsive mobile carousel, animated slide-in text, yellow narrator badge overlays video, social proof logos centered below.
+### SaysoWidget
+- **Path:** `components/SaysoWidget/` (`index.tsx`, `types.ts`, `data.ts`, `components/`)
+- **Description:** Props-driven rebuild of the real Sayso widget: call alert, toolbar, Pulse, cues, LPMAMA with note bubbles, copy, Playbook. Static (a picture) or live (clickable, with `onAction` / `onDotSelect`).
+- **Used on:** Homepage (`/`) hero demo, How it works, Features, Made to fit. Planned for the product pages.
+- **Props:** see `components/SaysoWidget/types.ts`; ready-made static views in `WIDGET_PRESETS` (`data.ts`).
+- **Visual behavior:** Renders at its true size (604px column, 1010px with Playbook beside it). Wrap it in `WidgetScaler`, which scales it down to fit and can switch to the stacked narrow layout.
+
+### Homepage sections
+- **Path:** `components/landing/Home*/` (`HomeTopStrip`, `HomeHero`, `HomeLiveDemo`, `HomeHowItWorks`, `HomeFeatures`, `HomeFitCards`, `HomeCompare`, `HomeReviews`, `HomePricing`, `HomeFAQ`, `HomeFinalCta`) plus shared classes in `HomeShared/`.
+- **Used on:** Homepage (`/`) only.
+- **Visual behavior:** Flat redesign. See Section 10 of `docs/brand/sayso-design-system.md` for the page order.
+
+### Carousel
+- **Path:** `components/ui/Carousel/`
+- **Description:** Grid on desktop (page passes the grid classes), swipeable scroll-snap row with peeking edges and prev/next arrows at 960px and below. Finite by default, `loop` for infinite (aria-hidden clones).
+- **Used on:** Homepage How it works, Made to fit, Compare, Reviews.
+- **Props:** `label`, `itemName?`, `loop?`, `trackClassName?`, `className?`, `children` (one child per slide).
 
 ### HeroSection
 - **Path:** `components/sections/HeroSection.tsx`
@@ -93,38 +104,10 @@
 - **Props:** `eyebrow?: string`, `headline: string`, `subhead?: string`, `primaryCTA?: { text, href }`, `secondaryCTA?: { text, href }`, `rightContent?: ReactNode`
 - **Visual behavior:** Full-width hero with large H1, subtitle text, and up to two CTA buttons side by side. Optional right content area for media.
 
-### PainPointPanel
-- **Path:** `components/landing/PainPointPanel/index.tsx`
-- **Description:** Showcases pain points with mobile carousel and desktop 2-panel "Without Sayso" section.
-- **Used on:** Homepage (`/`)
-- **Props:** None (uses internal state)
-- **Visual behavior:** Mobile: horizontal carousel with swipe. Desktop: side-by-side panels showing comic-style struggle illustrations.
-
-### PanelTheStruggle
-- **Path:** `components/landing/PainPointPanel/PanelTheStruggle.tsx`
-- **Description:** Comic panel showing an agent freezing on a call.
-- **Used on:** Used inside PainPointPanel
-- **Props:** `imgHeight?: number`
-- **Visual behavior:** Comic-style illustration card with descriptive text.
-
-### PanelWastedOpportunity
-- **Path:** `components/landing/PainPointPanel/PanelWastedOpportunity.tsx`
-- **Description:** Comic panel showing missed revenue from lost calls.
-- **Used on:** Used inside PainPointPanel
-- **Props:** `imgHeight?: number`
-- **Visual behavior:** Comic-style illustration card with descriptive text.
-
-### TransformationSection
-- **Path:** `components/landing/TransformationSection/index.tsx`
-- **Description:** Victory metrics and transformation messaging with superhero imagery and animated starburst background.
-- **Used on:** Homepage (`/`)
-- **Props:** `content?: TransformationContent` (headline, subheading, metrics array)
-- **Visual behavior:** Dark blue background (#1D4871) with yellow accent stripe, 2-column layout (hero image left, metrics right on desktop), metric cards with icons in white-rounded boxes, floating superhero animation.
-
 ### ThreeStepsSection
 - **Path:** `components/landing/ThreeStepsSection/index.tsx`
 - **Description:** 3-step process section showing how Sayso works with visual cards and mobile carousel.
-- **Used on:** Homepage (`/`)
+- **Used on:** Ad pages (`/agent`, `/isa`, `/broker`, `/sales-leader`)
 - **Props:** `content?: ThreeStepsContent` (headline, subheading, steps array)
 - **Visual behavior:** Mobile: carousel with prev/next buttons and dot indicators. Desktop: all 3 steps horizontal with comic arrow connectors. Dual CTAs at bottom.
 

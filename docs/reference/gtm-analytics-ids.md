@@ -17,14 +17,17 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Mobile hamburger menu, only in DOM when menu open |
 | `cta-download-mobile-menu` | Opens system-select modal | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Mobile hamburger menu, only in DOM when menu open |
 | `cta-get-started-navbar-minimal` | → `#cta` anchor | [components/layout/NavbarMinimal.tsx](../../components/layout/NavbarMinimal.tsx) | Minimal-navbar pages |
-| `cta-download-hero` | Opens system-select modal | [components/landing/HeroWithVideo.tsx](../../components/landing/HeroWithVideo.tsx) | Desktop-only render (≥lg) |
-| `cta-download-hero-mobile` | Opens system-select modal | [components/landing/HeroWithVideo.tsx](../../components/landing/HeroWithVideo.tsx) | Mobile-only render (<lg), labeled "Create an Account" |
-| `cta-download-three-steps-section` | Opens system-select modal | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Home page "3 Easy Steps" |
-| `cta-book-demo-three-steps-section` | Opens demo calendar | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Home page "3 Easy Steps" |
-| `cta-download-transformation-section` | Opens system-select modal | [components/landing/TransformationSection/index.tsx](../../components/landing/TransformationSection/index.tsx) | Home page "You're Unstoppable" |
-| `cta-book-demo-transformation-section` | Opens demo calendar | [components/landing/TransformationSection/index.tsx](../../components/landing/TransformationSection/index.tsx) | Home page "You're Unstoppable" |
-| `cta-book-demo-lift-card` | Navigates to `/demo` | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | "Book a time" in the floating demo card, homepage only (preview) |
-| `cta-lift-card-toggle` | Opens/closes the floating card | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | Round launcher button, homepage only (preview) |
+| `cta-book-demo-top-strip` | Opens the Calendly demo page in a new tab | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar |
+| `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
+| `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
+| `cta-watch-video-hero` | Opens the demo video pop-out | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
+| `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo |
+| `cta-founder-pricing-home-pricing` | Link to `/founderpricing/` | [components/landing/HomePricing/components/PricingCards.tsx](../../components/landing/HomePricing/components/PricingCards.tsx) | Homepage pricing, Claim early access |
+| `cta-book-demo-home-pricing-teams` | Opens demo calendar | [components/landing/HomePricing/components/PricingCards.tsx](../../components/landing/HomePricing/components/PricingCards.tsx) | Homepage pricing, Assemble your team |
+| `cta-download-final-cta` | Opens signup and download | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
+| `cta-book-demo-final-cta` | Opens demo calendar | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
+| `cta-download-three-steps-section` | Opens system-select modal | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Ad pages "3 Easy Steps" |
+| `cta-book-demo-three-steps-section` | Opens demo calendar | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Ad pages "3 Easy Steps" |
 | `cta-book-demo-persona-agent-footer` | Scrolls to the demo form in the hero | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent footer CTA |
 | `cta-book-demo-persona-broker-footer` | Scrolls to the demo form in the hero | [components/landing/BrokerAdPage.tsx](../../components/landing/BrokerAdPage.tsx) | /broker footer |
 | `cta-book-demo-persona-isa-footer` | Scrolls to the demo form in the hero | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa footer |
@@ -110,7 +113,6 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 2. Visit: `/`, `/pricing`, `/agent`, `/broker`, `/isa`, `/sales-leader`, `/products/cue` (or any slug), `/for/solo-agents`, `/blog/[any-slug]`, `/objections/[any-slug]`, `/glossary/[any-slug]`, `/integrations/partners/follow-up-boss`, `/why-sayso`.
 3. In DevTools console on each page: `document.querySelectorAll('[data-analytics-id]')` — verify expected IDs are present and no duplicates.
 4. Click each CTA and confirm behavior is unchanged (demo modal, system-select modal, or anchor jump still works).
-5. Mobile breakpoint: shrink to <768px and confirm mobile-only IDs appear (`cta-download-hero-mobile`, `cta-get-started-mobile-menu`).
 6. `npm run build` — must pass with no TypeScript errors. Passed as of the commit that introduced these attributes.
 
 ---
