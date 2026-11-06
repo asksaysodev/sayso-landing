@@ -5,6 +5,7 @@
  */
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import Carousel from '@/components/ui/Carousel';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
@@ -44,19 +45,19 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
           caption="Sample call: a live cue, captured letters and the note under Motivation."
           className="mb-8"
         />
-        <div className="mb-8 space-y-5">
+        <Carousel label="What makes Sayso different" itemName="card" className="mb-8" trackClassName="grid grid-cols-1 gap-5">
           {content.differentiators.map((diff) => (
             <div key={diff.title} className={card}>
               <p className="mb-2 font-sans text-base font-bold text-[#10233A]">{diff.title}</p>
               <p className="font-sans text-sm leading-relaxed text-[#1D4871]/70">{diff.description}</p>
             </div>
           ))}
-        </div>
+        </Carousel>
 
         <ContentInlineCTA location="why-sayso-page" />
 
         <h2 className={`${h2} mb-6 mt-10`}>Who Sayso Is Built For</h2>
-        <div className="mb-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <Carousel label="Who Sayso is built for" itemName="role" className="mb-8" trackClassName="grid grid-cols-2 gap-5">
           {content.whoItsFor.map((persona) => (
             <Link key={persona.persona} href={persona.href} className={`group ${linkCard}`}>
               <p className="mb-1 font-sans text-base font-bold text-[#10233A] transition-colors group-hover:text-[#2367EE]">
@@ -65,16 +66,16 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
               <p className="font-sans text-sm leading-relaxed text-[#1D4871]/70">{persona.description}</p>
             </Link>
           ))}
-        </div>
+        </Carousel>
 
         <h2 className={`${h2} mb-4 mt-10`}>What Teams Are Saying</h2>
-        <div className="mb-8 space-y-4">
+        <Carousel label="What teams are saying" itemName="quote" className="mb-8" trackClassName="grid grid-cols-1 gap-4">
           {content.socialProof.map((text, i) => (
             <blockquote key={i} className={quote}>
               <p className="font-sans text-base italic leading-relaxed text-[#10233A]">&ldquo;{text}&rdquo;</p>
             </blockquote>
           ))}
-        </div>
+        </Carousel>
       </article>
 
       {content.faq.length > 0 && <FAQ items={content.faq} />}
@@ -82,7 +83,7 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
       <ContentCTA
         location="why-sayso-page"
         headline="Get Started Today"
-        subheading="See the difference real-time coaching makes on your calls."
+        subheading="See the difference real-time guidance makes on your calls."
       />
     </>
   );

@@ -5,6 +5,7 @@
  * the real estate focus, on the standard navy dark-section shell.
  */
 
+import Carousel from '@/components/ui/Carousel';
 import { section } from '@/components/landing/HomeShared/styles';
 import { PIPELINE_STEPS, TECH_CARDS } from '../data';
 import { sectionTitle, sectionWrap } from '../styles';
@@ -37,14 +38,14 @@ export function EngineSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-5 text-left">
+        <Carousel label="How the engine works" itemName="card" className="mt-12 text-left" trackClassName="grid grid-cols-3 gap-5">
           {TECH_CARDS.map(({ title, description }) => (
             <div key={title} className="bg-white/[0.06] border border-white/15 rounded-[20px] p-7">
               <h3 className="text-[#FFDE59] font-extrabold text-lg leading-snug mb-3">{title}</h3>
               <p className="text-white/70 leading-relaxed text-[15.5px]">{description}</p>
             </div>
           ))}
-        </div>
+        </Carousel>
 
         <p className="mt-12 text-white/60 font-bold text-lg">
           There is nothing new to learn. Turn it on, make your calls, and book more appointments.

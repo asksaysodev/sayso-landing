@@ -4,6 +4,7 @@
  * The "3 boxes" block: a section heading plus three value-prop cards.
  * Content is driven by the partner entry so each page can tune its messaging.
  */
+import Carousel from '@/components/ui/Carousel';
 import { panel, section, wash } from '@/components/landing/HomeShared/styles';
 import type { PartnerIntegrationEntry } from '@/lib/content/partner-integrations/types';
 
@@ -24,7 +25,7 @@ export function ValuePropsSection({ entry }: ValuePropsSectionProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Carousel label={entry.valuePropsHeading} itemName="card" trackClassName="grid grid-cols-3 gap-6">
           {entry.valueProps.map((prop, index) => (
             <div
               key={prop.title}
@@ -41,7 +42,7 @@ export function ValuePropsSection({ entry }: ValuePropsSectionProps) {
               </p>
             </div>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );
