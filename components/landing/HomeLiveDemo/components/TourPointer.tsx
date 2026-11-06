@@ -32,9 +32,11 @@ export function TourPointer({ stageRef, active, layoutKey }: TourPointerProps) {
     }
     const r = target.getBoundingClientRect();
     const b = stage.getBoundingClientRect();
+    // The demo may sit in a scaled frame: convert screen px back to the stage's own px.
+    const k = stage.offsetWidth ? b.width / stage.offsetWidth : 1;
     const half = (ref.current?.offsetWidth || 90) / 2 + 8;
-    const left = Math.max(half, Math.min(b.width - half, r.left + r.width / 2 - b.left));
-    const top = r.top - b.top - 14;
+    const left = Math.max(half, Math.min(stage.offsetWidth - half, (r.left + r.width / 2 - b.left) / k));
+    const top = (r.top - b.top) / k - 14;
     setPos((p) => (p && Math.abs(p.left - left) < 0.5 && Math.abs(p.top - top) < 0.5 ? p : { left, top }));
   };
 
