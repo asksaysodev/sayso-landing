@@ -32,8 +32,16 @@ export const primaryNav: NavLink[] = [
 
 /** Highlighted links at the top of the Resources menu. */
 export const resourcesFeatured: NavLink[] = [
-  { label: 'Blog', href: '/blog', subtitle: 'Scripts, objections and prospecting guides', mark: 'B' },
-  { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator', subtitle: 'Work out the calls behind your goal', mark: '$' },
+  { label: 'Blog', href: '/blog', subtitle: 'Scripts and call guides', mark: 'B' },
+  { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator', subtitle: 'The calls behind your goal', mark: '$' },
+  {
+    label: 'Free script generator',
+    href: 'https://composer.asksayso.com',
+    subtitle: 'Custom call scripts',
+    mark: 'S',
+    external: true,
+    dataAnalyticsId: 'nav-composer',
+  },
 ];
 
 /** Columns inside the Resources menu. */

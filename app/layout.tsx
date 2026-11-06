@@ -71,7 +71,7 @@ const siteNavigationJsonLd = {
       name: 'Home',
       url: siteUrl,
     },
-    ...[...primaryNav.filter((link) => !link.href.includes('#')), ...resourcesFeatured].map((link, i) => ({
+    ...[...primaryNav.filter((link) => !link.href.includes('#')), ...resourcesFeatured.filter((link) => !link.external)].map((link, i) => ({
       '@type': 'SiteNavigationElement' as const,
       position: 2 + i,
       name: link.label,
