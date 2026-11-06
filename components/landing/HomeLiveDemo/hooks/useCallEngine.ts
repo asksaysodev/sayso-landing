@@ -5,20 +5,20 @@
  * (timers always read the latest values), re-renders on every change, plays
  * the scripted call in timed stretches, runs the call clock and handles the
  * widget controls. Every delayed callback is tracked and token-guarded:
- * stop cancels the call, cancelAll (Skip tour, Start over, unmount) clears
- * every pending timer.
+ * the yellow reset button cancels the call and starts a new one, cancelAll
+ * (stop, Skip tour, Start over, unmount) clears every pending timer.
  */
 import { useEffect, useReducer, useRef } from 'react';
 import { SAMPLE_MARKET, SAMPLE_NOTES } from '@/components/SaysoWidget/data';
 import type { WidgetControl } from '@/components/SaysoWidget/types';
-import { HINT_DISMISS, PHASE_A, PHASE_B2, STOPPED, fresh } from '../data';
+import { HINT_DISMISS, NEW_CALL, PHASE_A, PHASE_B2, fresh } from '../data';
 import type { Beat, DemoState } from '../types';
 
 interface EngineHooks {
   /** The opening stretch of the call finished. */
   onPhaseADone: () => void;
-  /** True while the tour wants Smart Capture note `i` to stay open. */
-  holdTip: (i: number) => boolean;
+  /** True when the yellow reset button should replay the call opening (false leaves an empty call). */
+  replayOnReset: () => boolean;
 }
 
 export function useCallEngine(hooks: EngineHooks) {
@@ -29,9 +29,9 @@ export function useCallEngine(hooks: EngineHooks) {
   const timers = useRef(new Set<ReturnType<typeof setTimeout>>());
   const clock = useRef<ReturnType<typeof setInterval>>();
   const talkTimer = useRef<ReturnType<typeof setTimeout>>();
-  /** Bumped by stop, Skip tour and Start over: cancels the scripted call. */
+  /** Bumped by reset, stop, Skip tour and Start over: cancels the scripted call. */
   const callToken = useRef(0);
-  /** Bumped by Skip tour and Start over: cancels every delayed callback. */
+  /** Bumped by stop, Skip tour and Start over: cancels every delayed callback. */
   const sessionToken = useRef(0);
   const zipToken = useRef(0);
   const phaseB2Done = useRef(false);
@@ -91,7 +91,7 @@ export function useCallEngine(hooks: EngineHooks) {
     set({ caps });
     if (!s.current.insight) return;
     set({ tip: i });
-    later(() => s.current.tip === i && !hooksRef.current.holdTip(i) && set({ tip: null }), 2400);
+    later(() => s.current.tip === i && set({ tip: null }), 2400);
   };
 
   const beat = (b: Beat) => {
@@ -111,18 +111,32 @@ export function useCallEngine(hooks: EngineHooks) {
     laterInCall(() => done?.(), t + 500);
   };
 
+  const startClock = () => {
+    clearInterval(clock.current);
+    clock.current = setInterval(() => set({ secs: s.current.secs + 1 }), 1000);
+  };
+
+  const playOpening = () =>
+    run(PHASE_A, () => {
+      set({ phaseADone: true });
+      hooksRef.current.onPhaseADone();
+    });
+
+  /** Back to the call alert with nothing played: the tour starts again at step 1. */
+  const restart = () => {
+    cancelAll();
+    s.current = fresh();
+    rerender();
+  };
+
   const actions: Record<WidgetControl, () => void> = {
     start() {
       if (s.current.live || s.current.starting) return;
       set({ starting: true });
       laterInCall(() => {
         set({ starting: false, live: true, detect: false, secs: 0, caption: { kind: 'none' } });
-        clearInterval(clock.current);
-        clock.current = setInterval(() => set({ secs: s.current.secs + 1 }), 1000);
-        run(PHASE_A, () => {
-          set({ phaseADone: true });
-          hooksRef.current.onPhaseADone();
-        });
+        startClock();
+        playOpening();
       }, 300);
     },
     dismiss() {
@@ -147,16 +161,15 @@ export function useCallEngine(hooks: EngineHooks) {
     },
     cues: () => s.current.live && openInsight(!s.current.insight),
     play: () => set({ play: !s.current.play }),
-    stop() {
-      stopCall();
-      // Stopping mid Phase A cancels its done callback; unlock the tour's Next button anyway.
-      set({ ...STOPPED, phaseADone: true });
-    },
+    stop: restart,
+    /** A new call on the same tour step: clock back to zero, letters and cues cleared, panels closed. */
     reset() {
-      cancelAll();
-      phaseB2Done.current = false;
-      s.current = fresh();
-      rerender();
+      if (!s.current.live) return;
+      stopCall();
+      const replay = hooksRef.current.replayOnReset();
+      set({ ...NEW_CALL, phaseADone: !replay });
+      startClock();
+      if (replay) playOpening();
     },
     lead: () => set({ lead: s.current.lead === 'B' ? 'S' : 'B' }),
     copy() {
@@ -165,5 +178,5 @@ export function useCallEngine(hooks: EngineHooks) {
     },
   };
 
-  return { s, set, later, run, actions, openInsight, cancelAll };
+  return { s, set, later, run, actions, openInsight, cancelAll, restart };
 }

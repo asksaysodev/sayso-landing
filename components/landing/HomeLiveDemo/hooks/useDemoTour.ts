@@ -4,7 +4,8 @@
  * Guided tour for the homepage demo, layered on the call engine. Moves the
  * tour forward when the visitor does what the current step asks, powers the
  * step card's Show me, Skip tour and Start over buttons, and builds the props
- * for the live widget.
+ * for the live widget. Stop sends the tour back to step 1; the yellow reset
+ * button starts a new call on the same step.
  */
 import type { SaysoWidgetProps, WidgetControl } from '@/components/SaysoWidget/types';
 import { prefersReducedMotion } from '@/lib/utils/motion';
@@ -15,7 +16,7 @@ import { useCallEngine } from './useCallEngine';
 const formatTime = (n: number) =>
   `${Math.floor(n / 3600)}:${String(Math.floor(n / 60) % 60).padStart(2, '0')}:${String(n % 60).padStart(2, '0')}`;
 
-const HIGHLIGHT: Partial<Record<StepKey, WidgetControl>> = { start: 'start', zip: 'zip', play: 'play', stop: 'stop' };
+const HIGHLIGHT: Partial<Record<StepKey, WidgetControl>> = { start: 'start', zip: 'zip', play: 'play', reset: 'reset' };
 
 const scrollToDemo = () => {
   const el = document.getElementById('demo');
@@ -29,16 +30,17 @@ export function useDemoTour() {
 
   const engine = useCallEngine({
     onPhaseADone: () => stepKey() === 'watch' && goStep(engine.s.current.step + 1),
-    // Keep L's note up while the tour is asking the visitor to look at it.
-    holdTip: (i) => stepKey() === 'dot' && i === 0,
+    // On the last step, reset leaves an empty call (timer running, cues closed); elsewhere the call replays.
+    replayOnReset: () => stepKey() !== 'reset',
   });
-  const { s, set, later, run, actions, openInsight, cancelAll } = engine;
+  const { s, set, later, run, actions, openInsight, cancelAll, restart } = engine;
 
   const goStep = (n: number) => {
-    set({ step: n });
     const key = STEPS[n]?.key;
+    // Step 3 shows L's note only when the visitor hovers or taps L.
+    set(key === 'dot' ? { step: n, tip: null } : { step: n });
     if (key === 'zip') run(PHASE_B);
-    if (key === 'stop') run(PHASE_C);
+    if (key === 'reset') run(PHASE_C);
   };
 
   /** Advance when the visitor did what the current step asks. */
@@ -52,7 +54,11 @@ export function useDemoTour() {
 
   const onAction = (control: WidgetControl) => {
     actions[control]();
-    if (control === 'start' || control === 'zip' || control === 'play' || control === 'stop') hit(control);
+    if (control === 'start' || control === 'zip' || control === 'play' || control === 'reset') hit(control);
+  };
+
+  const onDotHover = (i: number | null) => {
+    if (i === 0 && s.current.caps[0]) hit('dot');
   };
 
   const onDotSelect = (i: number) => {
@@ -69,7 +75,10 @@ export function useDemoTour() {
     if (key === 'watch') return goStep(s.current.step + 1);
     if (key === 'dot') {
       if (!s.current.insight) openInsight(true);
-      set({ tip: 0 });
+      // After a reset the call may not have reached L yet: fill it so the note has something to show.
+      const caps = [...s.current.caps];
+      caps[0] = true;
+      set({ caps, tip: 0 });
       return hit('dot');
     }
     onAction(key);
@@ -107,6 +116,7 @@ export function useDemoTour() {
     interactive: true,
     onAction,
     onDotSelect,
+    onDotHover,
   };
 
   return {
@@ -119,6 +129,6 @@ export function useDemoTour() {
     caption: st.caption,
     showMe,
     skip,
-    restart: () => actions.reset(),
+    restart,
   };
 }

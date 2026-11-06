@@ -17,12 +17,12 @@ export const STEPS: TourStep[] = [
   {
     key: 'watch',
     title: 'Cues come in on their own',
-    body: 'Just talk. As the prospect speaks, short cues flow into Sayso. There is nothing to click. Watch the newest cue at the top.',
+    body: 'Just talk. As the prospect speaks, short cues flow into Sayso. There is nothing to click.',
   },
   {
     key: 'dot',
     title: 'Smart Capture takes the notes',
-    body: 'L changed color when Sayso heard where they want to live. Hover or tap L to read the note it wrote for your CRM.',
+    body: 'L turned purple when Sayso heard where they want to live. Hover over L, or tap it on your phone, to read the note it wrote for your CRM.',
   },
   {
     key: 'zip',
@@ -35,9 +35,9 @@ export const STEPS: TourStep[] = [
     body: 'Click the list icon to open your Playbook. The check icon beside it hides or shows your cues.',
   },
   {
-    key: 'stop',
-    title: 'Hang up when you’re done',
-    body: 'Watch the rest of the letters fill in as the call wraps up, then press the red button. Sayso closes back down to the bar.',
+    key: 'reset',
+    title: 'Reset between calls',
+    body: 'Watch the rest of the letters fill in as the call wraps up. Then press the yellow reset button so Sayso starts fresh for your next call.',
   },
 ];
 
@@ -69,7 +69,7 @@ export const PHASE_B: Beat[] = [
 /** The agent answers with Pulse numbers. */
 export const PHASE_B2: Beat[] = [Y(1200, 'Homes there sell in about 90 days, and prices are trending up.')];
 
-/** The call wraps up (stop step): the remaining letters fill in. */
+/** The call wraps up (reset step): the remaining letters fill in. */
 export const PHASE_C: Beat[] = [
   P(600, 'Honestly, I just want less time in the car and more time with my kids.'),
   K(900, 2),
@@ -96,7 +96,13 @@ export const fresh = (): DemoState => ({
   tip: null, secs: 0, step: 0, phaseADone: false, caption: { kind: 'hint', text: HINT_START },
 });
 
-/** State after hanging up: the widget stays on screen with everything closed. */
+/** A new call after the yellow reset button: clock at zero, nothing captured, every panel closed. */
+export const NEW_CALL: Partial<DemoState> = {
+  live: true, detect: false, starting: false, insight: false, pulse: false, pulseShown: false, zipText: null, play: false,
+  cues: [], caps: [false, false, false, false, false, false], tip: null, secs: 0, caption: { kind: 'none' },
+};
+
+/** State after Skip tour: the widget stays on screen with everything closed. */
 export const STOPPED: Partial<DemoState> = {
   live: false, starting: false, insight: false, pulse: false, pulseShown: false, zipText: null, play: false, tip: null,
   caption: { kind: 'none' },
