@@ -1,0 +1,49 @@
+/**
+ * Team logo marquee: two rows moving in opposite directions, paused on hover.
+ * The second copy of each row is decorative and hidden from assistive tech.
+ * With reduced motion the rows sit still and wrap.
+ */
+import Image from 'next/image';
+import type { TeamLogo } from '../data';
+import styles from './LogoMarquee.module.css';
+
+/** Optical sizing: square badges render taller and long wordmarks shorter, so every logo reads at a similar weight. */
+function sizeClass({ width, height }: TeamLogo) {
+  const ratio = width / height;
+  if (ratio < 1.7) return styles.square;
+  if (ratio > 4) return styles.wide;
+  return '';
+}
+
+function LogoRow({ logos, reverse }: { logos: TeamLogo[]; reverse?: boolean }) {
+  return (
+    <div className={`${styles.track} ${reverse ? styles.reverse : ''}`}>
+      {[0, 1].map((copy) => (
+        <ul key={copy} className={styles.group} aria-hidden={copy === 1 ? true : undefined}>
+          {logos.map((logo) => (
+            <li key={logo.src}>
+              <Image
+                src={logo.src}
+                alt={copy === 1 ? '' : logo.alt}
+                width={logo.width}
+                height={logo.height}
+                sizes="190px"
+                className={`${styles.logo} ${sizeClass(logo)}`}
+              />
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  );
+}
+
+export function LogoMarquee({ rows, label }: { rows: TeamLogo[][]; label: string }) {
+  return (
+    <div role="region" aria-label={label} className={`mt-12 ${styles.marquee}`}>
+      {rows.map((logos, i) => (
+        <LogoRow key={i} logos={logos} reverse={i % 2 === 1} />
+      ))}
+    </div>
+  );
+}

@@ -1,13 +1,13 @@
 /**
- * Reviews: four agent quotes linking to their video stories, then the team
- * logos. Equal-height cards on desktop, an infinite carousel on mobile.
+ * Reviews: four agent quotes linking to their video stories, then a two-row
+ * team logo marquee. Equal-height cards on desktop, an infinite carousel on mobile.
  */
-import Image from 'next/image';
 import Carousel from '@/components/ui/Carousel';
 import { SectionHead } from '../HomeShared/SectionHead';
 import { section, wash, wrap } from '../HomeShared/styles';
+import { LogoMarquee } from './components/LogoMarquee';
 import { ReviewCard } from './components/ReviewCard';
-import { REVIEWS, TEAM_LOGOS } from './data';
+import { REVIEWS, TEAM_LOGO_ROWS } from './data';
 
 export function HomeReviews() {
   return (
@@ -19,20 +19,7 @@ export function HomeReviews() {
             <ReviewCard key={review.name} review={review} />
           ))}
         </Carousel>
-        <ul aria-label="Teams using Sayso" className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-[22px]">
-          {TEAM_LOGOS.map((logo) => (
-            <li key={logo.src}>
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                sizes="160px"
-                className="h-8 w-auto opacity-70 grayscale"
-              />
-            </li>
-          ))}
-        </ul>
+        <LogoMarquee rows={TEAM_LOGO_ROWS} label="Teams using Sayso" />
       </div>
     </section>
   );

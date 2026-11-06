@@ -49,7 +49,7 @@ export function PricingCards() {
               AGENT_SUPPORT_SUMMARY,
             ]}
           />
-          <Button onClick={openSignup} withArrow className="self-start" data-analytics-id="cta-download-pricing-individual">
+          <Button onClick={openSignup} withArrow className="self-start" data-analytics-id="cta-download-home-pricing-individual">
             Claim early access
           </Button>
         </div>

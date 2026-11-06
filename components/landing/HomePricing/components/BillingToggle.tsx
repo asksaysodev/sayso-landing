@@ -1,5 +1,8 @@
-/** Monthly / Annual switch above the pricing cards. Annual shows the green SAVE 30% badge. */
-import { BILLING_TOGGLE_ANALYTICS } from '@/lib/content/pricing';
+/**
+ * Monthly / Annual switch above the homepage pricing cards. Annual shows the
+ * green SAVE 30% badge. Homepage-only analytics ids, so GTM can tell them apart
+ * from the /pricing toggle.
+ */
 
 interface BillingToggleProps {
   annual: boolean;
@@ -19,7 +22,7 @@ export function BillingToggle({ annual, onChange }: BillingToggleProps) {
           type="button"
           aria-pressed={!annual}
           onClick={() => onChange(false)}
-          data-analytics-id={BILLING_TOGGLE_ANALYTICS.monthly}
+          data-analytics-id="home-pricing-billing-toggle-monthly"
           className={`${base} ${annual ? off : on}`}>
           Monthly
         </button>
@@ -27,7 +30,7 @@ export function BillingToggle({ annual, onChange }: BillingToggleProps) {
           type="button"
           aria-pressed={annual}
           onClick={() => onChange(true)}
-          data-analytics-id={BILLING_TOGGLE_ANALYTICS.annual}
+          data-analytics-id="home-pricing-billing-toggle-annual"
           className={`${base} ${annual ? on : off}`}>
           Annual
           <span
