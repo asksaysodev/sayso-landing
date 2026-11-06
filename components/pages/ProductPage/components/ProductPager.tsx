@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { getAllProductEntries } from '@/lib/content/products';
 
 const pill =
-  'inline-flex h-10 items-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-[#1D4871] shadow-card-sm transition hover:-translate-y-px hover:shadow-card-sm-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2';
+  'inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-full bg-white px-4 text-sm font-semibold text-[#1D4871] shadow-card-sm transition hover:-translate-y-px hover:shadow-card-sm-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2';
 
 /** "Cue - Real-Time Guidance" becomes "Cue". */
 const shortName = (h1: string) => h1.split(' - ')[0];
@@ -20,7 +20,7 @@ export function ProductPager({ slug }: { slug: string }) {
   const next = entries[index + 1];
 
   return (
-    <nav aria-label="Other features" className="flex gap-2">
+    <nav aria-label="Other features" className="flex flex-wrap gap-2">
       {prev && (
         <Link href={`/products/${prev.slug}`} className={pill} aria-label={`Previous feature: ${shortName(prev.h1)}`}>
           <span aria-hidden="true">&larr;</span>
