@@ -6,8 +6,8 @@ export interface PricingAnalyticsIds {
   teams: string;
 }
 
-/** The homepage ids (the billing toggle has none there). */
+/** The homepage ids (the billing toggle falls back to the shared toggle ids). */
 export const HOME_PRICING_IDS: PricingAnalyticsIds = {
-  agent: 'cta-founder-pricing-home-pricing',
+  agent: 'cta-download-pricing-individual',
   teams: 'cta-book-demo-home-pricing-teams',
 };

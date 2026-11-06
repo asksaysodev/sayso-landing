@@ -4,8 +4,11 @@
  * The step card above the demo stage. Shows the current tour step with a
  * progress bar, a Show me button that does the step for the visitor and a
  * Skip tour link. After the last step it becomes the end card with the
- * superhero, Book a demo and Start over.
+ * superhero, Book a demo and Start over. When a step change removes the
+ * focused button (Show me on the last step, Start over), focus moves to the
+ * new card's title so keyboard users keep their place.
  */
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { cx } from '@/lib/utils/cx';
@@ -23,6 +26,17 @@ interface CoachCardProps {
 export function CoachCard({ stepIndex, phaseADone, onShowMe, onSkip, onRestart }: CoachCardProps) {
   const { openDemoCalendar } = useDemoCalendar();
   const step = STEPS[stepIndex];
+  const titleRef = useRef<HTMLParagraphElement>(null);
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    const active = document.activeElement;
+    if (!active || active === document.body) titleRef.current?.focus({ preventScroll: true });
+  }, [stepIndex]);
 
   if (!step) {
     return (
@@ -36,7 +50,9 @@ export function CoachCard({ stepIndex, phaseADone, onShowMe, onSkip, onRestart }
         <div className={styles.coachBody}>
           <Image className={styles.endImage} src="/images/this-is-sayso-point-up.png" alt="" width={74} height={79} />
           <div className={styles.coachCopy}>
-            <h3>That’s Sayso.</h3>
+            <p ref={titleRef} tabIndex={-1} className={styles.coachTitle}>
+              That’s Sayso.
+            </p>
             <p>Cues while you talk, notes while you listen, and your script one click away.</p>
           </div>
           <div className={styles.coachActions}>
@@ -63,7 +79,9 @@ export function CoachCard({ stepIndex, phaseADone, onShowMe, onSkip, onRestart }
       </div>
       <div className={styles.coachBody}>
         <div className={styles.coachCopy}>
-          <h3>{step.title}</h3>
+          <p ref={titleRef} tabIndex={-1} className={styles.coachTitle}>
+            {step.title}
+          </p>
           <p>{step.body}</p>
         </div>
         <div className={styles.coachActions}>

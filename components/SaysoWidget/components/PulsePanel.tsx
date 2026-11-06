@@ -2,7 +2,9 @@
 
 /**
  * Pulse panel: sample market data for the zip code, with short one-line
- * labels. Optionally counts the numbers up from zero when it opens.
+ * labels. Optionally counts the numbers up from zero when it opens. A static
+ * (non-interactive) widget renders nothing inside a closed panel, so closed
+ * placeholder numbers never reach the page HTML.
  */
 import { useEffect, useState } from 'react';
 import { cx } from '@/lib/utils/cx';
@@ -14,6 +16,8 @@ import { SAMPLE_MARKET } from '../data';
 interface PulsePanelProps {
   open: boolean;
   animate: boolean;
+  /** Static widgets skip the closed panel's contents (nothing opens it). */
+  interactive: boolean;
   bind: BindControl;
 }
 
@@ -41,47 +45,49 @@ function useCountUp(open: boolean, animate: boolean): number {
   return open ? progress : 0;
 }
 
-export function PulsePanel({ open, animate, bind }: PulsePanelProps) {
+export function PulsePanel({ open, animate, interactive, bind }: PulsePanelProps) {
   const progress = useCountUp(open, animate);
   const m = SAMPLE_MARKET;
 
   return (
     <div className={cx(styles.collapse, open && styles.open)} data-collapsed={!open}>
-      <div aria-hidden={!open}>
-        <div className={cx(styles.surface, styles.pulse)}>
-          <div className={styles.pulseCard}>
-            <div className={styles.place}>
-              <b>{m.zip}</b>
-              <b>{m.place}</b>
+      {(open || interactive) && (
+        <div aria-hidden={!open}>
+          <div className={cx(styles.surface, styles.pulse)}>
+            <div className={styles.pulseCard}>
+              <div className={styles.place}>
+                <b>{m.zip}</b>
+                <b>{m.place}</b>
+              </div>
+              <ul className={styles.facts}>
+                <li>
+                  <span>
+                    Avg days on market: <b>{Math.round(m.daysOnMarket * progress)}</b>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    90-day price trend: <b>{m.priceTrend}</b>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Avg price per ft&sup2;: <b>${Math.round(m.pricePerSqft * progress)}</b>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Inventory: <b>{m.inventory}</b>
+                  </span>
+                </li>
+              </ul>
+              <button {...bind('zip', styles.min, { noHighlight: true, hidden: !open })} aria-label="Collapse market data">
+                <i aria-hidden="true" />
+              </button>
             </div>
-            <ul className={styles.facts}>
-              <li>
-                <span>
-                  Avg days on market: <b>{Math.round(m.daysOnMarket * progress)}</b>
-                </span>
-              </li>
-              <li>
-                <span>
-                  90-day price trend: <b>{m.priceTrend}</b>
-                </span>
-              </li>
-              <li>
-                <span>
-                  Avg price per ft&sup2;: <b>${Math.round(m.pricePerSqft * progress)}</b>
-                </span>
-              </li>
-              <li>
-                <span>
-                  Inventory: <b>{m.inventory}</b>
-                </span>
-              </li>
-            </ul>
-            <button {...bind('zip', styles.min, { noHighlight: true, hidden: !open })} aria-label="Collapse market data">
-              <i aria-hidden="true" />
-            </button>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

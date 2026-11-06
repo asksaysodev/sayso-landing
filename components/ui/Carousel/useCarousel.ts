@@ -17,6 +17,10 @@ export function useCarousel(trackRef: RefObject<HTMLDivElement>, count: number, 
   const [prevDisabled, setPrevDisabled] = useState(!loop);
   const [nextDisabled, setNextDisabled] = useState(false);
   const animating = useRef(false);
+  const glideTimer = useRef<ReturnType<typeof setInterval>>();
+
+  // Stop a glide that is still in flight when the carousel unmounts.
+  useEffect(() => () => clearInterval(glideTimer.current), []);
 
   const kids = useCallback(() => Array.from(trackRef.current?.children ?? []) as HTMLElement[], [trackRef]);
 
@@ -80,11 +84,12 @@ export function useCarousel(trackRef: RefObject<HTMLDivElement>, count: number, 
       const t0 = performance.now();
       animating.current = true;
       track.style.scrollSnapType = 'none';
-      const iv = setInterval(() => {
+      clearInterval(glideTimer.current);
+      glideTimer.current = setInterval(() => {
         const p = Math.min(1, (performance.now() - t0) / GLIDE_MS);
         track.scrollLeft = from + (to - from) * (1 - Math.pow(1 - p, 3));
         if (p >= 1) {
-          clearInterval(iv);
+          clearInterval(glideTimer.current);
           track.style.scrollSnapType = '';
           animating.current = false;
           normalize();

@@ -25,24 +25,26 @@ interface InsightPanelProps {
 export function InsightPanel({ open, cues, captured, activeNote, highlightDot, watch, toast, interactive, bind, onHover, onSelect }: InsightPanelProps) {
   return (
     <div className={cx(styles.collapse, open && styles.open)} data-collapsed={!open}>
-      <div aria-hidden={!open}>
-        <div className={cx(styles.surface, styles.insight, watch && styles.watch)}>
-          <CueList cues={cues} />
-          <LpmamaDots
-            captured={captured}
-            activeNote={activeNote}
-            highlightDot={highlightDot}
-            interactive={interactive}
-            hidden={!open}
-            bind={bind}
-            onHover={onHover}
-            onSelect={onSelect}
-          />
-          <span className={cx(styles.toast, toast && styles.on)} role="status">
-            {toast ? 'Copied notes for your CRM' : ''}
-          </span>
+      {(open || interactive) && (
+        <div aria-hidden={!open}>
+          <div className={cx(styles.surface, styles.insight, watch && styles.watch)}>
+            <CueList cues={cues} />
+            <LpmamaDots
+              captured={captured}
+              activeNote={activeNote}
+              highlightDot={highlightDot}
+              interactive={interactive}
+              hidden={!open}
+              bind={bind}
+              onHover={onHover}
+              onSelect={onSelect}
+            />
+            <span className={cx(styles.toast, toast && styles.on)} role="status">
+              {toast ? 'Copied notes for your CRM' : ''}
+            </span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

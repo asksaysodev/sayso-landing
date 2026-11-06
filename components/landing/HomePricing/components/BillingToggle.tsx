@@ -1,4 +1,5 @@
 /** Monthly / Annual switch above the pricing cards. Annual shows the green SAVE 30% badge. */
+import { BILLING_TOGGLE_ANALYTICS } from '@/lib/content/pricing';
 
 interface BillingToggleProps {
   annual: boolean;
@@ -16,10 +17,20 @@ export function BillingToggle({ annual, onChange, monthlyId, annualId }: Billing
   return (
     <div className="mb-[26px] flex justify-center">
       <div role="group" aria-label="Billing period" className="flex gap-1 rounded-full border border-[rgba(16,35,58,0.14)] bg-white p-1">
-        <button type="button" aria-pressed={!annual} onClick={() => onChange(false)} data-analytics-id={monthlyId} className={`${base} ${annual ? off : on}`}>
+        <button
+          type="button"
+          aria-pressed={!annual}
+          onClick={() => onChange(false)}
+          data-analytics-id={monthlyId ?? BILLING_TOGGLE_ANALYTICS.monthly}
+          className={`${base} ${annual ? off : on}`}>
           Monthly
         </button>
-        <button type="button" aria-pressed={annual} onClick={() => onChange(true)} data-analytics-id={annualId} className={`${base} ${annual ? on : off}`}>
+        <button
+          type="button"
+          aria-pressed={annual}
+          onClick={() => onChange(true)}
+          data-analytics-id={annualId ?? BILLING_TOGGLE_ANALYTICS.annual}
+          className={`${base} ${annual ? on : off}`}>
           Annual
           <span
             className={`ml-2 rounded-full px-2 py-[3px] text-[11px] font-extrabold tracking-[0.02em] ${

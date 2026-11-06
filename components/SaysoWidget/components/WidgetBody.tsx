@@ -78,7 +78,7 @@ export function WidgetBody(props: SaysoWidgetProps & { stacked: boolean }) {
           morph={morph}
           bind={bind}
         />
-        <PulsePanel open={pulseOpen} animate={animatePulse} bind={bind} />
+        <PulsePanel open={pulseOpen} animate={animatePulse} interactive={interactive} bind={bind} />
         <InsightPanel
           open={insightOpen}
           cues={cues}
@@ -92,9 +92,15 @@ export function WidgetBody(props: SaysoWidgetProps & { stacked: boolean }) {
           onHover={setHoverNote}
           onSelect={onDotSelect}
         />
-        <NoteBubble colRef={colRef} index={activeNote} showCursor={showCursor} />
+        <NoteBubble
+          colRef={colRef}
+          index={activeNote}
+          showCursor={showCursor}
+          follow={interactive}
+          layoutKey={[insightOpen, cues.length, pulseOpen, zipText ?? '', playbookOpen, live].join('|')}
+        />
       </div>
-      <PlaybookPanel lead={lead} open={playbookOpen} bind={bind} />
+      <PlaybookPanel lead={lead} open={playbookOpen} interactive={interactive} bind={bind} />
     </div>
   );
 }

@@ -1,6 +1,8 @@
 /**
  * Playbook panel: the agent's script for the selected lead type. Opens beside
- * the widget column, or stacks under it in the narrow layout.
+ * the widget column, or stacks under it in the narrow layout. A static
+ * (non-interactive) widget renders an empty wrapper while closed, so the
+ * script text is not in the page HTML.
  */
 import { Fragment } from 'react';
 import { cx } from '@/lib/utils/cx';
@@ -32,33 +34,37 @@ function ScriptLine({ text }: { text: string }) {
 interface PlaybookPanelProps {
   lead: LeadType;
   open: boolean;
+  /** Static widgets skip the closed panel's contents (nothing opens it). */
+  interactive: boolean;
   bind: BindControl;
 }
 
-export function PlaybookPanel({ lead, open, bind }: PlaybookPanelProps) {
+export function PlaybookPanel({ lead, open, interactive, bind }: PlaybookPanelProps) {
   const script = PLAYBOOKS[lead];
   return (
     <div className={cx(styles.playWrap, open && styles.open)} aria-hidden={!open}>
-      <div className={cx(styles.surface, styles.play)}>
-        <div className={styles.playHead}>
-          <b>
-            {script.title} <ChevronDownIcon />
-          </b>
-          <button {...bind('play', styles.min, { noHighlight: true, hidden: !open })} aria-label="Close playbook">
-            <i aria-hidden="true" />
-          </button>
+      {(open || interactive) && (
+        <div className={cx(styles.surface, styles.play)}>
+          <div className={styles.playHead}>
+            <b>
+              {script.title} <ChevronDownIcon />
+            </b>
+            <button {...bind('play', styles.min, { noHighlight: true, hidden: !open })} aria-label="Close playbook">
+              <i aria-hidden="true" />
+            </button>
+          </div>
+          <div className={styles.playBody}>
+            {script.sections.map((section) => (
+              <section key={section.heading}>
+                <p className={styles.playHeading}>{section.heading}</p>
+                {section.lines.map((line, i) => (
+                  <ScriptLine key={i} text={line} />
+                ))}
+              </section>
+            ))}
+          </div>
         </div>
-        <div className={styles.playBody}>
-          {script.sections.map((section) => (
-            <section key={section.heading}>
-              <h6>{section.heading}</h6>
-              {section.lines.map((line, i) => (
-                <ScriptLine key={i} text={line} />
-              ))}
-            </section>
-          ))}
-        </div>
-      </div>
+      )}
     </div>
   );
 }

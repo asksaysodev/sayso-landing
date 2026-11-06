@@ -3,7 +3,7 @@
  * and the scripted buyer call that drives the cues and Smart Capture.
  * The call and the market numbers are sample data.
  */
-import type { Beat, TourStep } from './types';
+import type { Beat, DemoState, TourStep } from './types';
 
 export const HINT_START = 'Press the button with the yellow ring to start';
 export const HINT_DISMISS = 'Press Start to try the demo';
@@ -88,3 +88,16 @@ export const PHASE_C: Beat[] = [
   K(800, 5),
   C(600, 'Confirm the tour and send the listings'),
 ];
+
+/** Demo state before the visitor starts the call. */
+export const fresh = (): DemoState => ({
+  lead: 'B', live: false, detect: true, starting: false, nudge: 0, insight: false, pulse: false,
+  pulseShown: false, zipText: null, play: false, cues: [], caps: [false, false, false, false, false, false],
+  tip: null, secs: 0, step: 0, phaseADone: false, caption: { kind: 'hint', text: HINT_START },
+});
+
+/** State after hanging up: the widget stays on screen with everything closed. */
+export const STOPPED: Partial<DemoState> = {
+  live: false, starting: false, insight: false, pulse: false, pulseShown: false, zipText: null, play: false, tip: null,
+  caption: { kind: 'none' },
+};

@@ -306,15 +306,30 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 |-----------|-----------|
 | **Navbar** (`components/landing/SaysoNavbar/`) | Full-width sticky bar, transparent at the top and blurred `#F4F4F5` with a hairline once the page scrolls. Logo left; How it works, Features, Pricing, FAQ and a **Resources** menu in the middle; Log in and a blue Book a demo pill on the right. The Resources menu shows Blog and the Prospecting Calculator on top, then Products, Solutions and About columns, then an All resources link. Links come from `lib/navigation.ts`. Mobile: a right-side drawer with a Resources accordion. |
 | **Footer** | Navy `#1D4871` with a yellow top border. Logo, one-line tagline, Beehiiv newsletter and Instagram/LinkedIn on the left; Programs, Get in Touch and Legal columns on the right (`footerNav`); copyright row underneath. |
-| **Cards / panels** | White, radius 16 to 20px, hairline ring `rgba(16,35,58,.12)` and a soft shadow `0 14px 34px -16px rgba(16,35,58,.25)`. No tilt, no offset shadow. |
-| **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, soft blue shadow, 1px lift on hover. `withArrow` adds the round white arrow badge used on main CTAs. |
-| **Secondary button** (`variant="secondary"`) | White pill with a hairline ring and dark text; the ring darkens on hover. |
+| **Cards / panels** | White, radius 16 to 20px, `shadow-card` (hairline ring `rgba(16,35,58,.12)` plus a soft drop shadow), `hover:shadow-card-hover` when the whole card is a link. No tilt, no offset shadow. |
+| **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, `shadow-button`, 1px lift on hover. `withArrow` adds the round white arrow badge used on main CTAs. Internal `href`s ("/...") render a `next/link`; pass `external` for off-site links (new tab, `rel="noopener noreferrer"`); with no `href` it renders a `type="button"` button. |
+| **Secondary button** (`variant="secondary"`) | White pill, `shadow-card-sm` and dark text; `shadow-card-sm-hover` darkens the ring on hover. |
 | **Badges and labels** | Yellow `v2-pow-badge` style label in Bangers, flat (no border or shadow), for section labels and small emphasis. |
 | **Sections / containers** | `Section` wrapper: full-width, `py-16 sm:py-24`, `default` or `accent` background variant. `Container`: centered, max-width ~1200px, `px-6 md:px-8 lg:px-12`. Alternate `background` and `accent-bg`, or drop into a dark navy section for emphasis. |
 | **Pricing cards** | `HomePricing`, shared by the homepage and `/pricing`: monthly / annual toggle, a white Individual Agent+ card and a navy Teams and Brokerages card, both with a yellow top border, checkmark feature lists and flat Button CTAs. |
 | **Blog content** | Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables, yellow bottom border on the blog hero banner. |
 | **Blog inline CTA** | A compact version of the mid-article CTA: navy-to-blue gradient card with the comic shadow, a white Bangers heading, one line of white body text (full white for contrast) and a white pill button with navy text. Sits after a post's second paragraph when the post sets `ctaVariant`. |
 | **Hub quick answers and related reading** | Optional blocks on hub pages (`HubPage.tsx`, set by `quickAnswers` and `relatedReading` in the hub config). Quick answers is a white rounded list with thin navy dividers: each row is a bold navy phrase over a one-line muted answer, the whole row links to the child page and turns blue on hover. Related reading is a Bangers heading over muted navy paragraphs with inline links. Both use the 800px content column. |
+
+### Shadow tokens
+
+Flat surfaces use these `boxShadow` tokens from `tailwind.config.ts`. Use the token instead of pasting the raw `shadow-[...]` string; add a new token here and in the config if a shadow repeats.
+
+| Class | Value | Use |
+|-------|-------|-----|
+| `shadow-card` | `0 0 0 1px rgba(16,35,58,0.12), 0 14px 34px -16px rgba(16,35,58,0.25)` | Default white card or panel |
+| `shadow-card-hover` | `0 0 0 1px rgba(16,35,58,0.2), 0 20px 40px -18px rgba(16,35,58,0.32)` | Hover state for linked cards |
+| `shadow-card-sm` | `0 0 0 1px rgba(16,35,58,0.12), 0 1px 2px rgba(16,35,58,0.06)` | Small surfaces: secondary buttons, chips, inputs, list rows |
+| `shadow-card-sm-hover` | `0 0 0 1px rgba(16,35,58,0.22), 0 4px 12px -4px rgba(16,35,58,0.15)` | Hover state for `shadow-card-sm` |
+| `shadow-popover` | `0 0 0 1px rgba(16,35,58,0.12), 0 24px 48px -20px rgba(16,35,58,0.35)` | Floating panels such as the Resources menu |
+| `shadow-button` | `0 1px 2px rgba(16,35,58,0.18), 0 8px 20px -8px rgba(35,103,238,0.55)` | Blue CTA buttons (primary `Button`, navbar and drawer Book a demo) |
+
+The blue button token is `shadow-button`, not `shadow-cta`: `cta` is already a color, and Tailwind's shadow-color utility `shadow-cta` would override the shadow.
 
 There is a fuller catalog of the actual React components in `docs/reference/ui-component-inventory.md`. This design-system doc covers the reusable visual language; that inventory lists the specific components that implement it.
 
@@ -339,7 +354,7 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 
 `app/page.tsx` composes these sections, in order. Each lives in its own folder under `components/landing/`:
 
-1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens Calendly in a new tab.
+1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens the Calendly demo pop-up (`openDemoCalendar`, `cta-team-platform-strip`).
 2. **Navbar** (shared, `SaysoNavbar`).
 3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Download Sayso / Book a demo / Try it live / Watch the demo (Loom pop-out), meta line, centered social proof with a rotating quote, Ask AI links.
 4. **Guided live demo** (`HomeLiveDemo`, `#demo`): step card above the stage, then the live widget. Six steps: Start, watch cues, Smart Capture note, Pulse, Playbook, hang up. Ends with the superhero card.
@@ -355,7 +370,7 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 ### Layout rules
 
 - Page column: 1160px max with a 16px gutter (`wrap` in `components/landing/HomeShared/styles.ts`). Sections use `section` (96px vertical, 68px at 640px and below) and alternate the page background `#F4F4F5` with the `wash` background `#E3E8EC` plus faint halftone dots.
-- Section headers: yellow Bangers label, Manrope 800 headline with a muted second half (`#7f92aa`).
+- Section headers: yellow Bangers label, Manrope 800 headline with a muted second half (`#6b7f99`, at least 3:1 on `#F4F4F5` and the `#E3E8EC` wash).
 - Breakpoints: 960px (grids become carousels, Features stacks), 640px (tighter spacing).
 - **Carousels** (`components/ui/Carousel`): a grid on desktop; at 960px and below a swipeable scroll-snap row with peeking edges and prev/next arrows. Finite for How it works and Compare, infinite (`loop`) for Made to fit and Reviews. Arrow presses use a timer-based tween because smooth scrolling is unreliable with scroll-snap. Clones are aria-hidden and their links are out of the tab order.
 - Section ids `#how`, `#features`, `#pricing` and `#faq` are linked from the navbar; keep them.
