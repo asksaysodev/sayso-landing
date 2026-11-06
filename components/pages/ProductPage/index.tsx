@@ -55,7 +55,7 @@ export function ProductPage({ entry }: ProductPageProps) {
       {entry.socialProof && <SocialProof text={entry.socialProof} />}
       <RelatedReading products={entry.relatedProducts} posts={entry.relatedBlogPosts} />
       {entry.faq.length > 0 && <FAQ items={entry.faq} />}
-      <ContentCTA location="feature-page" />
+      <ContentCTA location="feature-page" subheading={entry.ctaSubheading} />
     </>
   );
 }

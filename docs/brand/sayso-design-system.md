@@ -305,9 +305,9 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 | Component | Treatment |
 |-----------|-----------|
 | **Navbar** (`components/landing/SaysoNavbar/`) | Full-width sticky bar, transparent at the top and blurred `#F4F4F5` with a hairline once the page scrolls. Logo left; How it works, Features, Pricing, FAQ and a **Resources** menu in the middle; Log in and a blue Book a demo pill on the right. The Resources menu shows Blog and the Prospecting Calculator on top, then Products, Solutions and About columns, then an All resources link. Links come from `lib/navigation.ts`. Mobile: a right-side drawer with a Resources accordion. |
-| **Footer** | Navy `#1D4871` with a yellow top border. Logo, one-line tagline, Beehiiv newsletter and Instagram/LinkedIn on the left; Programs, Get in Touch and Legal columns on the right (`footerNav`); copyright row underneath. |
+| **Footer** | Navy `#1D4871` with a yellow top border. Logo, Beehiiv newsletter and Instagram/LinkedIn on the left; Programs, Get in Touch and Legal columns on the right (`footerNav`); copyright row underneath. |
 | **Cards / panels** | White, radius 16 to 20px, `shadow-card` (hairline ring `rgba(16,35,58,.12)` plus a soft drop shadow), `hover:shadow-card-hover` when the whole card is a link. No tilt, no offset shadow. |
-| **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, `shadow-button`, 1px lift on hover. `withArrow` adds the round white arrow badge used on main CTAs. Internal `href`s ("/...") render a `next/link`; pass `external` for off-site links (new tab, `rel="noopener noreferrer"`); with no `href` it renders a `type="button"` button. |
+| **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, `shadow-button`, 1px lift on hover. `withArrow` adds the round white arrow badge, left of the label, used on main CTAs. The main download CTA reads "Get Sayso" everywhere. Internal `href`s ("/...") render a `next/link`; pass `external` for off-site links (new tab, `rel="noopener noreferrer"`); with no `href` it renders a `type="button"` button. |
 | **Secondary button** (`variant="secondary"`) | White pill, `shadow-card-sm` and dark text; `shadow-card-sm-hover` darkens the ring on hover. |
 | **Badges and labels** | Yellow `v2-pow-badge` style label in Bangers, flat (no border or shadow), for section labels and small emphasis. |
 | **Sections / containers** | `Section` wrapper: full-width, `py-16 sm:py-24`, `default` or `accent` background variant. `Container`: centered, max-width ~1200px, `px-6 md:px-8 lg:px-12`. Alternate `background` and `accent-bg`, or drop into a dark navy section for emphasis. |
@@ -356,7 +356,7 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 
 1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens the Calendly demo pop-up (`openDemoCalendar`, `cta-team-platform-strip`).
 2. **Navbar** (shared, `SaysoNavbar`).
-3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Download Sayso / Book a demo / Try it, meta line, centered social proof with a rotating quote, Ask AI links.
+3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Get Sayso / Book a demo / Try it, meta line, centered social proof with a rotating quote, Ask AI links.
 4. **Guided live demo** (`HomeLiveDemo`, `#demo`): step card above the stage, then the live widget. Six steps: Start, watch cues, Smart Capture note, Pulse, Playbook, hang up. Ends with the superhero card.
 5. **How it works** (`HomeHowItWorks`, `#how`): three cards with static widget views.
 6. **Features** (`HomeFeatures`, `#features`): dark app-style panel, product tabs on the left, fixed-height panel on the right.

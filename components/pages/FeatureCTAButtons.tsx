@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Download Sayso and Book a demo buttons for the product and solution pages.
+ * Get Sayso and Book a demo buttons for the product and solution pages.
  * Analytics ids default to the product page hero; other placements pass their own.
  */
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
@@ -23,7 +23,7 @@ export function FeatureCTAButtons({
   return (
     <div className={`flex flex-wrap items-center gap-x-3 gap-y-2.5 ${className}`}>
       <Button withArrow onClick={openSignup} data-analytics-id={downloadAnalyticsId}>
-        Download Sayso
+        Get Sayso
       </Button>
       <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={demoAnalyticsId}>
         Book a demo

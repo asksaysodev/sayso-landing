@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Hero call-to-action row: Download Sayso, Book a demo and Try it (jumps to the
+ * Hero call-to-action row: Get Sayso, Book a demo and Try it (jumps to the
  * guided demo).
  */
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
@@ -16,7 +16,7 @@ export function HeroActions() {
   return (
     <div className="mt-[30px] flex flex-wrap justify-center gap-x-3 gap-y-2.5">
       <Button withArrow onClick={openSignup} data-analytics-id="cta-download-hero">
-        Download Sayso
+        Get Sayso
       </Button>
       <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id="cta-book-demo-hero">
         Book a demo
