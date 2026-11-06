@@ -17,10 +17,12 @@ import { useEffect, useRef, useState } from 'react';
 import SaysoWidget, { WidgetScaler } from '@/components/SaysoWidget';
 import styles from './LiveDemo.module.css';
 import { CoachCard } from './components/CoachCard';
+import { EndCover } from './components/EndCover';
 import { StageCaption } from './components/StageCaption';
 import { TourPointer } from './components/TourPointer';
 import { useDemoTour } from './hooks/useDemoTour';
 import { useStageFit } from './hooks/useStageFit';
+import { STEPS } from './data';
 
 /** Desktop layout width of the whole demo (the section's 1160px max minus its 16px gutters). */
 const DESIGN_WIDTH = 1128;
@@ -75,8 +77,9 @@ export function HomeLiveDemo() {
         <div role="region" aria-label="Guided demo" aria-live="polite">
           <CoachCard
             stepIndex={demo.stepIndex}
-            phaseADone={demo.phaseADone}
             onShowMe={demo.showMe}
+            onBack={demo.back}
+            onForward={demo.forward}
             onSkip={demo.skip}
             onRestart={demo.restart}
           />
@@ -89,6 +92,7 @@ export function HomeLiveDemo() {
             </WidgetScaler>
             <span className={styles.sampleNote}>Sample call and market data</span>
           </div>
+          {demo.stepIndex >= STEPS.length && <EndCover onRestart={demo.restart} />}
           <TourPointer stageRef={stageRef} active={pointerActive} layoutKey={layoutKey} />
         </div>
       </WidgetScaler>

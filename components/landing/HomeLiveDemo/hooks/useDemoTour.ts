@@ -10,12 +10,26 @@
 import type { SaysoWidgetProps, WidgetControl } from '@/components/SaysoWidget/types';
 import { useRef, useState } from 'react';
 import { prefersReducedMotion } from '@/lib/utils/motion';
-import { PHASE_B, PHASE_C, STEPS, STOPPED } from '../data';
-import type { StepKey } from '../types';
+import { PHASE_A, PHASE_B, PHASE_C, STEPS, STOPPED } from '../data';
+import type { Beat, DemoState, StepKey } from '../types';
 import { useCallEngine } from './useCallEngine';
 
 const formatTime = (n: number) =>
   `${Math.floor(n / 3600)}:${String(Math.floor(n / 60) % 60).padStart(2, '0')}:${String(n % 60).padStart(2, '0')}`;
+
+/** Cues on screen after a stretch of the call (newest first, four at most). */
+const cuesOf = (beats: Beat[]) => beats.flatMap((b) => (b.kind === 'cue' ? [b.text] : [])).reverse();
+const AFTER_A = cuesOf(PHASE_A).slice(0, 4);
+const AFTER_B = [...cuesOf(PHASE_B), ...AFTER_A].slice(0, 4);
+const L_ONLY = [true, false, false, false, false, false];
+
+/** The call as it stands when each step begins, for the step arrows. */
+const STEP_STATE: Partial<Record<StepKey, Partial<DemoState>>> = {
+  dot: { insight: true, cues: AFTER_A, caps: L_ONLY },
+  zip: { insight: true, cues: AFTER_A, caps: L_ONLY },
+  play: { insight: true, cues: AFTER_B, caps: L_ONLY, pulse: true, pulseShown: true },
+  reset: { insight: true, cues: AFTER_B, caps: L_ONLY, pulse: true, pulseShown: true, play: true },
+};
 
 const HIGHLIGHT: Partial<Record<StepKey, WidgetControl>> = { start: 'start', zip: 'zip', play: 'play', reset: 'reset' };
 
@@ -136,6 +150,23 @@ export function useDemoTour() {
     set(live ? { step: STEPS.length } : { ...STOPPED, step: STEPS.length });
   };
 
+  /**
+   * Step arrows: jump straight to step `n` with the call set up as it would be
+   * there. The clock keeps running; step 2 replays the call opening.
+   */
+  const jumpTo = (n: number) => {
+    if (n < 0) return;
+    advancing.current = -1;
+    setActed(-1);
+    if (n === 0) return restart();
+    if (n >= STEPS.length) return skip();
+    const key = STEPS[n].key;
+    const secs = s.current.live ? s.current.secs : 0;
+    cancelAll();
+    newCall(key === 'watch', { secs, step: n, ...STEP_STATE[key] });
+    goStep(n);
+  };
+
   const st = s.current;
   const key = STEPS[st.step]?.key;
   const showAlert = st.detect && !st.live;
@@ -182,6 +213,8 @@ export function useDemoTour() {
     caption: st.caption,
     showMe,
     skip,
+    back: () => jumpTo(s.current.step - 1),
+    forward: () => jumpTo(s.current.step + 1),
     restart: () => {
       advancing.current = -1;
       setActed(-1);

@@ -24,6 +24,27 @@
   font-weight: 700;
   color: #556b86;
 }
+.stepNav {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.stepArrow {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  color: #8496ab;
+}
+.stepArrow:hover:not(:disabled) {
+  color: #1d4871;
+  background: rgba(29, 72, 113, 0.08);
+}
+.stepArrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
 .coachBar {
   flex: 1;
   height: 5px;
@@ -147,6 +168,42 @@
 .stagePad:not([data-fit]) {
   min-height: 330px;
 }
+.endCover {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(245, 247, 250, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: coverIn 0.5s ease-out 1.2s both;
+}
+.endCoverTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #10233a;
+  text-align: center;
+}
+.endCoverSecondary {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d4871;
+  background: #fff;
+  border: 1px solid rgba(16, 35, 58, 0.15);
+  padding: 9px 16px;
+  border-radius: 999px;
+}
+.endCoverSecondary:hover {
+  background: #f3f6f9;
+}
+@keyframes coverIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 .sampleNote {
   position: absolute;
   right: 16px;
@@ -255,6 +312,7 @@
 @media (prefers-reduced-motion: reduce) {
   .coach,
   .stepIn,
+  .endCover,
   .captionPill,
   .bars i,
   .pointer,

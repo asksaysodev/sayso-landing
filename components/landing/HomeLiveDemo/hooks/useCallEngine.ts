@@ -131,10 +131,14 @@ export function useCallEngine(hooks: EngineHooks) {
     rerender();
   };
 
-  /** A new call: clock from zero, nothing captured, panels closed; `replay` plays the call opening again. */
-  const newCall = (replay: boolean) => {
+  /**
+   * A new call: clock from zero, nothing captured, panels closed; `replay` plays
+   * the call opening again. `patch` sets up a later moment of the call instead
+   * (the step arrows use it).
+   */
+  const newCall = (replay: boolean, patch: Partial<DemoState> = {}) => {
     stopCall();
-    set({ ...NEW_CALL, phaseADone: !replay });
+    set({ ...NEW_CALL, phaseADone: !replay, ...patch });
     startClock();
     if (replay) playOpening();
   };
