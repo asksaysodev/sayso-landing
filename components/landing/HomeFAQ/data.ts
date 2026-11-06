@@ -10,7 +10,7 @@ export interface FaqGroup {
 
 export const FAQ_GROUPS: FaqGroup[] = [
   {
-    title: 'THE PRODUCT',
+    title: 'PRODUCT',
     items: [
       {
         question: 'How is Sayso different from other coaching tools?',

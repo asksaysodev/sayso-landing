@@ -1,18 +1,7 @@
-/** One Compare card: a method, when it helps, and a yes / no / partly list. Sayso's card is navy. */
+/** One Compare card (phones and tablets; desktop shows CompareTable): a method, when it helps, and a yes / no / partly list. Sayso's card is navy. */
 import { cx } from '@/lib/utils/cx';
-import type { CompareMethod, Mark } from '../data';
-
-const MARK_TEXT: Record<Mark, { icon: string; sr: string }> = {
-  y: { icon: '✓', sr: 'Yes' },
-  n: { icon: '✕', sr: 'No' },
-  p: { icon: '~', sr: 'Partly' },
-};
-
-const markClass = (mark: Mark, us: boolean) => {
-  if (mark === 'y') return us ? 'bg-[#22c06d] text-white' : 'bg-[#dcf5e8] text-[#127a45]';
-  if (mark === 'n') return 'bg-[#fbe4e2] text-[#b4423c]';
-  return 'bg-[#fdf1d6] text-[#9a6a06]';
-};
+import type { CompareMethod } from '../data';
+import { MARK_TEXT, markClass } from './marks';
 
 export function MethodCard({ method }: { method: CompareMethod }) {
   const us = !!method.highlight;
@@ -45,7 +34,6 @@ export function MethodCard({ method }: { method: CompareMethod }) {
             <span className={!us && row.mark === 'n' ? 'text-[#556B86]' : undefined}>
               <span className="sr-only">{MARK_TEXT[row.mark].sr}: </span>
               {row.label}
-              {row.note && <small className={cx('mt-px block text-xs', us ? 'text-white/70' : 'text-[#556B86]')}>{row.note}</small>}
             </span>
           </li>
         ))}
