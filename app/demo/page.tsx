@@ -52,7 +52,7 @@ export default function DemoPage() {
             <div className="mt-8 flex flex-col items-center gap-3">
               <DownloadButton analyticsId="cta-demo-download" />
               <p className="text-sm text-[#556B86]">
-                Want to try it right now? Download Sayso and start your first call in a minute.
+                Want to try it right now? Get Sayso and start your first call in a minute.
               </p>
             </div>
           </section>

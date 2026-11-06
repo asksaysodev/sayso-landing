@@ -72,6 +72,7 @@ export const cue: ProductEntry = {
   ],
   socialProof:
     'Agents using real-time guidance report feeling more confident on calls and booking more appointments from conversations that would have previously stalled. Teams see faster onboarding and more consistent call quality across their entire organization.',
+  ctaSubheading: 'See how Sayso gives you real-time guidance on every call.',
   featureList: [
     'Real-time call guidance',
     'Live objection handling prompts',

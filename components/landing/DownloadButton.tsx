@@ -1,6 +1,6 @@
 'use client';
 
-/** Download Sayso button: the flat primary pill that opens the signup flow. */
+/** Get Sayso button: the flat primary pill that opens the signup flow. */
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { Button } from '@/components/ui/Button';
 
@@ -9,7 +9,7 @@ interface DownloadButtonProps {
   label?: string;
 }
 
-export function DownloadButton({ analyticsId, label = 'Download Sayso' }: DownloadButtonProps) {
+export function DownloadButton({ analyticsId, label = 'Get Sayso' }: DownloadButtonProps) {
   const { openSignup } = useDemoCalendar();
 
   return (
