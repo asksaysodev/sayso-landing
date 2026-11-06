@@ -307,6 +307,47 @@
   letter-spacing: 0.05em;
 }
 
+/* === Flat redesign (Nov 2026) ===
+   The comic utilities above now render flat across the site: soft shadows
+   instead of hard offsets, hairline borders instead of thick navy ones, no
+   tilts, glows or bursts. Pages wrapped in .legacy-comic (the ad landing
+   pages, pending their own redesign) keep the original comic look. */
+.v2-comic-shadow:not(.legacy-comic *),
+.v2-comic-shadow-blue:not(.legacy-comic *) {
+  box-shadow: 0 1px 2px rgba(16, 35, 58, 0.06), 0 14px 34px -16px rgba(16, 35, 58, 0.25);
+}
+.v2-comic-shadow-sm:not(.legacy-comic *) {
+  box-shadow: 0 1px 2px rgba(16, 35, 58, 0.06), 0 8px 20px -12px rgba(16, 35, 58, 0.22);
+}
+.v2-comic-border:not(.legacy-comic *),
+.v2-comic-border-light:not(.legacy-comic *),
+.v4-panel-border:not(.legacy-comic *) {
+  border: 1px solid rgba(16, 35, 58, 0.12);
+}
+.v2-comic-btn:not(.legacy-comic *),
+.v2-comic-btn:not(.legacy-comic *):hover,
+.v2-comic-btn:not(.legacy-comic *):active {
+  box-shadow: 0 1px 2px rgba(16, 35, 58, 0.18), 0 8px 20px -8px rgba(35, 103, 238, 0.45);
+}
+.v2-comic-btn:not(.legacy-comic *):hover { transform: translateY(-1px); }
+.v2-comic-btn:not(.legacy-comic *):active { transform: scale(0.98); }
+.v2-tilt-left:not(.legacy-comic *),
+.v2-tilt-right:not(.legacy-comic *) {
+  transform: none;
+}
+.v2-pow-badge:not(.legacy-comic *) {
+  border: 0;
+  box-shadow: none;
+}
+.v4-hero-glow:not(.legacy-comic *) {
+  animation: none;
+}
+.v2-starburst:not(.legacy-comic *)::before,
+.v2-speed-lines:not(.legacy-comic *)::after,
+.v2-action-lines:not(.legacy-comic *)::before {
+  display: none;
+}
+
 /* === V3 Conversation Animations === */
 
 /* Message entrance animation */

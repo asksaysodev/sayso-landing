@@ -20,18 +20,18 @@
 ## 1. Layout Components
 
 ### SaysoNavbar
-- **Path:** `components/landing/SaysoNavbar.tsx`
-- **Description:** Main sticky navigation bar with logo, menu links, CTA buttons, and mobile hamburger menu.
+- **Path:** `components/landing/SaysoNavbar/` (`index.tsx`, `components/DesktopNav.tsx`, `components/ResourcesMenu.tsx`, `components/MobileMenu.tsx`)
+- **Description:** Main sticky navigation bar with logo, primary links, the Resources menu, Log in and Book a demo, and a mobile drawer.
 - **Used on:** Homepage, Blog (layout), Affiliate, Case Studies, Contact, Demo, Feedback, Pricing, Privacy, Terms, Referral, Security (~15 pages)
-- **Props:** None
-- **Visual behavior:** Sticky top-4, rounded pill-shaped white navbar with comic-style border. Logo left, desktop nav links center, Download button right. Mobile: hamburger menu with dropdown panel, closes on Escape/outside click.
+- **Props:** `autoHide?: boolean` (slides away on scroll-down; used on /product-tour)
+- **Visual behavior:** Full-width sticky bar, transparent at the top, blurred `#F4F4F5` once scrolled. Logo left; How it works, Features, Pricing, FAQ and Resources in the middle; Log in and a white Book a demo pill on the right. Mobile: right-side drawer (portal on `<body>`, focus trapped, background inert, iOS-safe scroll lock) with a Resources accordion.
 
 ### Footer
 - **Path:** `components/landing/Footer.tsx`
 - **Description:** Branded footer with navigation links, newsletter signup, and social media links.
 - **Used on:** Homepage, Blog (layout), Affiliate, Case Studies, Contact, Demo, Feedback, Pricing, Privacy, Terms, Referral, Security (~14 pages)
 - **Props:** None
-- **Visual behavior:** Dark blue footer (#1D4871) with yellow top border. 2-column layout on mobile (logo/newsletter + links grid), responsive grid on desktop. Includes superhero Easter egg in bottom-right corner.
+- **Visual behavior:** Dark blue footer (#1D4871) with yellow top border. Logo, Beehiiv newsletter and socials on the left; Programs, Get in Touch and Legal columns on the right; copyright row underneath.
 
 ### LandingLayout
 - **Path:** `components/layout/LandingLayout.tsx`
