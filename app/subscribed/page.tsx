@@ -52,7 +52,7 @@ export default function SubscribedPage() {
           {/* Hero */}
           <section className="bg-[#F4F4F5] pt-28 pb-16 md:pt-32 md:pb-20">
             <div className="max-w-[800px] mx-auto px-6 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 border-2 border-[#2367EE]/30 mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 mb-6">
                 <Check
                   size={36}
                   strokeWidth={3}
@@ -60,7 +60,7 @@ export default function SubscribedPage() {
                   aria-hidden="true"
                 />
               </div>
-              <h1 className="font-comic text-4xl sm:text-5xl lg:text-6xl text-[#1D4871] leading-[1.05] tracking-wide">
+              <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[40px] sm:text-5xl lg:text-6xl leading-[1.08]">
                 You&apos;re subscribed.
               </h1>
 
@@ -76,7 +76,7 @@ export default function SubscribedPage() {
                 <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
                   What Sayso does on every call
                 </p>
-                <h2 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mb-4">
+                <h2 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[30px] md:text-[42px] leading-[1.1] mb-4">
                   A coach on every call, not after.
                 </h2>
                 <p className="text-[#1D4871]/80 text-base md:text-lg leading-relaxed font-sans">
@@ -134,7 +134,7 @@ export default function SubscribedPage() {
                 <path d="M7.17 6C4.86 6 3 7.86 3 10.17c0 2.31 1.86 4.17 4.17 4.17.41 0 .8-.07 1.18-.18-.68 1.92-2.48 3.34-4.6 3.58v2.09c4.38-.27 7.83-3.9 7.83-8.33V10.17C11.58 7.86 9.72 6 7.17 6zm9.66 0c-2.31 0-4.17 1.86-4.17 4.17 0 2.31 1.86 4.17 4.17 4.17.41 0 .8-.07 1.18-.18-.68 1.92-2.48 3.34-4.6 3.58v2.09c4.38-.27 7.83-3.9 7.83-8.33V10.17C21.24 7.86 19.38 6 16.83 6z" />
               </svg>
               <blockquote>
-                <p className="font-hero text-xl md:text-2xl lg:text-3xl text-[#1D4871] leading-snug">
+                <p className="font-hero font-bold tracking-[-0.02em] text-xl md:text-2xl lg:text-3xl text-[#10233A] leading-snug">
                   {testimonial.quote}
                 </p>
                 <footer className="mt-6">
@@ -154,10 +154,9 @@ export default function SubscribedPage() {
             <div className="max-w-[800px] mx-auto px-6 text-center">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-semibold text-[#1D4871] border-2 border-[#1D4871] hover:bg-[#F4F4F5] transition-colors"
-                style={{ boxShadow: '3px 3px 0px #1D4871' }}
+                className="inline-flex h-12 items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-6 text-[15px] font-semibold transition duration-150 hover:-translate-y-px active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_1px_2px_rgba(16,35,58,0.06)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.22),0_4px_12px_-4px_rgba(16,35,58,0.15)]"
               >
-                <span aria-hidden="true" className="mr-2">
+                <span aria-hidden="true">
                   ←
                 </span>
                 Return to Home

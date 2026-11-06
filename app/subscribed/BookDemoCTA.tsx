@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from '@/components/ui/Button';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 /**
@@ -17,15 +18,9 @@ export default function BookDemoCTA() {
       <p className="text-base md:text-lg text-[#1D4871]/75 leading-relaxed">
         Want to learn more about Sayso?
       </p>
-      <button
-        type="button"
-        onClick={openDemoCalendar}
-        data-analytics-id="cta-book-demo-subscribed"
-        className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-6 py-3 text-base font-semibold text-white border-2 border-[#1D4871] hover:bg-[#1b56cc] transition-colors"
-        style={{ boxShadow: '3px 3px 0px #1D4871' }}
-      >
+      <Button onClick={openDemoCalendar} data-analytics-id="cta-book-demo-subscribed" withArrow>
         Book a Demo
-      </button>
+      </Button>
     </div>
   );
 }

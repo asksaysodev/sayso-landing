@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 /**
@@ -15,20 +16,14 @@ export default function ConfirmationActions() {
 
   return (
     <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <button
-        type="button"
-        onClick={openDemoCalendar}
-        className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-6 py-3 text-base font-semibold text-white border-2 border-[#1D4871] hover:bg-[#1b56cc] transition-colors"
-        style={{ boxShadow: '3px 3px 0px #1D4871' }}
-      >
+      <Button onClick={openDemoCalendar} withArrow>
         Book a Demo
-      </button>
+      </Button>
       <Link
         href="/"
-        className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-semibold text-[#1D4871] border-2 border-[#1D4871] hover:bg-[#F4F4F5] transition-colors"
-        style={{ boxShadow: '3px 3px 0px #1D4871' }}
+        className="inline-flex h-12 items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-6 text-[15px] font-semibold transition duration-150 hover:-translate-y-px active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_1px_2px_rgba(16,35,58,0.06)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.22),0_4px_12px_-4px_rgba(16,35,58,0.15)]"
       >
-        <span aria-hidden="true" className="mr-2">
+        <span aria-hidden="true">
           ←
         </span>
         Back to Home

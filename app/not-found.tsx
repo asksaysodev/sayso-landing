@@ -42,7 +42,7 @@ export default function NotFound() {
           <p className="font-comic text-7xl sm:text-8xl text-[#2367EE] leading-none tracking-wide">
             404
           </p>
-          <h1 className="mt-6 font-comic text-4xl sm:text-5xl lg:text-6xl text-[#1D4871] leading-[1.1] tracking-wide">
+          <h1 className="mt-6 font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[38px] sm:text-5xl lg:text-6xl leading-[1.08]">
             This page took a <span className="text-[#2367EE]">wrong turn.</span>
           </h1>
           <p className="mt-5 text-lg md:text-xl text-[#1D4871]/75 leading-relaxed max-w-[640px] mx-auto">
@@ -51,13 +51,13 @@ export default function NotFound() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-6 py-3 text-white font-semibold hover:bg-[#1a52c2] transition-colors"
+              className="inline-flex h-12 items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-6 text-[15px] font-semibold transition duration-150 hover:-translate-y-px active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 bg-[#2367EE] text-white shadow-[0_1px_2px_rgba(16,35,58,0.18),0_8px_20px_-8px_rgba(35,103,238,0.55)] hover:bg-[#1F5AD6]"
             >
               Back to Home
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-[#1D4871]/20 bg-white px-6 py-3 text-[#1D4871] font-semibold hover:border-[#1D4871]/40 transition-colors"
+              className="inline-flex h-12 items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-6 text-[15px] font-semibold transition duration-150 hover:-translate-y-px active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_1px_2px_rgba(16,35,58,0.06)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.22),0_4px_12px_-4px_rgba(16,35,58,0.15)]"
             >
               Report a Broken Link
             </Link>
@@ -70,9 +70,9 @@ export default function NotFound() {
               <Link
                 key={d.href}
                 href={d.href}
-                className="group block rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md hover:border-[#2367EE]/40 transition-all"
+                className="group block rounded-[20px] bg-white p-6 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] hover:-translate-y-0.5 transition duration-200"
               >
-                <h2 className="text-lg font-semibold text-[#1D4871] group-hover:text-[#2367EE] transition-colors">
+                <h2 className="font-hero text-lg font-extrabold tracking-[-0.01em] text-[#10233A] group-hover:text-[#2367EE] transition-colors">
                   {d.label}
                 </h2>
                 <p className="mt-2 text-sm text-[#1D4871]/70 leading-relaxed">
