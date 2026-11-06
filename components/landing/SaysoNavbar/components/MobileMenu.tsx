@@ -143,7 +143,7 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
           type="button"
           onClick={onBookDemo}
           data-analytics-id="cta-book-demo-mobile-menu"
-          className="mt-6 h-12 rounded-full bg-[#2367EE] text-base font-semibold text-white shadow-button"
+          className="mt-6 h-12 rounded-full bg-white text-base font-semibold text-[#10233A] shadow-card-sm"
         >
           Book a demo
         </button>
