@@ -15,7 +15,7 @@ export default function ConfirmationActions() {
 
   return (
     <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <Button onClick={openDemoCalendar} withArrow>
+      <Button onClick={openDemoCalendar}>
         Book a Demo
       </Button>
       <Button href="/" variant="secondary">

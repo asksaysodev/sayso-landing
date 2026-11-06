@@ -83,7 +83,7 @@ export function AboutPageContent() {
             walk you through it.
           </p>
           <div>
-            <Button href="/demo/" withArrow>
+            <Button href="/demo/">
               Book a Demo
             </Button>
           </div>

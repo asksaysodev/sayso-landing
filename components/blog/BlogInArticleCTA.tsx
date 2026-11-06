@@ -17,7 +17,7 @@ export function BlogInArticleCTA() {
           See how Sayso gives your team real-time guidance on every call.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
-          <Button withArrow onClick={openSignup} data-analytics-id="cta-download-blog-article">
+          <Button onClick={openSignup} data-analytics-id="cta-download-blog-article">
             Get Sayso
           </Button>
           <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id="cta-book-demo-blog-article">

@@ -18,7 +18,7 @@ export default function BookDemoCTA() {
       <p className="text-base md:text-lg text-[#1D4871]/75 leading-relaxed">
         Want to learn more about Sayso?
       </p>
-      <Button onClick={openDemoCalendar} data-analytics-id="cta-book-demo-subscribed" withArrow>
+      <Button onClick={openDemoCalendar} data-analytics-id="cta-book-demo-subscribed">
         Book a Demo
       </Button>
     </div>
