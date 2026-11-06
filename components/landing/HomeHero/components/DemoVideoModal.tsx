@@ -2,8 +2,10 @@
 
 /**
  * Pop-out that plays the Sayso demo video (Loom embed). Closes on the X,
- * Escape or a click on the backdrop, locks page scroll while open and returns
- * focus to the button that opened it.
+ * Escape or a click on the backdrop, locks page scroll while open, keeps Tab
+ * and Shift+Tab inside the dialog and returns focus to the button that opened
+ * it. Focus sentinels at both ends catch Tab leaving the cross-origin iframe,
+ * whose key presses the page never sees.
  */
 import { useEffect, useRef, type RefObject } from 'react';
 import { DEMO_VIDEO_EMBED } from '../data';
@@ -17,6 +19,7 @@ interface DemoVideoModalProps {
 
 export function DemoVideoModal({ open, onClose, returnFocusRef }: DemoVideoModalProps) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const frameRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -24,7 +27,14 @@ export function DemoVideoModal({ open, onClose, returnFocusRef }: DemoVideoModal
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     closeRef.current?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      // Close button and iframe are the only stops: Tab between them in both directions.
+      if (e.key === 'Tab' && document.activeElement === closeRef.current) {
+        e.preventDefault();
+        frameRef.current?.focus();
+      }
+    };
     window.addEventListener('keydown', onKey);
     return () => {
       window.removeEventListener('keydown', onKey);
@@ -43,6 +53,7 @@ export function DemoVideoModal({ open, onClose, returnFocusRef }: DemoVideoModal
       className="fixed inset-0 z-[90] grid place-items-center bg-[rgba(10,20,34,0.78)] p-4 backdrop-blur-[6px]"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
+      <span tabIndex={0} aria-hidden="true" className="sr-only" onFocus={() => frameRef.current?.focus()} />
       <div className="relative w-full max-w-[980px]">
         <button
           ref={closeRef}
@@ -55,6 +66,7 @@ export function DemoVideoModal({ open, onClose, returnFocusRef }: DemoVideoModal
         </button>
         <div className="relative aspect-video overflow-hidden rounded-2xl border-[3px] border-[#1D4871] bg-[#0d1420] shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
           <iframe
+            ref={frameRef}
             src={DEMO_VIDEO_EMBED}
             title="Sayso demo video"
             allow="autoplay; fullscreen; picture-in-picture"
@@ -63,6 +75,7 @@ export function DemoVideoModal({ open, onClose, returnFocusRef }: DemoVideoModal
           />
         </div>
       </div>
+      <span tabIndex={0} aria-hidden="true" className="sr-only" onFocus={() => closeRef.current?.focus()} />
     </div>
   );
 }

@@ -51,7 +51,7 @@ export function PlaybookPanel({ lead, open, bind }: PlaybookPanelProps) {
         <div className={styles.playBody}>
           {script.sections.map((section) => (
             <section key={section.heading}>
-              <h6>{section.heading}</h6>
+              <p className={styles.playHeading}>{section.heading}</p>
               {section.lines.map((line, i) => (
                 <ScriptLine key={i} text={line} />
               ))}
