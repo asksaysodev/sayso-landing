@@ -21,9 +21,12 @@ declare global {
   }
 }
 
-/** The demo booking URL with the visitor's email already filled in. */
-export function calendlyDemoUrlFor(email?: string): string {
-  return email ? `${CALENDLY_DEMO_URL}&email=${encodeURIComponent(email)}` : CALENDLY_DEMO_URL;
+/** Calendly event the demo request forms (persona pages, /request-demo) book into. */
+export const CALENDLY_REQUEST_DEMO_URL = 'https://calendly.com/asksayso/request-demo?hide_gdpr_banner=1';
+
+/** A Calendly booking URL with the visitor's email already filled in. */
+export function calendlyUrlWithEmail(url: string, email?: string): string {
+  return email ? `${url}${url.includes('?') ? '&' : '?'}email=${encodeURIComponent(email)}` : url;
 }
 
 /**
