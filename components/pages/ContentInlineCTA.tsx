@@ -21,11 +21,11 @@ export function ContentInlineCTA({
           {headline}
         </h3>
         <div className="flex items-center justify-center gap-4 flex-wrap">
-          <Button onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}-inline`}>
-            Book a Demo
+          <Button withArrow onClick={openSignup} data-analytics-id={`cta-download-${location}-inline`}>
+            Get Sayso
           </Button>
-          <Button variant="secondary" onClick={openSignup} data-analytics-id={`cta-download-${location}-inline`}>
-            Download Sayso
+          <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}-inline`}>
+            Book a demo
           </Button>
         </div>
       </div>

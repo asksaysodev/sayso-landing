@@ -141,7 +141,7 @@ export function ThreeStepsSection({ content = defaultContent }: { content?: Thre
             >
               <LightningIcon size={16} color="#1D4871" className="mr-1.5" />
               <span className="lg:hidden">Create an Account</span>
-              <span className="hidden lg:inline">Download Sayso</span>
+              <span className="hidden lg:inline">Get Sayso</span>
             </button>
             <button
               onClick={openDemoCalendar}
