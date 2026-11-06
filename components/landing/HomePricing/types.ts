@@ -6,8 +6,10 @@ export interface PricingAnalyticsIds {
   teams: string;
 }
 
-/** The homepage ids (the billing toggle falls back to the shared toggle ids). */
+/** The homepage ids. /pricing passes its own production ids, so GTM can tell the two pages apart by id alone. */
 export const HOME_PRICING_IDS: PricingAnalyticsIds = {
-  agent: 'cta-download-pricing-individual',
+  monthly: 'home-pricing-billing-toggle-monthly',
+  annual: 'home-pricing-billing-toggle-annual',
+  agent: 'cta-download-home-pricing-individual',
   teams: 'cta-book-demo-home-pricing-teams',
 };

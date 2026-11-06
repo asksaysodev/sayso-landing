@@ -1,7 +1,6 @@
 /**
  * Static content for the homepage hero: rotating agent quotes, the brokerage
- * logos in the social proof row, the "Ask AI about Sayso" links and the demo
- * video embed.
+ * logos in the social proof row and the "Ask AI about Sayso" links.
  */
 
 export const ROTATING_QUOTES = [
@@ -11,14 +10,11 @@ export const ROTATING_QUOTES = [
 ];
 
 export const PROOF_LOGOS = [
-  { src: '/social-proof/anderson-group.png', name: 'Anderson Real Estate Group' },
-  { src: '/social-proof/exp-realty.png', name: 'eXp Realty' },
-  { src: '/social-proof/coldwell-banker.png', name: 'Coldwell Banker' },
-  { src: '/social-proof/kw-executive.png', name: 'KW Executive' },
-  { src: '/social-proof/obsidian-group.png', name: 'The Obsidian Group' },
+  { src: '/team-logos/marks/every-door-real-estate.png', name: 'Every Door Real Estate' },
+  { src: '/team-logos/marks/keller-williams.png', name: 'Keller Williams' },
+  { src: '/team-logos/marks/exp-realty.png', name: 'eXp Realty' },
+  { src: '/team-logos/marks/real-broker.png', name: 'Real Broker' },
 ];
-
-export const DEMO_VIDEO_EMBED = 'https://www.loom.com/embed/8a0b1cebe73d4f34bd47d3a335a820c9';
 
 const PROMPT = encodeURIComponent('Tell me about Sayso (AskSayso.com)');
 

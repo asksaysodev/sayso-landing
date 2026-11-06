@@ -18,12 +18,11 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-team-platform-strip` | Opens demo calendar | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar ("see the team platform") |
 | `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
-| `cta-watch-video-hero` | Opens the demo video pop-out | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo |
-| `cta-download-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/components/PricingCards.tsx](../../components/landing/HomePricing/components/PricingCards.tsx) | Individual Agent+ Claim early access, same id on the homepage and on /pricing |
-| `cta-book-demo-home-pricing-teams` | Opens demo calendar | [components/landing/HomePricing/components/PricingCards.tsx](../../components/landing/HomePricing/components/PricingCards.tsx) | Homepage pricing, Assemble your team |
-| `pricing-billing-toggle-annual` | Switches prices to annual billing | [components/landing/HomePricing/components/BillingToggle.tsx](../../components/landing/HomePricing/components/BillingToggle.tsx) | Same id on the homepage and on /pricing; split by page path in GTM |
-| `pricing-billing-toggle-monthly` | Switches prices to monthly billing | Same as above | Same as above |
+| `cta-download-home-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Individual Agent+ Claim early access. /pricing keeps `cta-download-pricing-individual` (below) |
+| `cta-book-demo-home-pricing-teams` | Opens demo calendar | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Assemble your team |
+| `home-pricing-billing-toggle-annual` | Switches prices to annual billing | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing. /pricing keeps `pricing-billing-toggle-annual` (below) |
+| `home-pricing-billing-toggle-monthly` | Switches prices to monthly billing | Same as above | Homepage pricing. /pricing keeps `pricing-billing-toggle-monthly` (below) |
 | `cta-download-final-cta` | Opens signup and download | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-book-demo-final-cta` | Opens demo calendar | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-download-three-steps-section` | Opens system-select modal | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Ad pages "3 Easy Steps" |
@@ -131,4 +130,4 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 
 ## Total count
 
-41 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The three ids under Retired IDs are no longer on the site.
+40 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The three ids under Retired IDs are no longer on the site.
