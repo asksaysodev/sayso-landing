@@ -41,7 +41,8 @@ export function WidgetFigure({ preset, label, caption, className = '' }: WidgetF
           className={`${shot} rounded-[14px] px-3 py-6 sm:px-10 sm:py-10 ${NOTE_PRESETS.includes(preset) ? 'pb-12 sm:pb-16' : ''}`}
         >
           <div className="relative mx-auto max-w-[604px]">
-            <WidgetScaler width={604} initialHeight={`min(${PRESET_HEIGHT[preset]}px, calc((100vw - 56px) * ${(PRESET_HEIGHT[preset] / 604).toFixed(3)}))`}>
+            {/* Before the first measurement the frame keeps the widget's aspect ratio at the real container width, so nothing shifts. */}
+            <WidgetScaler width={604} initialHeight="auto" style={{ aspectRatio: `604 / ${PRESET_HEIGHT[preset]}` }}>
               <SaysoWidget {...WIDGET_PRESETS[preset]} />
             </WidgetScaler>
           </div>
