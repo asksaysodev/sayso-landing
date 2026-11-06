@@ -42,7 +42,7 @@ export const headerNav: NavSection[] = [
     label: 'Products',
     href: '/products',
     links: [
-      { label: 'Cue', href: '/products/cue', subtitle: 'Real time context based coaching' },
+      { label: 'Cue', href: '/products/cue', subtitle: 'Real time context based guidance' },
       { label: 'Smart Capture', href: '/products/smart-capture', subtitle: 'Structured call notes' },
       { label: 'Pulse', href: '/products/pulse', subtitle: 'Live market analysis mid-call' },
       { label: 'Playbook', href: '/products/playbook', subtitle: 'Custom scripts for every scenario' },

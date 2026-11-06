@@ -45,7 +45,7 @@ export const sphereOfInfluence: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'For word-for-word scripts, see [referral scripts for past clients and your sphere](/blog/real-estate-referral-scripts/), and to see where sphere calls fit next to other lead sources, read [prospecting strategies compared](/blog/real-estate-prospecting-strategies/).',
-    'When you call a past client or SOI contact, the conversation can shift to real estate at any moment. Sayso\'s [Real-Time Coaching](/products/cue/) listens to your call and surfaces the right talking points the moment a prospect mentions they are thinking about selling or asks about their home\'s value. You stay helpful and informed without scrambling for data.',
+    'When you call a past client or SOI contact, the conversation can shift to real estate at any moment. Sayso\'s [Real-Time Guidance](/products/cue/) listens to your call and surfaces the right talking points the moment a prospect mentions they are thinking about selling or asks about their home\'s value. You stay helpful and informed without scrambling for data.',
     'After each call, [Call Notes](/products/smart-capture/) records the personal details for you, so the neighbor who mentioned downsizing next year is captured without you typing a word. [Book a demo](/demo/) to see how Sayso helps you turn every SOI conversation into a booked appointment.',
   ],
   relatedTerms: [

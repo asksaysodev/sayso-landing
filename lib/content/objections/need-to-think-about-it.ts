@@ -73,7 +73,7 @@ export const needToThinkAboutIt: ObjectionEntry = {
     {
       question: 'How can AI help when a prospect shuts down on a call?',
       answer:
-        'Tools like Sayso coach you in real time during the call, showing you exactly what to say when a prospect hesitates. Instead of freezing or guessing, you see a proven response on your screen and can redirect the conversation with confidence.',
+        'Tools like Sayso guide you in real time during the call, showing you exactly what to say when a prospect hesitates. Instead of freezing or guessing, you see a proven response on your screen and can redirect the conversation with confidence.',
     },
   ],
   relatedBlogPost: {
@@ -81,7 +81,7 @@ export const needToThinkAboutIt: ObjectionEntry = {
     href: '/blog/why-prospects-dont-commit',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

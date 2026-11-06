@@ -10,7 +10,7 @@ export const exampleTeam: CaseStudyEntry = {
   snapshot: {
     customer: 'Example Real Estate Team, 6 agents, Midwest market',
     challenge: 'New agents freezing on objections, losing appointments on prospecting calls.',
-    solution: 'Sayso real-time coaching + automatic call notes synced to Follow Up Boss.',
+    solution: 'Sayso real-time guidance + automatic call notes synced to Follow Up Boss.',
     result: '40% more appointments booked in the first 30 days.',
   },
   challenge:
@@ -18,7 +18,7 @@ export const exampleTeam: CaseStudyEntry = {
   whatTheyTriedBefore:
     'Before Sayso, the team tried script binders, weekly role play sessions, and post-call review meetings. The script binders helped with preparation but could not help in the moment. Role play sessions were useful but only happened once a week. The post-call reviews identified problems but could not prevent them.',
   howSaysoHelped:
-    'Sayso changed the team\'s approach from after-the-fact review to in-the-moment coaching. When a prospect said "I\'m not ready yet" or "I already have an agent," the right response appeared on the agent\'s screen immediately, tuned to what the prospect just said.\n\nThe automatic call notes eliminated the inconsistency problem. Every call got a summary logged to Follow Up Boss, regardless of which agent made the call. The team leader could see call activity and coaching data without sitting in on every conversation.',
+    'Sayso changed the team\'s approach from after-the-fact review to in-the-moment guidance. When a prospect said "I\'m not ready yet" or "I already have an agent," the right response appeared on the agent\'s screen immediately, tuned to what the prospect just said.\n\nThe automatic call notes eliminated the inconsistency problem. Every call got a summary logged to Follow Up Boss, regardless of which agent made the call. The team leader could see call activity and coaching data without sitting in on every conversation.',
   results:
     'In the first 30 days with Sayso, the team booked 40% more appointments from their prospecting calls. The biggest improvement came from new agents, who went from converting 1 in 15 calls to 1 in 9. Call note completeness went from roughly 60% to 100% because notes were automatic.\n\nThe team leader estimated saving 5+ hours per week that had previously been spent on call reviews and manual coaching sessions.',
   whatsNext:
@@ -29,7 +29,7 @@ export const exampleTeam: CaseStudyEntry = {
     'I used to dread objections. Now I almost look forward to them because I know exactly what to say.',
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Real-Time Guidance', href: '/products/cue' },
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedPersona: {

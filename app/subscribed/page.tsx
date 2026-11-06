@@ -31,7 +31,7 @@ const testimonial = {
 const showcaseFeatures = [
   {
     name: 'Cue',
-    description: 'Live coaching cards that surface mid-call.',
+    description: 'Live guidance cards that surface mid-call.',
   },
   {
     name: 'Smart Capture',

@@ -19,7 +19,7 @@ export const suresend: PartnerIntegrationEntry = {
 
   eyebrow: 'Integrations',
   h1: 'Keep your agents from losing opportunities with real-time conversation intelligence',
-  h2: "Sayso's integration with SureSend changes the way agent performance is managed. Let Sayso coach your agents live, in real time, while you focus on the high-level patterns in your business.",
+  h2: "Sayso's integration with SureSend changes the way agent performance is managed. Let Sayso guide your agents live, in real time, while you focus on the high-level patterns in your business.",
   heroCtaText: 'See how it works',
 
   valuePropsHeading: 'Imagine if every agent sounded like your best, all the time',

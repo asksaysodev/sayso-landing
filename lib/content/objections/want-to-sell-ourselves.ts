@@ -47,7 +47,7 @@ export const wantToSellOurselves: ObjectionEntry = {
     'Skipping follow-up because they seemed firm on selling alone',
   ],
   howSaysoHelps:
-    'When a seller says they want to handle the sale themselves, Sayso surfaces discovery questions that get at what is really driving the FSBO decision, whether it is commission, control, or a past experience. With Playbook, those prompts run on your own FSBO scripts, so the coaching sounds like you. Sayso also tracks where each seller stands, which matters because most FSBOs convert on the third or fourth conversation, not the first.',
+    'When a seller says they want to handle the sale themselves, Sayso surfaces discovery questions that get at what is really driving the FSBO decision, whether it is commission, control, or a past experience. With Playbook, those prompts run on your own FSBO scripts, so the guidance sounds like you. Sayso also tracks where each seller stands, which matters because most FSBOs convert on the third or fourth conversation, not the first.',
   relatedObjections: [
 { title: '"How Much Is Your Commission?"', slug: 'how-much-is-your-commission', keyword: 'how to handle commission question real estate' },
     { title: '"Bad Experience with Agents"', slug: 'bad-experience-with-agents', keyword: 'how to handle bad agent experience objection' },
@@ -73,7 +73,7 @@ export const wantToSellOurselves: ObjectionEntry = {
     {
       question: 'How can AI help with FSBO prospecting and objection handling?',
       answer:
-        'Tools like Sayso display the right questions and scripts on your screen in real time while you are on the call with a FSBO seller. Instead of memorizing every response, you get coached through the conversation and your notes are captured automatically.',
+        'Tools like Sayso display the right questions and scripts on your screen in real time while you are on the call with a FSBO seller. Instead of memorizing every response, you get guided through the conversation and your notes are captured automatically.',
     },
   ],
   relatedBlogPost: {

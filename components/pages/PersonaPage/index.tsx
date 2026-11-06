@@ -56,7 +56,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
         />
 
         {/* Sayso is introduced here, so the widget appears here */}
-        <ProseSection heading={entry.betterApproachHeading ?? 'A Better Approach: Real-Time Coaching'} paragraphs={entry.betterApproach}>
+        <ProseSection heading={entry.betterApproachHeading ?? 'A Better Approach: Real-Time Guidance'} paragraphs={entry.betterApproach}>
           <WidgetFigure
             preset="cues"
             label="The Sayso widget during a call, showing live cues and the LPMAMA letters"

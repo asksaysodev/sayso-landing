@@ -10,10 +10,10 @@ const productsHub: HubPageConfig = {
     'Explore the Sayso products: real-time coaching, automatic call notes, live market data, and custom scripts for real estate agents.',
   h1: 'Products Built For You',
   introduction:
-    'Every product in Sayso is designed for one thing: helping you sound better on prospecting calls. Real-time coaching, automatic notes, live market data, and more.',
+    'Every product in Sayso is designed for one thing: helping you sound better on prospecting calls. Real-time guidance, automatic notes, live market data, and more.',
   childPages: [
     {
-      title: 'Real-Time Coaching',
+      title: 'Real-Time Guidance',
       eyebrow: 'Cue',
       slug: 'cue',
       description:

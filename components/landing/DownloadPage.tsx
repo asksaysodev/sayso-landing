@@ -13,7 +13,7 @@ export function DownloadPage() {
             Get Sayso
           </h1>
           <p className="mx-auto mb-9 max-w-[560px] text-base leading-relaxed text-[#556B86] md:text-lg">
-            Set up Sayso on your computer to get real-time call coaching, automatic call notes,
+            Set up Sayso on your computer to get real-time call guidance, automatic call notes,
             and live market data on every prospecting call. The download takes about a minute, and
             you can start your first call right after.
           </p>

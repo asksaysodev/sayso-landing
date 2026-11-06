@@ -15,7 +15,7 @@ const caseStudiesHub: HubPageConfig = {
     {
       title: 'Example Real Estate Team',
       slug: 'example-team',
-      description: 'A 6-agent team booked 40% more appointments in 30 days with real-time coaching.',
+      description: 'A 6-agent team booked 40% more appointments in 30 days with real-time guidance.',
       linkText: 'Read the full story',
     },
   ],

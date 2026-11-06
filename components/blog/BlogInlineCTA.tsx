@@ -24,13 +24,13 @@ const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: s
   leads: {
     heading: 'Want to know what to ask next while the lead is talking?',
     body: 'Sayso suggests the next question on screen in real time, so the conversation keeps moving toward an appointment.',
-    label: 'See real-time coaching',
+    label: 'See real-time guidance',
     href: '/products/cue/',
   },
   prospecting: {
     heading: 'Want every prospecting call to end with a next step?',
     body: 'Sayso keeps the conversation on track with live prompts on screen as you talk.',
-    label: 'See real-time coaching',
+    label: 'See real-time guidance',
     href: '/products/cue/',
   },
   team: {

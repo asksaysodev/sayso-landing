@@ -73,7 +73,7 @@ export const justSendListings: ObjectionEntry = {
     {
       question: 'How can AI help agents redirect conversations during calls?',
       answer:
-        'Tools like Sayso display coaching prompts in real time while you are on the call, so you know how to redirect a conversation in real estate the moment a prospect tries to deflect. Instead of freezing or sending listings, you see the right response on your screen.',
+        'Tools like Sayso display guidance prompts in real time while you are on the call, so you know how to redirect a conversation in real estate the moment a prospect tries to deflect. Instead of freezing or sending listings, you see the right response on your screen.',
     },
   ],
   relatedBlogPost: {
@@ -81,7 +81,7 @@ export const justSendListings: ObjectionEntry = {
     href: '/blog/buyer-lead-scripts',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

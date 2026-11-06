@@ -73,7 +73,7 @@ export const wellWaitForSpring: ObjectionEntry = {
     {
       question: 'How can AI help agents handle timing objections on calls?',
       answer:
-        'Tools like Sayso surface real-time market data and coaching prompts during live calls, so you can respond to timing objections with specific local numbers instead of generic talking points. It helps you sound informed and confident in the moment.',
+        'Tools like Sayso surface real-time market data and guidance prompts during live calls, so you can respond to timing objections with specific local numbers instead of generic talking points. It helps you sound informed and confident in the moment.',
     },
   ],
   relatedBlogPost: {

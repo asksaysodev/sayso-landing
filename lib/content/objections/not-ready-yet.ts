@@ -60,7 +60,7 @@ export const notReadyYet: ObjectionEntry = {
     href: '/blog/why-prospects-dont-commit',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
   faq: [
@@ -82,7 +82,7 @@ export const notReadyYet: ObjectionEntry = {
     {
       question: 'How can AI help with objection handling on calls?',
       answer:
-        'Tools like Sayso show you the right response in real time while you are on the call, so you never freeze or fumble when a prospect pushes back. It coaches you through the moment instead of making you memorize scripts.',
+        'Tools like Sayso show you the right response in real time while you are on the call, so you never freeze or fumble when a prospect pushes back. It guides you through the moment instead of making you memorize scripts.',
     },
   ],
 };

@@ -73,7 +73,7 @@ export const howMuchIsYourCommission: ObjectionEntry = {
     {
       question: 'How can AI help agents handle the commission question on calls?',
       answer:
-        'Tools like Sayso provide real-time coaching during calls, showing you the right response the moment a prospect asks about commission. This helps you stay confident and keep the conversation focused on value.',
+        'Tools like Sayso provide real-time guidance during calls, showing you the right response the moment a prospect asks about commission. This helps you stay confident and keep the conversation focused on value.',
     },
   ],
   relatedBlogPost: {
@@ -81,7 +81,7 @@ export const howMuchIsYourCommission: ObjectionEntry = {
     href: '/blog/real-estate-negotiation-scripts',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

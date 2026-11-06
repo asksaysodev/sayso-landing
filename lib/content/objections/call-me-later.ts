@@ -73,7 +73,7 @@ export const callMeLater: ObjectionEntry = {
     {
       question: 'Can AI help agents handle "call me later" on live calls?',
       answer:
-        'Tools like Sayso display the right response on your screen the moment a prospect tries to end the call. It coaches you through the moment in real time so you can respond confidently without memorizing every script.',
+        'Tools like Sayso display the right response on your screen the moment a prospect tries to end the call. It guides you through the moment in real time so you can respond confidently without memorizing every script.',
     },
   ],
   relatedBlogPost: {
@@ -81,7 +81,7 @@ export const callMeLater: ObjectionEntry = {
     href: '/blog/how-to-keep-control-of-a-call',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

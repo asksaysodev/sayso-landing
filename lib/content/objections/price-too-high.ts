@@ -47,7 +47,7 @@ export const priceTooHigh: ObjectionEntry = {
     'Sending listings or CMAs over email instead of booking a conversation',
   ],
   howSaysoHelps:
-    'When a prospect says the price is too high, Sayso\'s Pulse feature pulls the comparable sales and current conditions onto your screen, so your response rests on evidence rather than opinion. Real-Time Coaching walks you through reframing the number around value, so you guide the conversation forward instead of digging in to defend a figure.',
+    'When a prospect says the price is too high, Sayso\'s Pulse feature pulls the comparable sales and current conditions onto your screen, so your response rests on evidence rather than opinion. Real-Time Guidance walks you through reframing the number around value, so you guide the conversation forward instead of digging in to defend a figure.',
   relatedObjections: [
     { title: '"The Market Is Bad"', slug: 'market-is-bad', keyword: 'how to handle market objection real estate' },
     { title: '"How Much Is Your Commission?"', slug: 'how-much-is-your-commission', keyword: 'how to handle commission question real estate' },
@@ -74,7 +74,7 @@ export const priceTooHigh: ObjectionEntry = {
     {
       question: 'How can AI help agents handle pricing objections on calls?',
       answer:
-        'Tools like Sayso surface real-time market data and coaching prompts while you are on the call, so you can respond to pricing concerns with confidence instead of scrambling for numbers or freezing up.',
+        'Tools like Sayso surface real-time market data and guidance prompts while you are on the call, so you can respond to pricing concerns with confidence instead of scrambling for numbers or freezing up.',
     },
   ],
   relatedBlogPost: {

@@ -15,7 +15,7 @@ const forHub: HubPageConfig = {
     {
       title: 'Solo Agents',
       slug: 'solo-agents',
-      description: 'Real-time coaching for agents who do everything themselves, including prospecting, objections, and follow-ups.',
+      description: 'Real-time guidance for agents who do everything themselves, including prospecting, objections, and follow-ups.',
       keyword: 'how to be more efficient real estate agent',
       linkText: 'How Sayso helps solo agents',
     },
