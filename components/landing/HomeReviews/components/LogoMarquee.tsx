@@ -1,12 +1,9 @@
-'use client';
-
 /**
- * Team logo marquee: two rows moving in opposite directions, paused on hover,
- * on keyboard focus, or with the pause button (WCAG 2.2.2).
+ * Team logo marquee: two rows moving in opposite directions, paused on hover
+ * or keyboard focus.
  * The second copy of each row is decorative and hidden from assistive tech.
  * With reduced motion the rows sit still and wrap.
  */
-import { useState } from 'react';
 import Image from 'next/image';
 import type { TeamLogo } from '../data';
 import styles from './LogoMarquee.module.css';
@@ -43,22 +40,11 @@ function LogoRow({ logos, reverse }: { logos: TeamLogo[]; reverse?: boolean }) {
 }
 
 export function LogoMarquee({ rows, label }: { rows: TeamLogo[][]; label: string }) {
-  const [paused, setPaused] = useState(false);
   return (
-    <div role="region" aria-label={label} className="mt-12">
-      <div className={`${styles.marquee} ${paused ? styles.paused : ''}`}>
-        {rows.map((logos, i) => (
-          <LogoRow key={i} logos={logos} reverse={i % 2 === 1} />
-        ))}
-      </div>
-      <button
-        type="button"
-        onClick={() => setPaused((p) => !p)}
-        aria-pressed={paused}
-        className={styles.pause}
-      >
-        {paused ? 'Play logos' : 'Pause logos'}
-      </button>
+    <div role="region" aria-label={label} className={`mt-12 ${styles.marquee}`}>
+      {rows.map((logos, i) => (
+        <LogoRow key={i} logos={logos} reverse={i % 2 === 1} />
+      ))}
     </div>
   );
 }

@@ -21,7 +21,7 @@ export const panel = `rounded-[20px] border border-[rgba(16,35,58,0.12)] bg-whit
 
 /** Yellow Bangers section label. */
 export const eyebrow =
-  'inline-block rounded-md border border-[rgba(16,35,58,0.14)] bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]';
+  'inline-block rounded-md border border-[rgba(16,35,58,0.14)] bg-[#FFDE59] px-3 py-0.5 font-comic text-[20px] tracking-[0.07em] text-[#1D4871]';
 
 /** Muted second half of a headline. #6b7f99 keeps 3:1 contrast for large text on #F4F4F5 (3.7:1) and the wash (3.3:1). */
 export const soft = 'text-[#6b7f99]';

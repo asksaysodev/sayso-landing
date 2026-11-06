@@ -8,7 +8,6 @@ export type Mark = 'y' | 'n' | 'p';
 export interface CompareRow {
   mark: Mark;
   label: string;
-  note?: string;
 }
 
 export interface CompareMethod {
@@ -24,11 +23,11 @@ export const METHODS: CompareMethod[] = [
     when: 'During the call',
     highlight: true,
     rows: [
-      { mark: 'y', label: 'Help while the prospect is talking', note: 'Cues appear as they talk' },
+      { mark: 'y', label: 'Help while the prospect is talking' },
       { mark: 'y', label: 'Follows what was just said' },
-      { mark: 'y', label: 'Your own scripts', note: 'Playbook' },
-      { mark: 'y', label: 'Local market data mid-call', note: 'Pulse, by zip code' },
-      { mark: 'y', label: 'Captures what the prospect told you', note: 'Synced to your CRM' },
+      { mark: 'y', label: 'Your own scripts' },
+      { mark: 'y', label: 'Local market data mid-call' },
+      { mark: 'y', label: 'Captures what the prospect told you' },
     ],
   },
   {
@@ -47,10 +46,10 @@ export const METHODS: CompareMethod[] = [
     when: 'After the call',
     rows: [
       { mark: 'n', label: 'Help while the prospect is talking' },
-      { mark: 'p', label: 'Follows what was just said', note: 'Once someone listens back' },
+      { mark: 'p', label: 'Follows what was just said' },
       { mark: 'n', label: 'Your own scripts' },
       { mark: 'n', label: 'Local market data mid-call' },
-      { mark: 'p', label: 'Captures what the prospect told you', note: 'After review' },
+      { mark: 'p', label: 'Captures what the prospect told you' },
     ],
   },
   {
