@@ -34,8 +34,12 @@ export const PLAN_PRODUCTS: { name: string; summary: string; detail: string }[] 
   },
 ];
 
+/** Production plan lines, shown on both pricing sections. */
+export const ONBOARDING_LINE = '1-on-1 onboarding';
+export const IMPACT_REVIEWS_LINE = '1-on-1 quarterly impact reviews with leadership';
+
 /** Agent support in Individual Agent+. */
-export const AGENT_SUPPORT = ['Weekly Virtual Office Hours', '1-on-1 onboarding', 'Dashboard analytics', 'Email Support'];
+export const AGENT_SUPPORT = ['Weekly Virtual Office Hours', ONBOARDING_LINE, 'Dashboard analytics', 'Email Support'];
 export const AGENT_SUPPORT_SUMMARY = 'Weekly office hours, dashboard analytics and email support';
 
 export const TEAM_PLAN_NAME = 'Teams and Brokerages';
@@ -46,7 +50,7 @@ export const TEAM_FEATURES = [
   'Leadership dashboard with unlimited teams and groups',
   'Priority Support',
   'Dedicated CSM',
-  '1-on-1 quarterly impact reviews with leadership',
+  IMPACT_REVIEWS_LINE,
   'Conversion Benchmarking',
 ];
 
@@ -56,6 +60,7 @@ export const TEAM_FEATURES_SUMMARY = [
   'Leadership dashboard with unlimited teams and groups',
   'Team implementation and train-the-trainer',
   'Dedicated CSM, priority support and conversion benchmarking',
+  IMPACT_REVIEWS_LINE,
 ];
 
 /** GTM ids for the billing toggle, shared by both pricing sections. */

@@ -13,6 +13,7 @@ import {
   AGENT_SUPPORT_SUMMARY,
   INDIVIDUAL_PLAN_NAME,
   INDIVIDUAL_PRICE,
+  ONBOARDING_LINE,
   PLAN_PRODUCTS,
   TEAM_FEATURES_SUMMARY,
   TEAM_PLAN_NAME,
@@ -44,6 +45,7 @@ export function PricingCards() {
                   <b>{p.name}:</b> {p.summary}
                 </>
               )),
+              ONBOARDING_LINE,
               AGENT_SUPPORT_SUMMARY,
             ]}
           />
