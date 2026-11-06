@@ -37,7 +37,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
 
       <article className="max-w-[800px] mx-auto px-6 pb-10">
         {/* H1 */}
-        <h1 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mt-6 mb-6">
+        <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] leading-[1.1] text-[34px] md:text-5xl mt-6 mb-6">
           {entry.h1}
         </h1>
 
@@ -65,13 +65,13 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
               alt={entry.heroImage.alt}
               width={800}
               height={450}
-              className="rounded-xl border-2 border-[#1D4871]/10"
+              className="rounded-2xl shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]"
             />
           </div>
         )}
 
         {/* How It Works */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           How {entry.term} Works in Practice
         </h2>
         <div className="space-y-4 mb-6">
@@ -86,7 +86,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         </div>
 
         {/* Why It Matters */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           Why {entry.term} Matters for Real Estate Agents
         </h2>
         <div className="space-y-4 mb-6">
@@ -101,7 +101,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         </div>
 
         {/* Tips */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           Tips for {entry.term}
         </h2>
         <ol className="space-y-4 mb-8">
@@ -123,7 +123,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         </ol>
 
         {/* How Sayso Helps */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           How Sayso Helps with {entry.term}
         </h2>
         <div className="space-y-4 mb-6">
@@ -142,7 +142,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         {/* Related Terms */}
         {entry.relatedTerms.length > 0 && (
           <>
-            <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+            <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
               Related Terms
             </h2>
             <ul className="space-y-2 mb-6">
@@ -166,7 +166,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
             {entry.relatedFeature && (
               <Link
                 href={entry.relatedFeature.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-[#1D4871]/10 bg-white hover:border-[#2367EE]/40 transition-colors group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Related feature
@@ -179,7 +179,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
             {entry.relatedPersona && (
               <Link
                 href={entry.relatedPersona.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-[#1D4871]/10 bg-white hover:border-[#2367EE]/40 transition-colors group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Built for you
@@ -194,7 +194,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
 
         {/* Deeper Content Link */}
         {entry.deeperLink && isLiveBlogHref(entry.deeperLink.href) && (
-          <div className="bg-white border-2 border-[#1D4871]/10 rounded-xl p-5 mb-6">
+          <div className="bg-white rounded-2xl p-5 mb-6 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
             <p className="text-sm text-[#1D4871]/60 font-sans mb-1">
               Go deeper:
             </p>

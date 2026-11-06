@@ -1,6 +1,6 @@
 'use client';
 
-import { LightningIcon } from '@/components/icons/LightningIcon';
+import { Button } from '@/components/ui/Button';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 
 interface ContentCTAProps {
@@ -18,30 +18,21 @@ export function ContentCTA({
 
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-10">
-      <div className="bg-[#1D4871] border-2 border-[#1D4871] rounded-2xl v2-comic-shadow overflow-hidden">
+      <div className="bg-[#1D4871] rounded-[20px] shadow-[0_1px_2px_rgba(16,35,58,0.1),0_18px_40px_-18px_rgba(16,35,58,0.55)] overflow-hidden">
         <div className="px-8 py-12 md:py-16 text-center">
-          <h2 className="font-comic text-3xl md:text-4xl text-white tracking-wide mb-4">
+          <h2 className="font-hero font-extrabold tracking-[-0.03em] leading-[1.08] text-[32px] md:text-5xl text-white mb-4">
             {headline}
           </h2>
-          <p className="text-base text-white/70 max-w-md mx-auto mb-8 font-sans">
+          <p className="text-[17px] text-white/80 max-w-md mx-auto mb-8 font-sans">
             {subheading}
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <button
-              onClick={openDemoCalendar}
-              data-analytics-id={`cta-book-demo-${location}`}
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-transparent text-white font-bold text-base border-2 border-white hover:bg-white/10 transition-colors"
-            >
+            <Button onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}`} withArrow>
               Book a Demo
-            </button>
-            <button
-              onClick={openSignup}
-              data-analytics-id={`cta-download-${location}`}
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFDE59] text-[#1D4871] font-bold text-base border-2 border-[#FFDE59] hover:bg-[#FFDE59]/90 transition-colors"
-            >
-              <LightningIcon size={14} className="mr-1.5" />
+            </Button>
+            <Button variant="secondary" onClick={openSignup} data-analytics-id={`cta-download-${location}`}>
               Download Sayso
-            </button>
+            </Button>
           </div>
         </div>
       </div>

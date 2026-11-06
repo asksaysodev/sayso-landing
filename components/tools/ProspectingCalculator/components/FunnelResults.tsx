@@ -25,16 +25,16 @@ export function FunnelResults({ stages }: FunnelResultsProps) {
     <div className="flex flex-col gap-6">
       <div className="grid gap-3 sm:grid-cols-3">
         {[dials, conversations, appointments].map((s) => (
-          <div key={s.label} className="rounded-xl border-2 border-[#1D4871] bg-[#FFDE59]/30 p-4">
+          <div key={s.label} className="rounded-2xl bg-[#F4F4F5] p-4 shadow-[0_0_0_1px_rgba(16,35,58,0.08)]">
             <p className="text-xs uppercase tracking-wide font-bold text-[#1D4871]/60">{s.label} per day</p>
-            <p className="font-hero text-3xl font-bold text-[#1D4871] mt-1">{fmt(s.perDay)}</p>
+            <p className="font-hero text-3xl font-extrabold tracking-[-0.02em] text-[#10233A] mt-1">{fmt(s.perDay)}</p>
             <p className="text-xs text-[#1D4871]/60 mt-1">{fmt(s.perWeek)} per week</p>
           </div>
         ))}
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse border-2 border-[#1D4871] text-sm font-sans">
+      <div className="overflow-x-auto rounded-2xl shadow-[0_0_0_1px_rgba(16,35,58,0.12)]">
+        <table className="w-full border-collapse text-sm font-sans">
           <thead>
             <tr>
               <th className="bg-[#1D4871] text-white px-4 py-2 text-left">Stage</th>

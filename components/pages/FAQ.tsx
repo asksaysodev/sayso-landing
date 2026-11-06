@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { generateFAQPageJsonLd } from '@/lib/seo/schema';
 
 interface FAQItem {
@@ -29,27 +29,24 @@ export function FAQ({ headline = 'Frequently Asked Questions', items }: FAQProps
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h2 className="font-comic text-2xl md:text-3xl text-[#1D4871] tracking-wide mb-6">
+      <h2 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[28px] md:text-4xl leading-[1.1] mb-6">
         {headline}
       </h2>
-      <div className="space-y-3">
+      <div className="divide-y divide-[#1D4871]/10 rounded-[20px] bg-white overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
         {items.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white border-2 border-[#1D4871]/10 rounded-xl overflow-hidden"
-          >
+          <div key={index}>
             <button
               onClick={() => toggle(index)}
               className="w-full flex items-center justify-between px-6 py-4 text-left"
               aria-expanded={openIndex === index}
             >
-              <span className="font-bold text-[#1D4871] text-base font-sans pr-4">
+              <span className="font-semibold text-[#10233A] text-base font-sans pr-4">
                 {item.question}
               </span>
-              <ChevronDown
+              <Plus
                 size={20}
-                className={`text-[#1D4871]/40 flex-shrink-0 transition-transform duration-200 ${
-                  openIndex === index ? 'rotate-180' : ''
+                className={`text-[#2367EE] flex-shrink-0 transition-transform duration-200 ${
+                  openIndex === index ? 'rotate-45' : ''
                 }`}
               />
             </button>
