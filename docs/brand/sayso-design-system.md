@@ -19,7 +19,7 @@ What the visual system communicates:
 - **Friendly** through the yellow labels, Bangers on small headings and the superhero in the final call to action.
 
 ### Where the comic identity still appears
-- Yellow section labels and badges (`v2-pow-badge`, Bangers, no border or shadow).
+- Yellow section labels and badges (inline `bg-[#FFDE59] rounded-md font-comic`, no border or shadow; the flat override also strips `v2-pow-badge` to this look).
 - Bangers on small headings: menu columns, footer columns, FAQ group titles.
 - The superhero illustration in the closing call to action and the end of the homepage demo.
 - The halftone dot texture on light section backgrounds, kept very faint.
@@ -309,7 +309,7 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 | **Cards / panels** | White, radius 16 to 20px, `shadow-card` (hairline ring `rgba(16,35,58,.12)` plus a soft drop shadow), `hover:shadow-card-hover` when the whole card is a link. No tilt, no offset shadow. |
 | **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, `shadow-button`, 1px lift on hover. The main download CTA reads "Get Sayso" everywhere. Internal `href`s ("/...") render a `next/link`; pass `external` for off-site links (new tab, `rel="noopener noreferrer"`); with no `href` it renders a `type="button"` button. |
 | **Secondary button** (`variant="secondary"`) | White pill, `shadow-card-sm` and dark text; `shadow-card-sm-hover` darkens the ring on hover. |
-| **Badges and labels** | Yellow `v2-pow-badge` style label in Bangers, flat (no border or shadow), for section labels and small emphasis. |
+| **Badges and labels** | Yellow rounded label in Bangers (`bg-[#FFDE59] rounded-md font-comic`), flat (no border or shadow), for section labels and small emphasis. |
 | **Sections / containers** | `Section` wrapper: full-width, `py-16 sm:py-24`, `default` or `accent` background variant. `Container`: centered, max-width ~1200px, `px-6 md:px-8 lg:px-12`. Alternate `background` and `accent-bg`, or drop into a dark navy section for emphasis. |
 | **Pricing cards** | `HomePricing`, shared by the homepage and `/pricing`: monthly / annual toggle, a white Individual Agent+ card and a navy Teams and Brokerages card, both with a yellow top border, checkmark feature lists and flat Button CTAs. |
 | **Blog content** | Manrope headings (800 for H1/H2), Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables inside a rounded hairline card. Post cards, author card and cluster box use the flat card pattern; the category pill is a small yellow Bangers label. |
@@ -327,7 +327,7 @@ Flat surfaces use these `boxShadow` tokens from `tailwind.config.ts`. Use the to
 | `shadow-card-sm` | `0 0 0 1px rgba(16,35,58,0.12), 0 1px 2px rgba(16,35,58,0.06)` | Small surfaces: secondary buttons, chips, inputs, list rows |
 | `shadow-card-sm-hover` | `0 0 0 1px rgba(16,35,58,0.22), 0 4px 12px -4px rgba(16,35,58,0.15)` | Hover state for `shadow-card-sm` |
 | `shadow-popover` | `0 0 0 1px rgba(16,35,58,0.12), 0 24px 48px -20px rgba(16,35,58,0.35)` | Floating panels such as the Resources menu |
-| `shadow-button` | `0 1px 2px rgba(16,35,58,0.18), 0 8px 20px -8px rgba(35,103,238,0.55)` | Blue CTA buttons (primary `Button`, navbar and drawer Book a demo) |
+| `shadow-button` | `0 1px 2px rgba(16,35,58,0.18), 0 8px 20px -8px rgba(35,103,238,0.55)` | Blue CTA buttons (primary `Button`: Get Sayso) |
 
 The blue button token is `shadow-button`, not `shadow-cta`: `cta` is already a color, and Tailwind's shadow-color utility `shadow-cta` would override the shadow.
 

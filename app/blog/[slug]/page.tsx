@@ -199,7 +199,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Related posts full width */}
       {relatedPosts.length > 0 && (
-        <BlogRelatedPosts posts={relatedPosts} variant="grid" />
+        <BlogRelatedPosts posts={relatedPosts} />
       )}
 
       <BlogNewsletterCTA />

@@ -5,8 +5,8 @@ export interface NavLink {
   external?: boolean;
   /** Optional subtitle displayed below the label (e.g. feature description) */
   subtitle?: string;
-  /** If true, render indented as a child of the item above (e.g. an integration partner under "Integrations"). */
-  indent?: boolean;
+  /** Decorative glyph on featured Resources cards. */
+  mark?: string;
   /** Optional data-analytics-id rendered on the link for GTM trigger targeting */
   dataAnalyticsId?: string;
 }
@@ -32,8 +32,8 @@ export const primaryNav: NavLink[] = [
 
 /** Highlighted links at the top of the Resources menu. */
 export const resourcesFeatured: NavLink[] = [
-  { label: 'Blog', href: '/blog', subtitle: 'Scripts, objections and prospecting guides' },
-  { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator', subtitle: 'Work out the calls behind your goal' },
+  { label: 'Blog', href: '/blog', subtitle: 'Scripts, objections and prospecting guides', mark: 'B' },
+  { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator', subtitle: 'Work out the calls behind your goal', mark: '$' },
 ];
 
 /** Columns inside the Resources menu. */
@@ -42,7 +42,7 @@ export const headerNav: NavSection[] = [
     label: 'Products',
     href: '/products',
     links: [
-      { label: 'Cue', href: '/products/cue', subtitle: 'Real time context based guidance' },
+      { label: 'Cue', href: '/products/cue', subtitle: 'Real-time context based guidance' },
       { label: 'Smart Capture', href: '/products/smart-capture', subtitle: 'Structured call notes' },
       { label: 'Pulse', href: '/products/pulse', subtitle: 'Live market analysis mid-call' },
       { label: 'Playbook', href: '/products/playbook', subtitle: 'Custom scripts for every scenario' },

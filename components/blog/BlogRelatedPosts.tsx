@@ -6,45 +6,10 @@ import { BlogPostMeta, formatCategoryName } from '@/lib/blog';
 
 interface BlogRelatedPostsProps {
   posts: BlogPostMeta[];
-  variant?: 'grid' | 'compact';
 }
 
-export function BlogRelatedPosts({ posts, variant = 'grid' }: BlogRelatedPostsProps) {
+export function BlogRelatedPosts({ posts }: BlogRelatedPostsProps) {
   if (posts.length === 0) return null;
-
-  if (variant === 'compact') {
-    return (
-      <ul className="space-y-3">
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/blog/${post.slug}`} className="group flex items-start gap-3">
-              <div className="w-16 h-12 rounded-lg bg-[#F4F4F5] overflow-hidden shrink-0">
-                {post.coverImage ? (
-                  <Image
-                    src={post.coverImage}
-                    alt={post.title}
-                    width={64}
-                    height={48}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-[#E3E8EC] flex items-center justify-center">
-                    <LightningIcon size={16} className="text-[#1D4871]/20" />
-                  </div>
-                )}
-              </div>
-              <div className="flex-1 min-w-0">
-                <h5 className="text-sm font-bold text-[#1D4871] line-clamp-2 group-hover:text-[#2367EE] transition-colors">
-                  {post.title}
-                </h5>
-                <span className="text-xs text-[#1D4871]/50 font-sans">{post.readingTime} min read</span>
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    );
-  }
 
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-10">

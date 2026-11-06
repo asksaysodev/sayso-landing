@@ -26,11 +26,19 @@ and you are unsure which to add).
   ```bash
   git grep -l "social-proof/" -- '*.tsx'
   ```
-  The two maintained rotating lists to update are:
-  - **`components/landing/HeroWithVideo.tsx`** — homepage hero marquee. Shape:
-    `{ name: 'Brand', src: '/social-proof/brand.png' }`
+  The maintained rotating lists to update are:
+  - **`components/landing/HomeReviews/data.ts`** (`TEAM_LOGO_ROWS`) — homepage
+    two-row logo marquee. These use **black silhouette** copies in
+    **`public/team-logos/`** (same name), not the color files. Shape:
+    `{ src: '/team-logos/brand.png', alt: 'Brand', width, height }` (the trimmed
+    PNG's pixel size). Add to whichever row is shorter.
+  - The hero logo bubbles (`PROOF_LOGOS` in `components/landing/HomeHero/data.ts`,
+    square crops in `public/team-logos/marks/`) are a curated set of four. Do
+    **not** add to them unless the user asks.
   - **`components/pages/PartnerIntegrationPage/components/PartnerLogoCarousel.tsx`** —
     partner page carousel. Shape: `{ src: '/social-proof/brand.png', alt: 'Brand' }`
+  - Do **not** auto-add to the case study pages (specific named case
+    studies). Mention it only if the user asks.
 - The marquee renders each logo at a **fixed height** (`h-12 md:h-16`, `w-auto`,
   `object-contain`), so consistent visual weight comes from **trimming whitespace**,
   not from resizing. The processing script handles this.
@@ -112,7 +120,7 @@ Flag these to the user rather than silently shipping them:
 Add the new logo to **both** maintained lists (Phase-0 locations), using each file's
 own object shape and the correct, well-spelled brand name:
 
-- `HeroWithVideo.tsx`: `{ name: 'Brand Name', src: '/social-proof/<slug>.png' }`
+- `HomeReviews/data.ts` (`TEAM_LOGO_ROWS`): `{ src: '/team-logos/<slug>.png', alt: 'Brand Name', width, height }`, using a black silhouette copy of the processed PNG (opaque pixels filled `#000`, trimmed) saved to `public/team-logos/<slug>.png`
 - `PartnerLogoCarousel.tsx`: `{ src: '/social-proof/<slug>.png', alt: 'Brand Name' }`
 
 Placement:
@@ -166,7 +174,7 @@ Follow the repo conventions in `CLAUDE.md`:
 # 1. process (writes public/social-proof/<slug>.png + preview strips)
 node scripts/process-logo.mjs ./dropped-logo.png <slug>
 # 2. read the two preview PNGs it prints, verify on white + gray
-# 3. add to HeroWithVideo.tsx  -> { name, src }
+# 3. add a black copy to public/team-logos/ and to HomeReviews/data.ts -> { src, alt, width, height }
 #    add to PartnerLogoCarousel.tsx -> { src, alt }
 # 4. rm the original drop, commit, PR into development
 ```

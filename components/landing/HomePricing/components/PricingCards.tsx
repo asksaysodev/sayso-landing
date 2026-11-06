@@ -5,7 +5,7 @@
  * the toggle, Claim early access opens the create-account flow, like /pricing) and Teams and
  * Brokerages (Assemble your team opens the demo calendar).
  */
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { Button } from '@/components/ui/Button';
 import { panel } from '../../HomeShared/styles';
@@ -42,9 +42,9 @@ export function PricingCards({ analyticsIds }: { analyticsIds: PricingAnalyticsI
           <FeatureList
             items={[
               ...PLAN_PRODUCTS.map((p) => (
-                <>
+                <Fragment key={p.name}>
                   <b>{p.name}:</b> {p.summary}
-                </>
+                </Fragment>
               )),
               ONBOARDING_LINE,
               AGENT_SUPPORT_SUMMARY,

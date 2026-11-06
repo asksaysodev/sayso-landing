@@ -41,7 +41,7 @@ const PRICING_PAGE_IDS = {
   monthly: 'pricing-billing-toggle-monthly',
   annual: 'pricing-billing-toggle-annual',
   agent: 'cta-download-pricing-individual',
-  teams: 'cta-signup-pricing-teams',
+  teams: 'cta-book-demo-pricing-teams',
 };
 
 export default function PricingPage() {

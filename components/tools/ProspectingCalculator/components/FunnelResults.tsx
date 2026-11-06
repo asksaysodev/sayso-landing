@@ -26,7 +26,7 @@ export function FunnelResults({ stages }: FunnelResultsProps) {
       <div className="grid grid-cols-3 gap-2 sm:gap-3">
         {[dials, conversations, appointments].map((s) => (
           <div key={s.label} className="min-w-0 rounded-2xl bg-[#F4F4F5] p-3 sm:p-4 shadow-[0_0_0_1px_rgba(16,35,58,0.08)]">
-            <p className="text-[10px] sm:text-xs uppercase tracking-wide font-bold text-[#1D4871]/60">{s.label} per day</p>
+            <p className="text-[11px] sm:text-xs uppercase tracking-wide font-bold text-[#1D4871]/80">{s.label} per day</p>
             <p className="font-hero text-2xl sm:text-3xl font-extrabold tracking-[-0.02em] text-[#10233A] mt-1">{fmt(s.perDay)}</p>
             <p className="text-xs text-[#1D4871]/60 mt-1">{fmt(s.perWeek)} per week</p>
           </div>

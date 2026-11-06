@@ -84,7 +84,7 @@ export function AboutPageContent() {
           </p>
           <div>
             <Button href="/demo/">
-              Book a Demo
+              Book a demo
             </Button>
           </div>
         </section>

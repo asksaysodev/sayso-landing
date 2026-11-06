@@ -89,7 +89,7 @@ All checked October 24, 2026 unless stated.
 | Mike Ferry Organization: free coaching evaluation; no price on the coaching page | confirmed for the coaching page only (pricing, FAQ and terms pages not checked) | https://www.mikeferry.com/coaching/ |
 | Ramsey Real Estate Pro Coaching: no price on the program page | confirmed for that page only | https://www.ramseysolutions.com/real-estate/real-estate-pro-coaching |
 | Mentor cost: group mentorships "may be free or require membership fees" | confirmed (VanEd, October 23, 2025) | https://www.vaned.com/blog/finding-real-estate-mentor |
-| Sayso Individual Agent+: $179/month, or $125/month billed annually ($1,499 a year); teams and brokerages: custom pricing based on team size | confirmed in repo | components/landing/PricingSection.tsx |
+| Sayso Individual Agent+: $179/month, or $125/month billed annually ($1,499 a year); teams and brokerages: custom pricing based on team size | confirmed in repo | lib/content/pricing.ts |
 | Annual and per-session figures in the post | computed by the author from the confirmed prices above (12 x monthly price; yearly price divided by private sessions; closings = yearly price divided by take-home per closing) | n/a |
 | Take-home example: $300,000 sale, 3% commission to the agent's side = $9,000, 70% split = $6,300 | illustrative arithmetic with assumed rates, labeled as such in the post; matches the hub's example | n/a |
 | "If about one in three appointments becomes a closing" | illustrative assumption, labeled "if" in the post | n/a |

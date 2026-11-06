@@ -6,7 +6,7 @@
  * (non-interactive) widget renders nothing inside a closed panel, so closed
  * placeholder numbers never reach the page HTML.
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import { cx } from '@/lib/utils/cx';
 import { prefersReducedMotion } from '@/lib/utils/motion';
 import styles from '../SaysoWidget.module.css';
@@ -21,11 +21,14 @@ interface PulsePanelProps {
   bind: BindControl;
 }
 
+const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
+
 /** 0 to 1 progress of the count-up, eased out. Starts at 1 so static views show final numbers. */
 function useCountUp(open: boolean, animate: boolean): number {
   const [progress, setProgress] = useState(1);
 
-  useEffect(() => {
+  // Layout effect: reset to 0 before the first open frame paints, so final numbers never flash.
+  useIsoLayoutEffect(() => {
     if (!open || !animate || prefersReducedMotion()) {
       setProgress(1);
       return;

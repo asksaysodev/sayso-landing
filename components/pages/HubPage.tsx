@@ -9,11 +9,11 @@ import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { HubPageConfig } from '@/lib/content/hubs/types';
 
 const GRID = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5';
-/** Hubs with up to this many cards swipe on mobile; longer directories (glossary, objections) stay a scannable list. */
+/** Hubs with 2 to 6 cards swipe on mobile; longer directories (glossary, objections) and single-card hubs stay a grid. */
 const CAROUSEL_MAX = 6;
 
 function HubCardList({ cards }: { cards: ReactElement[] }) {
-  if (cards.length > CAROUSEL_MAX) return <div className={GRID}>{cards}</div>;
+  if (cards.length < 2 || cards.length > CAROUSEL_MAX) return <div className={GRID}>{cards}</div>;
   return (
     <Carousel label="Pages in this section" itemName="page" trackClassName="grid grid-cols-2 lg:grid-cols-3 gap-5">
       {cards}
@@ -81,7 +81,7 @@ export function HubPage({ config }: HubPageProps) {
         {config.groups && config.groups.length > 0 ? (
           config.groups.map((group) => (
             <div key={group.label} className="mb-10">
-              <h2 className="font-comic text-[21px] tracking-[0.06em] text-[#1D4871] mb-4">
+              <h2 className="font-hero font-extrabold tracking-[-0.02em] text-[22px] text-[#10233A] mb-4">
                 {group.label}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -174,7 +174,7 @@ function HubCard({
   if (page.bannerText) {
     return (
       <div className="relative">
-        <div className="absolute -top-3 right-4 z-10 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-base tracking-[0.06em] px-3 py-0.5 whitespace-nowrap">
+        <div className="absolute -top-2 right-4 z-10 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-base tracking-[0.06em] px-3 py-0.5 whitespace-nowrap">
           {page.bannerText}
         </div>
         {card}
@@ -193,7 +193,7 @@ function FeatureRequestCard({
   return (
     <div className="relative">
       {card.bannerText && (
-        <div className="absolute -top-3 right-4 z-10 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-base tracking-[0.06em] px-3 py-0.5 whitespace-nowrap">
+        <div className="absolute -top-2 right-4 z-10 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-base tracking-[0.06em] px-3 py-0.5 whitespace-nowrap">
           {card.bannerText}
         </div>
       )}

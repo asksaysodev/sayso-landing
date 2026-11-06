@@ -9,6 +9,11 @@ export const INDIVIDUAL_PLAN_NAME = 'Individual Agent+';
 /** Individual Agent+ price per month, by billing period. */
 export const INDIVIDUAL_PRICE = { annual: '$125', monthly: '$179' } as const;
 
+/** Annual discount badge, derived from the two prices so it cannot drift. */
+export const ANNUAL_DISCOUNT_PERCENT = Math.round(
+  (1 - Number(INDIVIDUAL_PRICE.annual.slice(1)) / Number(INDIVIDUAL_PRICE.monthly.slice(1))) * 100,
+);
+
 /** Sayso products in Individual Agent+, with the short line shown on the plan card. */
 export const PLAN_PRODUCTS: { name: string; summary: string }[] = [
   { name: 'Cue', summary: 'real-time cues during the call' },
@@ -36,8 +41,3 @@ export const TEAM_FEATURES_SUMMARY = [
   IMPACT_REVIEWS_LINE,
 ];
 
-/** Default GTM ids for the billing toggle (the /pricing ids). The homepage passes its own via HOME_PRICING_IDS. */
-export const BILLING_TOGGLE_ANALYTICS = {
-  annual: 'pricing-billing-toggle-annual',
-  monthly: 'pricing-billing-toggle-monthly',
-} as const;

@@ -1,6 +1,6 @@
 /**
  * Product page (/products/[slug]): breadcrumb with previous / next feature
- * links, hero with the live widget picture, how it
+ * links, hero with the static widget picture, how it
  * works, who it is for, differentiators, social proof, related reading, FAQ
  * and the closing call to action. Composition only; copy comes from
  * lib/content/products.

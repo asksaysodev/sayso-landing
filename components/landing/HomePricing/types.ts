@@ -1,7 +1,7 @@
 /** Analytics ids on the pricing controls, so each page that shows pricing can report its own clicks. */
 export interface PricingAnalyticsIds {
-  monthly?: string;
-  annual?: string;
+  monthly: string;
+  annual: string;
   agent: string;
   teams: string;
 }
