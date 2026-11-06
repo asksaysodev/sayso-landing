@@ -32,7 +32,7 @@ export function FAQ({ headline = 'Frequently Asked Questions', items }: FAQProps
       <h2 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[28px] md:text-4xl leading-[1.1] mb-6">
         {headline}
       </h2>
-      <div className="divide-y divide-[#1D4871]/10 rounded-[20px] bg-white overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+      <div className="divide-y divide-[#1D4871]/10 rounded-[20px] bg-white overflow-hidden shadow-card">
         {items.map((item, index) => (
           <div key={index}>
             <button

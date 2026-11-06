@@ -53,7 +53,7 @@ const mdxComponents = {
   ),
   hr: () => <hr className="border-[#D7DEE1] my-8" />,
   table: (props: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="overflow-x-auto mb-6 rounded-2xl shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+    <div className="overflow-x-auto mb-6 rounded-2xl shadow-card">
       <table className="w-full border-collapse text-sm font-sans" {...props} />
     </div>
   ),
@@ -80,7 +80,7 @@ const mdxComponents = {
   ),
 
   ScriptExample: ({ label, children }: { label?: string; children: React.ReactNode }) => (
-    <div className="bg-white rounded-2xl p-6 my-6 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+    <div className="bg-white rounded-2xl p-6 my-6 shadow-card">
       {label && (
         <span className="text-xs uppercase tracking-wide text-[#1D4871]/50 font-bold block mb-2">
           {label}

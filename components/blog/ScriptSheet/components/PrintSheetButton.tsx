@@ -19,7 +19,7 @@ export function PrintSheetButton() {
     <button
       type="button"
       onClick={handlePrint}
-      className="script-sheet-print h-10 rounded-full bg-[#2367EE] px-5 text-sm font-semibold text-white shadow-[0_1px_2px_rgba(16,35,58,0.18),0_8px_20px_-8px_rgba(35,103,238,0.55)] hover:bg-[#1F5AD6] transition"
+      className="script-sheet-print h-10 rounded-full bg-[#2367EE] px-5 text-sm font-semibold text-white shadow-button hover:bg-[#1F5AD6] transition"
     >
       Print this sheet
     </button>

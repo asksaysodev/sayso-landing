@@ -25,7 +25,7 @@ export function AboutPageContent() {
         <section className="mt-10">
           <div className="flex flex-col items-center text-center">
             {/* Photo */}
-            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-[20px] overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] mb-6">
+            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-[20px] overflow-hidden shadow-card mb-6">
               <Image
                 src="/images/founder-kuvaal-patel.png"
                 alt="Kuvaal Patel, Founder of Sayso"

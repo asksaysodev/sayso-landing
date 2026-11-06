@@ -13,7 +13,7 @@ interface ScriptSheetProps {
 export function ScriptSheet({ title, children }: ScriptSheetProps) {
   return (
     <section
-      className="script-sheet bg-white rounded-[20px] p-6 my-8 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] print:shadow-none"
+      className="script-sheet bg-white rounded-[20px] p-6 my-8 shadow-card print:shadow-none"
       aria-label={title}
     >
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">

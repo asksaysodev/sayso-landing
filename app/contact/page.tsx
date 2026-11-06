@@ -51,7 +51,7 @@ export default function ContactPage() {
           </section>
 
           <section className="w-full px-4 md:px-6 pb-16">
-            <div className="max-w-[680px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+            <div className="max-w-[680px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">
               <SsFormEmbed embedCode="c7xK2u06CRJ0" />
             </div>
           </section>

@@ -7,7 +7,7 @@ interface BlogAuthorCardProps {
 
 export function BlogAuthorCard({ author }: BlogAuthorCardProps) {
   return (
-    <div className="bg-white rounded-[20px] p-6 flex items-start gap-4 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+    <div className="bg-white rounded-[20px] p-6 flex items-start gap-4 shadow-card">
       <div className="w-14 h-14 rounded-full bg-[#D7DEE1] overflow-hidden shrink-0">
         {author.avatar && (
           <Image

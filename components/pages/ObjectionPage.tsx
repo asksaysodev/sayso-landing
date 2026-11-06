@@ -48,7 +48,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
         </div>
 
         {/* Objection Quote */}
-        <div className="bg-white rounded-[20px] p-6 mb-8 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+        <div className="bg-white rounded-[20px] p-6 mb-8 shadow-card">
           <p className="text-xl md:text-2xl font-bold text-[#10233A] italic font-sans">
             &ldquo;{entry.objectionQuote}&rdquo;
           </p>
@@ -67,7 +67,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
               alt={entry.heroImage.alt}
               width={800}
               height={450}
-              className="rounded-2xl shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]"
+              className="rounded-2xl shadow-card"
             />
           </div>
         )}
@@ -163,7 +163,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
             {entry.relatedBlogPost && (
               <Link
                 href={entry.relatedBlogPost.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] transition-shadow group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Deeper reading
@@ -176,7 +176,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
             {entry.relatedFeature && (
               <Link
                 href={entry.relatedFeature.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] transition-shadow group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Related feature

@@ -4,9 +4,9 @@
  * match the post type, so the product mention reads as a natural next step.
  * Shares the BlogCtaCard shell with BlogInArticleCTA.
  */
-import Link from 'next/link';
 import type { BlogCtaVariant } from '@/lib/blog';
 import { BlogCtaCard } from './BlogCtaCard';
+import { Button } from '@/components/ui/Button';
 
 const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: string; href: string }> = {
   script: {
@@ -50,13 +50,9 @@ export function BlogInlineCTA({ variant }: { variant: BlogCtaVariant }) {
           <p className="font-hero font-extrabold tracking-[-0.01em] text-lg md:text-xl text-white leading-snug mb-2">{v.heading}</p>
           <p className="text-sm text-white font-sans">{v.body}</p>
         </div>
-        <Link
-          href={v.href}
-          data-analytics-id={`cta-inline-blog-${variant}`}
-          className="shrink-0 self-center inline-flex h-12 items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-6 text-[15px] font-semibold transition duration-150 hover:-translate-y-px active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_1px_2px_rgba(16,35,58,0.06)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.22),0_4px_12px_-4px_rgba(16,35,58,0.15)]"
-        >
+        <Button href={v.href} variant="secondary" className="shrink-0 self-center" data-analytics-id={`cta-inline-blog-${variant}`}>
           {v.label} &rarr;
-        </Link>
+        </Button>
       </div>
     </BlogCtaCard>
   );

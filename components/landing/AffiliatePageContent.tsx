@@ -53,7 +53,7 @@ export function AffiliatePageContent() {
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Submit the form below and we&apos;ll be in touch!
           </p>
-          <div className="rounded-[20px] overflow-hidden bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+          <div className="rounded-[20px] overflow-hidden bg-white shadow-card">
             <iframe
               src="https://asksayso.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
               width="100%"

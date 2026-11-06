@@ -45,7 +45,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         </div>
 
         {/* Snapshot Card */}
-        <div className="bg-white rounded-[20px] overflow-hidden mb-8 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+        <div className="bg-white rounded-[20px] overflow-hidden mb-8 shadow-card">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {[
               { label: 'Customer', value: entry.snapshot.customer },

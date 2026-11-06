@@ -65,7 +65,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
               alt={entry.heroImage.alt}
               width={800}
               height={450}
-              className="rounded-2xl shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]"
+              className="rounded-2xl shadow-card"
             />
           </div>
         )}
@@ -166,7 +166,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
             {entry.relatedFeature && (
               <Link
                 href={entry.relatedFeature.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] transition-shadow group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Related feature
@@ -179,7 +179,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
             {entry.relatedPersona && (
               <Link
                 href={entry.relatedPersona.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] transition-shadow group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Built for you
@@ -194,7 +194,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
 
         {/* Deeper Content Link */}
         {entry.deeperLink && isLiveBlogHref(entry.deeperLink.href) && (
-          <div className="bg-white rounded-2xl p-5 mb-6 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+          <div className="bg-white rounded-2xl p-5 mb-6 shadow-card">
             <p className="text-sm text-[#1D4871]/60 font-sans mb-1">
               Go deeper:
             </p>

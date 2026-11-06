@@ -86,7 +86,7 @@ export function FeedbackClient() {
               </div>
 
               <div className="w-full max-w-sm">
-                <div className="bg-white rounded-[20px] p-8 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+                <div className="bg-white rounded-[20px] p-8 shadow-card">
                   <form onSubmit={handlePasswordSubmit} className="space-y-4">
                     <div>
                       <label
@@ -118,7 +118,7 @@ export function FeedbackClient() {
                     <button
                       type="submit"
                       disabled={isLoading || !password}
-                      className="w-full mt-6 h-12 px-6 rounded-full bg-[#2367EE] text-white font-semibold text-[15px] shadow-[0_1px_2px_rgba(16,35,58,0.18),0_8px_20px_-8px_rgba(35,103,238,0.55)] hover:bg-[#1F5AD6] disabled:opacity-50 disabled:cursor-not-allowed transition-all focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
+                      className="w-full mt-6 h-12 px-6 rounded-full bg-[#2367EE] text-white font-semibold text-[15px] shadow-button hover:bg-[#1F5AD6] disabled:opacity-50 disabled:cursor-not-allowed transition-all focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
                     >
                       {isLoading ? 'Verifying...' : 'Access Feedback Board'}
                     </button>
@@ -166,8 +166,8 @@ export function FeedbackClient() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`h-11 px-5 rounded-full font-semibold text-sm md:text-[15px] transition-shadow ${
                       activeTab === tab.id
-                        ? 'bg-[#2367EE] text-white shadow-[0_1px_2px_rgba(16,35,58,0.18),0_8px_20px_-8px_rgba(35,103,238,0.55)] hover:bg-[#1F5AD6]'
-                        : 'bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_1px_2px_rgba(16,35,58,0.06)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.22),0_4px_12px_-4px_rgba(16,35,58,0.15)]'
+                        ? 'bg-[#2367EE] text-white shadow-button hover:bg-[#1F5AD6]'
+                        : 'bg-white text-[#10233A] shadow-card-sm hover:shadow-card-sm-hover'
                     }`}
                   >
                     {tab.label}

@@ -15,7 +15,7 @@ export function ContentInlineCTA({
   const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
-    <div className="my-10 bg-white rounded-[20px] shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] overflow-hidden">
+    <div className="my-10 bg-white rounded-[20px] shadow-card overflow-hidden">
       <div className="px-8 py-8 text-center">
         <h3 className="font-hero font-extrabold tracking-[-0.02em] text-2xl md:text-[28px] text-[#10233A] mb-5">
           {headline}

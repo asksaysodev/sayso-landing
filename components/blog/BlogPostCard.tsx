@@ -10,7 +10,7 @@ interface BlogPostCardProps {
 export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
-      <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)]">
+      <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-card transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-card-hover">
         {/* Cover Image */}
         <div className="relative aspect-video bg-[#F4F4F5] overflow-hidden">
           {post.coverImage ? (

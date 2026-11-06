@@ -41,7 +41,7 @@ export function HubPage({ config }: HubPageProps) {
               {config.quickAnswers.intro}
             </p>
           )}
-          <ul className="divide-y divide-[#1D4871]/10 rounded-[20px] bg-white overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+          <ul className="divide-y divide-[#1D4871]/10 rounded-[20px] bg-white overflow-hidden shadow-card">
             {config.quickAnswers.items.map((item) => (
               <li key={item.slug}>
                 <Link
@@ -136,7 +136,7 @@ function HubCard({
   const card = (
     <Link
       href={page.href ?? `${basePath}/${page.slug}`}
-      className={`group bg-white rounded-[20px] p-6 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] hover:-translate-y-0.5 transition duration-200 block${page.bannerText ? ' h-full' : ''}`}
+      className={`group bg-white rounded-[20px] p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition duration-200 block${page.bannerText ? ' h-full' : ''}`}
     >
       {page.eyebrow && (
         <span className="block text-xs font-bold text-[#2367EE] uppercase tracking-wider mb-1 font-sans">
@@ -184,7 +184,7 @@ function FeatureRequestCard({
       )}
       <Link
         href={card.href}
-        className="group bg-white rounded-[20px] p-6 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)] hover:-translate-y-0.5 transition duration-200 block h-full"
+        className="group bg-white rounded-[20px] p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition duration-200 block h-full"
       >
         <h3 className="font-hero font-extrabold tracking-[-0.01em] text-lg leading-snug text-[#10233A] mb-2 group-hover:text-[#2367EE] transition-colors">
           {card.title}

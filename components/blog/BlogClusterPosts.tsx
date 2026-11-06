@@ -22,7 +22,7 @@ export function BlogClusterPosts({
 
   return (
     <section className="max-w-[800px] mx-auto px-6 py-8">
-      <div className="bg-white rounded-[20px] p-6 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+      <div className="bg-white rounded-[20px] p-6 shadow-card">
         <h3 className="font-hero font-extrabold tracking-[-0.01em] text-lg text-[#10233A] mb-4">
           {postType === 'pillar' ? 'Posts in This Guide' : 'More in This Series'}
         </h3>

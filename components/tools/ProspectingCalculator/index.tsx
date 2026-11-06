@@ -23,7 +23,7 @@ export function ProspectingCalculator() {
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2 bg-white rounded-[20px] p-6 md:p-8 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+    <div className="grid gap-8 lg:grid-cols-2 bg-white rounded-[20px] p-6 md:p-8 shadow-card">
       <div>
         <h2 className="font-hero text-xl text-[#1D4871] font-bold mb-1">Your numbers</h2>
         <p className="text-sm text-[#1D4871]/60 mb-5">
