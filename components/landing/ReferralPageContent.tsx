@@ -1,4 +1,5 @@
 import { StepsList } from '@/components/landing/StepsList';
+import { Button } from '@/components/ui/Button';
 
 const STEPS = [
   { id: 1, text: 'Log in to your Sayso account' },
@@ -14,16 +15,16 @@ export function ReferralPageContent() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#1D4871]/60 mb-3">
-            Referrals
+          <p className="mb-4">
+            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">REFERRALS</span>
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
+          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
             Do you love Sayso?
           </h1>
           <p className="text-lg text-[#1D4871]/70 leading-relaxed">
             Invite someone to Sayso, and you both get rewarded!
           </p>
-          <div className="mt-6 border-t-2 border-[#FFDE59]" />
+          <div className="mt-8 border-t border-[#1D4871]/10" />
         </div>
 
         {/* Intro */}
@@ -37,7 +38,7 @@ export function ReferralPageContent() {
 
         {/* How it works */}
         <section className="mt-10 space-y-6">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             How It Works
           </h2>
           <StepsList steps={STEPS} />
@@ -47,18 +48,15 @@ export function ReferralPageContent() {
 
         {/* Contact */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Questions?
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Reach out to the team and we&apos;ll be happy to help.
           </p>
-          <a
-            href="mailto:support@asksayso.com"
-            className="inline-flex items-center gap-2 bg-[#FFDE59] hover:bg-[#f5d400] text-[#1D4871] font-bold px-6 py-3 rounded-lg transition-colors text-sm uppercase tracking-wide"
-          >
-            support@asksayso.com
-          </a>
+          <div>
+            <Button href="mailto:support@asksayso.com">support@asksayso.com</Button>
+          </div>
         </section>
 
       </div>

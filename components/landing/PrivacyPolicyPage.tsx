@@ -5,19 +5,19 @@ export function PrivacyPolicyPage() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#1D4871]/60 mb-3">
-            Legal
+          <p className="mb-4">
+            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">LEGAL</span>
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
+          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
             Privacy Policy
           </h1>
           <p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>
-          <div className="mt-6 border-t-2 border-[#FFDE59]" />
+          <div className="mt-8 border-t border-[#1D4871]/10" />
         </div>
 
         {/* Introduction */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Introduction
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -44,7 +44,7 @@ export function PrivacyPolicyPage() {
 
         {/* Information We Collect */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Information We Collect
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -133,7 +133,7 @@ export function PrivacyPolicyPage() {
 
         {/* Conversation Data */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Conversation Data
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -276,7 +276,7 @@ export function PrivacyPolicyPage() {
 
         {/* How We Use Your Information */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             How We Use Your Information
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -301,7 +301,7 @@ export function PrivacyPolicyPage() {
 
         {/* When We Share Information */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             When We Share Information
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -341,7 +341,7 @@ export function PrivacyPolicyPage() {
 
         {/* Your Rights & Choices */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Your Rights &amp; Choices
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -408,7 +408,7 @@ export function PrivacyPolicyPage() {
 
         {/* Children's Privacy */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Children's Privacy
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -421,7 +421,7 @@ export function PrivacyPolicyPage() {
 
         {/* Security Measures */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Security Measures
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -465,7 +465,7 @@ export function PrivacyPolicyPage() {
 
         {/* International Data Transfers */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             International Data Transfers
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -485,7 +485,7 @@ export function PrivacyPolicyPage() {
 
         {/* Canada */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">Canada</h2>
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">Canada</h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             If you are in Canada, you have the right to access and correct your personal
             information, and to know how it is used and disclosed. To exercise these rights or
@@ -511,7 +511,7 @@ export function PrivacyPolicyPage() {
 
         {/* Changes to This Policy */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Changes to This Policy
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -525,7 +525,7 @@ export function PrivacyPolicyPage() {
 
         {/* SMS/Text Messaging */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             SMS/Text Messaging
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -559,7 +559,7 @@ export function PrivacyPolicyPage() {
 
         {/* Contact Us */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">Contact Us</h2>
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">Contact Us</h2>
 
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Sayso is accountable for the personal information under its control. Our Privacy

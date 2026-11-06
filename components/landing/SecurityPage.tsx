@@ -5,22 +5,22 @@ export function SecurityPage() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#1D4871]/60 mb-3">
-            Company
+          <p className="mb-4">
+            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">COMPANY</span>
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
+          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
             Sayso Security
           </h1>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Sayso protects your data, your conversations, and your account access at every level.
             Security is built into how the product works, not added after.
           </p>
-          <div className="mt-6 border-t-2 border-[#FFDE59]" />
+          <div className="mt-8 border-t border-[#1D4871]/10" />
         </div>
 
         {/* 1. Infrastructure & Encryption */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             1. Infrastructure &amp; Encryption
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -42,7 +42,7 @@ export function SecurityPage() {
 
         {/* 2. Authentication & Access */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             2. Authentication &amp; Access
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -65,7 +65,7 @@ export function SecurityPage() {
 
         {/* 3. Application Security */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             3. Application Security
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -93,7 +93,7 @@ export function SecurityPage() {
 
         {/* 4. Call Data */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             4. Call Data
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -117,7 +117,7 @@ export function SecurityPage() {
 
         {/* 5. Payments */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             5. Payments
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -134,7 +134,7 @@ export function SecurityPage() {
 
         {/* 6. Monitoring & Backups */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             6. Monitoring &amp; Backups
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -154,7 +154,7 @@ export function SecurityPage() {
 
         {/* 7. Incident Response */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             7. Incident Response
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -175,7 +175,7 @@ export function SecurityPage() {
 
         {/* Contact */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Questions?
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">

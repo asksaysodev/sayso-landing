@@ -14,16 +14,16 @@ export function AffiliatePageContent() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#1D4871]/60 mb-3">
-            Partners
+          <p className="mb-4">
+            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">PARTNERS</span>
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
+          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
             Become a Sayso Affiliate
           </h1>
           <p className="text-lg text-[#1D4871]/70 leading-relaxed">
             Earn recurring commission by referring users to Sayso.
           </p>
-          <div className="mt-6 border-t-2 border-[#FFDE59]" />
+          <div className="mt-8 border-t border-[#1D4871]/10" />
         </div>
 
         {/* Intro */}
@@ -37,7 +37,7 @@ export function AffiliatePageContent() {
 
         {/* How it works */}
         <section className="mt-10 space-y-6">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             How It Works
           </h2>
           <StepsList steps={STEPS} />
@@ -47,13 +47,13 @@ export function AffiliatePageContent() {
 
         {/* Apply */}
         <section className="mt-10 space-y-6">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Ready to Apply?
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Submit the form below and we&apos;ll be in touch!
           </p>
-          <div className="rounded-xl overflow-hidden border border-[#1D4871]/10 shadow-sm">
+          <div className="rounded-[20px] overflow-hidden bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
             <iframe
               src="https://asksayso.notion.site/ebd/959fb6cea4534c5c9d5858c4f38768da"
               width="100%"
