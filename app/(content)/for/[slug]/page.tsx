@@ -31,7 +31,7 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const entry = getUseCaseBySlug(slug);
   if (!entry) notFound();
-  // PersonaPage is a client component, so drop scheduled posts here on the server.
+  // Drop scheduled posts that are not live yet.
   const relatedBlogPosts = entry.relatedBlogPosts.filter((post) => isLiveBlogHref(post.href));
   return <PersonaPage entry={{ ...entry, relatedBlogPosts }} />;
 }
