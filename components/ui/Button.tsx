@@ -7,8 +7,6 @@ interface ButtonProps {
   /** Opens href in a new tab with rel="noopener noreferrer". Only set this for off-site links. */
   external?: boolean;
   variant?: 'primary' | 'secondary';
-  /** Adds the round arrow badge, on the left of the label, used on primary CTAs. */
-  withArrow?: boolean;
   onClick?: () => void;
   className?: string;
   'data-analytics-id'?: string;
@@ -22,7 +20,6 @@ interface ButtonProps {
 export function Button({
   children,
   variant = 'primary',
-  withArrow = false,
   onClick,
   className = '',
   href,
@@ -39,23 +36,8 @@ export function Button({
       'bg-white text-[#10233A] shadow-card-sm hover:shadow-card-sm-hover',
   };
 
-  const arrowPad = withArrow && variant === 'primary' ? 'pl-1.5' : '';
-  const classes = `${baseStyles} ${variantStyles[variant]} ${arrowPad} ${className}`;
-  const content = (
-    <>
-      {withArrow && (
-        <span
-          aria-hidden="true"
-          className={`grid h-[34px] w-[34px] place-items-center rounded-full ${
-            variant === 'primary' ? 'bg-white text-[#2367EE]' : 'bg-[#2367EE] text-white'
-          }`}
-        >
-          &rarr;
-        </span>
-      )}
-      {children}
-    </>
-  );
+  const classes = `${baseStyles} ${variantStyles[variant]} ${className}`;
+  const content = children;
 
   if (href && external) {
     return (
