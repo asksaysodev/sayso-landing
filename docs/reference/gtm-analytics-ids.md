@@ -12,10 +12,8 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 
 | `data-analytics-id` | Action | File | Notes |
 |---|---|---|---|
-| `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Desktop navbar, visible on every page |
-| `cta-download-navbar` | Opens system-select modal | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Desktop navbar, visible on every page |
-| `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Mobile hamburger menu, only in DOM when menu open |
-| `cta-download-mobile-menu` | Opens system-select modal | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Mobile hamburger menu, only in DOM when menu open |
+| `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Desktop navbar, visible on every page |
+| `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile hamburger menu, only in DOM when menu open |
 | `cta-get-started-navbar-minimal` | → `#cta` anchor | [components/layout/NavbarMinimal.tsx](../../components/layout/NavbarMinimal.tsx) | Minimal-navbar pages |
 | `cta-download-hero` | Opens system-select modal | [components/landing/HeroWithVideo.tsx](../../components/landing/HeroWithVideo.tsx) | Desktop-only render (≥lg) |
 | `cta-download-hero-mobile` | Opens system-select modal | [components/landing/HeroWithVideo.tsx](../../components/landing/HeroWithVideo.tsx) | Mobile-only render (<lg), labeled "Create an Account" |
@@ -49,7 +47,18 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-subscribed` | Opens demo calendar | [app/subscribed/BookDemoCTA.tsx](../../app/subscribed/BookDemoCTA.tsx) | Hero CTA on /subscribed confirmation page |
 | `form-newsletter-footer` | (iframe wrapper) | [components/landing/Footer.tsx](../../components/landing/Footer.tsx) | Beehiiv iframe, see footnote |
 | `form-newsletter-blog` | (iframe wrapper) | [components/blog/BlogNewsletterCTA.tsx](../../components/blog/BlogNewsletterCTA.tsx) | Beehiiv iframe, see footnote |
-| `contact-email` | `mailto:support@asksayso.com` | [lib/navigation.ts](../../lib/navigation.ts) (rendered by [components/landing/Footer.tsx](../../components/landing/Footer.tsx)) | Footer "Help" link |
+
+---
+
+## Retired IDs
+
+These ids no longer exist on the site. Retire (pause or delete) the matching GTM triggers and tags so reports do not show them as broken or silently at zero.
+
+| `data-analytics-id` | Was | Retired by | Why |
+|---|---|---|---|
+| `cta-download-navbar` | Desktop navbar Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | The new navbar has only Log in and Book a demo, per the approved design |
+| `cta-download-mobile-menu` | Mobile menu Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | Same as above: the mobile drawer ends with Log in and Book a demo |
+| `contact-email` | Footer "Email Support" `mailto:support@asksayso.com` link | Flat redesign foundation (PR #124) | Email Support was removed from the footer on purpose |
 
 ---
 
@@ -117,4 +126,4 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 
 ## Total count
 
-38 unique `data-analytics-id` values (counting page-type family IDs as one row each per `{page-type}` substitution).
+35 unique `data-analytics-id` values (38 before the three retired ids above were removed) (counting page-type family IDs as one row each per `{page-type}` substitution).
