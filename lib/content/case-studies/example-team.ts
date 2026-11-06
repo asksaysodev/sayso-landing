@@ -14,7 +14,7 @@ export const exampleTeam: CaseStudyEntry = {
     result: '40% more appointments booked in the first 30 days.',
   },
   challenge:
-    'The Example Real Estate Team had six agents making prospecting calls every day, but their newer agents were struggling. They knew the scripts, but when a prospect pushed back with something unexpected, they froze. Calls ended without appointments. Follow-ups fell through the cracks because call notes were inconsistent, some agents logged everything, others logged nothing.\n\nThe team leader spent hours each week listening to recorded calls and giving feedback, but the coaching always came after the deal was already lost.',
+    'The Example Real Estate Team had six agents making prospecting calls every day, but their newer agents were struggling. They knew the scripts, but when a prospect pushed back with something unexpected, they froze. Calls ended without appointments. Follow-ups fell through the cracks because call notes were inconsistent, some agents logged everything, others logged nothing.\n\nThe team leader spent hours each week listening to recorded calls and giving feedback, but the coaching always came after the appointment was already lost.',
   whatTheyTriedBefore:
     'Before Sayso, the team tried script binders, weekly role play sessions, and post-call review meetings. The script binders helped with preparation but could not help in the moment. Role play sessions were useful but only happened once a week. The post-call reviews identified problems but could not prevent them.',
   howSaysoHelped:

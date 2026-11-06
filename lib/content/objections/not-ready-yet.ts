@@ -2,7 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const notReadyYet: ObjectionEntry = {
   slug: 'not-ready-yet',
-  updatedAt: '2026-06-13',
+  updatedAt: '2026-11-05',
   keyword: 'how to handle "not ready yet" real estate',
   seoTitle: 'How to Handle "Not Ready Yet" in Real Estate',
   seoDescription:
@@ -72,7 +72,7 @@ export const notReadyYet: ObjectionEntry = {
     {
       question: 'Should I follow up with someone who says they\'re not ready?',
       answer:
-        'Yes, always ask for permission to follow up later. Most agents lose deals not because the lead was bad, but because they never called back when the timing was right.',
+        'Yes, always ask for permission to follow up later. Most agents lose clients not because the lead was bad, but because they never called back when the timing was right.',
     },
     {
       question: 'How do you keep the conversation going after "not ready yet"?',

@@ -7,7 +7,7 @@ const caseStudiesHub: HubPageConfig = {
   basePath: '/case-studies',
   seoTitle: 'Sayso Case Studies: Real Results from Real Teams',
   seoDescription:
-    'See how real estate teams use Sayso to handle more objections, book more appointments, and close more deals with real-time call coaching.',
+    'See how real estate teams use Sayso to handle more objections, book more appointments, and turn more prospects into clients with real-time call coaching.',
   h1: 'Real Results from Real Teams',
   introduction:
     'See how real estate teams and agents use Sayso to book more appointments, handle objections confidently, and stop losing opportunities on the phone.',
