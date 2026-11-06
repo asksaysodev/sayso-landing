@@ -52,8 +52,8 @@ export function IsaAdPage() {
       <PersonaAdHero
         persona="isa"
         label="ISAs"
-        headline="Want to book more qualified appointments?"
-        subheadline="Sayso provides real-time guidance during live prospecting calls to sharpen your questions, objection handling and conversion."
+        headline="Stay as sharp on call 60 as you were on call 6."
+        subheadline="Sayso keeps the next question and response on your screen through every dial, so late-day calls don't slide into autopilot."
         proof="Unlike scripts and post-call coaching, Sayso helps you improve while the prospect is still on the phone."
       />
 

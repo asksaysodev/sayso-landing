@@ -49,8 +49,8 @@ export function AgentAdPage() {
       <PersonaAdHero
         persona="agent"
         label="REAL ESTATE AGENTS"
-        headline="Want to book more appointments?"
-        subheadline="Sayso provides real-time guidance during live prospecting calls to help you ask better questions, handle objections and navigate conversations."
+        headline="Know what to say when the call goes sideways."
+        subheadline="When a prospect throws you a curveball, Sayso shows the next question or response on your screen, so you keep the conversation moving instead of freezing."
         proof="Unlike scripts and post-call coaching, Sayso helps you improve while the prospect is still on the phone."
       />
 
