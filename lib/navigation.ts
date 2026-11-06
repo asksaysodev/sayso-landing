@@ -57,8 +57,6 @@ export const headerNav: NavSection[] = [
       { label: 'New Agents', href: '/for/new-agents' },
       { label: 'ISAs', href: '/for/isas' },
       { label: 'Integrations', href: '/integrations' },
-      { label: 'Follow Up Boss', href: '/integrations/partners/follow-up-boss', indent: true },
-      { label: 'SureSend', href: '/integrations/partners/suresend', indent: true },
     ],
   },
   {
