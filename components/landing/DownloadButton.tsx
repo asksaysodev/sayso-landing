@@ -1,7 +1,8 @@
 'use client';
 
+/** Download Sayso button: the flat primary pill that opens the signup flow. */
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { LightningIcon } from '@/components/icons/LightningIcon';
+import { Button } from '@/components/ui/Button';
 
 interface DownloadButtonProps {
   analyticsId: string;
@@ -12,13 +13,8 @@ export function DownloadButton({ analyticsId, label = 'Download Sayso' }: Downlo
   const { openSignup } = useDemoCalendar();
 
   return (
-    <button
-      onClick={openSignup}
-      data-analytics-id={analyticsId}
-      className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#2367EE] text-white font-bold text-base md:text-lg v4-hero-glow border-2 border-[#1D4871] focus:outline-none focus:ring-2 focus:ring-[#2367EE] focus:ring-offset-2"
-    >
-      <LightningIcon size={16} className="mr-2" />
+    <Button withArrow onClick={openSignup} data-analytics-id={analyticsId}>
       {label}
-    </button>
+    </Button>
   );
 }

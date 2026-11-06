@@ -1,0 +1,75 @@
+/*
+ * Carousel: the track is whatever grid the page passes in on desktop. At
+ * 960px and below it becomes a swipeable scroll-snap row with peeking edges.
+ * Clones (infinite mode) only exist visually in that mobile row.
+ */
+.track {
+  position: relative;
+}
+.slide {
+  display: flex;
+  min-width: 0;
+}
+.slide > * {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.clone {
+  display: none !important;
+}
+.nav {
+  display: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+.navButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(16, 35, 58, 0.14), 0 4px 12px -6px rgba(16, 35, 58, 0.25);
+  display: grid;
+  place-items: center;
+  color: #1d4871;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.navButton:active {
+  transform: scale(0.94);
+}
+.navButton:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.navButton:focus-visible {
+  outline: 3px solid #2367ee;
+  outline-offset: 2px;
+}
+
+@media (max-width: 960px) {
+  .track {
+    display: flex !important;
+    gap: 14px !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: -16px !important;
+    padding: 6px 9vw 14px !important;
+    max-width: none !important;
+  }
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+  .slide {
+    flex: 0 0 82vw;
+    max-width: 420px;
+    scroll-snap-align: center;
+  }
+  .clone {
+    display: flex !important;
+  }
+  .nav {
+    display: flex;
+  }
+}

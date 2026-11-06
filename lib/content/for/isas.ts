@@ -103,8 +103,8 @@ export const isas: UseCaseEntry = {
     { title: 'Real Estate Cold Calling Services vs. Making the Calls Yourself', href: '/blog/real-estate-cold-calling-services/' },
   ],
   relatedObjections: [
-    { title: '"Call Me Later" \u2014 How to Respond', href: '/objections/call-me-later' },
-    { title: '"I\'m Not Interested" \u2014 How to Respond', href: '/objections/not-interested' },
-    { title: '"I\'m Not Ready Yet" \u2014 How to Respond', href: '/objections/not-ready-yet' },
+    { title: '"Call Me Later": How to Respond', href: '/objections/call-me-later' },
+    { title: '"I\'m Not Interested": How to Respond', href: '/objections/not-interested' },
+    { title: '"I\'m Not Ready Yet": How to Respond', href: '/objections/not-ready-yet' },
   ],
 };

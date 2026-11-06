@@ -5,6 +5,7 @@
  * Carries the #demo-form anchor that the hero and CTA buttons scroll to.
  */
 import SsFormEmbed from '@/components/landing/SsFormEmbed';
+import { panel } from '@/components/landing/HomeShared/styles';
 import type { PartnerIntegrationEntry } from '@/lib/content/partner-integrations/types';
 
 interface DemoFormSectionProps {
@@ -13,17 +14,17 @@ interface DemoFormSectionProps {
 
 export function DemoFormSection({ entry }: DemoFormSectionProps) {
   return (
-    <section id="demo-form" className="scroll-mt-24 max-w-[1200px] mx-auto px-6 py-16 md:py-20">
+    <section id="demo-form" className="scroll-mt-24 max-w-[1160px] mx-auto px-4 sm:px-6 py-16 md:py-20">
       <div className="text-center max-w-2xl mx-auto mb-8">
-        <h2 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mb-3">
+        <h2 className="text-balance font-hero font-extrabold text-[clamp(30px,4.5vw,46px)] leading-[1.1] tracking-[-0.03em] text-[#10233A] mb-3">
           {entry.demoFormHeading}
         </h2>
-        <p className="text-base md:text-lg text-[#1D4871]/70 leading-relaxed font-sans">
+        <p className="text-base md:text-lg text-[#556B86] leading-relaxed font-sans">
           {entry.demoFormSubheading}
         </p>
       </div>
 
-      <div className="max-w-[680px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
+      <div className={`${panel} max-w-[680px] mx-auto overflow-hidden`}>
         <SsFormEmbed embedCode={entry.demoFormEmbedCode} />
       </div>
     </section>

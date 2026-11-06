@@ -163,7 +163,7 @@ The `IntegrationPage.tsx` component renders sections in this exact order:
 
 ### 3. Partner Logos
 - Sayso logo + "+" + CRM logo placeholder
-- The `ImagePlaceholder` component renders with the `logoAlt` value as alt text
+- Render the CRM logo with `next/image`, using the `logoAlt` value as alt text
 - **Alt text must be keyword-enriched** (e.g., "Follow Up Boss AI integration with Sayso")
 
 ### 4. H1

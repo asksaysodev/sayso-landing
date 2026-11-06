@@ -21,7 +21,7 @@ type TestimonialBlockProps = {
 export function TestimonialBlock({ testimonial }: TestimonialBlockProps) {
   return (
     <div className="flex flex-col h-full">
-      <div className="mb-4 rounded-lg bg-[#2367EE]/10 border-2 border-[#2367EE]/25 px-4 py-3 lg:px-5 lg:py-4 lg:min-h-[170px] flex">
+      <div className="mb-4 rounded-2xl bg-[#2367EE]/[0.07] border border-[#2367EE]/20 px-4 py-3 lg:px-5 lg:py-4 lg:min-h-[170px] flex">
         <div className="flex flex-col gap-3 w-full">
           <div className="min-w-0">
             <p className="text-[10px] lg:text-xs font-bold text-[#2367EE] mb-0.5 tracking-wider uppercase">
@@ -34,7 +34,7 @@ export function TestimonialBlock({ testimonial }: TestimonialBlockProps) {
           </div>
 
           <div className="flex items-center gap-3 text-[#2367EE]">
-            <p className="font-comic text-3xl leading-none tracking-wide flex-shrink-0">
+            <p className="font-hero font-extrabold text-3xl leading-none tracking-[-0.03em] flex-shrink-0">
               {testimonial.stat.value}
             </p>
             <p className="text-[11px] lg:text-xs font-semibold leading-tight">

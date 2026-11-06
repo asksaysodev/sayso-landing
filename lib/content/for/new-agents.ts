@@ -2,7 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const newAgents: UseCaseEntry = {
   slug: 'new-agents',
-  updatedAt: '2026-04-26',
+  updatedAt: '2026-11-05',
   persona: 'New Agents',
   keyword: 'how to get better at cold calling in real estate',
   seoTitle: 'Get Better at Cold Calling in Real Estate - New Agents',
@@ -46,7 +46,7 @@ export const newAgents: UseCaseEntry = {
     {
       feature: 'On-Screen Scripts and Prompts',
       description:
-        'See your scripts, talk tracks, and key questions on screen during every call. No memorization required. Follow along naturally and build the muscle memory over time.',
+        'See your scripts, talk tracks, and key questions on screen during every call, so there is nothing to memorize. Follow along naturally and build the muscle memory over time.',
       href: '/products/playbook',
     },
     {
@@ -106,8 +106,8 @@ export const newAgents: UseCaseEntry = {
     { title: 'Do You Need a Real Estate Coach?', href: '/blog/real-estate-coach' },
   ],
   relatedObjections: [
-    { title: '"I\'m Not Interested" \u2014 How to Respond', href: '/objections/not-interested' },
-    { title: '"I Already Have an Agent" \u2014 How to Respond', href: '/objections/already-have-an-agent' },
-    { title: '"I\'m Just Looking" \u2014 How to Respond', href: '/objections/just-looking' },
+    { title: '"I\'m Not Interested": How to Respond', href: '/objections/not-interested' },
+    { title: '"I Already Have an Agent": How to Respond', href: '/objections/already-have-an-agent' },
+    { title: '"I\'m Just Looking": How to Respond', href: '/objections/just-looking' },
   ],
 };

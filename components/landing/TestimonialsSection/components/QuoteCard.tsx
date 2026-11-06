@@ -1,6 +1,6 @@
 /**
  * Quote card shown below the video on lg+. Sizes to its content with
- * `h-full` so the parent grid row drives the height — all four cards in
+ * `h-full` so the parent grid row drives the height: all four cards in
  * the row stretch to the tallest quote's natural height, eliminating the
  * large dead space that came from the previous 9:14 aspect-ratio lock.
  * Attribution is pushed to the bottom with `mt-auto`.
@@ -15,7 +15,7 @@ type QuoteCardProps = {
 
 export function QuoteCard({ testimonial }: QuoteCardProps) {
   return (
-    <div className="relative h-full overflow-hidden rounded-xl bg-white v2-comic-border v2-comic-shadow p-4 lg:p-5 flex flex-col">
+    <div className="relative h-full overflow-hidden rounded-2xl bg-white shadow-card p-4 lg:p-5 flex flex-col">
       <svg
         className="absolute top-3 right-3 lg:top-4 lg:right-4 text-[#FFDE59]"
         width="40"
@@ -33,8 +33,8 @@ export function QuoteCard({ testimonial }: QuoteCardProps) {
         </p>
       </blockquote>
 
-      <div className="relative z-10 pt-3 mt-auto border-t-2 border-dashed border-[#1D4871]/15">
-        <p className="font-comic text-sm lg:text-base text-[#1D4871] tracking-wide leading-tight">
+      <div className="relative z-10 pt-3 mt-auto border-t border-[rgba(16,35,58,0.12)]">
+        <p className="font-sans font-bold text-sm lg:text-base text-[#10233A] leading-tight">
           {testimonial.name}
         </p>
         <p className="text-[11px] lg:text-xs text-[#1D4871]/70 leading-snug mt-0.5">

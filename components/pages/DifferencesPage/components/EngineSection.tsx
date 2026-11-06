@@ -5,14 +5,15 @@
  * the real estate focus, on the standard navy dark-section shell.
  */
 
+import { section } from '@/components/landing/HomeShared/styles';
 import { PIPELINE_STEPS, TECH_CARDS } from '../data';
+import { sectionTitle, sectionWrap } from '../styles';
 
 export function EngineSection() {
   return (
-    <section className="relative bg-[#1D4871] py-16 md:py-24 overflow-hidden v4-halftone-dark">
-      <div className="absolute top-0 left-0 right-0 h-3 md:h-4 bg-[#FFDE59]" />
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
-        <h2 className="font-comic text-3xl md:text-4xl lg:text-5xl text-white tracking-wide max-w-3xl mx-auto">
+    <section className={`bg-[#1D4871] ${section}`}>
+      <div className={sectionWrap}>
+        <h2 className={`${sectionTitle} !text-white max-w-3xl mx-auto`}>
           How does Sayso work?
         </h2>
 
@@ -38,7 +39,7 @@ export function EngineSection() {
 
         <div className="mt-12 grid md:grid-cols-3 gap-5 text-left">
           {TECH_CARDS.map(({ title, description }) => (
-            <div key={title} className="bg-white/5 border border-white/15 rounded-2xl p-7">
+            <div key={title} className="bg-white/[0.06] border border-white/15 rounded-[20px] p-7">
               <h3 className="text-[#FFDE59] font-extrabold text-lg leading-snug mb-3">{title}</h3>
               <p className="text-white/70 leading-relaxed text-[15.5px]">{description}</p>
             </div>
