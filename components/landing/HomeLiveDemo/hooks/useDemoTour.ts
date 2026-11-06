@@ -53,8 +53,6 @@ export function useDemoTour() {
       const at = engine.s.current.step;
       if (stepKey() === 'watch') engine.later(() => engine.s.current.step === at && goStep(at + 1), 1600);
     },
-    // L's note waits for the visitor on step 3, so it does not pop open on its own first.
-    autoTip: (i) => i !== 0 || !(stepKey() === 'watch' || stepKey() === 'dot'),
     // On the last step, reset leaves an empty call (timer running, cues closed); elsewhere the call replays.
     replayOnReset: () => stepKey() !== 'reset',
   });

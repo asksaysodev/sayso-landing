@@ -22,7 +22,10 @@ interface TourPointerProps {
 
 export function TourPointer({ stageRef, active, layoutKey }: TourPointerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
+  // Each position remembers the layout it was measured for, so a stale one is never drawn.
+  const [pos, setPos] = useState<{ left: number; top: number; key: string } | null>(null);
+  const keyRef = useRef(layoutKey);
+  keyRef.current = layoutKey;
 
   const place = () => {
     const stage = stageRef.current;
@@ -38,7 +41,8 @@ export function TourPointer({ stageRef, active, layoutKey }: TourPointerProps) {
     const half = (ref.current?.offsetWidth || 90) / 2 + 8;
     const left = Math.max(half, Math.min(stage.offsetWidth - half, (r.left + r.width / 2 - b.left) / k));
     const top = (r.top - b.top) / k - 14;
-    setPos((p) => (p && Math.abs(p.left - left) < 0.5 && Math.abs(p.top - top) < 0.5 ? p : { left, top }));
+    const key = keyRef.current;
+    setPos((p) => (p && p.key === key && Math.abs(p.left - left) < 0.5 && Math.abs(p.top - top) < 0.5 ? p : { left, top, key }));
   };
 
   // Hide on every layout change, then show once the widget has settled.
@@ -65,7 +69,7 @@ export function TourPointer({ stageRef, active, layoutKey }: TourPointerProps) {
     };
   }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const shown = active ? pos : null;
+  const shown = active && pos && pos.key === layoutKey ? { left: pos.left, top: pos.top } : null;
 
   return (
     <div ref={ref} className={styles.pointer} hidden={!shown} style={shown ?? undefined} aria-hidden="true">

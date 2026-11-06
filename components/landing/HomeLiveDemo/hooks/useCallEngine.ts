@@ -17,8 +17,6 @@ import type { Beat, DemoState } from '../types';
 interface EngineHooks {
   /** The opening stretch of the call finished. */
   onPhaseADone: () => void;
-  /** False when Smart Capture should fill letter `i` without popping its note open. */
-  autoTip: (i: number) => boolean;
   /** True when the yellow reset button should replay the call opening (false leaves an empty call). */
   replayOnReset: () => boolean;
 }
@@ -90,10 +88,8 @@ export function useCallEngine(hooks: EngineHooks) {
   const capture = (i: number) => {
     const caps = [...s.current.caps];
     caps[i] = true;
+    // The letter takes its color; its note only opens on hover or tap.
     set({ caps });
-    if (!s.current.insight || !hooksRef.current.autoTip(i)) return;
-    set({ tip: i });
-    later(() => s.current.tip === i && set({ tip: null }), 2400);
   };
 
   const beat = (b: Beat) => {
