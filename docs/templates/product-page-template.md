@@ -31,7 +31,7 @@ This document is the complete reference for creating `/products/[slug]` pages. I
 | `lib/content/products/types.ts` | `ProductEntry` TypeScript interface - every content field |
 | `lib/content/products/index.ts` | Content loader - exports `getAllProductEntries()`, `getProductBySlug()`, `getAllProductSlugs()` |
 | `lib/content/products/*.ts` | Individual feature content files (one per feature) |
-| `components/pages/ProductPage.tsx` | Shared page template component - renders all feature pages |
+| `components/pages/ProductPage/` | Shared page template component - renders all feature pages |
 | `app/(content)/products/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/products/page.tsx` | Features hub listing page |
 | `lib/content/hubs/products.ts` | Hub page config - lists all child feature pages |
@@ -141,7 +141,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ## Page Structure (Section by Section)
 
-The `ProductPage.tsx` component renders sections in this exact order:
+The `ProductPage` component renders sections in this exact order:
 
 ### 1. JSON-LD Schema (invisible)
 - `SoftwareApplication` schema with feature list
@@ -153,13 +153,13 @@ The `ProductPage.tsx` component renders sections in this exact order:
 - Links to `/` and `/products/` hub
 
 ### 3. Hero Section
-- **H1:** Benefit-oriented title with keyword + em-dash benefit clause
+- **H1:** Benefit-oriented title with keyword + a benefit clause (no em dashes)
 - **Body:** 2-3 paragraphs from `heroDescription[]`. Each paragraph is max 3 sentences.
   - Paragraph 1: State the **problem** this feature solves. Lead with the pain.
   - Paragraph 2: Introduce **Sayso's solution**. Include the exact target keyword here.
   - Paragraph 3: Reinforce the outcome - what changes for the agent.
 - **Hero CTA:** Two buttons - "Book a Demo" (`/demo`) and "Download Sayso" (`/`)
-- **Screenshot placeholder:** Image placeholder with keyword-rich alt text
+- **Product visual:** the real Sayso widget in the state that fits the product (`WidgetFigure` with the preset set in `components/pages/ProductPage/data.ts`), labeled with `screenshotAlt` and a short sample-data caption
 
 ### 4. How It Works
 - **H2:** Custom heading from `howItWorksHeading` (should contain keyword variation). Falls back to "How It Works."
@@ -232,7 +232,7 @@ export interface ProductEntry {
   relatedProducts: { title: string; slug: string }[];   // 2-3 other feature slugs
   relatedBlogPosts: { title: string; href: string }[];  // 1-2 blog post links
   featureList: string[];         // For SoftwareApplication JSON-LD schema
-  screenshotAlt: string;         // Alt text for hero image placeholder
+  screenshotAlt: string;         // Screen reader label for the hero widget picture
   ogImage?: string;              // Custom OG image path (defaults to /og-default.png)
 }
 ```
@@ -287,7 +287,7 @@ Feature pages carry 3 CTAs because the visitor is already solution-aware:
 
 | Position | Component | Placement |
 |----------|-----------|-----------|
-| **Hero CTA** | Inline buttons | Right after the hero paragraphs, before the screenshot |
+| **Hero CTA** | Inline buttons | Right after the hero paragraphs, before the widget picture |
 | **Secondary CTA** | `ContentInlineCTA` | Immediately after the "How It Works" section |
 | **Closing CTA** | `ContentCTA` | Full-width block at the very bottom of the page |
 

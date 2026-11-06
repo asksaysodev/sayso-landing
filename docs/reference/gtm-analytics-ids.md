@@ -42,11 +42,12 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-blog-article` | Opens demo calendar | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
 | `cta-download-blog-article` | Opens system-select modal | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
 | `cta-inline-blog-<variant>` | Link to the variant's page: script to /products/playbook/, coaching to /why-sayso/, leads and prospecting to /products/cue/, team to /for/team-leaders/ | [components/blog/BlogInlineCTA.tsx](../../components/blog/BlogInlineCTA.tsx) | CTA card after paragraph two on posts that set `ctaVariant`; those posts skip the mid-article `cta-*-blog-article` block |
-| `cta-book-demo-persona-page-get-started` | Opens demo calendar | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
-| `cta-download-persona-page-get-started` | Opens system-select modal | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
-| `cta-download-pricing-individual` | Opens system-select modal | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Individual Agent plan |
-| `cta-signup-pricing-teams` | Opens app.asksayso.com signup | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Teams & Brokerages plan |
-| `cta-book-demo-pricing-coming-soon` | Redirects to `/demo` | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | "Questions? Chat with our team" CTA below the pricing cards |
+| `cta-book-demo-persona-page-get-started` | Opens demo calendar | [components/pages/PersonaPage/index.tsx](../../components/pages/PersonaPage/index.tsx) | /for/[slug] "Get Started" section |
+| `cta-download-persona-page-get-started` | Opens system-select modal | [components/pages/PersonaPage/index.tsx](../../components/pages/PersonaPage/index.tsx) | /for/[slug] "Get Started" section |
+| `cta-download-pricing-individual` | Link to `/founderpricing/` | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing, Individual Agent+ Claim early access |
+| `cta-signup-pricing-teams` | Opens demo calendar | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing, Teams and Brokerages Assemble your team |
+| `pricing-billing-toggle-monthly` / `pricing-billing-toggle-annual` | Switches the billing period | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing billing toggle |
+| `cta-book-demo-pricing-coming-soon` | Link to `/demo` | [app/pricing/page.tsx](../../app/pricing/page.tsx) | "Questions? Chat with our team" below the pricing cards |
 | `cta-onboarding-get-started` | Starts onboarding flow | [components/onboarding/OnboardingFlow.tsx](../../components/onboarding/OnboardingFlow.tsx) | Welcome screen start button |
 | `cta-book-demo-onboarding-complete` | Opens demo calendar | [components/onboarding/OnboardingNavButtons.tsx](../../components/onboarding/OnboardingNavButtons.tsx) | Terminal CTA after onboarding |
 | `cta-book-demo-subscribed` | Opens demo calendar | [app/subscribed/BookDemoCTA.tsx](../../app/subscribed/BookDemoCTA.tsx) | Hero CTA on /subscribed confirmation page |
@@ -100,7 +101,7 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 - `NavLink.dataAnalyticsId?: string` (in [lib/navigation.ts](../../lib/navigation.ts))
 
 **Type additions:**
-- `PricingPlan.analyticsId: string` (required on each plan entry in `PricingSection`)
+- `PricingAnalyticsIds` (`components/landing/HomePricing/types.ts`): the ids a page passes to `HomePricing`
 
 **Shared component fix:**
 - [components/ui/Button.tsx](../../components/ui/Button.tsx) — the `<a>` branch now spreads `{...props}` so `data-*` attributes pass through on `href` usage (previously it only spread on the `<button>` branch).

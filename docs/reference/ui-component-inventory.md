@@ -82,13 +82,19 @@
 ### SaysoWidget
 - **Path:** `components/SaysoWidget/` (`index.tsx`, `types.ts`, `data.ts`, `components/`)
 - **Description:** Props-driven rebuild of the real Sayso widget: call alert, toolbar, Pulse, cues, LPMAMA with note bubbles, copy, Playbook. Static (a picture) or live (clickable, with `onAction` / `onDotSelect`).
-- **Used on:** Homepage (`/`) hero demo, How it works, Features, Made to fit. Planned for the product pages.
+- **Used on:** Homepage (`/`) hero demo, How it works, Features, Made to fit. Static pictures through `WidgetFigure` on the product pages, solution pages, `/why-sayso`, the partner integration pages and `/download`.
 - **Props:** see `components/SaysoWidget/types.ts`; ready-made static views in `WIDGET_PRESETS` (`data.ts`).
 - **Visual behavior:** Renders at its true size (604px column, 1010px with Playbook beside it). Wrap it in `WidgetScaler`, which scales it down to fit and can switch to the stacked narrow layout.
 
+### WidgetFigure
+- **Path:** `components/pages/WidgetFigure.tsx`
+- **Description:** A static `SaysoWidget` preset on the soft product backdrop inside a white card, with an optional caption. The picture carries an `aria-label`; the widget itself is decorative.
+- **Used on:** `/products/[slug]` (Cue: `cues`, Smart Capture: `smartCapture`, Pulse: `pulse`, Playbook: `playbook`), `/for/[slug]` (`cues`), `/why-sayso` (`notes`), `/integrations/partners/[slug]` (`notes`), `/download` (`cues`).
+- **Props:** `preset: WidgetPreset`, `label: string`, `caption?: string`, `className?: string`
+
 ### Homepage sections
 - **Path:** `components/landing/Home*/` (`HomeTopStrip`, `HomeHero`, `HomeLiveDemo`, `HomeHowItWorks`, `HomeFeatures`, `HomeFitCards`, `HomeCompare`, `HomeReviews`, `HomePricing`, `HomeFAQ`, `HomeFinalCta`) plus shared classes in `HomeShared/`.
-- **Used on:** Homepage (`/`) only.
+- **Used on:** Homepage (`/`). `HomePricing` is also the pricing section on `/pricing`.
 - **Visual behavior:** Flat redesign. See Section 10 of `docs/brand/sayso-design-system.md` for the page order.
 
 ### Carousel
@@ -110,13 +116,6 @@
 - **Used on:** Ad pages (`/agent`, `/isa`, `/broker`, `/sales-leader`)
 - **Props:** `content?: ThreeStepsContent` (headline, subheading, steps array)
 - **Visual behavior:** Mobile: carousel with prev/next buttons and dot indicators. Desktop: all 3 steps horizontal with comic arrow connectors. Dual CTAs at bottom.
-
-### ProductShowcaseDesktop
-- **Path:** `components/landing/ProductShowcaseDesktop.tsx`
-- **Description:** Responsive desktop demo frame with widget overlay showing product in action.
-- **Used on:** Product pages (`/products/[slug]`)
-- **Props:** Internal state (scaling, widget position)
-- **Visual behavior:** Desktop mockup frame displaying live product demo with responsive scaling.
 
 ### FeatureGrid
 - **Path:** `components/sections/FeatureGrid.tsx`
@@ -153,12 +152,12 @@
 - **Props:** `headline?: string`, `faqs: Array<{ question, answer }>`
 - **Visual behavior:** Vertical stack of clickable question rows that expand to reveal answers. One open at a time.
 
-### PricingSection
-- **Path:** `components/landing/PricingSection.tsx`
-- **Description:** Pricing page with two tiers (Individual Agent, Teams & Brokerages) and feature bullets, plus a "Questions? Chat with our team" CTA below the cards.
-- **Used on:** Pricing (`/pricing`)
-- **Props:** None (uses internal state and DemoCalendarContext)
-- **Visual behavior:** Light gray background with halftone pattern, 2-column card grid (1-col mobile), popular plan highlighted with blue shadow/accent, checkmark icons for features.
+### HomePricing
+- **Path:** `components/landing/HomePricing/`
+- **Description:** Monthly / annual toggle and the Individual Agent+ and Teams and Brokerages cards. Shared by the homepage and `/pricing`.
+- **Used on:** Homepage (`/`), Pricing (`/pricing`)
+- **Props:** `titleAs?: 'h1' | 'h2'`, `analyticsIds?: PricingAnalyticsIds` (homepage ids by default), `children?` (extra content under the cards), `className?`
+- **Visual behavior:** Flat white and navy cards with a yellow top border, checkmark feature lists, flat Button CTAs.
 
 ### Card
 - **Path:** `components/ui/Card.tsx`
@@ -353,27 +352,6 @@
 - **Props:** `size?: number`, `color?: string`, `className?: string`
 - **Visual behavior:** Lightning bolt SVG rendered at specified size and color.
 
-### AudioWaveform
-- **Path:** `components/landing/CRMDialerShowcase/AudioWaveform.tsx`
-- **Description:** 5-bar animated audio waveform visualization.
-- **Used on:** CRM Dialer Showcase, demo video
-- **Props:** `active: boolean`, `color?: string`
-- **Visual behavior:** 5 vertical bars animating at different heights when active.
-
-### ParticipantAvatar
-- **Path:** `components/landing/CRMDialerShowcase/ParticipantAvatar.tsx`
-- **Description:** Avatar circle with animated speaking ring indicator.
-- **Used on:** CRM Dialer Showcase
-- **Props:** `initials: string`, `color: string`, `speaking: boolean`, `ringColor?: string`
-- **Visual behavior:** Circular avatar with initials, pulsing ring when speaking.
-
-### SpeechBubble
-- **Path:** `components/landing/CRMDialerShowcase/SpeechBubble.tsx`
-- **Description:** Animated speech bubble with directional tail.
-- **Used on:** CRM Dialer Showcase
-- **Props:** `text: string`, `visible: boolean`, `side: 'buyer' | 'seller'`
-- **Visual behavior:** Rounded speech bubble with tail pointing left or right based on side, fade-in animation.
-
 ### CannyBoard
 - **Path:** `components/CannyBoard.tsx`
 - **Description:** Wrapper for Canny feedback board integration with user identification.
@@ -414,18 +392,6 @@ Static content pages with no props. Content is hardcoded in the component.
 - **Path:** `components/landing/CaseStudiesPage.tsx`
 - **Page:** `/case-studies`
 - **Description:** Full case studies page with expandable cards. Data is hardcoded in a `CASE_STUDIES` array inside the component.
-
-### CRM Dialer Showcase (composite)
-
-| Component | Path | Description |
-|-----------|------|-------------|
-| **CRMDialerShowcase** | `components/landing/CRMDialerShowcase/index.tsx` | Main orchestrator with `useDialerState` hook |
-| **DialerHeader** | `components/landing/CRMDialerShowcase/DialerHeader.tsx` | Top bar with timer and call controls |
-| **DialerSplitView** | `components/landing/CRMDialerShowcase/DialerSplitView.tsx` | Split you-vs-prospect view |
-| **DialerBottomBar** | `components/landing/CRMDialerShowcase/DialerBottomBar.tsx` | Bottom toolbar (Dialpad, Notes, Activity) |
-| **SaysoWidget** | `components/landing/CRMDialerShowcase/SaysoWidget.tsx` | Coaching prompt panel with toolbar |
-
-Used exclusively in the product showcase on the homepage. While individual sub-components accept props, the composite is tightly coupled to the homepage demo flow.
 
 ---
 
