@@ -57,7 +57,7 @@ export function useDemoTour() {
    * How long the result of each step stays on screen before the card moves on:
    * long enough to read L's note, and for Pulse to open and the agent to answer.
    */
-  const SETTLE: Partial<Record<StepKey, number>> = { dot: 2800, zip: 3200, play: 900, reset: 900 };
+  const SETTLE: Partial<Record<StepKey, number>> = { dot: 2000, zip: 3200, play: 900, reset: 900 };
 
   /** Advance when the visitor did what the current step asks. */
   const hit = (key: StepKey) => {
@@ -65,11 +65,14 @@ export function useDemoTour() {
     if (STEPS[at]?.key !== key || advancing.current === at) return;
     if (key === 'start') return goStep(at + 1);
     advancing.current = at;
-    later(() => {
-      if (s.current.step !== at) return;
-      if (key === 'dot' && s.current.tip === 0) set({ tip: null });
-      goStep(at + 1);
-    }, SETTLE[key] ?? 600);
+    const wait = SETTLE[key] ?? 600;
+    if (key === 'dot') {
+      // Fade L's note out first, then bring in the next step.
+      later(() => s.current.step === at && s.current.tip === 0 && set({ tip: null }), wait);
+      later(() => s.current.step === at && goStep(at + 1), wait + 300);
+      return;
+    }
+    later(() => s.current.step === at && goStep(at + 1), wait);
   };
 
   const onAction = (control: WidgetControl) => {
@@ -78,14 +81,22 @@ export function useDemoTour() {
     if (control === 'start' || control === 'zip' || control === 'play' || control === 'reset') hit(control);
   };
 
+  /** Step 3: hovering (or tapping) L opens its note and holds it open; the tour moves on 2s later. */
+  const openL = () => {
+    if (stepKey() !== 'dot' || !s.current.caps[0]) return;
+    if (!s.current.insight) openInsight(true);
+    if (s.current.tip !== 0) set({ tip: 0 });
+    hit('dot');
+  };
+
   const onDotHover = (i: number | null) => {
-    if (i === 0 && s.current.caps[0]) hit('dot');
+    if (i === 0) openL();
   };
 
   const onDotSelect = (i: number) => {
     if (!s.current.caps[i]) return;
+    if (i === 0 && stepKey() === 'dot') return openL();
     if (s.current.insight) set({ tip: i });
-    if (i === 0) hit('dot');
   };
 
   /** The step card's main button: does the step for the visitor. */
@@ -95,12 +106,13 @@ export function useDemoTour() {
     if (!key) return;
     if (key === 'watch') return goStep(s.current.step + 1);
     if (key === 'dot') {
-      if (!s.current.insight) openInsight(true);
       // After a reset the call may not have reached L yet: fill it so the note has something to show.
-      const caps = [...s.current.caps];
-      caps[0] = true;
-      set({ caps, tip: 0 });
-      return hit('dot');
+      if (!s.current.caps[0]) {
+        const caps = [...s.current.caps];
+        caps[0] = true;
+        set({ caps });
+      }
+      return openL();
     }
     onAction(key);
   };
