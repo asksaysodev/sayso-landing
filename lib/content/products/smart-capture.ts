@@ -107,7 +107,7 @@ export const smartCapture: ProductEntry = {
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', slug: 'cue' },
+    { title: 'Real-Time Guidance', slug: 'cue' },
     { title: 'Custom Scripts', slug: 'playbook' },
   ],
   relatedBlogPosts: [

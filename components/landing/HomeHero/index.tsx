@@ -45,7 +45,7 @@ export function HomeHero() {
       <div className="mt-[26px] flex flex-col items-center gap-2.5">
         <ProofFaces />
         <div className="text-center text-[clamp(12px,3.4vw,14px)] leading-[1.45] text-[#556B86]">
-          <b className="block text-balance font-semibold text-[#10233A]">Used by hundreds of agents at eXp, Coldwell Banker, KW and more</b>
+          <b className="block text-balance font-semibold text-[#10233A]">Used by hundreds of agents at eXp, KW, Real and more</b>
           <RotatingQuote />
         </div>
       </div>

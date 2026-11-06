@@ -107,7 +107,7 @@ export const playbook: ProductEntry = {
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', slug: 'cue' },
+    { title: 'Real-Time Guidance', slug: 'cue' },
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [
