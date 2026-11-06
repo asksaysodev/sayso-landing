@@ -3,9 +3,12 @@
 /**
  * Mobile drawer: slides in from the right with the primary links, a Resources
  * accordion (featured links plus the three columns), log in and Book a demo.
- * Locks page scroll while open and closes on Escape or a backdrop tap.
+ * Modal while open: focus moves to the close button, Tab stays inside the
+ * drawer, page scroll is locked, and Escape or a backdrop tap closes it.
+ * Focus returns to the menu button on close.
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { RefObject } from 'react';
 import Link from 'next/link';
 import { ChevronDown, X } from 'lucide-react';
 import { headerNav, loginHref, primaryNav, resourcesFeatured, resourcesHubHref } from '@/lib/navigation';
@@ -14,21 +17,54 @@ interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
   onBookDemo: () => void;
+  /** The hamburger button; focus returns here when the drawer closes. */
+  returnFocusRef: RefObject<HTMLButtonElement | null>;
 }
 
-export function MobileMenu({ open, onClose, onBookDemo }: MobileMenuProps) {
-  const [resourcesOpen, setResourcesOpen] = useState(false);
+const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
+export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: MobileMenuProps) {
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Scroll lock and focus handoff run once per open/close, not on every render.
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    if (open) document.addEventListener('keydown', onKey);
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    const returnTo = returnFocusRef.current;
+    document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
     return () => {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previousOverflow;
+      returnTo?.focus();
     };
+  }, [open, returnFocusRef]);
+
+  // Escape closes; Tab and Shift+Tab wrap inside the drawer.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+      if (e.key !== 'Tab' || !panelRef.current) return;
+      const items = Array.from(panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE));
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !panelRef.current.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (active === last || !panelRef.current.contains(active))) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
   }, [open, onClose]);
 
   if (!open) return null;
@@ -39,12 +75,19 @@ export function MobileMenu({ open, onClose, onBookDemo }: MobileMenuProps) {
   return (
     <div className="fixed inset-0 z-[70] flex justify-end bg-[#10233A]/45 lg:hidden" onClick={onClose}>
       <div
+        ref={panelRef}
         role="dialog"
+        aria-modal="true"
         aria-label="Menu"
         onClick={(e) => e.stopPropagation()}
         className="flex h-full w-[min(340px,88vw)] flex-col overflow-y-auto bg-white px-6 pb-8 pt-3"
       >
-        <button onClick={onClose} aria-label="Close menu" className="ml-auto grid h-10 w-10 place-items-center text-[#1D4871]">
+        <button
+          ref={closeRef}
+          type="button"
+          onClick={onClose}
+          aria-label="Close menu"
+          className="ml-auto grid h-10 w-10 place-items-center text-[#1D4871]">
           <X size={24} />
         </button>
 
@@ -56,6 +99,7 @@ export function MobileMenu({ open, onClose, onBookDemo }: MobileMenuProps) {
 
         <div className="border-b border-[#1D4871]/10">
           <button
+            type="button"
             onClick={() => setResourcesOpen((o) => !o)}
             aria-expanded={resourcesOpen}
             className="flex w-full items-center justify-between py-3.5 text-[17px] font-semibold text-[#1D4871]"
@@ -96,9 +140,10 @@ export function MobileMenu({ open, onClose, onBookDemo }: MobileMenuProps) {
           Log in
         </a>
         <button
+          type="button"
           onClick={onBookDemo}
           data-analytics-id="cta-book-demo-mobile-menu"
-          className="mt-6 h-12 rounded-full bg-[#2367EE] text-base font-semibold text-white shadow-[0_8px_20px_-8px_rgba(35,103,238,0.55)]"
+          className="mt-6 h-12 rounded-full bg-[#2367EE] text-base font-semibold text-white shadow-button"
         >
           Book a demo
         </button>

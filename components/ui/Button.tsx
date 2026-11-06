@@ -1,8 +1,11 @@
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 
 interface ButtonProps {
   children: ReactNode;
   href?: string;
+  /** Opens href in a new tab with rel="noopener noreferrer". Only set this for off-site links. */
+  external?: boolean;
   variant?: 'primary' | 'secondary';
   /** Adds the round white arrow badge used on primary CTAs. */
   withArrow?: boolean;
@@ -11,7 +14,11 @@ interface ButtonProps {
   'data-analytics-id'?: string;
 }
 
-/** Pill button: solid blue primary, white secondary with a hairline ring. Flat, soft shadow, no offset borders. */
+/**
+ * Pill button: solid blue primary, white secondary with a hairline ring. Flat, soft shadow, no offset borders.
+ * Renders a next/link for internal hrefs ("/..."), a new-tab anchor when `external` is set, a plain anchor for
+ * any other href (hash, mailto) and a type="button" button otherwise.
+ */
 export function Button({
   children,
   variant = 'primary',
@@ -19,6 +26,7 @@ export function Button({
   onClick,
   className = '',
   href,
+  external = false,
   'data-analytics-id': dataAnalyticsId,
 }: ButtonProps) {
   const baseStyles =
@@ -26,9 +34,9 @@ export function Button({
 
   const variantStyles = {
     primary:
-      'bg-[#2367EE] text-white shadow-[0_1px_2px_rgba(16,35,58,0.18),0_8px_20px_-8px_rgba(35,103,238,0.55)] hover:bg-[#1F5AD6]',
+      'bg-[#2367EE] text-white shadow-button hover:bg-[#1F5AD6]',
     secondary:
-      'bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_1px_2px_rgba(16,35,58,0.06)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.22),0_4px_12px_-4px_rgba(16,35,58,0.15)]',
+      'bg-white text-[#10233A] shadow-card-sm hover:shadow-card-sm-hover',
   };
 
   const arrowPad = withArrow && variant === 'primary' ? 'pr-1.5' : '';
@@ -49,16 +57,39 @@ export function Button({
     </>
   );
 
+  if (href && external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+        className={classes}
+        data-analytics-id={dataAnalyticsId}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  if (href?.startsWith('/')) {
+    return (
+      <Link href={href} onClick={onClick} className={classes} data-analytics-id={dataAnalyticsId}>
+        {content}
+      </Link>
+    );
+  }
+
   if (href) {
     return (
-      <a href={href} className={classes} data-analytics-id={dataAnalyticsId}>
+      <a href={href} onClick={onClick} className={classes} data-analytics-id={dataAnalyticsId}>
         {content}
       </a>
     );
   }
 
   return (
-    <button onClick={onClick} className={classes} data-analytics-id={dataAnalyticsId}>
+    <button type="button" onClick={onClick} className={classes} data-analytics-id={dataAnalyticsId}>
       {content}
     </button>
   );

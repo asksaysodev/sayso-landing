@@ -5,7 +5,7 @@
  * Book a demo button. Sticky and full width; it picks up a blurred background
  * once the page scrolls.
  */
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
@@ -21,6 +21,12 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
   // scroll-down and returns on scroll-up to free up vertical space.
   const [hidden, setHidden] = useState(false);
   const { openDemoCalendar } = useDemoCalendar();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
+  const bookDemoFromMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+    openDemoCalendar();
+  }, [openDemoCalendar]);
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -66,13 +72,16 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
             Log in
           </a>
           <button
+            type="button"
             onClick={openDemoCalendar}
             data-analytics-id="cta-book-demo-navbar"
-            className="inline-flex h-10 items-center rounded-full bg-[#2367EE] px-4 text-sm font-semibold text-white shadow-[0_8px_20px_-8px_rgba(35,103,238,0.55)] transition hover:-translate-y-px hover:bg-[#1F5AD6] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
+            className="inline-flex h-10 items-center rounded-full bg-[#2367EE] px-4 text-sm font-semibold text-white shadow-button transition hover:-translate-y-px hover:bg-[#1F5AD6] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
           >
             Book a demo
           </button>
           <button
+            ref={menuButtonRef}
+            type="button"
             onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Open menu"
             aria-expanded={isMobileMenuOpen}
@@ -85,11 +94,9 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
 
       <MobileMenu
         open={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-        onBookDemo={() => {
-          setIsMobileMenuOpen(false);
-          openDemoCalendar();
-        }}
+        onClose={closeMobileMenu}
+        onBookDemo={bookDemoFromMenu}
+        returnFocusRef={menuButtonRef}
       />
     </nav>
   );

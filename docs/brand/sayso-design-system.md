@@ -284,15 +284,30 @@ Widget surface treatment: `border-radius: 16px`, `backdrop-filter: blur(200px)`,
 |-----------|-----------|
 | **Navbar** (`components/landing/SaysoNavbar/`) | Full-width sticky bar, transparent at the top and blurred `#F4F4F5` with a hairline once the page scrolls. Logo left; How it works, Features, Pricing, FAQ and a **Resources** menu in the middle; Log in and a blue Book a demo pill on the right. The Resources menu shows Blog and the Prospecting Calculator on top, then Products, Solutions and About columns, then an All resources link. Links come from `lib/navigation.ts`. Mobile: a right-side drawer with a Resources accordion. |
 | **Footer** | Navy `#1D4871` with a yellow top border. Logo, one-line tagline, Beehiiv newsletter and Instagram/LinkedIn on the left; Programs, Get in Touch and Legal columns on the right (`footerNav`); copyright row underneath. |
-| **Cards / panels** | White, radius 16 to 20px, hairline ring `rgba(16,35,58,.12)` and a soft shadow `0 14px 34px -16px rgba(16,35,58,.25)`. No tilt, no offset shadow. |
-| **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, soft blue shadow, 1px lift on hover. `withArrow` adds the round white arrow badge used on main CTAs. |
-| **Secondary button** (`variant="secondary"`) | White pill with a hairline ring and dark text; the ring darkens on hover. |
+| **Cards / panels** | White, radius 16 to 20px, `shadow-card` (hairline ring `rgba(16,35,58,.12)` plus a soft drop shadow), `hover:shadow-card-hover` when the whole card is a link. No tilt, no offset shadow. |
+| **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, `shadow-button`, 1px lift on hover. `withArrow` adds the round white arrow badge used on main CTAs. Internal `href`s ("/...") render a `next/link`; pass `external` for off-site links (new tab, `rel="noopener noreferrer"`); with no `href` it renders a `type="button"` button. |
+| **Secondary button** (`variant="secondary"`) | White pill, `shadow-card-sm` and dark text; `shadow-card-sm-hover` darkens the ring on hover. |
 | **Badges and labels** | Yellow `v2-pow-badge` style label in Bangers, flat (no border or shadow), for section labels and small emphasis. |
 | **Sections / containers** | `Section` wrapper: full-width, `py-16 sm:py-24`, `default` or `accent` background variant. `Container`: centered, max-width ~1200px, `px-6 md:px-8 lg:px-12`. Alternate `background` and `accent-bg`, or drop into a dark navy section for emphasis. |
 | **Pricing cards** | Light surface with halftone, 3-column grid, popular plan highlighted with blue shadow/accent, `v4-accent-top` yellow top border, checkmark feature lists. |
 | **Blog content** | Manrope headings (800 for H1/H2), Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables inside a rounded hairline card. Post cards, author card and cluster box use the flat card pattern; the category pill is a small yellow Bangers label. |
 | **Blog CTAs** | Mid-article and inline CTAs share `BlogCtaCard`: a solid navy card, radius 20px, soft shadow, no gradient or offset shadow. White Manrope heading, white body text and flat pill buttons (white secondary, blue primary). The inline variant sits after a post's second paragraph when the post sets `ctaVariant`. |
 | **Hub quick answers and related reading** | Optional blocks on hub pages (`HubPage.tsx`, set by `quickAnswers` and `relatedReading` in the hub config). Quick answers is a white rounded list with thin navy dividers: each row is a bold navy phrase over a one-line muted answer, the whole row links to the child page and turns blue on hover. Related reading is a Manrope heading over muted navy paragraphs with inline links. Both use the 800px content column. Hub cards use the flat card pattern; group labels are small Bangers headings and card banners are flat yellow labels (no tilt). |
+
+### Shadow tokens
+
+Flat surfaces use these `boxShadow` tokens from `tailwind.config.ts`. Use the token instead of pasting the raw `shadow-[...]` string; add a new token here and in the config if a shadow repeats.
+
+| Class | Value | Use |
+|-------|-------|-----|
+| `shadow-card` | `0 0 0 1px rgba(16,35,58,0.12), 0 14px 34px -16px rgba(16,35,58,0.25)` | Default white card or panel |
+| `shadow-card-hover` | `0 0 0 1px rgba(16,35,58,0.2), 0 20px 40px -18px rgba(16,35,58,0.32)` | Hover state for linked cards |
+| `shadow-card-sm` | `0 0 0 1px rgba(16,35,58,0.12), 0 1px 2px rgba(16,35,58,0.06)` | Small surfaces: secondary buttons, chips, inputs, list rows |
+| `shadow-card-sm-hover` | `0 0 0 1px rgba(16,35,58,0.22), 0 4px 12px -4px rgba(16,35,58,0.15)` | Hover state for `shadow-card-sm` |
+| `shadow-popover` | `0 0 0 1px rgba(16,35,58,0.12), 0 24px 48px -20px rgba(16,35,58,0.35)` | Floating panels such as the Resources menu |
+| `shadow-button` | `0 1px 2px rgba(16,35,58,0.18), 0 8px 20px -8px rgba(35,103,238,0.55)` | Blue CTA buttons (primary `Button`, navbar and drawer Book a demo) |
+
+The blue button token is `shadow-button`, not `shadow-cta`: `cta` is already a color, and Tailwind's shadow-color utility `shadow-cta` would override the shadow.
 
 There is a fuller catalog of the actual React components in `docs/reference/ui-component-inventory.md`. This design-system doc covers the reusable visual language; that inventory lists the specific components that implement it.
 
