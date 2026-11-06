@@ -21,7 +21,7 @@ export function ReadTestimonialDisclosure({
   const panelId = `testimonial-quote-panel-${testimonial.number}`;
 
   return (
-    <div className="relative w-full overflow-hidden rounded-xl bg-white v2-comic-border v2-comic-shadow">
+    <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
       <button
         type="button"
         onClick={() => setIsOpen((v) => !v)}
@@ -29,7 +29,7 @@ export function ReadTestimonialDisclosure({
         aria-controls={panelId}
         className="w-full px-5 py-4 flex items-center gap-4 text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE] focus-visible:ring-inset"
       >
-        <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-[#FFDE59] border-2 border-[#1D4871]">
+        <span className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full bg-[#FFDE59]">
           <svg
             className="text-[#1D4871]"
             width="22"
@@ -43,7 +43,7 @@ export function ReadTestimonialDisclosure({
         </span>
 
         <span className="flex-1 min-w-0">
-          <span className="block font-comic text-base text-[#1D4871] tracking-wide leading-tight">
+          <span className="block font-sans font-bold text-base text-[#10233A] leading-tight">
             Read testimonial
           </span>
           <span className="block text-xs text-[#1D4871]/60 leading-snug mt-0.5 truncate">
@@ -64,7 +64,7 @@ export function ReadTestimonialDisclosure({
       {isOpen && (
         <div
           id={panelId}
-          className="px-5 pb-5 pt-1 border-t-2 border-dashed border-[#1D4871]/15"
+          className="px-5 pb-5 pt-1 border-t border-[rgba(16,35,58,0.12)]"
         >
           <blockquote className="pt-4">
             <p className="font-hero text-base text-[#1D4871] leading-snug">
@@ -72,8 +72,8 @@ export function ReadTestimonialDisclosure({
             </p>
           </blockquote>
 
-          <div className="pt-4 mt-4 border-t-2 border-dashed border-[#1D4871]/15">
-            <p className="font-comic text-lg text-[#1D4871] tracking-wide">
+          <div className="pt-4 mt-4 border-t border-[rgba(16,35,58,0.12)]">
+            <p className="font-sans font-bold text-base text-[#10233A]">
               {testimonial.name}
             </p>
             <p className="text-sm text-[#1D4871]/70 leading-snug">

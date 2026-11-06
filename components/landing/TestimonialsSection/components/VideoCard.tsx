@@ -19,7 +19,7 @@ export function VideoCard({ testimonial }: VideoCardProps) {
 
   return (
     <div
-      className="relative w-full max-w-[280px] mx-auto lg:max-w-none overflow-hidden rounded-xl bg-black v2-comic-border v2-comic-shadow"
+      className="relative w-full max-w-[280px] mx-auto lg:max-w-none overflow-hidden rounded-2xl bg-black shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]"
       style={{ aspectRatio: '9 / 14' }}
     >
       {isPlaying ? (
