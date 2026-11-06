@@ -7,7 +7,7 @@ interface BlogPillarUplinkProps {
 
 export function BlogPillarUplink({ pillar }: BlogPillarUplinkProps) {
   return (
-    <div className="bg-[#1D4871]/5 border-l-4 border-[#2367EE] px-5 py-3 mb-8 rounded-r-lg">
+    <div className="bg-white px-5 py-3.5 mb-8 rounded-2xl shadow-card">
       <p className="text-sm font-sans text-[#1D4871]/80">
         This post is part of our complete guide:{' '}
         <Link

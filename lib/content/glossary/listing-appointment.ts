@@ -44,7 +44,7 @@ export const listingAppointment: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'The calls that lead to listing appointments are where Sayso makes the biggest difference. When you are prospecting expired listings or following up with seller leads, Sayso\'s [Real-Time Coaching](/products/cue/) shows you what to say the moment a homeowner raises an objection or asks about pricing. That means more of your calls end with a listing appointment on the calendar.',
+    'The calls that lead to listing appointments are where Sayso makes the biggest difference. When you are prospecting expired listings or following up with seller leads, Sayso\'s [Real-Time Guidance](/products/cue/) shows you what to say the moment a homeowner raises an objection or asks about pricing. That means more of your calls end with a listing appointment on the calendar.',
     'After each call, [Call Notes](/products/smart-capture/) saves the details that matter to your CRM, so you walk into the listing appointment already knowing what the seller cares about. [Book a demo](/demo/) to see how Sayso helps you book more listing appointments from your daily prospecting.',
     'To get ready for the meeting itself, work through the [listing appointment checklist](/blog/listing-appointment-checklist/) and the [listing appointment questions](/blog/listing-appointment-questions/) to ask on the confirmation call. To fill your calendar with more of them, read [how to get listing appointments](/blog/how-to-get-listing-appointments/), for what to say once the conversation turns to the seller\'s plans see [seller scripts for real estate agents](/blog/seller-scripts-real-estate/), and see the [appointment-setting guide](/blog/how-to-book-appointments-real-estate/) for the call-side steps.',
   ],
@@ -61,7 +61,7 @@ export const listingAppointment: GlossaryEntry = {
     href: '/blog/listing-appointment-questions',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
   relatedPersona: {

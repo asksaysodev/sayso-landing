@@ -1,6 +1,6 @@
 # Sayso facts and call-to-action rules
 
-Use only these product facts. Anything else about Sayso must be confirmed in the repo (product pages in `lib/content/products/`, pricing in `components/landing/PricingSection.tsx`) before it is written.
+Use only these product facts. Anything else about Sayso must be confirmed in the repo (product pages in `lib/content/products/`, pricing in `lib/content/pricing.ts`) before it is written.
 
 ## What Sayso is
 

@@ -73,7 +73,7 @@ export const alreadyHaveAnAgent: ObjectionEntry = {
     {
       question: 'How can AI help when a prospect says they have an agent?',
       answer:
-        'Tools like Sayso coach you in real time during the call, prompting the right questions the moment you hear this objection. You get the exact script on screen so you can respond confidently without memorizing every scenario.',
+        'Tools like Sayso guide you in real time during the call, prompting the right questions the moment you hear this objection. You get the exact script on screen so you can respond confidently without memorizing every scenario.',
     },
   ],
   relatedBlogPost: {
@@ -81,7 +81,7 @@ export const alreadyHaveAnAgent: ObjectionEntry = {
     href: '/blog/how-to-talk-to-real-estate-leads',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

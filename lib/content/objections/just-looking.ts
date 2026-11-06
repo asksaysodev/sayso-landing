@@ -74,7 +74,7 @@ export const justLooking: ObjectionEntry = {
     {
       question: 'How can AI help handle objections like "just looking" on calls?',
       answer:
-        'Tools like Sayso display the right response on your screen in real time, so you never freeze or default to ending the call. It coaches you through the moment and captures your notes automatically for follow-up.',
+        'Tools like Sayso display the right response on your screen in real time, so you never freeze or default to ending the call. It guides you through the moment and captures your notes automatically for follow-up.',
     },
   ],
   relatedBlogPost: {
@@ -82,7 +82,7 @@ export const justLooking: ObjectionEntry = {
     href: '/blog/agent-client-conversation-examples',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

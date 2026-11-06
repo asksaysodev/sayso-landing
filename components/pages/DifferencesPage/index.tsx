@@ -18,7 +18,7 @@ import { EngineSection } from './components/EngineSection';
 
 export function DifferencesPage() {
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-[#F4F4F5]">
       <SaysoNavbar />
       <DifferencesHero />
       <MomentSection />

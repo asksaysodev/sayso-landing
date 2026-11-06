@@ -45,7 +45,7 @@ export const fsbo: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'If you are calling FSBO sellers, start with the complete call script, the branches for common replies, and the voicemail and text versions in our [FSBO scripts](/blog/fsbo-scripts/) guide, and see the [realtor voicemail scripts](/blog/real-estate-voicemail-scripts/) for when nobody picks up. For the objection you will hear most, see [what to say when a seller wants to sell it themselves](/objections/want-to-sell-ourselves/).',
-    'FSBO sellers often push back with objections like "I\'m saving on commission" or "I\'ve already had agents call me." Sayso\'s [Real-Time Coaching](/products/cue/) shows you the right response the moment you hear it, so you can address the objection confidently instead of scrambling for a script.',
+    'FSBO sellers often push back with objections like "I\'m saving on commission" or "I\'ve already had agents call me." Sayso\'s [Real-Time Guidance](/products/cue/) shows you the right response the moment you hear it, so you can address the objection confidently instead of scrambling for a script.',
     'Sayso\'s [Call Notes](/products/smart-capture/) logs every FSBO conversation to your CRM for you, so a seller you reach in week one is easy to pick back up in week three when they are ready to talk. [Book a demo](/demo/) to see how Sayso helps you convert FSBO leads into listing appointments.',
   ],
   relatedTerms: [
@@ -60,7 +60,7 @@ export const fsbo: GlossaryEntry = {
     href: '/blog/fsbo-scripts/',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
   relatedPersona: {

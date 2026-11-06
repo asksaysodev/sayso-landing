@@ -1,5 +1,5 @@
 /**
- * Yellow comic-style credential badge shown under a testimonial's name.
+ * Small yellow credential badge shown under a testimonial's name.
  * Renders an optional second line when the testimonial provides `badgeSubtext`.
  */
 
@@ -13,7 +13,7 @@ type BadgePillProps = {
 export function BadgePill({ testimonial, className = '' }: BadgePillProps) {
   return (
     <span
-      className={`inline-block bg-[#FFDE59] text-[#1D4871] px-2 py-1 rounded border-2 border-[#1D4871] ${className}`}
+      className={`inline-block bg-[#FFDE59] text-[#1D4871] px-2 py-1 rounded-md border border-[rgba(16,35,58,0.14)] ${className}`}
     >
       <span className="block text-[10px] md:text-xs font-bold tracking-widest uppercase leading-tight">
         {testimonial.badge}

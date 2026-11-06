@@ -77,7 +77,7 @@ export const notInterested: ObjectionEntry = {
     {
       question: 'How can AI help agents handle the "not interested" objection?',
       answer:
-        'Tools like Sayso display the right response on your screen in real time, so you never freeze or default to hanging up. It coaches you through the moment and logs the call automatically for future follow-up.',
+        'Tools like Sayso display the right response on your screen in real time, so you never freeze or default to hanging up. It guides you through the moment and logs the call automatically for future follow-up.',
     },
   ],
   relatedBlogPost: {
@@ -85,7 +85,7 @@ export const notInterested: ObjectionEntry = {
     href: '/blog/how-to-start-a-real-estate-call',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

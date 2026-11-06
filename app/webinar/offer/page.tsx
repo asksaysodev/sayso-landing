@@ -19,7 +19,7 @@ export const metadata = buildMetadata({
 export default function WebinarOfferPage() {
   return (
     // pb on mobile clears the fixed bottom claim bar (MobileCta).
-    <div className="relative bg-[#F4F4F5] min-h-screen pb-20 sm:pb-0">
+    <div className="legacy-comic relative bg-[#F4F4F5] min-h-screen pb-20 sm:pb-0">
       {/* One timer for the whole page (DeadlineProvider), so the gate and both
           countdowns share a single source of truth. DeadlineGate hides
           everything and shows the expired state once the 5:00 PM PT deadline

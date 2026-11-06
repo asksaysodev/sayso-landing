@@ -2,7 +2,7 @@ import type { ProductEntry } from './types';
 
 export const smartCapture: ProductEntry = {
   slug: 'smart-capture',
-  updatedAt: '2026-04-29',
+  updatedAt: '2026-11-06',
   keyword: 'automatic call notes real estate',
   seoTitle: 'Automatic Call Notes for Real Estate Agents',
   seoDescription:
@@ -13,7 +13,6 @@ export const smartCapture: ProductEntry = {
     'Smart Capture listens to your live call and writes structured notes automatically. Key details, objections, next steps, and buying signals are all captured and organized as the conversation happens. You never have to choose between listening and writing.',
     'After every call, your notes are clean, consistent, and ready to drop into your CRM. Agents stay fully present in the conversation and walk away with everything they need to follow up.',
   ],
-  heroVisual: 'product-showcase',
   screenshotAlt:
     'Sayso Smart Capture showing structured call notes organized in LPMAMA framework during a real estate prospecting call',
   howItWorksHeading: 'How Automatic Call Notes Work',
@@ -108,7 +107,7 @@ export const smartCapture: ProductEntry = {
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', slug: 'cue' },
+    { title: 'Real-Time Guidance', slug: 'cue' },
     { title: 'Custom Scripts', slug: 'playbook' },
   ],
   relatedBlogPosts: [

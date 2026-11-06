@@ -45,7 +45,7 @@ export const expiredListing: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'To find expireds worth calling, see [how to find expired listings](/blog/how-to-find-expired-listings/). Related scripts include [voicemail scripts](/blog/real-estate-voicemail-scripts/), [withdrawn listing scripts](/blog/withdrawn-listing-scripts/) for sellers who took the home off the market, and [FSBO scripts](/blog/fsbo-scripts/) for owners who decided to sell it themselves.',
-    'Calling expired listings means handling tough objections: "I\'m done with agents," "The last one wasted my time," and "I\'ll just sell it myself." Sayso\'s [Real-Time Coaching](/products/cue/) shows you the right response on screen the moment an objection comes up, so you stay composed and confident through the hardest parts of the conversation.',
+    'Calling expired listings means handling tough objections: "I\'m done with agents," "The last one wasted my time," and "I\'ll just sell it myself." Sayso\'s [Real-Time Guidance](/products/cue/) shows you the right response on screen the moment an objection comes up, so you stay composed and confident through the hardest parts of the conversation.',
     'After every call, Sayso\'s [Call Notes](/products/smart-capture/) writes down what the seller said and files it in your CRM, so when you follow up a week later you have the full picture without flipping through a notebook. [Book a demo](/demo/) to see how Sayso helps you convert more expireds into listing appointments.',
   ],
   relatedTerms: [
@@ -60,7 +60,7 @@ export const expiredListing: GlossaryEntry = {
     href: '/blog/expired-listing-scripts/',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
   relatedPersona: {

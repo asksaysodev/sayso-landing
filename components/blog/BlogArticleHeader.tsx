@@ -8,19 +8,19 @@ interface BlogArticleHeaderProps {
 
 export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
   return (
-    <header className="relative overflow-hidden bg-[#F4F4F5] border-b-4 border-[#FFDE59]">
+    <header className="relative overflow-hidden bg-[#F4F4F5]">
       {/* Background hero image (faded) */}
       <BlogHeroBackground src={post.heroImage} />
 
       {/* Content on top */}
       <div className="relative z-10 max-w-[800px] mx-auto px-6 pt-10 pb-10 md:pt-14 md:pb-14">
         {/* Category pill */}
-        <span className="inline-block px-3 py-1 mb-4 rounded-full bg-[#FFDE59] text-[#1D4871] font-comic text-xs uppercase tracking-wide">
+        <span className="inline-block px-3 py-1 mb-4 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-[15px] tracking-[0.06em]">
           {formatCategoryName(post.category)}
         </span>
 
         {/* Title */}
-        <h1 className="font-hero text-3xl md:text-4xl lg:text-[42px] text-[#1D4871] mb-5 leading-tight">
+        <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-3xl md:text-4xl lg:text-[44px] mb-5 leading-[1.1]">
           {post.title}
         </h1>
 

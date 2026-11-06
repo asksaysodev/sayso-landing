@@ -33,18 +33,18 @@ const EXCLUDED_PATHS = new Set([
  * partners) carry their own updatedAt field instead.
  */
 const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
-  '/': '2026-09-13',
-  '/demo': '2026-06-11',
-  '/download': '2026-05-05',
+  '/': '2026-11-05',
+  '/demo': '2026-11-06',
+  '/download': '2026-11-06',
   '/products': '2026-05-09',
-  '/for': '2026-04-19',
+  '/for': '2026-11-05',
   '/integrations': '2026-06-23',
   '/objections': '2026-09-13',
   '/glossary': '2026-04-19',
   '/tools/prospecting-calculator': '2026-10-04',
-  '/why-sayso': '2026-07-15',
-  '/differences': '2026-10-12',
-  '/pricing': '2026-10-12',
+  '/why-sayso': '2026-11-06',
+  '/differences': '2026-11-06',
+  '/pricing': '2026-11-05',
   '/about': '2026-10-04',
   '/security': '2026-10-04',
   '/contact': '2026-06-14',
@@ -100,7 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allStaticPaths = new Set(['/', '/demo', '/download', ...navHrefs]);
 
   // Skip excluded paths and the child pages the content loaders already list
-  // (persona, product and partner pages are registered in the nav too).
+  // (persona and product pages are registered in the nav too).
   const staticPages: MetadataRoute.Sitemap = Array.from(allStaticPaths)
     .filter((path) => !EXCLUDED_PATHS.has(path) && !contentPaths.has(path))
     .map((path) => {

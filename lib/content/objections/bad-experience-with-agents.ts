@@ -47,7 +47,7 @@ export const badExperienceWithAgents: ObjectionEntry = {
     'Treating it as a minor brush-off when it is actually a trust issue that needs real attention',
   ],
   howSaysoHelps:
-    'When a prospect brings up a bad experience, Sayso\'s real-time coaching shows you the right response framework on screen so you can focus on listening instead of scrambling for words. After the call, Sayso captures detailed notes about what the prospect shared, so your follow-up references their exact concerns. This is how you demonstrate the clear communication that their previous agent lacked.',
+    'When a prospect brings up a bad experience, Sayso\'s real-time guidance shows you the right response framework on screen so you can focus on listening instead of scrambling for words. After the call, Sayso captures detailed notes about what the prospect shared, so your follow-up references their exact concerns. This is how you demonstrate the clear communication that their previous agent lacked.',
   relatedObjections: [
     { title: '"Already Working with an Agent"', slug: 'already-have-an-agent', keyword: 'how to handle "already working with agent"' },
     { title: '"Want to Sell Ourselves"', slug: 'want-to-sell-ourselves', keyword: 'FSBO objection handling' },
@@ -72,7 +72,7 @@ export const badExperienceWithAgents: ObjectionEntry = {
     {
       question: 'How can AI help agents handle objections about bad experiences?',
       answer:
-        'Tools like Sayso provide real-time coaching during calls, showing you the right response the moment a prospect raises this objection. This helps you stay calm, ask the right questions, and avoid common mistakes like getting defensive.',
+        'Tools like Sayso provide real-time guidance during calls, showing you the right response the moment a prospect raises this objection. This helps you stay calm, ask the right questions, and avoid common mistakes like getting defensive.',
     },
   ],
   relatedBlogPost: {
@@ -80,7 +80,7 @@ export const badExperienceWithAgents: ObjectionEntry = {
     href: '/blog/how-to-build-rapport-real-estate-calls',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

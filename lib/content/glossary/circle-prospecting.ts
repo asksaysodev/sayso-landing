@@ -45,7 +45,7 @@ export const circleProspecting: GlossaryEntry = {
   ],
   howSaysoHelps: [
     'If you want word-for-word openers for a just-sold, just-listed or market milestone call, plus a voicemail script and a worked example, read our [circle prospecting scripts](/blog/circle-prospecting-scripts/) and the [just listed and just sold scripts](/blog/just-listed-just-sold-scripts/). To see how circle prospecting stacks up against other lead sources, read [prospecting strategies compared](/blog/real-estate-prospecting-strategies/), and for the software side, see the [types of real estate prospecting tools](/blog/real-estate-prospecting-tools/).',
-    'Sayso gives you real-time coaching during circle prospecting calls, so when a homeowner asks about their home\'s value or pushes back with "we\'re not thinking about moving," you see the right response instantly. No more freezing up or fumbling through a script binder.',
+    'Sayso gives you real-time guidance during circle prospecting calls, so when a homeowner asks about their home\'s value or pushes back with "we\'re not thinking about moving," you see the right response instantly. No more freezing up or fumbling through a script binder.',
     'Sayso also logs each circle prospecting call automatically, so the homeowner who said "maybe next year" is still in your pipeline when next year arrives. [Book a demo](/demo/) to see how Sayso turns neighborhood calls into listing appointments.',
   ],
   relatedTerms: [
@@ -61,7 +61,7 @@ export const circleProspecting: GlossaryEntry = {
     href: '/blog/circle-prospecting-scripts/',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
   relatedPersona: {

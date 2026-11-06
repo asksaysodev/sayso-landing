@@ -20,39 +20,18 @@
 ## 1. Layout Components
 
 ### SaysoNavbar
-- **Path:** `components/landing/SaysoNavbar.tsx`
-- **Description:** Main sticky navigation bar with logo, menu links, CTA buttons, and mobile hamburger menu.
+- **Path:** `components/landing/SaysoNavbar/` (`index.tsx`, `components/DesktopNav.tsx`, `components/ResourcesMenu.tsx`, `components/MobileMenu.tsx`)
+- **Description:** Main sticky navigation bar with logo, primary links, the Resources menu, Log in and Book a demo, and a mobile drawer.
 - **Used on:** Homepage, Blog (layout), Affiliate, Case Studies, Contact, Demo, Feedback, Pricing, Privacy, Terms, Referral, Security (~15 pages)
-- **Props:** None
-- **Visual behavior:** Sticky top-4, rounded pill-shaped white navbar with comic-style border. Logo left, desktop nav links center, Download button right. Mobile: hamburger menu with dropdown panel, closes on Escape/outside click.
+- **Props:** `autoHide?: boolean` (slides away on scroll-down; used on /product-tour)
+- **Visual behavior:** Full-width sticky bar, transparent at the top, blurred `#F4F4F5` once scrolled. Logo left; How it works, Features, Pricing, FAQ and Resources in the middle; Log in and a white Book a demo pill on the right. Mobile: right-side drawer (portal on `<body>`, focus trapped, background inert, iOS-safe scroll lock) with a Resources accordion.
 
 ### Footer
 - **Path:** `components/landing/Footer.tsx`
 - **Description:** Branded footer with navigation links, newsletter signup, and social media links.
 - **Used on:** Homepage, Blog (layout), Affiliate, Case Studies, Contact, Demo, Feedback, Pricing, Privacy, Terms, Referral, Security (~14 pages)
 - **Props:** None
-- **Visual behavior:** Dark blue footer (#1D4871) with yellow top border. 2-column layout on mobile (logo/newsletter + links grid), responsive grid on desktop. Includes superhero Easter egg in bottom-right corner.
-
-### LandingLayout
-- **Path:** `components/layout/LandingLayout.tsx`
-- **Description:** Page wrapper that renders navbar, main content area, and footer.
-- **Used on:** Available for marketing pages (used via layout system)
-- **Props:** `children: ReactNode`
-- **Visual behavior:** Vertical stack: NavbarMinimal → main content → FooterSimple.
-
-### NavbarMinimal
-- **Path:** `components/layout/NavbarMinimal.tsx`
-- **Description:** Minimal header with logo and single CTA button.
-- **Used on:** Used by LandingLayout
-- **Props:** None
-- **Visual behavior:** Simple horizontal bar with logo left, CTA button right.
-
-### FooterSimple
-- **Path:** `components/layout/FooterSimple.tsx`
-- **Description:** Simplified footer with copyright and essential links.
-- **Used on:** Used by LandingLayout
-- **Props:** None
-- **Visual behavior:** Compact footer with minimal links and copyright text.
+- **Visual behavior:** Dark blue footer (#1D4871) with yellow top border. Logo, Beehiiv newsletter and socials on the left; Programs, Get in Touch and Legal columns on the right; copyright row underneath.
 
 ### DemoCalendarProvider
 - **Path:** `app/context/landing/DemoCalendarContext.tsx`
@@ -61,146 +40,36 @@
 - **Props:** `children: ReactNode`
 - **Visual behavior:** Renders no visible UI itself; provides modal management context. Opens the Calendly popup or the contact form popup; `openSignup` opens signup and download in a new tab.
 
-### Container
-- **Path:** `components/ui/Container.tsx`
-- **Description:** Max-width container with responsive horizontal padding.
-- **Used on:** Used inside multiple section components
-- **Props:** `children: ReactNode`, `className?: string`
-- **Visual behavior:** Centered container with max-width 1200px, responsive padding (`px-6 md:px-8 lg:px-12`).
+### SaysoWidget
+- **Path:** `components/SaysoWidget/` (`index.tsx`, `types.ts`, `data.ts`, `components/`)
+- **Description:** Props-driven rebuild of the real Sayso widget: call alert, toolbar, Pulse, cues, LPMAMA with note bubbles, copy, Playbook. Static (a picture) or live (clickable, with `onAction` / `onDotSelect`).
+- **Used on:** Homepage (`/`) hero demo, How it works, Features, Made to fit. Static pictures through `WidgetFigure` on the product pages, solution pages, `/why-sayso`, the partner integration pages and `/download`.
+- **Props:** see `components/SaysoWidget/types.ts`; ready-made static views in `WIDGET_PRESETS` (`data.ts`).
+- **Visual behavior:** Renders at its true size (604px column, 1010px with Playbook beside it). Wrap it in `WidgetScaler`, which scales it down to fit and can switch to the stacked narrow layout.
 
-### Section
-- **Path:** `components/ui/Section.tsx`
-- **Description:** Section wrapper with variant backgrounds and vertical padding.
-- **Used on:** Used inside multiple section components
-- **Props:** `children: ReactNode`, `className?: string`, `variant?: 'default' | 'accent'`, `id?: string`
-- **Visual behavior:** Full-width section with `py-16 sm:py-24` padding. Accent variant applies alternate background color.
+### WidgetFigure
+- **Path:** `components/pages/WidgetFigure.tsx`
+- **Description:** A static `SaysoWidget` preset on the soft product backdrop inside a white card, with an optional caption. The picture carries an `aria-label`; the widget itself is decorative.
+- **Used on:** `/products/[slug]` (Cue: `cues`, Smart Capture: `smartCapture`, Pulse: `pulse`, Playbook: `playbook`), `/for/[slug]` (`cues`), `/why-sayso` (`notes`), `/integrations/partners/[slug]` (`notes`), `/download` (`cues`).
+- **Props:** `preset: WidgetPreset`, `label: string`, `caption?: string`, `className?: string`
 
----
+### Homepage sections
+- **Path:** `components/landing/Home*/` (`HomeTopStrip`, `HomeHero`, `HomeLiveDemo`, `HomeHowItWorks`, `HomeFeatures`, `HomeFitCards`, `HomeCompare`, `HomeReviews`, `HomePricing`, `HomeFAQ`, `HomeFinalCta`) plus shared classes in `HomeShared/`.
+- **Used on:** Homepage (`/`). `HomePricing` is also the pricing section on `/pricing`.
+- **Visual behavior:** Flat redesign. See Section 10 of `docs/brand/sayso-design-system.md` for the page order.
 
-## 2. Content Components
+### Carousel
+- **Path:** `components/ui/Carousel/`
+- **Description:** Grid on desktop (page passes the grid classes), swipeable scroll-snap row with peeking edges and prev/next arrows at 960px and below. Finite by default, `loop` for infinite (aria-hidden clones).
+- **Used on:** Homepage How it works, Made to fit, Compare, Reviews.
+- **Props:** `label`, `itemName?`, `loop?`, `trackClassName?`, `className?`, `children` (one child per slide).
 
-### HeroWithVideo
-- **Path:** `components/landing/HeroWithVideo.tsx`
-- **Description:** Main hero section with headline, tagline, CTA buttons, product showcase video, and social proof logos.
-- **Used on:** Homepage (`/`)
-- **Props:** `content?: HeroContent` (optional `headline`, `tagline`, `taglineSub`, `headlineSize`)
-- **Visual behavior:** 3-column layout (text | superhero character | video), responsive mobile carousel, animated slide-in text, yellow narrator badge overlays video, social proof logos centered below.
-
-### HeroSection
-- **Path:** `components/sections/HeroSection.tsx`
-- **Description:** Generic hero section with headline, subhead, dual CTAs, and optional right-side content.
-- **Used on:** Available as reusable section template
-- **Props:** `eyebrow?: string`, `headline: string`, `subhead?: string`, `primaryCTA?: { text, href }`, `secondaryCTA?: { text, href }`, `rightContent?: ReactNode`
-- **Visual behavior:** Full-width hero with large H1, subtitle text, and up to two CTA buttons side by side. Optional right content area for media.
-
-### PainPointPanel
-- **Path:** `components/landing/PainPointPanel/index.tsx`
-- **Description:** Showcases pain points with mobile carousel and desktop 2-panel "Without Sayso" section.
-- **Used on:** Homepage (`/`)
-- **Props:** None (uses internal state)
-- **Visual behavior:** Mobile: horizontal carousel with swipe. Desktop: side-by-side panels showing comic-style struggle illustrations.
-
-### PanelTheStruggle
-- **Path:** `components/landing/PainPointPanel/PanelTheStruggle.tsx`
-- **Description:** Comic panel showing an agent freezing on a call.
-- **Used on:** Used inside PainPointPanel
-- **Props:** `imgHeight?: number`
-- **Visual behavior:** Comic-style illustration card with descriptive text.
-
-### PanelWastedOpportunity
-- **Path:** `components/landing/PainPointPanel/PanelWastedOpportunity.tsx`
-- **Description:** Comic panel showing missed revenue from lost calls.
-- **Used on:** Used inside PainPointPanel
-- **Props:** `imgHeight?: number`
-- **Visual behavior:** Comic-style illustration card with descriptive text.
-
-### TransformationSection
-- **Path:** `components/landing/TransformationSection/index.tsx`
-- **Description:** Victory metrics and transformation messaging with superhero imagery and animated starburst background.
-- **Used on:** Homepage (`/`)
-- **Props:** `content?: TransformationContent` (headline, subheading, metrics array)
-- **Visual behavior:** Dark blue background (#1D4871) with yellow accent stripe, 2-column layout (hero image left, metrics right on desktop), metric cards with icons in white-rounded boxes, floating superhero animation.
-
-### ThreeStepsSection
-- **Path:** `components/landing/ThreeStepsSection/index.tsx`
-- **Description:** 3-step process section showing how Sayso works with visual cards and mobile carousel.
-- **Used on:** Homepage (`/`)
-- **Props:** `content?: ThreeStepsContent` (headline, subheading, steps array)
-- **Visual behavior:** Mobile: carousel with prev/next buttons and dot indicators. Desktop: all 3 steps horizontal with comic arrow connectors. Dual CTAs at bottom.
-
-### ProductShowcaseDesktop
-- **Path:** `components/landing/ProductShowcaseDesktop.tsx`
-- **Description:** Responsive desktop demo frame with widget overlay showing product in action.
-- **Used on:** Product pages (`/products/[slug]`)
-- **Props:** Internal state (scaling, widget position)
-- **Visual behavior:** Desktop mockup frame displaying live product demo with responsive scaling.
-
-### FeatureGrid
-- **Path:** `components/sections/FeatureGrid.tsx`
-- **Description:** Grid of feature cards in 1–3 columns with icons.
-- **Used on:** Available as reusable section template
-- **Props:** `headline?: string`, `subhead?: string`, `features: Array<{ title, description, icon }>`
-- **Visual behavior:** Responsive grid (1-col mobile, 2-col tablet, 3-col desktop) of cards with icon, title, and description.
-
-### HowItWorksSteps
-- **Path:** `components/sections/HowItWorksSteps.tsx`
-- **Description:** Numbered 3-step process section with icons.
-- **Used on:** Available as reusable section template
-- **Props:** `headline?: string`, `steps: Array<{ number, title, description }>`
-- **Visual behavior:** Numbered step cards in horizontal layout with connecting visual elements.
-
-### ProblemSection
-- **Path:** `components/sections/ProblemSection.tsx`
-- **Description:** Grid of pain point cards highlighting problems the product solves.
-- **Used on:** Available as reusable section template
-- **Props:** `headline?: string`, `subhead?: string`, `painPoints: Array<{ title, description }>`
-- **Visual behavior:** Grid of cards with problem descriptions.
-
-### SocialProofRow
-- **Path:** `components/sections/SocialProofRow.tsx`
-- **Description:** 3-column statistics display for social proof.
-- **Used on:** Available as reusable section template
-- **Props:** `stats: Array<{ value, label }>`
-- **Visual behavior:** 3 large numbers/values centered with labels beneath each.
-
-### FAQAccordion
-- **Path:** `components/sections/FAQAccordion.tsx`
-- **Description:** Collapsible FAQ section with expand/collapse state management.
-- **Used on:** Available as reusable section template
-- **Props:** `headline?: string`, `faqs: Array<{ question, answer }>`
-- **Visual behavior:** Vertical stack of clickable question rows that expand to reveal answers. One open at a time.
-
-### PricingSection
-- **Path:** `components/landing/PricingSection.tsx`
-- **Description:** Pricing page with two tiers (Individual Agent, Teams & Brokerages) and feature bullets, plus a "Questions? Chat with our team" CTA below the cards.
-- **Used on:** Pricing (`/pricing`)
-- **Props:** None (uses internal state and DemoCalendarContext)
-- **Visual behavior:** Light gray background with halftone pattern, 2-column card grid (1-col mobile), popular plan highlighted with blue shadow/accent, checkmark icons for features.
-
-### Card
-- **Path:** `components/ui/Card.tsx`
-- **Description:** Container card with border and padding.
-- **Used on:** Used inside multiple components
-- **Props:** `children: ReactNode`, `className?: string`
-- **Visual behavior:** White card with border, rounded corners, and padding.
-
-### MomentCard
-- **Path:** `components/ui/MomentCard.tsx`
-- **Description:** Card displaying a "moment" with label and conversation prompts.
-- **Used on:** Used in product showcase/demo sections
-- **Props:** `momentLabel: string`, `whatToSay: string`, `whatToAskNext: string`
-- **Visual behavior:** Styled card with moment label badge, "What to say" prompt, and "What to ask next" prompt.
-
----
-
-## 3. CTA Components
-
-### FinalCTASection
-- **Path:** `components/sections/FinalCTASection.tsx`
-- **Description:** Full-width dark CTA banner at the bottom of a page.
-- **Used on:** Available as reusable section template
-- **Props:** `headline: string`, `subhead?: string`, `ctaText: string`, `ctaHref: string`
-- **Visual behavior:** Full-width dark background section with large headline, optional subtext, and prominent CTA button.
+### HomePricing
+- **Path:** `components/landing/HomePricing/`
+- **Description:** Monthly / annual toggle and the Individual Agent+ and Teams and Brokerages cards. Shared by the homepage and `/pricing`.
+- **Used on:** Homepage (`/`), Pricing (`/pricing`)
+- **Props:** `titleAs?: 'h1' | 'h2'`, `analyticsIds?: PricingAnalyticsIds` (homepage ids by default), `children?` (extra content under the cards), `className?`
+- **Visual behavior:** Flat white and navy cards with a yellow top border, checkmark feature lists, flat Button CTAs.
 
 ### Button
 - **Path:** `components/ui/Button.tsx`
@@ -290,20 +159,6 @@
 - **Props:** `posts: BlogPostMeta[]`, `variant?: 'grid' | 'compact'`
 - **Visual behavior:** Grid variant: standard card grid. Compact variant: smaller list-style cards.
 
-### BlogShareBar
-- **Path:** `components/blog/BlogShareBar.tsx`
-- **Description:** Social share buttons for blog posts (LinkedIn, Twitter, Copy Link).
-- **Used on:** Blog post (`/blog/[slug]`)
-- **Props:** `title: string`, `slug: string`
-- **Visual behavior:** Row of social sharing icons/buttons with copy-to-clipboard functionality.
-
-### BlogTableOfContents
-- **Path:** `components/blog/BlogTableOfContents.tsx`
-- **Description:** Auto-generated table of contents with scroll spy active heading tracking.
-- **Used on:** Blog post (`/blog/[slug]`)
-- **Props:** `content: string` (MDX string to parse headings from)
-- **Visual behavior:** Sidebar list of heading links, active heading highlighted as user scrolls through article.
-
 ---
 
 ## 5. SEO / Meta Components
@@ -328,68 +183,12 @@
 
 ## 6. Shared UI Elements
 
-### Heading
-- **Path:** `components/ui/Heading.tsx`
-- **Description:** Semantic heading component with size variants.
-- **Used on:** Used across section components
-- **Props:** `children: ReactNode`, `variant?: 'hero' | 'h1' | 'h2' | 'h3'`, `className?: string`, `as?: 'h1' | 'h2' | 'h3' | 'h4'`
-- **Visual behavior:** Renders heading tag with appropriate font size, weight, and spacing per variant.
-
-### Text
-- **Path:** `components/ui/Text.tsx`
-- **Description:** Text component with semantic variants for body copy.
-- **Used on:** Used across section components
-- **Props:** `children: ReactNode`, `variant?: 'body' | 'muted' | 'small'`, `className?: string`, `as?: string`
-- **Visual behavior:** Renders paragraph or span with appropriate font size, color, and line height.
-
-### Badge
-- **Path:** `components/ui/Badge.tsx`
-- **Description:** Small label/badge component with variants.
-- **Used on:** Used in cards and product sections
-- **Props:** `children: ReactNode`, `variant?: 'standard' | 'moment'`, `className?: string`
-- **Visual behavior:** Small rounded label with variant-specific background and text colors.
-
-### Divider
-- **Path:** `components/ui/Divider.tsx`
-- **Description:** Horizontal line separator.
-- **Used on:** Used between content sections
-- **Props:** `className?: string`
-- **Visual behavior:** Thin horizontal rule with muted color.
-
-### IconWrapper
-- **Path:** `components/ui/IconWrapper.tsx`
-- **Description:** Centered icon container with size options.
-- **Used on:** Used in feature grids and step cards
-- **Props:** `children: ReactNode`, `size?: 'sm' | 'md' | 'lg'`, `className?: string`
-- **Visual behavior:** Circular or rounded container centering an icon at the specified size.
-
 ### LightningIcon
 - **Path:** `components/icons/LightningIcon.tsx`
 - **Description:** SVG lightning bolt icon.
 - **Used on:** Used in branded elements
 - **Props:** `size?: number`, `color?: string`, `className?: string`
 - **Visual behavior:** Lightning bolt SVG rendered at specified size and color.
-
-### AudioWaveform
-- **Path:** `components/landing/CRMDialerShowcase/AudioWaveform.tsx`
-- **Description:** 5-bar animated audio waveform visualization.
-- **Used on:** CRM Dialer Showcase, demo video
-- **Props:** `active: boolean`, `color?: string`
-- **Visual behavior:** 5 vertical bars animating at different heights when active.
-
-### ParticipantAvatar
-- **Path:** `components/landing/CRMDialerShowcase/ParticipantAvatar.tsx`
-- **Description:** Avatar circle with animated speaking ring indicator.
-- **Used on:** CRM Dialer Showcase
-- **Props:** `initials: string`, `color: string`, `speaking: boolean`, `ringColor?: string`
-- **Visual behavior:** Circular avatar with initials, pulsing ring when speaking.
-
-### SpeechBubble
-- **Path:** `components/landing/CRMDialerShowcase/SpeechBubble.tsx`
-- **Description:** Animated speech bubble with directional tail.
-- **Used on:** CRM Dialer Showcase
-- **Props:** `text: string`, `visible: boolean`, `side: 'buyer' | 'seller'`
-- **Visual behavior:** Rounded speech bubble with tail pointing left or right based on side, fade-in animation.
 
 ### CannyBoard
 - **Path:** `components/CannyBoard.tsx`
@@ -426,23 +225,6 @@ All four follow the same pattern: hardcoded hero, problem narrative, benefits gr
 | **ReferralPageContent** | `components/landing/ReferralPageContent.tsx` | `/referral` |
 
 Static content pages with no props. Content is hardcoded in the component.
-
-### CaseStudiesPage
-- **Path:** `components/landing/CaseStudiesPage.tsx`
-- **Page:** `/case-studies`
-- **Description:** Full case studies page with expandable cards. Data is hardcoded in a `CASE_STUDIES` array inside the component.
-
-### CRM Dialer Showcase (composite)
-
-| Component | Path | Description |
-|-----------|------|-------------|
-| **CRMDialerShowcase** | `components/landing/CRMDialerShowcase/index.tsx` | Main orchestrator with `useDialerState` hook |
-| **DialerHeader** | `components/landing/CRMDialerShowcase/DialerHeader.tsx` | Top bar with timer and call controls |
-| **DialerSplitView** | `components/landing/CRMDialerShowcase/DialerSplitView.tsx` | Split you-vs-prospect view |
-| **DialerBottomBar** | `components/landing/CRMDialerShowcase/DialerBottomBar.tsx` | Bottom toolbar (Dialpad, Notes, Activity) |
-| **SaysoWidget** | `components/landing/CRMDialerShowcase/SaysoWidget.tsx` | Coaching prompt panel with toolbar |
-
-Used exclusively in the product showcase on the homepage. While individual sub-components accept props, the composite is tightly coupled to the homepage demo flow.
 
 ---
 

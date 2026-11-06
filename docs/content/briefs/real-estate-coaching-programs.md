@@ -74,7 +74,7 @@ Gaps (what Sayso's post adds):
 | KW MAPS Onward BOLD: six one-day classes over six weeks, in person at market centers; "a $799 investment" | https://outfront.kw.com/training/kw-maps-coaching-bold/ |
 | Ricky Carruth Diamond+ Community: $1,500/month by application, installs over three 60-day phases, 20 spots a month; page updated October 13, 2026 | https://zerotodiamond.com |
 | Ramsey Real Estate Pro Coaching: for agents working Ramsey referrals; one-on-one coach, monthly mastermind call, Ramsey Pro Training course; no price published | https://www.ramseysolutions.com/real-estate/real-estate-pro-coaching |
-| Sayso Individual Agent+: $179/month or $125/month billed annually | components/landing/PricingSection.tsx |
+| Sayso Individual Agent+: $179/month or $125/month billed annually | lib/content/pricing.ts |
 
 Left out because they could not be verified in this run: Icenhower Coaching & Consulting (site blocked the check), Kevin Ward and YesMasters (no published program or price found), Club Wealth, Tom Ferry team plans.
 

@@ -12,19 +12,18 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 
 | `data-analytics-id` | Action | File | Notes |
 |---|---|---|---|
-| `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Desktop navbar, visible on every page |
-| `cta-download-navbar` | Opens system-select modal | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Desktop navbar, visible on every page |
-| `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Mobile hamburger menu, only in DOM when menu open |
-| `cta-download-mobile-menu` | Opens system-select modal | [components/landing/SaysoNavbar.tsx](../../components/landing/SaysoNavbar.tsx) | Mobile hamburger menu, only in DOM when menu open |
-| `cta-get-started-navbar-minimal` | → `#cta` anchor | [components/layout/NavbarMinimal.tsx](../../components/layout/NavbarMinimal.tsx) | Minimal-navbar pages |
-| `cta-download-hero` | Opens system-select modal | [components/landing/HeroWithVideo.tsx](../../components/landing/HeroWithVideo.tsx) | Desktop-only render (≥lg) |
-| `cta-download-hero-mobile` | Opens system-select modal | [components/landing/HeroWithVideo.tsx](../../components/landing/HeroWithVideo.tsx) | Mobile-only render (<lg), labeled "Create an Account" |
-| `cta-download-three-steps-section` | Opens system-select modal | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Home page "3 Easy Steps" |
-| `cta-book-demo-three-steps-section` | Opens demo calendar | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Home page "3 Easy Steps" |
-| `cta-download-transformation-section` | Opens system-select modal | [components/landing/TransformationSection/index.tsx](../../components/landing/TransformationSection/index.tsx) | Home page "You're Unstoppable" |
-| `cta-book-demo-transformation-section` | Opens demo calendar | [components/landing/TransformationSection/index.tsx](../../components/landing/TransformationSection/index.tsx) | Home page "You're Unstoppable" |
-| `cta-book-demo-lift-card` | Navigates to `/demo` | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | "Book a time" in the floating demo card, homepage only (preview) |
-| `cta-lift-card-toggle` | Opens/closes the floating card | [components/DemoLiftCard.tsx](../../components/DemoLiftCard.tsx) | Round launcher button, homepage only (preview) |
+| `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Desktop navbar, visible on every page |
+| `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile hamburger menu, only in DOM when menu open |
+| `cta-team-platform-strip` | Opens demo calendar | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar ("see the team platform") |
+| `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
+| `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
+| `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo |
+| `cta-download-home-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Individual Agent+ Claim early access. /pricing keeps `cta-download-pricing-individual` (below) |
+| `cta-book-demo-home-pricing-teams` | Opens demo calendar | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Assemble your team |
+| `home-pricing-billing-toggle-annual` | Switches prices to annual billing | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing. /pricing keeps `pricing-billing-toggle-annual` (below) |
+| `home-pricing-billing-toggle-monthly` | Switches prices to monthly billing | Same as above | Homepage pricing. /pricing keeps `pricing-billing-toggle-monthly` (below) |
+| `cta-download-final-cta` | Opens signup and download | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
+| `cta-book-demo-final-cta` | Opens demo calendar | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-book-demo-persona-agent-footer` | Scrolls to the demo form in the hero | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent footer CTA |
 | `cta-book-demo-persona-broker-footer` | Scrolls to the demo form in the hero | [components/landing/BrokerAdPage.tsx](../../components/landing/BrokerAdPage.tsx) | /broker footer |
 | `cta-book-demo-persona-isa-footer` | Scrolls to the demo form in the hero | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa footer |
@@ -39,17 +38,46 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-blog-article` | Opens demo calendar | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
 | `cta-download-blog-article` | Opens system-select modal | [components/blog/BlogInArticleCTA.tsx](../../components/blog/BlogInArticleCTA.tsx) | In-article CTA on /blog/[slug] |
 | `cta-inline-blog-<variant>` | Link to the variant's page: script to /products/playbook/, coaching to /why-sayso/, leads and prospecting to /products/cue/, team to /for/team-leaders/ | [components/blog/BlogInlineCTA.tsx](../../components/blog/BlogInlineCTA.tsx) | CTA card after paragraph two on posts that set `ctaVariant`; those posts skip the mid-article `cta-*-blog-article` block |
-| `cta-book-demo-persona-page-get-started` | Opens demo calendar | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
-| `cta-download-persona-page-get-started` | Opens system-select modal | [components/pages/PersonaPage.tsx](../../components/pages/PersonaPage.tsx) | /for/[slug] "Get Started" section |
-| `cta-download-pricing-individual` | Opens system-select modal | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Individual Agent plan |
-| `cta-signup-pricing-teams` | Opens app.asksayso.com signup | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | Teams & Brokerages plan |
-| `cta-book-demo-pricing-coming-soon` | Redirects to `/demo` | [components/landing/PricingSection.tsx](../../components/landing/PricingSection.tsx) | "Questions? Chat with our team" CTA below the pricing cards |
+| `cta-book-demo-persona-page-get-started` | Opens demo calendar | [components/pages/PersonaPage/index.tsx](../../components/pages/PersonaPage/index.tsx) | /for/[slug] "Get Started" section |
+| `cta-download-persona-page-get-started` | Opens system-select modal | [components/pages/PersonaPage/index.tsx](../../components/pages/PersonaPage/index.tsx) | /for/[slug] "Get Started" section |
+| `cta-download-pricing-individual` | Opens the create-account flow (`openSignup`) | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing, Individual Agent+ Claim early access. Same intent as production (start signup) |
+| `cta-book-demo-pricing-teams` | Opens demo calendar | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing, Teams and Brokerages Assemble your team. New id: production's `cta-signup-pricing-teams` opened app signup, this opens the calendar |
+| `cta-book-demo-differences-hero` | Opens demo calendar | [components/pages/DifferencesPage/components/DifferencesHero.tsx](../../components/pages/DifferencesPage/components/DifferencesHero.tsx) | /differences hero |
+| `cta-see-difference-differences-hero` | Scrolls to the answer section | Same as above | /differences hero |
+| `cta-download-differences-close` | Opens the create-account flow (`openSignup`) | [components/pages/DifferencesPage/components/CloseSection.tsx](../../components/pages/DifferencesPage/components/CloseSection.tsx) | /differences closing Get Sayso |
+| `cta-book-demo-differences-close` | Opens demo calendar | Same as above | /differences closing Book a demo |
+| `partner-hero-cta-{slug}` | Scrolls to the demo form | [components/pages/PartnerIntegrationPage/components/PartnerHero.tsx](../../components/pages/PartnerIntegrationPage/components/PartnerHero.tsx) | Partner pages; `{slug}` is `follow-up-boss` or `suresend` |
+| `partner-appointments-cta-{slug}` | Scrolls to the demo form | [components/pages/PartnerIntegrationPage/components/AppointmentsCta.tsx](../../components/pages/PartnerIntegrationPage/components/AppointmentsCta.tsx) | Partner pages, appointments section |
+| `cta-demo-download` | Opens the create-account flow (`openSignup`) | [app/demo/page.tsx](../../app/demo/page.tsx) (via `DownloadButton`) | /demo, Get Sayso under the calendar |
+| `cta-download-page` | Opens the create-account flow (`openSignup`) | [components/landing/DownloadPage.tsx](../../components/landing/DownloadPage.tsx) (via `DownloadButton`) | /download main button |
+| `pricing-billing-toggle-monthly` / `pricing-billing-toggle-annual` | Switches the billing period | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing billing toggle |
+| `cta-book-demo-pricing-coming-soon` | Link to `/demo` | [app/pricing/page.tsx](../../app/pricing/page.tsx) | "Questions? Chat with our team" below the pricing cards |
 | `cta-onboarding-get-started` | Starts onboarding flow | [components/onboarding/OnboardingFlow.tsx](../../components/onboarding/OnboardingFlow.tsx) | Welcome screen start button |
 | `cta-book-demo-onboarding-complete` | Opens demo calendar | [components/onboarding/OnboardingNavButtons.tsx](../../components/onboarding/OnboardingNavButtons.tsx) | Terminal CTA after onboarding |
 | `cta-book-demo-subscribed` | Opens demo calendar | [app/subscribed/BookDemoCTA.tsx](../../app/subscribed/BookDemoCTA.tsx) | Hero CTA on /subscribed confirmation page |
 | `form-newsletter-footer` | (iframe wrapper) | [components/landing/Footer.tsx](../../components/landing/Footer.tsx) | Beehiiv iframe, see footnote |
 | `form-newsletter-blog` | (iframe wrapper) | [components/blog/BlogNewsletterCTA.tsx](../../components/blog/BlogNewsletterCTA.tsx) | Beehiiv iframe, see footnote |
-| `contact-email` | `mailto:support@asksayso.com` | [lib/navigation.ts](../../lib/navigation.ts) (rendered by [components/landing/Footer.tsx](../../components/landing/Footer.tsx)) | Footer "Help" link |
+
+---
+
+## Retired IDs
+
+These ids no longer exist on the site. Retire (pause or delete) the matching GTM triggers and tags so reports do not show them as broken or silently at zero.
+
+| `data-analytics-id` | Was | Retired by | Why |
+|---|---|---|---|
+| `cta-download-navbar` | Desktop navbar Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | The new navbar has only Log in and Book a demo, per the approved design |
+| `cta-download-mobile-menu` | Mobile menu Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | Same as above: the mobile drawer ends with Log in and Book a demo |
+| `contact-email` | Footer "Email Support" `mailto:support@asksayso.com` link | Flat redesign foundation (PR #124) | Email Support was removed from the footer on purpose |
+| `cta-download-three-steps-section` | Old homepage "How it works" Download button | Homepage redesign (PR #126) | The old three-step section was replaced by the new How it works section |
+| `cta-book-demo-three-steps-section` | Old homepage "How it works" Book a demo button | Homepage redesign (PR #126) | Same as above |
+| `cta-download-transformation-section` | Old homepage transformation section Download button | Homepage redesign (PR #126) | Section removed in the new homepage |
+| `cta-book-demo-transformation-section` | Old homepage transformation section Book a demo button | Homepage redesign (PR #126) | Same as above |
+| `cta-book-demo-lift-card` | Floating demo lift card Book a demo button | Homepage redesign (PR #126) | The lift card was removed with the old homepage |
+| `cta-lift-card-toggle` | Floating demo lift card open/close toggle | Homepage redesign (PR #126) | Same as above |
+| `cta-download-hero-mobile` | Old homepage hero mobile "Create an Account" button | Homepage redesign (PR #126) | The new hero has one Get Sayso button at every width |
+| `cta-get-started-mobile-menu` | Old mobile menu Get started button | Flat redesign foundation (PR #124) | The new mobile drawer ends with Log in and Book a demo |
+| `cta-signup-pricing-teams` | /pricing Teams and Brokerages button (opened app signup) | Product pages (PR #127) | The Teams button now opens the demo calendar, tracked as `cta-book-demo-pricing-teams` |
 
 ---
 
@@ -97,7 +125,7 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 - `NavLink.dataAnalyticsId?: string` (in [lib/navigation.ts](../../lib/navigation.ts))
 
 **Type additions:**
-- `PricingPlan.analyticsId: string` (required on each plan entry in `PricingSection`)
+- `PricingAnalyticsIds` (`components/landing/HomePricing/types.ts`): the ids a page passes to `HomePricing`
 
 **Shared component fix:**
 - [components/ui/Button.tsx](../../components/ui/Button.tsx) — the `<a>` branch now spreads `{...props}` so `data-*` attributes pass through on `href` usage (previously it only spread on the `<button>` branch).
@@ -110,11 +138,10 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 2. Visit: `/`, `/pricing`, `/agent`, `/broker`, `/isa`, `/sales-leader`, `/products/cue` (or any slug), `/for/solo-agents`, `/blog/[any-slug]`, `/objections/[any-slug]`, `/glossary/[any-slug]`, `/integrations/partners/follow-up-boss`, `/why-sayso`.
 3. In DevTools console on each page: `document.querySelectorAll('[data-analytics-id]')` — verify expected IDs are present and no duplicates.
 4. Click each CTA and confirm behavior is unchanged (demo modal, system-select modal, or anchor jump still works).
-5. Mobile breakpoint: shrink to <768px and confirm mobile-only IDs appear (`cta-download-hero-mobile`, `cta-get-started-mobile-menu`).
-6. `npm run build` — must pass with no TypeScript errors. Passed as of the commit that introduced these attributes.
+5. `npm run build` — must pass with no TypeScript errors. Passed as of the commit that introduced these attributes.
 
 ---
 
 ## Total count
 
-38 unique `data-analytics-id` values (counting page-type family IDs as one row each per `{page-type}` substitution).
+46 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.

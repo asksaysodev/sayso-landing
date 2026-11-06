@@ -81,7 +81,7 @@ export const mySpouseNeedsToDecide: ObjectionEntry = {
     href: '/blog/how-to-close-for-appointment',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
 };

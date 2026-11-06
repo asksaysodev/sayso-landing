@@ -12,8 +12,8 @@ export const FEATURES: FeatureMeta[] = [
   {
     key: 'cue',
     shortLabel: 'Cue',
-    label: 'Cue · Real-Time Coaching',
-    tagline: 'Real-time coaching, so you never lose your words.',
+    label: 'Cue · Real-Time Guidance',
+    tagline: 'Real-time guidance, so you never lose your words.',
     caption: 'Sayso listens to the live call and shows the agent what to say the moment an objection lands.',
   },
   {
@@ -35,7 +35,7 @@ export const FEATURES: FeatureMeta[] = [
     shortLabel: 'Playbook',
     label: 'Playbook · Custom Scripts',
     tagline: 'The exact scripts you want agents following.',
-    caption: 'Your own scripts stay on screen beside the live coaching, so agents stay on track without memorizing.',
+    caption: 'Your own scripts stay on screen beside the live guidance, so agents stay on track without memorizing.',
   },
 ];
 

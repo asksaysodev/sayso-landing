@@ -29,18 +29,18 @@ export const teamLeaders: UseCaseEntry = {
   ],
   betterApproachHeading: 'A Better Approach to Coaching Agents on Calls',
   betterApproach: [
-    'What if every agent on your team had a coach present during every call? Real-time coaching changes the equation for team leaders. Instead of trying to prepare agents for every possible scenario before they dial, real-time coaching delivers guidance during the conversation when it actually matters.',
-    'Sayso gives your agents live coaching prompts on screen during every prospecting call. When a prospect pushes back, the right response appears. When the conversation stalls, Sayso suggests the next question. This is how team leaders coach real estate agents on calls at scale, without sitting in on every conversation and without hoping agents remember what you taught them last Tuesday.',
-    'Picture this: a newer agent on your team calls an expired listing. The prospect says "We are going to wait until the market improves." Instead of freezing or defaulting to a weak response, your agent sees a proven reply on their screen, delivers it naturally, and keeps the conversation moving toward an appointment. That is the kind of in-the-moment coaching that used to require you being on the line. Now it happens automatically, on every call, for every agent.',
+    'What if every agent on your team had a coach present during every call? Real-time guidance changes the equation for team leaders. Instead of trying to prepare agents for every possible scenario before they dial, real-time guidance delivers answers during the conversation when it actually matters.',
+    'Sayso gives your agents live guidance prompts on screen during every prospecting call. When a prospect pushes back, the right response appears. When the conversation stalls, Sayso suggests the next question. This is how team leaders coach real estate agents on calls at scale, without sitting in on every conversation and without hoping agents remember what you taught them last Tuesday.',
+    'Picture this: a newer agent on your team calls an expired listing. The prospect says "We are going to wait until the market improves." Instead of freezing or defaulting to a weak response, your agent sees a proven reply on their screen, delivers it naturally, and keeps the conversation moving toward an appointment. That is the kind of in-the-moment guidance that used to require you being on the line. Now it happens automatically, on every call, for every agent.',
     'Sayso also captures call notes automatically and syncs them to your CRM. Your agents spend less time on admin and more time dialing. And because every call is documented, you get visibility into what your team is saying without reviewing hours of recordings. You see where agents need help, which scripts are working, and where conversations are breaking down, all without being on the call yourself.',
   ],
   getStarted:
-    'See how Sayso helps team leaders coach every agent on every call without sitting in on a single one. Book a demo to watch real-time coaching in action, or visit pricing to find the right plan for your team.',
+    'See how Sayso helps team leaders coach every agent on every call without sitting in on a single one. Book a demo to watch real-time guidance in action, or visit pricing to find the right plan for your team.',
   howSaysoWorks: [
     {
-      feature: 'Real-Time Coaching for Every Agent',
+      feature: 'Real-Time Guidance for Every Agent',
       description:
-        'Every agent on your team gets live coaching prompts during calls. Objection responses, follow-up questions, and appointment closes appear on screen in the moment. Your best coaching is available on every call, not just the ones you sit in on.',
+        'Every agent on your team gets live guidance prompts during calls. Objection responses, follow-up questions, and appointment closes appear on screen in the moment. Your best coaching is available on every call, not just the ones you sit in on.',
       href: '/products/cue',
     },
     {
@@ -65,7 +65,7 @@ export const teamLeaders: UseCaseEntry = {
     {
       question: 'How does Sayso help me coach real estate agents on calls at scale?',
       answer:
-        'Sayso gives every agent on your team live coaching prompts during calls. Instead of relying on ride-alongs or post-call reviews, your agents get real-time guidance on objections, follow-ups, and appointment setting. You scale your coaching without being on the line.',
+        'Sayso gives every agent on your team live guidance prompts during calls. Instead of relying on ride-alongs or post-call reviews, your agents get real-time guidance on objections, follow-ups, and appointment setting. You scale your coaching without being on the line.',
     },
     {
       question: 'Can I see how my agents are performing on calls?',
@@ -85,11 +85,11 @@ export const teamLeaders: UseCaseEntry = {
     {
       question: 'How much does Sayso cost and how do I get started?',
       answer:
-        'Sayso offers team plans built for multi-agent organizations. Visit the pricing page for current plans, or book a demo to see how real-time coaching works across a team.',
+        'Sayso offers team plans built for multi-agent organizations. Visit the pricing page for current plans, or book a demo to see how real-time guidance works across a team.',
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Real-Time Guidance', href: '/products/cue' },
     { title: 'Custom Scripts', href: '/products/playbook' },
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],
@@ -99,7 +99,7 @@ export const teamLeaders: UseCaseEntry = {
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
   relatedObjections: [
-    { title: '"I\'m Not Ready Yet" \u2014 How to Respond', href: '/objections/not-ready-yet' },
-    { title: '"I Already Have an Agent" \u2014 How to Respond', href: '/objections/already-have-an-agent' },
+    { title: '"I\'m Not Ready Yet": How to Respond', href: '/objections/not-ready-yet' },
+    { title: '"I Already Have an Agent": How to Respond', href: '/objections/already-have-an-agent' },
   ],
 };

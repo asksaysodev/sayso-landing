@@ -24,7 +24,7 @@ export function BlogHeroBackground({ src }: BlogHeroBackgroundProps) {
         priority
         onError={() => setImgError(true)}
       />
-      <div className="absolute inset-0 bg-[#F4F4F5]/60" />
+      <div className="absolute inset-0 bg-[#F4F4F5]/80" />
     </div>
   );
 }

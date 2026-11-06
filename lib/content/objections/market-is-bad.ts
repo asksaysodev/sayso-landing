@@ -47,7 +47,7 @@ export const marketIsBad: ObjectionEntry = {
     'Dropping the lead entirely because they seem stuck on market conditions',
   ],
   howSaysoHelps:
-    'When a prospect says the market is bad, Sayso\'s Pulse feature puts real numbers for their specific area on your screen, so you can answer a headline with data about their street instead of generalities. Real-Time Coaching frames the response for you, so the conversation moves from debating the market to what it means for this prospect\'s decision.',
+    'When a prospect says the market is bad, Sayso\'s Pulse feature puts real numbers for their specific area on your screen, so you can answer a headline with data about their street instead of generalities. Real-Time Guidance frames the response for you, so the conversation moves from debating the market to what it means for this prospect\'s decision.',
   relatedObjections: [
     { title: '"The Price Is Too High"', slug: 'price-too-high', keyword: 'how to handle price objection real estate' },
     { title: '"We\'ll Wait for Spring"', slug: 'well-wait-for-spring', keyword: 'how to handle timing objection real estate' },
@@ -73,7 +73,7 @@ export const marketIsBad: ObjectionEntry = {
     {
       question: 'How can AI help agents handle market objections on calls?',
       answer:
-        'Tools like Sayso surface real-time market data and coaching prompts on your screen while you are on the call. Instead of scrambling for numbers or freezing up, you can respond to market concerns with specific, local data and the right response framework.',
+        'Tools like Sayso surface real-time market data and guidance prompts on your screen while you are on the call. Instead of scrambling for numbers or freezing up, you can respond to market concerns with specific, local data and the right response framework.',
     },
   ],
   relatedBlogPost: {

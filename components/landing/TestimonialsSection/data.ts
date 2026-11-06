@@ -49,7 +49,7 @@ export const testimonials: Testimonial[] = [
   {
     number: 4,
     name: 'Nicholas West',
-    attribution: 'eXp California & eXp Phoenix',
+    attribution: 'eXp California and eXp Arizona',
     badge: '2025 Salesperson Rookie of the Year',
     videoId: 'cErlCTC4Li4',
     stat: {

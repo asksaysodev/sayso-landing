@@ -64,7 +64,7 @@ export default function ProspectingCalculatorPage() {
       />
 
       <article className="max-w-[1000px] mx-auto px-6 pb-10">
-        <h1 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mt-6 mb-4">
+        <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] leading-[1.1] text-[34px] md:text-5xl mt-6 mb-4">
           Real Estate Prospecting Calculator
         </h1>
         <p className="text-[#1D4871]/80 text-lg leading-relaxed font-sans mb-8 max-w-[70ch]">
@@ -75,7 +75,7 @@ export default function ProspectingCalculatorPage() {
         <ProspectingCalculator />
 
         <section className="max-w-[800px] mt-12 font-sans text-[#1D4871]/80 leading-relaxed">
-          <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mb-4">How the math works</h2>
+          <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mb-4">How the math works</h2>
           <p className="mb-5">
             Each step divides by your rate for that step. With the starting numbers, 12 closed clients at an 80% close
             rate means 15 signed clients. At a 40% sign rate that is 37.5 appointments. At a 5% appointment rate that is
@@ -87,7 +87,7 @@ export default function ProspectingCalculatorPage() {
             market and your scripts, so replace them with what your dialer and CRM show.
           </p>
 
-          <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">Improve the step that moves the most</h2>
+          <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">Improve the step that moves the most</h2>
           <p className="mb-5">
             Raising your conversation-to-appointment rate from 5% to 7% cuts the dials you need by almost a third. That
             rate depends on what you say in the first 30 seconds and how you handle objections. These guides cover the

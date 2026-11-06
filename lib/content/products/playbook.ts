@@ -2,7 +2,7 @@ import type { ProductEntry } from './types';
 
 export const playbook: ProductEntry = {
   slug: 'playbook',
-  updatedAt: '2026-04-29',
+  updatedAt: '2026-11-06',
   keyword: 'custom call scripts real estate',
   seoTitle: 'Custom Call Scripts for Real Estate Agents',
   seoDescription:
@@ -10,10 +10,9 @@ export const playbook: ProductEntry = {
   h1: 'Playbook - Custom Script Overlay',
   heroDescription: [
     'You have scripts that work. Maybe your team leader built them, maybe you refined them over hundreds of calls. But during the call, they are sitting in a Google Doc, a binder, or a tab you forgot to open. The moment you need them, they are not in front of you.',
-    'Playbook lets you upload your own scripts, frameworks, or talk tracks directly into Sayso. They appear on screen during your calls, right alongside Cue\u2019s live coaching prompts. No switching tabs, no losing your place, no fumbling for the right page.',
+    'Playbook lets you upload your own scripts, frameworks, or talk tracks directly into Sayso. They appear on screen during your calls, right alongside Cue\u2019s live guidance prompts. No switching tabs, no losing your place, no fumbling for the right page.',
     'Your best material is always visible when you need it. Agents stay structured without feeling locked into a rigid script, and teams maintain consistency across every call.',
   ],
-  heroVisual: 'product-showcase',
   screenshotAlt:
     'Sayso Playbook showing a custom call script overlay visible during a live real estate prospecting call',
   howItWorksHeading: 'How Custom Call Scripts Work',
@@ -31,7 +30,7 @@ export const playbook: ProductEntry = {
     {
       step: 'Your script appears during the call',
       description:
-        'Playbook displays your material on screen alongside Cue\u2019s live coaching prompts. Both work together so you have structure and real-time guidance in the same view.',
+        'Playbook displays your material on screen alongside Cue\u2019s live guidance prompts. Both work together so you have structure and real-time guidance in the same view.',
     },
     {
       step: 'Stay on track without memorizing',
@@ -63,7 +62,7 @@ export const playbook: ProductEntry = {
       body: 'Your scripts appear in the same interface as your calls and Cue\u2019s live prompts. No switching windows, no scrolling through documents, no losing your place mid-conversation.',
     },
     {
-      title: 'Works alongside live coaching',
+      title: 'Works alongside live guidance',
       body: 'Playbook and Cue run side by side. Your script provides the structure while Cue handles real-time responses to objections, questions, and curveballs. They complement each other instead of competing.',
     },
     {
@@ -78,7 +77,7 @@ export const playbook: ProductEntry = {
     'On-screen script overlay',
     'Team script sharing',
     'Multiple script management',
-    'Live coaching integration',
+    'Live guidance integration',
   ],
   faq: [
     {
@@ -87,9 +86,9 @@ export const playbook: ProductEntry = {
         'You can upload any text-based material: call scripts, objection handling frameworks, talk tracks, qualifying question lists, or any other reference material you want visible during calls.',
     },
     {
-      question: 'Does Playbook replace Cue\u2019s live coaching?',
+      question: 'Does Playbook replace Cue\u2019s live guidance?',
       answer:
-        'No. Playbook and Cue work together. Playbook displays your static scripts and frameworks while Cue provides real-time, context-aware coaching prompts. You get both structure and live guidance.',
+        'No. Playbook and Cue work together. Playbook displays your static scripts and frameworks while Cue provides real-time, context-aware guidance prompts. You get both structure and live guidance.',
     },
     {
       question: 'Can I use different scripts for different types of calls?',
@@ -108,7 +107,7 @@ export const playbook: ProductEntry = {
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', slug: 'cue' },
+    { title: 'Real-Time Guidance', slug: 'cue' },
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [

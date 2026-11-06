@@ -34,7 +34,7 @@ This document is the complete reference for creating `/for/[slug]` persona pages
 | `lib/content/for/types.ts` | `UseCaseEntry` TypeScript interface - every content field |
 | `lib/content/for/index.ts` | Content loader - exports `getAllUseCaseEntries()`, `getUseCaseBySlug()`, `getAllUseCaseSlugs()` |
 | `lib/content/for/*.ts` | Individual persona content files (one per persona) |
-| `components/pages/PersonaPage.tsx` | Shared page template component - renders all persona pages |
+| `components/pages/PersonaPage/` | Shared page template component - renders all persona pages |
 | `app/(content)/for/[slug]/page.tsx` | Next.js dynamic route - handles metadata + static params |
 | `app/(content)/for/page.tsx` | Solutions hub listing page |
 | `lib/content/hubs/for.ts` | Hub page config - lists all child persona pages |
@@ -161,7 +161,7 @@ The correct spelling is **Sayso** (capital S, lowercase a-y-s-o). Never write "S
 
 ## Page Structure (Section by Section)
 
-The `PersonaPage.tsx` component renders sections in this exact order:
+The `PersonaPage` component renders sections in this exact order:
 
 ### 1. JSON-LD Schema (invisible)
 - `WebPage` schema with title, description, and URL

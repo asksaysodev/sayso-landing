@@ -2,7 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const newAgents: UseCaseEntry = {
   slug: 'new-agents',
-  updatedAt: '2026-04-26',
+  updatedAt: '2026-11-05',
   persona: 'New Agents',
   keyword: 'how to get better at cold calling in real estate',
   seoTitle: 'Get Better at Cold Calling in Real Estate - New Agents',
@@ -29,13 +29,13 @@ export const newAgents: UseCaseEntry = {
   ],
   betterApproachHeading: 'A Better Way to Get Better at Cold Calling',
   betterApproach: [
-    'What if you did not have to memorize everything before you dialed? Real-time coaching changes the equation for new agents. Instead of trying to prepare for every possible scenario, you get guidance during the conversation, exactly when it matters.',
+    'What if you did not have to memorize everything before you dialed? Real-time guidance changes the equation for new agents. Instead of trying to prepare for every possible scenario, you get guidance during the conversation, exactly when it matters.',
     'Sayso listens to your live calls and shows you what to say on your screen in real time. When a prospect pushes back, the right response appears. When you blank on a question, Sayso suggests the next thing to say. This is how new agents get better at cold calling in real estate without spending months memorizing scripts or grinding through hundreds of bad calls first.',
     'Picture this: you call a lead and they say "I already have an agent." Instead of panicking, you glance at your screen and see a calm, proven response. You deliver it naturally. The prospect pauses, then says "Actually, we have not heard from them in a while." You are now in a real conversation, and Sayso is guiding you through it step by step. That is what it feels like to have experience on your screen, even when you do not have it in your head yet.',
     'Sayso also captures your call notes automatically and syncs them to your CRM. As a new agent, you are still learning what information to capture and how to organize your follow-ups. Sayso handles that for you, so you can focus entirely on the conversation and build your skills faster.',
   ],
   getStarted:
-    'See how Sayso helps new agents sound experienced from their first call. Book a demo to watch real-time coaching in action, or download Sayso to get started today.',
+    'See how Sayso helps new agents sound experienced from their first call. Book a demo to watch real-time guidance in action, or download Sayso to get started today.',
   howSaysoWorks: [
     {
       feature: 'Real-Time Objection Handling',
@@ -46,7 +46,7 @@ export const newAgents: UseCaseEntry = {
     {
       feature: 'On-Screen Scripts and Prompts',
       description:
-        'See your scripts, talk tracks, and key questions on screen during every call. No memorization required. Follow along naturally and build the muscle memory over time.',
+        'See your scripts, talk tracks, and key questions on screen during every call, so there is nothing to memorize. Follow along naturally and build the muscle memory over time.',
       href: '/products/playbook',
     },
     {
@@ -66,7 +66,7 @@ export const newAgents: UseCaseEntry = {
     {
       question: 'How does Sayso help new agents get better at cold calling in real estate?',
       answer:
-        'Sayso listens to your live calls and shows coaching prompts on your screen in real time. When a prospect raises an objection, you see a proven response immediately. Instead of spending months memorizing scripts, you learn on the job with guidance on every call.',
+        'Sayso listens to your live calls and shows guidance prompts on your screen in real time. When a prospect raises an objection, you see a proven response immediately. Instead of spending months memorizing scripts, you learn on the job with guidance on every call.',
     },
     {
       question: 'Do I need to memorize scripts before I start using Sayso?',
@@ -86,11 +86,11 @@ export const newAgents: UseCaseEntry = {
     {
       question: 'How much does Sayso cost and how do I get started?',
       answer:
-        'Sayso offers individual plans that work for new agents. Visit the pricing page for current plans, or book a demo to see real-time coaching in action before you commit.',
+        'Sayso offers individual plans that work for new agents. Visit the pricing page for current plans, or book a demo to see real-time guidance in action before you commit.',
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Real-Time Guidance', href: '/products/cue' },
     { title: 'Custom Scripts', href: '/products/playbook' },
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],
@@ -106,8 +106,8 @@ export const newAgents: UseCaseEntry = {
     { title: 'Do You Need a Real Estate Coach?', href: '/blog/real-estate-coach' },
   ],
   relatedObjections: [
-    { title: '"I\'m Not Interested" \u2014 How to Respond', href: '/objections/not-interested' },
-    { title: '"I Already Have an Agent" \u2014 How to Respond', href: '/objections/already-have-an-agent' },
-    { title: '"I\'m Just Looking" \u2014 How to Respond', href: '/objections/just-looking' },
+    { title: '"I\'m Not Interested": How to Respond', href: '/objections/not-interested' },
+    { title: '"I Already Have an Agent": How to Respond', href: '/objections/already-have-an-agent' },
+    { title: '"I\'m Just Looking": How to Respond', href: '/objections/just-looking' },
   ],
 };

@@ -137,5 +137,4 @@ If a post omits these fields, `lib/blog.ts` defaults to the same paths automatic
 - `BlogPostCard.tsx` - uses `coverImage` for the grid card thumbnail
 - `BlogFeaturedPost.tsx` - uses `coverImage` for the featured post thumbnail
 - `BlogRelatedPosts.tsx` - uses `coverImage` for related post thumbnails
-- `BlogCoverImage.tsx` (via `BlogArticleHeader.tsx`) - uses `heroImage` for the article header
 - `app/blog/[slug]/page.tsx` - uses `heroImage` for OG/Twitter meta tags

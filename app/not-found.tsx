@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
+import { Button } from '@/components/ui/Button';
+import Carousel from '@/components/ui/Carousel';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
@@ -42,37 +44,31 @@ export default function NotFound() {
           <p className="font-comic text-7xl sm:text-8xl text-[#2367EE] leading-none tracking-wide">
             404
           </p>
-          <h1 className="mt-6 font-comic text-4xl sm:text-5xl lg:text-6xl text-[#1D4871] leading-[1.1] tracking-wide">
+          <h1 className="mt-6 font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[38px] sm:text-5xl lg:text-6xl leading-[1.08]">
             This page took a <span className="text-[#2367EE]">wrong turn.</span>
           </h1>
           <p className="mt-5 text-lg md:text-xl text-[#1D4871]/75 leading-relaxed max-w-[640px] mx-auto">
             The link you followed might be broken, or the page may have moved. Here are a few good places to pick things back up.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-6 py-3 text-white font-semibold hover:bg-[#1a52c2] transition-colors"
-            >
+            <Button href="/">
               Back to Home
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-[#1D4871]/20 bg-white px-6 py-3 text-[#1D4871] font-semibold hover:border-[#1D4871]/40 transition-colors"
-            >
+            </Button>
+            <Button href="/contact" variant="secondary">
               Report a Broken Link
-            </Link>
+            </Button>
           </div>
         </section>
 
         <section className="w-full px-4 md:px-6 pb-20">
-          <div className="max-w-[900px] mx-auto grid gap-4 sm:grid-cols-2">
+          <Carousel label="Popular pages" itemName="page" className="max-w-[900px] mx-auto" trackClassName="grid grid-cols-2 gap-4">
             {destinations.map((d) => (
               <Link
                 key={d.href}
                 href={d.href}
-                className="group block rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md hover:border-[#2367EE]/40 transition-all"
+                className="group block rounded-[20px] bg-white p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition duration-200"
               >
-                <h2 className="text-lg font-semibold text-[#1D4871] group-hover:text-[#2367EE] transition-colors">
+                <h2 className="font-hero text-lg font-extrabold tracking-[-0.01em] text-[#10233A] group-hover:text-[#2367EE] transition-colors">
                   {d.label}
                 </h2>
                 <p className="mt-2 text-sm text-[#1D4871]/70 leading-relaxed">
@@ -80,7 +76,7 @@ export default function NotFound() {
                 </p>
               </Link>
             ))}
-          </div>
+          </Carousel>
         </section>
       </main>
       <Footer />

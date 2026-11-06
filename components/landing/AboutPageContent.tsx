@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
 
 export function AboutPageContent() {
   return (
@@ -7,24 +8,24 @@ export function AboutPageContent() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#1D4871]/60 mb-3">
-            About
+          <p className="mb-4">
+            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">ABOUT</span>
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
+          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
             Built by an agent, for agents
           </h1>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Sayso was born from years of watching talented agents struggle on calls,
             not because they lacked skill, but because they lacked structure in the moment.
           </p>
-          <div className="mt-6 border-t-2 border-[#FFDE59]" />
+          <div className="mt-8 border-t border-[#1D4871]/10" />
         </div>
 
         {/* Founder Section */}
         <section className="mt-10">
           <div className="flex flex-col items-center text-center">
             {/* Photo */}
-            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-[3px] border-[#1D4871] v2-comic-shadow mb-6">
+            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-[20px] overflow-hidden shadow-card mb-6">
               <Image
                 src="/images/founder-kuvaal-patel.png"
                 alt="Kuvaal Patel, Founder of Sayso"
@@ -36,7 +37,7 @@ export function AboutPageContent() {
             </div>
 
             {/* Name & Title */}
-            <h2 className="text-2xl font-bold text-[#1D4871] mb-1">
+            <h2 className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] mb-1">
               Kuvaal Patel
             </h2>
             <p className="text-sm text-[#1D4871]/60 font-medium uppercase tracking-wide mb-2">
@@ -52,7 +53,7 @@ export function AboutPageContent() {
 
         {/* Origin Story */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-2xl md:text-[28px] font-extrabold tracking-[-0.02em] text-[#10233A]">
             The Story
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -74,19 +75,18 @@ export function AboutPageContent() {
 
         {/* CTA */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-2xl md:text-[28px] font-extrabold tracking-[-0.02em] text-[#10233A]">
             See it in action
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             Want to see how Sayso can help you or your team? Book a demo and we'll
             walk you through it.
           </p>
-          <a
-            href="/demo/"
-            className="inline-flex items-center gap-2 bg-[#FFDE59] hover:bg-[#f5d400] text-[#1D4871] font-bold px-6 py-3 rounded-lg transition-colors text-sm uppercase tracking-wide"
-          >
-            Book a Demo
-          </a>
+          <div>
+            <Button href="/demo/">
+              Book a demo
+            </Button>
+          </div>
         </section>
 
         {/* Bottom spacing */}

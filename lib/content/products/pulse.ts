@@ -2,7 +2,7 @@ import type { ProductEntry } from './types';
 
 export const pulse: ProductEntry = {
   slug: 'pulse',
-  updatedAt: '2026-05-02',
+  updatedAt: '2026-11-06',
   keyword: 'real estate market data during calls',
   seoTitle: 'Real Estate Market Data During Calls',
   seoDescription:
@@ -13,7 +13,6 @@ export const pulse: ProductEntry = {
     'Pulse gives you live market data during every call. Look up a zip code in real time and see the numbers you need: median prices, days on market, inventory levels, and trends. Instead of guessing, you anchor the conversation in actual data.',
     'Prospects hear specific numbers and trust that you know the market. Conversations move forward instead of stalling, and you never have to pause a call to look something up.',
   ],
-  heroVisual: 'product-showcase',
   screenshotAlt:
     'Sayso Pulse showing live zip code market data on screen during a real estate prospecting call',
   howItWorksHeading: 'How Live Market Data Works',
@@ -108,7 +107,7 @@ export const pulse: ProductEntry = {
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', slug: 'cue' },
+    { title: 'Real-Time Guidance', slug: 'cue' },
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [
