@@ -158,7 +158,7 @@ The `ProductPage` component renders sections in this exact order:
   - Paragraph 1: State the **problem** this feature solves. Lead with the pain.
   - Paragraph 2: Introduce **Sayso's solution**. Include the exact target keyword here.
   - Paragraph 3: Reinforce the outcome - what changes for the agent.
-- **Hero CTA:** Two buttons - "Book a Demo" (`/demo`) and "Download Sayso" (`/`)
+- **Hero CTA:** Two buttons - "Book a Demo" (`/demo`) and "Get Sayso" (`/`)
 - **Product visual:** the real Sayso widget in the state that fits the product (`WidgetFigure` with the preset set in `components/pages/ProductPage/data.ts`), labeled with `screenshotAlt` and a short sample-data caption
 
 ### 4. How It Works
@@ -274,7 +274,7 @@ Every feature page must include **5-8 internal links**. The component handles mo
 | 2-3 other feature pages | `relatedProducts` array | Yes (content file) |
 | 1-2 blog posts | `relatedBlogPosts` array | Yes (content file) |
 | 1+ persona pages | `personaLinks` array | Yes if pages exist (content file) |
-| `/` (homepage) | "Download Sayso" button in hero | Yes (automatic) |
+| `/` (homepage) | "Get Sayso" button in hero | Yes (automatic) |
 
 **Total automatic links:** 6 (home, features hub, demo x3, pricing)
 **Content-provided links:** 3-5 (related features + blog posts + persona pages)

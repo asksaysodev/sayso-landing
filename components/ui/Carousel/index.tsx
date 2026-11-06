@@ -45,11 +45,11 @@ export default function Carousel({ label, itemName = 'slide', loop = false, trac
     ));
 
   return (
-    <div className={className} role="region" aria-roledescription="carousel" aria-label={label}>
+    <div className={className} role="region" aria-label={label}>
       <div ref={trackRef} className={cx(trackClassName, styles.track)}>
         {loop && clones('before')}
         {slides.map((slide, i) => (
-          <div key={i} className={styles.slide}>
+          <div key={i} className={styles.slide} role="group" aria-label={`${i + 1} of ${slides.length}`}>
             {slide}
           </div>
         ))}

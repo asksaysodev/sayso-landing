@@ -2,7 +2,7 @@ import type { ProductEntry } from './types';
 
 export const playbook: ProductEntry = {
   slug: 'playbook',
-  updatedAt: '2026-04-29',
+  updatedAt: '2026-11-06',
   keyword: 'custom call scripts real estate',
   seoTitle: 'Custom Call Scripts for Real Estate Agents',
   seoDescription:

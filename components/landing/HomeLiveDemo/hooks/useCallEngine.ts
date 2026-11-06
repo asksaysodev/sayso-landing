@@ -59,6 +59,8 @@ export function useCallEngine(hooks: EngineHooks) {
 
   const stopCall = () => {
     callToken.current++;
+    // A fresh call should replay the agent's Pulse answer.
+    phaseB2Done.current = false;
     zipToken.current++;
     clearInterval(clock.current);
     clearTimeout(talkTimer.current);
@@ -147,7 +149,8 @@ export function useCallEngine(hooks: EngineHooks) {
     play: () => set({ play: !s.current.play }),
     stop() {
       stopCall();
-      set(STOPPED);
+      // Stopping mid Phase A cancels its done callback; unlock the tour's Next button anyway.
+      set({ ...STOPPED, phaseADone: true });
     },
     reset() {
       cancelAll();

@@ -11,6 +11,7 @@
  *     <SaysoWidget {...WIDGET_PRESETS.cues} />
  *   </WidgetScaler>
  */
+import { inter } from './font';
 import { cx } from '@/lib/utils/cx';
 import styles from './SaysoWidget.module.css';
 import { makeBind } from './bind';
@@ -25,7 +26,7 @@ export default function SaysoWidget(props: SaysoWidgetProps) {
 
   if (props.view === 'alert') {
     return (
-      <div className={cx(styles.root, !interactive && styles.static, props.className)} aria-hidden={interactive ? undefined : true}>
+      <div className={cx(inter.variable, styles.root, !interactive && styles.static, props.className)} aria-hidden={interactive ? undefined : true}>
         <CallAlert
           leaving={props.alertLeaving}
           nudge={props.alertNudge}

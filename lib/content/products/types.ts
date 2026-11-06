@@ -26,5 +26,4 @@ export interface ProductEntry {
   featureList: string[];
   /** Screen reader description of the hero widget picture. */
   screenshotAlt: string;
-  ogImage?: string;
 }

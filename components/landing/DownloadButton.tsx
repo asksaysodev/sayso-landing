@@ -6,15 +6,14 @@ import { Button } from '@/components/ui/Button';
 
 interface DownloadButtonProps {
   analyticsId: string;
-  label?: string;
 }
 
-export function DownloadButton({ analyticsId, label = 'Get Sayso' }: DownloadButtonProps) {
+export function DownloadButton({ analyticsId }: DownloadButtonProps) {
   const { openSignup } = useDemoCalendar();
 
   return (
     <Button onClick={openSignup} data-analytics-id={analyticsId}>
-      {label}
+      Get Sayso
     </Button>
   );
 }
