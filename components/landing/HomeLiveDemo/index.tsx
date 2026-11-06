@@ -15,17 +15,22 @@ import { CoachCard } from './components/CoachCard';
 import { StageCaption } from './components/StageCaption';
 import { TourPointer } from './components/TourPointer';
 import { useDemoTour } from './hooks/useDemoTour';
+import { useStageFit } from './hooks/useStageFit';
 
 export function HomeLiveDemo() {
   const stageRef = useRef<HTMLDivElement>(null);
+  const padRef = useRef<HTMLDivElement>(null);
+  const captionRef = useRef<HTMLDivElement>(null);
+  const coachRef = useRef<HTMLDivElement>(null);
   const demo = useDemoTour();
+  const fit = useStageFit(padRef, captionRef, coachRef);
   const pointerActive = !demo.starting && !!demo.widget.highlight;
   const w = demo.widget;
   const layoutKey = [demo.stepIndex, w.view, w.live, w.insightOpen, w.pulseOpen, w.zipText ?? '', w.playbookOpen, w.cues?.length, w.note].join('|');
 
   return (
     <div id="demo" className={`${inter.variable} mx-auto mt-12 w-full max-w-[1160px] scroll-mt-20 px-4 pb-3`}>
-      <div role="region" aria-label="Guided demo" aria-live="polite">
+      <div ref={coachRef} role="region" aria-label="Guided demo" aria-live="polite">
         <CoachCard
           stepIndex={demo.stepIndex}
           phaseADone={demo.phaseADone}
@@ -35,9 +40,19 @@ export function HomeLiveDemo() {
         />
       </div>
       <div ref={stageRef} className={styles.stage}>
-        <div className={styles.stagePad}>
-          <StageCaption caption={demo.caption} />
-          <WidgetScaler width={1010} narrowWidth={demo.narrowWidth} initialHeight="min(62px, calc((100vw - 54px) * 0.1292))">
+        <div
+          ref={padRef}
+          className={styles.stagePad}
+          data-fit={fit ? '' : undefined}
+          style={fit ? { height: fit.height } : undefined}
+        >
+          <StageCaption ref={captionRef} caption={demo.caption} />
+          <WidgetScaler
+            width={1010}
+            narrowWidth={demo.narrowWidth}
+            maxScale={fit?.maxScale}
+            initialHeight="min(62px, calc((100vw - 54px) * 0.1292))"
+          >
             <SaysoWidget {...demo.widget} />
           </WidgetScaler>
           <span className={styles.sampleNote}>Sample call and market data</span>

@@ -23,6 +23,8 @@ interface WidgetScalerProps {
   stackBelow?: number;
   /** Fixed frame height. Content scales to fit and is centered vertically. */
   maxHeight?: number;
+  /** Upper bound on the scale, e.g. to fit a fixed height chosen by the page. */
+  maxScale?: number;
   /** Height reserved before measuring (px or any CSS length). Ignored when `maxHeight` is set. */
   initialHeight?: number | string;
   className?: string;
@@ -47,6 +49,7 @@ export function WidgetScaler({
   narrowWidth,
   stackBelow = 760,
   maxHeight,
+  maxScale = 1,
   initialHeight = 0,
   className,
   style,
@@ -75,12 +78,12 @@ export function WidgetScaler({
       return;
     }
     const ih = inner.offsetHeight || 1;
-    const scale = Math.min(1, cw / target, maxHeight ? maxHeight / ih : 1);
+    const scale = Math.min(1, maxScale, cw / target, maxHeight ? maxHeight / ih : 1);
     inner.style.transform = `translateX(-50%) scale(${scale})`;
     inner.style.top = maxHeight ? `${(maxHeight - ih * scale) / 2}px` : '0px';
     outer.style.height = `${maxHeight || ih * scale}px`;
     setReady(true);
-  }, [width, narrowWidth, stackBelow, maxHeight, designWidth]);
+  }, [width, narrowWidth, stackBelow, maxHeight, maxScale, designWidth]);
 
   // Re-measure after every render: the widget's content may have changed.
   useIsomorphicLayoutEffect(measure);
