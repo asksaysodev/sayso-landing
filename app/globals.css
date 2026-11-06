@@ -34,25 +34,6 @@
   }
 }
 
-/* === Product Showcase Animations === */
-
-/* Glassmorphism panels matching real product */
-.showcase-glass {
-  background: rgba(2, 25, 47, 0.85);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-}
-
-.showcase-glass-strong {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 0.5px solid rgba(255, 255, 255, 0.18);
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.18),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08);
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }

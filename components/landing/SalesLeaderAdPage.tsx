@@ -4,7 +4,7 @@ import { Check, TrendingUp, Users, Zap } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
-import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
+import { PersonaStepWidget } from '@/components/landing/PersonaAdShared/PersonaStepWidget';
 
 export function SalesLeaderAdPage() {
   return (
@@ -70,7 +70,7 @@ export function SalesLeaderAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Agents start Sayso when they begin calling</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualStartSayso />
+                <PersonaStepWidget preset="bar" />
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export function SalesLeaderAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Real-time prompts keep the conversation on track</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualPrompts />
+                <PersonaStepWidget preset="cues" />
               </div>
             </div>
           </div>

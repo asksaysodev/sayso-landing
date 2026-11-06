@@ -10,7 +10,7 @@ This document describes the layout, style, and component pattern used for person
 |------|---------|
 | `components/landing/BrokerAdPage.tsx` | The broker page layout - use this as the template |
 | `app/broker/page.tsx` | Next.js route - just imports and renders `BrokerAdPage` |
-| `components/landing/ThreeStepsSection/StepVisuals.tsx` | Reusable dark UI mockups used in the How It Works cards |
+| `components/landing/PersonaAdShared/PersonaStepWidget.tsx` | The real Sayso widget (toolbar or live cues) in the How It Works step cards |
 
 ---
 
@@ -63,9 +63,9 @@ This document describes the layout, style, and component pattern used for person
 - **Two-column grid** (`grid grid-cols-2 gap-4`) of white cards:
   - Each card: `bg-white rounded-2xl overflow-hidden shadow-sm`
   - Card header: `font-comic text-lg` title + `text-xs text-[#1D4871]/60` description
-  - Card visual: `h-36 mx-3 mb-3 rounded-xl overflow-hidden` containing a `StepVisual` component
-  - Step 1 uses `<StepVisualStartSayso />` - shows the "Launch Coach" toggle stacked above "Select Prospect" button on a dark gradient background
-  - Step 2 uses `<StepVisualPrompts />` - shows the Sayso status bar + live prompt suggestion card on a dark gradient background
+  - Card visual: `h-36 mx-3 mb-3 rounded-xl overflow-hidden` containing a `PersonaStepWidget`
+  - Step 1 uses `<PersonaStepWidget preset="bar" />` - the real Sayso toolbar mid-call
+  - Step 2 uses `<PersonaStepWidget preset="cues" />` - the real Sayso widget with live cues open
 
 ### 6. Benefits (inside the gray panel)
 

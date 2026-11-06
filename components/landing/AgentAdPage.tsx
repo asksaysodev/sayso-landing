@@ -4,7 +4,7 @@ import { Check, MessageCircle, Zap, FileText } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
-import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
+import { PersonaStepWidget } from '@/components/landing/PersonaAdShared/PersonaStepWidget';
 
 function HandwrittenNote() {
   return (
@@ -138,7 +138,7 @@ export function AgentAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Open the app before your prospecting block</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualStartSayso />
+                <PersonaStepWidget preset="bar" />
               </div>
             </div>
 
@@ -149,7 +149,7 @@ export function AgentAdPage() {
                 <p className="text-xs text-[#1D4871]/60">It detects what the prospect says and surfaces the right prompts in real time</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualPrompts />
+                <PersonaStepWidget preset="cues" />
               </div>
             </div>
           </div>
