@@ -50,11 +50,7 @@ export function PricingCards({ analyticsIds }: { analyticsIds: PricingAnalyticsI
               AGENT_SUPPORT_SUMMARY,
             ]}
           />
-<<<<<<< HEAD
           <Button onClick={openSignup} className="self-start" data-analytics-id={analyticsIds.agent}>
-=======
-          <Button onClick={openSignup} className="self-start" data-analytics-id="cta-download-home-pricing-individual">
->>>>>>> feat/redesign-homepage
             Claim early access
           </Button>
         </div>
