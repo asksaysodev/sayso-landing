@@ -1,16 +1,20 @@
 import type { Metadata } from 'next';
-import { Footer } from "@/components/landing/Footer";
-import { HeroWithVideo } from "@/components/landing/HeroWithVideo";
-import { PainPointPanel } from "@/components/landing/PainPointPanel";
-import SaysoNavbar from "@/components/landing/SaysoNavbar";
-import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
-import { ThreeStepsSection } from "@/components/landing/ThreeStepsSection";
-import { TransformationSection } from "@/components/landing/TransformationSection";
-import { WhoItsForSection } from '@/components/landing/WhoItsForSection';
-import { FAQSection } from '@/components/landing/FAQSection';
-import { DemoLiftCard } from '@/components/DemoLiftCard';
+import { Footer } from '@/components/landing/Footer';
+import SaysoNavbar from '@/components/landing/SaysoNavbar';
+import { HomeTopStrip } from '@/components/landing/HomeTopStrip';
+import { HomeHero } from '@/components/landing/HomeHero';
+import { HomeLiveDemo } from '@/components/landing/HomeLiveDemo';
+import { HomeHowItWorks } from '@/components/landing/HomeHowItWorks';
+import { HomeFeatures } from '@/components/landing/HomeFeatures';
+import { HomeFitCards } from '@/components/landing/HomeFitCards';
+import { HomeCompare } from '@/components/landing/HomeCompare';
+import { HomeReviews } from '@/components/landing/HomeReviews';
+import { HomePricing } from '@/components/landing/HomePricing';
+import { HomeFAQ } from '@/components/landing/HomeFAQ';
+import { FAQ_ITEMS } from '@/components/landing/HomeFAQ/data';
+import { HomeFinalCta } from '@/components/landing/HomeFinalCta';
 import { siteUrl } from '@/lib/config';
-import { generateSoftwareAppJsonLd } from '@/lib/seo/schema';
+import { generateFAQPageJsonLd, generateSoftwareAppJsonLd } from '@/lib/seo/schema';
 
 export const metadata: Metadata = {
   title: {
@@ -43,23 +47,29 @@ const softwareAppJsonLd = generateSoftwareAppJsonLd({
   audienceType: 'Real estate agents',
 });
 
+// Built from the same list as the visible FAQ, so the two always match.
+const faqJsonLd = generateFAQPageJsonLd(FAQ_ITEMS);
+
 export default function Home() {
-    return (
-        <div className="relative bg-white">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
-            />
-            <SaysoNavbar />
-            <HeroWithVideo />
-            <TestimonialsSection />
-            <WhoItsForSection />
-            <PainPointPanel />
-            <TransformationSection />
-            <ThreeStepsSection />
-            <FAQSection />
-            <Footer />
-            <DemoLiftCard />
-        </div>
-    );
+  return (
+    <div className="relative overflow-x-clip bg-[#F4F4F5] text-[#10233A]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <HomeTopStrip />
+      <SaysoNavbar />
+      <main id="top">
+        <HomeHero />
+        <HomeLiveDemo />
+        <HomeHowItWorks />
+        <HomeFeatures />
+        <HomeFitCards />
+        <HomeCompare />
+        <HomeReviews />
+        <HomePricing />
+        <HomeFAQ />
+        <HomeFinalCta />
+      </main>
+      <Footer />
+    </div>
+  );
 }

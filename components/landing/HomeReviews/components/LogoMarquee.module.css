@@ -1,0 +1,106 @@
+/*
+ * Two rows of team logos scrolling in opposite directions. Each row renders its
+ * list twice, so shifting the track by half its width loops without a seam.
+ */
+.marquee {
+  display: grid;
+  gap: 28px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 46s linear infinite;
+}
+.reverse {
+  animation-direction: reverse;
+}
+.marquee:hover .track,
+.marquee:focus-within .track,
+.paused .track {
+  animation-play-state: paused;
+}
+.pause {
+  display: block;
+  margin: 14px auto 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #556b86;
+}
+.pause:hover {
+  color: #1d4871;
+}
+.pause:focus-visible {
+  outline: 2px solid #2367ee;
+  outline-offset: 2px;
+}
+.group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 56px;
+  padding-right: 56px;
+  margin: 0;
+  list-style: none;
+}
+.logo {
+  height: 32px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+.square {
+  height: 48px;
+}
+.wide {
+  height: 26px;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 640px) {
+  .marquee {
+    gap: 20px;
+  }
+  .group {
+    gap: 40px;
+    padding-right: 40px;
+  }
+  .logo {
+    height: 26px;
+    max-width: 150px;
+  }
+  .square {
+    height: 38px;
+  }
+  .wide {
+    height: 21px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    width: auto;
+  }
+  .group {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+    row-gap: 20px;
+    width: 100%;
+  }
+  .group[aria-hidden='true'],
+  .pause {
+    display: none;
+  }
+}

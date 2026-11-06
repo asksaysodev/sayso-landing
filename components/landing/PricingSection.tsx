@@ -2,6 +2,15 @@
 
 import { useState } from 'react';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
+import {
+  AGENT_SUPPORT,
+  ANNUAL_SAVINGS,
+  BILLING_TOGGLE_ANALYTICS,
+  INDIVIDUAL_PLAN_NAME,
+  INDIVIDUAL_PRICE,
+  PLAN_PRODUCTS,
+  TEAM_FEATURES,
+} from '@/lib/content/pricing';
 
 type BillingPeriod = 'annual' | 'monthly';
 
@@ -40,21 +49,21 @@ function BillingToggle({
         type="button"
         onClick={() => onChange('annual')}
         aria-pressed={billing === 'annual'}
-        data-analytics-id="pricing-billing-toggle-annual"
+        data-analytics-id={BILLING_TOGGLE_ANALYTICS.annual}
         className={`inline-flex items-center gap-2 rounded-full px-4 md:px-5 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] ${
           billing === 'annual' ? 'bg-[#2367EE] text-white' : 'bg-transparent text-[#1D4871] hover:bg-[#F8F8FA]'
         }`}
       >
         Annual
         <span className="bg-[#FFDE59] text-[#1D4871] border border-[#1D4871] rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide whitespace-nowrap">
-          SAVE $649
+          SAVE {ANNUAL_SAVINGS}
         </span>
       </button>
       <button
         type="button"
         onClick={() => onChange('monthly')}
         aria-pressed={billing === 'monthly'}
-        data-analytics-id="pricing-billing-toggle-monthly"
+        data-analytics-id={BILLING_TOGGLE_ANALYTICS.monthly}
         className={`rounded-full px-4 md:px-5 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] ${
           billing === 'monthly' ? 'bg-[#2367EE] text-white' : 'bg-transparent text-[#1D4871] hover:bg-[#F8F8FA]'
         }`}
@@ -145,29 +154,18 @@ export function PricingSection() {
 
   const plans: PricingPlan[] = [
     {
-      title: 'Individual Agent+',
-      price: isAnnual ? '$125 / month' : '$179 / month',
-      priceNote: isAnnual ? '*Billed annually, save $649.' : '*Billed monthly, cancel anytime.',
+      title: INDIVIDUAL_PLAN_NAME,
+      price: `${isAnnual ? INDIVIDUAL_PRICE.annual : INDIVIDUAL_PRICE.monthly} / month`,
+      priceNote: isAnnual ? `*Billed annually, save ${ANNUAL_SAVINGS}.` : '*Billed monthly, cancel anytime.',
       description: 'For agents who want daily consistency.',
       groups: [
         {
           header: 'Sayso:',
-          bullets: [
-            'Cue: real-time conversation intelligence',
-            'Smart Capture: automatic call notes sorted and synced to your CRM',
-            'Pulse: live market data mid-call, including prices, days on market, and inventory',
-            'Playbook: your custom scripts on screen, right next to Cue',
-            'Composer: custom script generator, built on NLP, psychology, proven frameworks',
-          ],
+          bullets: PLAN_PRODUCTS.map((p) => `${p.name}: ${p.detail}`),
         },
         {
           header: 'Agent Support:',
-          bullets: [
-            'Weekly Virtual Office Hours',
-            '1-on-1 onboarding',
-            'Dashboard analytics',
-            'Email Support',
-          ],
+          bullets: AGENT_SUPPORT,
         },
       ],
       buttonLabel: 'Claim early access',
@@ -184,14 +182,7 @@ export function PricingSection() {
       groups: [
         {
           header: 'Every agent gets what’s in Individual Agent+, and the team gets:',
-          bullets: [
-            'Custom team implementation + train-the-trainer',
-            'Leadership dashboard with unlimited teams and groups',
-            'Priority Support',
-            'Dedicated CSM',
-            '1-on-1 quarterly impact reviews with leadership',
-            'Conversion Benchmarking',
-          ],
+          bullets: TEAM_FEATURES,
         },
       ],
       buttonLabel: 'Assemble your team',

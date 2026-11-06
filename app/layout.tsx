@@ -8,10 +8,10 @@ import { headerNav, primaryNav, resourcesFeatured } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
 import './globals.css'
 
-// Load Manrope for hero text
+// Load Manrope for hero text (800 for the homepage headlines)
 const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['700'],
+  weight: ['700', '800'],
   variable: '--font-manrope',
   display: 'swap',
 })
@@ -22,6 +22,7 @@ const bangers = Bangers({
   variable: '--font-bangers',
   display: 'swap',
 })
+
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',

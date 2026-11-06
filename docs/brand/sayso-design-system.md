@@ -92,14 +92,15 @@ colors: {
 
 ## 4. Typography
 
-Four font families are in play. Manrope and Bangers load globally in `app/layout.tsx`; Caveat loads only on the `/agent` and `/isa` ad-page routes (scoped in their own `layout.tsx`).
+Five font families are in play. Manrope (700 and 800), Bangers and Inter load globally in `app/layout.tsx`; Caveat loads only on the `/agent` and `/isa` ad-page routes (scoped in their own `layout.tsx`). Inter is only used inside the Sayso widget rebuild, to match the real app.
 
 | Tailwind token | Family | CSS variable | Loaded | Use |
 |----------------|--------|--------------|--------|-----|
-| `font-hero` | Manrope (Bold 700) | `--font-manrope` | Global | Hero headlines, large display text |
+| `font-hero` | Manrope (700, 800) | `--font-manrope` | Global | Hero headlines, large display text. The homepage headlines use 800 (`font-extrabold`) |
 | `font-comic` | Bangers (400) | `--font-bangers` | Global | Comic-style headers, POW badges, punchy labels |
 | `font-sans` | Helvetica Neue / Helvetica / Arial / system-ui | (system stack) | Always | Body, UI, section headers (the default `body` font) |
 | `font-handwriting` | Caveat (400/500) | `--font-caveat` | `/agent`, `/isa` only | Handwritten accents on ad pages |
+| (none, CSS variable only) | Inter (400/500/600) | `--font-inter` | Global | The Sayso widget (`components/SaysoWidget`) and the homepage Features panel |
 
 ```ts
 // tailwind.config.ts
@@ -244,37 +245,58 @@ Motion philosophy: bounce and spring easing (`cubic-bezier(.34,1.56,.64,1)`) are
 
 ---
 
-## 7. Glassmorphism / Product Surface
+## 7. Product Surface: the Sayso Widget
 
-The product-showcase and in-app coach widget use a dark glassmorphism surface. The landing page replicates it with `.showcase-glass` so the demo feels like the real product.
+Wherever the site shows the product it shows the widget, rebuilt as a React component in `components/SaysoWidget/`. It is a faithful copy of the desktop app's widget, not an illustration. PR 3 of the redesign reuses it on the product pages.
 
-```css
-/* Landing-page showcase glass (app/globals.css) */
-.showcase-glass {
-  background: rgba(2, 25, 47, 0.85);
-  backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
-}
-.showcase-glass-strong {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border: 0.5px solid rgba(255,255,255,0.18);
-  box-shadow: 0 4px 16px rgba(0,0,0,.18), inset 0 1px 1px rgba(255,255,255,.08);
-}
+### Using it
+
+```tsx
+import SaysoWidget, { WidgetScaler } from '@/components/SaysoWidget';
+import { WIDGET_PRESETS } from '@/components/SaysoWidget/data';
+
+<WidgetScaler width={604}>
+  <SaysoWidget {...WIDGET_PRESETS.cues} />
+</WidgetScaler>
 ```
 
-The real coach widget (in the web app) uses these reference tokens. Match them when recreating the widget on any surface:
+- **Props-driven.** Every visible state is a prop (`types.ts` documents them all): `view` (`alert` or `widget`), `lead`, `live`, `time`, `insightOpen`, `cues`, `captured`, `note`, `pulseOpen`, `playbookOpen`, `stacked`, plus guided-demo highlights (`highlight`, `highlightDot`, `watchInsight`).
+- **Static or live.** Leave `interactive` off for a picture: it is hidden from assistive tech and ignores the pointer. Turn it on and pass `onAction(control)` / `onDotSelect(index)` to drive a live demo, as `components/landing/HomeLiveDemo` does.
+- **Presets.** `WIDGET_PRESETS` in `data.ts` has the standard static views: `alert`, `bar`, `cues`, `notes`, `smartCapture`, `pulse`, `playbook`. Import presets from `data.ts`, not from the client `index.tsx`, so server components get plain objects.
+- **Scaling.** The widget is drawn at its true size (584px column, 604px design width; 1010px with Playbook beside it). `WidgetScaler` scales it down uniformly to fit (never above 1, never distorted). `narrowWidth` switches to the stacked layout below 760px of container width (Playbook stacks under the column). `maxHeight` fixes the frame height and fits the widget inside it. `initialHeight` reserves space before the first measurement so nothing shifts.
+- **Sample data.** Market numbers (zip 33331, Miami) and the LPMAMA notes are sample data. Any page that shows them labels them, e.g. "Sample call and market data".
+
+### What it contains
+
+| Part | Behavior |
+|------|----------|
+| Call alert | White Sayso bolt (`/images/bolt-white.png`), "Sayso identified a call", Start and an X with a 12s countdown ring. Start morphs it into the toolbar. |
+| Toolbar | Grip, lead pill (B Buyer / S Seller), zip pill, reset / stop / timer while live, check button (cues and LPMAMA panel) and list button (Playbook). |
+| Pulse | One-line labels: avg days on market, 90-day price trend, avg price per ft², inventory. Optional count-up when it opens. |
+| Cues | Arrow cues only, newest on top and highlighted, up to four. No timestamps and no header. |
+| LPMAMA | Six letters. A captured letter takes its color (`DOT_COLORS`) with a small pop. Its note bubble always sits under its letter and follows it as the panel grows. Copy button shows "Copied notes for your CRM". |
+| Playbook | The script for the lead type, `[Placeholders]` highlighted. Opens beside the column, or under it when stacked. |
+
+### Tokens
+
+Styles live in `components/SaysoWidget/SaysoWidget.module.css` as CSS variables on the widget root:
 
 | Token | Value | Use |
 |-------|-------|-----|
-| Coach background | `#1D2D40E5` (90% opacity dark navy) | Panels, toolbar |
-| Sayso blue | `#2367EE` | Primary CTA, start button |
-| Sayso indigo | `#1D4871` | Secondary buttons, toggle states |
-| Border | `#E4E4E7` | Hairlines |
-| White | `rgb(244,244,245)` | Avatars, light text |
-| Destructive | `#DC2626` | Stop button |
-| Success | `#219e66` | Active capture toggle |
+| `--sw-bg` | `linear-gradient(115deg, #2d4560, #1f3550 38%, #284665 52%, #1a2e48)` | Every widget surface |
+| `--sw-card` / `--sw-card-2` | `rgba(255,255,255,.09)` / `.13` | Pulse card, cue list |
+| `--sw-text` / `--sw-dim` / `--sw-ph` | `#F4F4F5` / `rgba(244,244,245,.68)` / `#8FA9CB` | Text, secondary text, placeholders |
+| `--sw-pill` / `--sw-zip` | `rgba(255,255,255,.16)` / `#2450C9` | Lead pill, zip pill |
+| `--sw-reset` / `--sw-stop` / `--sw-timer` | `#D8932B` / `#DC2626` / `#141518` | Live controls |
+| `--sw-icon` | `#2B4A6D` (blue `#2367EE` when pressed) | Round icon buttons |
 
-Widget surface treatment: `border-radius: 16px`, `backdrop-filter: blur(200px)`, `box-shadow: inset 0 1px 0 rgba(114,126,137,0.6)`. Inner cards use `rgba(255,255,255,0.08)` with a `0.5px solid rgba(255,255,255,0.15)` border and `border-radius: 12px`. Widget typography is the Helvetica stack at 13.5 to 16px. Pills and buttons are `border-radius: 100px`, 32px tall. Coaching cue bubbles slide in from the left with a spring (`300ms cubic-bezier(.34,1.56,.64,1)`).
+Surfaces are 26px radius with `inset 0 1px 0 rgba(140,160,182,.55)` and a soft drop shadow; the toolbar is 58px tall with 36px pills. Font is Inter at 13.5 to 17px. Motion: spring `cubic-bezier(.34,1.56,.64,1)` for pops and cues, smooth `cubic-bezier(.16,1,.3,1)` for panels opening. All widget motion is switched off under `prefers-reduced-motion`.
+
+The guided demo marks the control to press with a pulsing yellow ring (`.target`) and the panel to watch with a yellow outline (`.watch`); the stage adds a yellow "Click here" pointer.
+
+### Older glass utilities
+
+`.showcase-glass` and `.showcase-glass-strong` in `app/globals.css` still serve the older product showcases (`components/landing/showcases`, `CRMDialerShowcase`). Do not use them in new work; use the widget.
 
 ---
 
@@ -328,9 +350,32 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 
 ## 10. Layout & Page Structure
 
-Recommended homepage flow (matches the live page): Hero (promise + CTAs + product visual with superhero) → pain points ("Without Sayso") → transformation / victory metrics (dark navy + starburst) → three-step how-it-works (comic arrow connectors) → product showcase (glassmorphism demo) → social proof → final CTA + footer.
+### Homepage (November 2026)
 
-Each section does one job. Favor whitespace and short blocks. The comic system supplies the visual energy, so copy and layout can stay clean and scannable.
+`app/page.tsx` composes these sections, in order. Each lives in its own folder under `components/landing/`:
+
+1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens the Calendly demo pop-up (`openDemoCalendar`, `cta-team-platform-strip`).
+2. **Navbar** (shared, `SaysoNavbar`).
+3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Get Sayso / Book a demo / Try it, meta line, centered social proof with a rotating quote, Ask AI links.
+4. **Guided live demo** (`HomeLiveDemo`, `#demo`): step card above the stage, then the live widget. Six steps: Start, watch cues, Smart Capture note, Pulse, Playbook, hang up. Ends with the superhero card.
+5. **How it works** (`HomeHowItWorks`, `#how`): three cards with static widget views.
+6. **Features** (`HomeFeatures`, `#features`): dark app-style panel, product tabs on the left, fixed-height panel on the right.
+7. **Made to fit** (`HomeFitCards`, `#fits`): six cards (CRM, dialers, lead types, scripts, the bar, setup).
+8. **Compare** (`HomeCompare`, `#compare`): Sayso versus role-play, call recording review and printed scripts.
+9. **Reviews** (`HomeReviews`, `#reviews`): four agent quotes linking to their videos, then a two-row team logo marquee (rows scroll in opposite directions, pause on hover, sit still with reduced motion). Logos are black silhouettes in `public/team-logos/`; the hero bubbles use square crops in `public/team-logos/marks/`.
+10. **Pricing** (`HomePricing`, `#pricing`): monthly / annual toggle, Individual Agent+ and Teams and Brokerages.
+11. **FAQ** (`HomeFAQ`, `#faq`): grouped questions. The same data feeds the FAQPage JSON-LD in `app/page.tsx`.
+12. **Final call to action** (`HomeFinalCta`) with the floating superhero, then the footer.
+
+### Layout rules
+
+- Page column: 1160px max with a 16px gutter (`wrap` in `components/landing/HomeShared/styles.ts`). Sections use `section` (96px vertical, 68px at 640px and below) and alternate the page background `#F4F4F5` with the `wash` background `#E3E8EC` plus faint halftone dots.
+- Section headers: yellow Bangers label, Manrope 800 headline with a muted second half (`#6b7f99`, at least 3:1 on `#F4F4F5` and the `#E3E8EC` wash).
+- Breakpoints: 960px (grids become carousels, Features stacks), 640px (tighter spacing).
+- **Carousels** (`components/ui/Carousel`): a grid on desktop; at 960px and below a swipeable scroll-snap row with peeking edges and prev/next arrows. Finite for How it works and Compare, infinite (`loop`) for Made to fit and Reviews. Arrow presses use a timer-based tween because smooth scrolling is unreliable with scroll-snap. Clones are aria-hidden and their links are out of the tab order.
+- Section ids `#how`, `#features`, `#pricing` and `#faq` are linked from the navbar; keep them.
+
+Each section does one job. Favor whitespace and short blocks.
 
 ---
 
