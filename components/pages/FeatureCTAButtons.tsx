@@ -22,7 +22,7 @@ export function FeatureCTAButtons({
 
   return (
     <div className={`flex flex-wrap items-center gap-x-3 gap-y-2.5 ${className}`}>
-      <Button withArrow onClick={openSignup} data-analytics-id={downloadAnalyticsId}>
+      <Button onClick={openSignup} data-analytics-id={downloadAnalyticsId}>
         Get Sayso
       </Button>
       <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={demoAnalyticsId}>

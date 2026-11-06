@@ -20,7 +20,7 @@ export function CloseSection() {
           The next call is the one that counts.
         </h2>
         <div className="mt-9 flex items-center justify-center gap-x-3 gap-y-2.5 flex-wrap">
-          <Button withArrow onClick={openSignup} data-analytics-id="cta-download-differences-close">
+          <Button onClick={openSignup} data-analytics-id="cta-download-differences-close">
             Get Sayso
           </Button>
           <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id="cta-book-demo-differences-close">

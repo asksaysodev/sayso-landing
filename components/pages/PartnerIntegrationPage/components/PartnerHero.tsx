@@ -57,7 +57,7 @@ export function PartnerHero({ entry }: PartnerHeroProps) {
 
         {/* CTA */}
         <div className="mt-9">
-          <Button href="#demo-form" withArrow data-analytics-id={`partner-hero-cta-${entry.slug}`}>
+          <Button href="#demo-form" data-analytics-id={`partner-hero-cta-${entry.slug}`}>
             {entry.heroCtaText}
           </Button>
         </div>

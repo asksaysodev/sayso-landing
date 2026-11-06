@@ -35,7 +35,7 @@ export function DifferencesHero() {
           opportunity is still winnable.
         </p>
         <div className="mt-9 flex items-center justify-center gap-x-3 gap-y-2.5 flex-wrap">
-          <Button withArrow onClick={scrollToAnswer} data-analytics-id="cta-see-difference-differences-hero">
+          <Button onClick={scrollToAnswer} data-analytics-id="cta-see-difference-differences-hero">
             Here is the difference
           </Button>
           <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id="cta-book-demo-differences-hero">

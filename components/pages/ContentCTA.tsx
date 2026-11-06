@@ -27,7 +27,7 @@ export function ContentCTA({
             {subheading}
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Button withArrow onClick={openSignup} data-analytics-id={`cta-download-${location}`}>
+            <Button onClick={openSignup} data-analytics-id={`cta-download-${location}`}>
               Get Sayso
             </Button>
             <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}`}>

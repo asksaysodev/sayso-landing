@@ -13,7 +13,7 @@ export function DownloadButton({ analyticsId, label = 'Get Sayso' }: DownloadBut
   const { openSignup } = useDemoCalendar();
 
   return (
-    <Button withArrow onClick={openSignup} data-analytics-id={analyticsId}>
+    <Button onClick={openSignup} data-analytics-id={analyticsId}>
       {label}
     </Button>
   );
