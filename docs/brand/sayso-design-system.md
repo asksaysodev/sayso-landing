@@ -9,15 +9,22 @@
 
 ## 1. Brand Identity & Vibe
 
-Sayso is real-time, in-call guidance that helps real estate agents say the right thing at the right moment. The site turns that promise into a **comic-book / superhero** visual language: bold panels, hard offset shadows, halftone dot textures, action starbursts, and a friendly superhero character. The agent is the hero; Sayso is the sidekick in their ear.
+Sayso is real-time, in-call guidance that helps real estate agents say the right thing at the right moment. Since the November 2026 redesign the site is **clean and product-first**: a light, flat page with soft shadows and hairline borders, built around the real Sayso widget. The comic and superhero identity stays, in small doses.
 
-**The feel in one line:** confident, energetic, and human, with comic-book punch instead of generic SaaS minimalism.
+**The feel in one line:** calm, confident and practical, with a little comic personality.
 
 What the visual system communicates:
-- **Bold and decisive** through thick borders and hard "comic" shadows rather than soft, subtle elevation.
-- **Energetic** through starbursts, speed lines, and floating/flying motion.
-- **Friendly and approachable** through the superhero character, rounded shapes, and warm yellow accents.
-- **Trustworthy** through the steady navy primary and a clean, readable body typeface.
+- **The product is the hero.** Wherever the site shows Sayso, it shows the real widget (toolbar, cues, LPMAMA, Pulse, Playbook), not an illustration or a made-up screen.
+- **Calm and trustworthy** through flat surfaces, soft elevation, the steady navy and generous whitespace.
+- **Friendly** through the yellow labels, Bangers on small headings and the superhero in the final call to action.
+
+### Where the comic identity still appears
+- Yellow section labels and badges (`v2-pow-badge`, Bangers, no border or shadow).
+- Bangers on small headings: menu columns, footer columns, FAQ group titles.
+- The superhero illustration in the closing call to action and the end of the homepage demo.
+- The halftone dot texture on light section backgrounds, kept very faint.
+
+Hard offset shadows, thick navy borders, tilted cards, glows, starbursts and speed lines are retired. The ad landing pages (`/founderpricing`, `/webinar/offer`) keep the old look for now by wrapping their page in `.legacy-comic`; remove that wrapper when they are redesigned.
 
 ---
 
@@ -122,9 +129,9 @@ Type scale tokens (`text-hero` 30px, `text-heading` 18px, `text-body` 16px, `tex
 
 ---
 
-## 5. The Comic-Book Visual System (signature)
+## 5. The Comic-Book Utilities (legacy)
 
-These utility classes live in `app/globals.css` under the `V2 Comic Book` block. They are the heart of the Sayso look. Navy `#1D4871` is the shadow/border color; blue `#2367EE` and yellow `#FFDE59` are the accents.
+These utility classes live in `app/globals.css` under the `V2 Comic Book` block. **They now render flat everywhere** except inside `.legacy-comic`: the `Flat redesign` block right after them turns hard shadows into soft ones, thick borders into hairlines, and switches off tilts, glows, starbursts, speed lines and action lines. Do not use them in new work; use the flat patterns in Section 8. The definitions below describe what they still do inside `.legacy-comic`.
 
 ### Hard comic shadows
 Offset solid shadows (no blur) give the flat, printed-panel feel.
@@ -275,13 +282,12 @@ Widget surface treatment: `border-radius: 16px`, `backdrop-filter: blur(200px)`,
 
 | Component | Treatment |
 |-----------|-----------|
-| **Navbar** | Sticky `top-4`, rounded pill, white background, comic border. Logo left, nav links center, primary CTA right. Mobile: hamburger drawer that closes on Escape / outside click. The page reserves `scrollbar-gutter: stable` so popups do not shift the centered navbar. |
-| **Footer** | Dark navy `#1D4871` background with a yellow top border. Multi-column links, newsletter signup, social links. |
-| **Cards / panels** | Comic border (`v2-comic-border` / `v4-panel-border`) + hard shadow (`v2-comic-shadow`), large radius (12 to 16px). Often tilted (`v2-tilt-left/right`) and on a halftone surface. |
-| **Primary button (comic)** | Solid CTA blue, white text, `v2-comic-btn` hard shadow, rounded. The signature button. |
-| **Primary button (clean `Button.tsx`)** | `rounded-full px-6 py-3`, `bg-[#2367EE]` white text, soft shadow, `-translate-y-0.5` lift on hover, focus ring. Used where a quieter button fits. |
-| **Secondary button** | Transparent with `border-[#1D4871]/20`, navy text, subtle hover fill + lift. |
-| **Badges** | `v2-pow-badge` (yellow, Bangers, navy border + shadow) for comic emphasis; smaller pills for categories and the narrator badge over the hero video. |
+| **Navbar** (`components/landing/SaysoNavbar/`) | Full-width sticky bar, transparent at the top and blurred `#F4F4F5` with a hairline once the page scrolls. Logo left; How it works, Features, Pricing, FAQ and a **Resources** menu in the middle; Log in and a blue Book a demo pill on the right. The Resources menu shows Blog and the Prospecting Calculator on top, then Products, Solutions and About columns, then an All resources link. Links come from `lib/navigation.ts`. Mobile: a right-side drawer with a Resources accordion. |
+| **Footer** | Navy `#1D4871` with a yellow top border. Logo, one-line tagline, Beehiiv newsletter and Instagram/LinkedIn on the left; Programs, Get in Touch and Legal columns on the right (`footerNav`); copyright row underneath. |
+| **Cards / panels** | White, radius 16 to 20px, hairline ring `rgba(16,35,58,.12)` and a soft shadow `0 14px 34px -16px rgba(16,35,58,.25)`. No tilt, no offset shadow. |
+| **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, soft blue shadow, 1px lift on hover. `withArrow` adds the round white arrow badge used on main CTAs. |
+| **Secondary button** (`variant="secondary"`) | White pill with a hairline ring and dark text; the ring darkens on hover. |
+| **Badges and labels** | Yellow `v2-pow-badge` style label in Bangers, flat (no border or shadow), for section labels and small emphasis. |
 | **Sections / containers** | `Section` wrapper: full-width, `py-16 sm:py-24`, `default` or `accent` background variant. `Container`: centered, max-width ~1200px, `px-6 md:px-8 lg:px-12`. Alternate `background` and `accent-bg`, or drop into a dark navy section for emphasis. |
 | **Pricing cards** | Light surface with halftone, 3-column grid, popular plan highlighted with blue shadow/accent, `v4-accent-top` yellow top border, checkmark feature lists. |
 | **Blog content** | Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables, yellow bottom border on the blog hero banner. |
@@ -316,16 +322,17 @@ Each section does one job. Favor whitespace and short blocks. The comic system s
 ## 11. Do / Don't
 
 **Do**
-- Use navy `#1D4871` for borders and hard shadows; it is what makes the comic look read.
-- Keep the comic system consistent: borders + offset shadows + halftone + the occasional starburst.
-- Reserve yellow for small, high-impact accents.
-- Use Bangers (`font-comic`) for punchy headers and badges, Manrope for hero headlines, Helvetica for everything else.
-- Lean into purposeful bounce/spring motion on entrances and the hero.
+- Show the real Sayso widget wherever the site shows the product.
+- Use flat surfaces: hairline rings and soft shadows for cards, solid pills for buttons.
+- Reserve yellow for small, high-impact accents and section labels.
+- Use Bangers (`font-comic`) for small headings and labels only, Manrope for headlines, Helvetica for everything else.
+- Keep motion purposeful: the widget's own animations, small entrance fades, nothing that competes with reading.
 
 **Don't**
 - Use em dashes, "deal" language, "cold call", or staccato tagline fragments (see Section 2).
 - Use large areas of yellow or yellow behind body text.
-- Use soft, blurred drop shadows where the comic hard shadow belongs.
+- Use hard offset shadows, thick navy borders, tilted cards, starbursts or speed lines in new work.
+- Draw a fake version of the product (made-up dialers, notes cards or dashboards).
 - Add constant moving backgrounds or motion that competes with reading.
 - Introduce new colors or fonts outside the tokens above without updating this doc.
 
