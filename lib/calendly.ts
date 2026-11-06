@@ -21,6 +21,11 @@ declare global {
   }
 }
 
+/** The demo booking URL with the visitor's email already filled in. */
+export function calendlyDemoUrlFor(email?: string): string {
+  return email ? `${CALENDLY_DEMO_URL}&email=${encodeURIComponent(email)}` : CALENDLY_DEMO_URL;
+}
+
 /**
  * Open the Calendly booking flow in a centered popup overlay.
  *
