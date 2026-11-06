@@ -356,7 +356,7 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 
 1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens the Calendly demo pop-up (`openDemoCalendar`, `cta-team-platform-strip`).
 2. **Navbar** (shared, `SaysoNavbar`).
-3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Download Sayso / Book a demo / Try it, meta line, centered social proof with a rotating quote, Ask AI links.
+3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Get Sayso / Book a demo / Try it, meta line, centered social proof with a rotating quote, Ask AI links.
 4. **Guided live demo** (`HomeLiveDemo`, `#demo`): step card above the stage, then the live widget. Six steps: Start, watch cues, Smart Capture note, Pulse, Playbook, hang up. Ends with the superhero card.
 5. **How it works** (`HomeHowItWorks`, `#how`): three cards with static widget views.
 6. **Features** (`HomeFeatures`, `#features`): dark app-style panel, product tabs on the left, fixed-height panel on the right.
