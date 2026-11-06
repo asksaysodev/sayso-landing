@@ -129,6 +129,14 @@ export function useCallEngine(hooks: EngineHooks) {
     rerender();
   };
 
+  /** A new call: clock from zero, nothing captured, panels closed; `replay` plays the call opening again. */
+  const newCall = (replay: boolean) => {
+    stopCall();
+    set({ ...NEW_CALL, phaseADone: !replay });
+    startClock();
+    if (replay) playOpening();
+  };
+
   const actions: Record<WidgetControl, () => void> = {
     start() {
       if (s.current.live || s.current.starting) return;
@@ -164,12 +172,7 @@ export function useCallEngine(hooks: EngineHooks) {
     stop: restart,
     /** A new call on the same tour step: clock back to zero, letters and cues cleared, panels closed. */
     reset() {
-      if (!s.current.live) return;
-      stopCall();
-      const replay = hooksRef.current.replayOnReset();
-      set({ ...NEW_CALL, phaseADone: !replay });
-      startClock();
-      if (replay) playOpening();
+      if (s.current.live) newCall(hooksRef.current.replayOnReset());
     },
     lead: () => set({ lead: s.current.lead === 'B' ? 'S' : 'B' }),
     copy() {
@@ -178,5 +181,5 @@ export function useCallEngine(hooks: EngineHooks) {
     },
   };
 
-  return { s, set, later, run, actions, openInsight, cancelAll, restart };
+  return { s, set, later, run, actions, openInsight, cancelAll, restart, newCall };
 }

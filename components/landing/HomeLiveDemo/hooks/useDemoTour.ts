@@ -33,7 +33,7 @@ export function useDemoTour() {
     // On the last step, reset leaves an empty call (timer running, cues closed); elsewhere the call replays.
     replayOnReset: () => stepKey() !== 'reset',
   });
-  const { s, set, later, run, actions, openInsight, cancelAll, restart } = engine;
+  const { s, set, later, run, actions, openInsight, cancelAll, restart, newCall } = engine;
 
   const goStep = (n: number) => {
     const key = STEPS[n]?.key;
@@ -84,10 +84,16 @@ export function useDemoTour() {
     onAction(key);
   };
 
-  /** Skip tour: hang up (clock and scripted call stop) and show the end card. */
+  /**
+   * Skip tour: show the end card. A call in progress becomes an empty call
+   * (timer running, cues closed) so the yellow reset button stays available;
+   * before Start, the call alert stays up.
+   */
   const skip = () => {
+    const live = s.current.live;
     cancelAll();
-    set({ ...STOPPED, step: STEPS.length });
+    if (live) newCall(false);
+    set(live ? { step: STEPS.length } : { ...STOPPED, step: STEPS.length });
   };
 
   const st = s.current;
