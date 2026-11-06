@@ -11,7 +11,7 @@ const FEATURED_MARKS = ['B', '$'];
 export function ResourcesMenu({ onNavigate }: { onNavigate: () => void }) {
   return (
     <div className="absolute left-1/2 top-full z-50 w-[min(760px,92vw)] -translate-x-1/2 pt-2">
-      <div className="rounded-2xl bg-white p-5 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_24px_48px_-20px_rgba(16,35,58,0.35)]">
+      <div className="rounded-2xl bg-white p-5 shadow-popover">
         <div className="mb-5 grid grid-cols-2 gap-3">
           {resourcesFeatured.map((link, i) => (
             <Link
