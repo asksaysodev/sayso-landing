@@ -1,9 +1,9 @@
 export function BlogNewsletterCTA() {
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-10">
-      <div className="bg-[#1D4871] rounded-2xl border-2 border-[#1D4871] v2-comic-shadow overflow-hidden relative">
-        <div className="v4-halftone-dark px-8 py-12 md:py-14 text-center relative z-10">
-          <h2 className="font-hero text-2xl md:text-3xl text-white mb-3">
+      <div className="bg-[#1D4871] rounded-[20px] shadow-[0_1px_2px_rgba(16,35,58,0.1),0_18px_40px_-18px_rgba(16,35,58,0.55)] overflow-hidden">
+        <div className="px-8 py-12 md:py-14 text-center">
+          <h2 className="font-hero font-extrabold tracking-[-0.03em] text-3xl md:text-4xl text-white mb-3">
             Never Miss a Moment
           </h2>
           <p className="text-base text-white/70 max-w-md mx-auto mb-8 font-sans">

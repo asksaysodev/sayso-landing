@@ -10,7 +10,7 @@ interface BlogPostCardProps {
 export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
-      <article className="bg-white rounded-2xl border-2 border-[#1D4871] v2-comic-shadow-sm overflow-hidden transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_#1D4871]">
+      <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)]">
         {/* Cover Image */}
         <div className="relative aspect-video bg-[#F4F4F5] overflow-hidden">
           {post.coverImage ? (
@@ -21,8 +21,8 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1D4871] to-[#2367EE]">
-              <LightningIcon size={48} className="text-white/30" />
+            <div className="absolute inset-0 flex items-center justify-center bg-[#E3E8EC]">
+              <LightningIcon size={48} className="text-[#1D4871]/20" />
             </div>
           )}
         </div>
@@ -30,12 +30,12 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
         {/* Content */}
         <div className="p-5">
           {/* Category pill */}
-          <span className="inline-block px-3 py-1 mb-3 rounded-full bg-[#FFDE59] text-[#1D4871] font-comic text-xs uppercase tracking-wide">
+          <span className="inline-block px-3 py-1 mb-3 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-sm tracking-[0.06em]">
             {formatCategoryName(post.category)}
           </span>
 
           {/* Title */}
-          <h3 className="font-hero text-lg text-[#1D4871] mb-2 line-clamp-2 group-hover:text-[#2367EE] transition-colors">
+          <h3 className="font-hero font-extrabold tracking-[-0.01em] text-lg leading-snug text-[#10233A] mb-2 line-clamp-2 group-hover:text-[#2367EE] transition-colors">
             {post.title}
           </h3>
 

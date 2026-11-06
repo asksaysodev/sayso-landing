@@ -27,8 +27,8 @@ export function BlogRelatedPosts({ posts, variant = 'grid' }: BlogRelatedPostsPr
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#1D4871] to-[#2367EE] flex items-center justify-center">
-                    <LightningIcon size={16} className="text-white/30" />
+                  <div className="w-full h-full bg-[#E3E8EC] flex items-center justify-center">
+                    <LightningIcon size={16} className="text-[#1D4871]/20" />
                   </div>
                 )}
               </div>
@@ -47,11 +47,11 @@ export function BlogRelatedPosts({ posts, variant = 'grid' }: BlogRelatedPostsPr
 
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-10">
-      <h3 className="font-hero text-xl md:text-2xl text-[#1D4871] mb-6">Related Posts</h3>
+      <h3 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-2xl md:text-3xl mb-6">Related Posts</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-            <article className="bg-white rounded-2xl border-2 border-[#1D4871] v2-comic-shadow-sm overflow-hidden transition-all duration-200 group-hover:-translate-y-1">
+            <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)]">
               <div className="relative aspect-video bg-[#F4F4F5] overflow-hidden">
                 {post.coverImage ? (
                   <Image
@@ -61,16 +61,16 @@ export function BlogRelatedPosts({ posts, variant = 'grid' }: BlogRelatedPostsPr
                     className="object-cover"
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1D4871] to-[#2367EE]">
-                    <LightningIcon size={32} className="text-white/30" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#E3E8EC]">
+                    <LightningIcon size={32} className="text-[#1D4871]/20" />
                   </div>
                 )}
               </div>
               <div className="p-4">
-                <span className="inline-block px-2 py-0.5 mb-2 rounded-full bg-[#FFDE59] text-[#1D4871] font-comic text-xs uppercase tracking-wide">
+                <span className="inline-block px-2 py-0.5 mb-2 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-sm tracking-[0.06em]">
                   {formatCategoryName(post.category)}
                 </span>
-                <h4 className="font-hero text-base text-[#1D4871] line-clamp-2 group-hover:text-[#2367EE] transition-colors">
+                <h4 className="font-hero font-extrabold text-base leading-snug text-[#10233A] line-clamp-2 group-hover:text-[#2367EE] transition-colors">
                   {post.title}
                 </h4>
               </div>
