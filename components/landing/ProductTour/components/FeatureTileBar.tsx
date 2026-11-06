@@ -40,8 +40,8 @@ export function FeatureTileBar({ activeKey, appActive, onSelect, onSelectApp }: 
       <button
         onClick={onSelectApp}
         aria-pressed={appActive}
-        className={`inline-flex items-center justify-center gap-1.5 rounded-full border-2 border-[#1D4871] bg-accent px-4 py-2 text-[13px] font-bold text-[#1D4871] v2-comic-shadow-sm transition-transform hover:-translate-y-[1px] sm:text-sm ${
-          appActive ? 'ring-2 ring-[#1D4871] ring-offset-1' : ''
+        className={`inline-flex items-center justify-center gap-1.5 rounded-full border border-[rgba(16,35,58,0.14)] bg-accent px-4 py-2 text-[13px] font-bold text-[#1D4871] transition-transform hover:-translate-y-px sm:text-sm ${
+          appActive ? 'ring-2 ring-[#2367EE] ring-offset-2' : ''
         }`}
       >
         <AppWindow size={14} />

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function ProductTourPage() {
   return (
     <DemoCalendarProvider>
-      <div className="relative bg-white">
+      <div className="relative bg-[#F4F4F5]">
         <SaysoNavbar autoHide />
         <ProductTour />
         <Footer />

@@ -40,14 +40,14 @@ export function ProductTour() {
   const isApp = mode === 'app';
 
   return (
-    <section className="bg-white py-8">
+    <section className="py-8 md:py-12">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-comic text-3xl tracking-wide text-primary sm:text-4xl">
+          <h1 className="text-balance font-hero text-[clamp(30px,4.5vw,46px)] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10233A]">
             See Sayso in Action
-          </h2>
-          <p className="mt-2 text-sm text-primary/75 sm:text-base">
+          </h1>
+          <p className="mt-3 text-sm text-[#556B86] sm:text-base">
             Watch Sayso work with your existing CRM / dialer: coaching the call,
             real-time intelligence, capturing the details, and logging notes to your
             CRM automatically.
