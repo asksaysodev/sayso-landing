@@ -75,7 +75,7 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
             type="button"
             onClick={openDemoCalendar}
             data-analytics-id="cta-book-demo-navbar"
-            className="inline-flex h-10 items-center rounded-full bg-[#2367EE] px-4 text-sm font-semibold text-white shadow-button transition hover:-translate-y-px hover:bg-[#1F5AD6] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
+            className="inline-flex h-10 items-center rounded-full bg-white px-4 text-sm font-semibold text-[#10233A] shadow-card-sm transition hover:-translate-y-px hover:shadow-card-sm-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
           >
             Book a demo
           </button>
