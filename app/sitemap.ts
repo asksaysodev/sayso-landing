@@ -33,7 +33,7 @@ const EXCLUDED_PATHS = new Set([
  * partners) carry their own updatedAt field instead.
  */
 const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
-  '/': '2026-11-05',
+  '/': '2026-11-06',
   '/demo': '2026-11-06',
   '/download': '2026-11-06',
   '/products': '2026-05-09',

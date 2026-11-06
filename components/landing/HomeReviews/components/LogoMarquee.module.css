@@ -18,25 +18,8 @@
   animation-direction: reverse;
 }
 .marquee:hover .track,
-.marquee:focus-within .track,
-.paused .track {
+.marquee:focus-within .track {
   animation-play-state: paused;
-}
-.pause {
-  display: block;
-  margin: 14px auto 0;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #556b86;
-}
-.pause:hover {
-  color: #1d4871;
-}
-.pause:focus-visible {
-  outline: 2px solid #2367ee;
-  outline-offset: 2px;
 }
 .group {
   display: flex;
@@ -99,8 +82,7 @@
     row-gap: 20px;
     width: 100%;
   }
-  .group[aria-hidden='true'],
-  .pause {
+  .group[aria-hidden='true'] {
     display: none;
   }
 }
