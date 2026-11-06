@@ -12,7 +12,7 @@ interface ContentCTAProps {
 export function ContentCTA({
   location,
   headline = 'Ready to Win the Moment?',
-  subheading = 'See how Sayso gives you real-time coaching on every call.',
+  subheading = 'See how Sayso gives you real-time guidance on every call.',
 }: ContentCTAProps) {
   const { openDemoCalendar, openSignup } = useDemoCalendar();
 

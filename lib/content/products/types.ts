@@ -19,8 +19,6 @@ export interface ProductEntry {
   differentiatorsHeading?: string;
   differentiators: { title: string; body: string }[];
   socialProof?: string;
-  /** Overrides the closing call-to-action subheading. */
-  ctaSubheading?: string;
   faq: { question: string; answer: string }[];
   relatedProducts: { title: string; slug: string }[];
   relatedBlogPosts: { title: string; href: string }[];
