@@ -16,12 +16,12 @@ export const whySaysoContent: WhySaysoContent = {
     'Sayso gives real estate agents real-time coaching during live calls, not after them. See why teams are switching from script binders and post-call reviews.',
   h1: 'Why Teams Are Switching to Sayso',
   opening:
-    'Real estate agents lose opportunities every day, not because they do not know the scripts, but because they freeze in the moment. Sayso fixes that by coaching you during the call, not after it. Real-time prompts, automatic notes, and objection handling that works when you need it most.',
+    'Real estate agents lose opportunities every day, not because they do not know the scripts, but because they freeze in the moment. Sayso fixes that by guiding you during the call, not after it. Real-time prompts, automatic notes, and objection handling that works when you need it most.',
   problemToday:
-    'Most agents learn through script binders, ride-alongs, and post-call reviews. These methods teach you what to say, but they cannot help you when the prospect is on the phone and you have seconds to respond. The gap between preparation and performance is where opportunities slip away.\n\nPost-call tools tell you what went wrong. Real-time coaching prevents it from going wrong in the first place.',
+    'Most agents learn through script binders, ride-alongs, and post-call reviews. These methods teach you what to say, but they cannot help you when the prospect is on the phone and you have seconds to respond. The gap between preparation and performance is where opportunities slip away.\n\nPost-call tools tell you what went wrong. Real-time guidance prevents it from going wrong in the first place.',
   differentiators: [
     {
-      title: 'Coaching happens during the call, not after',
+      title: 'Guidance happens during the call, not after',
       description: 'Sayso listens to your live conversation and shows you what to say next, the moment you need it. No more reviewing a recording to find out what you should have said.',
     },
     {
@@ -59,7 +59,7 @@ export const whySaysoContent: WhySaysoContent = {
     },
     {
       persona: 'ISAs',
-      description: 'Convert more leads with consistent coaching on every inbound and outbound call. Have cleaner appointment handoffs, every time.',
+      description: 'Convert more leads with consistent guidance on every inbound and outbound call. Have cleaner appointment handoffs, every time.',
       href: '/for/isas',
     },
   ],
@@ -71,7 +71,7 @@ export const whySaysoContent: WhySaysoContent = {
   faq: [
     {
       question: 'What makes Sayso different from other coaching tools?',
-      answer: 'Sayso coaches you during the call, not after it. Most tools analyze recordings after the conversation ends. Sayso gives you real-time prompts while the prospect is on the phone.',
+      answer: 'Sayso guides you during the call, not after it. Most tools analyze recordings after the conversation ends. Sayso gives you real-time prompts while the prospect is on the phone.',
     },
     {
       question: 'Is Sayso only for new agents?',
@@ -83,7 +83,7 @@ export const whySaysoContent: WhySaysoContent = {
     },
     {
       question: 'How fast can I get started?',
-      answer: 'Most agents are set up and coaching on calls within minutes. There is no training period or onboarding program, just open Sayso and start your next call.',
+      answer: 'Most agents are set up and getting guidance on calls within minutes. There is no training period or onboarding program, just open Sayso and start your next call.',
     },
   ],
 };

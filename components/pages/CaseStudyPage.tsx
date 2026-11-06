@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import Carousel from '@/components/ui/Carousel';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { generateWebPageJsonLd } from '@/lib/seo/schema';
 import type { CaseStudyEntry } from '@/lib/content/case-studies/types';
@@ -33,10 +34,10 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
       <article className="max-w-[800px] mx-auto px-6 pb-10">
         {/* Badge + Headline */}
         <div className="mt-6 mb-6">
-          <span className="v2-pow-badge px-3 py-1 rounded-lg text-xs font-comic tracking-wider mb-3 inline-block">
+          <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871] mb-4">
             CASE STUDY
           </span>
-          <h1 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide">
+          <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] leading-[1.1] text-[34px] md:text-5xl">
             {entry.headline}
           </h1>
           <p className="text-[#1D4871]/60 text-base font-sans mt-2">
@@ -45,7 +46,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         </div>
 
         {/* Snapshot Card */}
-        <div className="bg-white border-2 border-[#1D4871] rounded-2xl v2-comic-shadow-sm overflow-hidden mb-8">
+        <div className="bg-white rounded-[20px] overflow-hidden mb-8 shadow-card">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {[
               { label: 'Customer', value: entry.snapshot.customer },
@@ -66,7 +67,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         </div>
 
         {/* Challenge */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           The Challenge
         </h2>
         {entry.challenge.split('\n\n').map((paragraph, i) => (
@@ -78,7 +79,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         {/* What They Tried Before */}
         {entry.whatTheyTriedBefore && (
           <>
-            <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+            <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
               What They Tried Before
             </h2>
             <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
@@ -88,7 +89,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         )}
 
         {/* How Sayso Helped */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           How Sayso Helped
         </h2>
         {entry.howSaysoHelped.split('\n\n').map((paragraph, i) => (
@@ -99,7 +100,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
 
         {/* Quotes */}
         {entry.quotes.length > 0 && (
-          <div className="space-y-4 my-8">
+          <Carousel label="Customer quotes" itemName="quote" className="my-8" trackClassName="grid grid-cols-1 gap-4">
             {entry.quotes.map((quote, i) => (
               <blockquote
                 key={i}
@@ -110,11 +111,11 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
                 </p>
               </blockquote>
             ))}
-          </div>
+          </Carousel>
         )}
 
         {/* Results */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           The Results
         </h2>
         {entry.results.split('\n\n').map((paragraph, i) => (
@@ -126,7 +127,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         {/* What's Next */}
         {entry.whatsNext && (
           <>
-            <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+            <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
               What&apos;s Next
             </h2>
             <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
@@ -136,7 +137,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         )}
 
         {/* Related Features */}
-        <h2 className="font-hero text-xl text-[#1D4871] mt-10 mb-3">
+        <h2 className="font-hero font-bold tracking-[-0.01em] text-xl text-[#10233A] mt-10 mb-3">
           Features Used
         </h2>
         <ul className="space-y-2 mb-6">

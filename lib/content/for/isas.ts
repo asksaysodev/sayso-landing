@@ -29,13 +29,13 @@ export const isas: UseCaseEntry = {
   ],
   betterApproachHeading: 'A Better Approach to ISA Conversion in Real Estate',
   betterApproach: [
-    'What if your sharpest call and your 100th call sounded the same? Real-time coaching changes the equation for ISAs. Instead of relying on memory and energy to sustain quality across a full session, you get live guidance on screen during every conversation, whether it is your first dial or your last.',
+    'What if your sharpest call and your 100th call sounded the same? Real-time guidance changes the equation for ISAs. Instead of relying on memory and energy to sustain quality across a full session, you get live guidance on screen during every conversation, whether it is your first dial or your last.',
     'Sayso listens to your live calls and surfaces the right response on your screen in real time. When a prospect says "call me later," you see a proven conversion pivot instead of defaulting to "Sure, when works for you?" When they hesitate after your value statement, Sayso suggests the next question to move them toward an appointment. This is how ISAs improve conversion rates in real estate without burning out by mid-afternoon.',
-    'Picture this: it is 3 PM and you are on call number 90. A lead says "I am not interested." Instead of pushing through a tired rebuttal, you glance at your screen, see a response tuned to what they just said, and deliver it with the same clarity you had at 9 AM. The prospect pauses, then asks a question. Now you are in a real conversation, and Sayso is guiding you through every step. That is what conversion coaching looks like when it shows up during the call, not in a training session you attended last week.',
+    'Picture this: it is 3 PM and you are on call number 90. A lead says "I am not interested." Instead of pushing through a tired rebuttal, you glance at your screen, see a response tuned to what they just said, and deliver it with the same clarity you had at 9 AM. The prospect pauses, then asks a question. Now you are in a real conversation, and Sayso is guiding you through every step. That is what conversion help looks like when it shows up during the call, not in a training session you attended last week.',
     'Sayso also captures your call notes automatically and formats them for clean handoffs. The agent receiving your booked appointment gets a complete summary: what the prospect said, what matters to them, and what was promised. No more shorthand notes that leave agents guessing. Every appointment you set arrives with full context, and you never break your pace to fill in a template between dials.',
   ],
   getStarted:
-    'See how Sayso helps ISAs convert more leads and deliver cleaner handoffs on every call. Book a demo to watch real-time coaching in action, or visit pricing to find the right plan for your team.',
+    'See how Sayso helps ISAs convert more leads and deliver cleaner handoffs on every call. Book a demo to watch real-time guidance in action, or visit pricing to find the right plan for your team.',
   howSaysoWorks: [
     {
       feature: 'Real-Time Conversion Prompts',
@@ -58,7 +58,7 @@ export const isas: UseCaseEntry = {
     {
       feature: 'Consistent Quality Across Every Dial',
       description:
-        'Whether it is call number 5 or call number 105, Sayso keeps your responses sharp. Real-time coaching offloads the cognitive load that causes conversion rates to drop as the day goes on.',
+        'Whether it is call number 5 or call number 105, Sayso keeps your responses sharp. Real-time guidance offloads the cognitive load that causes conversion rates to drop as the day goes on.',
       href: '/products/cue',
     },
   ],
@@ -66,7 +66,7 @@ export const isas: UseCaseEntry = {
     {
       question: 'How does Sayso help ISAs improve conversion rates in real estate?',
       answer:
-        'Sayso listens to your live calls and shows coaching prompts on your screen in real time. When a prospect raises an objection or hesitates, you see a proven response immediately. This keeps your conversion quality consistent from your first call to your last, regardless of how many dials you have made that day.',
+        'Sayso listens to your live calls and shows guidance prompts on your screen in real time. When a prospect raises an objection or hesitates, you see a proven response immediately. This keeps your conversion quality consistent from your first call to your last, regardless of how many dials you have made that day.',
     },
     {
       question: 'Does Sayso help with handoff notes for agents?',
@@ -86,11 +86,11 @@ export const isas: UseCaseEntry = {
     {
       question: 'How much does Sayso cost and how do I get started?',
       answer:
-        'Sayso offers team plans built for organizations with ISAs. Visit the pricing page for current plans, or book a demo to see how real-time coaching works across a high-volume calling team.',
+        'Sayso offers team plans built for organizations with ISAs. Visit the pricing page for current plans, or book a demo to see how real-time guidance works across a high-volume calling team.',
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Real-Time Guidance', href: '/products/cue' },
     { title: 'Custom Scripts', href: '/products/playbook' },
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],

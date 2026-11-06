@@ -48,7 +48,7 @@ export function ProductTour() {
             See Sayso in Action
           </h1>
           <p className="mt-3 text-sm text-[#556B86] sm:text-base">
-            Watch Sayso work with your existing CRM / dialer: coaching the call,
+            Watch Sayso work with your existing CRM / dialer: guiding the call,
             real-time intelligence, capturing the details, and logging notes to your
             CRM automatically.
           </p>
@@ -70,7 +70,7 @@ export function ProductTour() {
               <>
                 App:{' '}
                 <span className="font-medium text-primary/75">
-                  Review every conversation, the details Sayso captured, and the coaching, after the call.
+                  Review every conversation, the details Sayso captured, and the guidance, after the call.
                 </span>
               </>
             ) : (

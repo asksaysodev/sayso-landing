@@ -271,9 +271,6 @@ Same layout as the blog index, but:
 | `BlogNewsletterCTA`      | `components/blog/BlogNewsletterCTA`| Newsletter signup banner (embeds Beehiiv)             |
 | `BlogArticleHeader`      | `components/blog/BlogArticleHeader`| Post title, meta, cover image for article page        |
 | `BlogArticleContent`     | `components/blog/BlogArticleContent`| Prose-styled MDX/markdown renderer                   |
-| `BlogTableOfContents`    | `components/blog/BlogTableOfContents`| Sticky sidebar TOC auto-generated from headings     |
-| `BlogSidebar`            | `components/blog/BlogSidebar`      | Sidebar wrapper (TOC + newsletter + related)          |
-| `BlogShareBar`           | `components/blog/BlogShareBar`     | Social share buttons (sticky on desktop)              |
 | `BlogAuthorCard`         | `components/blog/BlogAuthorCard`   | Author bio at bottom of posts                         |
 | `BlogRelatedPosts`       | `components/blog/BlogRelatedPosts` | 3-column related posts grid                           |
 | `BlogBreadcrumb`         | `components/blog/BlogBreadcrumb`   | Breadcrumb navigation                                 |
@@ -481,9 +478,6 @@ Add a "Blog" link under the **Product** column in `Footer`:
 3. **Phase 3 - Blog Post Page**
    - `BlogArticleHeader` component
    - `BlogArticleContent` with custom MDX components
-   - `BlogTableOfContents` component
-   - `BlogSidebar` component
-   - `BlogShareBar` component
    - `BlogAuthorCard` component
    - `BlogInArticleCTA` component
    - `BlogRelatedPosts` component
@@ -530,9 +524,6 @@ components/
 │   ├── BlogNewsletterCTA.tsx
 │   ├── BlogArticleHeader.tsx
 │   ├── BlogArticleContent.tsx
-│   ├── BlogTableOfContents.tsx
-│   ├── BlogSidebar.tsx
-│   ├── BlogShareBar.tsx
 │   ├── BlogAuthorCard.tsx
 │   ├── BlogRelatedPosts.tsx
 │   ├── BlogBreadcrumb.tsx

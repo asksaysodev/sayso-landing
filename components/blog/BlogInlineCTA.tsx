@@ -4,9 +4,9 @@
  * match the post type, so the product mention reads as a natural next step.
  * Shares the BlogCtaCard shell with BlogInArticleCTA.
  */
-import Link from 'next/link';
 import type { BlogCtaVariant } from '@/lib/blog';
 import { BlogCtaCard } from './BlogCtaCard';
+import { Button } from '@/components/ui/Button';
 
 const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: string; href: string }> = {
   script: {
@@ -24,13 +24,13 @@ const VARIANTS: Record<BlogCtaVariant, { heading: string; body: string; label: s
   leads: {
     heading: 'Want to know what to ask next while the lead is talking?',
     body: 'Sayso suggests the next question on screen in real time, so the conversation keeps moving toward an appointment.',
-    label: 'See real-time coaching',
+    label: 'See real-time guidance',
     href: '/products/cue/',
   },
   prospecting: {
     heading: 'Want every prospecting call to end with a next step?',
     body: 'Sayso keeps the conversation on track with live prompts on screen as you talk.',
-    label: 'See real-time coaching',
+    label: 'See real-time guidance',
     href: '/products/cue/',
   },
   team: {
@@ -47,16 +47,12 @@ export function BlogInlineCTA({ variant }: { variant: BlogCtaVariant }) {
     <BlogCtaCard as="aside">
       <div className="px-6 py-7 md:px-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
         <div className="flex-1 text-center md:text-left">
-          <p className="font-hero text-lg md:text-xl text-white leading-snug mb-2">{v.heading}</p>
+          <p className="font-hero font-extrabold tracking-[-0.01em] text-lg md:text-xl text-white leading-snug mb-2">{v.heading}</p>
           <p className="text-sm text-white font-sans">{v.body}</p>
         </div>
-        <Link
-          href={v.href}
-          data-analytics-id={`cta-inline-blog-${variant}`}
-          className="shrink-0 self-center inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-[#1D4871] font-bold text-sm border-2 border-[#1D4871] hover:bg-white/90 transition-colors"
-        >
+        <Button href={v.href} variant="secondary" className="shrink-0 self-center" data-analytics-id={`cta-inline-blog-${variant}`}>
           {v.label} &rarr;
-        </Link>
+        </Button>
       </div>
     </BlogCtaCard>
   );

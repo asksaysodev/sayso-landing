@@ -19,7 +19,7 @@ What the visual system communicates:
 - **Friendly** through the yellow labels, Bangers on small headings and the superhero in the final call to action.
 
 ### Where the comic identity still appears
-- Yellow section labels and badges (`v2-pow-badge`, Bangers, no border or shadow).
+- Yellow section labels and badges (inline `bg-[#FFDE59] rounded-md font-comic`, no border or shadow; the flat override also strips `v2-pow-badge` to this look).
 - Bangers on small headings: menu columns, footer columns, FAQ group titles.
 - The superhero illustration in the closing call to action and the end of the homepage demo.
 - The halftone dot texture on light section backgrounds, kept very faint.
@@ -309,12 +309,12 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 | **Cards / panels** | White, radius 16 to 20px, `shadow-card` (hairline ring `rgba(16,35,58,.12)` plus a soft drop shadow), `hover:shadow-card-hover` when the whole card is a link. No tilt, no offset shadow. |
 | **Primary button** (`Button.tsx`, `variant="primary"`) | 48px pill, solid `#2367EE`, white semibold text, `shadow-button`, 1px lift on hover. The main download CTA reads "Get Sayso" everywhere. Internal `href`s ("/...") render a `next/link`; pass `external` for off-site links (new tab, `rel="noopener noreferrer"`); with no `href` it renders a `type="button"` button. |
 | **Secondary button** (`variant="secondary"`) | White pill, `shadow-card-sm` and dark text; `shadow-card-sm-hover` darkens the ring on hover. |
-| **Badges and labels** | Yellow `v2-pow-badge` style label in Bangers, flat (no border or shadow), for section labels and small emphasis. |
+| **Badges and labels** | Yellow rounded label in Bangers (`bg-[#FFDE59] rounded-md font-comic`), flat (no border or shadow), for section labels and small emphasis. |
 | **Sections / containers** | `Section` wrapper: full-width, `py-16 sm:py-24`, `default` or `accent` background variant. `Container`: centered, max-width ~1200px, `px-6 md:px-8 lg:px-12`. Alternate `background` and `accent-bg`, or drop into a dark navy section for emphasis. |
 | **Pricing cards** | `HomePricing`, shared by the homepage and `/pricing`: monthly / annual toggle, a white Individual Agent+ card and a navy Teams and Brokerages card, both with a yellow top border, checkmark feature lists and flat Button CTAs. |
-| **Blog content** | Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables, yellow bottom border on the blog hero banner. |
-| **Blog inline CTA** | A compact version of the mid-article CTA: navy-to-blue gradient card with the comic shadow, a white Bangers heading, one line of white body text (full white for contrast) and a white pill button with navy text. Sits after a post's second paragraph when the post sets `ctaVariant`. |
-| **Hub quick answers and related reading** | Optional blocks on hub pages (`HubPage.tsx`, set by `quickAnswers` and `relatedReading` in the hub config). Quick answers is a white rounded list with thin navy dividers: each row is a bold navy phrase over a one-line muted answer, the whole row links to the child page and turns blue on hover. Related reading is a Bangers heading over muted navy paragraphs with inline links. Both use the 800px content column. |
+| **Blog content** | Manrope headings (800 for H1/H2), Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables inside a rounded hairline card. Post cards, author card and cluster box use the flat card pattern; the category pill is a small yellow Bangers label. |
+| **Blog CTAs** | Mid-article and inline CTAs share `BlogCtaCard`: a solid navy card, radius 20px, soft shadow, no gradient or offset shadow. White Manrope heading, white body text and flat pill buttons (white secondary, blue primary). The inline variant sits after a post's second paragraph when the post sets `ctaVariant`. |
+| **Hub quick answers and related reading** | Optional blocks on hub pages (`HubPage.tsx`, set by `quickAnswers` and `relatedReading` in the hub config). Quick answers is a white rounded list with thin navy dividers: each row is a bold navy phrase over a one-line muted answer, the whole row links to the child page and turns blue on hover. Related reading is a Manrope heading over muted navy paragraphs with inline links. Both use the 800px content column. Hub cards use the flat card pattern; group labels are small Bangers headings and card banners are flat yellow labels (no tilt). |
 
 ### Shadow tokens
 

@@ -46,7 +46,7 @@ export const isaRealEstate: GlossaryEntry = {
     },
   ],
   howSaysoHelps: [
-    'ISAs make dozens of calls every day, and the difference between a booked appointment and a lost lead often comes down to saying the right thing at the right moment. Sayso\'s [Real-Time Coaching](/products/cue/) gives ISAs live, on-screen guidance during every call, so when a prospect pushes back or asks a tough question, the next line is already on screen. For the talk tracks themselves, including what to say on each of the seven daily calls and how to handle the replies, see our [real estate ISA scripts](/blog/real-estate-isa-scripts/), for the booking call itself see the [appointment setting script](/blog/appointment-setting-script/), if you are deciding whether to hire an ISA or outsource calls read [calling services vs. making the calls yourself](/blog/real-estate-cold-calling-services/), team leaders can find a weekly routine in [how to coach real estate agents on their calls](/blog/how-to-coach-real-estate-agents-on-calls/), and to see how Sayso supports the role on live calls, visit [Sayso for ISAs](/for/isas/).',
+    'ISAs make dozens of calls every day, and the difference between a booked appointment and a lost lead often comes down to saying the right thing at the right moment. Sayso\'s [Real-Time Guidance](/products/cue/) gives ISAs live, on-screen guidance during every call, so when a prospect pushes back or asks a tough question, the next line is already on screen. For the talk tracks themselves, including what to say on each of the seven daily calls and how to handle the replies, see our [real estate ISA scripts](/blog/real-estate-isa-scripts/), for the booking call itself see the [appointment setting script](/blog/appointment-setting-script/), if you are deciding whether to hire an ISA or outsource calls read [calling services vs. making the calls yourself](/blog/real-estate-cold-calling-services/), team leaders can find a weekly routine in [how to coach real estate agents on their calls](/blog/how-to-coach-real-estate-agents-on-calls/), and to see how Sayso supports the role on live calls, visit [Sayso for ISAs](/for/isas/).',
     'After each call, Sayso\'s [Call Notes](/products/smart-capture/) handles the write-up and the CRM entry, so ISAs spend their shift dialing instead of documenting and agents get a clean handoff. [Book a demo](/demo/) to see how Sayso helps ISAs book more appointments on every shift.',
   ],
   relatedTerms: [
@@ -61,7 +61,7 @@ export const isaRealEstate: GlossaryEntry = {
     href: '/blog/real-estate-isa-scripts/',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
   relatedPersona: {

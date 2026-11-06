@@ -44,11 +44,11 @@ export const metadata: Metadata = {
 export default function RequestDemoPage() {
   return (
     <DemoCalendarProvider>
-      <div className="relative bg-white min-h-screen">
+      <div className="relative bg-[#F4F4F5] min-h-screen">
         <SaysoNavbar />
         <main>
           <section className="max-w-[900px] mx-auto px-6 pt-32 pb-10 text-center">
-            <h1 className="font-comic text-5xl sm:text-6xl lg:text-7xl text-[#1D4871] leading-[1.05] tracking-wide">
+            <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[42px] sm:text-6xl lg:text-7xl leading-[1.08]">
               <span className="text-[#2367EE]">Request</span> a Demo.
             </h1>
             <h2 className="mt-5 text-lg md:text-xl text-[#1D4871]/75 leading-relaxed max-w-[600px] mx-auto font-normal">
@@ -57,7 +57,7 @@ export default function RequestDemoPage() {
           </section>
 
           <section className="w-full px-4 md:px-6 pb-16">
-            <div className="max-w-[680px] mx-auto rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-lg">
+            <div className="max-w-[680px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">
               <SsFormEmbed embedCode="LmIZLgSzGPfy" />
             </div>
           </section>

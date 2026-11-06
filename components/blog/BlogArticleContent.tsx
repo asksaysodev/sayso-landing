@@ -12,10 +12,10 @@ interface BlogArticleContentProps {
 
 const mdxComponents = {
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4" {...props} />
+    <h2 className="font-hero font-extrabold tracking-[-0.02em] text-2xl md:text-[28px] leading-tight text-[#10233A] mt-10 mb-4" {...props} />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="font-hero text-xl md:text-[22px] text-[#1D4871] mt-8 mb-3" {...props} />
+    <h3 className="font-hero font-bold tracking-[-0.01em] text-xl md:text-[22px] leading-snug text-[#10233A] mt-8 mb-3" {...props} />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p className="text-[#1D4871]/80 text-base leading-relaxed mb-5 font-sans" {...props} />
@@ -53,8 +53,8 @@ const mdxComponents = {
   ),
   hr: () => <hr className="border-[#D7DEE1] my-8" />,
   table: (props: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="overflow-x-auto mb-6">
-      <table className="w-full border-collapse border-2 border-[#1D4871] rounded-lg text-sm font-sans" {...props} />
+    <div className="overflow-x-auto mb-6 rounded-2xl shadow-card">
+      <table className="w-full border-collapse text-sm font-sans" {...props} />
     </div>
   ),
   th: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
@@ -67,12 +67,12 @@ const mdxComponents = {
   // Custom content components
   CalloutBox: ({ type = 'tip', children }: { type?: 'tip' | 'warning' | 'key-takeaway'; children: React.ReactNode }) => (
     <div
-      className={`rounded-xl border-2 px-6 py-4 my-6 ${
+      className={`rounded-2xl border px-6 py-4 my-6 ${
         type === 'warning'
-          ? 'border-red-300 bg-red-50'
+          ? 'border-red-200 bg-red-50'
           : type === 'key-takeaway'
-            ? 'border-[#2367EE]/30 bg-[#2367EE]/5'
-            : 'border-[#FFDE59] bg-[#FFDE59]/10'
+            ? 'border-[#2367EE]/20 bg-[#2367EE]/5'
+            : 'border-[#FFDE59]/70 bg-[#FFDE59]/10'
       }`}
     >
       <div className="text-sm font-sans text-[#1D4871]/80">{children}</div>
@@ -80,7 +80,7 @@ const mdxComponents = {
   ),
 
   ScriptExample: ({ label, children }: { label?: string; children: React.ReactNode }) => (
-    <div className="bg-white border-2 border-[#1D4871] rounded-xl p-6 my-6">
+    <div className="bg-white rounded-2xl p-6 my-6 shadow-card">
       {label && (
         <span className="text-xs uppercase tracking-wide text-[#1D4871]/50 font-bold block mb-2">
           {label}

@@ -21,10 +21,10 @@ export function BlogCategoryPills({ categories, activeCategory }: BlogCategoryPi
       <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
         <Link
           href="/blog"
-          className={`shrink-0 px-5 py-2 rounded-full font-bold text-sm border-2 transition-all ${
+          className={`shrink-0 px-4 py-2 rounded-full font-semibold text-sm transition-shadow ${
             allActive
-              ? 'bg-[#2367EE] text-white border-[#2367EE]'
-              : 'bg-white text-[#1D4871] border-[#1D4871] hover:bg-[#FFDE59]/20'
+              ? 'bg-[#2367EE] text-white shadow-[0_0_0_1px_#2367EE]'
+              : 'bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.24)]'
           }`}
         >
           All
@@ -33,10 +33,10 @@ export function BlogCategoryPills({ categories, activeCategory }: BlogCategoryPi
           <Link
             key={cat.slug}
             href={`/blog/category/${cat.slug}`}
-            className={`shrink-0 px-5 py-2 rounded-full font-bold text-sm border-2 transition-all ${
+            className={`shrink-0 px-4 py-2 rounded-full font-semibold text-sm transition-shadow ${
               activeCategory === cat.slug
-                ? 'bg-[#2367EE] text-white border-[#2367EE]'
-                : 'bg-white text-[#1D4871] border-[#1D4871] hover:bg-[#FFDE59]/20'
+                ? 'bg-[#2367EE] text-white shadow-[0_0_0_1px_#2367EE]'
+                : 'bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.24)]'
             }`}
           >
             {cat.name} ({cat.count})

@@ -27,7 +27,7 @@ export default function NewsletterConfirmationPage() {
         <main>
           <section className="bg-[#F4F4F5] pt-28 pb-24 md:pt-32 md:pb-32">
             <div className="max-w-[800px] mx-auto px-6 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 border-2 border-[#2367EE]/30 mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 mb-6">
                 <Mail
                   size={34}
                   strokeWidth={2.5}
@@ -38,7 +38,7 @@ export default function NewsletterConfirmationPage() {
               <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
                 Subscribed
               </p>
-              <h1 className="font-comic text-4xl sm:text-5xl lg:text-6xl text-[#1D4871] leading-[1.05] tracking-wide">
+              <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[40px] sm:text-5xl lg:text-6xl leading-[1.08]">
                 Thanks for subscribing.
               </h1>
 

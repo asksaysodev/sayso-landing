@@ -39,20 +39,19 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
       <article className="max-w-[800px] mx-auto px-6 pb-10">
         {/* Badge + H1 */}
         <div className="mt-6 mb-6">
-          <span className="v2-pow-badge px-3 py-1 rounded-lg text-xs font-comic tracking-wider mb-3 inline-block">
+          <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871] mb-4">
             OBJECTION
           </span>
-          <h1 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide">
+          <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] leading-[1.1] text-[34px] md:text-5xl">
             {entry.h1}
           </h1>
         </div>
 
         {/* Objection Quote */}
-        <div className="bg-white border-2 border-[#1D4871] rounded-2xl p-6 v2-comic-shadow-sm mb-8 relative">
-          <p className="text-xl md:text-2xl font-bold text-[#1D4871] italic font-sans">
+        <div className="bg-white rounded-[20px] p-6 mb-8 shadow-card">
+          <p className="text-xl md:text-2xl font-bold text-[#10233A] italic font-sans">
             &ldquo;{entry.objectionQuote}&rdquo;
           </p>
-          <div className="absolute -bottom-3 left-10 w-6 h-6 bg-white border-b-2 border-r-2 border-[#1D4871] rotate-45" />
         </div>
 
         {/* Opening Paragraph */}
@@ -68,13 +67,13 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
               alt={entry.heroImage.alt}
               width={800}
               height={450}
-              className="rounded-xl border-2 border-[#1D4871]/10"
+              className="rounded-2xl shadow-card"
             />
           </div>
         )}
 
         {/* Why They Say This */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           {entry.whyTheyTitle}
         </h2>
         {entry.whyTheySayThis.split('\n\n').map((paragraph, i) => (
@@ -84,14 +83,14 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
         ))}
 
         {/* 3 Response Frameworks + What to Say Next (merged) */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-6">
           3 Ways to Respond
         </h2>
 
         {[entry.responses.safe, entry.responses.stronger, entry.responses.advanced].map(
           (response) => (
             <div key={response.label} className="mb-8">
-              <h3 className="font-hero text-xl text-[#1D4871] mb-3">
+              <h3 className="font-hero font-bold tracking-[-0.01em] text-xl text-[#10233A] mb-3">
                 {response.label}
               </h3>
               <blockquote className="border-l-4 border-[#FFDE59] bg-[#FFDE59]/10 px-6 py-4 rounded-r-lg mb-3">
@@ -108,7 +107,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
         )}
 
         {/* What to Say Next - merged under "3 Ways to Respond" */}
-        <h3 className="font-hero text-xl text-[#1D4871] mb-3">
+        <h3 className="font-hero font-bold tracking-[-0.01em] text-xl text-[#10233A] mb-3">
           What to Say Next
         </h3>
         <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-6">
@@ -116,7 +115,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
         </p>
 
         {/* Common Mistakes */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           Common Mistakes to Avoid
         </h2>
         <ul className="space-y-2 mb-8">
@@ -129,7 +128,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
         </ul>
 
         {/* How Sayso Helps */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           How Sayso Helps You Handle This in Real Time
         </h2>
         <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-6">
@@ -139,7 +138,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
         <ContentInlineCTA location="objection-page" />
 
         {/* Related Objections + Cross-Section Links */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
+        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
           Related Objections
         </h2>
         <ul className="space-y-2 mb-6">
@@ -164,7 +163,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
             {entry.relatedBlogPost && (
               <Link
                 href={entry.relatedBlogPost.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-[#1D4871]/10 bg-white hover:border-[#2367EE]/40 transition-colors group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Deeper reading
@@ -177,7 +176,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
             {entry.relatedFeature && (
               <Link
                 href={entry.relatedFeature.href}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-[#1D4871]/10 bg-white hover:border-[#2367EE]/40 transition-colors group"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
                 <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Related feature

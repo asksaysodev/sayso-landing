@@ -21,7 +21,7 @@ export const FEATURES: Feature[] = [
   {
     id: 'cue',
     name: 'Cue',
-    sub: 'Real-time context based coaching',
+    sub: 'Real-time context based guidance',
     title: 'Know what to say the moment you need it.',
     body: 'Sayso listens to your live call, understands the context and shows a short cue for your next move, so you never have to memorize a script.',
     href: '/products/cue/',

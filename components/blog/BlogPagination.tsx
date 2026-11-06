@@ -33,7 +33,7 @@ export function BlogPagination({ currentPage, totalPages, basePath = '/blog' }: 
         {currentPage > 1 && (
           <Link
             href={getHref(currentPage - 1)}
-            className="px-4 py-2 rounded-full border-2 border-[#1D4871] text-[#1D4871] font-bold text-sm hover:bg-[#FFDE59]/20 transition-colors"
+            className="px-4 py-2 rounded-full font-semibold text-sm transition-shadow bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.24)]"
           >
             &larr; Prev
           </Link>
@@ -48,10 +48,10 @@ export function BlogPagination({ currentPage, totalPages, basePath = '/blog' }: 
             <Link
               key={page}
               href={getHref(page)}
-              className={`w-10 h-10 flex items-center justify-center rounded-full font-bold text-sm border-2 transition-all ${
+              className={`w-10 h-10 flex items-center justify-center rounded-full font-semibold text-sm transition-shadow ${
                 page === currentPage
-                  ? 'bg-[#2367EE] text-white border-[#2367EE]'
-                  : 'border-[#1D4871] text-[#1D4871] hover:bg-[#FFDE59]/20'
+                  ? 'bg-[#2367EE] text-white shadow-[0_0_0_1px_#2367EE]'
+                  : 'bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.24)]'
               }`}
             >
               {page}
@@ -62,7 +62,7 @@ export function BlogPagination({ currentPage, totalPages, basePath = '/blog' }: 
         {currentPage < totalPages && (
           <Link
             href={getHref(currentPage + 1)}
-            className="px-4 py-2 rounded-full border-2 border-[#1D4871] text-[#1D4871] font-bold text-sm hover:bg-[#FFDE59]/20 transition-colors"
+            className="px-4 py-2 rounded-full font-semibold text-sm transition-shadow bg-white text-[#10233A] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:shadow-[0_0_0_1px_rgba(16,35,58,0.24)]"
           >
             Next &rarr;
           </Link>

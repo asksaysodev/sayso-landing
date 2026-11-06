@@ -5,19 +5,19 @@ export function TermsOfServicePage() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-widest text-[#1D4871]/60 mb-3">
-            Legal
+          <p className="mb-4">
+            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">LEGAL</span>
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1D4871] leading-tight mb-3">
+          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
             Terms and Conditions
           </h1>
           <p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>
-          <div className="mt-6 border-t-2 border-[#FFDE59]" />
+          <div className="mt-8 border-t border-[#1D4871]/10" />
         </div>
 
         {/* Agreement to Terms */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Agreement to Terms
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -47,7 +47,7 @@ export function TermsOfServicePage() {
 
         {/* Intellectual Property Rights */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Intellectual Property Rights
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -66,7 +66,7 @@ export function TermsOfServicePage() {
 
         {/* Privacy & Security */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Privacy &amp; Security
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -110,7 +110,7 @@ export function TermsOfServicePage() {
 
         {/* Conversation Data License */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Conversation Data License
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -146,7 +146,7 @@ export function TermsOfServicePage() {
 
         {/* User Representations */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             User Representations
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -170,7 +170,7 @@ export function TermsOfServicePage() {
 
         {/* Prohibited Uses */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Prohibited Uses
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">You agree not to:</p>
@@ -199,7 +199,7 @@ export function TermsOfServicePage() {
 
         {/* User Contributions & Feedback */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             User Contributions &amp; Feedback
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -217,7 +217,7 @@ export function TermsOfServicePage() {
 
         {/* Service Availability */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Service Availability
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -231,7 +231,7 @@ export function TermsOfServicePage() {
 
         {/* Arbitration & Class Action Waiver */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Arbitration &amp; Class Action Waiver
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -250,7 +250,7 @@ export function TermsOfServicePage() {
 
         {/* Limitation of Liability */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Limitation of Liability
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -265,7 +265,7 @@ export function TermsOfServicePage() {
 
         {/* Disclaimer */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">Disclaimer</h2>
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">Disclaimer</h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             The Service is provided "as is" and "as available" without warranties of any kind,
             express or implied. We do not guarantee that the Service will be error-free,
@@ -286,7 +286,7 @@ export function TermsOfServicePage() {
 
         {/* Governing Law & Jurisdiction */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Governing Law &amp; Jurisdiction
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -300,7 +300,7 @@ export function TermsOfServicePage() {
 
         {/* SMS Terms of Service */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             SMS Terms of Service
           </h2>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
@@ -342,7 +342,7 @@ export function TermsOfServicePage() {
 
         {/* Refunds and Cancellations */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Refunds and Cancellations
           </h2>
 
@@ -449,7 +449,7 @@ export function TermsOfServicePage() {
 
         {/* Contact Information */}
         <section className="mt-10 space-y-4">
-          <h2 className="text-xl font-bold text-[#1D4871] uppercase tracking-wide">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             Contact Information
           </h2>
 

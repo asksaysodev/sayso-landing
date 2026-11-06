@@ -2,7 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const notReadyYet: ObjectionEntry = {
   slug: 'not-ready-yet',
-  updatedAt: '2026-06-13',
+  updatedAt: '2026-11-05',
   keyword: 'how to handle "not ready yet" real estate',
   seoTitle: 'How to Handle "Not Ready Yet" in Real Estate',
   seoDescription:
@@ -60,7 +60,7 @@ export const notReadyYet: ObjectionEntry = {
     href: '/blog/why-prospects-dont-commit',
   },
   relatedFeature: {
-    title: 'Real-Time Coaching',
+    title: 'Real-Time Guidance',
     href: '/products/cue',
   },
   faq: [
@@ -72,7 +72,7 @@ export const notReadyYet: ObjectionEntry = {
     {
       question: 'Should I follow up with someone who says they\'re not ready?',
       answer:
-        'Yes, always ask for permission to follow up later. Most agents lose deals not because the lead was bad, but because they never called back when the timing was right.',
+        'Yes, always ask for permission to follow up later. Most agents lose clients not because the lead was bad, but because they never called back when the timing was right.',
     },
     {
       question: 'How do you keep the conversation going after "not ready yet"?',
@@ -82,7 +82,7 @@ export const notReadyYet: ObjectionEntry = {
     {
       question: 'How can AI help with objection handling on calls?',
       answer:
-        'Tools like Sayso show you the right response in real time while you are on the call, so you never freeze or fumble when a prospect pushes back. It coaches you through the moment instead of making you memorize scripts.',
+        'Tools like Sayso show you the right response in real time while you are on the call, so you never freeze or fumble when a prospect pushes back. It guides you through the moment instead of making you memorize scripts.',
     },
   ],
 };

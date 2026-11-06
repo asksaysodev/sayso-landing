@@ -7,7 +7,7 @@ interface BlogAuthorCardProps {
 
 export function BlogAuthorCard({ author }: BlogAuthorCardProps) {
   return (
-    <div className="bg-white rounded-xl border-2 border-[#1D4871] p-6 flex items-start gap-4">
+    <div className="bg-white rounded-[20px] p-6 flex items-start gap-4 shadow-card">
       <div className="w-14 h-14 rounded-full bg-[#D7DEE1] overflow-hidden shrink-0">
         {author.avatar && (
           <Image
@@ -20,7 +20,7 @@ export function BlogAuthorCard({ author }: BlogAuthorCardProps) {
         )}
       </div>
       <div>
-        <h4 className="font-hero text-base text-[#1D4871] mb-1">{author.name}</h4>
+        <h4 className="font-hero font-extrabold text-base text-[#10233A] mb-1">{author.name}</h4>
         <p className="text-sm text-[#1D4871]/60 font-sans mb-2">{author.role}</p>
         {author.linkedin && (
           <a

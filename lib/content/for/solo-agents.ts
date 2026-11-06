@@ -29,16 +29,16 @@ export const soloAgents: UseCaseEntry = {
   ],
   betterApproachHeading: 'A Better Approach to Prospecting Conversations',
   betterApproach: [
-    'What if you could have a coach in your ear during every call, not after? Real-time coaching changes the equation. Instead of preparing for every possible scenario before the conversation, you get guidance during the conversation when it actually matters.',
+    'What if you had help on your screen during every call, not after? Real-time guidance changes the equation. Instead of preparing for every possible scenario before the conversation, you get guidance during the conversation when it actually matters.',
     'Sayso listens to your live prospecting calls and shows you what to say next on your screen. When a prospect pushes back, the right response appears. When the conversation stalls, Sayso suggests the next question to keep it moving. This is how solo agents have better prospecting conversations in real estate without memorizing a binder full of scripts.',
-    'Picture this: a lead says "I already have an agent." Instead of stammering through a generic reply, you see a proven response on your screen, tailored to what they just said. You deliver it naturally, the conversation continues, and you book the appointment. That is the difference real-time coaching makes.',
+    'Picture this: a lead says "I already have an agent." Instead of stammering through a generic reply, you see a proven response on your screen, tailored to what they just said. You deliver it naturally, the conversation continues, and you book the appointment. That is the difference real-time guidance makes.',
     'Sayso captures your notes automatically and syncs them to your CRM, so the admin work that used to take an hour now takes zero. You move straight to the next dial with your conversation details already logged.',
   ],
   getStarted:
-    'See how Sayso helps solo agents sound better on every prospecting call. Book a demo to watch real-time coaching in action, or visit pricing to find the right plan for you.',
+    'See how Sayso helps solo agents sound better on every prospecting call. Book a demo to watch real-time guidance in action, or visit pricing to find the right plan for you.',
   howSaysoWorks: [
     {
-      feature: 'Real-Time Coaching',
+      feature: 'Real-Time Guidance',
       description: 'See what to say during live calls: objection responses, follow-up questions, and appointment closes, with no memorization needed.',
       href: '/products/cue',
     },
@@ -60,7 +60,7 @@ export const soloAgents: UseCaseEntry = {
   faq: [
     {
       question: 'How does Sayso help me have better prospecting conversations in real estate?',
-      answer: 'Sayso listens to your live calls and shows coaching prompts on your screen in real time. When a prospect raises an objection, you see the right response immediately, so you handle it confidently instead of freezing.',
+      answer: 'Sayso listens to your live calls and shows guidance prompts on your screen in real time. When a prospect raises an objection, you see the right response immediately, so you handle it confidently instead of freezing.',
     },
     {
       question: 'Can solo agents use Sayso without a team plan?',
@@ -68,19 +68,19 @@ export const soloAgents: UseCaseEntry = {
     },
     {
       question: 'Does Sayso replace a real estate coach?',
-      answer: 'Sayso handles the in-the-moment coaching that a human coach cannot: real-time prompts during live calls. It complements coaching programs by giving you support on every single call, not just the ones you review later.',
+      answer: 'Sayso handles the in-the-moment guidance that a human coach cannot: real-time prompts during live calls. It complements coaching programs by giving you support on every single call, not just the ones you review later.',
     },
     {
       question: 'How much time does Sayso save per day?',
-      answer: 'Most solo agents save 30\u201360 minutes per day on call notes alone. The real-time coaching also reduces the number of lost prospects from fumbled objections, which compounds over time.',
+      answer: 'Most solo agents save 30\u201360 minutes per day on call notes alone. The real-time guidance also reduces the number of lost prospects from fumbled objections, which compounds over time.',
     },
     {
       question: 'How much does Sayso cost and how do I get started?',
-      answer: 'Sayso offers flexible plans for solo agents and teams. Visit the pricing page for current plans, or book a demo to see real-time coaching in action before you commit.',
+      answer: 'Sayso offers flexible plans for solo agents and teams. Visit the pricing page for current plans, or book a demo to see real-time guidance in action before you commit.',
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', href: '/products/cue' },
+    { title: 'Real-Time Guidance', href: '/products/cue' },
     { title: 'Call Notes', href: '/products/smart-capture' },
   ],
   relatedBlogPosts: [
