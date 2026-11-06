@@ -13,7 +13,7 @@ interface ScriptSheetProps {
 export function ScriptSheet({ title, children }: ScriptSheetProps) {
   return (
     <section
-      className="script-sheet bg-white border-2 border-dashed border-[#1D4871]/40 rounded-xl p-6 my-8"
+      className="script-sheet bg-white rounded-[20px] p-6 my-8 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] print:shadow-none"
       aria-label={title}
     >
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
@@ -21,7 +21,7 @@ export function ScriptSheet({ title, children }: ScriptSheetProps) {
           <span className="text-xs uppercase tracking-wide text-[#1D4871]/50 font-bold block mb-1">
             Printable call sheet
           </span>
-          <p className="font-hero text-xl text-[#1D4871] font-bold">{title}</p>
+          <p className="font-hero text-xl text-[#10233A] font-extrabold tracking-[-0.01em]">{title}</p>
         </div>
         <PrintSheetButton />
       </div>

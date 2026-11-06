@@ -9,7 +9,7 @@ export function BlogClusterNav({ posts }: BlogClusterNavProps) {
   if (posts.length === 0) return null;
 
   return (
-    <div className="bg-white rounded-xl border-2 border-[#1D4871] p-5 mt-6">
+    <div className="bg-white rounded-2xl p-5 shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] mt-6">
       <h4 className="font-hero text-sm text-[#1D4871] mb-3 uppercase tracking-wide">
         In This Guide
       </h4>

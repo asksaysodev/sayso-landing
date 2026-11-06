@@ -14,7 +14,7 @@ export function BlogCoverImage({ src, alt }: BlogCoverImageProps) {
   const hasImage = src && !imgError;
 
   return (
-    <div className="relative aspect-video bg-[#F4F4F5] rounded-xl border-2 border-[#1D4871] overflow-hidden">
+    <div className="relative aspect-video bg-[#F4F4F5] rounded-[20px] overflow-hidden shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
       {hasImage ? (
         <Image
           src={src}
@@ -25,8 +25,8 @@ export function BlogCoverImage({ src, alt }: BlogCoverImageProps) {
           onError={() => setImgError(true)}
         />
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1D4871] to-[#2367EE]">
-          <LightningIcon size={80} className="text-white/30" />
+        <div className="absolute inset-0 flex items-center justify-center bg-[#E3E8EC]">
+          <LightningIcon size={80} className="text-[#1D4871]/20" />
         </div>
       )}
     </div>

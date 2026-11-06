@@ -27,7 +27,7 @@ export function BlogShareBar({ title, slug }: BlogShareBarProps) {
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#1D4871] text-[#1D4871] hover:bg-[#2367EE] hover:text-white hover:border-[#2367EE] transition-colors"
+        className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#1D4871] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:bg-[#2367EE] hover:text-white hover:shadow-[0_0_0_1px_#2367EE] transition"
         aria-label="Share on LinkedIn"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -40,7 +40,7 @@ export function BlogShareBar({ title, slug }: BlogShareBarProps) {
         href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#1D4871] text-[#1D4871] hover:bg-[#2367EE] hover:text-white hover:border-[#2367EE] transition-colors"
+        className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#1D4871] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:bg-[#2367EE] hover:text-white hover:shadow-[0_0_0_1px_#2367EE] transition"
         aria-label="Share on X"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -51,7 +51,7 @@ export function BlogShareBar({ title, slug }: BlogShareBarProps) {
       {/* Copy Link */}
       <button
         onClick={handleCopy}
-        className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#1D4871] text-[#1D4871] hover:bg-[#2367EE] hover:text-white hover:border-[#2367EE] transition-colors relative"
+        className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#1D4871] shadow-[0_0_0_1px_rgba(16,35,58,0.12)] hover:bg-[#2367EE] hover:text-white hover:shadow-[0_0_0_1px_#2367EE] transition relative"
         aria-label="Copy link"
       >
         {copied ? (
