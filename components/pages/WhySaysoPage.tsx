@@ -1,8 +1,16 @@
+/**
+ * /why-sayso: the opening, the problem with how agents learn today, what makes
+ * Sayso different (with the Sayso widget), who it is built for, team quotes,
+ * FAQ and the closing call to action. Copy comes from lib/content/why-sayso.
+ */
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import Carousel from '@/components/ui/Carousel';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
+import { WidgetFigure } from '@/components/pages/WidgetFigure';
+import { body, card, h1, h2, linkCard, quote } from '@/components/pages/contentStyles';
 import { generateWebPageJsonLd } from '@/lib/seo/schema';
 import type { WhySaysoContent } from '@/lib/content/why-sayso';
 
@@ -11,116 +19,71 @@ interface WhySaysoPageProps {
 }
 
 export function WhySaysoPage({ content }: WhySaysoPageProps) {
-  const webPageJsonLd = generateWebPageJsonLd(
-    content.seoTitle,
-    content.seoDescription,
-    '/why-sayso',
-  );
+  const webPageJsonLd = generateWebPageJsonLd(content.seoTitle, content.seoDescription, '/why-sayso');
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
 
-      <Breadcrumb
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Why Sayso' },
-        ]}
-      />
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Why Sayso' }]} />
 
-      <article className="max-w-[800px] mx-auto px-6 pb-10">
-        {/* H1 */}
-        <h1 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mt-6 mb-6">
-          {content.h1}
-        </h1>
+      <article className="mx-auto max-w-[800px] px-6 pb-10">
+        <h1 className={`${h1} mb-6 mt-6`}>{content.h1}</h1>
+        <p className={`${body} mb-8 text-lg`}>{content.opening}</p>
 
-        {/* Opening */}
-        <p className="text-[#1D4871]/80 text-lg leading-relaxed font-sans mb-8">
-          {content.opening}
-        </p>
-
-        {/* The Problem */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
-          The Problem with How Agents Learn Today
-        </h2>
+        <h2 className={`${h2} mb-4 mt-10`}>The Problem with How Agents Learn Today</h2>
         {content.problemToday.split('\n\n').map((paragraph, i) => (
-          <p key={i} className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-5">
+          <p key={i} className={`${body} mb-5`}>
             {paragraph}
           </p>
         ))}
 
-        {/* Differentiators */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
-          What Makes Sayso Different
-        </h2>
-        <div className="space-y-5 mb-8">
+        <h2 className={`${h2} mb-6 mt-10`}>What Makes Sayso Different</h2>
+        <WidgetFigure
+          preset="notes"
+          label="The Sayso widget during a call, showing a live cue, captured LPMAMA letters and a note"
+          caption="Sample call: a live cue, captured letters and the note under Motivation."
+          className="mb-8"
+        />
+        <Carousel label="What makes Sayso different" itemName="card" className="mb-8" trackClassName="grid grid-cols-1 gap-5">
           {content.differentiators.map((diff) => (
-            <div
-              key={diff.title}
-              className="bg-white border-2 border-[#1D4871]/10 rounded-2xl p-5"
-            >
-              <p className="font-bold text-[#1D4871] text-base font-sans mb-2">
-                {diff.title}
-              </p>
-              <p className="text-[#1D4871]/70 text-sm leading-relaxed font-sans">
-                {diff.description}
-              </p>
+            <div key={diff.title} className={card}>
+              <p className="mb-2 font-sans text-base font-bold text-[#10233A]">{diff.title}</p>
+              <p className="font-sans text-sm leading-relaxed text-[#1D4871]/70">{diff.description}</p>
             </div>
           ))}
-        </div>
+        </Carousel>
 
         <ContentInlineCTA location="why-sayso-page" />
 
-        {/* Who It's For */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-6">
-          Who Sayso Is Built For
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+        <h2 className={`${h2} mb-6 mt-10`}>Who Sayso Is Built For</h2>
+        <Carousel label="Who Sayso is built for" itemName="role" className="mb-8" trackClassName="grid grid-cols-2 gap-5">
           {content.whoItsFor.map((persona) => (
-            <Link
-              key={persona.persona}
-              href={persona.href}
-              className="group bg-white border-2 border-[#1D4871]/10 rounded-2xl p-5 hover:border-[#2367EE] transition-colors block"
-            >
-              <p className="font-bold text-[#1D4871] text-base font-sans mb-1 group-hover:text-[#2367EE] transition-colors">
+            <Link key={persona.persona} href={persona.href} className={`group ${linkCard}`}>
+              <p className="mb-1 font-sans text-base font-bold text-[#10233A] transition-colors group-hover:text-[#2367EE]">
                 {persona.persona}
               </p>
-              <p className="text-[#1D4871]/70 text-sm leading-relaxed font-sans">
-                {persona.description}
-              </p>
+              <p className="font-sans text-sm leading-relaxed text-[#1D4871]/70">{persona.description}</p>
             </Link>
           ))}
-        </div>
+        </Carousel>
 
-        {/* Social Proof */}
-        <h2 className="font-hero text-2xl md:text-[28px] text-[#1D4871] mt-10 mb-4">
-          What Teams Are Saying
-        </h2>
-        <div className="space-y-4 mb-8">
-          {content.socialProof.map((quote, i) => (
-            <blockquote
-              key={i}
-              className="border-l-4 border-[#FFDE59] bg-[#FFDE59]/10 px-6 py-4 rounded-r-lg"
-            >
-              <p className="text-[#1D4871] text-base leading-relaxed font-sans italic">
-                &ldquo;{quote}&rdquo;
-              </p>
+        <h2 className={`${h2} mb-4 mt-10`}>What Teams Are Saying</h2>
+        <Carousel label="What teams are saying" itemName="quote" className="mb-8" trackClassName="grid grid-cols-1 gap-4">
+          {content.socialProof.map((text, i) => (
+            <blockquote key={i} className={quote}>
+              <p className="font-sans text-base italic leading-relaxed text-[#10233A]">&ldquo;{text}&rdquo;</p>
             </blockquote>
           ))}
-        </div>
-
+        </Carousel>
       </article>
 
-      {/* FAQ */}
       {content.faq.length > 0 && <FAQ items={content.faq} />}
 
       <ContentCTA
         location="why-sayso-page"
         headline="Get Started Today"
-        subheading="See the difference real-time coaching makes on your calls."
+        subheading="See the difference real-time guidance makes on your calls."
       />
     </>
   );

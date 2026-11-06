@@ -247,7 +247,7 @@ Motion philosophy: bounce and spring easing (`cubic-bezier(.34,1.56,.64,1)`) are
 
 ## 7. Product Surface: the Sayso Widget
 
-Wherever the site shows the product it shows the widget, rebuilt as a React component in `components/SaysoWidget/`. It is a faithful copy of the desktop app's widget, not an illustration. PR 3 of the redesign reuses it on the product pages.
+Wherever the site shows the product it shows the widget, rebuilt as a React component in `components/SaysoWidget/`. It is a faithful copy of the desktop app's widget, not an illustration. Content pages show static presets through `components/pages/WidgetFigure.tsx` (white card, soft backdrop, caption): Cue shows `cues`, Smart Capture `smartCapture`, Pulse `pulse` and Playbook `playbook` on `/products/[slug]`, and the solution, Why Sayso, partner integration and download pages show `cues` or `notes`.
 
 ### Using it
 
@@ -296,7 +296,7 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 
 ### Older glass utilities
 
-`.showcase-glass` and `.showcase-glass-strong` in `app/globals.css` still serve the older product showcases (`components/landing/showcases`, `CRMDialerShowcase`). Do not use them in new work; use the widget.
+`.showcase-glass` and `.showcase-glass-strong` in `app/globals.css` came from the older product showcases, which are now removed. They are still used by the ad pages' 3 Easy Steps visuals (`components/landing/ThreeStepsSection/StepVisuals.tsx`), so keep them until those pages are redesigned; do not use them in new work. The product tour (`/product-tour`) keeps its own Follow Up Boss scene and overlay (`components/landing/ProductTour`), because its chapters carry their own notes, market data and scripts.
 
 ---
 
@@ -311,7 +311,7 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 | **Secondary button** (`variant="secondary"`) | White pill, `shadow-card-sm` and dark text; `shadow-card-sm-hover` darkens the ring on hover. |
 | **Badges and labels** | Yellow `v2-pow-badge` style label in Bangers, flat (no border or shadow), for section labels and small emphasis. |
 | **Sections / containers** | `Section` wrapper: full-width, `py-16 sm:py-24`, `default` or `accent` background variant. `Container`: centered, max-width ~1200px, `px-6 md:px-8 lg:px-12`. Alternate `background` and `accent-bg`, or drop into a dark navy section for emphasis. |
-| **Pricing cards** | Light surface with halftone, 3-column grid, popular plan highlighted with blue shadow/accent, `v4-accent-top` yellow top border, checkmark feature lists. |
+| **Pricing cards** | `HomePricing`, shared by the homepage and `/pricing`: monthly / annual toggle, a white Individual Agent+ card and a navy Teams and Brokerages card, both with a yellow top border, checkmark feature lists and flat Button CTAs. |
 | **Blog content** | Helvetica prose, blue links, blockquotes with a yellow left border, gray code blocks, dark-header tables, yellow bottom border on the blog hero banner. |
 | **Blog inline CTA** | A compact version of the mid-article CTA: navy-to-blue gradient card with the comic shadow, a white Bangers heading, one line of white body text (full white for contrast) and a white pill button with navy text. Sits after a post's second paragraph when the post sets `ctaVariant`. |
 | **Hub quick answers and related reading** | Optional blocks on hub pages (`HubPage.tsx`, set by `quickAnswers` and `relatedReading` in the hub config). Quick answers is a white rounded list with thin navy dividers: each row is a bold navy phrase over a one-line muted answer, the whole row links to the child page and turns blue on hover. Related reading is a Bangers heading over muted navy paragraphs with inline links. Both use the 800px content column. |

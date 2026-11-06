@@ -18,18 +18,19 @@ import {
   TEAM_FEATURES_SUMMARY,
   TEAM_PLAN_NAME,
 } from '@/lib/content/pricing';
+import type { PricingAnalyticsIds } from '../types';
 import { BillingToggle } from './BillingToggle';
 import { FeatureList } from './FeatureList';
 
 const card = `${panel} flex flex-col border-t-4 border-t-[#FFDE59] p-7`;
 
-export function PricingCards() {
+export function PricingCards({ analyticsIds }: { analyticsIds: PricingAnalyticsIds }) {
   const [annual, setAnnual] = useState(true);
   const { openDemoCalendar, openSignup } = useDemoCalendar();
 
   return (
     <>
-      <BillingToggle annual={annual} onChange={setAnnual} />
+      <BillingToggle annual={annual} onChange={setAnnual} monthlyId={analyticsIds.monthly} annualId={analyticsIds.annual} />
       <div className="mx-auto grid max-w-[960px] grid-cols-1 items-stretch gap-[22px] min-[961px]:grid-cols-2">
         <div className={card}>
           <h3 className="font-hero text-[22px] font-bold">{INDIVIDUAL_PLAN_NAME}</h3>
@@ -49,7 +50,7 @@ export function PricingCards() {
               AGENT_SUPPORT_SUMMARY,
             ]}
           />
-          <Button onClick={openSignup} className="self-start" data-analytics-id="cta-download-home-pricing-individual">
+          <Button onClick={openSignup} className="self-start" data-analytics-id={analyticsIds.agent}>
             Claim early access
           </Button>
         </div>
@@ -58,7 +59,7 @@ export function PricingCards() {
           <div className="mt-2 font-hero text-[40px] font-extrabold leading-none tracking-[-0.03em]">Custom</div>
           <p className="mt-2 text-sm text-white/85">Priced by team size.</p>
           <FeatureList items={TEAM_FEATURES_SUMMARY} inverted />
-          <Button variant="secondary" onClick={openDemoCalendar} className="self-start !shadow-none" data-analytics-id="cta-book-demo-home-pricing-teams">
+          <Button variant="secondary" onClick={openDemoCalendar} className="self-start !shadow-none" data-analytics-id={analyticsIds.teams}>
             Assemble your team
           </Button>
         </div>

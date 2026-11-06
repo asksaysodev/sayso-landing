@@ -10,7 +10,7 @@ const forHub: HubPageConfig = {
     'See how Sayso helps solo agents, team leaders, new agents, and ISAs sound better on every prospecting call with real-time coaching.',
   h1: 'Built for How You Work',
   introduction:
-    'Whether you are a solo agent leveling up, a team leader trying to level up 10 agents at once, or brokerage who wants to ramp agents quickly with the right habits, a brand new agent learning the ropes, or an ISA converting leads all day \u2014 Sayso adapts to your role.',
+    'Whether you are a solo agent leveling up, a team leader trying to level up 10 agents at once, or brokerage who wants to ramp agents quickly with the right habits, a brand new agent learning the ropes, or an ISA converting leads all day, Sayso adapts to your role.',
   childPages: [
     {
       title: 'Solo Agents',

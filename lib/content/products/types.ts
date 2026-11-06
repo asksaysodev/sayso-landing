@@ -24,9 +24,6 @@ export interface ProductEntry {
   relatedBlogPosts: { title: string; href: string }[];
   /** Feature list for SoftwareApplication JSON-LD. */
   featureList: string[];
-  /** Alt text for hero screenshot placeholder. */
+  /** Screen reader description of the hero widget picture. */
   screenshotAlt: string;
-  /** Which visual to render in the hero section. Defaults to 'placeholder'. */
-  heroVisual?: 'placeholder' | 'product-showcase';
-  ogImage?: string;
 }

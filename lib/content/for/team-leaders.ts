@@ -99,7 +99,7 @@ export const teamLeaders: UseCaseEntry = {
     { title: 'Real Estate Cold Call Scripts: Complete Guide', href: '/blog/real-estate-cold-calling-guide' },
   ],
   relatedObjections: [
-    { title: '"I\'m Not Ready Yet" \u2014 How to Respond', href: '/objections/not-ready-yet' },
-    { title: '"I Already Have an Agent" \u2014 How to Respond', href: '/objections/already-have-an-agent' },
+    { title: '"I\'m Not Ready Yet": How to Respond', href: '/objections/not-ready-yet' },
+    { title: '"I Already Have an Agent": How to Respond', href: '/objections/already-have-an-agent' },
   ],
 };

@@ -2,7 +2,7 @@ import type { ProductEntry } from './types';
 
 export const playbook: ProductEntry = {
   slug: 'playbook',
-  updatedAt: '2026-04-29',
+  updatedAt: '2026-11-06',
   keyword: 'custom call scripts real estate',
   seoTitle: 'Custom Call Scripts for Real Estate Agents',
   seoDescription:
@@ -13,7 +13,6 @@ export const playbook: ProductEntry = {
     'Playbook lets you upload your own scripts, frameworks, or talk tracks directly into Sayso. They appear on screen during your calls, right alongside Cue\u2019s live coaching prompts. No switching tabs, no losing your place, no fumbling for the right page.',
     'Your best material is always visible when you need it. Agents stay structured without feeling locked into a rigid script, and teams maintain consistency across every call.',
   ],
-  heroVisual: 'product-showcase',
   screenshotAlt:
     'Sayso Playbook showing a custom call script overlay visible during a live real estate prospecting call',
   howItWorksHeading: 'How Custom Call Scripts Work',
@@ -108,7 +107,7 @@ export const playbook: ProductEntry = {
     },
   ],
   relatedProducts: [
-    { title: 'Real-Time Coaching', slug: 'cue' },
+    { title: 'Real-Time Guidance', slug: 'cue' },
     { title: 'Smart Capture', slug: 'smart-capture' },
   ],
   relatedBlogPosts: [

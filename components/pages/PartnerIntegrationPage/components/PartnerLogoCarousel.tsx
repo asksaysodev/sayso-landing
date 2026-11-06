@@ -52,7 +52,7 @@ export function PartnerLogoCarousel() {
       `}</style>
 
       <div className="max-w-[1200px] mx-auto px-6 py-8 md:py-10">
-        <p className="text-xs md:text-sm tracking-wide text-[#1D4871]/60 text-center mb-6">
+        <p className="text-xs md:text-sm tracking-wide text-[#556B86] text-center mb-6">
           Trusted by real estate teams making calls every day
         </p>
 

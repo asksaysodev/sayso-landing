@@ -2,10 +2,13 @@
  * PartnerHero
  *
  * Top of the partner integration page: paired Sayso + partner logos, an
- * "Integrations" eyebrow, the H1 promise, supporting copy, and a CTA that
- * scrolls down to the demo form. Modeled on partner co-marketing hero layouts.
+ * "Integrations" eyebrow, the H1 promise, supporting copy, a CTA that
+ * scrolls down to the demo form, and the Sayso widget with Smart Capture
+ * notes. Modeled on partner co-marketing hero layouts.
  */
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
+import { WidgetFigure } from '@/components/pages/WidgetFigure';
 import type { PartnerIntegrationEntry } from '@/lib/content/partner-integrations/types';
 
 interface PartnerHeroProps {
@@ -15,7 +18,6 @@ interface PartnerHeroProps {
 export function PartnerHero({ entry }: PartnerHeroProps) {
   return (
     <section className="relative overflow-hidden">
-      <div className="v2-halftone absolute inset-0 pointer-events-none" aria-hidden />
       <div className="relative max-w-[900px] mx-auto px-6 pt-12 pb-10 md:pt-16 md:pb-14 text-center">
         {/* Paired logos */}
         <div className="flex items-center justify-center gap-4 md:gap-6 mb-8">
@@ -44,26 +46,28 @@ export function PartnerHero({ entry }: PartnerHeroProps) {
         </span>
 
         {/* H1 */}
-        <h1 className="font-hero text-3xl sm:text-4xl md:text-5xl text-[#1D4871] leading-[1.12] tracking-tight max-w-3xl mx-auto">
+        <h1 className="font-hero font-extrabold text-[34px] sm:text-4xl md:text-5xl text-[#10233A] leading-[1.1] tracking-[-0.03em] max-w-3xl mx-auto">
           {entry.h1}
         </h1>
 
         {/* Supporting copy */}
-        <p className="mt-6 text-base md:text-lg text-[#1D4871]/75 leading-relaxed max-w-2xl mx-auto font-sans">
+        <p className="mt-6 text-base md:text-lg text-[#556B86] leading-relaxed max-w-2xl mx-auto font-sans">
           {entry.h2}
         </p>
 
         {/* CTA */}
         <div className="mt-9">
-          <a
-            href="#demo-form"
-            data-analytics-id={`partner-hero-cta-${entry.slug}`}
-            className="inline-flex items-center justify-center rounded-full bg-[#2367EE] text-white font-bold text-base px-8 py-3.5 v2-comic-shadow-blue border-2 border-[#1D4871] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
-          >
+          <Button href="#demo-form" data-analytics-id={`partner-hero-cta-${entry.slug}`}>
             {entry.heroCtaText}
-          </a>
+          </Button>
         </div>
       </div>
+      <WidgetFigure
+        preset="notes"
+        label="The Sayso widget during a call, with Smart Capture notes ready to copy into your CRM"
+        caption="Sample call with Smart Capture notes."
+        className="mx-auto w-full max-w-[880px] px-4 pb-6 sm:px-6"
+      />
     </section>
   );
 }
