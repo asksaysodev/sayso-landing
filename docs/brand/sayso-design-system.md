@@ -296,7 +296,7 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 
 ### Older glass utilities
 
-`.showcase-glass` and `.showcase-glass-strong` in `app/globals.css` belonged to the older product showcases, which are now removed. Nothing uses them; do not use them in new work. The product tour (`/product-tour`) keeps its own Follow Up Boss scene and overlay (`components/landing/ProductTour`), because its chapters carry their own notes, market data and scripts.
+`.showcase-glass` and `.showcase-glass-strong` in `app/globals.css` came from the older product showcases, which are now removed. They are still used by the ad pages' 3 Easy Steps visuals (`components/landing/ThreeStepsSection/StepVisuals.tsx`), so keep them until those pages are redesigned; do not use them in new work. The product tour (`/product-tour`) keeps its own Follow Up Boss scene and overlay (`components/landing/ProductTour`), because its chapters carry their own notes, market data and scripts.
 
 ---
 
