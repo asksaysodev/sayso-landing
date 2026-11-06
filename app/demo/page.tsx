@@ -58,7 +58,7 @@ export default function DemoPage() {
           </section>
 
           <section className="w-full px-4 md:px-6 pb-16">
-            <div className="max-w-[900px] mx-auto rounded-[20px] border border-[rgba(16,35,58,0.12)] overflow-hidden bg-white shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+            <div className="max-w-[900px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">
               <CalendlyInlineWidget
                 className="w-full"
                 style={{ minWidth: '320px', height: '700px' }}

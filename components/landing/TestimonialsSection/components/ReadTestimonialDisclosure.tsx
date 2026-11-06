@@ -21,7 +21,7 @@ export function ReadTestimonialDisclosure({
   const panelId = `testimonial-quote-panel-${testimonial.number}`;
 
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
+    <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-card">
       <button
         type="button"
         onClick={() => setIsOpen((v) => !v)}

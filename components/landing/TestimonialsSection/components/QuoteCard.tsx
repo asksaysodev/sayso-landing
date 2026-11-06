@@ -15,7 +15,7 @@ type QuoteCardProps = {
 
 export function QuoteCard({ testimonial }: QuoteCardProps) {
   return (
-    <div className="relative h-full overflow-hidden rounded-2xl bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)] p-4 lg:p-5 flex flex-col">
+    <div className="relative h-full overflow-hidden rounded-2xl bg-white shadow-card p-4 lg:p-5 flex flex-col">
       <svg
         className="absolute top-3 right-3 lg:top-4 lg:right-4 text-[#FFDE59]"
         width="40"

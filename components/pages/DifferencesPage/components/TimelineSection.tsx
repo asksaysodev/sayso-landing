@@ -21,7 +21,7 @@ export function TimelineSection() {
         <div className="mx-auto max-w-[960px] mt-12">
           <div className="grid grid-cols-1 md:grid-cols-[1.55fr_1fr] gap-2">
             <div
-              className="h-[78px] flex items-center justify-center rounded-2xl bg-[#2367EE] text-white font-extrabold text-[15px] shadow-[0_1px_2px_rgba(16,35,58,0.18),0_8px_20px_-8px_rgba(35,103,238,0.55)]"
+              className="h-[78px] flex items-center justify-center rounded-2xl bg-[#2367EE] text-white font-extrabold text-[15px] shadow-button"
             >
               The call is happening
             </div>

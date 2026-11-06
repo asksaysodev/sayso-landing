@@ -20,13 +20,13 @@ export const h2Small = 'font-hero text-xl font-extrabold tracking-[-0.02em] text
 export const body = 'font-sans text-base leading-relaxed text-[#1D4871]/80';
 
 /** Soft card shadow with a hairline ring. */
-const cardShadow = 'shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-16px_rgba(16,35,58,0.25)]';
+const cardShadow = 'shadow-card';
 
 /** White card. */
 export const card = `rounded-2xl bg-white p-5 ${cardShadow}`;
 
 /** White card that links somewhere: the shadow deepens on hover. */
-export const linkCard = `${card} block transition-shadow hover:shadow-[0_0_0_1px_rgba(16,35,58,0.2),0_20px_40px_-18px_rgba(16,35,58,0.32)]`;
+export const linkCard = `${card} block transition-shadow hover:shadow-card-hover`;
 
 /** Inline text link. */
 export const textLink = 'font-sans text-[#2367EE] hover:underline';
