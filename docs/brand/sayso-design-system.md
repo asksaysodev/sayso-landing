@@ -356,13 +356,13 @@ Easing conventions: spring/overshoot `cubic-bezier(0.34, 1.56, 0.64, 1)` for ent
 
 1. **Top strip** (`HomeTopStrip`): NEW pill, "Sayso for teams", opens the Calendly demo pop-up (`openDemoCalendar`, `cta-team-platform-strip`).
 2. **Navbar** (shared, `SaysoNavbar`).
-3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Download Sayso / Book a demo / Try it live / Watch the demo (Loom pop-out), meta line, centered social proof with a rotating quote, Ask AI links.
+3. **Hero** (`HomeHero`): blog pill, H1 "Know what to say on every call.", lede, Download Sayso / Book a demo / Try it, meta line, centered social proof with a rotating quote, Ask AI links.
 4. **Guided live demo** (`HomeLiveDemo`, `#demo`): step card above the stage, then the live widget. Six steps: Start, watch cues, Smart Capture note, Pulse, Playbook, hang up. Ends with the superhero card.
 5. **How it works** (`HomeHowItWorks`, `#how`): three cards with static widget views.
 6. **Features** (`HomeFeatures`, `#features`): dark app-style panel, product tabs on the left, fixed-height panel on the right.
 7. **Made to fit** (`HomeFitCards`, `#fits`): six cards (CRM, dialers, lead types, scripts, the bar, setup).
 8. **Compare** (`HomeCompare`, `#compare`): Sayso versus role-play, call recording review and printed scripts.
-9. **Reviews** (`HomeReviews`, `#reviews`): four agent quotes linking to their videos, then team logos.
+9. **Reviews** (`HomeReviews`, `#reviews`): four agent quotes linking to their videos, then a two-row team logo marquee (rows scroll in opposite directions, pause on hover, sit still with reduced motion). Logos are black silhouettes in `public/team-logos/`; the hero bubbles use square crops in `public/team-logos/marks/`.
 10. **Pricing** (`HomePricing`, `#pricing`): monthly / annual toggle, Individual Agent+ and Teams and Brokerages.
 11. **FAQ** (`HomeFAQ`, `#faq`): grouped questions. The same data feeds the FAQPage JSON-LD in `app/page.tsx`.
 12. **Final call to action** (`HomeFinalCta`) with the floating superhero, then the footer.

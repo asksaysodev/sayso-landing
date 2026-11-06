@@ -1,4 +1,4 @@
-/** Agent reviews (each links to the agent's video story) and the team logos under them. */
+/** Agent reviews (each links to the agent's video story) and the team logo marquee under them. */
 
 export interface Review {
   badge: string;
@@ -44,13 +44,33 @@ export const REVIEWS: Review[] = [
   },
 ];
 
-export const TEAM_LOGOS = [
-  { src: '/social-proof/anderson-group.png', alt: 'Anderson Real Estate Group', width: 930, height: 316 },
-  { src: '/social-proof/exp-realty.png', alt: 'eXp Realty', width: 988, height: 513 },
-  { src: '/social-proof/coldwell-banker.png', alt: 'Coldwell Banker', width: 196, height: 199 },
-  { src: '/social-proof/kw-executive.png', alt: 'KW Executive', width: 360, height: 103 },
-  { src: '/social-proof/obsidian-group.png', alt: 'The Obsidian Group', width: 1335, height: 278 },
-  { src: '/social-proof/exit-realty.png', alt: 'EXIT Realty', width: 839, height: 349 },
-  { src: '/social-proof/real-people-realty.png', alt: 'Real People Realty', width: 318, height: 208 },
-  { src: '/social-proof/team-borham.png', alt: 'Team Borham', width: 447, height: 355 },
+export interface TeamLogo {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+/** Team and brokerage logos, as black silhouettes, split across the two marquee rows. */
+export const TEAM_LOGO_ROWS: TeamLogo[][] = [
+  [
+    { src: '/team-logos/anderson-real-estate-group.png', alt: 'Anderson Real Estate Group', width: 191, height: 66 },
+    { src: '/team-logos/exp-realty.png', alt: 'eXp Realty', width: 231, height: 120 },
+    { src: '/team-logos/every-door-real-estate.png', alt: 'Every Door Real Estate', width: 730, height: 120 },
+    { src: '/team-logos/keller-williams.png', alt: 'Keller Williams', width: 265, height: 120 },
+    { src: '/team-logos/obsidian-group.png', alt: 'The Obsidian Group', width: 754, height: 120 },
+    { src: '/team-logos/real-broker.png', alt: 'Real Broker', width: 189, height: 120 },
+    { src: '/team-logos/team-borham.png', alt: 'Team Borham', width: 128, height: 120 },
+    { src: '/team-logos/smallegan-real-estate.png', alt: 'Smallegan Real Estate', width: 378, height: 120 },
+  ],
+  [
+    { src: '/team-logos/kw-executive.png', alt: 'KW Executive', width: 360, height: 103 },
+    { src: '/team-logos/coldwell-banker.png', alt: 'Coldwell Banker', width: 118, height: 120 },
+    { src: '/team-logos/realty-of-america.png', alt: 'Realty of America', width: 262, height: 120 },
+    { src: '/team-logos/team-integrity.png', alt: 'Team Integrity', width: 497, height: 118 },
+    { src: '/team-logos/dan-chin-homes.png', alt: 'Dan Chin Homes', width: 131, height: 120 },
+    { src: '/team-logos/k2-omni-group.png', alt: 'K2 Omni Group', width: 291, height: 120 },
+    { src: '/team-logos/team-minik.png', alt: 'Team Minik', width: 168, height: 120 },
+    { src: '/team-logos/real-people-realty.png', alt: 'Real People Realty', width: 183, height: 120 },
+  ],
 ];

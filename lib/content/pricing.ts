@@ -36,7 +36,7 @@ export const TEAM_FEATURES_SUMMARY = [
   IMPACT_REVIEWS_LINE,
 ];
 
-/** GTM ids for the billing toggle, shared by the homepage and /pricing. */
+/** Default GTM ids for the billing toggle (the /pricing ids). The homepage passes its own via HOME_PRICING_IDS. */
 export const BILLING_TOGGLE_ANALYTICS = {
   annual: 'pricing-billing-toggle-annual',
   monthly: 'pricing-billing-toggle-monthly',

@@ -15,17 +15,17 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'How is Sayso different from other coaching tools?',
         answer:
-          'Sayso coaches you during the call, not after it. Most tools analyze recordings once the conversation ends. Sayso gives you cues while the prospect is on the phone.',
+          'Sayso guides you during the call, not after it. Most tools analyze recordings once the conversation ends. Sayso gives you cues while the prospect is on the phone.',
       },
       {
         question: 'Do I need to click anything to get a cue?',
         answer:
-          'No. Cues come in on their own as the prospect talks. You keep your eyes on the conversation and glance over when you need the next question.',
+          'No. Cues come in on their own as the prospect talks. You stay focused on the conversation and glance over when you want.',
       },
       {
         question: 'Do I need to change my dialer or CRM?',
         answer:
-          'No. Sayso works alongside your existing tools. There is nothing to switch, no migration and no retraining your team on a new platform.',
+          'No. Sayso works alongside your existing browser-based dialer.',
       },
       {
         question: 'Will it distract me on a live call?',
@@ -40,7 +40,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'Does Sayso record my calls?',
         answer:
-          'Sayso uses the conversation transcript in real time and disposes of it immediately after the call. It does not record calls or store transcripts after the call ends.',
+          'Sayso uses the conversation transcript in real time. It does not record call audio.',
       },
     ],
   },
