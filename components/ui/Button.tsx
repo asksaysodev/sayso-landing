@@ -37,8 +37,6 @@ export function Button({
   };
 
   const classes = `${baseStyles} ${variantStyles[variant]} ${className}`;
-  const content = children;
-
   if (href && external) {
     return (
       <a
@@ -49,7 +47,7 @@ export function Button({
         className={classes}
         data-analytics-id={dataAnalyticsId}
       >
-        {content}
+        {children}
       </a>
     );
   }
@@ -57,7 +55,7 @@ export function Button({
   if (href?.startsWith('/')) {
     return (
       <Link href={href} onClick={onClick} className={classes} data-analytics-id={dataAnalyticsId}>
-        {content}
+        {children}
       </Link>
     );
   }
@@ -65,14 +63,14 @@ export function Button({
   if (href) {
     return (
       <a href={href} onClick={onClick} className={classes} data-analytics-id={dataAnalyticsId}>
-        {content}
+        {children}
       </a>
     );
   }
 
   return (
     <button type="button" onClick={onClick} className={classes} data-analytics-id={dataAnalyticsId}>
-      {content}
+      {children}
     </button>
   );
 }

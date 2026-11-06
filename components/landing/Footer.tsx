@@ -1,5 +1,5 @@
 /**
- * Site footer: logo, tagline, newsletter signup and social links on the left,
+ * Site footer: logo, newsletter signup and social links on the left,
  * three link columns (Programs, Get in Touch, Legal) on the right, copyright
  * underneath.
  */
