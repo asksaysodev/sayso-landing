@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Manrope, Bangers, Inter } from 'next/font/google'
+import { Manrope, Bangers } from 'next/font/google'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -23,13 +23,6 @@ const bangers = Bangers({
   display: 'swap',
 })
 
-// Inter is the Sayso widget's UI font (components/SaysoWidget)
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-inter',
-  display: 'swap',
-})
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -129,7 +122,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${bangers.variable} ${inter.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${bangers.variable}`}>
       <head>
       {gtmId && (
         <Script

@@ -14,7 +14,6 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 |---|---|---|---|
 | `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Desktop navbar, visible on every page |
 | `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile hamburger menu, only in DOM when menu open |
-| `cta-get-started-navbar-minimal` | → `#cta` anchor | [components/layout/NavbarMinimal.tsx](../../components/layout/NavbarMinimal.tsx) | Minimal-navbar pages |
 | `cta-team-platform-strip` | Opens demo calendar | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar ("see the team platform") |
 | `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
@@ -25,8 +24,6 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `home-pricing-billing-toggle-monthly` | Switches prices to monthly billing | Same as above | Homepage pricing. /pricing and /founderpricing keep `pricing-billing-toggle-monthly` |
 | `cta-download-final-cta` | Opens signup and download | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-book-demo-final-cta` | Opens demo calendar | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
-| `cta-download-three-steps-section` | Opens system-select modal | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Ad pages "3 Easy Steps" |
-| `cta-book-demo-three-steps-section` | Opens demo calendar | [components/landing/ThreeStepsSection/index.tsx](../../components/landing/ThreeStepsSection/index.tsx) | Ad pages "3 Easy Steps" |
 | `cta-book-demo-persona-agent-footer` | Scrolls to the demo form in the hero | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent footer CTA |
 | `cta-book-demo-persona-broker-footer` | Scrolls to the demo form in the hero | [components/landing/BrokerAdPage.tsx](../../components/landing/BrokerAdPage.tsx) | /broker footer |
 | `cta-book-demo-persona-isa-footer` | Scrolls to the demo form in the hero | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa footer |
@@ -63,6 +60,14 @@ These ids no longer exist on the site. Retire (pause or delete) the matching GTM
 | `cta-download-navbar` | Desktop navbar Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | The new navbar has only Log in and Book a demo, per the approved design |
 | `cta-download-mobile-menu` | Mobile menu Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | Same as above: the mobile drawer ends with Log in and Book a demo |
 | `contact-email` | Footer "Email Support" `mailto:support@asksayso.com` link | Flat redesign foundation (PR #124) | Email Support was removed from the footer on purpose |
+| `cta-download-three-steps-section` | Old homepage "How it works" Download button | Homepage redesign (PR #126) | The old three-step section was replaced by the new How it works section |
+| `cta-book-demo-three-steps-section` | Old homepage "How it works" Book a demo button | Homepage redesign (PR #126) | Same as above |
+| `cta-download-transformation-section` | Old homepage transformation section Download button | Homepage redesign (PR #126) | Section removed in the new homepage |
+| `cta-book-demo-transformation-section` | Old homepage transformation section Book a demo button | Homepage redesign (PR #126) | Same as above |
+| `cta-book-demo-lift-card` | Floating demo lift card Book a demo button | Homepage redesign (PR #126) | The lift card was removed with the old homepage |
+| `cta-lift-card-toggle` | Floating demo lift card open/close toggle | Homepage redesign (PR #126) | Same as above |
+| `cta-download-hero-mobile` | Old homepage hero mobile "Create an Account" button | Homepage redesign (PR #126) | The new hero has one Get Sayso button at every width |
+| `cta-get-started-mobile-menu` | Old mobile menu Get started button | Flat redesign foundation (PR #124) | The new mobile drawer ends with Log in and Book a demo |
 
 ---
 
@@ -123,10 +128,10 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 2. Visit: `/`, `/pricing`, `/agent`, `/broker`, `/isa`, `/sales-leader`, `/products/cue` (or any slug), `/for/solo-agents`, `/blog/[any-slug]`, `/objections/[any-slug]`, `/glossary/[any-slug]`, `/integrations/partners/follow-up-boss`, `/why-sayso`.
 3. In DevTools console on each page: `document.querySelectorAll('[data-analytics-id]')` — verify expected IDs are present and no duplicates.
 4. Click each CTA and confirm behavior is unchanged (demo modal, system-select modal, or anchor jump still works).
-6. `npm run build` — must pass with no TypeScript errors. Passed as of the commit that introduced these attributes.
+5. `npm run build` — must pass with no TypeScript errors. Passed as of the commit that introduced these attributes.
 
 ---
 
 ## Total count
 
-40 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The three ids under Retired IDs are no longer on the site.
+37 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.

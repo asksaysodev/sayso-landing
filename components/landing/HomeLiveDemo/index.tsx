@@ -7,6 +7,7 @@
  * hangs up. The call engine (useCallEngine) and the tour (useDemoTour) hold
  * all the logic.
  */
+import { inter } from '@/components/SaysoWidget/font';
 import { useRef } from 'react';
 import SaysoWidget, { WidgetScaler } from '@/components/SaysoWidget';
 import styles from './LiveDemo.module.css';
@@ -23,7 +24,7 @@ export function HomeLiveDemo() {
   const layoutKey = [demo.stepIndex, w.view, w.live, w.insightOpen, w.pulseOpen, w.zipText ?? '', w.playbookOpen, w.cues?.length, w.note].join('|');
 
   return (
-    <div id="demo" className="mx-auto mt-12 w-full max-w-[1160px] scroll-mt-20 px-4 pb-3">
+    <div id="demo" className={`${inter.variable} mx-auto mt-12 w-full max-w-[1160px] scroll-mt-20 px-4 pb-3`}>
       <div role="region" aria-label="Guided demo" aria-live="polite">
         <CoachCard
           stepIndex={demo.stepIndex}

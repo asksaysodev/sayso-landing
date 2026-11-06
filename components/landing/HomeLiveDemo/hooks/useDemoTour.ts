@@ -8,7 +8,7 @@
  */
 import type { SaysoWidgetProps, WidgetControl } from '@/components/SaysoWidget/types';
 import { prefersReducedMotion } from '@/lib/utils/motion';
-import { HINT_START, PHASE_B, PHASE_C, STEPS, STOPPED } from '../data';
+import { PHASE_B, PHASE_C, STEPS, STOPPED } from '../data';
 import type { StepKey } from '../types';
 import { useCallEngine } from './useCallEngine';
 
@@ -37,7 +37,6 @@ export function useDemoTour() {
   const goStep = (n: number) => {
     set({ step: n });
     const key = STEPS[n]?.key;
-    if (n === 0 && !s.current.live) set({ caption: { kind: 'hint', text: HINT_START } });
     if (key === 'zip') run(PHASE_B);
     if (key === 'stop') run(PHASE_C);
   };

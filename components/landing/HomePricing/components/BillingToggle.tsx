@@ -1,8 +1,9 @@
 /**
  * Monthly / Annual switch above the homepage pricing cards. Annual shows the
- * green SAVE 30% badge. Homepage-only analytics ids, so GTM can tell them apart
+ * green SAVE badge (percent derived in lib/content/pricing). Homepage-only analytics ids, so GTM can tell them apart
  * from the /pricing toggle.
  */
+import { ANNUAL_DISCOUNT_PERCENT } from '@/lib/content/pricing';
 
 interface BillingToggleProps {
   annual: boolean;
@@ -38,7 +39,7 @@ export function BillingToggle({ annual, onChange }: BillingToggleProps) {
               annual ? 'bg-[#12a150] text-white shadow-[0_0_0_2px_rgba(255,255,255,0.35)]' : 'bg-[#d9f7e7] text-[#0f7a45]'
             }`}
           >
-            SAVE 30%
+            SAVE {ANNUAL_DISCOUNT_PERCENT}%
           </span>
         </button>
       </div>

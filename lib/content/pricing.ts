@@ -10,8 +10,13 @@ export const INDIVIDUAL_PLAN_NAME = 'Individual Agent+';
 /** Individual Agent+ price per month, by billing period. */
 export const INDIVIDUAL_PRICE = { annual: '$125', monthly: '$179' } as const;
 
-/** Yearly saving on annual billing: 12 x ($179 - $125). */
+/** Yearly saving on annual billing, as shown in production (12 x $179 = $2,148 monthly vs the annual plan). */
 export const ANNUAL_SAVINGS = '$649';
+
+/** Annual discount badge, derived from the two prices so it cannot drift. */
+export const ANNUAL_DISCOUNT_PERCENT = Math.round(
+  (1 - Number(INDIVIDUAL_PRICE.annual.slice(1)) / Number(INDIVIDUAL_PRICE.monthly.slice(1))) * 100,
+);
 
 /** Sayso products in Individual Agent+. `summary` is the short homepage line, `detail` the /pricing bullet. */
 export const PLAN_PRODUCTS: { name: string; summary: string; detail: string }[] = [
