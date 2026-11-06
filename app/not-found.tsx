@@ -3,6 +3,7 @@ import Link from 'next/link';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { Button } from '@/components/ui/Button';
+import Carousel from '@/components/ui/Carousel';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
@@ -60,7 +61,7 @@ export default function NotFound() {
         </section>
 
         <section className="w-full px-4 md:px-6 pb-20">
-          <div className="max-w-[900px] mx-auto grid gap-4 sm:grid-cols-2">
+          <Carousel label="Popular pages" itemName="page" className="max-w-[900px] mx-auto" trackClassName="grid grid-cols-2 gap-4">
             {destinations.map((d) => (
               <Link
                 key={d.href}
@@ -75,7 +76,7 @@ export default function NotFound() {
                 </p>
               </Link>
             ))}
-          </div>
+          </Carousel>
         </section>
       </main>
       <Footer />

@@ -1,10 +1,25 @@
+import type { ReactElement } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import Carousel from '@/components/ui/Carousel';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { HubPageConfig } from '@/lib/content/hubs/types';
+
+const GRID = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5';
+/** Hubs with up to this many cards swipe on mobile; longer directories (glossary, objections) stay a scannable list. */
+const CAROUSEL_MAX = 6;
+
+function HubCardList({ cards }: { cards: ReactElement[] }) {
+  if (cards.length > CAROUSEL_MAX) return <div className={GRID}>{cards}</div>;
+  return (
+    <Carousel label="Pages in this section" itemName="page" trackClassName="grid grid-cols-2 lg:grid-cols-3 gap-5">
+      {cards}
+    </Carousel>
+  );
+}
 
 interface HubPageProps {
   config: HubPageConfig;
@@ -79,14 +94,14 @@ export function HubPage({ config }: HubPageProps) {
             </div>
           ))
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {config.childPages.map((page) => (
-              <HubCard key={page.slug} page={page} basePath={config.basePath} />
-            ))}
-            {config.featureRequestCard && (
-              <FeatureRequestCard card={config.featureRequestCard} />
-            )}
-          </div>
+          <HubCardList
+            cards={[
+              ...config.childPages.map((page) => <HubCard key={page.slug} page={page} basePath={config.basePath} />),
+              ...(config.featureRequestCard
+                ? [<FeatureRequestCard key="feature-request" card={config.featureRequestCard} />]
+                : []),
+            ]}
+          />
         )}
       </section>
 

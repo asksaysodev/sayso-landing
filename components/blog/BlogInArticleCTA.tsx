@@ -14,7 +14,7 @@ export function BlogInArticleCTA() {
           Ready to Win the Moment?
         </h3>
         <p className="text-base text-white/80 max-w-md mx-auto mb-6 font-sans">
-          See how Sayso gives your team real-time coaching on every call.
+          See how Sayso gives your team real-time guidance on every call.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <Button withArrow onClick={openSignup} data-analytics-id="cta-download-blog-article">

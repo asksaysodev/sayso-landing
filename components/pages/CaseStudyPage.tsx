@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import Carousel from '@/components/ui/Carousel';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { generateWebPageJsonLd } from '@/lib/seo/schema';
 import type { CaseStudyEntry } from '@/lib/content/case-studies/types';
@@ -99,7 +100,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
 
         {/* Quotes */}
         {entry.quotes.length > 0 && (
-          <div className="space-y-4 my-8">
+          <Carousel label="Customer quotes" itemName="quote" className="my-8" trackClassName="grid grid-cols-1 gap-4">
             {entry.quotes.map((quote, i) => (
               <blockquote
                 key={i}
@@ -110,7 +111,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
                 </p>
               </blockquote>
             ))}
-          </div>
+          </Carousel>
         )}
 
         {/* Results */}
