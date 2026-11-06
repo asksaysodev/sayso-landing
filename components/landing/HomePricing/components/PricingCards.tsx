@@ -10,18 +10,19 @@ import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { Button } from '@/components/ui/Button';
 import { panel } from '../../HomeShared/styles';
 import { AGENT_FEATURES, AGENT_PRICE, TEAM_FEATURES } from '../data';
+import type { PricingAnalyticsIds } from '../types';
 import { BillingToggle } from './BillingToggle';
 import { FeatureList } from './FeatureList';
 
 const card = `${panel} flex flex-col border-t-4 border-t-[#FFDE59] p-7`;
 
-export function PricingCards() {
+export function PricingCards({ analyticsIds }: { analyticsIds: PricingAnalyticsIds }) {
   const [annual, setAnnual] = useState(true);
   const { openDemoCalendar } = useDemoCalendar();
 
   return (
     <>
-      <BillingToggle annual={annual} onChange={setAnnual} />
+      <BillingToggle annual={annual} onChange={setAnnual} monthlyId={analyticsIds.monthly} annualId={analyticsIds.annual} />
       <div className="mx-auto grid max-w-[960px] grid-cols-1 items-stretch gap-[22px] min-[961px]:grid-cols-2">
         <div className={card}>
           <h3 className="font-hero text-[22px] font-bold">Individual Agent+</h3>
@@ -41,7 +42,7 @@ export function PricingCards() {
               ),
             )}
           />
-          <Button href="/founderpricing/" withArrow className="self-start" data-analytics-id="cta-founder-pricing-home-pricing">
+          <Button href="/founderpricing/" withArrow className="self-start" data-analytics-id={analyticsIds.agent}>
             Claim early access
           </Button>
         </div>
@@ -50,7 +51,7 @@ export function PricingCards() {
           <div className="mt-2 font-hero text-[40px] font-extrabold leading-none tracking-[-0.03em]">Custom</div>
           <p className="mt-2 text-sm text-white/85">Priced by team size.</p>
           <FeatureList items={TEAM_FEATURES} inverted />
-          <Button variant="secondary" onClick={openDemoCalendar} className="self-start !shadow-none" data-analytics-id="cta-book-demo-home-pricing-teams">
+          <Button variant="secondary" onClick={openDemoCalendar} className="self-start !shadow-none" data-analytics-id={analyticsIds.teams}>
             Assemble your team
           </Button>
         </div>

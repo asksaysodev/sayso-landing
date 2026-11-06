@@ -3,6 +3,8 @@
 interface BillingToggleProps {
   annual: boolean;
   onChange: (annual: boolean) => void;
+  monthlyId?: string;
+  annualId?: string;
 }
 
 const base =
@@ -10,14 +12,14 @@ const base =
 const on = 'bg-[#2367EE] text-white shadow-[0_4px_12px_-4px_rgba(35,103,238,0.5)]';
 const off = 'bg-transparent text-[#556B86]';
 
-export function BillingToggle({ annual, onChange }: BillingToggleProps) {
+export function BillingToggle({ annual, onChange, monthlyId, annualId }: BillingToggleProps) {
   return (
     <div className="mb-[26px] flex justify-center">
       <div role="group" aria-label="Billing period" className="flex gap-1 rounded-full border border-[rgba(16,35,58,0.14)] bg-white p-1">
-        <button type="button" aria-pressed={!annual} onClick={() => onChange(false)} className={`${base} ${annual ? off : on}`}>
+        <button type="button" aria-pressed={!annual} onClick={() => onChange(false)} data-analytics-id={monthlyId} className={`${base} ${annual ? off : on}`}>
           Monthly
         </button>
-        <button type="button" aria-pressed={annual} onClick={() => onChange(true)} className={`${base} ${annual ? on : off}`}>
+        <button type="button" aria-pressed={annual} onClick={() => onChange(true)} data-analytics-id={annualId} className={`${base} ${annual ? on : off}`}>
           Annual
           <span
             className={`ml-2 rounded-full px-2 py-[3px] text-[11px] font-extrabold tracking-[0.02em] ${
