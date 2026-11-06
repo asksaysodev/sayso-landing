@@ -38,9 +38,6 @@ export function Footer() {
           <Link href="/" aria-label="Sayso home" className="inline-block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59]">
             <Image src="/logos/logo-neg-transparent-horizontal.png" alt="Sayso" width={84} height={27} />
           </Link>
-          <p className="mt-3.5 max-w-[34ch] text-white/75">
-            Real-time call guidance for real estate agents. Know what to say on every call.
-          </p>
           <div className="mt-6">
             <h3 className="mb-2 text-xs font-bold uppercase tracking-widest text-[#FFDE59]">Subscribe to our newsletter</h3>
             <iframe
@@ -103,7 +100,7 @@ export function Footer() {
         </div>
       </div>
       <div className="mx-auto max-w-[1200px] border-t border-white/15 px-6 py-5 text-white/60">
-        &copy; 2026 Asksayso, Inc.
+        &copy; 2026 AskSayso, Inc.
       </div>
     </footer>
   );

@@ -7,7 +7,7 @@ interface ButtonProps {
   /** Opens href in a new tab with rel="noopener noreferrer". Only set this for off-site links. */
   external?: boolean;
   variant?: 'primary' | 'secondary';
-  /** Adds the round white arrow badge used on primary CTAs. */
+  /** Adds the round arrow badge, on the left of the label, used on primary CTAs. */
   withArrow?: boolean;
   onClick?: () => void;
   className?: string;
@@ -39,11 +39,10 @@ export function Button({
       'bg-white text-[#10233A] shadow-card-sm hover:shadow-card-sm-hover',
   };
 
-  const arrowPad = withArrow && variant === 'primary' ? 'pr-1.5' : '';
+  const arrowPad = withArrow && variant === 'primary' ? 'pl-1.5' : '';
   const classes = `${baseStyles} ${variantStyles[variant]} ${arrowPad} ${className}`;
   const content = (
     <>
-      {children}
       {withArrow && (
         <span
           aria-hidden="true"
@@ -54,6 +53,7 @@ export function Button({
           &rarr;
         </span>
       )}
+      {children}
     </>
   );
 
