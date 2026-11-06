@@ -290,20 +290,6 @@
 - **Props:** `posts: BlogPostMeta[]`, `variant?: 'grid' | 'compact'`
 - **Visual behavior:** Grid variant: standard card grid. Compact variant: smaller list-style cards.
 
-### BlogShareBar
-- **Path:** `components/blog/BlogShareBar.tsx`
-- **Description:** Social share buttons for blog posts (LinkedIn, Twitter, Copy Link).
-- **Used on:** Blog post (`/blog/[slug]`)
-- **Props:** `title: string`, `slug: string`
-- **Visual behavior:** Row of social sharing icons/buttons with copy-to-clipboard functionality.
-
-### BlogTableOfContents
-- **Path:** `components/blog/BlogTableOfContents.tsx`
-- **Description:** Auto-generated table of contents with scroll spy active heading tracking.
-- **Used on:** Blog post (`/blog/[slug]`)
-- **Props:** `content: string` (MDX string to parse headings from)
-- **Visual behavior:** Sidebar list of heading links, active heading highlighted as user scrolls through article.
-
 ---
 
 ## 5. SEO / Meta Components
@@ -426,11 +412,6 @@ All four follow the same pattern: hardcoded hero, problem narrative, benefits gr
 | **ReferralPageContent** | `components/landing/ReferralPageContent.tsx` | `/referral` |
 
 Static content pages with no props. Content is hardcoded in the component.
-
-### CaseStudiesPage
-- **Path:** `components/landing/CaseStudiesPage.tsx`
-- **Page:** `/case-studies`
-- **Description:** Full case studies page with expandable cards. Data is hardcoded in a `CASE_STUDIES` array inside the component.
 
 ### CRM Dialer Showcase (composite)
 
