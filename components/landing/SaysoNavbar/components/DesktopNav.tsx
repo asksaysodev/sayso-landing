@@ -3,7 +3,8 @@
 /**
  * Desktop link row: primary links plus the Resources trigger. The Resources
  * menu opens on hover (with a short close delay) or on click, and closes on
- * Escape or an outside click.
+ * Escape (focus returns to the trigger), an outside click, or when keyboard
+ * focus leaves it.
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -14,6 +15,7 @@ import { ResourcesMenu } from './ResourcesMenu';
 export function DesktopNav() {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const show = useCallback(() => {
@@ -30,7 +32,9 @@ export function DesktopNav() {
       if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key !== 'Escape') return;
+      if (wrapRef.current?.contains(document.activeElement)) triggerRef.current?.focus();
+      setOpen(false);
     };
     document.addEventListener('mousedown', onDown);
     document.addEventListener('keydown', onKey);
@@ -50,12 +54,21 @@ export function DesktopNav() {
           {link.label}
         </Link>
       ))}
-      <div ref={wrapRef} className="relative" onMouseEnter={show} onMouseLeave={hideSoon}>
+      <div
+        ref={wrapRef}
+        className="relative"
+        onMouseEnter={show}
+        onMouseLeave={hideSoon}
+        onBlur={(e) => {
+          if (!wrapRef.current?.contains(e.relatedTarget as Node | null)) setOpen(false);
+        }}
+      >
         <button
+          ref={triggerRef}
+          type="button"
           // Hover already opens it on mouse devices, so a click there should not toggle it shut.
           onClick={() => (window.matchMedia('(hover: hover)').matches ? setOpen(true) : setOpen((o) => !o))}
           aria-expanded={open}
-          aria-haspopup="true"
           className={`flex h-10 items-center gap-1 ${linkClass}`}
         >
           Resources

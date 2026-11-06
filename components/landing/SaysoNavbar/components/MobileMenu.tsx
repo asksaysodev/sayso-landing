@@ -3,11 +3,14 @@
 /**
  * Mobile drawer: slides in from the right with the primary links, a Resources
  * accordion (featured links plus the three columns), log in and Book a demo.
- * Modal while open: focus moves to the close button, Tab stays inside the
- * drawer, page scroll is locked, and Escape or a backdrop tap closes it.
- * Focus returns to the menu button on close.
+ * Modal while open: rendered in a portal on <body> (the blurred navbar would
+ * otherwise trap a fixed overlay inside itself), the rest of the page is
+ * inert, focus moves to the close button, Tab stays inside the drawer, page
+ * scroll is locked (iOS-safe), and Escape or a backdrop tap closes it. Focus
+ * returns to the menu button on close.
  */
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { RefObject } from 'react';
 import Link from 'next/link';
 import { ChevronDown, X } from 'lucide-react';
@@ -31,12 +34,24 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
   // Scroll lock and focus handoff run once per open/close, not on every render.
   useEffect(() => {
     if (!open) return;
-    const previousOverflow = document.body.style.overflow;
+    const { body } = document;
     const returnTo = returnFocusRef.current;
-    document.body.style.overflow = 'hidden';
+    const scrollY = window.scrollY;
+    const previous = { position: body.style.position, top: body.style.top, width: body.style.width };
+    // position: fixed is the scroll lock iOS Safari respects; overflow: hidden alone is ignored there.
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}px`;
+    body.style.width = '100%';
+    // Everything outside the drawer's portal is inert, so screen readers and Tab stay in the dialog.
+    const siblings = Array.from(body.children).filter(
+      (el) => el !== panelRef.current?.parentElement && !el.hasAttribute('inert'),
+    );
+    siblings.forEach((el) => el.setAttribute('inert', ''));
     closeRef.current?.focus();
     return () => {
-      document.body.style.overflow = previousOverflow;
+      siblings.forEach((el) => el.removeAttribute('inert'));
+      Object.assign(body.style, previous);
+      window.scrollTo(0, scrollY);
       returnTo?.focus();
     };
   }, [open, returnFocusRef]);
@@ -72,7 +87,7 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
   const rowClass = 'block border-b border-[#1D4871]/10 py-3.5 text-[17px] font-semibold text-[#1D4871]';
   const subClass = 'block py-2 pl-2.5 text-[15px] text-[#10233A]';
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[70] flex justify-end bg-[#10233A]/45 lg:hidden" onClick={onClose}>
       <div
         ref={panelRef}
@@ -80,7 +95,7 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
         aria-modal="true"
         aria-label="Menu"
         onClick={(e) => e.stopPropagation()}
-        className="flex h-full w-[min(340px,88vw)] flex-col overflow-y-auto bg-white px-6 pb-8 pt-3"
+        className="flex h-full w-[min(340px,88vw)] flex-col overflow-y-auto overscroll-contain bg-white px-6 pb-8 pt-3"
       >
         <button
           ref={closeRef}
@@ -122,7 +137,7 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
                       key={link.href}
                       href={link.href}
                       onClick={onClose}
-                      className={link.indent ? `${subClass} pl-6 text-[#556B86]` : subClass}
+                      className={subClass}
                     >
                       {link.label}
                     </Link>
@@ -148,6 +163,7 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
           Book a demo
         </button>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

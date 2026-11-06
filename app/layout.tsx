@@ -4,7 +4,7 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
-import { headerNav } from '@/lib/navigation'
+import { headerNav, primaryNav, resourcesFeatured } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
 import './globals.css'
 
@@ -78,10 +78,16 @@ const siteNavigationJsonLd = {
       name: 'Home',
       url: siteUrl,
     },
+    ...[...primaryNav.filter((link) => !link.href.includes('#')), ...resourcesFeatured].map((link, i) => ({
+      '@type': 'SiteNavigationElement' as const,
+      position: 2 + i,
+      name: link.label,
+      url: `${siteUrl}${link.href}`,
+    })),
     ...headerNav.flatMap((section, sIdx) =>
       section.links.map((link, lIdx) => ({
         '@type': 'SiteNavigationElement' as const,
-        position: 2 + sIdx * 10 + lIdx,
+        position: 10 + sIdx * 10 + lIdx,
         name: link.label,
         url: `${siteUrl}${link.href}`,
       })),

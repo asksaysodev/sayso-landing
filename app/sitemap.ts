@@ -100,7 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allStaticPaths = new Set(['/', '/demo', '/download', ...navHrefs]);
 
   // Skip excluded paths and the child pages the content loaders already list
-  // (persona, product and partner pages are registered in the nav too).
+  // (persona and product pages are registered in the nav too).
   const staticPages: MetadataRoute.Sitemap = Array.from(allStaticPaths)
     .filter((path) => !EXCLUDED_PATHS.has(path) && !contentPaths.has(path))
     .map((path) => {
