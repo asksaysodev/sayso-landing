@@ -24,7 +24,7 @@ export function FAQ({ headline = 'Frequently Asked Questions', items }: FAQProps
   const jsonLd = generateFAQPageJsonLd(items);
 
   return (
-    <section className="max-w-[800px] mx-auto px-6 py-10">
+    <section data-faq="" className="max-w-[800px] mx-auto px-6 py-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
