@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 export default function FounderPricingPage() {
   return (
     <DemoCalendarProvider>
-      <div className="legacy-comic relative bg-[#F4F4F5] min-h-screen">
+      <div className="relative min-h-screen bg-[#F4F4F5] text-[#10233A]">
         <SaysoNavbar />
         <main className="pt-24">
           <FounderPricingSection />

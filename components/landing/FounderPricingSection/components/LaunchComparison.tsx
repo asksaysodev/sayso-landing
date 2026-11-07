@@ -7,29 +7,26 @@
 import { FOUNDER_PRICING_CONFIG, LAUNCH_COMPARISON } from '../data';
 import type { ComparisonColumn } from '../types';
 import { Carousel } from './Carousel';
+import { heading, navyPanel, whitePanel, yellowTag } from '../styles';
 
 function ComparisonCard({ column }: { column: ComparisonColumn }) {
   const isLater = column.variant === 'later';
 
-  const wrapperCls = isLater
-    ? 'bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-7 w-full'
-    : 'bg-white v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-7 w-full';
+  const wrapperCls = isLater ? `${navyPanel} p-6 md:p-7 w-full` : `${whitePanel} p-6 md:p-7 w-full`;
 
   const tagCls = isLater
-    ? 'inline-block text-[11px] font-bold uppercase tracking-widest text-[#1D4871] bg-[#FFDE59] border-2 border-[#1D4871] rounded-full px-3 py-1 mb-3'
-    : 'inline-block text-[11px] font-bold uppercase tracking-widest text-[#1D4871] bg-[#D7DEE1] border-2 border-[#1D4871] rounded-full px-3 py-1 mb-3';
+    ? `mb-3 inline-block ${yellowTag}`
+    : 'mb-3 inline-block rounded-full bg-[#F4F4F5] px-2.5 py-[3px] text-xs font-semibold text-[#556B86] whitespace-nowrap';
 
-  const titleCls = isLater
-    ? 'font-comic text-2xl md:text-[26px] text-white tracking-wide mb-3'
-    : 'font-comic text-2xl md:text-[26px] text-[#1D4871] tracking-wide mb-3';
+  const titleCls = isLater ? 'mb-3 font-hero text-[22px] font-bold text-white' : 'mb-3 font-hero text-[22px] font-bold text-[#10233A]';
 
   const liCls = isLater
     ? 'text-sm md:text-[15px] leading-relaxed text-white/90 py-2 pl-7 relative border-t border-white/20 first:border-t-0'
-    : 'text-sm md:text-[15px] leading-relaxed text-[#1D4871]/80 py-2 pl-7 relative border-t border-[#1D4871]/15 first:border-t-0';
+    : 'text-sm md:text-[15px] leading-relaxed text-[#556B86] py-2 pl-7 relative border-t border-[rgba(16,35,58,0.1)] first:border-t-0';
 
   const dotCls = isLater
-    ? 'absolute left-0 top-[14px] w-3 h-3 rounded-full bg-[#FFDE59] border-2 border-white'
-    : 'absolute left-0 top-[14px] w-3 h-3 rounded-full bg-[#2367EE] border-2 border-[#1D4871]';
+    ? 'absolute left-0 top-[15px] h-2.5 w-2.5 rounded-full bg-[#FFDE59]'
+    : 'absolute left-0 top-[15px] h-2.5 w-2.5 rounded-full bg-[#2367EE]';
 
   return (
     <div className={wrapperCls}>
@@ -51,14 +48,10 @@ export function LaunchComparison() {
   return (
     <section>
       <div className="mb-7">
-        <span className="block text-xs font-bold tracking-widest uppercase text-[#2367EE] mb-3">
-          After public launch
-        </span>
-        <h2 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mb-3">
-          What changes after our hard launch
-        </h2>
-        <p className="text-base md:text-lg text-[#1D4871]/75 leading-relaxed">
-          Three things change when Sayso hard launches ({FOUNDER_PRICING_CONFIG.launchWindow}): Early Access Pricing closes, prices increase, and instead of one rate, each product has its own cost.
+        <h2 className={`mb-3 ${heading}`}>What changes after our hard launch</h2>
+        <p className="text-base md:text-lg text-[#556B86] leading-relaxed">
+          Three things change when Sayso hard launches ({FOUNDER_PRICING_CONFIG.launchWindow}): Early Access Pricing closes, prices
+          increase, and instead of one rate, each product has its own cost.
         </p>
       </div>
 

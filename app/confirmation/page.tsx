@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { Check } from 'lucide-react';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
+import { SignupShowcase } from '@/components/landing/HomeShared/SignupShowcase';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
 import { Button } from '@/components/ui/Button';
@@ -19,28 +19,6 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
-
-const testimonial = {
-  quote:
-    'The prompts were really helping me out, giving me more direction toward booking the appointment. I felt more confident about where I was going with the conversation, and I was just coming up with a solution to give the prospect for the next question.',
-  name: 'Alejandro Barrera',
-  attribution: 'Anderson Real Estate Group, eXp Long Beach',
-};
-
-const showcaseFeatures = [
-  {
-    name: 'Cue',
-    description: 'Live guidance cards that surface mid-call.',
-  },
-  {
-    name: 'Smart Capture',
-    description: 'Structured notes auto-saved to your CRM.',
-  },
-  {
-    name: 'Pulse',
-    description: 'Zip-level market data, on the fly.',
-  },
-];
 
 export default function ConfirmationPage() {
   return (
@@ -72,86 +50,7 @@ export default function ConfirmationPage() {
             </div>
           </section>
 
-          {/* What you'll see on the demo */}
-          <section className="bg-white">
-            <div className="max-w-[1200px] mx-auto px-6 py-16 md:py-24">
-            <div className="grid grid-cols-1 md:grid-cols-[5fr_7fr] gap-10 md:gap-14 items-center">
-              <div>
-                <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
-                  What you&apos;ll see on the demo
-                </p>
-                <h2 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[30px] md:text-[42px] leading-[1.1] mb-4">
-                  Guidance on every call, not after.
-                </h2>
-                <p className="text-[#1D4871]/80 text-base md:text-lg leading-relaxed font-sans">
-                  Sayso listens to your call in real time and surfaces the
-                  exact thing to say next: objection handlers, better discovery
-                  questions, market data for any zip. All without taking your
-                  eyes off the conversation.
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {showcaseFeatures.map((feature) => (
-                    <li
-                      key={feature.name}
-                      className="flex items-start gap-3 text-[#1D4871]"
-                    >
-                      <span
-                        className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-[#2367EE] flex-shrink-0"
-                        aria-hidden="true"
-                      />
-                      <p className="text-base font-sans">
-                        <span className="font-bold">{feature.name}:</span>{' '}
-                        <span className="text-[#1D4871]/75">
-                          {feature.description}
-                        </span>
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="relative">
-                <Image
-                  src="/full-widget-transparent.png"
-                  alt="Sayso live call view showing the Pulse market data widget alongside the Playbook script panel"
-                  width={1778}
-                  height={792}
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-            </div>
-            </div>
-          </section>
-
-          {/* Testimonial */}
-          <section className="bg-[#F4F4F5] py-16 md:py-20">
-            <div className="max-w-[760px] mx-auto px-6 text-center">
-              <svg
-                className="mx-auto mb-6 text-[#FFDE59]"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M7.17 6C4.86 6 3 7.86 3 10.17c0 2.31 1.86 4.17 4.17 4.17.41 0 .8-.07 1.18-.18-.68 1.92-2.48 3.34-4.6 3.58v2.09c4.38-.27 7.83-3.9 7.83-8.33V10.17C11.58 7.86 9.72 6 7.17 6zm9.66 0c-2.31 0-4.17 1.86-4.17 4.17 0 2.31 1.86 4.17 4.17 4.17.41 0 .8-.07 1.18-.18-.68 1.92-2.48 3.34-4.6 3.58v2.09c4.38-.27 7.83-3.9 7.83-8.33V10.17C21.24 7.86 19.38 6 16.83 6z" />
-              </svg>
-              <blockquote>
-                <p className="font-hero font-bold tracking-[-0.02em] text-xl md:text-2xl lg:text-3xl text-[#10233A] leading-snug">
-                  {testimonial.quote}
-                </p>
-                <footer className="mt-6">
-                  <p className="font-comic text-lg md:text-xl text-[#1D4871] tracking-wide">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm md:text-base text-[#1D4871]/70 leading-snug">
-                    {testimonial.attribution}
-                  </p>
-                </footer>
-              </blockquote>
-            </div>
-          </section>
+          <SignupShowcase eyebrow="ON YOUR DEMO" />
 
           {/* Return to Home */}
           <section className="py-16 md:py-20">

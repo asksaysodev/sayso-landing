@@ -4,6 +4,7 @@
  */
 
 import type { CaseStudyCard as CaseStudyCardData } from '../types';
+import { navyPanel, whitePanel } from '../styles';
 
 type CaseStudyCardProps = {
   card: CaseStudyCardData;
@@ -12,29 +13,23 @@ type CaseStudyCardProps = {
 export function CaseStudyCard({ card }: CaseStudyCardProps) {
   const isDark = card.variant === 'dark';
 
-  const wrapperCls = isDark
-    ? 'bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-7 w-full'
-    : 'bg-white v2-comic-border v2-comic-shadow rounded-2xl p-6 md:p-7 w-full';
+  const wrapperCls = isDark ? `${navyPanel} p-6 md:p-7 w-full` : `${whitePanel} p-6 md:p-7 w-full`;
 
-  const titleCls = isDark
-    ? 'font-comic text-2xl md:text-[26px] text-[#FFDE59] tracking-wide mb-2'
-    : 'font-comic text-2xl md:text-[26px] text-[#1D4871] tracking-wide mb-2';
+  const titleCls = isDark ? 'mb-2 font-hero text-[22px] font-bold text-[#FFDE59]' : 'mb-2 font-hero text-[22px] font-bold text-[#10233A]';
 
-  const bodyCls = isDark
-    ? 'text-sm md:text-[15px] text-white/90 leading-relaxed'
-    : 'text-sm md:text-[15px] text-[#1D4871]/80 leading-relaxed';
+  const bodyCls = isDark ? 'text-sm md:text-[15px] text-white/90 leading-relaxed' : 'text-sm md:text-[15px] text-[#556B86] leading-relaxed';
 
   const statWrapCls = isDark
-    ? 'bg-white/[0.07] border-2 border-white/30 rounded-xl px-2 py-3 md:p-3 text-center'
-    : 'bg-[#F4F4F5] border-2 border-[#1D4871] rounded-xl px-2 py-3 md:p-3 text-center';
+    ? 'rounded-xl bg-white/[0.07] px-2 py-3 text-center ring-1 ring-white/15 md:p-3'
+    : 'rounded-xl bg-[#F4F4F5] px-2 py-3 text-center md:p-3';
 
   const statNumCls = isDark
-    ? 'font-comic text-xl md:text-[26px] text-[#FFDE59] tracking-wide leading-none'
-    : 'font-comic text-xl md:text-[26px] text-[#1D4871] tracking-wide leading-none';
+    ? 'font-hero text-xl font-extrabold leading-none tracking-[-0.02em] text-[#FFDE59] tabular-nums md:text-[26px]'
+    : 'font-hero text-xl font-extrabold leading-none tracking-[-0.02em] text-[#10233A] tabular-nums md:text-[26px]';
 
   const statLblCls = isDark
     ? 'text-[10px] md:text-[10.5px] font-bold uppercase tracking-tight md:tracking-wide text-white/80 mt-2 leading-tight'
-    : 'text-[10px] md:text-[10.5px] font-bold uppercase tracking-tight md:tracking-wide text-[#1D4871]/70 mt-2 leading-tight';
+    : 'text-[10px] md:text-[10.5px] font-bold uppercase tracking-tight md:tracking-wide text-[#556B86] mt-2 leading-tight';
 
   return (
     <div className={wrapperCls}>
