@@ -4,7 +4,7 @@ import { Check, TrendingUp, Users, Zap } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
-import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
+import { PersonaStepWidget } from '@/components/landing/PersonaAdShared/PersonaStepWidget';
 
 export function BrokerAdPage() {
   return (
@@ -14,19 +14,19 @@ export function BrokerAdPage() {
       <PersonaAdHero
         persona="broker"
         label="BROKERS"
-        headline="Want to grow agent production and attract talent?"
-        subheadline="Sayso provides real-time guidance during live prospecting calls to help agents book more qualified appointments."
-        proof="Unlike traditional training, Sayso helps agents improve while prospects are still on the phone, supporting agent development and recruiting."
+        headline="Give every agent a coach on every call."
+        subheadline="Sayso prompts your agents on live prospecting calls. New agents get productive sooner, and you have real support to recruit with and a reason for agents to stay."
+        proof="By the time a call is reviewed, the opportunity to change its outcome is gone."
       />
 
       {/* ── Trust strip ── */}
       <div className="max-w-xl mx-auto px-6 pb-10">
         <div className="flex items-center gap-3 text-sm text-[#1D4871]/60">
-          <div className="h-px flex-1 bg-[#1D4871]/15" />
-          <span className="whitespace-nowrap text-center">
-            Built for <strong className="text-[#1D4871] font-bold">rainmakers</strong> managing agents and teams.
+          <div className="hidden sm:block h-px flex-1 bg-[#1D4871]/15" />
+          <span className="text-center">
+            Built for brokers who recruit, develop and keep agents.
           </span>
-          <div className="h-px flex-1 bg-[#1D4871]/15" />
+          <div className="hidden sm:block h-px flex-1 bg-[#1D4871]/15" />
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export function BrokerAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Agents start Sayso when they begin calling</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualStartSayso />
+                <PersonaStepWidget preset="bar" />
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export function BrokerAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Real-time prompts keep the conversation on track</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualPrompts />
+                <PersonaStepWidget preset="cues" />
               </div>
             </div>
           </div>

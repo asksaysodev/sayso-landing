@@ -4,7 +4,7 @@ import { Check, TrendingUp, Users, Zap } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
-import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
+import { PersonaStepWidget } from '@/components/landing/PersonaAdShared/PersonaStepWidget';
 
 export function SalesLeaderAdPage() {
   return (
@@ -13,20 +13,20 @@ export function SalesLeaderAdPage() {
       {/* ── Hero ── */}
       <PersonaAdHero
         persona="sales-leader"
-        label="SALES LEADERS"
-        headline="Want to increase agent production?"
-        subheadline="Sayso provides real-time guidance during live prospecting calls to help your agents book more qualified appointments."
-        proof="Unlike traditional call reviews, Sayso helps agents improve while prospects are still on the phone."
+        label="TEAM LEADERS"
+        headline="Coach every call while it's still happening."
+        subheadline="Sayso prompts your agents on live prospecting calls, so new agents ramp faster and you're not reviewing recordings after the lead is gone."
+        proof="By the time a call is reviewed, the opportunity to change its outcome is gone."
       />
 
       {/* ── Trust strip ── */}
       <div className="max-w-xl mx-auto px-6 pb-10">
         <div className="flex items-center gap-3 text-sm text-[#1D4871]/60">
-          <div className="h-px flex-1 bg-[#1D4871]/15" />
-          <span className="whitespace-nowrap text-center">
-            Built for teams, tracking calls, and conversation conversion
+          <div className="hidden sm:block h-px flex-1 bg-[#1D4871]/15" />
+          <span className="text-center">
+            Built for team leaders who ramp and manage agents.
           </span>
-          <div className="h-px flex-1 bg-[#1D4871]/15" />
+          <div className="hidden sm:block h-px flex-1 bg-[#1D4871]/15" />
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export function SalesLeaderAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Agents start Sayso when they begin calling</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualStartSayso />
+                <PersonaStepWidget preset="bar" />
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export function SalesLeaderAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Real-time prompts keep the conversation on track</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualPrompts />
+                <PersonaStepWidget preset="cues" />
               </div>
             </div>
           </div>

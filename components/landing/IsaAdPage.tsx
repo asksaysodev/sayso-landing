@@ -4,7 +4,7 @@ import { Check, MessageCircle, Clock, Users } from 'lucide-react';
 import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
-import { StepVisualStartSayso, StepVisualPrompts } from '@/components/landing/ThreeStepsSection/StepVisuals';
+import { PersonaStepWidget } from '@/components/landing/PersonaAdShared/PersonaStepWidget';
 
 function HandwrittenNote() {
   return (
@@ -52,8 +52,8 @@ export function IsaAdPage() {
       <PersonaAdHero
         persona="isa"
         label="ISAs"
-        headline="Want to book more qualified appointments?"
-        subheadline="Sayso provides real-time guidance during live prospecting calls to sharpen your questions, objection handling and conversion."
+        headline="Stay as sharp on call 60 as you were on call 6."
+        subheadline="Sayso keeps the next question and response on your screen through every dial, so late-day calls don't slide into autopilot."
         proof="Unlike scripts and post-call coaching, Sayso helps you improve while the prospect is still on the phone."
       />
 
@@ -138,7 +138,7 @@ export function IsaAdPage() {
                 <p className="text-xs text-[#1D4871]/60">Open the app before your next call block</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualStartSayso />
+                <PersonaStepWidget preset="bar" />
               </div>
             </div>
 
@@ -149,7 +149,7 @@ export function IsaAdPage() {
                 <p className="text-xs text-[#1D4871]/60">It captures key details from every conversation automatically</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
-                <StepVisualPrompts />
+                <PersonaStepWidget preset="cues" />
               </div>
             </div>
           </div>

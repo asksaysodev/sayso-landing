@@ -1,6 +1,6 @@
 /**
- * PersonaAdHero: logo, audience label, question headline, value proposition,
- * customer result and the demo request form at the top of each persona ad landing page.
+ * PersonaAdHero: logo, audience label, pain-led headline, value proposition,
+ * customer result, the demo request form and a trusted-by logo at the top of each persona ad landing page.
  */
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,9 +10,9 @@ import { PersonaDemoForm } from './PersonaDemoForm';
 interface PersonaAdHeroProps {
   /** Analytics suffix, e.g. "agent" gives "cta-watch-video-persona-agent". */
   persona: string;
-  /** Who the page is for, shown above the headline exactly as written (e.g. "SALES LEADERS"). */
+  /** Who the page is for, shown above the headline exactly as written (e.g. "TEAM LEADERS"). */
   label: string;
-  /** Short question rendered as the H1. */
+  /** Persona-specific headline rendered as the H1 (lead with this buyer's pain, not a yes/no question). */
   headline: string;
   /** One sentence on what Sayso does for this audience. */
   subheadline: string;
@@ -54,6 +54,16 @@ export function PersonaAdHero({ persona, label, headline, subheadline, proof }: 
           .
         </p>
         <PersonaDemoForm />
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#556B86]">Trusted by</span>
+          <Image
+            src="/social-proof/fidelity-national-title.png"
+            alt="Fidelity National Title Arizona"
+            width={318}
+            height={227}
+            className="h-10 w-auto"
+          />
+        </div>
       </div>
     </section>
   );
