@@ -2,7 +2,7 @@ import type { GlossaryEntry } from './types';
 
 export const isaRealEstate: GlossaryEntry = {
   slug: 'isa-real-estate',
-  updatedAt: '2026-09-29',
+  updatedAt: '2026-11-07',
   term: 'ISA (Inside Sales Agent)',
   keyword: 'what is an isa in real estate',
   seoTitle: 'What Is an ISA in Real Estate? Role, Pay and Scripts',
@@ -27,14 +27,6 @@ export const isaRealEstate: GlossaryEntry = {
     {
       title: 'Call new leads within five minutes',
       body: 'Many teams aim to call every new online lead within five minutes of registration. The lead is still on the site and remembers filling out the form, which makes the first conversation warmer and easier.',
-    },
-    {
-      title: 'Use one script per call type',
-      body: 'ISAs make the same seven calls over and over: new lead, no-answer follow-up, old lead, qualifying, appointment set, warm handoff, and past client check-in. A short script for each keeps every call pointed at a clear next step.',
-    },
-    {
-      title: 'Block the day by call type',
-      body: 'Block specific times for new leads, follow-up, old leads, and confirmations. Without a schedule, urgent calls crowd out the follow-up calls that generate the most long-term appointments.',
     },
     {
       title: 'Track appointments held, not just set',
