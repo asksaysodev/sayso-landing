@@ -62,17 +62,17 @@ export function Carousel({ children, ariaLabel }: CarouselProps) {
               type="button"
               onClick={goPrev}
               aria-label="Previous"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-[#FFDE59] text-[#1D4871] v2-comic-border v2-comic-shadow transition-transform duration-150 hover:scale-105 active:translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#10233A] shadow-card-sm transition duration-150 hover:shadow-card-sm-hover active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
             >
-              <ChevronLeft size={26} strokeWidth={3} aria-hidden="true" />
+              <ChevronLeft size={22} strokeWidth={2.5} aria-hidden="true" />
             </button>
             <button
               type="button"
               onClick={goNext}
               aria-label="Next"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-[#FFDE59] text-[#1D4871] v2-comic-border v2-comic-shadow transition-transform duration-150 hover:scale-105 active:translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#10233A] shadow-card-sm transition duration-150 hover:shadow-card-sm-hover active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
             >
-              <ChevronRight size={26} strokeWidth={3} aria-hidden="true" />
+              <ChevronRight size={22} strokeWidth={2.5} aria-hidden="true" />
             </button>
           </div>
         )}

@@ -32,17 +32,14 @@ export function PricingCalculator() {
   );
 
   const fillPct = (index / (tiers.length - 1)) * 100;
-  const trackBg = `linear-gradient(90deg,#2367EE 0 ${fillPct}%,#D7DEE1 ${fillPct}% 100%)`;
+  const trackBg = `linear-gradient(90deg,#2367EE 0 ${fillPct}%,#E3E8EC ${fillPct}% 100%)`;
 
   return (
-    <section className="bg-white v2-comic-border v2-comic-shadow rounded-2xl p-7 md:p-10">
-      <span className="block text-xs font-bold tracking-widest uppercase text-[#2367EE] mb-3">
-        Find your plan
-      </span>
-      <h2 className="font-comic text-3xl md:text-4xl text-[#1D4871] tracking-wide mb-2">
+    <section className="rounded-[20px] border border-[rgba(16,35,58,0.12)] bg-white shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-16px_rgba(16,35,58,0.25)] p-7 md:p-10">
+      <h2 className="mb-2 font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[clamp(28px,4vw,40px)] leading-[1.1]">
         Get enough hours to coach every call
       </h2>
-      <p className="text-base md:text-[15px] text-[#1D4871]/75 leading-relaxed mb-6">
+      <p className="text-base md:text-[15px] text-[#556B86] leading-relaxed mb-6">
         Slide to find your plan. Each one is a monthly pool of conversation hours that covers your whole team, with room to spare.
       </p>
 
@@ -59,7 +56,7 @@ export function PricingCalculator() {
         style={{ ['--track' as string]: trackBg }}
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-1">
+      <div className="mt-2 grid grid-cols-2 gap-2 md:grid-cols-4">
         {tiers.map((t, i) => {
           const active = i === index;
           return (
@@ -67,10 +64,9 @@ export function PricingCalculator() {
               key={t.hours}
               type="button"
               onClick={() => setIndex(i)}
-              className={`text-sm font-bold leading-tight py-3 px-1 rounded-xl transition-colors ${
-                active
-                  ? 'text-[#1D4871] bg-white border-2 border-[#1D4871] v2-comic-shadow-sm'
-                  : 'text-[#1D4871]/70 hover:text-[#1D4871] border-2 border-transparent'
+              aria-pressed={active}
+              className={`h-11 rounded-full px-1 text-sm font-semibold leading-tight transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2 ${
+                active ? 'bg-[#2367EE] text-white shadow-button' : 'bg-white text-[#10233A] shadow-card-sm hover:shadow-card-sm-hover'
               }`}
             >
               {t.hours} hrs
@@ -79,42 +75,42 @@ export function PricingCalculator() {
         })}
       </div>
 
-      <div className="mt-7 v2-comic-border rounded-2xl bg-[#F4F4F5] overflow-hidden">
+      <div className="mt-7 overflow-hidden rounded-2xl bg-[#F4F4F5] ring-1 ring-[rgba(16,35,58,0.1)]">
         <div className="flex items-start justify-between flex-wrap gap-3 px-6 pt-6 pb-1">
-          <div className="font-comic text-[22px] md:text-[26px] text-[#1D4871] tracking-wide leading-tight">
+          <div className="font-hero text-[22px] font-bold leading-tight text-[#10233A]">
             {tier.hours} conversation hours
           </div>
-          <span className="text-[11px] font-bold uppercase tracking-widest text-[#1D4871] bg-[#FFDE59] border-2 border-[#1D4871] rounded-full px-3 py-1 whitespace-nowrap">
+          <span className="rounded-full bg-[#FFDE59] px-2.5 py-[3px] text-xs font-semibold text-[#1D4871] whitespace-nowrap">
             Early Access Pricing
           </span>
         </div>
         <div className="flex items-baseline gap-2 px-6 pb-4">
-          <div className="font-comic text-[56px] md:text-[80px] text-[#1D4871] tracking-wide leading-none">
+          <div className="font-hero text-[52px] font-extrabold leading-none tracking-[-0.03em] text-[#10233A] tabular-nums md:text-[72px]">
             ${formatNumber(tier.price)}
           </div>
-          <div className="text-base md:text-lg font-bold text-[#1D4871]/75">/ month</div>
+          <div className="text-base md:text-lg font-semibold text-[#556B86]">/ month</div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 border-t-[2.5px] border-[#1D4871]">
-          <div className="px-5 py-4 md:border-r-[2.5px] border-b-[2.5px] md:border-b-0 border-[#1D4871]">
-            <div className="font-comic text-2xl md:text-[26px] text-[#1D4871] tracking-wide leading-tight">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-[rgba(16,35,58,0.1)]">
+          <div className="border-b border-[rgba(16,35,58,0.1)] px-5 py-4 md:border-b-0 md:border-r">
+            <div className="font-hero text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#10233A] tabular-nums">
               ≈ {formatNumber(estimatedCalls)}
             </div>
-            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#1D4871]/70 mt-1">
+            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#556B86] mt-1">
               Estimated calls
             </div>
           </div>
           <div className="px-5 py-4">
-            <div className="font-comic text-2xl md:text-[26px] text-[#1D4871] tracking-wide leading-tight">
+            <div className="font-hero text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#10233A] tabular-nums">
               ${costPerHour}
             </div>
-            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#1D4871]/70 mt-1">
+            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#556B86] mt-1">
               Cost per conversation hour
             </div>
           </div>
         </div>
 
-        <div className="px-6 py-4 bg-white border-t-[2.5px] border-[#1D4871] text-sm md:text-[15px] font-semibold text-[#1D4871]">
+        <div className="border-t border-[rgba(16,35,58,0.1)] bg-white px-6 py-4 text-sm font-semibold text-[#10233A] md:text-[15px]">
           All Sayso products are included, Cue, Smart Capture, Pulse, and Playbook, for everyone in your organization.
         </div>
       </div>

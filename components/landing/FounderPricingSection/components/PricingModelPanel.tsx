@@ -18,11 +18,11 @@ const benefits = [
 
 export function PricingModelPanel() {
   return (
-    <section className="bg-[#1D4871] v2-comic-border v2-comic-shadow rounded-2xl p-7 md:p-10">
-      <span className="block text-xs font-bold tracking-widest uppercase text-[#FFDE59] mb-3">
+    <section className="rounded-[20px] bg-[#1D4871] shadow-[0_18px_40px_-18px_rgba(29,72,113,0.6)] p-7 md:p-10">
+      <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-[#FFDE59]">
         How pricing works
       </span>
-      <h2 className="font-comic text-3xl md:text-4xl text-white tracking-wide mb-4">
+      <h2 className="mb-4 font-hero font-extrabold tracking-[-0.03em] text-white text-[clamp(28px,4vw,40px)] leading-[1.1]">
         One price, your whole team
       </h2>
       <p className="text-base md:text-lg text-white/90 leading-relaxed">
@@ -33,9 +33,9 @@ export function PricingModelPanel() {
         {benefits.map((b) => (
           <div
             key={b.title}
-            className="bg-white/[0.07] border-2 border-white/30 rounded-xl p-5"
+            className="rounded-2xl bg-white/[0.07] p-5 ring-1 ring-white/15"
           >
-            <h3 className="font-comic text-xl text-[#FFDE59] tracking-wide mb-2">
+            <h3 className="mb-2 font-hero text-lg font-bold text-[#FFDE59]">
               {b.title}
             </h3>
             <p className="text-sm md:text-[15px] text-white/90 leading-relaxed">
@@ -45,8 +45,8 @@ export function PricingModelPanel() {
         ))}
       </div>
 
-      <div className="bg-[#FFDE59] border-2 border-[#1D4871] rounded-xl p-5 md:p-6 mt-5">
-        <h3 className="font-comic text-xl text-[#1D4871] tracking-wide mb-2">
+      <div className="mt-5 rounded-2xl bg-[#FFDE59] p-5 md:p-6">
+        <h3 className="mb-2 font-hero text-lg font-bold text-[#10233A]">
           What is Early Access Pricing?
         </h3>
         <p className="text-sm md:text-[15px] text-[#1D4871] font-medium leading-relaxed">
