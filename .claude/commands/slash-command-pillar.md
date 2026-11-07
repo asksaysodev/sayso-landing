@@ -305,7 +305,7 @@ Supporting posts in each cluster for reference:
 
 **Cold Calling:** expired-listing-scripts, fsbo-scripts, circle-prospecting-scripts, buyer-lead-scripts, how-to-start-a-real-estate-call, appointment-setting-script, best-real-estate-call-coaching-software
 
-**Appointment Setting:** how-to-close-for-appointment, how-many-times-ask-for-appointment, why-prospects-dont-commit, how-to-get-same-day-appointments
+**Appointment Setting:** how-to-close-for-appointment, how-many-times-ask-for-appointment, how-to-get-same-day-appointments
 
 **Conversation Skills:** how-to-build-rapport-calls, how-to-qualify-leads-on-phone, questions-to-ask-real-estate-leads, how-to-guide-a-sales-conversation, how-to-keep-control-of-a-call, what-top-agents-say-on-calls, what-real-time-call-coaching-looks-like
 

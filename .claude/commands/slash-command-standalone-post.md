@@ -30,7 +30,7 @@ Standalone posts are not part of a pillar cluster. They live in one of three con
 
 **CRM and Notes:** real-estate-call-notes-template, how-to-take-notes-during-calls, crm-note-examples-real-estate, how-to-stay-organized-with-leads, what-to-write-in-crm-after-call, day-in-the-life-agent-using-ai-coaching
 
-**Struggle and Emotional:** i-hate-cold-calling, why-leads-ghost-after-calls, how-to-recover-a-bad-call, how-to-not-freeze-on-calls, how-to-not-sound-salesy, how-to-think-on-your-feet-sales
+**Struggle and Emotional:** why-leads-ghost-after-calls, how-to-recover-a-bad-call, how-to-not-freeze-on-calls, how-to-not-sound-salesy, how-to-think-on-your-feet-sales
 
 **Data and Authority:** real-estate-call-data-study, ai-coaching-results-study, what-separates-top-agents-calls
 

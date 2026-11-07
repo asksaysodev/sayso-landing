@@ -77,8 +77,8 @@ export const needToThinkAboutIt: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Why Prospects Don\'t Commit to Meetings',
-    href: '/blog/why-prospects-dont-commit',
+    title: 'The "I Need to Think About It" Objection',
+    href: '/blog/think-about-it-objection',
   },
   relatedFeature: {
     title: 'Real-Time Guidance',
