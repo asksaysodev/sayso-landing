@@ -17,13 +17,32 @@ import { STEPS } from '../data';
 
 interface CoachCardProps {
   stepIndex: number;
-  phaseADone: boolean;
   onShowMe: () => void;
+  onBack: () => void;
+  onForward: () => void;
   onSkip: () => void;
   onRestart: () => void;
 }
 
-export function CoachCard({ stepIndex, phaseADone, onShowMe, onSkip, onRestart }: CoachCardProps) {
+function Chevron({ dir }: { dir: 'left' | 'right' }) {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={dir === 'left' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'} />
+    </svg>
+  );
+}
+
+export function CoachCard({ stepIndex, onShowMe, onBack, onForward, onSkip, onRestart }: CoachCardProps) {
   const { openDemoCalendar } = useDemoCalendar();
   const step = STEPS[stepIndex];
   const titleRef = useRef<HTMLParagraphElement>(null);
@@ -72,21 +91,30 @@ export function CoachCard({ stepIndex, phaseADone, onShowMe, onSkip, onRestart }
   return (
     <div className={styles.coach}>
       <div className={styles.coachHead}>
-        Step {stepIndex + 1} of {STEPS.length}
+        <span className={styles.stepNav}>
+          <button type="button" className={styles.stepArrow} onClick={onBack} disabled={stepIndex === 0} aria-label="Previous step">
+            <Chevron dir="left" />
+          </button>
+          Step {stepIndex + 1} of {STEPS.length}
+          <button type="button" className={styles.stepArrow} onClick={onForward} aria-label="Next step">
+            <Chevron dir="right" />
+          </button>
+        </span>
         <span className={styles.coachBar}>
           <i style={{ width: `${((stepIndex + 1) / STEPS.length) * 100}%` }} />
         </span>
       </div>
       <div className={styles.coachBody}>
-        <div className={styles.coachCopy}>
+        <div key={stepIndex} className={cx(styles.coachCopy, styles.stepIn)}>
           <p ref={titleRef} tabIndex={-1} className={styles.coachTitle}>
             {step.title}
           </p>
           <p>{step.body}</p>
         </div>
         <div className={styles.coachActions}>
-          <button type="button" className={styles.coachGo} onClick={onShowMe} disabled={isWatch && !phaseADone}>
-            {isWatch ? (phaseADone ? 'Next' : 'Listening…') : 'Show me'}
+          {/* Step 2 moves on by itself when the opening finishes, so it never offers a button that would flash. */}
+          <button type="button" className={styles.coachGo} onClick={onShowMe} disabled={isWatch}>
+            {isWatch ? 'Listening…' : 'Show me'}
           </button>
           <button type="button" className={styles.coachSkip} onClick={onSkip}>
             Skip tour

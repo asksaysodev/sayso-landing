@@ -23,6 +23,11 @@ interface WidgetScalerProps {
   stackBelow?: number;
   /** Fixed frame height. Content scales to fit and is centered vertically. */
   maxHeight?: number;
+  /**
+   * Also fit the window's height: the scaled content is at most
+   * `window.innerHeight - fitViewport` px tall. Tracks window resizes.
+   */
+  fitViewport?: number;
   /** Height reserved before measuring (px or any CSS length). Ignored when `maxHeight` is set. */
   initialHeight?: number | string;
   className?: string;
@@ -47,6 +52,7 @@ export function WidgetScaler({
   narrowWidth,
   stackBelow = 760,
   maxHeight,
+  fitViewport,
   initialHeight = 0,
   className,
   style,
@@ -75,12 +81,13 @@ export function WidgetScaler({
       return;
     }
     const ih = inner.offsetHeight || 1;
-    const scale = Math.min(1, cw / target, maxHeight ? maxHeight / ih : 1);
+    const byViewport = fitViewport === undefined ? 1 : Math.max(0.3, (window.innerHeight - fitViewport) / ih);
+    const scale = Math.min(1, byViewport, cw / target, maxHeight ? maxHeight / ih : 1);
     inner.style.transform = `translateX(-50%) scale(${scale})`;
     inner.style.top = maxHeight ? `${(maxHeight - ih * scale) / 2}px` : '0px';
     outer.style.height = `${maxHeight || ih * scale}px`;
     setReady(true);
-  }, [width, narrowWidth, stackBelow, maxHeight, designWidth]);
+  }, [width, narrowWidth, stackBelow, maxHeight, fitViewport, designWidth]);
 
   // Re-measure after every render: the widget's content may have changed.
   useIsomorphicLayoutEffect(measure);
@@ -92,8 +99,12 @@ export function WidgetScaler({
     const ro = new ResizeObserver(() => measure());
     if (sensorRef.current) ro.observe(sensorRef.current);
     if (innerRef.current) ro.observe(innerRef.current);
-    return () => ro.disconnect();
-  }, [measure]);
+    if (fitViewport !== undefined) window.addEventListener('resize', measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, [measure, fitViewport]);
 
   const stacked = !!narrowWidth && designWidth === narrowWidth && narrowWidth !== width;
 

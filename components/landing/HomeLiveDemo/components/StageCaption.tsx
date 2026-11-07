@@ -4,11 +4,12 @@
  */
 import { cx } from '@/lib/utils/cx';
 import styles from '../LiveDemo.module.css';
+import { forwardRef } from 'react';
 import type { Caption } from '../types';
 
-export function StageCaption({ caption }: { caption: Caption }) {
+export const StageCaption = forwardRef<HTMLDivElement, { caption: Caption }>(function StageCaption({ caption }, ref) {
   return (
-    <div className={styles.caption} aria-live="polite">
+    <div ref={ref} className={styles.caption} aria-live="polite">
       {caption.kind === 'hint' && <div className={cx(styles.captionPill, styles.hint)}>{caption.text}</div>}
       {caption.kind === 'talk' && (
         <div className={cx(styles.captionPill, styles.talk)}>
@@ -23,4 +24,4 @@ export function StageCaption({ caption }: { caption: Caption }) {
       )}
     </div>
   );
-}
+});

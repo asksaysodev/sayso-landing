@@ -97,5 +97,7 @@ export interface SaysoWidgetProps {
   onAction?: (control: WidgetControl) => void;
   /** Called when an LPMAMA letter is clicked or tapped. */
   onDotSelect?: (index: number) => void;
+  /** Called when the pointer or focus moves onto a captured LPMAMA letter (null when it leaves). */
+  onDotHover?: (index: number | null) => void;
   className?: string;
 }
