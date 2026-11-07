@@ -19,9 +19,6 @@ const benefits = [
 export function PricingModelPanel() {
   return (
     <section className="rounded-[20px] bg-[#1D4871] shadow-[0_18px_40px_-18px_rgba(29,72,113,0.6)] p-7 md:p-10">
-      <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-[#FFDE59]">
-        How pricing works
-      </span>
       <h2 className="mb-4 font-hero font-extrabold tracking-[-0.03em] text-white text-[clamp(28px,4vw,40px)] leading-[1.1]">
         One price, your whole team
       </h2>
