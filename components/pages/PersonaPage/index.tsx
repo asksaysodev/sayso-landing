@@ -13,6 +13,7 @@ import { FeatureCTAButtons } from '@/components/pages/FeatureCTAButtons';
 import { WidgetFigure } from '@/components/pages/WidgetFigure';
 import { body, h1, h2, textLink } from '@/components/pages/contentStyles';
 import { generateWebPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
+import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { UseCaseEntry } from '@/lib/content/for/types';
 import { ProseSection } from './components/ProseSection';
 import { HowSaysoWorksGrid } from './components/HowSaysoWorksGrid';
@@ -44,7 +45,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
         <div className="mb-8 space-y-4">
           {entry.openingEmpathy.map((paragraph, i) => (
             <p key={i} className={body}>
-              {paragraph}
+              {renderInlineMarkdown(paragraph)}
             </p>
           ))}
         </div>

@@ -303,7 +303,7 @@ Pillar posts are the most link-dense pages on the site. Rules:
 
 Supporting posts in each cluster for reference:
 
-**Cold Calling:** expired-listing-scripts, fsbo-scripts, circle-prospecting-scripts, buyer-lead-scripts, how-to-start-a-real-estate-call, appointment-setting-script, best-real-estate-call-coaching-software
+**Cold Calling:** expired-listing-scripts, fsbo-scripts, circle-prospecting-scripts, buyer-lead-scripts, how-to-start-a-real-estate-call, appointment-setting-script, how-to-choose-real-estate-call-coaching-software
 
 **Appointment Setting:** how-to-close-for-appointment, how-many-times-ask-for-appointment, why-prospects-dont-commit, how-to-get-same-day-appointments
 

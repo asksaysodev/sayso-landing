@@ -28,7 +28,7 @@ If no cluster is provided, attempt to infer from the keyword using the cluster r
 
 ### Supporting Posts Per Cluster
 
-**Cold Calling:** expired-listing-scripts, fsbo-scripts, circle-prospecting-scripts, buyer-lead-scripts, how-to-start-a-real-estate-call, appointment-setting-script, best-real-estate-call-coaching-software
+**Cold Calling:** expired-listing-scripts, fsbo-scripts, circle-prospecting-scripts, buyer-lead-scripts, how-to-start-a-real-estate-call, appointment-setting-script, how-to-choose-real-estate-call-coaching-software
 
 **Appointment Setting:** how-to-close-for-appointment, how-many-times-ask-for-appointment, why-prospects-dont-commit, how-to-get-same-day-appointments
 
