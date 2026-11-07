@@ -2,7 +2,7 @@ import type { UseCaseEntry } from './types';
 
 export const isas: UseCaseEntry = {
   slug: 'isas',
-  updatedAt: '2026-09-29',
+  updatedAt: '2026-11-07',
   persona: 'ISAs',
   keyword: 'how to improve ISA conversion rates in real estate',
   seoTitle: 'Improve ISA Conversion Rates in Real Estate - ISAs',
@@ -10,7 +10,7 @@ export const isas: UseCaseEntry = {
     'ISAs lose conversions as call fatigue sets in. Learn how to improve ISA conversion rates in real estate with live AI coaching on every dial. Try Sayso.',
   h1: 'How to Improve ISA Conversion Rates in Real Estate',
   openingEmpathy: [
-    'If you are an ISA, your entire job comes down to one number: how many leads you convert into booked appointments. Knowing how to improve ISA conversion rates in real estate is the difference between hitting your targets and watching qualified leads slip through the cracks, call after call.',
+    'If you are an [ISA (inside sales agent)](/glossary/isa-real-estate/), your entire job comes down to one number: how many leads you convert into booked appointments. Knowing how to improve ISA conversion rates in real estate is the difference between hitting your targets and watching qualified leads slip through the cracks, call after call.',
     'You dial 80, 100, sometimes 150 calls a day. The first ten feel sharp. You hit your openers clean, you handle pushback smoothly, and your booking rate is solid. But by call 60, the edge is gone. Your tone flattens, your responses slow down, and leads you would have converted at 9 AM are slipping away at 2 PM.',
     'The hardest part is that you know the difference. You can hear it in your own voice. The scripts you nailed this morning sound robotic by afternoon. And every unconverted lead is not just a missed opportunity for you, it is a missed appointment for the agent who was counting on you to fill their calendar.',
   ],
@@ -22,7 +22,7 @@ export const isas: UseCaseEntry = {
   ],
   whatTheyTryHeading: 'What Most ISAs Try (And Why It Falls Short)',
   whatTheyTry: [
-    'Most ISAs try to solve fatigue by rotating scripts. You switch between three or four openers, cycle through different objection handlers, and hope the variety keeps your delivery fresh. It helps for a while, but rotation does not fix the underlying problem. You are still drawing from memory under pressure, and by the 80th call, even four scripts feel like one.',
+    'Most ISAs try to solve fatigue by rotating scripts. You switch between three or four openers, like the ones in our [real estate ISA scripts](/blog/real-estate-isa-scripts/) and [phone scripts for leads](/blog/real-estate-phone-script-for-leads/), cycle through different objection handlers, and hope the variety keeps your delivery fresh. It helps for a while, but rotation does not fix the underlying problem. You are still drawing from memory under pressure, and by the 80th call, even four scripts feel like one.',
     'Some ISAs build elaborate pre-call rituals to maintain energy: standing desks, timed breaks, caffeine routines, motivational playlists between sessions. These are good habits, but they treat the symptom, not the cause. You can be perfectly alert and still deliver a flat script because the words have lost their meaning after 60 repetitions.',
     'Others try to fix the handoff problem with post-call note templates. You fill in the fields after each conversation: lead name, objection raised, follow-up date, appointment details. But templates add time between dials, slow your pace, and still depend on your memory of a conversation you had three minutes ago while simultaneously thinking about the next one.',
     'The common thread is that every approach puts the solution before or after the call. You prep harder, you recover smarter, you document faster. But during the call itself, when the prospect is on the line and your conversion rate is on the line with it, you are relying entirely on a brain that has been doing the same thing for five straight hours.',

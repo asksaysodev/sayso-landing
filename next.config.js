@@ -87,7 +87,13 @@ const nextConfig = {
       // ──────────────────────────────────────────────────
       {
         source: '/blog/best-real-estate-call-coaching-software-alternatives/',
-        destination: '/blog/best-real-estate-call-coaching-software/',
+        destination: '/blog/how-to-choose-real-estate-call-coaching-software/',
+        permanent: true,
+      },
+      // Renamed to match the content: it explains how to choose, it does not rank tools.
+      {
+        source: '/blog/best-real-estate-call-coaching-software/',
+        destination: '/blog/how-to-choose-real-estate-call-coaching-software/',
         permanent: true,
       },
       {
