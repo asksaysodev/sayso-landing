@@ -42,7 +42,7 @@ export const METHODS: CompareMethod[] = [
     ],
   },
   {
-    name: 'Call recording review',
+    name: 'Call Reviews',
     when: 'After the call',
     rows: [
       { mark: 'n', label: 'Help while the prospect is talking' },

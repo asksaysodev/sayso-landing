@@ -294,9 +294,9 @@ Surfaces are 26px radius with `inset 0 1px 0 rgba(140,160,182,.55)` and a soft d
 
 The guided demo marks the control to press with a pulsing yellow ring (`.target`) and the panel to watch with a yellow outline (`.watch`); the stage adds a yellow "Click here" pointer.
 
-### Older glass utilities
+### Product tour
 
-`.showcase-glass` and `.showcase-glass-strong` in `app/globals.css` came from the older product showcases, which are now removed. They are still used by the ad pages' 3 Easy Steps visuals (`components/landing/ThreeStepsSection/StepVisuals.tsx`), so keep them until those pages are redesigned; do not use them in new work. The product tour (`/product-tour`) keeps its own Follow Up Boss scene and overlay (`components/landing/ProductTour`), because its chapters carry their own notes, market data and scripts.
+The product tour (`/product-tour`) keeps its own Follow Up Boss scene and overlay (`components/landing/ProductTour`), because its chapters carry their own notes, market data and scripts.
 
 ---
 

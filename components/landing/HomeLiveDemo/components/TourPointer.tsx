@@ -1,15 +1,16 @@
 'use client';
 
 /**
- * The yellow "Click here" pointer that floats above the control the current
- * tour step wants pressed. It finds the widget's highlighted control inside
- * the stage and re-measures only when needed: after each demo layout change
- * (with a short per-frame burst to follow the widget's transitions, only while
- * the stage is on screen) and when the stage resizes.
+ * The yellow "Click here" pointer above the control the current tour step
+ * wants pressed. It never moves on screen: when the widget's layout changes
+ * it disappears, waits for the widget to settle, then appears in its new
+ * place. It hides the moment the step is done (the tour turns `active` off).
  */
-import { useRef, useState, type RefObject } from 'react';
-import { useTrackLayout } from '@/lib/hooks/useTrackLayout';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import styles from '../LiveDemo.module.css';
+
+/** Longest widget open/close transition, so the pointer only appears once things stop moving. */
+const SETTLE_MS = 450;
 
 interface TourPointerProps {
   stageRef: RefObject<HTMLDivElement>;
@@ -21,7 +22,10 @@ interface TourPointerProps {
 
 export function TourPointer({ stageRef, active, layoutKey }: TourPointerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
+  // Each position remembers the layout it was measured for, so a stale one is never drawn.
+  const [pos, setPos] = useState<{ left: number; top: number; key: string } | null>(null);
+  const keyRef = useRef(layoutKey);
+  keyRef.current = layoutKey;
 
   const place = () => {
     const stage = stageRef.current;
@@ -32,14 +36,40 @@ export function TourPointer({ stageRef, active, layoutKey }: TourPointerProps) {
     }
     const r = target.getBoundingClientRect();
     const b = stage.getBoundingClientRect();
+    // The demo may sit in a scaled frame: convert screen px back to the stage's own px.
+    const k = stage.offsetWidth ? b.width / stage.offsetWidth : 1;
     const half = (ref.current?.offsetWidth || 90) / 2 + 8;
-    const left = Math.max(half, Math.min(b.width - half, r.left + r.width / 2 - b.left));
-    const top = r.top - b.top - 14;
-    setPos((p) => (p && Math.abs(p.left - left) < 0.5 && Math.abs(p.top - top) < 0.5 ? p : { left, top }));
+    const left = Math.max(half, Math.min(stage.offsetWidth - half, (r.left + r.width / 2 - b.left) / k));
+    const top = (r.top - b.top) / k - 14;
+    const key = keyRef.current;
+    setPos((p) => (p && p.key === key && Math.abs(p.left - left) < 0.5 && Math.abs(p.top - top) < 0.5 ? p : { left, top, key }));
   };
 
-  useTrackLayout(stageRef, place, { enabled: active, layoutKey, follow: true });
-  const shown = active ? pos : null;
+  // Hide on every layout change, then show once the widget has settled.
+  useEffect(() => {
+    setPos(null);
+    if (!active) return;
+    const id = setTimeout(place, SETTLE_MS);
+    return () => clearTimeout(id);
+  }, [active, layoutKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // A window resize scales the demo: hide, then re-place when resizing stops.
+  useEffect(() => {
+    if (!active) return;
+    let id: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      setPos(null);
+      clearTimeout(id);
+      id = setTimeout(place, 150);
+    };
+    window.addEventListener('resize', onResize);
+    return () => {
+      clearTimeout(id);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const shown = active && pos && pos.key === layoutKey ? { left: pos.left, top: pos.top } : null;
 
   return (
     <div ref={ref} className={styles.pointer} hidden={!shown} style={shown ?? undefined} aria-hidden="true">

@@ -4,7 +4,7 @@
 import type { LeadType } from '@/components/SaysoWidget/types';
 
 /** Guided tour step keys. Each key matches the widget control the step points at. */
-export type StepKey = 'start' | 'watch' | 'dot' | 'zip' | 'play' | 'stop';
+export type StepKey = 'start' | 'watch' | 'dot' | 'zip' | 'play' | 'reset';
 
 export interface TourStep {
   key: StepKey;

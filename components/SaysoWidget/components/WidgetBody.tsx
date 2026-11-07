@@ -41,6 +41,7 @@ export function WidgetBody(props: SaysoWidgetProps & { stacked: boolean }) {
     interactive = false,
     onAction,
     onDotSelect,
+    onDotHover,
   } = props;
 
   const colRef = useRef<HTMLDivElement>(null);
@@ -89,7 +90,10 @@ export function WidgetBody(props: SaysoWidgetProps & { stacked: boolean }) {
           toast={toast}
           interactive={interactive}
           bind={bind}
-          onHover={setHoverNote}
+          onHover={(i) => {
+            setHoverNote(i);
+            onDotHover?.(i);
+          }}
           onSelect={onDotSelect}
         />
         <NoteBubble

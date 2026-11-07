@@ -21,6 +21,14 @@ declare global {
   }
 }
 
+/** Calendly event the demo request forms (persona pages, /request-demo) book into. */
+export const CALENDLY_REQUEST_DEMO_URL = 'https://calendly.com/asksayso/request-demo?hide_gdpr_banner=1';
+
+/** A Calendly booking URL with the visitor's email already filled in. */
+export function calendlyUrlWithEmail(url: string, email?: string): string {
+  return email ? `${url}${url.includes('?') ? '&' : '?'}email=${encodeURIComponent(email)}` : url;
+}
+
 /**
  * Open the Calendly booking flow in a centered popup overlay.
  *

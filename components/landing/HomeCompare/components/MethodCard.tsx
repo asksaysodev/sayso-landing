@@ -1,5 +1,6 @@
 /** One Compare card (phones and tablets; desktop shows CompareTable): a method, when it helps, and a yes / no / partly list. Sayso's card is navy. */
 import { cx } from '@/lib/utils/cx';
+import { SaysoLogo } from './SaysoLogo';
 import type { CompareMethod } from '../data';
 import { MARK_TEXT, markClass } from './marks';
 
@@ -15,7 +16,7 @@ export function MethodCard({ method }: { method: CompareMethod }) {
       )}
     >
       <header className={cx('mb-1.5 flex flex-col gap-1.5 border-b pb-3', us ? 'border-white/15' : 'border-[rgba(29,72,113,0.14)]')}>
-        <h3 className={us ? 'font-comic text-2xl font-normal tracking-[0.06em]' : 'font-hero text-lg font-bold'}>{method.name}</h3>
+        <h3 className={us ? undefined : 'font-hero text-lg font-bold'}>{us ? <SaysoLogo className="block h-7 w-auto" /> : method.name}</h3>
         <span
           className={cx(
             'self-start rounded-full px-2.5 py-[3px] text-xs font-semibold',

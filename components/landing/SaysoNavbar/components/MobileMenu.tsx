@@ -125,7 +125,14 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
           {resourcesOpen && (
             <div className="pb-3">
               {resourcesFeatured.map((link) => (
-                <Link key={link.href} href={link.href} onClick={onClose} className={subClass}>
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={onClose}
+                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  data-analytics-id={link.dataAnalyticsId}
+                  className={subClass}
+                >
                   {link.label}
                 </Link>
               ))}

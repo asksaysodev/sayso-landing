@@ -4,6 +4,7 @@
  * swipe cards (MethodCard) instead.
  */
 import { cx } from '@/lib/utils/cx';
+import { SaysoLogo } from './SaysoLogo';
 import type { CompareMethod } from '../data';
 import { MARK_TEXT, markClass } from './marks';
 
@@ -13,7 +14,7 @@ export function CompareTable({ methods }: { methods: CompareMethod[] }) {
   return (
     <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_0_0_1px_rgba(16,35,58,0.12),0_14px_34px_-18px_rgba(16,35,58,0.28)]">
       <table className="w-full table-fixed border-collapse text-left">
-        <caption className="sr-only">How Sayso compares with role-play, call recording review and printed scripts</caption>
+        <caption className="sr-only">How Sayso compares with role-play, call reviews and printed scripts</caption>
         <colgroup>
           <col className="w-[34%]" />
           {methods.map((m) => (
@@ -29,14 +30,11 @@ export function CompareTable({ methods }: { methods: CompareMethod[] }) {
                 scope="col"
                 className={cx('px-4 pb-4 pt-5 text-center align-bottom', m.highlight && 'bg-[#1D4871] text-white')}
               >
-                <span
-                  className={cx(
-                    'block',
-                    m.highlight ? 'font-comic text-2xl font-normal tracking-[0.06em]' : 'font-hero text-lg font-bold text-[#10233A]',
-                  )}
-                >
-                  {m.name}
-                </span>
+                {m.highlight ? (
+                  <SaysoLogo className="mx-auto block h-[30px] w-auto" />
+                ) : (
+                  <span className="block font-hero text-lg font-bold text-[#10233A]">{m.name}</span>
+                )}
                 <span
                   className={cx(
                     'mt-1.5 inline-block rounded-full px-2.5 py-[3px] text-xs font-semibold',
