@@ -4,8 +4,8 @@
  */
 import Image from 'next/image';
 import Link from 'next/link';
-import SsFormEmbed from '@/components/landing/SsFormEmbed';
-import { DEMO_FORM_EMBED_CODE, DEMO_FORM_ID, PROOF_VIDEO_URL } from './constants';
+import { PROOF_VIDEO_URL } from './constants';
+import { PersonaDemoForm } from './PersonaDemoForm';
 
 interface PersonaAdHeroProps {
   /** Analytics suffix, e.g. "agent" gives "cta-watch-video-persona-agent". */
@@ -53,12 +53,7 @@ export function PersonaAdHero({ persona, label, headline, subheadline, proof }: 
           </a>
           .
         </p>
-        {/* The embed's own wrapper adds 24px of padding; remove it so the box fits the fields exactly. */}
-        <SsFormEmbed
-          id={DEMO_FORM_ID}
-          embedCode={DEMO_FORM_EMBED_CODE}
-          className="scroll-mt-6 text-left [&_.ss-form-wrapper]:p-0"
-        />
+        <PersonaDemoForm />
       </div>
     </section>
   );
