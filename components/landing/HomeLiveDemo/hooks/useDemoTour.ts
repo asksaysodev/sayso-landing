@@ -198,7 +198,8 @@ export function useDemoTour() {
    * Click here shows only while the current step waits for the visitor: on
    * the control the step points at, or on L once its note is ready (step 3).
    */
-  const pointer = !st.starting && acted !== st.step && (key === 'dot' ? !!st.caps[0] : !!(key && HIGHLIGHT[key]));
+  // Step 1's Start button already glows yellow, so it gets no Click here.
+  const pointer = !st.starting && acted !== st.step && key !== 'start' && (key === 'dot' ? !!st.caps[0] : !!(key && HIGHLIGHT[key]));
 
   return {
     widget,
