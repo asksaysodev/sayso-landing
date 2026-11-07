@@ -9,7 +9,8 @@ import { LogoMarquee } from './components/LogoMarquee';
 import { ReviewCard } from './components/ReviewCard';
 import { REVIEWS, TEAM_LOGO_ROWS } from './data';
 
-export function HomeReviews() {
+/** `logos={false}` leaves out the team logo marquee (the confirmation pages show only the cards). */
+export function HomeReviews({ logos = true }: { logos?: boolean }) {
   return (
     <section id="reviews" className={`${section} ${wash}`} aria-labelledby="reviews-title">
       <div className={wrap}>
@@ -19,7 +20,7 @@ export function HomeReviews() {
             <ReviewCard key={review.name} review={review} />
           ))}
         </Carousel>
-        <LogoMarquee rows={TEAM_LOGO_ROWS} label="Teams using Sayso" />
+        {logos && <LogoMarquee rows={TEAM_LOGO_ROWS} label="Teams using Sayso" />}
       </div>
     </section>
   );

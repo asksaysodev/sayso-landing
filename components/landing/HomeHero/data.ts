@@ -7,6 +7,12 @@ export const ROTATING_QUOTES = [
   'Sayso has accelerated me by 6 months or more in skills on the phone.',
   'Sayso has helped me stay on track and book more appointments.',
   'Sayso instills more confidence in my calls.',
+  'I feel like I don’t skip a beat.',
+  'Sayso reacts to what both parties are saying.',
+  'It allows me to be in the moment with the client.',
+  'It’s been helping me ask deeper questions more efficiently.',
+  'I have recommended it to about seven or eight people.',
+  '100% would recommend it.',
 ];
 
 export const PROOF_LOGOS = [

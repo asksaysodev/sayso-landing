@@ -12,7 +12,7 @@ export const STEPS: TourStep[] = [
   {
     key: 'start',
     title: 'Sayso spots your call',
-    body: 'Your buyer lead picks up and Sayso shows a call alert. Press Start on the alert, where it says Click here.',
+    body: 'Your buyer lead picks up and Sayso shows a call alert. Press the yellow-ringed Start button on the alert.',
   },
   {
     key: 'watch',
