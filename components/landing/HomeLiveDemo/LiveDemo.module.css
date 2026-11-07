@@ -204,14 +204,6 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.sampleNote {
-  position: absolute;
-  right: 16px;
-  bottom: 12px;
-  font-size: 11.5px;
-  color: #556b86;
-}
-
 .caption {
   display: flex;
   justify-content: center;

@@ -60,33 +60,20 @@ export const PHASE_A: Beat[] = [
   C(700, 'Acknowledge it, ask what a shorter commute would change'),
 ];
 
-/** The prospect asks about the market (zip step). */
-export const PHASE_B: Beat[] = [
-  P(200, 'What’s the market like over there right now?'),
-  C(900, 'Open Pulse, share days on market and price trend'),
-];
-
-/** The agent answers with Pulse numbers. */
-export const PHASE_B2: Beat[] = [Y(1200, 'Homes there sell in about 90 days, and prices are trending up.')];
+/** Zip step: the Pulse cue appears. After step 2 there is no talking, only cues and letters. */
+export const PHASE_B: Beat[] = [C(300, 'Open Pulse, share days on market and price trend')];
 
 /** The call wraps up (reset step): the remaining letters fill in. */
 export const PHASE_C: Beat[] = [
-  P(600, 'Honestly, I just want less time in the car and more time with my kids.'),
-  K(900, 2),
-  C(600, 'Validate it, ask if they’re working with an agent'),
-  Y(1600, 'That makes sense. Are you working with an agent yet?'),
-  P(1600, 'No, you’re the first one I’ve talked to.'),
-  K(800, 3),
-  C(600, 'Ask what price range feels comfortable'),
-  Y(1600, 'What price range feels comfortable for you?'),
-  P(1700, 'We’re pre-approved with our bank, up to about $650K.'),
-  K(800, 1),
-  K(500, 4),
-  C(700, 'Offer two times to tour this weekend'),
-  Y(1600, 'I can show you a few places Saturday at 10 or Sunday at 1. Which works?'),
-  P(1600, 'Saturday at 10 works.'),
-  K(800, 5),
-  C(600, 'Confirm the tour and send the listings'),
+  K(400, 2),
+  C(500, 'Validate it, ask if they’re working with an agent'),
+  K(900, 3),
+  C(500, 'Ask what price range feels comfortable'),
+  K(900, 1),
+  K(400, 4),
+  C(500, 'Offer two times to tour this weekend'),
+  K(900, 5),
+  C(500, 'Confirm the tour and send the listings'),
 ];
 
 /** Demo state before the visitor starts the call. */

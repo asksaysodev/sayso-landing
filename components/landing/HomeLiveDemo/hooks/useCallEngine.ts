@@ -11,7 +11,7 @@
 import { useEffect, useReducer, useRef } from 'react';
 import { SAMPLE_MARKET, SAMPLE_NOTES } from '@/components/SaysoWidget/data';
 import type { WidgetControl } from '@/components/SaysoWidget/types';
-import { HINT_DISMISS, NEW_CALL, PHASE_A, PHASE_B2, fresh } from '../data';
+import { HINT_DISMISS, NEW_CALL, PHASE_A, fresh } from '../data';
 import type { Beat, DemoState } from '../types';
 
 interface EngineHooks {
@@ -34,7 +34,6 @@ export function useCallEngine(hooks: EngineHooks) {
   /** Bumped by stop, Skip tour and Start over: cancels every delayed callback. */
   const sessionToken = useRef(0);
   const zipToken = useRef(0);
-  const phaseB2Done = useRef(false);
 
   const set = (patch: Partial<DemoState>) => {
     s.current = { ...s.current, ...patch };
@@ -60,7 +59,6 @@ export function useCallEngine(hooks: EngineHooks) {
   const stopCall = () => {
     callToken.current++;
     // A fresh call should replay the agent's Pulse answer.
-    phaseB2Done.current = false;
     zipToken.current++;
     clearInterval(clock.current);
     clearTimeout(talkTimer.current);
@@ -162,10 +160,6 @@ export function useCallEngine(hooks: EngineHooks) {
           if (mine !== zipToken.current) return;
           if (i < zip.length) return set({ zipText: zip.slice(0, i) });
           set({ zipText: null, pulseShown: true });
-          if (s.current.live && !phaseB2Done.current) {
-            phaseB2Done.current = true;
-            run(PHASE_B2);
-          }
         }, 90 * i);
       }
     },

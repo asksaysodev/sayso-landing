@@ -90,7 +90,6 @@ export function HomeLiveDemo() {
             <WidgetScaler width={1010} narrowWidth={demo.narrowWidth} initialHeight="min(62px, calc((100vw - 54px) * 0.1292))">
               <SaysoWidget {...demo.widget} />
             </WidgetScaler>
-            <span className={styles.sampleNote}>Sample call and market data</span>
           </div>
           {demo.stepIndex >= STEPS.length && <EndCover onRestart={demo.restart} />}
           <TourPointer stageRef={stageRef} active={pointerActive} layoutKey={layoutKey} />

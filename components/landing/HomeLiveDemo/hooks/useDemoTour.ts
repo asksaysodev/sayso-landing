@@ -69,9 +69,9 @@ export function useDemoTour() {
 
   /**
    * How long the result of each step stays on screen before the card moves on:
-   * long enough to read L's note, and for Pulse to open and the agent to answer.
+   * long enough to read L's note, and for Pulse to open.
    */
-  const SETTLE: Partial<Record<StepKey, number>> = { dot: 2000, zip: 3200, play: 900, reset: 900 };
+  const SETTLE: Partial<Record<StepKey, number>> = { dot: 2000, zip: 1400, play: 900, reset: 900 };
 
   /** Advance when the visitor did what the current step asks. */
   const hit = (key: StepKey) => {
