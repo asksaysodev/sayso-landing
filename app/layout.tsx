@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
+import { CalendlyBookingTracker } from '@/components/CalendlyBookingTracker'
 import { headerNav, primaryNav, resourcesFeatured } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
 import './globals.css'
@@ -222,6 +223,7 @@ fbq('track', 'PageView');`,
         <DemoCalendarProvider>
           {children}
         </DemoCalendarProvider>
+        <CalendlyBookingTracker />
         <Analytics />
         <SpeedInsights />
         <Script

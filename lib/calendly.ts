@@ -24,6 +24,21 @@ declare global {
 /** Calendly event the demo request forms (persona pages, /request-demo) book into. */
 export const CALENDLY_REQUEST_DEMO_URL = 'https://calendly.com/asksayso/request-demo?hide_gdpr_banner=1';
 
+// Slug of the Calendly event most recently opened on this page (e.g. "demo",
+// "request-demo"), so the booking event can say which one was booked.
+let lastEventSlug: string | null = null;
+
+/** Remembers which Calendly event a widget was opened for. */
+export function noteCalendlyEvent(url: string): void {
+  const m = url.match(/calendly\.com\/[^/]+\/([^/?#]+)/);
+  if (m) lastEventSlug = m[1];
+}
+
+/** The Calendly event most recently opened on this page, if any. */
+export function lastCalendlyEvent(): string | null {
+  return lastEventSlug;
+}
+
 /** A Calendly booking URL with the visitor's email already filled in. */
 export function calendlyUrlWithEmail(url: string, email?: string): string {
   return email ? `${url}${url.includes('?') ? '&' : '?'}email=${encodeURIComponent(email)}` : url;
@@ -37,6 +52,7 @@ export function calendlyUrlWithEmail(url: string, email?: string): string {
  */
 export function openCalendlyPopup(url: string = CALENDLY_DEMO_URL): void {
   if (typeof window === 'undefined') return;
+  noteCalendlyEvent(url);
 
   if (window.Calendly) {
     // hide_event_type_details=1 drops Calendly's left info panel so the popup
