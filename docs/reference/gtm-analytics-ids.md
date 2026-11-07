@@ -95,6 +95,14 @@ That's out of scope for the attribute-only task.
 
 ---
 
+## FAQ clicks
+
+FAQ toggles have no `data-analytics-id`. Both FAQ blocks (homepage `components/landing/HomeFAQ` and `components/pages/FAQ.tsx`) carry a `data-faq` attribute instead. The GTM trigger "Click - FAQ Accordion" should use this CSS selector, so menus and other expanding buttons aren't counted as FAQ clicks:
+
+```
+[data-faq] summary, [data-faq] summary *, [data-faq] button[aria-expanded], [data-faq] button[aria-expanded] *
+```
+
 ## Naming convention
 
 - **Format:** kebab-case only. Lowercase, hyphens between words, no underscores, no camelCase.

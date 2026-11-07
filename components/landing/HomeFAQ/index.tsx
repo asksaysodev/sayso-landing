@@ -27,7 +27,8 @@ export function HomeFAQ() {
             .
           </p>
         </div>
-        <div>
+        {/* data-faq: GTM's FAQ trigger only counts clicks inside this marker. */}
+        <div data-faq="">
           {FAQ_GROUPS.map((group, gi) => (
             <div key={group.title} className={gi ? 'mt-[30px]' : undefined}>
               <h3 className="mb-1 font-comic text-[21px] font-normal tracking-[0.06em] text-[#1D4871]">{group.title}</h3>
