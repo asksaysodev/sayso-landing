@@ -14,6 +14,7 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 |---|---|---|---|
 | `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Desktop navbar, visible on every page |
 | `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile hamburger menu, only in DOM when menu open |
+| `nav-composer` | Opens composer.asksayso.com (free script generator) in a new tab | [lib/navigation.ts](../../lib/navigation.ts) (`resourcesFeatured`) | Resources menu and mobile drawer |
 | `cta-team-platform-strip` | Opens demo calendar | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar ("see the team platform") |
 | `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
@@ -144,4 +145,4 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 
 ## Total count
 
-46 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.
+47 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.
