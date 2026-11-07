@@ -1,13 +1,16 @@
 /**
  * Closing CTA block. Dark navy panel with the lock-in pitch and a button
- * that opens the Sayso demo calendar.
+ * that opens the Sayso demo calendar in the on-page popup (so bookings are tracked).
  */
+'use client';
 
+import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { Button } from '@/components/ui/Button';
 import { FOUNDER_PRICING_CONFIG } from '../data';
 import { headingOnNavy, navyPanel } from '../styles';
 
 export function CtaBlock() {
+  const { openDemoCalendar } = useDemoCalendar();
   return (
     <section className={`${navyPanel} p-8 md:p-10 text-center`}>
       <h2 className={`mb-3 ${headingOnNavy}`}>Lock in Early Access Pricing</h2>
@@ -16,7 +19,7 @@ export function CtaBlock() {
         {FOUNDER_PRICING_CONFIG.launchWindow}, and the rate you lock in now is yours for good. If you want your team on Sayso, now is the
         time to start.
       </p>
-      <Button href="https://calendly.com/asksayso/demo" external variant="secondary" data-analytics-id="cta-book-call-founder-pricing">
+      <Button onClick={openDemoCalendar} variant="secondary" data-analytics-id="cta-book-call-founder-pricing">
         Book a call
       </Button>
       <p className="text-xs md:text-sm text-white/70 mt-4">

@@ -13,7 +13,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { CALENDLY_DEMO_URL } from '@/lib/calendly';
+import { CALENDLY_DEMO_URL, noteCalendlyEvent } from '@/lib/calendly';
 
 interface CalendlyInlineWidgetProps {
   url?: string;
@@ -45,6 +45,7 @@ export function CalendlyInlineWidget({
       if (window.Calendly) {
         // Clear any prior render before (re)initializing on client navigation.
         el.innerHTML = '';
+        noteCalendlyEvent(url);
         window.Calendly.initInlineWidget({ url, parentElement: el });
       } else if (attempts < MAX_INIT_ATTEMPTS) {
         attempts += 1;
