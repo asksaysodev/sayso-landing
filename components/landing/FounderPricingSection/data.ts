@@ -1,9 +1,4 @@
-import type {
-  CaseStudyCard,
-  ComparisonColumn,
-  FounderPricingConfig,
-  IncludedProduct,
-} from './types';
+import type { CaseStudyCard, ComparisonColumn, FounderPricingConfig, IncludedProduct } from './types';
 
 /**
  * Edit pricing here. Change a number and the calculator updates.
@@ -68,8 +63,7 @@ export const INCLUDED_PRODUCTS: IncludedProduct[] = [
   {
     name: 'Playbook',
     tag: 'Custom Scripts',
-    description:
-      'Puts your scripts right on the screen next to Cue, so nobody is digging through a Google Doc or scripts binder.',
+    description: 'Puts your scripts right on the screen next to Cue, so nobody is digging through a Google Doc or scripts binder.',
   },
 ];
 
@@ -78,18 +72,12 @@ export const LAUNCH_COMPARISON: ComparisonColumn[] = [
     tag: 'Early Access Pricing · now',
     title: 'One price, one org',
     variant: 'now',
-    bullets: [
-      'One flat monthly price for the whole team',
-      'Every product included for every agent',
-    ],
+    bullets: ['One flat monthly price for the whole team', 'Every product included for every agent'],
   },
   {
     tag: 'A la carte · at launch',
     title: 'Buy it by the product',
     variant: 'later',
-    bullets: [
-      'Each product is priced on its own',
-      'Increased pricing to match the market',
-    ],
+    bullets: ['Each product is priced on its own', 'Increased pricing to match the market'],
   },
 ];

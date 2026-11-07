@@ -11,6 +11,7 @@
 
 import { useMemo, useState } from 'react';
 import { FOUNDER_PRICING_CONFIG } from '../data';
+import { heading, whitePanel, yellowTag } from '../styles';
 
 const { tiers, callsPerHour } = FOUNDER_PRICING_CONFIG;
 
@@ -22,23 +23,15 @@ export function PricingCalculator() {
   const [index, setIndex] = useState(0);
   const tier = tiers[index];
 
-  const estimatedCalls = useMemo(
-    () => Math.round((tier.hours * callsPerHour) / 100) * 100,
-    [tier.hours],
-  );
-  const costPerHour = useMemo(
-    () => (tier.price / tier.hours).toFixed(2),
-    [tier.hours, tier.price],
-  );
+  const estimatedCalls = useMemo(() => Math.round((tier.hours * callsPerHour) / 100) * 100, [tier.hours]);
+  const costPerHour = useMemo(() => (tier.price / tier.hours).toFixed(2), [tier.hours, tier.price]);
 
   const fillPct = (index / (tiers.length - 1)) * 100;
   const trackBg = `linear-gradient(90deg,#2367EE 0 ${fillPct}%,#E3E8EC ${fillPct}% 100%)`;
 
   return (
-    <section className="rounded-[20px] border border-[rgba(16,35,58,0.12)] bg-white shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-16px_rgba(16,35,58,0.25)] p-7 md:p-10">
-      <h2 className="mb-2 font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[clamp(28px,4vw,40px)] leading-[1.1]">
-        Get enough hours to coach every call
-      </h2>
+    <section className={`${whitePanel} p-7 md:p-10`}>
+      <h2 className={`mb-2 ${heading}`}>Get enough hours to coach every call</h2>
       <p className="text-base md:text-[15px] text-[#556B86] leading-relaxed mb-6">
         Slide to find your plan. Each one is a monthly pool of conversation hours that covers your whole team, with room to spare.
       </p>
@@ -77,12 +70,8 @@ export function PricingCalculator() {
 
       <div className="mt-7 overflow-hidden rounded-2xl bg-[#F4F4F5] ring-1 ring-[rgba(16,35,58,0.1)]">
         <div className="flex items-start justify-between flex-wrap gap-3 px-6 pt-6 pb-1">
-          <div className="font-hero text-[22px] font-bold leading-tight text-[#10233A]">
-            {tier.hours} conversation hours
-          </div>
-          <span className="rounded-full bg-[#FFDE59] px-2.5 py-[3px] text-xs font-semibold text-[#1D4871] whitespace-nowrap">
-            Early Access Pricing
-          </span>
+          <div className="font-hero text-[22px] font-bold leading-tight text-[#10233A]">{tier.hours} conversation hours</div>
+          <span className={`${yellowTag}`}>Early Access Pricing</span>
         </div>
         <div className="flex items-baseline gap-2 px-6 pb-4">
           <div className="font-hero text-[52px] font-extrabold leading-none tracking-[-0.03em] text-[#10233A] tabular-nums md:text-[72px]">
@@ -96,17 +85,13 @@ export function PricingCalculator() {
             <div className="font-hero text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#10233A] tabular-nums">
               ≈ {formatNumber(estimatedCalls)}
             </div>
-            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#556B86] mt-1">
-              Estimated calls
-            </div>
+            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#556B86] mt-1">Estimated calls</div>
           </div>
           <div className="px-5 py-4">
             <div className="font-hero text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#10233A] tabular-nums">
               ${costPerHour}
             </div>
-            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#556B86] mt-1">
-              Cost per conversation hour
-            </div>
+            <div className="text-[11.5px] font-bold uppercase tracking-wider text-[#556B86] mt-1">Cost per conversation hour</div>
           </div>
         </div>
 

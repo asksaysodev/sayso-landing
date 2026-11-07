@@ -4,6 +4,7 @@
  */
 
 import type { CaseStudyCard as CaseStudyCardData } from '../types';
+import { navyPanel, whitePanel } from '../styles';
 
 type CaseStudyCardProps = {
   card: CaseStudyCardData;
@@ -12,17 +13,11 @@ type CaseStudyCardProps = {
 export function CaseStudyCard({ card }: CaseStudyCardProps) {
   const isDark = card.variant === 'dark';
 
-  const wrapperCls = isDark
-    ? 'rounded-[20px] bg-[#1D4871] shadow-[0_18px_40px_-18px_rgba(29,72,113,0.6)] p-6 md:p-7 w-full'
-    : 'rounded-[20px] border border-[rgba(16,35,58,0.12)] bg-white shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-16px_rgba(16,35,58,0.25)] p-6 md:p-7 w-full';
+  const wrapperCls = isDark ? `${navyPanel} p-6 md:p-7 w-full` : `${whitePanel} p-6 md:p-7 w-full`;
 
-  const titleCls = isDark
-    ? 'mb-2 font-hero text-[22px] font-bold text-[#FFDE59]'
-    : 'mb-2 font-hero text-[22px] font-bold text-[#10233A]';
+  const titleCls = isDark ? 'mb-2 font-hero text-[22px] font-bold text-[#FFDE59]' : 'mb-2 font-hero text-[22px] font-bold text-[#10233A]';
 
-  const bodyCls = isDark
-    ? 'text-sm md:text-[15px] text-white/90 leading-relaxed'
-    : 'text-sm md:text-[15px] text-[#556B86] leading-relaxed';
+  const bodyCls = isDark ? 'text-sm md:text-[15px] text-white/90 leading-relaxed' : 'text-sm md:text-[15px] text-[#556B86] leading-relaxed';
 
   const statWrapCls = isDark
     ? 'rounded-xl bg-white/[0.07] px-2 py-3 text-center ring-1 ring-white/15 md:p-3'

@@ -7,16 +7,16 @@
 import { HOURS_CASE_STUDIES } from '../data';
 import { Carousel } from './Carousel';
 import { CaseStudyCard } from './CaseStudyCard';
+import { heading } from '../styles';
 
 export function HoursCaseStudy() {
   return (
     <section>
       <div className="mb-7">
-        <h2 className="mb-3 font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[clamp(28px,4vw,40px)] leading-[1.1]">
-          Hours = conversations coached
-        </h2>
+        <h2 className={`mb-3 ${heading}`}>Hours = conversations coached</h2>
         <p className="text-base md:text-lg text-[#556B86] leading-relaxed">
-          Sayso plans are measured in conversation hours, the time your agents spend talking to leads, not dial time. An agent can dial for 3 hours and get 1 hour of back and forth conversation. That hour is where Sayso coaches, and where the hours count.
+          Sayso plans are measured in conversation hours, the time your agents spend talking to leads, not dial time. An agent can dial for
+          3 hours and get 1 hour of back and forth conversation. That hour is where Sayso coaches, and where the hours count.
         </p>
       </div>
 

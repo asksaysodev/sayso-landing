@@ -13,7 +13,8 @@ export function Hero() {
         Sayso Levels Up The Whole Team
       </h1>
       <p className="text-base md:text-lg text-[#556B86] max-w-3xl mx-auto leading-relaxed">
-        Agents freeze or feature dump when a lead pushes back, and appointments don&apos;t get booked. Sayso coaches them live, right on the call, so they keep control and win the moment. Here is everything your team gets, at Early Access Pricing.
+        Agents freeze or feature dump when a lead pushes back, and appointments don&apos;t get booked. Sayso coaches them live, right on the
+        call, so they keep control and win the moment. Here is everything your team gets, at Early Access Pricing.
       </p>
     </section>
   );
