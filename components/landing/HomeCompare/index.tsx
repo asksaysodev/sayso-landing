@@ -1,5 +1,5 @@
 /**
- * Compare: Sayso next to role-play, call recording review and printed
+ * Compare: Sayso next to role-play, call reviews and printed
  * scripts. A table on desktop, swipe cards at 960px and below.
  */
 import Link from 'next/link';

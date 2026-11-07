@@ -3,12 +3,24 @@
  * tabs (roving tabindex). Two-by-two grid on mobile, a column on desktop.
  */
 import { useRef, type KeyboardEvent } from 'react';
-import { BoltIcon, CheckIcon, ListIcon, SearchIcon } from '@/components/SaysoWidget/components/icons';
+import { CheckIcon, ListIcon, SearchIcon } from '@/components/SaysoWidget/components/icons';
 import { cx } from '@/lib/utils/cx';
 import { FEATURES, type FeatureIcon } from '../data';
 
 const ICONS: Record<FeatureIcon, JSX.Element> = {
-  bolt: <BoltIcon />,
+  // The Sayso bolt (same shape as the site icon), in white.
+  bolt: (
+    <svg aria-hidden="true" width="17" height="17" viewBox="0 0 512 512">
+      <path
+        d="M294.4 25.6L115.2 281.6H256L217.6 486.4L396.8 230.4H256L294.4 25.6Z"
+        fill="#fff"
+        stroke="#fff"
+        strokeWidth="38.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
   check: <CheckIcon />,
   search: <SearchIcon color="#fff" />,
   list: <ListIcon />,
