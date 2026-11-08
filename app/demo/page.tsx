@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
-import { DownloadButton } from '@/components/landing/DownloadButton';
+import Image from 'next/image';
+import { REVIEWS } from '@/components/landing/HomeReviews/data';
 import { CalendlyInlineWidget } from '@/components/CalendlyInlineWidget';
 import { siteUrl } from '@/lib/config';
 import { PageHeader } from '@/components/pages/PageHeader';
@@ -37,30 +38,91 @@ export const metadata: Metadata = {
   },
 };
 
+/** Calendly booking page with the landing details hidden, so only the scheduler shows. */
+const DEMO_BOOKING_URL = 'https://calendly.com/asksayso/demo?hide_event_type_details=1&hide_landing_page_details=1&hide_gdpr_banner=1';
+
+const COVERED = [
+  'What Sayso does',
+  'How Sayso works',
+  'Why Sayso is a competitive advantage',
+  'A setup plan and pricing for your needs',
+];
+
+const REVIEW = REVIEWS.find((r) => r.name === 'David Simpson') ?? REVIEWS[0];
+
 export default function DemoPage() {
   return (
     <DemoCalendarProvider>
+      {/* On desktop the navbar, header and booking area fill exactly one screen
+          height, so the calendar and side card fit without scrolling. Phones stack
+          and scroll normally. */}
       <div className="relative min-h-screen bg-[#F4F4F5]">
+        <div className="lg:flex lg:h-[100dvh] lg:flex-col">
         <SaysoNavbar />
-        <main>
-          <PageHeader standalone title="Book a Demo" intro="Schedule a meeting to see Sayso in action!">
-            <div className="flex flex-col items-center gap-3">
-              <DownloadButton analyticsId="cta-demo-download" />
-              <p className="text-sm text-[#556B86]">
-                Want to try it right now? Get Sayso and start your first call in a minute.
-              </p>
-            </div>
-          </PageHeader>
+        <main className="lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
+          <PageHeader
+            standalone
+            title="Book a 25-min Demo"
+            className="lg:[@media(max-height:860px)]:!pb-6 lg:[@media(max-height:860px)]:!pt-10"
+          />
 
-          <section className="w-full px-4 md:px-6 pb-16">
-            <div className="max-w-[900px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">
-              <CalendlyInlineWidget
-                className="w-full"
-                style={{ minWidth: '320px', height: '700px' }}
-              />
+          <section className="w-full px-4 pb-16 md:px-6 lg:min-h-0 lg:flex-1 lg:pb-6">
+            <div className="mx-auto grid max-w-[1100px] gap-6 lg:h-full lg:grid-cols-[320px_1fr] lg:items-start">
+              <div className="order-1 h-[700px] min-w-[320px] overflow-hidden rounded-[20px] bg-white shadow-card lg:order-2 lg:h-full lg:min-h-[480px]">
+                <CalendlyInlineWidget url={DEMO_BOOKING_URL} className="h-full w-full" />
+              </div>
+
+              <aside className="order-2 space-y-6 rounded-[20px] bg-white p-6 shadow-card lg:order-1 lg:[@media(max-height:860px)]:space-y-4 lg:[@media(max-height:860px)]:p-5">
+                <div>
+                  <p className="font-hero text-lg font-bold text-[#10233A]">What we&apos;ll cover</p>
+                  <ul className="mt-3 space-y-2.5 text-[15px] leading-relaxed text-[#1D4871]/80">
+                    {COVERED.map((item) => (
+                      <li key={item} className="flex gap-2.5">
+                        <span aria-hidden="true" className="mt-[9px] h-1.5 w-1.5 flex-none rounded-full bg-[#2367EE]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex items-center gap-3 border-t border-[#1D4871]/10 pt-6 lg:[@media(max-height:860px)]:pt-4">
+                  <Image
+                    src="/images/founder-kuvaal-patel.png"
+                    alt="Kuvaal Patel"
+                    width={56}
+                    height={56}
+                    className="h-14 w-14 flex-none rounded-full object-cover"
+                  />
+                  <p className="text-[15px] leading-snug text-[#1D4871]/80">
+                    <span className="block font-bold text-[#10233A]">Kuvaal Patel</span>
+                    Founder of Sayso. Director of Agent Development at Anderson Real Estate Group.
+                  </p>
+                </div>
+
+                <figure className="border-t border-[#1D4871]/10 pt-6 lg:[@media(max-height:860px)]:pt-4">
+                  <blockquote className="text-[15px] italic leading-relaxed text-[#10233A]">
+                    &ldquo;{REVIEW.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-2 text-sm text-[#556B86]">
+                    {REVIEW.name}, {REVIEW.team}
+                  </figcaption>
+                </figure>
+
+                <p className="border-t border-[#1D4871]/10 pt-6 lg:[@media(max-height:860px)]:pt-4 text-sm text-[#556B86]">
+                  Want to try it first?{' '}
+                  <a
+                    href="https://app.asksayso.com/signup?signup=true"
+                    data-analytics-id="link-demo-get-sayso"
+                    className="font-bold text-[#2367EE] hover:underline"
+                  >
+                    Get Sayso &rarr;
+                  </a>
+                </p>
+              </aside>
             </div>
           </section>
         </main>
+        </div>
         <Footer />
       </div>
     </DemoCalendarProvider>
