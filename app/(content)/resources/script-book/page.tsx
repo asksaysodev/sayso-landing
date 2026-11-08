@@ -111,7 +111,7 @@ export default function ScriptBookPage() {
         <div className="mx-auto max-w-[560px] rounded-[20px] border border-[rgba(16,35,58,0.12)] border-t-4 border-t-[#FFDE59] bg-white px-6 pt-6 pb-4 md:px-8 md:pt-7 text-center shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-16px_rgba(16,35,58,0.25)]">
           <h2 className="font-hero font-bold text-[22px] text-[#10233A]">Get the script book</h2>
           <p className="mt-1 mb-4 text-[15px] text-[#556B86]">Enter your email and we&apos;ll send the script book.</p>
-          <BeehiivForm formId={SCRIPT_BOOK_FORM_ID} data-analytics-id="form-script-book" className="mx-auto w-full max-w-[420px] text-left" />
+          <BeehiivForm formId={SCRIPT_BOOK_FORM_ID} pagePath="/resources/script-book/" title="Get the script book" data-analytics-id="form-script-book" className="mx-auto w-full max-w-[420px] text-left" />
         </div>
 
         <section className="mx-auto max-w-[800px] font-sans text-[#1D4871]/80 leading-relaxed">
