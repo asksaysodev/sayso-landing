@@ -5,6 +5,7 @@ import { Footer } from '@/components/landing/Footer';
 import { AdPageCTAButton } from '@/components/landing/AdPageCTAButton';
 import { PersonaAdHero } from '@/components/landing/PersonaAdShared/PersonaAdHero';
 import { PersonaStepWidget } from '@/components/landing/PersonaAdShared/PersonaStepWidget';
+import { HomeTeams } from '@/components/landing/HomeTeams';
 
 export function BrokerAdPage() {
   return (
@@ -116,6 +117,9 @@ export function BrokerAdPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Teams and brokerages ── */}
+      <HomeTeams className="bg-[#F4F4F5]" analyticsSuffix="broker" />
 
       {/* ── Closing CTA ── */}
       <section className="max-w-xl mx-auto px-6 py-10 text-center">

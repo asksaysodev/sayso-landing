@@ -69,14 +69,6 @@ export function CopyIcon() {
   );
 }
 
-export function BoltIcon() {
-  return (
-    <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="#fff">
-      <path d="M13.5 2L4 14h7l-1.5 8L19 10h-7z" />
-    </svg>
-  );
-}
-
 export function CursorIcon({ className, style }: IconProps & { style?: React.CSSProperties }) {
   return (
     <svg aria-hidden="true" className={className} style={style} viewBox="0 0 26 30">

@@ -5,6 +5,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { DownloadButton } from '@/components/landing/DownloadButton';
 import { CalendlyInlineWidget } from '@/components/CalendlyInlineWidget';
 import { siteUrl } from '@/lib/config';
+import { PageHeader } from '@/components/pages/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Book a Demo',
@@ -42,20 +43,14 @@ export default function DemoPage() {
       <div className="relative min-h-screen bg-[#F4F4F5]">
         <SaysoNavbar />
         <main>
-          <section className="max-w-[900px] mx-auto px-6 pt-16 md:pt-24 pb-10 text-center">
-            <h1 className="font-hero font-extrabold text-[40px] md:text-[56px] text-[#10233A] leading-[1.1] tracking-[-0.03em]">
-              Book a Demo
-            </h1>
-            <p className="mt-5 text-lg md:text-xl text-[#556B86] leading-relaxed max-w-[600px] mx-auto">
-              Schedule a meeting to see Sayso in action!
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-3">
+          <PageHeader standalone title="Book a Demo" intro="Schedule a meeting to see Sayso in action!">
+            <div className="flex flex-col items-center gap-3">
               <DownloadButton analyticsId="cta-demo-download" />
               <p className="text-sm text-[#556B86]">
                 Want to try it right now? Get Sayso and start your first call in a minute.
               </p>
             </div>
-          </section>
+          </PageHeader>
 
           <section className="w-full px-4 md:px-6 pb-16">
             <div className="max-w-[900px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">

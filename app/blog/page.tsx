@@ -1,10 +1,7 @@
 import { Metadata } from 'next';
-import { getAllPostsMeta, getCategories, getPaginatedPosts } from '@/lib/blog';
+import { getAllPostsMeta, getCategories, toBlogCardPost } from '@/lib/blog';
 import { generateBlogListJsonLd } from '@/lib/seo/blog-jsonld';
-import { BlogHeroBanner } from '@/components/blog/BlogHeroBanner';
-import { BlogCategoryPills } from '@/components/blog/BlogCategoryPills';
-import { BlogPostCard } from '@/components/blog/BlogPostCard';
-import { BlogPagination } from '@/components/blog/BlogPagination';
+import { BlogIndex, type BlogSort } from '@/components/blog/BlogIndex';
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
 import { siteUrl } from '@/lib/config';
 
@@ -31,29 +28,31 @@ export const metadata: Metadata = {
   },
 };
 
+const POSTS_PER_PAGE = 9;
+const SORTS: BlogSort[] = ['newest', 'oldest', 'quickest'];
+
 interface BlogPageProps {
-  searchParams: Promise<{ page?: string; q?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
+
+/** Repeated query keys (`?q=a&q=b`) arrive as arrays; take the first value. */
+function firstParam(value: string | string[] | undefined): string | undefined {
+  return Array.isArray(value) ? value[0] : value;
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const params = await searchParams;
-  const page = Math.max(1, parseInt(params.page || '1', 10));
-  const query = params.q?.toLowerCase();
-
+  const raw = await searchParams;
+  const params = {
+    page: firstParam(raw.page),
+    q: firstParam(raw.q),
+    category: firstParam(raw.category),
+    sort: firstParam(raw.sort),
+  };
+  const page = Math.max(1, parseInt(params.page || '1', 10) || 1);
   const categories = getCategories();
-  const { posts, totalPages, currentPage } = getPaginatedPosts(page);
-
-  // Filter by search query if provided
-  const filteredPosts = query
-    ? posts.filter(
-        (p) =>
-          p.title.toLowerCase().includes(query) ||
-          p.description.toLowerCase().includes(query) ||
-          p.tags.some((t) => t.toLowerCase().includes(query))
-      )
-    : posts;
-
-  const gridPosts = filteredPosts;
+  const category = categories.some((c) => c.slug === params.category) ? params.category : undefined;
+  const sort = SORTS.find((s) => s === params.sort) ?? 'newest';
+  const posts = getAllPostsMeta().map(toBlogCardPost);
 
   const jsonLd = generateBlogListJsonLd(siteUrl);
 
@@ -64,30 +63,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <BlogHeroBanner />
-      <BlogCategoryPills categories={categories} />
-
-      {/* Post grid */}
-      <section className="max-w-[1200px] mx-auto px-6 pb-4">
-        {query && (
-          <p className="text-sm text-[#1D4871]/60 mb-4 font-sans">
-            Showing results for &ldquo;{params.q}&rdquo;
-          </p>
-        )}
-        {gridPosts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {gridPosts.map((post) => (
-              <BlogPostCard key={post.slug} post={post} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-16">
-            <p className="text-[#1D4871]/60 font-sans text-lg">No posts found.</p>
-          </div>
-        )}
-      </section>
-
-      <BlogPagination currentPage={currentPage} totalPages={totalPages} />
+      <BlogIndex
+        posts={posts}
+        categories={categories}
+        initialCategory={category}
+        initialSort={sort}
+        initialQuery={params.q?.trim() ?? ''}
+        initialPage={page}
+        pageSize={POSTS_PER_PAGE}
+      />
       <BlogNewsletterCTA />
     </>
   );

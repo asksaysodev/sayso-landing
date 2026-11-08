@@ -7,7 +7,6 @@ import { cache } from 'react';
 import { siteUrl } from '@/lib/config';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
-const POSTS_PER_PAGE = 9;
 
 export interface BlogAuthor {
   name: string;
@@ -149,10 +148,6 @@ export function getPostsByCategory(category: string): BlogPostMeta[] {
   return getAllPostsMeta().filter((p) => p.category === category);
 }
 
-export function getFeaturedPost(): BlogPostMeta | null {
-  return getAllPostsMeta().find((p) => p.featured) || getAllPostsMeta()[0] || null;
-}
-
 export function getCategories(): { slug: string; name: string; count: number }[] {
   const posts = getAllPostsMeta();
   const categoryMap = new Map<string, number>();
@@ -173,19 +168,6 @@ export function formatCategoryName(slug: string): string {
     .split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
-}
-
-export function getPaginatedPosts(page: number, category?: string): {
-  posts: BlogPostMeta[];
-  totalPages: number;
-  currentPage: number;
-} {
-  const allPosts = category ? getPostsByCategory(category) : getAllPostsMeta();
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
-  const start = (page - 1) * POSTS_PER_PAGE;
-  const posts = allPosts.slice(start, start + POSTS_PER_PAGE);
-
-  return { posts, totalPages, currentPage: page };
 }
 
 export function getRelatedPosts(
@@ -231,16 +213,6 @@ export function getRelatedPosts(
   return related;
 }
 
-export function getClusterPosts(cluster: string): BlogPostMeta[] {
-  return getAllPostsMeta()
-    .filter((p) => p.cluster === cluster)
-    .sort((a, b) => {
-      if (a.type === 'pillar' && b.type !== 'pillar') return -1;
-      if (b.type === 'pillar' && a.type !== 'pillar') return 1;
-      return new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
-    });
-}
-
 export function getPillarPost(cluster: string): BlogPostMeta | null {
   const pillars = getAllPostsMeta().filter(
     (p) => p.cluster === cluster && p.type === 'pillar'
@@ -261,14 +233,20 @@ export function getSupportingPosts(cluster: string): BlogPostMeta[] {
     .sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime());
 }
 
-export function getPostClusters(): string[] {
-  const clusters = getAllPostsMeta()
-    .map((p) => p.cluster)
-    .filter((c): c is string => !!c);
-
-  return [...new Set(clusters)].sort();
-}
-
 export function getAllSlugs(): string[] {
   return getAllPosts().map((p) => p.slug);
+}
+
+/** The plain fields a blog card renders (see components/blog/BlogPostCard). */
+export function toBlogCardPost(post: BlogPostMeta) {
+  return {
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    categoryName: formatCategoryName(post.category),
+    category: post.category,
+    tags: post.tags,
+    publishedAt: post.publishedAt,
+    readingTime: post.readingTime,
+  };
 }

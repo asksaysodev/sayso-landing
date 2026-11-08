@@ -14,7 +14,7 @@ export default function ConfirmationActions() {
   const { openDemoCalendar } = useDemoCalendar();
 
   return (
-    <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
       <Button onClick={openDemoCalendar}>
         Book a demo
       </Button>

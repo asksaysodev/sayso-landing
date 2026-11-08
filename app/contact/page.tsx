@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing/Footer';
 import SsFormEmbed from '@/components/landing/SsFormEmbed';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
+import { PageHeader } from '@/components/pages/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -41,14 +42,15 @@ export default function ContactPage() {
       <div className="relative bg-[#F4F4F5] min-h-screen">
         <SaysoNavbar />
         <main>
-          <section className="max-w-[900px] mx-auto px-6 pt-32 pb-10 text-center">
-            <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[42px] sm:text-6xl lg:text-7xl leading-[1.08]">
-              <span className="text-[#2367EE]">Contact</span> Us.
-            </h1>
-            <p className="mt-5 text-lg md:text-xl text-[#1D4871]/75 leading-relaxed max-w-[600px] mx-auto">
-              Send us a message and we&apos;ll get back to you shortly.
-            </p>
-          </section>
+          <PageHeader
+            standalone
+            title={
+              <>
+                <span className="text-[#2367EE]">Contact</span> Us.
+              </>
+            }
+            intro="Send us a message and we'll get back to you shortly."
+          />
 
           <section className="w-full px-4 md:px-6 pb-16">
             <div className="max-w-[680px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">

@@ -14,7 +14,7 @@ export default function BookDemoCTA() {
   const { openDemoCalendar } = useDemoCalendar();
 
   return (
-    <div className="mt-8 flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4">
       <p className="text-base md:text-lg text-[#1D4871]/75 leading-relaxed">
         Want to learn more about Sayso?
       </p>

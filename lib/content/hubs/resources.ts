@@ -5,13 +5,20 @@ const resourcesHub: HubPageConfig = {
   slug: 'resources',
   section: 'Resources',
   basePath: '/resources',
-  seoTitle: 'Sayso Resources: Guides, Scripts & Insights for Real Estate Agents',
+  seoTitle: 'Sayso Resources: Scripts and Guides for Agents',
   seoDescription:
     'Browse Sayso resources: blog articles, objection scripts, and glossary terms to help real estate agents sound better on every call.',
   h1: 'Resources for Real Estate Agents',
   introduction:
     'Scripts, strategies, and insights to help you sound better on every call, plus everything you need to understand how Sayso works and what it costs.',
   childPages: [
+    {
+      title: 'Ultimate Real Estate Script Book',
+      slug: 'script-book',
+      description:
+        'Free call scripts and talk tracks for buyer, seller, open house and follow-up conversations. Enter your email and we send it over.',
+      linkText: 'Get the free script book',
+    },
     {
       title: 'Blog',
       slug: 'blog',

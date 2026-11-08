@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { CannyBoard } from '@/components/CannyBoard';
+import { PageHeader } from '@/components/pages/PageHeader';
 
 type TabType = 'feedback' | 'bugs' | 'roadmap';
 
@@ -72,19 +73,15 @@ export function FeedbackClient() {
     <div className="min-h-screen bg-white flex flex-col">
       <SaysoNavbar />
 
-      <main className="flex-1 pt-8 md:pt-16">
+      <main className="flex-1">
         {!isAuthenticated ? (
-          <div className="max-w-[1200px] mx-auto px-6 py-16 md:py-24">
-            <div className="flex flex-col items-center justify-center min-h-[600px]">
-              <div className="mb-12 text-center max-w-md">
-                <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[38px] md:text-5xl leading-[1.08] mb-4">
-                  Feature Requests & Feedback
-                </h1>
-                <p className="text-base md:text-lg text-[#1D4871]/70 leading-relaxed">
-                  Share your ideas to help us build the features you need most.
-                </p>
-              </div>
-
+          <div className="pb-16 md:pb-24">
+            <PageHeader
+              standalone
+              title="Feature Requests & Feedback"
+              intro="Share your ideas to help us build the features you need most."
+            />
+            <div className="flex flex-col items-center px-6">
               <div className="w-full max-w-sm">
                 <div className="bg-white rounded-[20px] p-8 shadow-card">
                   <form onSubmit={handlePasswordSubmit} className="space-y-4">
@@ -154,7 +151,7 @@ export function FeedbackClient() {
           </div>
         ) : (
           user ? (
-            <div className="w-full h-full flex flex-col">
+            <div className="w-full h-full flex flex-col pt-8 md:pt-16">
               <div className="max-w-[1200px] mx-auto px-4 md:px-6 py-8 w-full flex flex-wrap gap-3">
                 {[
                   { id: 'feedback' as TabType, label: 'Feature Requests' },
@@ -200,7 +197,7 @@ export function FeedbackClient() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex items-center justify-center min-h-screen pt-8 md:pt-16">
               <p className="text-[#1D4871]">Loading...</p>
             </div>
           )

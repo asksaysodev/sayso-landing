@@ -7,9 +7,6 @@
 /** 800px reading column used by the content templates. */
 export const column = 'mx-auto w-full max-w-[800px] px-6';
 
-/** Page H1: Manrope 800, the same scale as the other content templates. */
-export const h1 = 'font-hero text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10233A] md:text-5xl';
-
 /** Section H2. */
 export const h2 = 'font-hero text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#10233A] md:text-[28px]';
 

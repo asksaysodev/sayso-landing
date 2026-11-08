@@ -46,7 +46,7 @@ export default function FounderPricingPage() {
     <DemoCalendarProvider>
       <div className="relative min-h-screen bg-[#F4F4F5] text-[#10233A]">
         <SaysoNavbar />
-        <main className="pt-24">
+        <main>
           <FounderPricingSection />
         </main>
         <Footer />

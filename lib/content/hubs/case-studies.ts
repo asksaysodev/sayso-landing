@@ -5,18 +5,20 @@ const caseStudiesHub: HubPageConfig = {
   slug: 'case-studies',
   section: 'Case Studies',
   basePath: '/case-studies',
-  seoTitle: 'Sayso Case Studies: Real Results from Real Teams',
+  seoTitle: 'Sayso Case Studies: Real Estate Teams Using Sayso',
   seoDescription:
-    'See how real estate teams use Sayso to handle more objections, book more appointments, and turn more prospects into clients with real-time call coaching.',
-  h1: 'Real Results from Real Teams',
+    'Case studies from real estate teams using Sayso for real-time call coaching, with the period behind every number labeled.',
+  h1: 'Sayso Case Studies',
   introduction:
-    'See how real estate teams and agents use Sayso to book more appointments, handle objections confidently, and stop losing opportunities on the phone.',
+    'How real estate teams use Sayso on their calls, told with their own numbers and the time period each number covers.',
   childPages: [
     {
-      title: 'Example Real Estate Team',
-      slug: 'example-team',
-      description: 'A 6-agent team booked 40% more appointments in 30 days with real-time guidance.',
-      linkText: 'Read the full story',
+      title: 'Anderson Real Estate Group',
+      slug: 'anderson-real-estate-group',
+      eyebrow: '50-agent mega team',
+      description:
+        '1,928 appointments from January to mid-August 2026, 337 more than in all of 2025, with agents using Sayso on their calls.',
+      linkText: 'Read the AREG case study',
     },
   ],
   noKeyword: true,

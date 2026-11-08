@@ -38,7 +38,8 @@ export function Footer() {
           <Link href="/" aria-label="Sayso home" className="inline-block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59]">
             <Image src="/logos/logo-neg-transparent-horizontal.png" alt="Sayso" width={84} height={27} />
           </Link>
-          <div className="mt-6">
+          <p className="mt-3 font-comic text-base tracking-wider text-[#FFDE59]">Win the Moment.</p>
+          <div className="mt-5">
             <h3 className="mb-2 text-xs font-bold uppercase tracking-widest text-[#FFDE59]">Subscribe to our newsletter</h3>
             <iframe
               src="https://subscribe-forms.beehiiv.com/de7b925b-6f1f-4557-9fde-cf8005c34c5f"
