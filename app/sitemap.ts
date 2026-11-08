@@ -41,7 +41,7 @@ const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/integrations': '2026-06-23',
   '/objections': '2026-09-13',
   '/glossary': '2026-04-19',
-  '/tools/prospecting-calculator': '2026-10-04',
+  '/tools/prospecting-calculator': '2026-11-07',
   '/why-sayso': '2026-11-06',
   '/differences': '2026-11-06',
   '/pricing': '2026-11-05',

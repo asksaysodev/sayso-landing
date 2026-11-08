@@ -24,9 +24,9 @@ const guideLinks = [
 ];
 
 export const metadata = buildMetadata({
-  title: 'Real Estate Prospecting Calculator: Dials to Listings',
+  title: 'Free Prospecting Calculator for Real Estate Agents',
   description:
-    'Work backward from your yearly goal to the dials, conversations and appointments you need each day. Use your own conversion rates and see where to improve.',
+    'Free prospecting calculator: enter your yearly client goal and conversion rates to see the dials, conversations and appointments you need each day.',
   path: '/tools/prospecting-calculator',
 });
 
@@ -68,8 +68,8 @@ export default function ProspectingCalculatorPage() {
           Real Estate Prospecting Calculator
         </h1>
         <p className="text-[#1D4871]/80 text-lg leading-relaxed font-sans mb-8 max-w-[70ch]">
-          Enter how many clients you want to close this year and your own conversion rates. The calculator works
-          backward to the dials, conversations and appointments you need each day and each week.
+          This free prospecting calculator turns your yearly client goal into the dials, conversations and appointments
+          you need each day. Enter your goal and your own conversion rates, and it works backward through each step.
         </p>
 
         <ProspectingCalculator />

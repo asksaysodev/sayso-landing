@@ -2,15 +2,15 @@ import type { GlossaryEntry } from './types';
 
 export const listingAppointment: GlossaryEntry = {
   slug: 'listing-appointment',
-  updatedAt: '2026-09-29',
+  updatedAt: '2026-11-07',
   term: 'Listing Appointment',
   keyword: 'what is a listing appointment',
-  seoTitle: 'What Is a Listing Appointment? Checklist + Questions',
+  seoTitle: 'What Is a Listing Appointment? How It Works',
   seoDescription:
-    'A listing appointment is a meeting where an agent presents a pricing and marketing plan to a seller. See how it works, plus a prep checklist and questions.',
+    'A listing appointment is a meeting where a seller decides whether to hire an agent to list their home. See what happens in one and how to prepare for it.',
   h1: 'What Is a Listing Appointment?',
   definition:
-    'A listing appointment is a face-to-face meeting between a real estate agent and a homeowner where the agent presents their marketing strategy, reviews comparable sales, and makes the case to represent the seller. It is the moment where prospecting turns into business, and the outcome depends on how well the agent prepared, built rapport, and addressed the seller\'s concerns.',
+    'A listing appointment is a meeting where a homeowner who is thinking about selling decides whether to hire a real estate agent to list their home. In it, the agent learns the seller\'s goals and timeline, walks through the property, presents a comparative market analysis with a recommended price and a marketing plan, and asks the seller to sign a listing agreement.',
   howItWorks: [
     'A listing appointment typically begins with a conversation about the seller\'s goals, timeline, and expectations. The agent then walks through the property, noting its condition, features, and anything that could affect pricing or marketability.',
     'After the walkthrough, the agent sits down with the seller to present a comparative market analysis, or CMA, showing recent sales of similar homes in the area. This is where pricing strategy gets discussed and the agent explains their marketing plan, from photography and staging to how they will attract qualified buyers.',
