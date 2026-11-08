@@ -148,10 +148,6 @@ export function getPostsByCategory(category: string): BlogPostMeta[] {
   return getAllPostsMeta().filter((p) => p.category === category);
 }
 
-export function getFeaturedPost(): BlogPostMeta | null {
-  return getAllPostsMeta().find((p) => p.featured) || getAllPostsMeta()[0] || null;
-}
-
 export function getCategories(): { slug: string; name: string; count: number }[] {
   const posts = getAllPostsMeta();
   const categoryMap = new Map<string, number>();
@@ -217,16 +213,6 @@ export function getRelatedPosts(
   return related;
 }
 
-export function getClusterPosts(cluster: string): BlogPostMeta[] {
-  return getAllPostsMeta()
-    .filter((p) => p.cluster === cluster)
-    .sort((a, b) => {
-      if (a.type === 'pillar' && b.type !== 'pillar') return -1;
-      if (b.type === 'pillar' && a.type !== 'pillar') return 1;
-      return new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
-    });
-}
-
 export function getPillarPost(cluster: string): BlogPostMeta | null {
   const pillars = getAllPostsMeta().filter(
     (p) => p.cluster === cluster && p.type === 'pillar'
@@ -245,14 +231,6 @@ export function getSupportingPosts(cluster: string): BlogPostMeta[] {
   return getAllPostsMeta()
     .filter((p) => p.cluster === cluster && p.type === 'supporting')
     .sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime());
-}
-
-export function getPostClusters(): string[] {
-  const clusters = getAllPostsMeta()
-    .map((p) => p.cluster)
-    .filter((c): c is string => !!c);
-
-  return [...new Set(clusters)].sort();
 }
 
 export function getAllSlugs(): string[] {
