@@ -46,6 +46,12 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
           <strong>{entry.definition}</strong>
         </p>
 
+        {entry.definitionFollowUp && (
+          <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-3">
+            {renderInlineMarkdown(entry.definitionFollowUp)}
+          </p>
+        )}
+
         {/* Glossary hub link */}
         <p className="text-sm text-[#1D4871]/50 font-sans mb-8">
           Part of the{' '}
@@ -86,41 +92,49 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         </div>
 
         {/* Why It Matters */}
-        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
-          Why {entry.term} Matters for Real Estate Agents
-        </h2>
-        <div className="space-y-4 mb-6">
-          {entry.whyItMatters.map((paragraph, index) => (
-            <p
-              key={index}
-              className="text-[#1D4871]/80 text-base leading-relaxed font-sans"
-            >
-              {renderInlineMarkdown(paragraph)}
-            </p>
-          ))}
-        </div>
+        {entry.whyItMatters && entry.whyItMatters.length > 0 && (
+          <>
+            <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
+              Why {entry.term} Matters for Real Estate Agents
+            </h2>
+            <div className="space-y-4 mb-6">
+              {entry.whyItMatters.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-[#1D4871]/80 text-base leading-relaxed font-sans"
+                >
+                  {renderInlineMarkdown(paragraph)}
+                </p>
+              ))}
+            </div>
+          </>
+        )}
 
         {/* Tips */}
-        <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
-          Tips for {entry.term}
-        </h2>
-        <ol className="space-y-4 mb-8">
-          {entry.tips.map((tip, index) => (
-            <li key={index} className="flex gap-4">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2367EE]/10 text-[#2367EE] font-bold text-sm flex items-center justify-center">
-                {index + 1}
-              </span>
-              <div>
-                <p className="font-bold text-[#1D4871] text-base font-sans">
-                  {tip.title}
-                </p>
-                <p className="text-[#1D4871]/70 text-base leading-relaxed font-sans mt-1">
-                  {tip.body}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
+        {entry.tips && entry.tips.length > 0 && (
+          <>
+            <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
+              Tips for {entry.term}
+            </h2>
+            <ol className="space-y-4 mb-8">
+              {entry.tips.map((tip, index) => (
+                <li key={index} className="flex gap-4">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2367EE]/10 text-[#2367EE] font-bold text-sm flex items-center justify-center">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <p className="font-bold text-[#1D4871] text-base font-sans">
+                      {tip.title}
+                    </p>
+                    <p className="text-[#1D4871]/70 text-base leading-relaxed font-sans mt-1">
+                      {tip.body}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </>
+        )}
 
         {/* How Sayso Helps */}
         <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
@@ -142,21 +156,21 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         {/* Related Terms */}
         {entry.relatedTerms.length > 0 && (
           <>
-            <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
-              Related Terms
-            </h2>
-            <ul className="space-y-2 mb-6">
-              {entry.relatedTerms.map((related) => (
-                <li key={related.slug}>
-                  <Link
-                    href={`/glossary/${related.slug}`}
-                    className="text-[#2367EE] hover:underline font-bold font-sans"
-                  >
-                    {related.term}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
+                Related Terms
+              </h2>
+              <ul className="space-y-2 mb-6">
+                {entry.relatedTerms.map((related) => (
+                  <li key={related.slug}>
+                    <Link
+                      href={`/glossary/${related.slug}`}
+                      className="text-[#2367EE] hover:underline font-bold font-sans"
+                    >
+                      {related.term}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
           </>
         )}
 
