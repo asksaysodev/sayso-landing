@@ -43,11 +43,6 @@ export default function NotFound() {
       <main>
         <PageHeader
           standalone
-          eyebrow={
-            <p className="font-comic text-7xl sm:text-8xl text-[#2367EE] leading-none tracking-wide">
-              404
-            </p>
-          }
           title={
             <>
               This page took a <span className="text-[#2367EE]">wrong turn.</span>

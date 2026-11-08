@@ -34,11 +34,6 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
           { label: 'Objections', href: '/objections' },
           { label: entry.h1 },
         ]}
-        eyebrow={
-          <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">
-            OBJECTION
-          </span>
-        }
         title={entry.h1}
       />
 

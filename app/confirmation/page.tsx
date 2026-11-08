@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/Button';
 import { PageHeader } from '@/components/pages/PageHeader';
 
 export const metadata: Metadata = {
-  title: "You're on the calendar | Sayso",
+  title: "You're on the calendar",
   description:
     "Your demo with Sayso is booked. A calendar invite is on its way. Here's a quick look at what you'll see on the call.",
   alternates: {
@@ -33,7 +33,7 @@ export default function ConfirmationPage() {
               standalone
               eyebrow={
                 <>
-                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10">
                     <Check
                       size={36}
                       strokeWidth={3}
@@ -41,9 +41,6 @@ export default function ConfirmationPage() {
                       aria-hidden="true"
                     />
                   </div>
-                  <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE]">
-                    Demo Booked
-                  </p>
                 </>
               }
               title="You're on the calendar."
@@ -51,7 +48,7 @@ export default function ConfirmationPage() {
             />
           </section>
 
-          <SignupShowcase eyebrow="ON YOUR DEMO" />
+          <SignupShowcase />
 
           {/* Return to Home */}
           <section className="py-16 md:py-20">

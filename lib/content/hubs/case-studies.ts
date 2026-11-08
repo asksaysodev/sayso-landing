@@ -15,7 +15,6 @@ const caseStudiesHub: HubPageConfig = {
     {
       title: 'Anderson Real Estate Group',
       slug: 'anderson-real-estate-group',
-      eyebrow: '50-agent mega team',
       description:
         '1,928 appointments from January to mid-August 2026, 337 more than in all of 2025, with agents using Sayso on their calls.',
       linkText: 'Read the AREG case study',

@@ -17,7 +17,6 @@ export const suresend: PartnerIntegrationEntry = {
   seoDescription:
     'Sayso integrates with SureSend to coach your agents live on every call. Real-time conversation intelligence, automatic notes, and more booked appointments.',
 
-  eyebrow: 'Integrations',
   h1: 'Keep your agents from losing opportunities with real-time conversation intelligence',
   h2: "Sayso's integration with SureSend changes the way agent performance is managed. Let Sayso guide your agents live, in real time, while you focus on the high-level patterns in your business.",
   heroCtaText: 'See how it works',

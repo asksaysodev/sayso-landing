@@ -22,7 +22,6 @@ const forHub: HubPageConfig = {
     {
       title: 'Team Leaders',
       slug: 'team-leaders',
-      eyebrow: 'Teams & Brokerages',
       description: 'Scale your coaching without being on every call. See how your team sounds and where they need help.',
       keyword: 'how to manage high volume leads real estate',
       linkText: 'Sayso for team leaders',

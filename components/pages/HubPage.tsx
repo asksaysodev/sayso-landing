@@ -145,11 +145,6 @@ function HubCard({
       href={page.href ?? `${basePath}/${page.slug}`}
       className={`group bg-white rounded-[20px] p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition duration-200 block${page.bannerText ? ' h-full' : ''}`}
     >
-      {page.eyebrow && (
-        <span className="block text-xs font-bold text-[#2367EE] uppercase tracking-wider mb-1 font-sans">
-          {page.eyebrow}
-        </span>
-      )}
       <h3 className="font-hero font-extrabold tracking-[-0.01em] text-lg leading-snug text-[#10233A] mb-2 group-hover:text-[#2367EE] transition-colors">
         {page.title}
       </h3>

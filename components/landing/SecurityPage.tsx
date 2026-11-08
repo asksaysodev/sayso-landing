@@ -4,7 +4,6 @@ export function SecurityPage() {
     <main className="bg-[#F4F4F5] min-h-screen">
       <PageHeader
         standalone
-        eyebrow={<span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">COMPANY</span>}
         title="Sayso Security"
         intro="Sayso protects your data, your conversations, and your account access at every level. Security is built into how the product works, not added after."
       />

@@ -4,7 +4,6 @@ export function TermsOfServicePage() {
     <main className="bg-[#F4F4F5] min-h-screen">
       <PageHeader
         standalone
-        eyebrow={<span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">LEGAL</span>}
         title="Terms and Conditions"
         intro={<p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>}
       />

@@ -22,8 +22,6 @@ export interface PartnerIntegrationEntry {
   seoDescription: string;
 
   // Hero
-  /** Small uppercase label above the H1, e.g. "Integrations". */
-  eyebrow: string;
   h1: string;
   /** Supporting paragraph under the H1. */
   h2: string;
