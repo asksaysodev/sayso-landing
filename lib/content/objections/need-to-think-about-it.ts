@@ -2,7 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const needToThinkAboutIt: ObjectionEntry = {
   slug: 'need-to-think-about-it',
-  updatedAt: '2026-06-13',
+  updatedAt: '2026-11-07',
   keyword: 'what to say when prospect shuts down',
   seoTitle: 'What to Say When a Prospect Shuts Down',
   seoDescription:
@@ -77,8 +77,8 @@ export const needToThinkAboutIt: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Why Prospects Don\'t Commit to Meetings',
-    href: '/blog/why-prospects-dont-commit',
+    title: 'The "I Need to Think About It" Objection',
+    href: '/blog/think-about-it-objection',
   },
   relatedFeature: {
     title: 'Real-Time Guidance',
