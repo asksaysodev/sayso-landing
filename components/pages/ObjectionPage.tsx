@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { PageHeader } from '@/components/pages/PageHeader';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
@@ -28,25 +28,21 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
 
-      <Breadcrumb
-        items={[
+      <PageHeader
+        breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Objections', href: '/objections' },
           { label: entry.h1 },
         ]}
+        eyebrow={
+          <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">
+            OBJECTION
+          </span>
+        }
+        title={entry.h1}
       />
 
       <article className="max-w-[800px] mx-auto px-6 pb-10">
-        {/* Badge + H1 */}
-        <div className="mt-6 mb-6">
-          <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871] mb-4">
-            OBJECTION
-          </span>
-          <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] leading-[1.1] text-[34px] md:text-5xl">
-            {entry.h1}
-          </h1>
-        </div>
-
         {/* Objection Quote */}
         <div className="bg-white rounded-[20px] p-6 mb-8 shadow-card">
           <p className="text-xl md:text-2xl font-bold text-[#10233A] italic font-sans">

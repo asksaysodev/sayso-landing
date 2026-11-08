@@ -4,6 +4,7 @@ import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { Button } from '@/components/ui/Button';
 import Carousel from '@/components/ui/Carousel';
+import { PageHeader } from '@/components/pages/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
@@ -40,17 +41,21 @@ export default function NotFound() {
     <div className="relative bg-[#F4F4F5] min-h-screen">
       <SaysoNavbar />
       <main>
-        <section className="max-w-[900px] mx-auto px-6 pt-32 pb-10 text-center">
-          <p className="font-comic text-7xl sm:text-8xl text-[#2367EE] leading-none tracking-wide">
-            404
-          </p>
-          <h1 className="mt-6 font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[38px] sm:text-5xl lg:text-6xl leading-[1.08]">
-            This page took a <span className="text-[#2367EE]">wrong turn.</span>
-          </h1>
-          <p className="mt-5 text-lg md:text-xl text-[#1D4871]/75 leading-relaxed max-w-[640px] mx-auto">
-            The link you followed might be broken, or the page may have moved. Here are a few good places to pick things back up.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <PageHeader
+          standalone
+          eyebrow={
+            <p className="font-comic text-7xl sm:text-8xl text-[#2367EE] leading-none tracking-wide">
+              404
+            </p>
+          }
+          title={
+            <>
+              This page took a <span className="text-[#2367EE]">wrong turn.</span>
+            </>
+          }
+          intro="The link you followed might be broken, or the page may have moved. Here are a few good places to pick things back up."
+        >
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <Button href="/">
               Back to Home
             </Button>
@@ -58,7 +63,7 @@ export default function NotFound() {
               Report a Broken Link
             </Button>
           </div>
-        </section>
+        </PageHeader>
 
         <section className="w-full px-4 md:px-6 pb-20">
           <Carousel label="Popular pages" itemName="page" className="max-w-[900px] mx-auto" trackClassName="grid grid-cols-2 gap-4">

@@ -37,7 +37,7 @@ export function FunnelResults({ stages }: FunnelResultsProps) {
         <table className="w-full border-collapse text-sm font-sans">
           <thead>
             <tr>
-              <th className="bg-[#1D4871] text-white px-4 py-2 text-left">Stage</th>
+              <th className="bg-[#1D4871] text-white px-4 py-2 text-left">KPI</th>
               <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Per day</th>
               <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Per week</th>
               <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Per year</th>

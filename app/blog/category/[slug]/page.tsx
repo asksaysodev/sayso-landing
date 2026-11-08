@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPostsByCategory, getCategories, formatCategoryName } from '@/lib/blog';
-import { BlogHeroBanner } from '@/components/blog/BlogHeroBanner';
+import { getPostsByCategory, getCategories, formatCategoryName, toBlogCardPost } from '@/lib/blog';
+import { PageHeader } from '@/components/pages/PageHeader';
+import { BlogSearchForm } from '@/components/blog/BlogSearchForm';
 import { BlogCategoryPills } from '@/components/blog/BlogCategoryPills';
 import { BlogPostCard } from '@/components/blog/BlogPostCard';
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
@@ -55,18 +56,26 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <>
-      <BlogHeroBanner
+      <PageHeader
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Blog', href: '/blog' },
+          { label: categoryName },
+        ]}
         title={categoryName}
-        subtitle={`Explore our articles about ${categoryName.toLowerCase()}.`}
-      />
+        intro={`Explore our articles about ${categoryName.toLowerCase()}.`}
+      >
+        <BlogSearchForm />
+      </PageHeader>
 
       <BlogCategoryPills categories={categories} activeCategory={slug} />
 
       <section className="max-w-[1200px] mx-auto px-6 pb-8">
+        <h2 className="sr-only">Posts</h2>
         {posts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
-              <BlogPostCard key={post.slug} post={post} />
+              <BlogPostCard key={post.slug} post={toBlogCardPost(post)} />
             ))}
           </div>
         ) : (

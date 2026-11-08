@@ -7,7 +7,6 @@ import { cache } from 'react';
 import { siteUrl } from '@/lib/config';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
-const POSTS_PER_PAGE = 9;
 
 export interface BlogAuthor {
   name: string;
@@ -175,19 +174,6 @@ export function formatCategoryName(slug: string): string {
     .join(' ');
 }
 
-export function getPaginatedPosts(page: number, category?: string): {
-  posts: BlogPostMeta[];
-  totalPages: number;
-  currentPage: number;
-} {
-  const allPosts = category ? getPostsByCategory(category) : getAllPostsMeta();
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
-  const start = (page - 1) * POSTS_PER_PAGE;
-  const posts = allPosts.slice(start, start + POSTS_PER_PAGE);
-
-  return { posts, totalPages, currentPage: page };
-}
-
 export function getRelatedPosts(
   currentSlug: string,
   options?: { cluster?: string; category?: string; limit?: number }
@@ -271,4 +257,18 @@ export function getPostClusters(): string[] {
 
 export function getAllSlugs(): string[] {
   return getAllPosts().map((p) => p.slug);
+}
+
+/** The plain fields a blog card renders (see components/blog/BlogPostCard). */
+export function toBlogCardPost(post: BlogPostMeta) {
+  return {
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    categoryName: formatCategoryName(post.category),
+    category: post.category,
+    tags: post.tags,
+    publishedAt: post.publishedAt,
+    readingTime: post.readingTime,
+  };
 }

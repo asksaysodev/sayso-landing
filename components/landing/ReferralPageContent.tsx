@@ -1,5 +1,6 @@
 import { StepsList } from '@/components/landing/StepsList';
 import { Button } from '@/components/ui/Button';
+import { PageHeader } from '@/components/pages/PageHeader';
 
 const STEPS = [
   { id: 1, text: 'Log in to your Sayso account' },
@@ -11,21 +12,14 @@ const STEPS = [
 export function ReferralPageContent() {
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
-      <div className="max-w-[760px] mx-auto px-6 py-16 md:py-24">
-
-        {/* Header */}
-        <div className="mb-10">
-          <p className="mb-4">
-            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">REFERRALS</span>
-          </p>
-          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
-            Do you love Sayso?
-          </h1>
-          <p className="text-lg text-[#1D4871]/70 leading-relaxed">
-            Invite someone to Sayso, and you both get rewarded!
-          </p>
-          <div className="mt-8 border-t border-[#1D4871]/10" />
-        </div>
+      <PageHeader
+        standalone
+        eyebrow={<span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">REFERRALS</span>}
+        title="Do you love Sayso?"
+        intro="Invite someone to Sayso, and you both get rewarded!"
+      />
+      <div className="max-w-[760px] mx-auto px-6 pb-16 md:pb-24">
+        <div className="border-t border-[#1D4871]/10" />
 
         {/* Intro */}
         <section className="mt-10 space-y-4">

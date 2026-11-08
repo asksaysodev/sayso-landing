@@ -23,7 +23,7 @@ import { CtaBlock } from './components/CtaBlock';
 
 export function FounderPricingSection() {
   return (
-    <section className="bg-[#F4F4F5] py-10 md:py-16">
+    <section className="bg-[#F4F4F5] pt-[92px] pb-10 md:pb-16">
       <div className="mx-auto flex max-w-[1000px] flex-col gap-12 px-4 md:gap-16">
         <Hero />
         <PricingModelPanel />

@@ -32,7 +32,7 @@ const organizationJsonLd = {
   alternateName: ['Sayso Real Estate', 'AskSayso'],
   url: siteUrl,
   logo: `${siteUrl}/logos/logo-pos-horizontal.png`,
-  description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
+  description: 'Sayso improves sales execution with real-time conversation guidance for real estate agents, teams, and brokerages.',
   slogan: 'Fix where real estate prospecting breaks down',
   knowsAbout: [
     'real estate prospecting',

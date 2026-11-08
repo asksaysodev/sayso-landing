@@ -82,6 +82,14 @@ const nextConfig = {
         destination: '/subscribed/',
         permanent: true,
       },
+      // Placeholder case study removed; replaced by the AREG case study. Only the
+      // slash form is needed: trailingSlash's built-in redirect runs before custom
+      // redirects, so /case-studies/example-team reaches this rule as .../example-team/.
+      {
+        source: '/case-studies/example-team/',
+        destination: '/case-studies/anderson-real-estate-group/',
+        permanent: true,
+      },
       // ──────────────────────────────────────────────────
       // DELETED BLOG POST REDIRECTS
       // ──────────────────────────────────────────────────

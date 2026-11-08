@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { PageHeader } from '@/components/pages/PageHeader';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
@@ -27,25 +27,22 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermJsonLd) }}
       />
 
-      <Breadcrumb
-        items={[
+      <PageHeader
+        breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Glossary', href: '/glossary' },
           { label: entry.term },
         ]}
+        title={entry.h1}
+        intro={
+          /* Definition - featured snippet target */
+          <p className="text-[#1D4871]">
+            <strong>{entry.definition}</strong>
+          </p>
+        }
       />
 
       <article className="max-w-[800px] mx-auto px-6 pb-10">
-        {/* H1 */}
-        <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] leading-[1.1] text-[34px] md:text-5xl mt-6 mb-6">
-          {entry.h1}
-        </h1>
-
-        {/* Definition - featured snippet target */}
-        <p className="text-[#1D4871] text-lg leading-relaxed font-sans mb-3">
-          <strong>{entry.definition}</strong>
-        </p>
-
         {entry.definitionFollowUp && (
           <p className="text-[#1D4871]/80 text-base leading-relaxed font-sans mb-3">
             {renderInlineMarkdown(entry.definitionFollowUp)}

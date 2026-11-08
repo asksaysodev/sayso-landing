@@ -1,22 +1,15 @@
+import { PageHeader } from '@/components/pages/PageHeader';
 export function SecurityPage() {
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
-      <div className="max-w-[760px] mx-auto px-6 py-16 md:py-24">
-
-        {/* Header */}
-        <div className="mb-10">
-          <p className="mb-4">
-            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">COMPANY</span>
-          </p>
-          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
-            Sayso Security
-          </h1>
-          <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            Sayso protects your data, your conversations, and your account access at every level.
-            Security is built into how the product works, not added after.
-          </p>
-          <div className="mt-8 border-t border-[#1D4871]/10" />
-        </div>
+      <PageHeader
+        standalone
+        eyebrow={<span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">COMPANY</span>}
+        title="Sayso Security"
+        intro="Sayso protects your data, your conversations, and your account access at every level. Security is built into how the product works, not added after."
+      />
+      <div className="max-w-[760px] mx-auto px-6 pb-16 md:pb-24">
+        <div className="border-t border-[#1D4871]/10" />
 
         {/* 1. Infrastructure & Encryption */}
         <section className="mt-10 space-y-4">

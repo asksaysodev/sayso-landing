@@ -9,6 +9,7 @@ import { HomeFeatures } from '@/components/landing/HomeFeatures';
 import { HomeFitCards } from '@/components/landing/HomeFitCards';
 import { HomeCompare } from '@/components/landing/HomeCompare';
 import { HomeReviews } from '@/components/landing/HomeReviews';
+import { HomeTeams } from '@/components/landing/HomeTeams';
 import { HomePricing } from '@/components/landing/HomePricing';
 import { HomeFAQ } from '@/components/landing/HomeFAQ';
 import { FAQ_ITEMS } from '@/components/landing/HomeFAQ/data';
@@ -65,6 +66,7 @@ export default function Home() {
         <HomeFitCards />
         <HomeCompare />
         <HomeReviews />
+        <HomeTeams />
         <HomePricing />
         <HomeFAQ />
         <HomeFinalCta />

@@ -21,7 +21,7 @@ export function DifferencesHero() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-24">
+    <section className="relative overflow-hidden pt-[92px] pb-20 md:pb-24">
       <div className="max-w-[1160px] mx-auto px-4 sm:px-6 relative z-10 text-center">
         <h1 className="font-hero font-extrabold text-[clamp(34px,6vw,60px)] text-[#10233A] tracking-[-0.03em] leading-[1.1] flex items-center justify-center flex-wrap gap-x-[0.25em] gap-y-2">
           <span>We already use</span>

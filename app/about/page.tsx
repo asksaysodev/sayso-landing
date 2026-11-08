@@ -8,14 +8,14 @@ import { siteUrl } from '@/lib/config';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Sayso was built by Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, to give real estate agents the structure they need on every call.',
+    'Sayso improves sales execution with real-time conversation guidance. Founded by Kuvaal Patel to close the gap between knowing what to do and doing it on calls.',
   alternates: {
     canonical: `${siteUrl}/about/`,
   },
   openGraph: {
     title: 'About | Sayso',
     description:
-      'Sayso was built by Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, to give real estate agents the structure they need on every call.',
+      'Sayso improves sales execution with real-time conversation guidance. Founded by Kuvaal Patel to close the gap between knowing what to do and doing it on calls.',
     url: `${siteUrl}/about/`,
     images: [
       { url: '/images/og-default.png', width: 1200, height: 630, alt: 'About Sayso' },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'About | Sayso',
     description:
-      'Sayso was built by Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, to give real estate agents the structure they need on every call.',
+      'Sayso improves sales execution with real-time conversation guidance. Founded by Kuvaal Patel to close the gap between knowing what to do and doing it on calls.',
     images: ['/images/og-default.png'],
   },
 };
