@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { buildMetadata } from '@/lib/seo/metadata';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { PageHeader } from '@/components/pages/PageHeader';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { ProspectingCalculator } from '@/components/tools/ProspectingCalculator';
@@ -56,25 +56,19 @@ const faqItems = [
 export default function ProspectingCalculatorPage() {
   return (
     <>
-      <Breadcrumb
-        items={[
+      <PageHeader
+        breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Prospecting Calculator' },
         ]}
+        title="Real Estate Prospecting Calculator"
+        intro="This free prospecting calculator turns your yearly client goal into the dials, conversations and appointments you need each day. Enter your goal and your own conversion rates, and it works backward through each step."
       />
 
       <article className="max-w-[1000px] mx-auto px-6 pb-10">
-        <h1 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] leading-[1.1] text-[34px] md:text-5xl mt-6 mb-4">
-          Real Estate Prospecting Calculator
-        </h1>
-        <p className="text-[#1D4871]/80 text-lg leading-relaxed font-sans mb-8 max-w-[70ch]">
-          This free prospecting calculator turns your yearly client goal into the dials, conversations and appointments
-          you need each day. Enter your goal and your own conversion rates, and it works backward through each step.
-        </p>
-
         <ProspectingCalculator />
 
-        <section className="max-w-[800px] mt-12 font-sans text-[#1D4871]/80 leading-relaxed">
+        <section className="mx-auto max-w-[800px] mt-12 font-sans text-[#1D4871]/80 leading-relaxed">
           <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mb-4">How the math works</h2>
           <p className="mb-5">
             Each step divides by your rate for that step. With the starting numbers, 12 closed clients at an 80% close

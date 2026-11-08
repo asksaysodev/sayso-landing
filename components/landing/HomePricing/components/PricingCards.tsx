@@ -3,7 +3,7 @@
 /**
  * The billing toggle and the two plan cards: Individual Agent+ (price follows
  * the toggle, Claim early access opens the create-account flow, like /pricing) and Teams and
- * Brokerages (Assemble your team opens the demo calendar).
+ * Brokerages (Book a demo opens the demo calendar).
  */
 import { useState, Fragment } from 'react';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
@@ -60,7 +60,7 @@ export function PricingCards({ analyticsIds }: { analyticsIds: PricingAnalyticsI
           <p className="mt-2 text-sm text-white/85">Priced by team size.</p>
           <FeatureList items={TEAM_FEATURES_SUMMARY} inverted />
           <Button variant="secondary" onClick={openDemoCalendar} className="self-start !shadow-none" data-analytics-id={analyticsIds.teams}>
-            Assemble your team
+            Book a demo
           </Button>
         </div>
       </div>

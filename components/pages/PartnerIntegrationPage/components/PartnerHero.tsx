@@ -18,7 +18,7 @@ interface PartnerHeroProps {
 export function PartnerHero({ entry }: PartnerHeroProps) {
   return (
     <section className="relative overflow-hidden">
-      <div className="relative max-w-[900px] mx-auto px-6 pt-12 pb-10 md:pt-16 md:pb-14 text-center">
+      <div className="relative max-w-[900px] mx-auto px-6 pt-[68px] pb-10 md:pb-14 text-center">
         {/* Paired logos */}
         <div className="flex items-center justify-center gap-4 md:gap-6 mb-8">
           <Image

@@ -7,7 +7,7 @@ import { getAllObjectionEntries } from '@/lib/content/objections';
 import { getAllProductEntries } from '@/lib/content/products';
 import { getAllPartnerIntegrations } from '@/lib/content/partner-integrations';
 import { getAllUseCaseEntries } from '@/lib/content/for';
-// import { getAllCaseStudyEntries } from '@/lib/content/case-studies'; // TODO: re-enable when first real case study is published
+import { getAllCaseStudyEntries } from '@/lib/content/case-studies';
 
 // Regenerate hourly so scheduled posts enter the sitemap when their publishedAt
 // date passes, without waiting for a manual redeploy. Matches the blog pages'
@@ -19,10 +19,9 @@ const EXCLUDED_PATHS = new Set([
   '/privacy',
   '/terms',
   '/feedback',
-  '/case-studies', // TODO: re-enable when first real case study is published
+  '/case-studies', // noindex: hub has a single study; the study itself is listed via getAllCaseStudyEntries
   '/founderpricing', // noindex: time-limited promo overlapping /pricing/
   '/request-demo', // noindex: duplicates the /demo/ booking page
-  '/resources', // noindex: thin gateway that only repeats nav links
 ]);
 
 /**
@@ -30,7 +29,7 @@ const EXCLUDED_PATHS = new Set([
  * sitemap, used as its lastmod. Bump the date when you change a page's
  * content. /blog is omitted because it uses the newest post's updatedAt.
  * Content entries (glossary, objections, products, /for/, integration
- * partners) carry their own updatedAt field instead.
+ * partners, case studies) carry their own updatedAt field instead.
  */
 const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/': '2026-11-06',
@@ -42,10 +41,13 @@ const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/objections': '2026-09-13',
   '/glossary': '2026-04-19',
   '/tools/prospecting-calculator': '2026-11-07',
+  '/resources': '2026-11-08',
+  '/resources/script-book': '2026-11-08',
   '/why-sayso': '2026-11-06',
   '/differences': '2026-11-06',
   '/pricing': '2026-11-05',
-  '/about': '2026-10-04',
+  '/about': '2026-11-08',
+  '/careers': '2026-11-08',
   '/security': '2026-10-04',
   '/contact': '2026-06-14',
   '/referral': '2026-10-04',
@@ -89,13 +91,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { entries: getAllProductEntries(), prefix: '/products', priority: 0.7 },
     { entries: getAllPartnerIntegrations(), prefix: '/integrations/partners', priority: 0.7 },
     { entries: getAllUseCaseEntries(), prefix: '/for', priority: 0.7 },
-    // { entries: getAllCaseStudyEntries(), prefix: '/case-studies', priority: 0.7 }, // TODO: re-enable when first real case study is published
+    { entries: getAllCaseStudyEntries(), prefix: '/case-studies', priority: 0.7 },
   ];
   const contentPaths = new Set(
     contentSections.flatMap(({ entries, prefix }) => entries.map((entry) => `${prefix}/${entry.slug}`)),
   );
 
-  // Static pages: everything registered in the nav, plus homepage, demo and download.
+  // Static pages: everything registered in the nav (including the script book,
+  // a featured Resources link), plus homepage, demo and download.
   const navHrefs = getAllNavHrefs();
   const allStaticPaths = new Set(['/', '/demo', '/download', ...navHrefs]);
 

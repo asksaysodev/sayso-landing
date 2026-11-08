@@ -1,69 +1,46 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { LightningIcon } from '@/components/icons/LightningIcon';
-import { BlogPostMeta, formatCategoryName } from '@/lib/blog';
 
-interface BlogPostCardProps {
-  post: BlogPostMeta;
+/** The fields a blog card needs. Plain data, so client components can render cards too. */
+export interface BlogCardPost {
+  slug: string;
+  title: string;
+  description: string;
+  categoryName: string;
+  publishedAt: string;
+  readingTime: number;
 }
 
+interface BlogPostCardProps {
+  post: BlogCardPost;
+}
+
+/** Text-only blog card: category, title, excerpt, date and read time. */
 export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
-      <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-card transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-card-hover">
-        {/* Cover Image */}
-        <div className="relative aspect-video bg-[#F4F4F5] overflow-hidden">
-          {post.coverImage ? (
-            <Image
-              src={post.coverImage}
-              alt={post.title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center bg-[#E3E8EC]">
-              <LightningIcon size={48} className="text-[#1D4871]/20" />
-            </div>
-          )}
-        </div>
+    <Link href={`/blog/${post.slug}`} className="group block h-full">
+      <article className="flex h-full flex-col rounded-[20px] bg-white p-6 shadow-card transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-card-hover">
+        <span className="mb-3 inline-block self-start rounded-md bg-[#FFDE59] px-3 py-1 font-comic text-sm tracking-[0.06em] text-[#1D4871]">
+          {post.categoryName}
+        </span>
 
-        {/* Content */}
-        <div className="p-5">
-          {/* Category pill */}
-          <span className="inline-block px-3 py-1 mb-3 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-sm tracking-[0.06em]">
-            {formatCategoryName(post.category)}
-          </span>
+        <h3 className="mb-2 font-hero text-lg font-extrabold leading-snug tracking-[-0.01em] text-[#10233A] transition-colors group-hover:text-[#2367EE]">
+          {post.title}
+        </h3>
 
-          {/* Title */}
-          <h3 className="font-hero font-extrabold tracking-[-0.01em] text-lg leading-snug text-[#10233A] mb-2 line-clamp-2 group-hover:text-[#2367EE] transition-colors">
-            {post.title}
-          </h3>
+        <p className="mb-5 line-clamp-3 font-sans text-sm leading-relaxed text-[#1D4871]/70">{post.description}</p>
 
-          {/* Excerpt */}
-          <p className="text-sm text-[#1D4871]/70 line-clamp-2 mb-4 font-sans">
-            {post.description}
-          </p>
-
-          {/* Meta */}
-          <div className="flex items-center gap-2 text-xs text-[#1D4871]/50 font-sans">
-            <div className="w-6 h-6 rounded-full bg-[#D7DEE1] overflow-hidden shrink-0">
-              {post.author.avatar && (
-                <Image
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  width={24}
-                  height={24}
-                  className="w-full h-full object-cover"
-                />
-              )}
-            </div>
-            <span className="font-bold text-[#1D4871]/70">{post.author.name}</span>
-            <span>&middot;</span>
-            <span>{new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-            <span>&middot;</span>
-            <span>{post.readingTime} min read</span>
-          </div>
-        </div>
+        <p className="mt-auto flex items-center gap-2 font-sans text-xs text-[#1D4871]/50">
+          <time dateTime={post.publishedAt}>
+            {new Date(post.publishedAt).toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+              timeZone: 'UTC',
+            })}
+          </time>
+          <span aria-hidden="true">&middot;</span>
+          <span>{post.readingTime} min read</span>
+        </p>
       </article>
     </Link>
   );

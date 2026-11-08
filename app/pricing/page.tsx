@@ -50,7 +50,7 @@ export default function PricingPage() {
       <div className="relative min-h-screen bg-[#F4F4F5]">
         <SaysoNavbar />
         <main>
-          <HomePricing titleAs="h1" srTitlePrefix="Sayso pricing:" analyticsIds={PRICING_PAGE_IDS} className="!pt-12 min-[641px]:!pt-16">
+          <HomePricing titleAs="h1" srTitlePrefix="Sayso pricing:" analyticsIds={PRICING_PAGE_IDS} className="!pt-[92px]">
             <div className="mx-auto mt-10 max-w-[640px] text-center">
               <p className="text-base leading-relaxed text-[#556B86]">
                 Every plan includes a custom setup and training. Founding member and early access pricing is locked

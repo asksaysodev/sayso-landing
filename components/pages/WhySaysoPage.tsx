@@ -4,13 +4,13 @@
  * FAQ and the closing call to action. Copy comes from lib/content/why-sayso.
  */
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { PageHeader } from '@/components/pages/PageHeader';
 import Carousel from '@/components/ui/Carousel';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { WidgetFigure } from '@/components/pages/WidgetFigure';
-import { body, card, h1, h2, linkCard, quote } from '@/components/pages/contentStyles';
+import { body, card, h2, linkCard, quote } from '@/components/pages/contentStyles';
 import { generateWebPageJsonLd } from '@/lib/seo/schema';
 import type { WhySaysoContent } from '@/lib/content/why-sayso';
 
@@ -25,13 +25,14 @@ export function WhySaysoPage({ content }: WhySaysoPageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
 
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Why Sayso' }]} />
+      <PageHeader
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Why Sayso' }]}
+        title={content.h1}
+        intro={content.opening}
+      />
 
       <article className="mx-auto max-w-[800px] px-6 pb-10">
-        <h1 className={`${h1} mb-6 mt-6`}>{content.h1}</h1>
-        <p className={`${body} mb-8 text-lg`}>{content.opening}</p>
-
-        <h2 className={`${h2} mb-4 mt-10`}>The Problem with How Agents Learn Today</h2>
+        <h2 className={`${h2} mb-4`}>The Problem with How Agents Learn Today</h2>
         {content.problemToday.split('\n\n').map((paragraph, i) => (
           <p key={i} className={`${body} mb-5`}>
             {paragraph}

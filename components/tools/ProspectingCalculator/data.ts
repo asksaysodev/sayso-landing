@@ -12,7 +12,7 @@ export const DEFAULT_INPUTS: CalculatorInputs = {
 };
 
 export const FIELDS: CalculatorField[] = [
-  { key: 'goalClients', label: 'Closed clients you want this year', hint: 'Buyers and sellers combined', min: 1, max: 200, step: 1 },
+  { key: 'goalClients', label: 'Closings Goal', hint: 'Buyers and sellers combined', min: 1, max: 200, step: 1 },
   { key: 'contactRate', label: 'Dials that become a conversation', hint: 'Someone picks up and talks with you', suffix: '%', min: 1, max: 100, step: 1 },
   { key: 'appointmentRate', label: 'Conversations that become an appointment', hint: 'A booked meeting or consultation', suffix: '%', min: 1, max: 100, step: 1 },
   { key: 'signRate', label: 'Appointments that become a signed client', hint: 'Listing or buyer agreement signed', suffix: '%', min: 1, max: 100, step: 1 },

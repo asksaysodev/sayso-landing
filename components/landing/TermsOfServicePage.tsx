@@ -1,19 +1,15 @@
+import { PageHeader } from '@/components/pages/PageHeader';
 export function TermsOfServicePage() {
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
-      <div className="max-w-[760px] mx-auto px-6 py-16 md:py-24">
-
-        {/* Header */}
-        <div className="mb-10">
-          <p className="mb-4">
-            <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">LEGAL</span>
-          </p>
-          <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-4xl md:text-[56px] leading-[1.08] mb-4">
-            Terms and Conditions
-          </h1>
-          <p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>
-          <div className="mt-8 border-t border-[#1D4871]/10" />
-        </div>
+      <PageHeader
+        standalone
+        eyebrow={<span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">LEGAL</span>}
+        title="Terms and Conditions"
+        intro={<p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>}
+      />
+      <div className="max-w-[760px] mx-auto px-6 pb-16 md:pb-24">
+        <div className="border-t border-[#1D4871]/10" />
 
         {/* Agreement to Terms */}
         <section className="mt-10 space-y-4">

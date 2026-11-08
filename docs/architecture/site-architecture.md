@@ -172,7 +172,7 @@ These pages exist for paid Facebook ad traffic only. They are set to `noindex, f
 
 ```
 /case-studies/                              (hub - no keyword, conversion-focused)                      ⚪ NONE    ✅ DONE
-└── /case-studies/[customer-slug]/          (individual - no keyword, conversion-focused)               ⚪ NONE    ✅ DONE (placeholder: example-team)
+└── /case-studies/[customer-slug]/          (individual - no keyword, conversion-focused)               ⚪ NONE    ✅ DONE (anderson-real-estate-group)
 ```
 
 **Structure note:** Build hub page and URL pattern in Wave 1 even if content is placeholder. Page must exist in nav and sitemap before customer stories are ready.

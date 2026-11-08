@@ -5,8 +5,6 @@ export interface NavLink {
   external?: boolean;
   /** Optional subtitle displayed below the label (e.g. feature description) */
   subtitle?: string;
-  /** Decorative glyph on featured Resources cards. */
-  mark?: string;
   /** Optional data-analytics-id rendered on the link for GTM trigger targeting */
   dataAnalyticsId?: string;
 }
@@ -32,13 +30,16 @@ export const primaryNav: NavLink[] = [
 
 /** Highlighted links at the top of the Resources menu. */
 export const resourcesFeatured: NavLink[] = [
-  { label: 'Blog', href: '/blog', subtitle: 'Scripts and call guides', mark: 'B' },
-  { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator', subtitle: 'The calls behind your goal', mark: '$' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator' },
   {
-    label: 'Free script generator',
+    label: 'Ultimate Script Book',
+    href: '/resources/script-book',
+    dataAnalyticsId: 'nav-script-book',
+  },
+  {
+    label: 'Free Script Generator',
     href: 'https://composer.asksayso.com',
-    subtitle: 'Custom call scripts',
-    mark: 'S',
     external: true,
     dataAnalyticsId: 'nav-composer',
   },
@@ -74,6 +75,7 @@ export const headerNav: NavSection[] = [
       { label: 'About Sayso', href: '/about' },
       { label: 'Why Sayso', href: '/why-sayso' },
       { label: 'How Sayso Compares', href: '/differences' },
+      { label: 'Case Studies', href: '/case-studies' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
     ],
@@ -104,6 +106,7 @@ export const footerNav: NavSection[] = [
       { label: 'Contact', href: '/contact' },
       { label: 'Request a Demo', href: '/request-demo', dataAnalyticsId: 'request-demo-footer' },
       { label: 'Help Center', href: 'https://asksayso.notion.site/helpcenter', external: true, dataAnalyticsId: 'help-center' },
+      { label: 'Careers', href: '/careers' },
     ],
   },
   {

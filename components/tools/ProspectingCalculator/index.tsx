@@ -25,10 +25,7 @@ export function ProspectingCalculator() {
   return (
     <div className="grid gap-8 lg:grid-cols-2 bg-white rounded-[20px] p-6 md:p-8 shadow-card">
       <div>
-        <h2 className="font-hero text-xl text-[#1D4871] font-bold mb-1">Your numbers</h2>
-        <p className="text-sm text-[#1D4871]/60 mb-5">
-          These are starting numbers. Replace them with your own from your CRM or dialer.
-        </p>
+        <h2 className="font-hero text-xl text-[#1D4871] font-bold mb-5">Inputs</h2>
         <CalculatorInputs values={draft} onChange={handleChange} />
         <button
           type="button"
@@ -39,7 +36,7 @@ export function ProspectingCalculator() {
         </button>
       </div>
       <div>
-        <h2 className="font-hero text-xl text-[#1D4871] font-bold mb-5">What it takes</h2>
+        <h2 className="font-hero text-xl text-[#1D4871] font-bold mb-5">Results</h2>
         <FunnelResults stages={stages} />
       </div>
     </div>

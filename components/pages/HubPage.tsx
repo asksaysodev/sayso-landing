@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { PageHeader } from '@/components/pages/PageHeader';
 import Carousel from '@/components/ui/Carousel';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FAQ } from '@/components/pages/FAQ';
@@ -28,22 +28,14 @@ interface HubPageProps {
 export function HubPage({ config }: HubPageProps) {
   return (
     <>
-      <Breadcrumb
-        items={[
+      <PageHeader
+        breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: config.section },
         ]}
+        title={config.h1}
+        intro={config.introduction}
       />
-
-      {/* Hero */}
-      <section className="max-w-[800px] mx-auto px-6 pt-6 pb-8 text-center">
-        <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] leading-[1.08] text-4xl md:text-[56px] mb-4">
-          {config.h1}
-        </h1>
-        <p className="text-[#1D4871]/70 text-base md:text-lg max-w-2xl mx-auto font-sans leading-relaxed">
-          {config.introduction}
-        </p>
-      </section>
 
       {/* Quick answers: scannable list with a one-line answer per child page */}
       {config.quickAnswers && (

@@ -5,6 +5,7 @@ import { Footer } from '@/components/landing/Footer';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
 import ConfirmationActions from './ConfirmationActions';
+import { PageHeader } from '@/components/pages/PageHeader';
 
 export const metadata: Metadata = {
   title: "You're subscribed",
@@ -25,29 +26,32 @@ export default function NewsletterConfirmationPage() {
       <div className="relative bg-[#F4F4F5] min-h-screen">
         <SaysoNavbar />
         <main>
-          <section className="bg-[#F4F4F5] pt-28 pb-24 md:pt-32 md:pb-32">
-            <div className="max-w-[800px] mx-auto px-6 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 mb-6">
-                <Mail
-                  size={34}
-                  strokeWidth={2.5}
-                  className="text-[#2367EE]"
-                  aria-hidden="true"
-                />
-              </div>
-              <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-3">
-                Subscribed
-              </p>
-              <h1 className="font-hero font-extrabold tracking-[-0.035em] text-[#10233A] text-[40px] sm:text-5xl lg:text-6xl leading-[1.08]">
-                Thanks for subscribing.
-              </h1>
-
+          <section className="bg-[#F4F4F5] pb-16 md:pb-20">
+            <PageHeader
+              standalone
+              eyebrow={
+                <>
+                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 mb-6">
+                    <Mail
+                      size={34}
+                      strokeWidth={2.5}
+                      className="text-[#2367EE]"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE]">
+                    Subscribed
+                  </p>
+                </>
+              }
+              title="Thanks for subscribing."
+            >
               <ConfirmationActions />
 
               <p className="mt-6 text-sm text-[#1D4871]/60">
                 Want to see Sayso live on a call? Book a quick demo above.
               </p>
-            </div>
+            </PageHeader>
           </section>
         </main>
         <Footer />

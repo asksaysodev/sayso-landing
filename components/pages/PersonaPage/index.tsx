@@ -5,13 +5,13 @@
  * Composition only; copy comes from lib/content/for.
  */
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { PageHeader } from '@/components/pages/PageHeader';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { ContentInlineCTA } from '@/components/pages/ContentInlineCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { FeatureCTAButtons } from '@/components/pages/FeatureCTAButtons';
 import { WidgetFigure } from '@/components/pages/WidgetFigure';
-import { body, h1, h2, textLink } from '@/components/pages/contentStyles';
+import { body, h2, textLink } from '@/components/pages/contentStyles';
 import { generateWebPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { UseCaseEntry } from '@/lib/content/for/types';
@@ -36,10 +36,12 @@ export function PersonaPage({ entry }: PersonaPageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/for' }, { label: entry.persona }]} />
+      <PageHeader
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/for' }, { label: entry.persona }]}
+        title={entry.h1}
+      />
 
       <article className="mx-auto max-w-[800px] px-6 pb-10">
-        <h1 className={`${h1} mb-6 mt-6`}>{entry.h1}</h1>
 
         {/* Opening empathy: no product mention yet */}
         <div className="mb-8 space-y-4">

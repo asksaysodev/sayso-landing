@@ -1,7 +1,7 @@
 import type { CaseStudyEntry } from './types';
-import { exampleTeam } from './example-team';
+import { andersonRealEstateGroup } from './anderson-real-estate-group';
 
-const entries: CaseStudyEntry[] = [exampleTeam];
+const entries: CaseStudyEntry[] = [andersonRealEstateGroup];
 
 export function getAllCaseStudyEntries(): CaseStudyEntry[] {
   return entries;

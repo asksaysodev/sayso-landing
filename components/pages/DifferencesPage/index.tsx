@@ -14,6 +14,7 @@ import { MomentSection } from './components/MomentSection';
 import { HomeworkSection } from './components/HomeworkSection';
 import { TimelineSection } from './components/TimelineSection';
 import { CloseSection } from './components/CloseSection';
+import { AiCallingSection } from './components/AiCallingSection';
 import { EngineSection } from './components/EngineSection';
 
 export function DifferencesPage() {
@@ -25,6 +26,7 @@ export function DifferencesPage() {
       <HomeworkSection />
       <TimelineSection />
       <CloseSection />
+      <AiCallingSection />
       <EngineSection />
       <Footer />
     </div>
