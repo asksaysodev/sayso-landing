@@ -2,7 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const notReadyYet: ObjectionEntry = {
   slug: 'not-ready-yet',
-  updatedAt: '2026-11-05',
+  updatedAt: '2026-11-07',
   keyword: 'how to handle "not ready yet" real estate',
   seoTitle: 'How to Handle "Not Ready Yet" in Real Estate',
   seoDescription:
@@ -56,8 +56,8 @@ export const notReadyYet: ObjectionEntry = {
     { title: '"We\'ll Wait for Spring"', slug: 'well-wait-for-spring', keyword: 'how to handle timing objection real estate' },
   ],
   relatedBlogPost: {
-    title: 'Why Prospects Don\'t Commit to Meetings',
-    href: '/blog/why-prospects-dont-commit',
+    title: 'The "I Need to Think About It" Objection',
+    href: '/blog/think-about-it-objection',
   },
   relatedFeature: {
     title: 'Real-Time Guidance',
