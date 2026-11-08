@@ -2,7 +2,7 @@
  * PartnerHero
  *
  * Top of the partner integration page: paired Sayso + partner logos, an
- * "Integrations" eyebrow, the H1 promise, supporting copy, a CTA that
+ * the H1 promise, supporting copy, a CTA that
  * scrolls down to the demo form, and the Sayso widget with Smart Capture
  * notes. Modeled on partner co-marketing hero layouts.
  */
@@ -39,11 +39,6 @@ export function PartnerHero({ entry }: PartnerHeroProps) {
             priority
           />
         </div>
-
-        {/* Eyebrow */}
-        <span className="inline-block text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE] mb-4">
-          {entry.eyebrow}
-        </span>
 
         {/* H1 */}
         <h1 className="font-hero font-extrabold text-[34px] sm:text-4xl md:text-5xl text-[#10233A] leading-[1.1] tracking-[-0.03em] max-w-3xl mx-auto">

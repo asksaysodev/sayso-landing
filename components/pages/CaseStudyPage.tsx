@@ -53,11 +53,6 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
           { label: 'Case Studies', href: '/case-studies' },
           { label: entry.customerName },
         ]}
-        eyebrow={
-          <span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">
-            CASE STUDY
-          </span>
-        }
         title={entry.headline}
         intro={entry.subheadline}
       >

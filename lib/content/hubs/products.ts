@@ -14,7 +14,6 @@ const productsHub: HubPageConfig = {
   childPages: [
     {
       title: 'Real-Time Guidance',
-      eyebrow: 'Cue',
       slug: 'cue',
       description:
         'Live guidance on every call. See how to handle objections and exactly what to ask or say the moment you need it.',
@@ -23,7 +22,6 @@ const productsHub: HubPageConfig = {
     },
     {
       title: 'Call Notes',
-      eyebrow: 'Smart Capture',
       slug: 'smart-capture',
       description:
         'Automate, instant, and structured conversation notes for your CRM.',
@@ -32,7 +30,6 @@ const productsHub: HubPageConfig = {
     },
     {
       title: 'Live Market Analysis',
-      eyebrow: 'Pulse',
       slug: 'pulse',
       description:
         'Be the expert when you know the market data for any zip or postal code live on the call.',
@@ -41,7 +38,6 @@ const productsHub: HubPageConfig = {
     },
     {
       title: 'Custom Scripts',
-      eyebrow: 'Playbook',
       slug: 'playbook',
       description:
         'Never be lost for words with a custom script or framework for every call.',

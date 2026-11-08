@@ -7,7 +7,7 @@ import { MobileCta } from '@/components/landing/WebinarOfferSection/components/M
 import { buildMetadata } from '@/lib/seo/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Your Webinar Offer | Sayso',
+  title: 'Your Webinar Offer',
   description:
     'The full Sayso offer from the webinar: the platform, a year of weekly coaching, curated leads, and onboarding, backed by the signed-client guarantee.',
   path: '/webinar/offer',

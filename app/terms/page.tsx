@@ -6,7 +6,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Terms and Conditions | Sayso',
+  title: 'Terms and Conditions',
   description: 'Review the terms and conditions governing your use of Sayso and the AskSayso platform.',
   alternates: {
     canonical: `${siteUrl}/terms/`,

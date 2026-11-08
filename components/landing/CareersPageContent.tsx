@@ -27,7 +27,6 @@ export function CareersPageContent() {
     <main className="bg-[#F4F4F5] min-h-screen">
       <PageHeader
         standalone
-        eyebrow={<span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">CAREERS</span>}
         title="Build Sayso with us"
         intro="Sayso gives real estate agents real-time conversation guidance while they are still on the call."
       />
