@@ -14,7 +14,6 @@ export function ReferralPageContent() {
     <main className="bg-[#F4F4F5] min-h-screen">
       <PageHeader
         standalone
-        eyebrow={<span className="inline-block rounded-md bg-[#FFDE59] px-2.5 py-px font-comic text-[17px] tracking-[0.08em] text-[#1D4871]">REFERRALS</span>}
         title="Do you love Sayso?"
         intro="Invite someone to Sayso, and you both get rewarded!"
       />

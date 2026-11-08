@@ -7,7 +7,7 @@ export const smartCapture: ProductEntry = {
   seoTitle: 'Automatic Call Notes for Real Estate Agents',
   seoDescription:
     'Stop scribbling notes mid-call and losing details. Sayso\u2019s Smart Capture gives real estate agents automatic call notes in a structured format, ready for your CRM.',
-  h1: 'Smart Capture - Structured Note Taking',
+  h1: 'Smart Capture - Structured Notes',
   heroDescription: [
     'You are on a call and the prospect shares something important: their timeline, their motivation, a concern. You try to scribble it down, but now you are distracted. You miss what they say next. Or you skip notes entirely and try to remember the details after you hang up. Either way, you lose information that could have made the difference.',
     'Smart Capture listens to your live call and writes structured notes automatically. Key details, objections, next steps, and buying signals are all captured and organized as the conversation happens. You never have to choose between listening and writing.',

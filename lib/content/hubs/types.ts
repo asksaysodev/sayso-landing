@@ -2,8 +2,6 @@ export interface HubChildPage {
   title: string;
   slug: string;
   description: string;
-  /** Optional eyebrow label displayed above the card title. */
-  eyebrow?: string;
   keyword?: string;
   /** Visible anchor text for the link - MUST vary across items for SEO. */
   linkText: string;

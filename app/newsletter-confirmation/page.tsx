@@ -31,7 +31,7 @@ export default function NewsletterConfirmationPage() {
               standalone
               eyebrow={
                 <>
-                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10 mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#2367EE]/10">
                     <Mail
                       size={34}
                       strokeWidth={2.5}
@@ -39,9 +39,6 @@ export default function NewsletterConfirmationPage() {
                       aria-hidden="true"
                     />
                   </div>
-                  <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-[#2367EE]">
-                    Subscribed
-                  </p>
                 </>
               }
               title="Thanks for subscribing."

@@ -48,7 +48,7 @@ export default function SubscribedPage() {
             </PageHeader>
           </section>
 
-          <SignupShowcase eyebrow="SEE IT LIVE" />
+          <SignupShowcase />
 
           {/* Return to Home */}
           <section className="py-16 md:py-20">

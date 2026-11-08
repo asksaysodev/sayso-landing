@@ -6,7 +6,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Sayso',
+  title: 'Privacy Policy',
   description: 'Learn how AskSayso, Inc. collects, uses, and protects your personal information.',
   alternates: {
     canonical: `${siteUrl}/privacy/`,
