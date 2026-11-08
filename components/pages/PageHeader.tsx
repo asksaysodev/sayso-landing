@@ -19,6 +19,8 @@ interface PageHeaderProps {
    * same space so the header lands where it does on breadcrumb pages.
    */
   standalone?: boolean;
+  /** Extra classes on the <header>, e.g. tighter spacing on short screens. */
+  className?: string;
 }
 
 /**
@@ -47,11 +49,12 @@ export function PageHeader({
   children,
   titleClassName = '',
   standalone = false,
+  className = '',
 }: PageHeaderProps) {
   return (
     <>
       {breadcrumbs && breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} />}
-      <header className={`mx-auto w-full max-w-[1200px] px-6 pb-8 md:pb-10 ${standalone ? standaloneTopClass : 'pt-6'}`}>
+      <header className={`mx-auto w-full max-w-[1200px] px-6 pb-8 md:pb-10 ${standalone ? standaloneTopClass : 'pt-6'} ${className}`.trim()}>
         <div className="mx-auto max-w-[760px] text-center">
           {eyebrow && <div className="mb-4">{eyebrow}</div>}
           <h1 className={`${pageTitleClass} ${titleClassName}`.trim()}>{title}</h1>
