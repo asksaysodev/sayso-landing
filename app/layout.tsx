@@ -29,7 +29,7 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Sayso',
-  alternateName: 'Sayso for Real Estate Agents',
+  alternateName: ['Sayso Real Estate', 'AskSayso'],
   url: siteUrl,
   logo: `${siteUrl}/logos/logo-pos-horizontal.png`,
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
@@ -51,7 +51,7 @@ const webSiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Sayso',
-  alternateName: 'Sayso Real Estate',
+  alternateName: ['Sayso Real Estate', 'AskSayso'],
   url: siteUrl,
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   publisher: {
