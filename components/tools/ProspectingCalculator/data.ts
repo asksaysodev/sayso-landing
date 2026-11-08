@@ -13,9 +13,9 @@ export const DEFAULT_INPUTS: CalculatorInputs = {
 
 export const FIELDS: CalculatorField[] = [
   { key: 'goalClients', label: 'Closings Goal', hint: 'Buyers and sellers combined', min: 1, max: 200, step: 1 },
-  { key: 'contactRate', label: 'Dials that become a conversation', hint: 'Someone picks up and talks with you', suffix: '%', min: 1, max: 100, step: 1 },
-  { key: 'appointmentRate', label: 'Conversations that become an appointment', hint: 'A booked meeting or consultation', suffix: '%', min: 1, max: 100, step: 1 },
-  { key: 'signRate', label: 'Appointments that become a signed client', hint: 'Listing or buyer agreement signed', suffix: '%', min: 1, max: 100, step: 1 },
+  { key: 'contactRate', label: 'Dials to conversation', hint: 'Someone picks up and talks with you', suffix: '%', min: 1, max: 100, step: 1 },
+  { key: 'appointmentRate', label: 'Conversations to appointment', hint: 'A booked meeting or consultation', suffix: '%', min: 1, max: 100, step: 1 },
+  { key: 'signRate', label: 'Appointments to signed client', hint: 'Listing or buyer agreement signed', suffix: '%', min: 1, max: 100, step: 1 },
   { key: 'closeRate', label: 'Signed clients who close', hint: 'Some agreements fall through', suffix: '%', min: 1, max: 100, step: 1 },
   { key: 'weeks', label: 'Weeks you prospect per year', hint: 'Leave out vacation weeks', min: 1, max: 52, step: 1 },
   { key: 'daysPerWeek', label: 'Prospecting days per week', hint: 'Days you block time for calls', min: 1, max: 7, step: 1 },

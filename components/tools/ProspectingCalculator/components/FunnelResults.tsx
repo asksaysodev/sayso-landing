@@ -38,9 +38,9 @@ export function FunnelResults({ stages }: FunnelResultsProps) {
           <thead>
             <tr>
               <th className="bg-[#1D4871] text-white px-4 py-2 text-left">KPI</th>
-              <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Per day</th>
-              <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Per week</th>
-              <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Per year</th>
+              <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Daily</th>
+              <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Weekly</th>
+              <th className="bg-[#1D4871] text-white px-4 py-2 text-right">Yearly</th>
             </tr>
           </thead>
           <tbody>

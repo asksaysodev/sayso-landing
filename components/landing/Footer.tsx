@@ -1,7 +1,7 @@
 /**
  * Site footer: logo, newsletter signup and social links on the left,
- * three link columns (Programs, Get in Touch, Legal) on the right, copyright
- * underneath.
+ * three link columns (Programs, Contact, Legal) on the right. The copyright
+ * sits under the social links on desktop and after the columns on phones.
  */
 import Image from 'next/image';
 import Link from 'next/link';
@@ -65,6 +65,7 @@ export function Footer() {
               </a>
             ))}
           </div>
+          <p className="mt-5 hidden text-white/60 lg:block">&copy; 2026 AskSayso, Inc.</p>
         </div>
 
         <div className="grid grid-cols-3 content-start gap-6">
@@ -99,9 +100,7 @@ export function Footer() {
             </div>
           ))}
         </div>
-      </div>
-      <div className="mx-auto max-w-[1200px] border-t border-white/15 px-6 py-5 text-white/60">
-        &copy; 2026 AskSayso, Inc.
+        <p className="text-white/60 lg:hidden">&copy; 2026 AskSayso, Inc.</p>
       </div>
     </footer>
   );

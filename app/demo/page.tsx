@@ -44,8 +44,8 @@ const DEMO_BOOKING_URL = 'https://calendly.com/asksayso/demo?hide_event_type_det
 const COVERED = [
   'What Sayso does',
   'How Sayso works',
-  'Why Sayso is a competitive advantage',
-  'A setup plan and pricing for your needs',
+  'Why Sayso gives you an edge',
+  'A setup plan and pricing for your team',
 ];
 
 const REVIEW = REVIEWS.find((r) => r.name === 'David Simpson') ?? REVIEWS[0];
