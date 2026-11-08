@@ -2,7 +2,7 @@ import type { ObjectionEntry } from './types';
 
 export const wellWaitForSpring: ObjectionEntry = {
   slug: 'well-wait-for-spring',
-  updatedAt: '2026-06-13',
+  updatedAt: '2026-11-07',
   keyword: 'how to handle timing objection real estate',
   seoTitle: 'How to Handle the Timing Objection in Real Estate',
   seoDescription:
@@ -77,8 +77,8 @@ export const wellWaitForSpring: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'Why Prospects Don\'t Commit to Meetings',
-    href: '/blog/why-prospects-dont-commit',
+    title: 'The "I Need to Think About It" Objection',
+    href: '/blog/think-about-it-objection',
   },
   relatedFeature: {
     title: 'Real-Time Market Data',

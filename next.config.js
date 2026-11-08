@@ -96,6 +96,12 @@ const nextConfig = {
         destination: '/blog/how-to-choose-real-estate-call-coaching-software/',
         permanent: true,
       },
+      // Merged into the think-about-it objection post (overlapping content, not indexed)
+      {
+        source: '/blog/why-prospects-dont-commit/',
+        destination: '/blog/think-about-it-objection/',
+        permanent: true,
+      },
       {
         source: '/blog/shilo-ai-alternatives-real-estate-call-coaching/',
         destination: '/why-sayso/',
