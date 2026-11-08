@@ -129,7 +129,7 @@ export function generateBlogListJsonLd(siteUrl: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'The Sayso Blog',
+    name: 'Sayso Blog',
     description: 'Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams.',
     url: `${siteUrl}/blog/`,
     publisher: SAYSO_PUBLISHER,

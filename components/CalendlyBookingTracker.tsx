@@ -10,7 +10,7 @@
  * with a Custom Event trigger on `demo_booked`.
  */
 import { useEffect } from 'react';
-import { lastCalendlyEvent } from '@/lib/calendly';
+import { lastCalendlyEvent, preloadDemoPopup } from '@/lib/calendly';
 
 declare global {
   interface Window {
@@ -20,6 +20,8 @@ declare global {
 
 export function CalendlyBookingTracker() {
   useEffect(() => {
+    // Build the hidden demo popup after load so "Book a demo" opens instantly.
+    preloadDemoPopup();
     const onMessage = (e: MessageEvent) => {
       if (e.origin !== 'https://calendly.com') return;
       const data = e.data as { event?: string } | null;

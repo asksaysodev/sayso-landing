@@ -111,7 +111,7 @@ export function BlogIndex({
     <>
       <PageHeader
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
-        title="The Sayso Blog"
+        title="Sayso Blog"
         intro="Expert insights on prospecting, objection handling, and appointment booking for real estate agents and teams."
       >
         <BlogSearchForm initialQuery={initialQuery} onSearch={(q) => update({ query: q })} />
