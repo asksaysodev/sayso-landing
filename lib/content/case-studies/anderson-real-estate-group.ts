@@ -16,8 +16,7 @@ export const andersonRealEstateGroup: CaseStudyEntry = {
   slug: 'anderson-real-estate-group',
   updatedAt: '2026-11-08',
   customerName: 'Anderson Real Estate Group',
-  headline: 'Real Estate Mega Team Case Study: More Conversations, More Appointments',
-  subheadline: 'More focus on conversations in 2026, with agents using Sayso.',
+  headline: '50-Agent Team - More Activity & Improved Results',
   seoTitle: 'Real Estate Mega Team Case Study: 1,928 Appointments YTD',
   seoDescription:
     'How a 50-agent eXp mega team using Sayso booked 1,928 appointments from January to mid-August 2026, 337 more than in all of 2025.',
@@ -54,7 +53,7 @@ export const andersonRealEstateGroup: CaseStudyEntry = {
       body: 'When an agent knows help will be on the screen if the call goes sideways, picking up the phone is less of a hurdle. Less hesitation before the call means more calls get made, and more calls give agents more chances to ask for the appointment.',
     },
     {
-      title: 'More conversations, not just more dials',
+      title: 'More conversations, not only more dials',
       body: 'Dialing more is easy to measure and easy to push. The harder part is turning dials into conversations where the agent stays on the line, asks questions, and moves toward a next step. The team\'s focus in 2026 was on conversations, not only on dial counts.',
     },
     {
@@ -62,7 +61,7 @@ export const andersonRealEstateGroup: CaseStudyEntry = {
       body: 'Confidence on the phone comes from knowing what to say next. Agents do not have to carry every script and objection response in their heads, because the cue they need shows up while they are talking.',
     },
     {
-      title: 'Coaching reminders directly on the call',
+      title: 'Coaching reminders on the call',
       body: 'The coaching the team already teaches, from scripts to objection handling to asking for the appointment, appears as reminders during the live call. It is the same coaching, delivered at the moment it can still change how the call ends.',
     },
   ],

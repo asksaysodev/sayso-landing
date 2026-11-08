@@ -156,7 +156,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
                 href={entry.relatedBlogPost.href}
                 className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
-                <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
+                <span className="shrink-0 whitespace-nowrap text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Deeper reading
                 </span>
                 <span className="text-[#2367EE] font-bold font-sans group-hover:underline">
@@ -169,7 +169,7 @@ export function ObjectionPage({ entry }: ObjectionPageProps) {
                 href={entry.relatedFeature.href}
                 className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white shadow-card hover:shadow-card-hover transition-shadow group"
               >
-                <span className="text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
+                <span className="shrink-0 whitespace-nowrap text-sm font-bold text-[#1D4871]/50 uppercase tracking-wide">
                   Related feature
                 </span>
                 <span className="text-[#2367EE] font-bold font-sans group-hover:underline">

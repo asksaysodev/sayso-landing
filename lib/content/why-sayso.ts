@@ -14,7 +14,7 @@ export const whySaysoContent: WhySaysoContent = {
   seoTitle: 'Why Teams Are Switching to Sayso',
   seoDescription:
     'Sayso gives real estate agents real-time coaching during live calls, not after them. See why teams are switching from script binders and post-call reviews.',
-  h1: 'Why Teams Are Switching to Sayso',
+  h1: 'Why Teams Switch to Sayso',
   opening:
     'Real estate agents lose opportunities every day, not because they do not know the scripts, but because they freeze in the moment. Sayso fixes that by guiding you during the call, not after it. Real-time prompts, automatic notes, and objection handling that works when you need it most.',
   problemToday:

@@ -195,7 +195,7 @@ export function CaseStudyPage({ entry }: CaseStudyPageProps) {
         {/* FAQ */}
         {entry.faqs && entry.faqs.length > 0 && (
           <>
-            <h2 className={h2Class}>Frequently Asked Questions</h2>
+            <h2 className={h2Class}>Common Questions</h2>
             {entry.faqs.map((faq) => (
               <div key={faq.question}>
                 <h3 className="font-hero font-bold tracking-[-0.01em] text-lg text-[#10233A] mt-6 mb-2">

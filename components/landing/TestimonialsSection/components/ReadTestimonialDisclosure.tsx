@@ -46,7 +46,7 @@ export function ReadTestimonialDisclosure({
           <span className="block font-sans font-bold text-base text-[#10233A] leading-tight">
             Read testimonial
           </span>
-          <span className="block text-xs text-[#1D4871]/60 leading-snug mt-0.5 truncate">
+          <span className="block text-xs text-[#1D4871]/60 leading-snug mt-0.5">
             {testimonial.name} - {testimonial.attribution}
           </span>
         </span>

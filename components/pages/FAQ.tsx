@@ -14,7 +14,7 @@ interface FAQProps {
   items: FAQItem[];
 }
 
-export function FAQ({ headline = 'Frequently Asked Questions', items }: FAQProps) {
+export function FAQ({ headline = 'Common Questions', items }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -29,7 +29,7 @@ export function FAQ({ headline = 'Frequently Asked Questions', items }: FAQProps
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h2 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[28px] md:text-4xl leading-[1.1] mb-6">
+      <h2 className="text-balance font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[28px] md:text-4xl leading-[1.1] mb-6">
         {headline}
       </h2>
       <div className="divide-y divide-[#1D4871]/10 rounded-[20px] bg-white overflow-hidden shadow-card">

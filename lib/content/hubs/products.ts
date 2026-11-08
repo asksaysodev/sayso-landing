@@ -8,7 +8,7 @@ const productsHub: HubPageConfig = {
   seoTitle: 'Sayso Products: Real-Time Coaching for Agents',
   seoDescription:
     'Explore the Sayso products: real-time coaching, automatic call notes, live market data, and custom scripts for real estate agents.',
-  h1: 'Products Built For You',
+  h1: 'Sayso Products',
   introduction:
     'Every product in Sayso is designed for one thing: helping you sound better on prospecting calls. Real-time guidance, automatic notes, live market data, and more.',
   childPages: [
@@ -24,7 +24,7 @@ const productsHub: HubPageConfig = {
       title: 'Call Notes',
       slug: 'smart-capture',
       description:
-        'Automate, instant, and structured conversation notes for your CRM.',
+        'Automatic, instant, and structured conversation notes for your CRM.',
       keyword: 'automatic call notes real estate',
       linkText: 'See how Smart Capture works',
     },

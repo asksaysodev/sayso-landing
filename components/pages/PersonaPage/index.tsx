@@ -105,7 +105,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
       <ContentCTA
         location="persona-page"
         headline="Get Started Today"
-        subheading={`See how Sayso helps ${entry.persona.toLowerCase()} sound better on every call.`}
+        subheading={`See how Sayso helps ${/[A-Z].*[A-Z]/.test(entry.persona) ? entry.persona : entry.persona.toLowerCase()} sound better on every call.`}
       />
     </>
   );
