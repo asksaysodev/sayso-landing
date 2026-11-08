@@ -9,11 +9,14 @@ export interface GlossaryEntry {
   h1: string;
   /** Short definition - 2-3 sentences, featured snippet target. Sentence 1 under 45 words: "[Term] is [definition]." */
   definition: string;
+  /** Optional paragraph rendered right under the definition, such as a link to the deeper guide. Supports [text](/url/) inline markdown. */
+  definitionFollowUp?: string;
   /** Each string renders as its own paragraph. Target: 2-3 paragraphs, max 3 sentences each. */
   howItWorks: string[];
-  /** Each string renders as its own paragraph. Target: 2-3 paragraphs, max 3 sentences each. */
-  whyItMatters: string[];
-  tips: { title: string; body: string }[];
+  /** Each string renders as its own paragraph. Target: 2-3 paragraphs, max 3 sentences each. Omit to drop the section. */
+  whyItMatters?: string[];
+  /** Omit to drop the Tips section. */
+  tips?: { title: string; body: string }[];
   /** Each string renders as its own paragraph. Supports [text](/url/) inline markdown for CTA links. */
   howSaysoHelps: string[];
   relatedTerms: { term: string; slug: string }[];
