@@ -35,7 +35,7 @@ export const followUpBoss: PartnerIntegrationEntry = {
       body: 'Instead of coaching every little detail, Sayso handles that in the moment for you. You get to focus on the higher-leverage, GCI-producing activity that actually grows the business.',
     },
     {
-      title: 'More production, less revolving door',
+      title: 'More production, less turnover',
       body: 'Create more business from the leads you already paid thousands for. Instead of agents chasing new leads, Sayso helps them convert the ones they already have.',
     },
   ],

@@ -101,7 +101,7 @@ export const footerNav: NavSection[] = [
     ],
   },
   {
-    label: 'Get in Touch',
+    label: 'Contact',
     links: [
       { label: 'Contact', href: '/contact' },
       { label: 'Request a Demo', href: '/request-demo', dataAnalyticsId: 'request-demo-footer' },

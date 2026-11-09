@@ -31,7 +31,7 @@ export const standaloneTopClass = 'pt-[92px]';
 
 /** Page H1 scale shared by every content and resource page. */
 const pageTitleClass =
-  'font-hero text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10233A] md:text-5xl';
+  'text-balance font-hero text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10233A] md:text-5xl';
 
 /** Intro paragraph under the H1. */
 const pageIntroClass = 'font-sans text-lg leading-relaxed text-[#1D4871]/80';

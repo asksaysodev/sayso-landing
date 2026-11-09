@@ -28,16 +28,16 @@ export const ONBOARDING_LINE = '1-on-1 onboarding';
 export const IMPACT_REVIEWS_LINE = '1-on-1 quarterly impact reviews with leadership';
 
 /** Agent support in Individual Agent+. */
-export const AGENT_SUPPORT_SUMMARY = 'Weekly office hours, dashboard analytics and email support';
+export const AGENT_SUPPORT_SUMMARY = 'Weekly office hours, analytics and email support';
 
 export const TEAM_PLAN_NAME = 'Teams and Brokerages';
 
 /** Teams and Brokerages list for the plan card. */
 export const TEAM_FEATURES_SUMMARY = [
-  'Everything in Individual Agent+ for every agent',
+  'Individual Agent+ for every agent',
   'Leadership dashboard with unlimited teams and groups',
   'Team implementation and train-the-trainer',
-  'Dedicated CSM, priority support and conversion benchmarking',
+  'Dedicated CSM, priority support, benchmarking',
   IMPACT_REVIEWS_LINE,
 ];
 

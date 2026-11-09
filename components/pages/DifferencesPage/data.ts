@@ -42,7 +42,7 @@ export const PIPELINE_STEPS: string[] = [
 /** Cards for the dark "how Sayso works while you are talking" grid. */
 export const TECH_CARDS: TechCard[] = [
   {
-    title: 'Sayso keeps up with the conversation',
+    title: 'Sayso keeps up with the call',
     description:
       'The words go from their mouth to directions on your screen fast enough that you can use them in the next sentence.',
   },
