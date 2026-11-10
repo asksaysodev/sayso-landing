@@ -156,26 +156,26 @@ fbq('track', 'PageView');`,
           }}
         />
       )}
+      {/* lazyOnload: visitor ID tags wait for the page's load event so they do
+          not compete with the hero for bandwidth. GTM above stays afterInteractive
+          so GA4 still records visitors who leave quickly. */}
       <Script
         id="vtag-ai-js"
         src="https://r2.leadsy.ai/tag.js"
         data-pid="1nhqD1cnSGYVDeXLS"
         data-version="062024"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       {/*
-        Calendly booking widget loaded once globally: the styles + script power
-        both the inline scheduler on /demo and the "Book a Demo" popup triggered
-        from buttons across the site (see lib/calendly.ts).
+        Calendly booking widget loaded once globally: the script powers both the
+        inline scheduler on /demo and the "Book a Demo" popup triggered from
+        buttons across the site (see lib/calendly.ts). It stays afterInteractive
+        so an early click still gets the popup. Its stylesheet is added from
+        lib/calendly.ts after load, not here, because a <link> in <head> blocks
+        the first paint.
       */}
-      {/* Warm up the connection to calendly.com so the popup iframe loads
-          faster. assets.calendly.com needs no hint: the stylesheet link below
-          already opens that connection in the same parse pass. */}
+      {/* Warm up the connection to calendly.com so the popup iframe loads faster. */}
       <link rel="preconnect" href="https://calendly.com" />
-      <link
-        href="https://assets.calendly.com/assets/external/widget.css"
-        rel="stylesheet"
-      />
       <Script
         id="calendly-widget"
         src="https://assets.calendly.com/assets/external/widget.js"
@@ -193,17 +193,6 @@ fbq('track', 'PageView');`,
             />
           </noscript>
         )}
-        {metaPixelId && (
-          <noscript>
-            <img
-              height="1"
-              width="1"
-              style={{ display: 'none' }}
-              src={`https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1`}
-              alt=""
-            />
-          </noscript>
-        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -216,7 +205,7 @@ fbq('track', 'PageView');`,
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
         />
-        <Script id="vector-pixel" strategy="afterInteractive">{`
+        <Script id="vector-pixel" strategy="lazyOnload">{`
           !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
           vector.load("80c5a758-0d80-4bfc-a31f-ca301c7405b8");
         `}</Script>
@@ -228,7 +217,7 @@ fbq('track', 'PageView');`,
         <SpeedInsights />
         <Script
           src="https://subscribe-forms.beehiiv.com/attribution.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>
