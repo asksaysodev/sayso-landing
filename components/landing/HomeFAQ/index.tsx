@@ -1,10 +1,11 @@
 /**
- * Homepage FAQ: an intro column with contact links and grouped questions that
- * open in place (native details / summary, no JavaScript needed).
+ * Homepage FAQ: an intro column with contact links and a short flat list of
+ * questions. The full list lives on /faq.
  */
 import Link from 'next/link';
 import { section, wash, wrap, eyebrow, focusRing } from '../HomeShared/styles';
-import { FAQ_GROUPS } from './data';
+import { FaqList } from '@/components/pages/FaqList';
+import { HOME_FAQ_ITEMS } from '@/lib/content/faq';
 
 export function HomeFAQ() {
   return (
@@ -29,27 +30,14 @@ export function HomeFAQ() {
         </div>
         {/* data-faq: GTM's FAQ trigger only counts clicks inside this marker. */}
         <div data-faq="">
-          {FAQ_GROUPS.map((group, gi) => (
-            <div key={group.title} className={gi ? 'mt-[30px]' : undefined}>
-              <h3 className="mb-1 font-comic text-[21px] font-normal tracking-[0.06em] text-[#1D4871]">{group.title}</h3>
-              {group.items.map((item) => (
-                <details key={item.question} className="group border-b border-[rgba(29,72,113,0.14)]">
-                  <summary
-                    className={`flex cursor-pointer list-none justify-between gap-3.5 rounded px-1 py-4 text-base font-semibold text-[#10233A] [&::-webkit-details-marker]:hidden ${focusRing}`}
-                  >
-                    {item.question}
-                    <span
-                      aria-hidden="true"
-                      className="text-[22px] leading-none text-[#2367EE] transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <p className="max-w-[62ch] px-1 pb-[18px] text-[#556B86]">{item.answer}</p>
-                </details>
-              ))}
-            </div>
-          ))}
+          <FaqList items={HOME_FAQ_ITEMS} />
+          <Link
+            href="/faq/"
+            data-analytics-id="link-faq-all"
+            className={`mt-6 inline-block rounded px-1 text-sm font-bold text-[#2367EE] ${focusRing}`}
+          >
+            See all questions &rarr;
+          </Link>
         </div>
       </div>
     </section>

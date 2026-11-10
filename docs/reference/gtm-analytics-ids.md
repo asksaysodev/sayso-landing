@@ -19,10 +19,11 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
 | `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo |
-| `cta-download-home-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Individual Agent+ Claim early access. /pricing keeps `cta-download-pricing-individual` (below) |
+| `cta-download-home-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Individual Agent+ Get Sayso. /pricing keeps `cta-download-pricing-individual` (below) |
 | `cta-book-demo-home-pricing-teams` | Opens demo calendar | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Assemble your team |
-| `home-pricing-billing-toggle-annual` | Switches prices to annual billing | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing. /pricing keeps `pricing-billing-toggle-annual` (below) |
+| `home-pricing-billing-toggle-annual` | Switches prices to annual billing | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing. Rendered twice: above the cards on desktop, inside the Individual Agent+ card below 961px (only one is visible). /pricing keeps `pricing-billing-toggle-annual` (below) |
 | `home-pricing-billing-toggle-monthly` | Switches prices to monthly billing | Same as above | Homepage pricing. /pricing keeps `pricing-billing-toggle-monthly` (below) |
+| `link-faq-all` | Goes to /faq | [components/landing/HomeFAQ/index.tsx](../../components/landing/HomeFAQ/index.tsx) | Homepage FAQ, "See all questions" link |
 | `cta-download-final-cta` | Opens signup and download | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-book-demo-final-cta` | Opens demo calendar | [components/landing/HomeFinalCta/FinalCtaButtons.tsx](../../components/landing/HomeFinalCta/FinalCtaButtons.tsx) | Homepage closing call to action |
 | `cta-book-demo-persona-agent-footer` | Scrolls to the demo form in the hero | [components/landing/AgentAdPage.tsx](../../components/landing/AgentAdPage.tsx) | /agent footer CTA |
@@ -30,8 +31,8 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-book-demo-persona-isa-footer` | Scrolls to the demo form in the hero | [components/landing/IsaAdPage.tsx](../../components/landing/IsaAdPage.tsx) | /isa footer |
 | `cta-book-demo-persona-sales-leader-footer` | Scrolls to the demo form in the hero | [components/landing/SalesLeaderAdPage.tsx](../../components/landing/SalesLeaderAdPage.tsx) | /sales-leader footer |
 | `cta-watch-video-persona-{persona}` | Opens the 2.6× customer result video (new tab) | [components/landing/PersonaAdShared/PersonaAdHero.tsx](../../components/landing/PersonaAdShared/PersonaAdHero.tsx) | Hero proof line on /agent, /broker, /isa, /sales-leader; `{persona}` ∈ `agent`, `broker`, `isa`, `sales-leader` |
-| `cta-book-demo-{page-type}` | Opens demo calendar | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | `{page-type}` ∈ `feature-page`, `case-study-page`, `glossary-page`, `hub-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
-| `cta-download-{page-type}` | Opens system-select modal | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | Same 8 page-types as above |
+| `cta-book-demo-{page-type}` | Opens demo calendar | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | `{page-type}` ∈ `feature-page`, `case-study-page`, `glossary-page`, `hub-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page`, plus `faq` (/faq), `script-book` (/resources/script-book) and `prospecting-calculator` (/tools/prospecting-calculator) |
+| `cta-download-{page-type}` | Opens system-select modal | [components/pages/ContentCTA.tsx](../../components/pages/ContentCTA.tsx) | Same page-types as above |
 | `cta-book-demo-{page-type}-inline` | Opens demo calendar | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | `{page-type}` ∈ `feature-page`, `glossary-page`, `integration-page`, `objection-page`, `persona-page`, `why-sayso-page` |
 | `cta-download-{page-type}-inline` | Opens system-select modal | [components/pages/ContentInlineCTA.tsx](../../components/pages/ContentInlineCTA.tsx) | Same 6 page-types as above |
 | `cta-book-demo-feature-page-inline` | Opens demo calendar | [components/pages/FeatureCTAButtons.tsx](../../components/pages/FeatureCTAButtons.tsx) | Feature-page inline pair |
@@ -41,7 +42,7 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-inline-blog-<variant>` | Link to the variant's page: script to /products/playbook/, coaching to /why-sayso/, leads and prospecting to /products/cue/, team to /for/team-leaders/ | [components/blog/BlogInlineCTA.tsx](../../components/blog/BlogInlineCTA.tsx) | CTA card after paragraph two on posts that set `ctaVariant`; those posts skip the mid-article `cta-*-blog-article` block |
 | `cta-book-demo-persona-page-get-started` | Opens demo calendar | [components/pages/PersonaPage/index.tsx](../../components/pages/PersonaPage/index.tsx) | /for/[slug] "Get Started" section |
 | `cta-download-persona-page-get-started` | Opens system-select modal | [components/pages/PersonaPage/index.tsx](../../components/pages/PersonaPage/index.tsx) | /for/[slug] "Get Started" section |
-| `cta-download-pricing-individual` | Opens the create-account flow (`openSignup`) | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing, Individual Agent+ Claim early access. Same intent as production (start signup) |
+| `cta-download-pricing-individual` | Opens the create-account flow (`openSignup`) | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing, Individual Agent+ Get Sayso. Same intent as production (start signup) |
 | `cta-book-demo-pricing-teams` | Opens demo calendar | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing, Teams and Brokerages Assemble your team. New id: production's `cta-signup-pricing-teams` opened app signup, this opens the calendar |
 | `cta-book-demo-differences-hero` | Opens demo calendar | [components/pages/DifferencesPage/components/DifferencesHero.tsx](../../components/pages/DifferencesPage/components/DifferencesHero.tsx) | /differences hero |
 | `cta-see-difference-differences-hero` | Scrolls to the answer section | Same as above | /differences hero |
@@ -97,7 +98,7 @@ That's out of scope for the attribute-only task.
 
 ## FAQ clicks
 
-FAQ toggles have no `data-analytics-id`. Both FAQ blocks (homepage `components/landing/HomeFAQ` and `components/pages/FAQ.tsx`) carry a `data-faq` attribute instead. The GTM trigger "Click - FAQ Accordion" should use this CSS selector, so menus and other expanding buttons aren't counted as FAQ clicks:
+FAQ toggles have no `data-analytics-id`. The FAQ blocks (homepage `components/landing/HomeFAQ`, the /faq page and `components/pages/FAQ.tsx`) carry a `data-faq` attribute instead. The GTM trigger "Click - FAQ Accordion" should use this CSS selector, so menus and other expanding buttons aren't counted as FAQ clicks:
 
 ```
 [data-faq] summary, [data-faq] summary *, [data-faq] button[aria-expanded], [data-faq] button[aria-expanded] *
@@ -153,4 +154,4 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 
 ## Total count
 
-47 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.
+48 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.
