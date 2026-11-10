@@ -57,6 +57,23 @@ export function calendlyUrlWithEmail(url: string, email?: string): string {
 // calendar. The weekly Piper report uses our own book_demo_click instead.
 // ---------------------------------------------------------------------------
 
+const CALENDLY_CSS_URL = 'https://assets.calendly.com/assets/external/widget.css';
+
+/**
+ * Adds Calendly's stylesheet to the page once. It is not in the root layout's
+ * <head> because a third-party stylesheet there blocks the first paint on every
+ * page. The popup, the preloaded popup and the inline embed call this before
+ * they render, and the layout loads it after the page's load event.
+ */
+export function loadCalendlyStyles(): void {
+  if (typeof document === 'undefined' || document.getElementById('calendly-css')) return;
+  const link = document.createElement('link');
+  link.id = 'calendly-css';
+  link.rel = 'stylesheet';
+  link.href = CALENDLY_CSS_URL;
+  document.head.appendChild(link);
+}
+
 /** Pages that embed Calendly themselves or book a different event. */
 const NO_PRELOAD_PATHS = ['/demo', '/request-demo'];
 const PRELOAD_DELAY_MS = 3000;
@@ -106,6 +123,7 @@ function hidePreloaded(): void {
 
 function buildPreloaded(): void {
   if (preloaded) return;
+  loadCalendlyStyles();
   const overlay = document.createElement('div');
   overlay.className = 'calendly-overlay';
   overlay.style.opacity = '0';
@@ -167,6 +185,7 @@ export function preloadDemoPopup(): void {
 export function openCalendlyPopup(url: string = CALENDLY_DEMO_URL): void {
   if (typeof window === 'undefined') return;
   noteCalendlyEvent(url);
+  loadCalendlyStyles();
 
   if (url === CALENDLY_DEMO_URL && preloaded) {
     setPreloadedVisible(true);
