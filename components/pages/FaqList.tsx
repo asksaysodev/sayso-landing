@@ -13,7 +13,7 @@ function FaqAnswer({ answer }: { answer: string }) {
   return (
     <>
       {faqAnswerParts(answer).map((part, i) => {
-        if (!('href' in part)) return part.text;
+        if (!part.href) return part.text;
         if (part.href.startsWith('/')) {
           return (
             <Link key={i} href={part.href} className={linkClass}>
@@ -37,7 +37,7 @@ function FaqAnswer({ answer }: { answer: string }) {
   );
 }
 
-export function FaqList({ items, showImages = false }: { items: FaqItem[]; showImages?: boolean }) {
+export function FaqList({ items }: { items: FaqItem[] }) {
   return (
     <>
       {items.map((item) => (
@@ -56,7 +56,7 @@ export function FaqList({ items, showImages = false }: { items: FaqItem[]; showI
           <p className="max-w-[62ch] px-1 pb-[18px] text-[#556B86]">
             <FaqAnswer answer={item.answer} />
           </p>
-          {showImages && item.image && (
+          {item.image && (
             <Image
               src={item.image.src}
               alt={item.image.alt}

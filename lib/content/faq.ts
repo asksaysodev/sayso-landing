@@ -1,9 +1,11 @@
 /**
  * FAQ copy for /faq (every question, grouped) and the homepage (a short set).
  *
- * Answers may contain links written as [text](href). Use `FaqAnswer` to render
- * them and `faqPlainText` for structured data, which needs plain text.
+ * Answers may contain links written as [text](href). `FaqList` renders them via
+ * `faqAnswerParts`; `faqSchemaItems` strips them for structured data.
  */
+
+import { INDIVIDUAL_PRICE } from '@/lib/content/pricing';
 
 export interface FaqItem {
   question: string;
@@ -19,7 +21,8 @@ export interface FaqGroup {
 
 const SIGNUP_HREF = 'https://app.asksayso.com/signup?signup=true';
 
-const q = {
+/** Questions that appear word for word on both /faq and the homepage. */
+const shared = {
   dialer: {
     question: 'Do I need to change my dialer or CRM?',
     answer: 'No. Sayso works alongside your existing browser-based dialer; you don’t need to change your workflow.',
@@ -76,7 +79,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
   {
     title: 'Setup and fit',
     items: [
-      q.dialer,
+      shared.dialer,
       {
         question: 'Does it work on my cell phone?',
         answer:
@@ -149,7 +152,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
         question: 'Does it record my calls or my screen?',
         answer: 'No. The setup permission only lets Sayso hear the call, and we don’t save audio recordings.',
       },
-      q.twoParty,
+      shared.twoParty,
     ],
   },
   {
@@ -157,7 +160,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         question: 'How do I get started, and what does it cost?',
-        answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on team size and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay $125/month, billed annually.`,
+        answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on team size and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually.`,
       },
       {
         question: 'Can I see if my agents are using it?',
@@ -179,13 +182,13 @@ export const FAQ_ITEMS: FaqItem[] = FAQ_GROUPS.flatMap((group) => group.items);
 
 /** Homepage set: the questions people ask right before booking, some merged. */
 export const HOME_FAQ_ITEMS: FaqItem[] = [
-  q.dialer,
+  shared.dialer,
   {
     question: 'Does it record my calls or my screen?',
     answer:
       'No. The setup permission only lets Sayso hear the call, and we don’t save audio recordings. Transcripts and notes are encrypted, stored in the US, and never used to train outside AI models. You can request a copy or deletion anytime. See more: [Security](/security/) · [Privacy](/privacy/)',
   },
-  q.twoParty,
+  shared.twoParty,
   {
     question: 'Will it distract me on a live call?',
     answer:
@@ -198,20 +201,22 @@ export const HOME_FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'How do I get started, and what does it cost?',
-    answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on team size and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay $125/month, billed annually. You can cancel anytime; there are no contracts.`,
+    answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on team size and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually. You can cancel anytime; there are no contracts.`,
   },
 ];
 
 const LINK_PATTERN = /\[([^\]]+)\]\(([^)]+)\)/g;
 
-/** Answer text with [text](href) links reduced to their text, for JSON-LD. */
-export function faqPlainText(answer: string): string {
-  return answer.replace(LINK_PATTERN, '$1');
+/** FAQ items as FAQPage JSON-LD input: answers as plain text, links reduced to their text. */
+export function faqSchemaItems(items: FaqItem[]) {
+  return items.map((item) => ({ question: item.question, answer: item.answer.replace(LINK_PATTERN, '$1') }));
 }
 
+type FaqAnswerPart = { text: string; href?: string };
+
 /** Splits an answer into text and link parts for rendering. */
-export function faqAnswerParts(answer: string): ({ text: string } | { text: string; href: string })[] {
-  const parts: ({ text: string } | { text: string; href: string })[] = [];
+export function faqAnswerParts(answer: string): FaqAnswerPart[] {
+  const parts: FaqAnswerPart[] = [];
   let last = 0;
   for (const match of answer.matchAll(LINK_PATTERN)) {
     const index = match.index ?? 0;

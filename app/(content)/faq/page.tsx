@@ -5,7 +5,7 @@ import { PageHeader } from '@/components/pages/PageHeader';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FaqList } from '@/components/pages/FaqList';
 import { focusRing } from '@/components/landing/HomeShared/styles';
-import { FAQ_GROUPS, FAQ_ITEMS, faqPlainText } from '@/lib/content/faq';
+import { FAQ_GROUPS, FAQ_ITEMS, faqSchemaItems } from '@/lib/content/faq';
 
 export const metadata = buildMetadata({
   title: 'Sayso FAQ: Real-Time Call Guidance for Real Estate Teams',
@@ -14,9 +14,7 @@ export const metadata = buildMetadata({
   path: '/faq',
 });
 
-const faqJsonLd = generateFAQPageJsonLd(
-  FAQ_ITEMS.map((item) => ({ question: item.question, answer: faqPlainText(item.answer) })),
-);
+const faqJsonLd = generateFAQPageJsonLd(faqSchemaItems(FAQ_ITEMS));
 
 export default function FaqPage() {
   return (
@@ -55,7 +53,7 @@ export default function FaqPage() {
             >
               {group.title}
             </h2>
-            <FaqList items={group.items} showImages />
+            <FaqList items={group.items} />
           </section>
         ))}
       </div>

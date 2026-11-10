@@ -66,6 +66,7 @@ export const headerNav: NavSection[] = [
       { label: 'New Agents', href: '/for/new-agents' },
       { label: 'ISAs', href: '/for/isas' },
       { label: 'Integrations', href: '/integrations' },
+      { label: 'Compare Sayso', href: '/differences' },
     ],
   },
   {
@@ -74,10 +75,10 @@ export const headerNav: NavSection[] = [
     links: [
       { label: 'About Sayso', href: '/about' },
       { label: 'Why Sayso', href: '/why-sayso' },
-      { label: 'How Sayso Compares', href: '/differences' },
       { label: 'Case Studies', href: '/case-studies' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
+      { label: 'FAQ', href: '/faq' },
     ],
   },
 ];

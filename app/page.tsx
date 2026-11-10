@@ -12,7 +12,7 @@ import { HomeReviews } from '@/components/landing/HomeReviews';
 import { HomeTeams } from '@/components/landing/HomeTeams';
 import { HomePricing } from '@/components/landing/HomePricing';
 import { HomeFAQ } from '@/components/landing/HomeFAQ';
-import { HOME_FAQ_ITEMS, faqPlainText } from '@/lib/content/faq';
+import { HOME_FAQ_ITEMS, faqSchemaItems } from '@/lib/content/faq';
 import { HomeFinalCta } from '@/components/landing/HomeFinalCta';
 import { siteUrl } from '@/lib/config';
 import { generateFAQPageJsonLd, generateSoftwareAppJsonLd } from '@/lib/seo/schema';
@@ -49,9 +49,7 @@ const softwareAppJsonLd = generateSoftwareAppJsonLd({
 });
 
 // Built from the same list as the visible FAQ, so the two always match.
-const faqJsonLd = generateFAQPageJsonLd(
-  HOME_FAQ_ITEMS.map((item) => ({ question: item.question, answer: faqPlainText(item.answer) })),
-);
+const faqJsonLd = generateFAQPageJsonLd(faqSchemaItems(HOME_FAQ_ITEMS));
 
 export default function Home() {
   return (
