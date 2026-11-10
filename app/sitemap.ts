@@ -48,6 +48,7 @@ const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/pricing': '2026-11-05',
   '/about': '2026-11-08',
   '/careers': '2026-11-08',
+  '/faq': '2026-11-09',
   '/security': '2026-10-04',
   '/contact': '2026-06-14',
   '/referral': '2026-10-04',
