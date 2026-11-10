@@ -90,6 +90,19 @@ const nextConfig = {
         destination: '/case-studies/anderson-real-estate-group/',
         permanent: true,
       },
+      // Old SEO integration page, replaced by the partner page. Search Console still
+      // reports the old URL as a 404.
+      {
+        source: '/integrations/follow-up-boss/',
+        destination: '/integrations/partners/follow-up-boss/',
+        permanent: true,
+      },
+      // Category from the old site; the current blog has no "real-estate" category.
+      {
+        source: '/blog/category/real-estate/',
+        destination: '/blog/',
+        permanent: true,
+      },
       // ──────────────────────────────────────────────────
       // DELETED BLOG POST REDIRECTS
       // ──────────────────────────────────────────────────
