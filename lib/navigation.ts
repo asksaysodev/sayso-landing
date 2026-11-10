@@ -66,6 +66,7 @@ export const headerNav: NavSection[] = [
       { label: 'New Agents', href: '/for/new-agents' },
       { label: 'ISAs', href: '/for/isas' },
       { label: 'Integrations', href: '/integrations' },
+      { label: 'Compare Sayso', href: '/differences' },
     ],
   },
   {
@@ -74,10 +75,10 @@ export const headerNav: NavSection[] = [
     links: [
       { label: 'About Sayso', href: '/about' },
       { label: 'Why Sayso', href: '/why-sayso' },
-      { label: 'How Sayso Compares', href: '/differences' },
       { label: 'Case Studies', href: '/case-studies' },
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
+      { label: 'FAQ', href: '/faq' },
     ],
   },
 ];
@@ -106,6 +107,7 @@ export const footerNav: NavSection[] = [
       { label: 'Contact', href: '/contact' },
       { label: 'Request a Demo', href: '/request-demo', dataAnalyticsId: 'request-demo-footer' },
       { label: 'Help Center', href: 'https://asksayso.notion.site/helpcenter', external: true, dataAnalyticsId: 'help-center' },
+      { label: 'FAQ', href: '/faq' },
       { label: 'Careers', href: '/careers' },
     ],
   },

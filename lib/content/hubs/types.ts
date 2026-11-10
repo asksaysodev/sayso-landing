@@ -1,7 +1,8 @@
 export interface HubChildPage {
   title: string;
   slug: string;
-  description: string;
+  /** Card subtext. Omit for a title-and-link card. */
+  description?: string;
   keyword?: string;
   /** Visible anchor text for the link - MUST vary across items for SEO. */
   linkText: string;
@@ -18,7 +19,8 @@ export interface HubPageConfig {
   seoTitle: string;
   seoDescription: string;
   h1: string;
-  introduction: string;
+  /** Intro under the H1. Omit for no intro. */
+  introduction?: string;
   childPages: HubChildPage[];
   groups?: { label: string; slugs: string[] }[];
   howSaysoHelps?: string;

@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { SectionHead } from '../HomeShared/SectionHead';
 import { focusRing, muted, panel, section, soft, wrap } from '../HomeShared/styles';
 import { TeamDemoButton } from './components/TeamDemoButton';
+import { TeamPropsRow } from './components/TeamPropsRow';
 import { TEAM_PROOF, TEAM_VALUE_PROPS } from './data';
 
 /**
@@ -29,19 +30,7 @@ export function HomeTeams({ className = '', analyticsSuffix }: { className?: str
           }
         />
 
-        <ul className="grid grid-cols-1 gap-5 min-[861px]:grid-cols-3">
-          {TEAM_VALUE_PROPS.map((prop, i) => (
-            <li key={prop.title} className={`${panel} p-6`}>
-              <h3 className="flex items-baseline gap-2.5 font-hero text-[18.5px] font-bold leading-[1.3] text-[#10233A]">
-                <span aria-hidden="true" className="font-comic text-2xl font-normal text-[#2367EE]">
-                  {i + 1}
-                </span>
-                {prop.title}
-              </h3>
-              <p className={`mt-2 text-[15px] leading-relaxed ${muted}`}>{prop.body}</p>
-            </li>
-          ))}
-        </ul>
+        <TeamPropsRow props={TEAM_VALUE_PROPS} />
 
         <div
           className={`${panel} mt-5 grid grid-cols-1 items-center gap-7 border-l-[5px] !border-l-[#FFDE59] p-7 min-[861px]:grid-cols-[1.1fr_1fr_auto] min-[861px]:gap-10 min-[861px]:px-10`}

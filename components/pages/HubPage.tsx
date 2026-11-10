@@ -148,9 +148,9 @@ function HubCard({
       <h3 className="font-hero font-extrabold tracking-[-0.01em] text-lg leading-snug text-[#10233A] mb-2 group-hover:text-[#2367EE] transition-colors">
         {page.title}
       </h3>
-      <p className="text-sm text-[#1D4871]/60 font-sans leading-relaxed mb-4">
-        {page.description}
-      </p>
+      {page.description && (
+        <p className="text-sm text-[#1D4871]/60 font-sans leading-relaxed mb-4">{page.description}</p>
+      )}
       <span className="inline-flex items-center text-sm font-bold text-[#2367EE] font-sans">
         {page.linkText}
         <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
