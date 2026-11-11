@@ -17,8 +17,9 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `nav-composer` | Opens composer.asksayso.com (free script generator) in a new tab | [lib/navigation.ts](../../lib/navigation.ts) (`resourcesFeatured`) | Resources menu and mobile drawer |
 | `cta-team-platform-strip` | Opens demo calendar | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar ("see the team platform") |
 | `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
-| `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
-| `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo |
+| `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero. Hidden at 640px and below (navbar Book a demo covers phones) |
+| `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/EndCover.tsx](../../components/landing/HomeLiveDemo/components/EndCover.tsx) | Cover over the demo stage after the homepage guided demo ends |
+| `cta-download-live-demo` | Opens the create-account flow (`openSignup`) | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo (Get Sayso) |
 | `cta-download-home-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Individual Agent+ Get Sayso. /pricing keeps `cta-download-pricing-individual` (below) |
 | `cta-book-demo-home-pricing-teams` | Opens demo calendar | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Assemble your team |
 | `home-pricing-billing-toggle-annual` | Switches prices to annual billing | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing. Rendered twice: above the cards on desktop, inside the Individual Agent+ card below 961px (only one is visible). /pricing keeps `pricing-billing-toggle-annual` (below) |
@@ -154,4 +155,4 @@ Per-slug breakdown is available in GA via the `page_path` dimension, so there's 
 
 ## Total count
 
-48 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.
+49 rows in the reference table above (page-type family IDs count as one row each per `{page-type}` substitution). The ids under Retired IDs are no longer on the site.
