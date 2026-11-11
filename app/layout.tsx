@@ -17,11 +17,14 @@ const manrope = Manrope({
   display: 'swap',
 })
 
+// Bangers is only used for section labels below the hero, so it is not
+// preloaded: it would compete with the hero for bandwidth on slow phones.
 const bangers = Bangers({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-bangers',
   display: 'swap',
+  preload: false,
 })
 
 

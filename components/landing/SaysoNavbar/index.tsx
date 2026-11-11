@@ -57,7 +57,7 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
           aria-label="Sayso home"
           className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
         >
-          <Image src="/logos/logo-pos-transparent-horizontal.png" alt="Sayso" width={90} height={29} priority />
+          <Image src="/logos/logo-pos-transparent-horizontal.png" alt="Sayso" width={90} height={29} loading="eager" />
         </Link>
 
         <DesktopNav />
