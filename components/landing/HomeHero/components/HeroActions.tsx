@@ -2,7 +2,7 @@
 
 /**
  * Hero call-to-action row: Get Sayso, Book a demo and Try it (jumps to the
- * guided demo).
+ * guided demo). Book a demo is hidden on phones, where the navbar already shows it.
  */
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { Button } from '@/components/ui/Button';
@@ -18,7 +18,7 @@ export function HeroActions() {
       <Button onClick={openSignup} data-analytics-id="cta-download-hero">
         Get Sayso
       </Button>
-      <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id="cta-book-demo-hero">
+      <Button variant="secondary" onClick={openDemoCalendar} className="max-[640px]:!hidden" data-analytics-id="cta-book-demo-hero">
         Book a demo
       </Button>
       <a href="#demo" className={textButton}>

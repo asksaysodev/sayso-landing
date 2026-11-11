@@ -12,32 +12,32 @@ export const STEPS: TourStep[] = [
   {
     key: 'start',
     title: 'Sayso spots your call',
-    body: 'Your buyer lead picks up and Sayso shows a call alert. Press the yellow-ringed Start button on the alert.',
+    body: 'You start a call and Sayso shows a call alert. Press the yellow-ringed Start button.',
   },
   {
     key: 'watch',
     title: 'Cues come in on their own',
-    body: 'Just talk. As the prospect speaks, short cues flow into Sayso. There is nothing to click.',
+    body: 'Just talk. As the prospect speaks, Sayso will show you cues automatically.',
   },
   {
     key: 'dot',
     title: 'Smart Capture takes the notes',
-    body: 'L turned purple when Sayso heard where they want to live. Hover over L, or tap it on your phone, to read the note it wrote for your CRM.',
+    body: 'Hover over or tap L to read the note Sayso wrote for your CRM.',
   },
   {
     key: 'zip',
     title: 'They ask about the market',
-    body: 'Click Zip Code. Pulse drops in local numbers you can share on the spot.',
+    body: 'Click Zip Code. Pulse shows local market data so you’re always the expert.',
   },
   {
     key: 'play',
     title: 'Pull up your script',
-    body: 'Click the list icon to open your Playbook. The check icon beside it hides or shows your cues.',
+    body: 'Click the list icon to open Playbook. These are your custom scripts next to Cue.',
   },
   {
     key: 'reset',
     title: 'Reset between calls',
-    body: 'Watch the rest of the letters fill in as the call wraps up. Then press the yellow reset button so Sayso starts fresh for your next call.',
+    body: 'Press the yellow button so Sayso resets for your next conversation.',
   },
 ];
 
