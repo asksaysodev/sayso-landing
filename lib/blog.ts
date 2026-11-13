@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { cache } from 'react';
 import { siteUrl } from '@/lib/config';
+import { getAuthor } from '@/lib/authors';
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
@@ -13,6 +14,8 @@ export interface BlogAuthor {
   role: string;
   avatar: string;
   linkedin?: string;
+  /** Author page path, when the author has one (see lib/authors.ts). */
+  path?: string;
 }
 
 /** Which one-line call to action follows the second paragraph (see BlogInlineCTA). */
@@ -43,6 +46,16 @@ export interface BlogPost {
 
 export interface BlogPostMeta extends Omit<BlogPost, 'content'> {}
 
+const DEFAULT_AUTHOR_KEY = 'kuvaal-patel';
+
+/** Frontmatter `author` is a key from lib/authors.ts. Unknown keys fail the build. */
+function resolveAuthor(key: unknown, filePath: string): BlogAuthor {
+  const author = getAuthor(typeof key === 'string' ? key : DEFAULT_AUTHOR_KEY);
+  if (!author) throw new Error(`Unknown author "${String(key)}" in ${filePath}. Add it to lib/authors.ts.`);
+  const { name, role, avatar, linkedin, path } = author;
+  return { name, role, avatar, linkedin, path };
+}
+
 function parseMdxFile(filePath: string): BlogPost {
   const raw = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(raw);
@@ -60,7 +73,7 @@ function parseMdxFile(filePath: string): BlogPost {
     description: data.description || '',
     category: data.category || 'general',
     tags: data.tags || [],
-    author: data.author || { name: 'Sayso Team', role: 'Team', avatar: '/logos/logo-sayso.png' },
+    author: resolveAuthor(data.author, filePath),
     coverImage: data.coverImage || '/blog/covers/blog-card.jpg',
     heroImage: data.heroImage || '/blog/covers/blog-hero.jpg',
     publishedAt: data.publishedAt || new Date().toISOString().split('T')[0],

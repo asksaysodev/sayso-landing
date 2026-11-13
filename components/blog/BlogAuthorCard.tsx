@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { BlogAuthor } from '@/lib/blog';
 
 interface BlogAuthorCardProps {
@@ -20,7 +21,15 @@ export function BlogAuthorCard({ author }: BlogAuthorCardProps) {
         )}
       </div>
       <div>
-        <h4 className="font-hero font-extrabold text-base text-[#10233A] mb-1">{author.name}</h4>
+        <h4 className="font-hero font-extrabold text-base text-[#10233A] mb-1">
+          {author.path ? (
+            <Link href={author.path} rel="author" className="hover:text-[#2367EE] hover:underline">
+              {author.name}
+            </Link>
+          ) : (
+            author.name
+          )}
+        </h4>
         <p className="text-sm text-[#1D4871]/60 font-sans mb-2">{author.role}</p>
         {author.linkedin && (
           <a
