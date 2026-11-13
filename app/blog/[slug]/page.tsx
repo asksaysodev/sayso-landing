@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       images: [post.heroImage],
       type: 'article',
       publishedTime: post.publishedAt,
-      authors: [post.author.name],
+      authors: [post.author.path ? `${siteUrl}${post.author.path}` : post.author.name],
     },
     twitter: {
       card: 'summary_large_image',

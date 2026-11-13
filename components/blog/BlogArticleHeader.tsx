@@ -1,9 +1,22 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { BlogPost, formatCategoryName } from '@/lib/blog';
 import { PageHeader } from '@/components/pages/PageHeader';
 
 interface BlogArticleHeaderProps {
   post: BlogPost;
+}
+
+/** The author's photo or name, linked to their author page when they have one. */
+function AuthorLink({ path, className, children }: { path?: string; className: string; children: ReactNode }) {
+  return path ? (
+    <Link href={path} rel="author" className={`block ${className}`}>
+      {children}
+    </Link>
+  ) : (
+    <div className={className}>{children}</div>
+  );
 }
 
 /** Blog post header on the shared PageHeader: category, centered title, author and meta. */
@@ -18,7 +31,7 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
       title={post.title}
     >
       <div className="flex items-center justify-center gap-3">
-        <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#D7DEE1]">
+        <AuthorLink path={post.author.path} className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#D7DEE1]">
           {post.author.avatar && (
             <Image
               src={post.author.avatar}
@@ -28,9 +41,11 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
               className="h-full w-full object-cover"
             />
           )}
-        </div>
+        </AuthorLink>
         <div className="text-left font-sans text-sm">
-          <div className="font-bold text-[#1D4871]">{post.author.name}</div>
+          <AuthorLink path={post.author.path} className="font-bold text-[#1D4871] hover:text-[#2367EE] hover:underline">
+            {post.author.name}
+          </AuthorLink>
           <div className="text-[#1D4871]/50">
             {new Date(post.publishedAt).toLocaleDateString('en-US', {
               month: 'long',

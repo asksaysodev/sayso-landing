@@ -48,6 +48,7 @@ const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/pricing': '2026-11-05',
   '/about': '2026-11-08',
   '/careers': '2026-11-08',
+  '/author/kuvaal-patel': '2026-11-13',
   '/faq': '2026-11-09',
   '/security': '2026-10-04',
   '/contact': '2026-06-14',
@@ -101,7 +102,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages: everything registered in the nav (including the script book,
   // a featured Resources link), plus homepage, demo and download.
   const navHrefs = getAllNavHrefs();
-  const allStaticPaths = new Set(['/', '/demo', '/download', ...navHrefs]);
+  // The author page is linked only from blog bylines, so it is listed here, not in the nav.
+  const allStaticPaths = new Set(['/', '/demo', '/download', '/author/kuvaal-patel', ...navHrefs]);
 
   // Skip excluded paths and the child pages the content loaders already list
   // (persona and product pages are registered in the nav too).

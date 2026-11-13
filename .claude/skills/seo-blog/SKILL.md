@@ -82,10 +82,7 @@ pillar: "<pillar>"
 category: "<category>"
 tags: ["<4 to 6 tags>"]
 ctaVariant: "<cta_variant>"
-author:
-  name: "Sayso Team"
-  role: "Team"
-  avatar: "/logos/logo-sayso.png"
+author: "kuvaal-patel"
 publishedAt: "<launch_date>"
 updatedAt: "<launch_date>"
 featured: false

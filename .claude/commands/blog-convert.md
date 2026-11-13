@@ -171,9 +171,7 @@ From the draft content and any metadata blocks in the file, extract:
 - **readingTime**: Calculate from word count (avg 200 words/min, round to nearest minute)
 
 ### 4.2 Apply Defaults
-- **author.name**: `"Sayso Team"`
-- **author.role**: `"Sayso Team"`
-- **author.avatar**: `"/logo-sayso.png"`
+- **author**: `"kuvaal-patel"` (a key from `lib/authors.ts`)
 - **coverImage**: `"/blog/covers/default.jpg"`
 - **publishedAt**: Today's date (from system context)
 - **updatedAt**: Same as publishedAt
@@ -228,10 +226,7 @@ slug: "article-slug-here"
 description: "One to two sentence SEO description."
 category: "category-slug"
 tags: ["tag one", "tag two", "tag three"]
-author:
-  name: "Sayso Team"
-  role: "Sayso Team"
-  avatar: "/logo-sayso.png"
+author: "kuvaal-patel"
 coverImage: "/blog/covers/default.jpg"
 publishedAt: "YYYY-MM-DD"
 updatedAt: "YYYY-MM-DD"
