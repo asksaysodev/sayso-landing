@@ -24,7 +24,11 @@ export const AUTHORS: Record<string, Author> = {
     avatar: '/images/founder-kuvaal-patel.png',
     path: '/author/kuvaal-patel/',
     linkedin: 'https://www.linkedin.com/in/kuvaal/',
-    sameAs: ['https://www.linkedin.com/in/kuvaal/', 'https://andersonreg.com/kuvaal-patel/'],
+    sameAs: [
+      'https://www.linkedin.com/in/kuvaal/',
+      'https://andersonreg.com/kuvaal-patel/',
+      'https://www.instagram.com/kuvaal_/',
+    ],
   },
 };
 
