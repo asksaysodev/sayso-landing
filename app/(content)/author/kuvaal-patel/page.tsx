@@ -30,6 +30,7 @@ const BIO = [
 const PROFILE_LINKS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kuvaal/' },
   { label: 'Anderson Real Estate Group', href: 'https://andersonreg.com/kuvaal-patel/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/kuvaal_/' },
 ];
 
 const description =
@@ -110,7 +111,7 @@ export default function KuvaalPatelAuthorPage() {
           ))}
         </ul>
 
-        <h2 className="mt-12 border-t border-[#1D4871]/10 pt-8 font-hero text-xl font-extrabold text-[#10233A]">
+        <h2 className="mt-8 border-t border-[#1D4871]/10 pt-6 font-hero text-xl font-extrabold text-[#10233A]">
           Articles by {author.name}
         </h2>
         <ul className="mt-4 divide-y divide-[#1D4871]/10">

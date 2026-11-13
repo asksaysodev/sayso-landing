@@ -8,13 +8,13 @@ interface BlogPillarUplinkProps {
 export function BlogPillarUplink({ pillar }: BlogPillarUplinkProps) {
   return (
     <div className="bg-white px-5 py-3.5 mb-8 rounded-2xl shadow-card">
-      <p className="text-sm font-sans text-[#1D4871]/80">
-        This post is part of our complete guide:{' '}
+      <p className="text-center text-sm font-sans text-[#1D4871]/80 text-balance">
+        This is part of our complete guide:{' '}
         <Link
           href={`/blog/${pillar.slug}`}
           className="text-[#2367EE] font-bold hover:underline"
         >
-          {pillar.title} &rarr;
+          {pillar.title}&nbsp;&rarr;
         </Link>
       </p>
     </div>
