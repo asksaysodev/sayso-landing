@@ -127,10 +127,7 @@ type: "pillar"
 cluster: "[cluster-name-kebab-case]"
 category: "[same as cluster]"
 tags: ["[3-5 relevant tags]"]
-author:
-  name: "Sayso Team"
-  role: "Team"
-  avatar: "/logo-sayso.png"
+author: "kuvaal-patel"
 publishedAt: "2099-01-01"
 featured: false
 coverImage: "/blog/covers/blog-card.jpg"

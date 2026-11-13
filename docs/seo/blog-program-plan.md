@@ -52,7 +52,7 @@ One skill does both new posts and refreshes: `.claude/skills/seo-blog/`. It is a
 | Point the inline CTA at the matching product or persona page instead of `/demo/` for every variant (section 7) | Builds a path from post to product page to demo |
 | Remove the `dialer` and `crm` variants | No longer used |
 | Show the generic mid-article block only on posts without an inline CTA | Avoids three product blocks in one post |
-| Represent "Sayso Team" as an Organization in structured data | It is not a person |
+| Byline every post to Kuvaal Patel (Person, linked to /author/kuvaal-patel/) | A named author with an author page; replaced the "Sayso Team" Organization byline in Nov 2026 |
 
 ---
 
