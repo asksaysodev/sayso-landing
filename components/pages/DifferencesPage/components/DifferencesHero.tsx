@@ -1,49 +1,31 @@
-'use client';
-
 /**
- * Light hero for the /differences page. States the objection verbatim
- * ("We already use ___. So how is this different?") with the blank filled
- * by the spinning DrumWheel, answers it in one line, and offers a scroll
- * CTA into the answer plus the standard demo CTA.
+ * Hero for team leaders: the objection they hear ("We already use ___") with
+ * the spinning DrumWheel, the answer as the H1, and See how, which jumps to the comparison.
  */
 
-import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { Button } from '@/components/ui/Button';
 import { soft } from '@/components/landing/HomeShared/styles';
 import { DrumWheel } from './DrumWheel';
+import { SeeHowButton } from './SeeHowButton';
 import { DRUM_WORDS } from '../data';
 
 export function DifferencesHero() {
-  const { openDemoCalendar } = useDemoCalendar();
-
-  const scrollToAnswer = () => {
-    document.getElementById('how')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section className="relative overflow-hidden pt-[92px] pb-20 md:pb-24">
-      <div className="max-w-[1160px] mx-auto px-4 sm:px-6 relative z-10 text-center">
-        <h1 className="font-hero font-extrabold text-[clamp(34px,6vw,60px)] text-[#10233A] tracking-[-0.03em] leading-[1.1] flex items-center justify-center flex-wrap gap-x-[0.25em] gap-y-2">
+      <div className="relative z-10 mx-auto max-w-[1160px] px-4 text-center sm:px-6">
+        <p
+          className={`flex flex-wrap items-center justify-center gap-x-[0.25em] gap-y-2 font-hero text-[clamp(22px,3.2vw,32px)] font-extrabold leading-[1.15] tracking-[-0.03em] ${soft}`}
+        >
           <span>We already use</span>
           <DrumWheel words={DRUM_WORDS} />
+        </p>
+        <h1 className="mx-auto mt-5 max-w-4xl text-balance font-hero text-[clamp(34px,5.6vw,58px)] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#10233A]">
+          Sayso helps your agents book more.
         </h1>
-        <p className={`mt-4 font-hero font-extrabold text-[clamp(24px,3.6vw,38px)] tracking-[-0.03em] leading-[1.15] ${soft}`}>
-          So how is this different?
-        </p>
-        <p className="mt-7 text-base md:text-lg lg:text-xl leading-relaxed text-[#556B86] max-w-xl mx-auto">
-          Those help after the opportunity is lost. Sayso helps you while the
-          opportunity is still winnable.
-        </p>
-        <div className="mt-9 flex items-center justify-center gap-x-3 gap-y-2.5 flex-wrap">
-          <Button onClick={scrollToAnswer} data-analytics-id="cta-see-difference-differences-hero">
-            Here is the difference
-          </Button>
-          <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id="cta-book-demo-differences-hero">
-            Book a demo
-          </Button>
+        <div className="mt-9">
+          <SeeHowButton />
         </div>
-        <p className="mt-7 text-sm font-semibold text-[#556B86]">
-          Sayso works with your existing dialer and CRM. There is nothing to switch.
+        <p className="mt-7 text-sm font-bold uppercase tracking-wide text-[#7f92aa]">
+          Used daily by RealTrends-ranked teams &amp; brokerages
         </p>
       </div>
     </section>

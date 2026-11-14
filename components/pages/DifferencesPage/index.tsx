@@ -1,33 +1,39 @@
 /**
- * /differences page composition, following the approved "Style A Light"
- * mockup: a light hero that states the objection verbatim ("We already
- * use ___. So how is this different?") with a spinning drum filling the
- * blank, then the one-line answer, the homework everything else assigns,
- * the call-timeline comparison, a closing CTA, and the dark section on
- * how Sayso works live. Styled with the site design system throughout.
+ * /differences for team leaders: what Sayso does that the rest of their stack
+ * doesn't, the live demo, what leaders get, support and proof.
  */
 
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { DifferencesHero } from './components/DifferencesHero';
-import { MomentSection } from './components/MomentSection';
-import { HomeworkSection } from './components/HomeworkSection';
-import { TimelineSection } from './components/TimelineSection';
-import { CloseSection } from './components/CloseSection';
+import {
+  ComparisonSection,
+  DailyUseSection,
+  LeaderFaqSection,
+  LeadersGetSection,
+  NotesSection,
+  ProofSection,
+  SupportSection,
+  TimingSection,
+} from './components/LeaderSections';
 import { AiCallingSection } from './components/AiCallingSection';
-import { EngineSection } from './components/EngineSection';
+import { CloseSection } from './components/CloseSection';
 
 export function DifferencesPage() {
   return (
     <div className="relative bg-[#F4F4F5]">
       <SaysoNavbar />
       <DifferencesHero />
-      <MomentSection />
-      <HomeworkSection />
-      <TimelineSection />
-      <CloseSection />
+      <TimingSection />
+      <ComparisonSection />
+      <NotesSection />
+      <DailyUseSection />
+      <LeadersGetSection />
+      <SupportSection />
+      <ProofSection />
       <AiCallingSection />
-      <EngineSection />
+      <LeaderFaqSection />
+      <CloseSection />
       <Footer />
     </div>
   );

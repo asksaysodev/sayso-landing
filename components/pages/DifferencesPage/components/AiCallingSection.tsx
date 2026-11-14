@@ -4,7 +4,7 @@
  * contrast who is on the phone, then a statement line closes the point.
  */
 
-import { eyebrow, panel, section, wash } from '@/components/landing/HomeShared/styles';
+import { eyebrow, panel, section } from '@/components/landing/HomeShared/styles';
 import { sectionTitle, sectionWrap } from '../styles';
 
 const AI_CALLING_POINTS = [
@@ -21,18 +21,12 @@ const SAYSO_POINTS = [
 
 export function AiCallingSection() {
   return (
-    <section className={`${wash} ${section}`}>
+    <section className={section}>
       <div className={sectionWrap}>
         <span className={eyebrow}>SAYSO VS. AI CALLING TOOLS</span>
         <h2 className={`${sectionTitle} mt-5 max-w-3xl mx-auto`}>
           Sayso doesn&apos;t make the call. You do.
         </h2>
-        <p className="mt-6 text-[1.2rem] text-[#556B86] max-w-3xl mx-auto leading-relaxed">
-          AI calling tools make the call for you. Sayso supports the agent who
-          makes the call. The agent stays the agent, and Sayso gives cues based
-          on what is being said while the conversation is still happening.
-        </p>
-
         <div className="mx-auto max-w-[960px] mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
           <div className={`${panel} p-6`}>
             <h3 className="font-extrabold text-[#7f92aa] text-lg mb-3">AI calling tools</h3>
