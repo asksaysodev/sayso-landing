@@ -1,35 +1,20 @@
-'use client';
+/** Closing CTA band. */
 
-/**
- * Closing CTA band: one line, the standard demo/download button pair, and
- * a short social-proof note underneath.
- */
-
-import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { Button } from '@/components/ui/Button';
 import { section } from '@/components/landing/HomeShared/styles';
+import { TeamDemoButton } from '@/components/landing/HomeTeams/components/TeamDemoButton';
 import { sectionTitle, sectionWrap } from '../styles';
 
 export function CloseSection() {
-  const { openDemoCalendar, openSignup } = useDemoCalendar();
-
   return (
     <section className={section}>
       <div className={sectionWrap}>
-        <h2 className={sectionTitle}>
-          The next call is the one that counts.
-        </h2>
-        <div className="mt-9 flex items-center justify-center gap-x-3 gap-y-2.5 flex-wrap">
-          <Button onClick={openSignup} data-analytics-id="cta-download-differences-close">
-            Get Sayso
-          </Button>
-          <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id="cta-book-demo-differences-close">
-            Book a demo
-          </Button>
-        </div>
-        <p className="mt-8 text-sm font-bold tracking-wide uppercase text-[#7f92aa]">
-          Used by RealTrends ranked teams every day
+        <h2 className={sectionTitle}>The next call is the one that counts.</h2>
+        <p className="mx-auto mt-5 max-w-xl text-[1.1rem] leading-relaxed text-[#556B86]">
+          See Sayso on a live call with your team’s scripts.
         </p>
+        <div className="mt-9">
+          <TeamDemoButton analyticsId="cta-book-demo-differences-close" />
+        </div>
       </div>
     </section>
   );
