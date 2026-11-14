@@ -160,7 +160,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         question: 'How do I get started, and what does it cost?',
-        answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on team size and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually.`,
+        answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on usage and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually.`,
       },
       {
         question: 'Can I see if my agents are using it?',
@@ -201,7 +201,7 @@ export const HOME_FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'How do I get started, and what does it cost?',
-    answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on team size and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually. You can cancel anytime; there are no contracts.`,
+    answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on usage and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually. You can cancel anytime; there are no contracts.`,
   },
 ];
 

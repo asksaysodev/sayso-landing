@@ -77,8 +77,8 @@ export const alreadyHaveAnAgent: ObjectionEntry = {
     },
   ],
   relatedBlogPost: {
-    title: 'How to Talk to Real Estate Leads',
-    href: '/blog/how-to-talk-to-real-estate-leads',
+    title: 'The 4 Situations Behind "I Already Have an Agent" (Deep Dive)',
+    href: '/blog/already-have-an-agent-objection/',
   },
   relatedFeature: {
     title: 'Real-Time Guidance',

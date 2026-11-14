@@ -45,7 +45,7 @@ export function PricingCards({ analyticsIds }: { analyticsIds: PricingAnalyticsI
         <div className={`${card} !bg-[#1D4871] text-white min-[961px]:order-last`}>
           <h3 className="font-hero text-[22px] font-bold">{TEAM_PLAN_NAME}</h3>
           <div className="mt-2 font-hero text-[36px] font-extrabold leading-none tracking-[-0.03em] min-[961px]:text-[40px]">Custom</div>
-          <p className="mt-2 text-sm text-white/85">Priced by team size.</p>
+          <p className="mt-2 text-sm text-white/85">Priced by usage.</p>
           <FeatureList items={TEAM_FEATURES_SUMMARY} inverted />
           <Button variant="secondary" onClick={openDemoCalendar} className="self-start !shadow-none" data-analytics-id={analyticsIds.teams}>
             Book a demo
