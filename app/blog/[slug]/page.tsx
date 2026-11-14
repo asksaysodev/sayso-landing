@@ -110,13 +110,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Split content roughly in half for mid-article CTA insertion
   const contentLines = post.content.split('\n');
   const midpoint = Math.floor(contentLines.length / 2);
-  // Find the nearest heading after midpoint to split cleanly
+  // Find the nearest heading after midpoint to split cleanly. Never split inside a
+  // numbered run ("Step 4" then "Step 5", "Script 3" then "Script 4", "2." then "3."),
+  // so the CTA lands after the sequence ends.
+  const sequenceLabel = (heading: string) => {
+    const match = heading.match(/^##\s+(?:([A-Za-z]+)\s+)?#?\d+\b/);
+    return match ? (match[1] ?? '').toLowerCase() : null;
+  };
+  const inSameSequence = (a: string, b: string) => {
+    const labelA = sequenceLabel(a);
+    return labelA !== null && labelA === sequenceLabel(b);
+  };
   let splitIndex = midpoint;
-  for (let i = midpoint; i < contentLines.length; i++) {
+  let previousHeading = '';
+  for (let i = midpoint - 1; i >= 0; i--) {
     if (contentLines[i].startsWith('## ')) {
-      splitIndex = i;
+      previousHeading = contentLines[i];
       break;
     }
+  }
+  for (let i = midpoint; i < contentLines.length; i++) {
+    const line = contentLines[i];
+    if (!line.startsWith('## ')) continue;
+    if (inSameSequence(previousHeading, line)) {
+      previousHeading = line;
+      continue;
+    }
+    splitIndex = i;
+    break;
   }
   const firstHalf = contentLines.slice(0, splitIndex).join('\n');
   const secondHalf = contentLines.slice(splitIndex).join('\n');
