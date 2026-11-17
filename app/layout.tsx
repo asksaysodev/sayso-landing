@@ -7,6 +7,8 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { CalendlyBookingTracker } from '@/components/CalendlyBookingTracker'
 import { headerNav, primaryNav, resourcesFeatured } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
+import { SAYSO_ORG_ID } from '@/lib/seo/schema'
+import { AUTHORS } from '@/lib/authors'
 
 /** Analytics only load on the production domain. */
 const PRODUCTION_HOSTNAME = 'www.asksayso.com'
@@ -34,8 +36,10 @@ const bangers = Bangers({
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': SAYSO_ORG_ID,
   name: 'Sayso',
-  alternateName: ['Sayso Real Estate', 'AskSayso'],
+  legalName: 'AskSayso, Inc.',
+  alternateName: ['AskSayso', 'Ask Sayso', 'Sayso Real Estate'],
   url: siteUrl,
   logo: `${siteUrl}/logos/logo-pos-horizontal.png`,
   description: 'Sayso improves sales execution with real-time conversation guidance for real estate agents, teams, and brokerages.',
@@ -47,9 +51,36 @@ const organizationJsonLd = {
     'objection handling',
     'live call coaching for real estate agents',
   ],
+  foundingDate: '2025-08',
+  founder: {
+    '@type': 'Person',
+    '@id': `${siteUrl}/author/kuvaal-patel/#person`,
+    name: 'Kuvaal Patel',
+    url: `${siteUrl}/author/kuvaal-patel/`,
+    sameAs: AUTHORS['kuvaal-patel'].sameAs,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'PO Box 244',
+    addressLocality: 'Tolleson',
+    addressRegion: 'AZ',
+    postalCode: '85353',
+    addressCountry: 'US',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'support@asksayso.com',
+    telephone: '+1-623-321-3061',
+  },
   sameAs: [
     'https://www.linkedin.com/company/asksayso',
     'https://www.instagram.com/asksayso',
+    'https://www.youtube.com/@asksayso',
+    'https://www.crunchbase.com/organization/sayso-124c',
+    'https://www.facebook.com/61591170566423',
+    // Google Business Profile (Ask Sayso, Inc)
+    'https://maps.google.com/?cid=13566026824632094354',
   ],
 };
 
@@ -62,6 +93,7 @@ const webSiteJsonLd = {
   description: 'Sayso helps real estate agents turn messy prospecting conversations into booked appointments.',
   publisher: {
     '@type': 'Organization',
+    '@id': SAYSO_ORG_ID,
     name: 'Sayso',
     url: siteUrl,
   },
