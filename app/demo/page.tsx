@@ -39,7 +39,8 @@ export const metadata: Metadata = {
 };
 
 /** Calendly booking page with the landing details hidden, so only the scheduler shows. */
-const DEMO_BOOKING_URL = 'https://calendly.com/asksayso/demo?hide_event_type_details=1&hide_landing_page_details=1&hide_gdpr_banner=1';
+// utm tags so bookings from this page show as "website / demo_page" in GA4 instead of Direct.
+const DEMO_BOOKING_URL = 'https://calendly.com/asksayso/demo?hide_event_type_details=1&hide_landing_page_details=1&hide_gdpr_banner=1&utm_source=website&utm_medium=demo_page';
 
 const COVERED = [
   'What Sayso does',
