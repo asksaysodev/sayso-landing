@@ -28,6 +28,8 @@ export const AUTHORS: Record<string, Author> = {
       'https://www.linkedin.com/in/kuvaal/',
       'https://andersonreg.com/kuvaal-patel/',
       'https://www.instagram.com/kuvaal_/',
+      'https://www.facebook.com/kuvaaljp/',
+      'https://www.tiktok.com/@kuvaal',
     ],
   },
 };

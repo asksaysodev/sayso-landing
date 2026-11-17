@@ -1,10 +1,14 @@
 import { siteUrl } from '@/lib/config';
 
+/** Stable @id of the site-wide Organization block (root layout), so every reference resolves to one entity. */
+export const SAYSO_ORG_ID = `${siteUrl}/#organization`;
+
 /**
  * Shared Sayso Organization publisher block for JSON-LD schemas.
  */
 export const SAYSO_PUBLISHER = {
   '@type': 'Organization' as const,
+  '@id': SAYSO_ORG_ID,
   name: 'Sayso',
   logo: {
     '@type': 'ImageObject' as const,
