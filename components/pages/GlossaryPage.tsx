@@ -88,6 +88,57 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
           ))}
         </div>
 
+        {/* Optional extra sections */}
+        {entry.sections?.map((section) => (
+          <section key={section.heading}>
+            <h2 className="font-hero font-extrabold tracking-[-0.02em] leading-tight text-2xl md:text-[28px] text-[#10233A] mt-10 mb-4">
+              {section.heading}
+            </h2>
+            {section.paragraphs && section.paragraphs.length > 0 && (
+              <div className="space-y-4 mb-6">
+                {section.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="text-[#1D4871]/80 text-base leading-relaxed font-sans"
+                  >
+                    {renderInlineMarkdown(paragraph)}
+                  </p>
+                ))}
+              </div>
+            )}
+            {section.table && (
+              <div className="mb-6 overflow-x-auto rounded-2xl border border-[#D7DEE1] bg-white">
+                <table className="w-full text-left text-base font-sans">
+                  <thead>
+                    <tr>
+                      {section.table.headers.map((header) => (
+                        <th
+                          key={header}
+                          scope="col"
+                          className="border-b border-[#D7DEE1] px-4 py-3 font-bold text-[#10233A]"
+                        >
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row, rowIndex) => (
+                      <tr key={rowIndex} className="border-b border-[#D7DEE1] last:border-b-0">
+                        {row.map((cell, cellIndex) => (
+                          <td key={cellIndex} className="px-4 py-3 align-top leading-relaxed text-[#1D4871]/80">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </section>
+        ))}
+
         {/* Why It Matters */}
         {entry.whyItMatters && entry.whyItMatters.length > 0 && (
           <>
