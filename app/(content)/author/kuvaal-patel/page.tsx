@@ -9,6 +9,7 @@ import { siteUrl } from '@/lib/config';
 import { AUTHORS } from '@/lib/authors';
 import { getAllPostsMeta } from '@/lib/blog';
 import { PageHeader } from '@/components/pages/PageHeader';
+import { SAYSO_ORG_ID } from '@/lib/seo/schema';
 
 // Matches the blog: scheduled posts join the list within an hour of publishing.
 export const revalidate = 3600;
@@ -50,7 +51,7 @@ const profileJsonLd = {
     '@type': 'Person',
     name: author.name,
     jobTitle: 'Founder',
-    worksFor: { '@type': 'Organization', name: 'Sayso', url: siteUrl },
+    worksFor: { '@type': 'Organization', '@id': SAYSO_ORG_ID, name: 'Sayso', url: siteUrl },
     image: `${siteUrl}${author.avatar}`,
     url: `${siteUrl}${author.path}`,
     description,
