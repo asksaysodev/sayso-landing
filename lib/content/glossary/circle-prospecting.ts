@@ -5,46 +5,50 @@ export const circleProspecting: GlossaryEntry = {
   updatedAt: '2026-09-29',
   term: 'Circle Prospecting',
   keyword: 'what is circle prospecting',
-  seoTitle: 'What Is Circle Prospecting in Real Estate? Meaning and Tips',
+  seoTitle: 'What Is Circle Prospecting in Real Estate?',
   seoDescription:
-    'Circle prospecting, also called circle calling or circle dialing, is calling homeowners near a recent listing or sale. Learn how it works plus tips and scripts.',
+    'Circle prospecting means contacting the homeowners around a recent listing, sale or open house. How it works, when to use it, pros and cons, and an example.',
   h1: 'What Is Circle Prospecting?',
   definition:
-    'Circle prospecting, also called circle calling or circle dialing, is the practice of calling homeowners in a specific geographic area, usually around a recent listing, sale, or open house, to generate new buyer and seller leads. It gives agents a natural reason to call and a predictable way to build pipeline from a geographic farm.',
+    'Circle prospecting is contacting the homeowners closest to a recent listing, sale or open house to start a conversation about what is happening on their street. Agents also call it circle calling or circle dialing. The nearby activity gives you a timely, local reason to reach out.',
+  definitionFollowUp:
+    'For word-for-word scripts and a voicemail that gets callbacks, see our [circle prospecting scripts](/blog/circle-prospecting-scripts/).',
   howItWorks: [
-    'When a home sells or gets listed in a neighborhood, nearby homeowners pay attention. Circle prospecting takes advantage of that awareness by reaching out while the topic is top of mind. A common approach is to pull a list of nearby homeowners, often within a half-mile radius of the property, then call them with a simple script that references the recent activity.',
-    'The goal is to start a conversation. You mention the listing or sale, ask if they have thought about their own home\'s value, and listen for signals of interest.',
-    'Most calls are short. The ones that matter turn into listing appointments weeks or months later.',
+    'Pick a center property. The best centers are fresh events that neighbors notice: a home that was just listed, a home that just sold, or an open house this weekend. The event is your reason for reaching out, so the sooner you act on it, the better.',
+    'Choose the radius. Most agents draw a circle from a few blocks up to about half a mile, tighter in dense neighborhoods and wider in suburbs. The aim is a list of owners who would plausibly care about that sale or listing.',
+    'Build the list. Pull the addresses inside the circle from your MLS, a property data tool or county records, add phone numbers, and check those numbers against the Do Not Call Registry before anyone dials.',
+    'Reach out by phone, door or mail. Phone is the most common channel, but the same circle works for door knocking and for a just listed or just sold mailer. Many agents combine them, sending a mailer first and calling a few days later.',
   ],
-  whyItMatters: [
-    'Circle prospecting works because it gives you a natural reason to call. You are referencing something that happened in their neighborhood. That context makes the conversation feel relevant instead of intrusive.',
-    'For agents who struggle with cold outreach, circle prospecting is often the easiest entry point. The scripts are simple, the objections are softer, and the conversion timeline is predictable.',
-    'Teams that circle prospect consistently build a pipeline of future listings from their own geographic farm area.',
-  ],
-  tips: [
+  sections: [
     {
-      title: 'Call within 48 hours of the trigger event',
-      body: 'The listing or sale is freshest in neighbors\' minds right after it happens. Waiting a week reduces relevance and response rates.',
+      heading: 'When to Use Circle Prospecting (and When Not To)',
+      paragraphs: [
+        'Use it when you have a fresh, nearby event to talk about. A new listing, a sale that closed quickly, or an open house this weekend all give neighbors a reason to listen. It also suits newer agents building a geographic farm, because every conversation starts from the same local news.',
+        'Skip it when the event is weeks old, when there has been no recent activity in the area, or when most numbers on your list are on the Do Not Call Registry. It is also a poor fit if you will not follow up, because most circle prospecting conversations turn into business months later, not on the first contact.',
+      ],
     },
     {
-      title: 'Lead with the neighborhood, not yourself',
-      body: 'Open with "I wanted to let you know a home just sold on your street," not "Hi, I\'m an agent looking for listings." Make it about them, not you.',
+      heading: 'Pros and Cons of Circle Prospecting',
+      table: {
+        headers: ['Pros', 'Cons'],
+        rows: [
+          ['A natural, local reason to reach out', 'Low contact rates, since most calls reach voicemail'],
+          ['Builds name recognition in one neighborhood', 'Building the list and checking Do Not Call takes time'],
+          ['Works by phone, at the door or by mail', 'Results usually come months later'],
+          ['An easy starting point for newer agents', 'Only works when there is fresh activity nearby'],
+        ],
+      },
     },
     {
-      title: 'Keep a consistent radius',
-      body: 'Half a mile is the standard. Going wider dilutes the neighborhood connection that makes circle prospecting effective.',
-    },
-    {
-      title: 'Track every conversation in your CRM',
-      body: 'Many circle prospecting conversations turn into appointments months later. If you do not log the conversation, you will forget to follow up when it matters.',
-    },
-    {
-      title: 'Pair it with a follow-up drip',
-      body: 'After the initial call, add interested homeowners to a monthly market update email. This keeps you top of mind without requiring another cold call.',
+      heading: 'Circle Prospecting Example',
+      paragraphs: [
+        'Example (the numbers are illustrative, not a benchmark): You just sold 123 Oak St. You pull the 50 closest homes, call them over two evenings, reach 15 owners, and book 1 to 2 conversations.',
+        'The owners you did not reach, and the ones who are not moving yet, go into your CRM with a note. The next sale on their street gives you a reason to contact them again.',
+      ],
     },
   ],
   howSaysoHelps: [
-    'If you want word-for-word openers for a just-sold, just-listed or market milestone call, plus a voicemail script and a worked example, read our [circle prospecting scripts](/blog/circle-prospecting-scripts/) and the [just listed and just sold scripts](/blog/just-listed-just-sold-scripts/). To see how circle prospecting stacks up against other lead sources, read [prospecting strategies compared](/blog/real-estate-prospecting-strategies/), and for the software side, see the [types of real estate prospecting tools](/blog/real-estate-prospecting-tools/).',
+    'For the calls themselves, see the [just listed and just sold scripts](/blog/just-listed-just-sold-scripts/). To see how circle prospecting compares with other lead sources, read [prospecting strategies compared](/blog/real-estate-prospecting-strategies/), and for the software side, see the [types of real estate prospecting tools](/blog/real-estate-prospecting-tools/).',
     'Sayso gives you real-time guidance during circle prospecting calls, so when a homeowner asks about their home\'s value or pushes back with "we\'re not thinking about moving," you see the right response instantly. No more freezing up or fumbling through a script binder.',
     'Sayso also logs each circle prospecting call automatically, so the homeowner who said "maybe next year" is still in your pipeline when next year arrives. [Book a demo](/demo/) to see how Sayso turns neighborhood calls into listing appointments.',
   ],
@@ -72,27 +76,22 @@ export const circleProspecting: GlossaryEntry = {
     {
       question: 'What is circle prospecting in real estate?',
       answer:
-        'Circle prospecting is calling homeowners near a recent listing, sale, or open house to start conversations and generate new leads. It works because you have a natural, relevant reason to call.',
+        'Circle prospecting is contacting the homeowners near a recent listing, sale or open house to start conversations and generate new leads. It works because you have a timely, local reason to reach out.',
     },
     {
-      question: 'How many homes should I call when circle prospecting?',
+      question: 'What is the difference between circle prospecting and farming?',
       answer:
-        'Pick a list size you can finish in one or two calling blocks. Start with the closest homes and work outward.',
+        'Farming is a long-term plan to become the known agent in one neighborhood through regular mail, events and contact. Circle prospecting is a short burst of outreach around one listing, sale or open house. Many agents use circle prospecting as one tactic inside their farm.',
     },
     {
-      question: 'What do you say when circle prospecting?',
+      question: 'Does circle prospecting have to be done by phone?',
       answer:
-        'Lead with the neighborhood event: "A home just sold on your street for $X and I wanted to let you know." Then ask if they have thought about their own home\'s value. Keep it conversational.',
-    },
-    {
-      question: 'What is circle dialing?',
-      answer:
-        'Circle dialing is another name for circle prospecting. Agents also say circle calling. All three mean calling the homeowners around a recent sale, listing, or open house to start a conversation about the neighborhood.',
+        'No. Phone is the most common channel, but agents also knock on doors and send just listed or just sold mailers to the same homes. Calls must follow Do Not Call rules, and some towns restrict door-to-door solicitation, so check the local rules first.',
     },
     {
       question: 'How do I get started with circle prospecting?',
       answer:
-        'Start by picking a recent listing or sale in your farm area. Pull a list of 50–100 nearby homeowners, write a short script that references the property, and begin calling within 48 hours of the event. Track every conversation in your CRM and follow up with interested contacts monthly.',
+        'Pick one recent listing or sale in an area you want to work, pull the closest 50 to 100 homes, check the numbers against the Do Not Call Registry, and reach out within a few days of the event. Log every conversation in your CRM so you can follow up.',
     },
   ],
 };

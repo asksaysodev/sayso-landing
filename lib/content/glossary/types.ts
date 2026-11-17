@@ -13,6 +13,8 @@ export interface GlossaryEntry {
   definitionFollowUp?: string;
   /** Each string renders as its own paragraph. Target: 2-3 paragraphs, max 3 sentences each. */
   howItWorks: string[];
+  /** Optional extra H2 sections rendered after How It Works, in order (e.g. when to use it, pros and cons, a worked example). */
+  sections?: GlossarySection[];
   /** Each string renders as its own paragraph. Target: 2-3 paragraphs, max 3 sentences each. Omit to drop the section. */
   whyItMatters?: string[];
   /** Omit to drop the Tips section. */
@@ -30,4 +32,12 @@ export interface GlossaryEntry {
   /** Cross-section link to a persona page. */
   relatedPersona?: { title: string; href: string };
   ogImage?: string;
+}
+
+export interface GlossarySection {
+  heading: string;
+  /** Each string renders as its own paragraph. Supports [text](/url/) inline markdown. */
+  paragraphs?: string[];
+  /** Optional simple table rendered after the paragraphs. */
+  table?: { headers: string[]; rows: string[][] };
 }

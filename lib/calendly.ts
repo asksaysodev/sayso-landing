@@ -96,12 +96,16 @@ function setPreloadedVisible(visible: boolean): void {
   document.body.style.overflow = visible ? 'hidden' : '';
 }
 
+// UTM tags on every popup booking (and the new-tab fallback), so Calendly's GA4 events (invitee_meeting_scheduled)
+// show "website / popup" instead of Direct and can be told apart from cold email links.
+const POPUP_UTM = 'utm_source=website&utm_medium=popup';
+
 function popupUrl(url: string): string {
   // hide_event_type_details=1 drops Calendly's left info panel so the popup is
   // just the calendar: narrower and far less internal scrolling. Applied to the
   // popup only; full-page surfaces (the /demo inline embed and the new-tab
   // fallback) keep the event details for context.
-  return `${url}${url.includes('?') ? '&' : '?'}hide_event_type_details=1`;
+  return `${url}${url.includes('?') ? '&' : '?'}hide_event_type_details=1&${POPUP_UTM}`;
 }
 
 function preloadedSrc(): string {
@@ -198,5 +202,5 @@ export function openCalendlyPopup(url: string = CALENDLY_DEMO_URL): void {
     return;
   }
 
-  window.open(url, '_blank', 'noopener,noreferrer');
+  window.open(`${url}${url.includes('?') ? '&' : '?'}${POPUP_UTM}`, '_blank', 'noopener,noreferrer');
 }
