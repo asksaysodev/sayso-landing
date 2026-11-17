@@ -7,6 +7,9 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { CalendlyBookingTracker } from '@/components/CalendlyBookingTracker'
 import { headerNav, primaryNav, resourcesFeatured } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
+
+/** Analytics only load on the production domain. */
+const PRODUCTION_HOSTNAME = 'www.asksayso.com'
 import './globals.css'
 
 // Load Manrope for hero text (800 for the homepage headlines)
@@ -128,13 +131,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${bangers.variable}`}>
       <head>
+      {/* GTM (and the GA4 tag inside it) loads only on www.asksayso.com, so Vercel
+          previews and localhost stay out of the live GA4 property. */}
       {gtmId && (
         <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+new Date().getTime(),event:'gtm.js'});if(w.location.hostname!=='${PRODUCTION_HOSTNAME}')return;var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${gtmId}');`,
@@ -186,7 +191,7 @@ fbq('track', 'PageView');`,
       />
       </head>
       <body>
-        {gtmId && (
+        {gtmId && process.env.VERCEL_ENV === 'production' && (
           <noscript>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
