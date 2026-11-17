@@ -71,6 +71,7 @@ const organizationJsonLd = {
     '@type': 'ContactPoint',
     contactType: 'customer support',
     email: 'support@asksayso.com',
+    telephone: '+1-623-321-3061',
   },
   sameAs: [
     'https://www.linkedin.com/company/asksayso',
