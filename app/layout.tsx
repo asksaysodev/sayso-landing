@@ -8,6 +8,7 @@ import { CalendlyBookingTracker } from '@/components/CalendlyBookingTracker'
 import { headerNav, primaryNav, resourcesFeatured } from '@/lib/navigation'
 import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
 import { SAYSO_ORG_ID } from '@/lib/seo/schema'
+import { AUTHORS } from '@/lib/authors'
 
 /** Analytics only load on the production domain. */
 const PRODUCTION_HOSTNAME = 'www.asksayso.com'
@@ -38,7 +39,7 @@ const organizationJsonLd = {
   '@id': SAYSO_ORG_ID,
   name: 'Sayso',
   legalName: 'AskSayso, Inc.',
-  alternateName: ['AskSayso', 'Sayso Real Estate'],
+  alternateName: ['AskSayso', 'Ask Sayso', 'Sayso Real Estate'],
   url: siteUrl,
   logo: `${siteUrl}/logos/logo-pos-horizontal.png`,
   description: 'Sayso improves sales execution with real-time conversation guidance for real estate agents, teams, and brokerages.',
@@ -53,9 +54,10 @@ const organizationJsonLd = {
   foundingDate: '2025-08',
   founder: {
     '@type': 'Person',
+    '@id': `${siteUrl}/author/kuvaal-patel/#person`,
     name: 'Kuvaal Patel',
     url: `${siteUrl}/author/kuvaal-patel/`,
-    sameAs: ['https://www.linkedin.com/in/kuvaal/'],
+    sameAs: AUTHORS['kuvaal-patel'].sameAs,
   },
   address: {
     '@type': 'PostalAddress',

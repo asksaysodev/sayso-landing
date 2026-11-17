@@ -49,6 +49,7 @@ const profileJsonLd = {
   url: `${siteUrl}${author.path}`,
   mainEntity: {
     '@type': 'Person',
+    '@id': `${siteUrl}${author.path}#person`,
     name: author.name,
     jobTitle: 'Founder',
     worksFor: { '@type': 'Organization', '@id': SAYSO_ORG_ID, name: 'Sayso', url: siteUrl },
