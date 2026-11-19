@@ -52,6 +52,7 @@ export function PersonaDemoForm() {
         id={DEMO_FORM_ID}
         embedCode={DEMO_FORM_EMBED_CODE}
         onSuccess={openBooking}
+        reserveClassName="min-h-[461px] md:min-h-[394px]"
         className="persona-demo-form scroll-mt-6 text-left [&_.ss-form-wrapper]:p-0"
       />
       <p className="mt-3 text-center text-sm text-[#556B86]">
