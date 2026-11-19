@@ -10,7 +10,7 @@ export function AdPageCTAButton({ location }: AdPageCTAButtonProps) {
   return (
     <div className="flex items-center justify-center">
       <Button href={`#${DEMO_FORM_ID}`} data-analytics-id={`cta-book-demo-persona-${location}`}>
-        Book my demo
+        Book a demo
       </Button>
     </div>
   );

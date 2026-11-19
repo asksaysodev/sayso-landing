@@ -33,7 +33,7 @@ This document describes the layout, style, and component pattern used for person
 - Audience eyebrow above the `h1`: Manrope 12px 700, 0.12em tracking, `#556B86`, shown as written
 - `h1` in `font-hero text-[30px] sm:text-[40px] font-extrabold tracking-[-0.03em] text-[#10233A]` - no bold/strong tags
 - Subtext paragraph in `text-base text-[#1D4871]/70`
-- The Sure Send demo form (`PersonaDemoForm`) in a white card with a soft shadow. The `.persona-demo-form` styles in `app/globals.css` give it Manrope labels, rounded inputs and a blue `#2367EE` pill submit labeled "Book my demo". On phones the consent text sits under the button so the button stays above the fold.
+- The Sure Send demo form (`PersonaDemoForm`) in a white card with a soft shadow. The `.persona-demo-form` styles in `app/globals.css` give it Manrope labels, rounded inputs and a blue `#2367EE` pill submit labeled "Book a demo" (set in Sure Send). On phones the consent text sits under the button so the button stays above the fold.
 - Under the form: "Next: pick a time on the calendar. Most demos take 20 minutes."
 
 ### 2. Trust Strip
@@ -82,7 +82,7 @@ This document describes the layout, style, and component pattern used for person
 
 - Back to the page background, centered
 - `h2` in `font-hero font-extrabold tracking-[-0.02em] text-[#10233A]` - no bold/strong tags
-- `AdPageCTAButton`: blue pill "Book my demo" that scrolls to the hero form
+- `AdPageCTAButton`: blue pill "Book a demo" that scrolls to the hero form
 
 ### 8. Footer
 

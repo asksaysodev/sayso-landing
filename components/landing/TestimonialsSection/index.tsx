@@ -23,12 +23,9 @@ export function TestimonialsSection() {
           <span className="mb-4 inline-block font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#556B86]">
             What agents are saying
           </span>
-          <h2 className="text-balance font-hero font-extrabold text-[clamp(30px,4.5vw,46px)] leading-[1.1] tracking-[-0.03em] text-[#10233A] mb-4">
-            Real agents, real conversations
+          <h2 className="text-balance font-hero font-extrabold text-[clamp(30px,4.5vw,46px)] leading-[1.1] tracking-[-0.03em] text-[#10233A]">
+            Hear from our users
           </h2>
-          <p className="text-base md:text-lg text-[#556B86] leading-relaxed">
-            Agents using Sayso share how the prompts change the way they handle live prospecting conversations and guide them toward booked appointments.
-          </p>
         </div>
 
         <div className="lg:hidden">

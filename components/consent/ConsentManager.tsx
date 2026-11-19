@@ -4,10 +4,10 @@
  * Cookie consent banner and Choices panel.
  *
  * - First visit: a banner (bottom-left card on desktop, bottom sheet on phones)
- *   with Accept all, Reject non-essential and Choices.
+ *   with Accept all and Reject non-essential.
  * - Choices panel: Essential (always on), Analytics (GA4), Advertising & visitor
- *   identification (Meta, Vector, Leadsy). Opened from the banner, the footer's
- *   "Your Privacy Choices" link, or the privacy policy.
+ *   identification (Meta, Vector, Leadsy). Opened from the footer's
+ *   "Your Privacy Choices" link or the privacy policy.
  * - Global Privacy Control: advertising is off and the banner is not shown;
  *   the panel notes that the signal was honored.
  *
@@ -95,7 +95,7 @@ export function ConsentManager() {
   const panelRef = useRef<HTMLDivElement>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
   const hadAdsRef = useRef(false);
-  const bannerChoicesRef = useRef<HTMLButtonElement>(null);
+  const bannerAcceptRef = useRef<HTMLButtonElement>(null);
   const focusBannerRef = useRef(false);
   const uid = useId();
   const bannerTitleId = `${uid}-banner-title`;
@@ -146,11 +146,11 @@ export function ConsentManager() {
     else if (backToBanner) focusBannerRef.current = true;
   }, [choice, gpc]);
 
-  // Back from the panel to the banner: focus the banner's Choices link again.
+  // Back from the panel to the banner: focus the banner's Accept button.
   useEffect(() => {
     if (view === 'banner' && focusBannerRef.current) {
       focusBannerRef.current = false;
-      bannerChoicesRef.current?.focus();
+      bannerAcceptRef.current?.focus();
     }
   }, [view]);
 
@@ -205,24 +205,16 @@ export function ConsentManager() {
             Your privacy on Sayso
           </h2>
           <p id={bannerTextId} className="mt-1.5 text-sm leading-relaxed text-[#1D4871]/80">
-            Cookies help us improve Sayso and show you relevant content. You decide which ones run.
+            Cookies help us improve Sayso and show you relevant content.
           </p>
           <div className="mt-4 grid grid-cols-2 gap-3">
-            <button type="button" className={bluePill} onClick={() => decide({ analytics: true, advertising: true })}>
+            <button ref={bannerAcceptRef} type="button" className={bluePill} onClick={() => decide({ analytics: true, advertising: true })}>
               Accept all
             </button>
             <button type="button" className={whitePill} onClick={() => decide({ analytics: false, advertising: false })}>
               Reject non-essential
             </button>
           </div>
-          <button
-            ref={bannerChoicesRef}
-            type="button"
-            onClick={openPanel}
-            className="mt-3 rounded text-sm font-semibold text-[#1D4871] underline underline-offset-2 hover:text-[#10233A] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE]"
-          >
-            Choices
-          </button>
         </div>
       )}
 
