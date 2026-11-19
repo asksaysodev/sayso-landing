@@ -173,6 +173,13 @@ const nextConfig = {
         destination: '/case-studies/anderson-real-estate-group/',
         permanent: true,
       },
+      // The old product tour is retired; the guided demo on the homepage replaces it.
+      // The code is in git history (removed 2026-11-19).
+      {
+        source: '/product-tour/',
+        destination: '/#demo',
+        permanent: true,
+      },
       // Old SEO integration page, replaced by the partner page. Search Console still
       // reports the old URL as a 404.
       {

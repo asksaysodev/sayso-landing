@@ -218,7 +218,7 @@ The guided demo marks the control to press with a pulsing yellow ring (`.target`
 
 ### Product tour
 
-The product tour (`/product-tour`) keeps its own Follow Up Boss scene and overlay (`components/landing/ProductTour`), because its chapters carry their own notes, market data and scripts.
+The old product tour (`/product-tour`) was retired on 2026-11-19. The URL redirects to the guided demo on the homepage (`/#demo`), and the code is in git history.
 
 ---
 
