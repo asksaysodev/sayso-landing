@@ -68,7 +68,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
           />
         </ProseSection>
 
-        <ContentInlineCTA location="persona-page" />
+        <ContentInlineCTA location="persona-page" primary={entry.primaryCta} />
 
         <HowSaysoWorksGrid persona={entry.persona} items={entry.howSaysoWorks} />
 
@@ -80,6 +80,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
               className="mb-6"
               downloadAnalyticsId="cta-download-persona-page-get-started"
               demoAnalyticsId="cta-book-demo-persona-page-get-started"
+              primary={entry.primaryCta}
             />
           </>
         )}
@@ -104,6 +105,7 @@ export function PersonaPage({ entry }: PersonaPageProps) {
 
       <ContentCTA
         location="persona-page"
+        primary={entry.primaryCta}
         headline="Get Started Today"
         subheading={`See how Sayso helps ${/[A-Z].*[A-Z]/.test(entry.persona) ? entry.persona : entry.persona.toLowerCase()} sound better on every call.`}
       />

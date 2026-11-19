@@ -30,4 +30,6 @@ export interface UseCaseEntry {
   /** Links to relevant objection pages. */
   relatedObjections?: { title: string; href: string }[];
   ogImage?: string;
+  /** Which call to action gets the filled blue button. Team-focused pages pass 'demo'. Default 'download'. */
+  primaryCta?: 'download' | 'demo';
 }
