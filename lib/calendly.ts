@@ -75,8 +75,8 @@ export function loadCalendlyStyles(): void {
   document.head.appendChild(link);
 }
 
-/** Pages that embed Calendly themselves or book a different event. */
-const NO_PRELOAD_PATHS = ['/demo', '/request-demo'];
+/** Pages that embed Calendly themselves, book a different event, or (/contact) only open it on click. */
+const NO_PRELOAD_PATHS = ['/demo', '/request-demo', '/contact'];
 const PRELOAD_DELAY_MS = 3000;
 
 let preloaded: { overlay: HTMLDivElement; iframe: HTMLIFrameElement } | null = null;

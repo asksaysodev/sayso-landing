@@ -10,10 +10,14 @@
  * If the script never loads (commonly blocked by ad-blockers), polling is
  * capped and a fallback link to the booking page is shown so this high-intent
  * page is never a dead end.
+ *
+ * The parent sets the height (the iframe fills it). A brand skeleton covers the
+ * box until the Calendly iframe fires its load event.
  */
 
 import { useEffect, useRef, useState } from 'react';
 import { CALENDLY_DEMO_URL, loadCalendlyStyles, noteCalendlyEvent } from '@/lib/calendly';
+import { EmbedFrame } from '@/components/embeds/EmbedFrame';
 
 interface CalendlyInlineWidgetProps {
   url?: string;
@@ -32,6 +36,7 @@ export function CalendlyInlineWidget({
 }: CalendlyInlineWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -39,6 +44,19 @@ export function CalendlyInlineWidget({
 
     let cancelled = false;
     let attempts = 0;
+
+    // Calendly appends its iframe to the container; reveal it once it loads.
+    const onFrameLoad = () => {
+      if (!cancelled) setLoaded(true);
+    };
+    const observer = new MutationObserver(() => {
+      const frame = el.querySelector('iframe');
+      if (frame) {
+        observer.disconnect();
+        frame.addEventListener('load', onFrameLoad, { once: true });
+      }
+    });
+    observer.observe(el, { childList: true, subtree: true });
 
     function init() {
       if (cancelled || !el) return;
@@ -58,10 +76,12 @@ export function CalendlyInlineWidget({
     }
 
     setFailed(false);
+    setLoaded(false);
     init();
 
     return () => {
       cancelled = true;
+      observer.disconnect();
     };
   }, [url]);
 
@@ -86,5 +106,9 @@ export function CalendlyInlineWidget({
     );
   }
 
-  return <div ref={containerRef} className={className} style={style} />;
+  return (
+    <EmbedFrame loaded={loaded} className={className}>
+      <div ref={containerRef} className="h-full w-full" style={style} />
+    </EmbedFrame>
+  );
 }

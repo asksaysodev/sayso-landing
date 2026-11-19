@@ -54,7 +54,11 @@ export default function ContactPage() {
 
           <section className="w-full px-4 md:px-6 pb-16">
             <div className="max-w-[680px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">
-              <SsFormEmbed embedCode="c7xK2u06CRJ0" />
+              {/* Reserve: the form's loaded height at 375px, 640px and 768px+ (680px column). */}
+              <SsFormEmbed
+                embedCode="c7xK2u06CRJ0"
+                reserveClassName="min-h-[772px] sm:min-h-[704px] md:min-h-[682px]"
+              />
             </div>
           </section>
         </main>

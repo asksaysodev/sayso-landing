@@ -55,12 +55,16 @@ export default function RequestDemoPage() {
                 <span className="text-[#2367EE]">Request</span> a Demo.
               </>
             }
-            intro={<h2>Interested in learning more about Sayso?</h2>}
           />
 
           <section className="w-full px-4 md:px-6 pb-16">
             <div className="max-w-[680px] mx-auto rounded-[20px] overflow-hidden bg-white shadow-card">
-              <SsFormEmbed embedCode="LmIZLgSzGPfy" />
+              {/* The form opens with its own "Interested in learning more about Sayso?" line.
+                  Reserve: its loaded height at 375px, 640px and 768px+ (680px column). */}
+              <SsFormEmbed
+                embedCode="LmIZLgSzGPfy"
+                reserveClassName="min-h-[1182px] sm:min-h-[1026px] md:min-h-[1003px]"
+              />
             </div>
           </section>
         </main>

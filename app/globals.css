@@ -288,3 +288,36 @@
     display: none;
   }
 }
+
+/* Blog post body (BlogArticleContent wraps posts in .prose-sayso). Code blocks such as
+   "Call Notes" templates wrap instead of widening the page on phones. */
+.prose pre,
+.prose code,
+.prose-sayso pre,
+.prose-sayso code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
+.prose pre,
+.prose-sayso pre {
+  overflow-x: auto;
+}
+
+/* Embed skeleton (components/embeds/EmbedSkeleton.tsx): grey bars with a soft sweep
+   while a third-party form or scheduler loads. Static for reduced-motion users. */
+.embed-shimmer {
+  background: linear-gradient(90deg, #E9EDF1 0%, #F4F6F8 50%, #E9EDF1 100%);
+  background-size: 200% 100%;
+  animation: embedShimmer 1.4s ease-in-out infinite;
+}
+@keyframes embedShimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .embed-shimmer {
+    animation: none;
+    background: #E9EDF1;
+  }
+}

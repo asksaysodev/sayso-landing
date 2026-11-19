@@ -11,9 +11,14 @@
  * Pass the form's embed code (the id in the snippet, e.g. "LmIZLgSzGPfy").
  * `onSuccess` fires once after a successful submit with the email and phone the
  * visitor typed (read at submit time, since the embed hides the form after).
+ *
+ * Pass `reserveClassName` (min-height classes at the form's measured loaded
+ * height) to hold its space and show a skeleton until the form renders, so the
+ * content below does not jump.
  */
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { EmbedFrame } from '@/components/embeds/EmbedFrame';
 
 export interface SsFormValues {
   email?: string;
@@ -34,10 +39,18 @@ interface SsFormEmbedProps {
   className?: string;
   /** Called once when the embed shows its success state. */
   onSuccess?: (values: SsFormValues) => void;
+  /** Min-height classes to reserve until the form renders. Omit for no reserve or skeleton. */
+  reserveClassName?: string;
 }
 
-export default function SsFormEmbed({ embedCode, id, className, onSuccess }: SsFormEmbedProps) {
+// Show whatever is there after this long, so a blocked script never leaves a shimmer forever.
+const READY_TIMEOUT_MS = 10000;
+const REVEAL_DELAY_MS = 150;
+
+export default function SsFormEmbed({ embedCode, id, className, onSuccess, reserveClassName }: SsFormEmbedProps) {
   const rootRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
   const onSuccessRef = useRef(onSuccess);
   onSuccessRef.current = onSuccess;
 
@@ -88,9 +101,41 @@ export default function SsFormEmbed({ embedCode, id, className, onSuccess }: SsF
     };
   }, [embedCode]);
 
-  return (
+  // Ready once the script has drawn the form (the target div gets a height).
+  // A short delay lets the form's own styles apply before the reveal.
+  useEffect(() => {
+    if (reserveClassName === undefined) return;
+    const target = targetRef.current;
+    if (!target) return;
+    setReady(false);
+    let done = false;
+    const reveal = () => {
+      if (done) return;
+      done = true;
+      window.setTimeout(() => setReady(true), REVEAL_DELAY_MS);
+    };
+    const observer = new ResizeObserver(() => {
+      if (target.offsetHeight > 0) reveal();
+    });
+    observer.observe(target);
+    const timeout = window.setTimeout(reveal, READY_TIMEOUT_MS);
+    return () => {
+      done = true;
+      observer.disconnect();
+      window.clearTimeout(timeout);
+    };
+  }, [embedCode, reserveClassName]);
+
+  const form = (
     <div id={id} ref={rootRef} className={className}>
-      <div id={`ss-form-${embedCode}`} />
+      <div id={`ss-form-${embedCode}`} ref={targetRef} />
     </div>
+  );
+
+  if (reserveClassName === undefined) return form;
+  return (
+    <EmbedFrame loaded={ready} reserveClassName={reserveClassName}>
+      {form}
+    </EmbedFrame>
   );
 }
