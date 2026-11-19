@@ -64,7 +64,7 @@ export function SecurityPage() {
             We actively protect against common vulnerabilities and attacks.
           </p>
           <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
-            <li>Strict security headers (CSP, HSTS, X-Frame-Options)</li>
+            <li>Security headers on our website, including HSTS, clickjacking protection and content-type protection</li>
             <li>Protection against cross-site scripting (XSS)</li>
             <li>Secure API validation and routing</li>
             <li>
@@ -100,8 +100,23 @@ export function SecurityPage() {
             <li>Notes</li>
           </ul>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            This data is encrypted and access-controlled at all times. Call recordings are never
-            stored. We only store what is necessary to support the product and improve performance.
+            Sayso streams call audio to our transcription provider, AssemblyAI, to create the
+            transcript, and uses OpenAI to generate cues and notes from it. AssemblyAI does not keep
+            the audio or transcripts, and neither provider trains its models on your data. OpenAI
+            keeps requests for up to 30 days to check for abuse, then deletes them.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso does not keep call recordings: temporary audio files are deleted once processing
+            finishes. We store transcripts, conversation signals and notes, encrypted and
+            access-controlled. We only store what is necessary to support the product and improve
+            performance.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            See every provider we use and the data each one receives in our{' '}
+            <a href="/privacy/#service-providers" className="text-[#2367EE] hover:underline">
+              list of service providers
+            </a>
+            .
           </p>
         </section>
 
@@ -159,7 +174,7 @@ export function SecurityPage() {
             <li>Review and improve</li>
           </ul>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            If users are impacted, we will notify you within 48 hours.
+            If users are impacted, we will notify you within 72 hours.
           </p>
         </section>
 

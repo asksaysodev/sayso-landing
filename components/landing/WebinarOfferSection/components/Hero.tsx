@@ -11,10 +11,10 @@ export function Hero() {
   return (
     <section className="text-center px-5 pt-14 pb-10 md:pt-16 md:pb-12">
       <div className="max-w-[680px] mx-auto">
-        <span className="inline-block text-xs font-extrabold uppercase tracking-[0.14em] text-[#2367EE] mb-4">
+        <span className="inline-block font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#556B86] mb-4">
           Webinar attendees only
         </span>
-        <h1 className="font-comic text-5xl md:text-6xl text-[#1D4871] tracking-wide leading-none mb-5">
+        <h1 className="font-hero font-extrabold text-5xl md:text-6xl text-[#10233A] tracking-[-0.035em] leading-none mb-5">
           The offer
         </h1>
         <p className="text-lg md:text-xl text-[#1D4871]/65 max-w-xl mx-auto mb-5 leading-relaxed">

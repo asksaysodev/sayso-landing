@@ -1,3 +1,5 @@
+import { EmbedIframe } from '@/components/embeds/EmbedIframe';
+
 export function BlogNewsletterCTA() {
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-10">
@@ -10,9 +12,12 @@ export function BlogNewsletterCTA() {
             Subscribe for weekly tips on cold calling, lead conversion, and winning more appointments.
           </p>
           <div className="max-w-md mx-auto">
-            <iframe
+            {/* 57px = the slim form's loaded height at every width. */}
+            <EmbedIframe
               src="https://subscribe-forms.beehiiv.com/de7b925b-6f1f-4557-9fde-cf8005c34c5f"
-              className="w-full max-w-[414px] h-[57px] border-0 mx-auto block"
+              className="w-full h-[57px] border-0 block"
+              frameClassName="mx-auto max-w-[414px]"
+              compactSkeleton
               data-test-id="beehiiv-embed"
               data-analytics-id="form-newsletter-blog"
               scrolling="no"

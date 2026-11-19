@@ -76,7 +76,6 @@ sayso_landing_page/
 
 **Fonts:**
 - Hero: Manrope Bold (`font-hero`, 30px)
-- Comic headers / badges: Bangers (`font-comic`)
 - Headings / body / UI: Helvetica stack (`font-sans`, 18/16/12px)
 - Handwriting accents (ad pages only): Caveat (`font-handwriting`)
 

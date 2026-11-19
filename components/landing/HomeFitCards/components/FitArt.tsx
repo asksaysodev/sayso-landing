@@ -42,7 +42,7 @@ export function FitArt({ art }: { art: FitArtData }) {
         </WidgetScaler>
       )}
       {art.kind === 'big' && (
-        <span className="font-comic text-[56px] leading-none tracking-[0.04em] text-[#1D4871]">{art.text}</span>
+        <span className="font-hero text-[52px] font-extrabold leading-none tracking-[-0.03em] text-[#1D4871]">{art.text}</span>
       )}
     </div>
   );

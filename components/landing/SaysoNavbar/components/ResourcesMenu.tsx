@@ -87,7 +87,7 @@ export function ResourcesMenu({ onNavigate }: { onNavigate: () => void }) {
               <Link
                 href={section.href ?? resourcesHubHref}
                 onClick={onNavigate}
-                className="mb-2 block font-comic text-base tracking-wider text-[#1D4871] hover:text-[#2367EE]"
+                className="mb-2 block font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#556B86] hover:text-[#2367EE]"
               >
                 {section.label.toUpperCase()}
               </Link>

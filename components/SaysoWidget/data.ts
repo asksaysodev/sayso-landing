@@ -107,11 +107,13 @@ export const SAMPLE_CUES: Record<LeadType, string[]> = {
 /** Sample data only, not live market numbers. */
 export const SAMPLE_MARKET: MarketSample = {
   zip: '33331',
-  place: 'Miami, FL',
-  daysOnMarket: 90,
-  priceTrend: 'Up',
-  pricePerSqft: 412,
-  inventory: 'Low',
+  place: 'Fort Lauderdale, FL',
+  medianPrice: 1224750,
+  medianPricePerSqft: 449.64,
+  medianDaysOnMarket: 78,
+  newListings: 13,
+  market: 'Buyers',
+  priceTrend: 'down',
 };
 
 const caps = (...on: number[]) => [0, 1, 2, 3, 4, 5].map((i) => on.includes(i));

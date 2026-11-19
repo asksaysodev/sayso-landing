@@ -3,7 +3,7 @@
  * below the site's shared carousel (swipe row with prev / next arrows).
  */
 import Carousel from '@/components/ui/Carousel';
-import { muted, panel } from '../../HomeShared/styles';
+import { muted, panel, stepNumber } from '../../HomeShared/styles';
 import type { TeamValueProp } from '../data';
 
 export function TeamPropsRow({ props }: { props: TeamValueProp[] }) {
@@ -11,8 +11,8 @@ export function TeamPropsRow({ props }: { props: TeamValueProp[] }) {
     <Carousel label="Sayso for teams" itemName="card" trackClassName="grid grid-cols-3 gap-5">
       {props.map((prop, i) => (
         <div key={prop.title} className={`${panel} h-full p-6`}>
-          <h3 className="flex items-baseline gap-2.5 font-hero text-[18.5px] font-bold leading-[1.3] text-[#10233A]">
-            <span aria-hidden="true" className="font-comic text-2xl font-normal text-[#2367EE]">
+          <h3 className="flex items-start gap-2.5 font-hero text-[18.5px] font-bold leading-[1.3] text-[#10233A]">
+            <span aria-hidden="true" className={stepNumber}>
               {i + 1}
             </span>
             {prop.title}

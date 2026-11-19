@@ -6,7 +6,7 @@
 export function Hero() {
   return (
     <section className="text-center">
-      <span className="mb-5 inline-block rounded-md border border-[rgba(16,35,58,0.14)] bg-[#FFDE59] px-3 py-0.5 font-comic text-[20px] tracking-[0.07em] text-[#1D4871]">
+      <span className="mb-5 inline-block font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#556B86]">
         Sayso for Teams
       </span>
       <h1 className="mb-5 text-balance font-hero text-[40px] font-extrabold leading-[1.08] tracking-[-0.035em] text-[#10233A] sm:text-5xl lg:text-6xl">

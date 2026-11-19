@@ -11,7 +11,7 @@ export function DeadlineBar() {
   return (
     <div
       role="status"
-      className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-[#1D4871] px-4 py-2.5 text-white shadow-[0_2px_0_rgba(29,72,113,0.25)]"
+      className="sticky top-0 z-50 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-[#1D4871] px-4 py-2.5 text-white shadow-[0_8px_20px_-12px_rgba(16,35,58,0.45)]"
     >
       <span className="text-sm md:text-[15px]">
         Webinar pricing ends{' '}

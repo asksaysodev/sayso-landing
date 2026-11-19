@@ -10,7 +10,7 @@ export function Bonuses() {
   return (
     <section className="py-12 md:py-14">
       <div className="max-w-[680px] mx-auto px-5 md:px-6">
-        <h2 className="font-comic text-3xl md:text-4xl text-[#1D4871] text-center tracking-wide mb-2">
+        <h2 className="font-hero font-extrabold text-3xl md:text-4xl tracking-[-0.03em] text-[#10233A] text-center mb-2">
           Claim your webinar bonuses
         </h2>
         <p className="text-center text-[#1D4871]/60 mb-8">
