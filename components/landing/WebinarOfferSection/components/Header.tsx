@@ -5,10 +5,11 @@
  */
 
 import Image from 'next/image';
+import { pill } from '@/components/landing/HomeShared/styles';
 
 export function Header() {
   return (
-    <header className="w-full border-b-2 border-[#1D4871]/10 bg-white/70 backdrop-blur-sm">
+    <header className="w-full border-b border-[#1D4871]/10 bg-white/70 backdrop-blur-sm">
       <div className="max-w-[1000px] mx-auto px-5 md:px-6 h-16 flex items-center justify-between">
         <Image
           src="/logos/logo-pos-horizontal.png"
@@ -17,7 +18,7 @@ export function Header() {
           height={32}
           priority
         />
-        <span className="v2-pow-badge inline-block px-3 py-1 rounded-full text-[10px] md:text-xs tracking-widest uppercase">
+        <span className={pill}>
           Webinar Exclusive
         </span>
       </div>

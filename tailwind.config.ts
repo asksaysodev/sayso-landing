@@ -17,7 +17,6 @@ const config: Config = {
       },
       fontFamily: {
         hero: ['var(--font-manrope)', 'sans-serif'],
-        comic: ['var(--font-bangers)', 'cursive'],
         sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'system-ui', 'sans-serif'],
         handwriting: ['var(--font-caveat)', 'cursive'],
       },

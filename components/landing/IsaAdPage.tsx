@@ -46,7 +46,7 @@ function HandwrittenNote() {
 
 export function IsaAdPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[#F4F4F5] min-h-screen">
 
       {/* ── Hero ── */}
       <PersonaAdHero
@@ -70,10 +70,10 @@ export function IsaAdPage() {
 
       {/* ── Problem ── */}
       <section className="max-w-xl mx-auto px-6 py-8">
-        <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-1 leading-snug text-center">
+        <h2 className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl mb-1 leading-snug text-center">
           Your job is the phone. All day.
         </h2>
-        <p className="font-comic text-2xl sm:text-3xl text-[#1D4871] text-center mb-6 leading-snug">
+        <p className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl text-center mb-6 leading-snug">
           Call after call. Conversation after conversation.
         </p>
 
@@ -111,10 +111,10 @@ export function IsaAdPage() {
 
       {/* ── Mid-hook ── */}
       <section className="max-w-xl mx-auto px-6 py-6 text-center">
-        <p className="font-comic text-2xl sm:text-3xl text-[#1D4871] leading-snug">
+        <p className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl leading-snug">
           ISAs don&apos;t struggle with scripts.
         </p>
-        <p className="font-comic text-2xl sm:text-3xl text-[#1D4871] leading-snug mt-1">
+        <p className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl leading-snug mt-1">
           They struggle with keeping every conversation organized.
         </p>
         <div className="mt-4 space-y-1 text-sm text-[#1D4871]/65 italic">
@@ -125,16 +125,16 @@ export function IsaAdPage() {
       </section>
 
       {/* ── How Sayso helps ── */}
-      <section className="bg-[#f0f2f5] py-10">
+      <section className="bg-[#E3E8EC] py-10">
         <div className="max-w-xl mx-auto px-6">
-          <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-6">
+          <h2 className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl mb-6">
             Sayso supports you during the call.
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Step 1 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <div className="bg-white rounded-[20px] overflow-hidden shadow-card">
               <div className="px-4 pt-4 pb-2">
-                <h3 className="font-comic text-lg text-[#1D4871] mb-1">1. Start Sayso</h3>
+                <h3 className="font-hero text-lg font-bold text-[#10233A] mb-1">1. Start Sayso</h3>
                 <p className="text-xs text-[#1D4871]/60">Open the app before your next call block</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
@@ -143,9 +143,9 @@ export function IsaAdPage() {
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <div className="bg-white rounded-[20px] overflow-hidden shadow-card">
               <div className="px-4 pt-4 pb-2">
-                <h3 className="font-comic text-lg text-[#1D4871] mb-1">2. Stay organized</h3>
+                <h3 className="font-hero text-lg font-bold text-[#10233A] mb-1">2. Stay organized</h3>
                 <p className="text-xs text-[#1D4871]/60">It captures key details from every conversation automatically</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
@@ -173,11 +173,11 @@ export function IsaAdPage() {
                 desc: 'Your notes are already organized when the call ends.',
               },
             ].map((b) => (
-              <div key={b.title} className="bg-white rounded-2xl shadow-sm p-4 flex flex-col gap-2">
+              <div key={b.title} className="bg-white rounded-[20px] shadow-card p-4 flex flex-col gap-2">
                 <div className="w-9 h-9 rounded-full bg-[#2367EE]/10 flex items-center justify-center text-[#2367EE]">
                   {b.icon}
                 </div>
-                <h3 className="font-semibold text-[#1D4871] text-sm leading-tight">{b.title}</h3>
+                <h3 className="font-hero font-bold text-[#10233A] text-sm leading-tight">{b.title}</h3>
                 <p className="text-xs text-[#1D4871]/65 leading-relaxed">{b.desc}</p>
               </div>
             ))}
@@ -187,7 +187,7 @@ export function IsaAdPage() {
 
       {/* ── Closing CTA ── */}
       <section className="max-w-xl mx-auto px-6 py-10 text-center">
-        <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-3">
+        <h2 className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl mb-3">
           Win the Moment
         </h2>
         <p className="text-[#1D4871]/70 mb-8 text-base">

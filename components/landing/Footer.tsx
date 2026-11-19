@@ -7,6 +7,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { footerNav } from '@/lib/navigation';
 
+/** Eyebrow-style column heading, lightened for the navy footer. */
+const columnHeading = 'font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#B9C6D6]';
+
 const SOCIAL = [
   {
     label: 'Instagram',
@@ -38,9 +41,9 @@ export function Footer() {
           <Link href="/" aria-label="Sayso home" className="inline-block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFDE59]">
             <Image src="/logos/logo-neg-transparent-horizontal.png" alt="Sayso" width={84} height={27} />
           </Link>
-          <p className="mt-3 font-comic text-base tracking-wider text-[#FFDE59]">Win the Moment.</p>
+          <p className="mt-3 font-hero text-base font-extrabold tracking-[-0.01em] text-[#FFDE59]">Win the Moment.</p>
           <div className="mt-5">
-            <h3 className="mb-2 text-xs font-bold uppercase tracking-widest text-[#FFDE59]">Subscribe to our newsletter</h3>
+            <h3 className={`mb-2 ${columnHeading}`}>Subscribe to our newsletter</h3>
             <iframe
               src="https://subscribe-forms.beehiiv.com/de7b925b-6f1f-4557-9fde-cf8005c34c5f"
               className="h-[57px] w-full max-w-[414px] border-0"
@@ -71,7 +74,7 @@ export function Footer() {
         <div className="grid grid-cols-3 content-start gap-6">
           {footerNav.map((section) => (
             <div key={section.label}>
-              <h3 className="mb-2.5 font-comic text-base tracking-wider text-[#FFDE59]">{section.label.toUpperCase()}</h3>
+              <h3 className={`mb-2.5 ${columnHeading}`}>{section.label}</h3>
               <ul>
                 {section.links.map((link) => (
                   <li key={link.href}>

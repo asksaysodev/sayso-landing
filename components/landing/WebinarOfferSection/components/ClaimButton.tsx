@@ -29,7 +29,7 @@ export function ClaimButton({
     <a
       href={CLAIM_URL}
       data-analytics-id="cta-claim-offer-webinar"
-      className={`inline-flex items-center justify-center rounded-full bg-[#2367EE] font-bold text-white v2-comic-border focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]/40 ${VARIANT_CLS[variant]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-full bg-[#2367EE] font-bold text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]/40 ${VARIANT_CLS[variant]} ${className}`}
     >
       {label}
     </a>

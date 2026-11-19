@@ -14,7 +14,6 @@ export function HomeHowItWorks() {
       <div className={wrap}>
         <SectionHead
           id="how-title"
-          eyebrow="HOW IT WORKS"
           title={
             <>
               You make the call. <span className={soft}>Sayso keeps you on track.</span>

@@ -19,9 +19,16 @@ export const panelShadow = 'shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-1
 /** White card with a hairline border and soft shadow. */
 export const panel = `rounded-[20px] border border-[rgba(16,35,58,0.12)] bg-white ${panelShadow}`;
 
-/** Yellow Bangers section label. */
-export const eyebrow =
-  'inline-block rounded-md border border-[rgba(16,35,58,0.14)] bg-[#FFDE59] px-3 py-0.5 font-comic text-[20px] tracking-[0.07em] text-[#1D4871]';
+/** Section label: Manrope 12px 700 uppercase, 0.12em tracking, muted slate. */
+export const eyebrow = 'inline-block font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#556B86]';
+
+/** Small label pill: white, 1.5px navy hairline at 14% opacity, Manrope 12px 600 navy. */
+export const pill =
+  'inline-block rounded-full border-[1.5px] border-[rgba(29,72,113,0.14)] bg-white px-3 py-1 font-hero text-xs font-semibold text-[#1D4871]';
+
+/** Numbered step marker: Manrope 700 in a navy circle. */
+export const stepNumber =
+  'inline-grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#1D4871] font-hero text-sm font-bold leading-none text-white';
 
 /** Muted second half of a headline. #6b7f99 keeps 3:1 contrast for large text on #F4F4F5 (3.7:1) and the wash (3.3:1). */
 export const soft = 'text-[#6b7f99]';

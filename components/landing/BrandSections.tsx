@@ -3,6 +3,7 @@
  * Careers pages. Copy comes from the founder's brand identity doc.
  */
 import type { ReactNode } from 'react';
+import { eyebrow } from '@/components/landing/HomeShared/styles';
 
 const body = 'text-base text-[#1D4871]/80 leading-relaxed';
 
@@ -44,7 +45,7 @@ export function BeliefList({ includePurpose = false }: { includePurpose?: boolea
     <dl className="space-y-4">
       {items.map((b) => (
         <div key={b.label}>
-          <dt className="font-comic text-[15px] tracking-[0.08em] text-[#1D4871]/70">{b.label.toUpperCase()}</dt>
+          <dt className={`mb-1 ${eyebrow}`}>{b.label}</dt>
           <dd className={body}>{b.text}</dd>
         </div>
       ))}
@@ -79,9 +80,8 @@ const VALUES = [
 export function ValuesGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-3">
-      {VALUES.map((v, i) => (
+      {VALUES.map((v) => (
         <div key={v.title} className="rounded-[20px] bg-white p-5 shadow-card">
-          <p className="font-comic text-[15px] tracking-[0.08em] text-[#1D4871]/60 mb-1">0{i + 1}</p>
           <h3 className="font-hero text-lg font-extrabold tracking-[-0.01em] text-[#10233A] mb-2">{v.title}</h3>
           {v.lines.map((line) => (
             <p key={line} className="text-sm text-[#1D4871]/80 leading-relaxed mt-2">{line}</p>

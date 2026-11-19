@@ -14,7 +14,7 @@ export function ExpiredState() {
   return (
     <div className="min-h-screen flex items-center justify-center text-center px-5 py-16">
       <div className="max-w-[560px]">
-        <h1 className="font-comic text-4xl md:text-5xl text-[#1D4871] tracking-wide leading-tight mb-5">
+        <h1 className="font-hero font-extrabold text-4xl md:text-5xl text-[#10233A] tracking-[-0.03em] leading-tight mb-5">
           The webinar offer for your session has ended.
         </h1>
         <p className="text-lg text-[#1D4871]/70 mb-8 leading-relaxed">
@@ -25,7 +25,7 @@ export function ExpiredState() {
         </p>
         <a
           href={REGULAR_PRICING_URL}
-          className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-9 py-3.5 text-base font-bold text-white v2-comic-border v2-comic-btn focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]/40"
+          className="inline-flex items-center justify-center rounded-full bg-[#2367EE] px-9 py-3.5 text-base font-bold text-white v2-comic-btn focus:outline-none focus-visible:ring-4 focus-visible:ring-[#2367EE]/40"
         >
           See regular pricing
         </a>
