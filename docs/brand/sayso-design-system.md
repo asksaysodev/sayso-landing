@@ -186,7 +186,7 @@ import { WIDGET_PRESETS } from '@/components/SaysoWidget/data';
 - **Static or live.** Leave `interactive` off for a picture: it is hidden from assistive tech and ignores the pointer. Turn it on and pass `onAction(control)` / `onDotSelect(index)` to drive a live demo, as `components/landing/HomeLiveDemo` does.
 - **Presets.** `WIDGET_PRESETS` in `data.ts` has the standard static views: `alert`, `bar`, `cues`, `notes`, `smartCapture`, `pulse`, `playbook`. Import presets from `data.ts`, not from the client `index.tsx`, so server components get plain objects.
 - **Scaling.** The widget is drawn at its true size (584px column, 604px design width; 1010px with Playbook beside it). `WidgetScaler` scales it down uniformly to fit (never above 1, never distorted). `narrowWidth` switches to the stacked layout below 760px of container width (Playbook stacks under the column). `maxHeight` fixes the frame height and fits the widget inside it. `initialHeight` reserves space before the first measurement so nothing shifts.
-- **Sample data.** Market numbers (zip 33331, Miami) and the LPMAMA notes are sample data. Any page that shows them labels them, e.g. "Sample call and market data".
+- **Sample data.** Market numbers (zip 33331, Fort Lauderdale) and the LPMAMA notes are sample data. Any page that shows them labels them, e.g. "Sample call and market data".
 
 ### What it contains
 
@@ -194,7 +194,7 @@ import { WIDGET_PRESETS } from '@/components/SaysoWidget/data';
 |------|----------|
 | Call alert | White Sayso bolt (`/images/bolt-white.png`), "Sayso identified a call", Start and an X with a 12s countdown ring. Start morphs it into the toolbar. |
 | Toolbar | Grip, lead pill (B Buyer / S Seller), zip pill, reset / stop / timer while live, check button (cues and LPMAMA panel) and list button (Playbook). |
-| Pulse | One-line labels: avg days on market, 90-day price trend, avg price per ft², inventory. Optional count-up when it opens. |
+| Pulse | Laid out like the app: "City, ST - zip" header, Single Family / Condo switch, then six facts in two columns with info icons (median price, median price per sq ft, median days on market, new listings, market, L90D price trend arrow). No data-source note. Optional count-up when it opens. |
 | Cues | Arrow cues only, newest on top and highlighted, up to four. No timestamps and no header. |
 | LPMAMA | Six letters. A captured letter takes its color (`DOT_COLORS`) with a small pop. Its note bubble always sits under its letter and follows it as the panel grows. Copy button shows "Copied notes for your CRM". |
 | Playbook | The script for the lead type, `[Placeholders]` highlighted. Opens beside the column, or under it when stacked. |

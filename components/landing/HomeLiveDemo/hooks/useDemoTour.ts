@@ -10,7 +10,7 @@
 import type { SaysoWidgetProps, WidgetControl } from '@/components/SaysoWidget/types';
 import { useRef, useState } from 'react';
 import { prefersReducedMotion } from '@/lib/utils/motion';
-import { PHASE_A, PHASE_B, PHASE_C, STEPS, STOPPED } from '../data';
+import { PHASE_A, PHASE_C, STEPS, STOPPED } from '../data';
 import type { Beat, DemoState, StepKey } from '../types';
 import { useCallEngine } from './useCallEngine';
 
@@ -20,15 +20,15 @@ const formatTime = (n: number) =>
 /** Cues on screen after a stretch of the call (newest first, four at most). */
 const cuesOf = (beats: Beat[]) => beats.flatMap((b) => (b.kind === 'cue' ? [b.text] : [])).reverse();
 const AFTER_A = cuesOf(PHASE_A).slice(0, 4);
-const AFTER_B = [...cuesOf(PHASE_B), ...AFTER_A].slice(0, 4);
 const L_ONLY = [true, false, false, false, false, false];
 
 /** The call as it stands when each step begins, for the step arrows. */
 const STEP_STATE: Partial<Record<StepKey, Partial<DemoState>>> = {
   dot: { insight: true, cues: AFTER_A, caps: L_ONLY },
-  zip: { insight: true, cues: AFTER_A, caps: L_ONLY },
-  play: { insight: true, cues: AFTER_B, caps: L_ONLY, pulse: true, pulseShown: true },
-  reset: { insight: true, cues: AFTER_B, caps: L_ONLY, pulse: true, pulseShown: true, play: true },
+  // L's note stays open on the zip step until the visitor clicks Zip Code.
+  zip: { insight: true, cues: AFTER_A, caps: L_ONLY, tip: 0 },
+  play: { insight: true, cues: AFTER_A, caps: L_ONLY, pulse: true, pulseShown: true },
+  reset: { insight: true, cues: AFTER_A, caps: L_ONLY, pulse: true, pulseShown: true, play: true },
 };
 
 const HIGHLIGHT: Partial<Record<StepKey, WidgetControl>> = { start: 'start', zip: 'zip', play: 'play', reset: 'reset' };
@@ -63,13 +63,12 @@ export function useDemoTour() {
     const key = STEPS[n]?.key;
     // Step 3 shows L's note only when the visitor hovers or taps L.
     set(key === 'dot' ? { step: n, tip: null } : { step: n });
-    if (key === 'zip') run(PHASE_B);
     if (key === 'reset') run(PHASE_C);
   };
 
   /**
    * How long the result of each step stays on screen before the card moves on:
-   * long enough to read L's note, and for Pulse to open.
+   * long enough to start reading L's note, and for Pulse to open.
    */
   const SETTLE: Partial<Record<StepKey, number>> = { dot: 2000, zip: 1400, play: 900, reset: 900 };
 
@@ -82,16 +81,12 @@ export function useDemoTour() {
     if (key === 'start') return goStep(at + 1);
     advancing.current = at;
     const wait = SETTLE[key] ?? 600;
-    if (key === 'dot') {
-      // Fade L's note out first, then bring in the next step.
-      later(() => s.current.step === at && s.current.tip === 0 && set({ tip: null }), wait);
-      later(() => s.current.step === at && goStep(at + 1), wait + 300);
-      return;
-    }
     later(() => s.current.step === at && goStep(at + 1), wait);
   };
 
   const onAction = (control: WidgetControl) => {
+    // L's note stays open from step 3 until the visitor clicks Zip Code.
+    if (control === 'zip' && s.current.tip === 0) set({ tip: null });
     if (control === 'stop') {
       advancing.current = -1;
       setActed(-1);
@@ -100,7 +95,7 @@ export function useDemoTour() {
     if (control === 'start' || control === 'zip' || control === 'play' || control === 'reset') hit(control);
   };
 
-  /** Step 3: hovering (or tapping) L opens its note and holds it open; the tour moves on 2s later. */
+  /** Step 3: hovering (or tapping) L opens its note and holds it open until Zip Code is clicked; the tour moves on 2s later. */
   const openL = () => {
     if (stepKey() !== 'dot' || !s.current.caps[0]) return;
     if (!s.current.insight) openInsight(true);

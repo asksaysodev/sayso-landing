@@ -208,11 +208,11 @@ export function ConsentManager() {
             Cookies help us improve Sayso and show you relevant content.
           </p>
           <div className="mt-4 grid grid-cols-2 gap-3">
-            <button ref={bannerAcceptRef} type="button" className={bluePill} onClick={() => decide({ analytics: true, advertising: true })}>
-              Accept all
-            </button>
             <button type="button" className={whitePill} onClick={() => decide({ analytics: false, advertising: false })}>
               Reject non-essential
+            </button>
+            <button ref={bannerAcceptRef} type="button" className={bluePill} onClick={() => decide({ analytics: true, advertising: true })}>
+              Accept all
             </button>
           </div>
         </div>
