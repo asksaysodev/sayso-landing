@@ -347,6 +347,11 @@ export function PrivacyPolicyPage() {
               <span className="font-semibold text-[#1D4871]">Vendors &amp; Service Providers:</span>{' '}
               With trusted third parties who perform services for us (e.g., hosting, analytics,
               payment processing) under contractual confidentiality and data protection obligations.
+              The full list is in{' '}
+              <a href="#service-providers" className="text-[#2367EE] hover:underline">
+                Service Providers We Use
+              </a>{' '}
+              below.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">
@@ -371,6 +376,117 @@ export function PrivacyPolicyPage() {
               believe disclosure is necessary to prevent fraud, security issues, or potential harm.
             </li>
           </ul>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Service Providers */}
+        <section id="service-providers" className="mt-10 scroll-mt-24 space-y-4">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
+            Service Providers We Use
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            These are the providers that help us run Sayso, what each one does, and the data it
+            receives.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[560px] text-left text-sm text-[#1D4871]/80 leading-relaxed">
+              <thead>
+                <tr className="text-[#10233A]">
+                  <th scope="col" className="py-2 pr-4 font-bold">Provider</th>
+                  <th scope="col" className="py-2 pr-4 font-bold">What they do</th>
+                  <th scope="col" className="py-2 font-bold">Data they receive</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Heroku</td>
+                  <td className="py-2.5 pr-4">Application hosting (US)</td>
+                  <td className="py-2.5">All data the Sayso app processes</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Supabase</td>
+                  <td className="py-2.5 pr-4">Database and authentication</td>
+                  <td className="py-2.5">Account details, transcripts, conversation signals and notes</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">AssemblyAI</td>
+                  <td className="py-2.5 pr-4">Call audio transcription</td>
+                  <td className="py-2.5">Live call audio (not kept, not used for training)</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">OpenAI</td>
+                  <td className="py-2.5 pr-4">AI processing of transcripts for cues and notes</td>
+                  <td className="py-2.5">Call transcripts (not used for training)</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Stripe</td>
+                  <td className="py-2.5 pr-4">Payments</td>
+                  <td className="py-2.5">Billing name, email and payment details</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Resend</td>
+                  <td className="py-2.5 pr-4">Transactional email</td>
+                  <td className="py-2.5">Your email address and the email we send</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Sentry</td>
+                  <td className="py-2.5 pr-4">Error monitoring</td>
+                  <td className="py-2.5">Error reports, which can include your account ID</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Vercel, Netlify</td>
+                  <td className="py-2.5 pr-4">Website and web app hosting</td>
+                  <td className="py-2.5">Visit data such as IP address</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">RentCast</td>
+                  <td className="py-2.5 pr-4">Property and market data (Pulse, Sayso Map)</td>
+                  <td className="py-2.5">Zip codes and addresses you look up</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Google (Analytics, Tag Manager, Places)</td>
+                  <td className="py-2.5 pr-4">Site analytics, address lookup</td>
+                  <td className="py-2.5">Website usage (if you allow analytics) and addresses typed for lookup</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Meta</td>
+                  <td className="py-2.5 pr-4">Advertising measurement (Meta pixel)</td>
+                  <td className="py-2.5">Website visit data, only if you allow advertising</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Vector</td>
+                  <td className="py-2.5 pr-4">Visitor identification</td>
+                  <td className="py-2.5">Website visit data, only if you allow advertising</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Leadsy</td>
+                  <td className="py-2.5 pr-4">Visitor identification</td>
+                  <td className="py-2.5">Website visit data, only if you allow advertising</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Calendly</td>
+                  <td className="py-2.5 pr-4">Demo scheduling</td>
+                  <td className="py-2.5">Name, email and booking details</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">beehiiv</td>
+                  <td className="py-2.5 pr-4">Newsletter</td>
+                  <td className="py-2.5">Email address</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Sure Send</td>
+                  <td className="py-2.5 pr-4">Demo request forms on our website</td>
+                  <td className="py-2.5">Name, email and phone number you enter</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Follow Up Boss, Sure Send, Zoom</td>
+                  <td className="py-2.5 pr-4">Integrations, only when you connect them</td>
+                  <td className="py-2.5">The notes and data you choose to sync</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
