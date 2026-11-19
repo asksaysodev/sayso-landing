@@ -6,7 +6,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { CalendlyBookingTracker } from '@/components/CalendlyBookingTracker'
 import { headerNav, primaryNav, resourcesFeatured } from '@/lib/navigation'
-import { siteUrl, gtmId, metaPixelId } from '@/lib/config'
+import { siteUrl, gtmId } from '@/lib/config'
+import { consentDefaultScript } from '@/lib/consent'
+import { ConsentManager } from '@/components/consent/ConsentManager'
 import { SAYSO_ORG_ID } from '@/lib/seo/schema'
 import { AUTHORS } from '@/lib/authors'
 
@@ -164,13 +166,17 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} ${bangers.variable}`}>
       <head>
       {/* GTM (and the GA4 tag inside it) loads only on www.asksayso.com, so Vercel
-          previews and localhost stay out of the live GA4 property. */}
+          previews and localhost stay out of the live GA4 property. Google Consent
+          Mode v2 (advanced): consent defaults to denied, and a stored choice is
+          applied as an update, before the GTM snippet runs (lib/consent.ts).
+          Meta, Vector and Leadsy load from ConsentManager after Advertising consent. */}
       {gtmId && (
         <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            __html: `${consentDefaultScript}
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});if(w.location.hostname!=='${PRODUCTION_HOSTNAME}')return;var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -178,34 +184,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       )}
-      {metaPixelId && (
-        <Script
-          id="meta-pixel"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '${metaPixelId}');
-fbq('track', 'PageView');`,
-          }}
-        />
-      )}
-      {/* lazyOnload: visitor ID tags wait for the page's load event so they do
-          not compete with the hero for bandwidth. GTM above stays afterInteractive
-          so GA4 still records visitors who leave quickly. */}
-      <Script
-        id="vtag-ai-js"
-        src="https://r2.leadsy.ai/tag.js"
-        data-pid="1nhqD1cnSGYVDeXLS"
-        data-version="062024"
-        strategy="lazyOnload"
-      />
       {/*
         Calendly booking widget loaded once globally: the script powers both the
         inline scheduler on /demo and the "Book a Demo" popup triggered from
@@ -245,14 +223,11 @@ fbq('track', 'PageView');`,
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
         />
-        <Script id="vector-pixel" strategy="lazyOnload">{`
-          !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
-          vector.load("80c5a758-0d80-4bfc-a31f-ca301c7405b8");
-        `}</Script>
         <DemoCalendarProvider>
           {children}
         </DemoCalendarProvider>
         <CalendlyBookingTracker />
+        <ConsentManager />
         <Analytics />
         <SpeedInsights />
         <Script

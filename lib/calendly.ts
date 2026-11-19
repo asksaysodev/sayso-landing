@@ -48,8 +48,9 @@ export function calendlyUrlWithEmail(url: string, email?: string): string {
 // Preloaded demo popup
 //
 // Opening Calendly from scratch takes ~2.7s (the booking app plus an
-// availability fetch). So a few seconds after the page loads we build the demo
-// popup hidden, with the same markup and URL Calendly's own widget uses (styled
+// availability fetch). So a few seconds after the page loads (and only once the
+// visitor has allowed any non-essential cookies, see CalendlyBookingTracker) we
+// build the demo popup hidden, with the same markup and URL Calendly's own widget uses (styled
 // by widget.css), and "Book a demo" just reveals it.
 //
 // Side effect: Calendly's GA4 "invitee_event_type_page" now fires for every
@@ -166,7 +167,7 @@ function buildPreloaded(): void {
 
 /**
  * Builds the hidden demo popup a few seconds after load, once the page is idle.
- * Call once from the root layout.
+ * Called from CalendlyBookingTracker after consent; safe to call more than once.
  */
 export function preloadDemoPopup(): void {
   if (typeof window === 'undefined' || preloaded) return;

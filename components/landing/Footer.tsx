@@ -6,6 +6,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { footerNav } from '@/lib/navigation';
+import { PrivacyChoicesIcon, PrivacyChoicesLink } from '@/components/consent/PrivacyChoicesLink';
 
 const SOCIAL = [
   {
@@ -96,6 +97,14 @@ export function Footer() {
                     )}
                   </li>
                 ))}
+                {section.label === 'Legal' && (
+                  <li>
+                    <PrivacyChoicesLink className="flex items-center gap-1.5 py-1 text-left text-white/80 transition-colors hover:text-white">
+                      Your Privacy Choices
+                      <PrivacyChoicesIcon className="shrink-0" />
+                    </PrivacyChoicesLink>
+                  </li>
+                )}
               </ul>
             </div>
           ))}
