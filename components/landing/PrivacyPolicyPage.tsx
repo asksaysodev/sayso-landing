@@ -477,7 +477,7 @@ export function PrivacyPolicyPage() {
                 <tr className="border-t border-[#1D4871]/10 align-top">
                   <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Sure Send</td>
                   <td className="py-2.5 pr-4">Demo request forms on our website</td>
-                  <td className="py-2.5">Name, email and phone number you enter</td>
+                  <td className="py-2.5">Email and phone number you enter</td>
                 </tr>
                 <tr className="border-t border-[#1D4871]/10 align-top">
                   <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Follow Up Boss, Sure Send, Zoom</td>
