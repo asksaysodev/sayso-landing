@@ -19,7 +19,7 @@ What the visual system communicates:
 - **Friendly** through small yellow accents and the superhero in the final call to action.
 
 ### Labels: eyebrows and pills
-- **Eyebrow** (`eyebrow` in `components/landing/HomeShared/styles.ts`): Manrope 12px 700 uppercase, 0.12em tracking, `#556B86`. Use one only when it adds information. Delete any eyebrow that repeats the heading under it. On the navy footer the same style is lightened to `#B9C6D6`.
+- **Section tag** (`eyebrow` in `components/landing/HomeShared/styles.ts`): yellow `#FFDE59` box with a hairline border, Manrope 12px 800 uppercase, 0.1em tracking, `#1D4871`. It sits above homepage section titles and separates the sections. `tag` is the smaller version for badges such as the review cards. For plain small labels inside cards and lists, use `label` (Manrope 12px 700 uppercase, `#556B86`); on the navy footer that style is lightened to `#B9C6D6`.
 - **Pill** (`pill` in the same file): white, 1.5px navy border at 14% opacity, Manrope 12px 600 navy. For category tags, card banners and small badges.
 - **Step numbers** (`stepNumber`): Manrope 700 in a navy circle.
 

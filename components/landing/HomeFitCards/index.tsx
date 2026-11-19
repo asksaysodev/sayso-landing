@@ -12,7 +12,7 @@ export function HomeFitCards() {
   return (
     <section id="fits" className={`${section} ${wash}`} aria-labelledby="fits-title">
       <div className={wrap}>
-        <SectionHead id="fits-title" title="Fits the way you already work." />
+        <SectionHead id="fits-title" eyebrow="MADE TO FIT" title="Fits the way you already work." />
         <Carousel label="Made to fit" itemName="card" loop trackClassName="grid grid-cols-3 gap-5">
           {FIT_CARDS.map((card) => (
             <FitCard key={card.title} card={card} />

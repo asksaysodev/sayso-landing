@@ -3,7 +3,7 @@
  * questions. The full list lives on /faq.
  */
 import Link from 'next/link';
-import { section, wash, wrap, focusRing } from '../HomeShared/styles';
+import { section, wash, wrap, eyebrow, focusRing } from '../HomeShared/styles';
 import { FaqList } from '@/components/pages/FaqList';
 import { HOME_FAQ_ITEMS } from '@/lib/content/faq';
 
@@ -12,7 +12,8 @@ export function HomeFAQ() {
     <section id="faq" className={`${section} ${wash}`} aria-labelledby="faq-title">
       <div className={`${wrap} grid max-w-[1040px] grid-cols-1 gap-10 min-[961px]:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]`}>
         <div>
-          <h2 id="faq-title" className="text-balance font-hero text-[clamp(28px,4vw,40px)] font-extrabold tracking-[-0.03em] text-[#10233A]">
+          <span className={eyebrow}>FAQ</span>
+          <h2 id="faq-title" className="mt-[18px] text-balance font-hero text-[clamp(28px,4vw,40px)] font-extrabold tracking-[-0.03em] text-[#10233A]">
             Frequently asked questions
           </h2>
           <p className="mt-3 text-[#556B86]">

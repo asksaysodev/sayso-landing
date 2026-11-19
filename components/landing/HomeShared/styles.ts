@@ -19,8 +19,16 @@ export const panelShadow = 'shadow-[0_1px_2px_rgba(16,35,58,0.06),0_14px_34px_-1
 /** White card with a hairline border and soft shadow. */
 export const panel = `rounded-[20px] border border-[rgba(16,35,58,0.12)] bg-white ${panelShadow}`;
 
-/** Section label: Manrope 12px 700 uppercase, 0.12em tracking, muted slate. */
-export const eyebrow = 'inline-block font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#556B86]';
+/** Yellow section label (the tag above section titles), in the site font. */
+export const eyebrow =
+  'inline-block rounded-md border border-[rgba(16,35,58,0.14)] bg-[#FFDE59] px-3 py-1 font-hero text-xs font-extrabold uppercase tracking-[0.1em] text-[#1D4871]';
+
+/** Small yellow tag, such as the badge on a review card. */
+export const tag =
+  'inline-block rounded-md border border-[rgba(16,35,58,0.14)] bg-[#FFDE59] px-2 py-0.5 font-hero text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#1D4871]';
+
+/** Plain grey caps label, for small labels inside cards and lists. */
+export const label = 'inline-block font-hero text-xs font-bold uppercase tracking-[0.12em] text-[#556B86]';
 
 /** Small label pill: white, 1.5px navy hairline at 14% opacity, Manrope 12px 600 navy. */
 export const pill =

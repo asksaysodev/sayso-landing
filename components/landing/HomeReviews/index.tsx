@@ -14,7 +14,7 @@ export function HomeReviews({ logos = true }: { logos?: boolean }) {
   return (
     <section id="reviews" className={`${section} ${wash}`} aria-labelledby="reviews-title">
       <div className={wrap}>
-        <SectionHead id="reviews-title" eyebrow="REVIEWS" title="Agents on what changed." />
+        <SectionHead id="reviews-title" eyebrow="REVIEWS" title="Hear from agents" />
         <Carousel label="Agent reviews" itemName="review" loop trackClassName="grid grid-cols-4 auto-rows-fr gap-[18px]">
           {REVIEWS.map((review) => (
             <ReviewCard key={review.name} review={review} />

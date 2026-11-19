@@ -3,7 +3,7 @@
  * Careers pages. Copy comes from the founder's brand identity doc.
  */
 import type { ReactNode } from 'react';
-import { eyebrow } from '@/components/landing/HomeShared/styles';
+import { label } from '@/components/landing/HomeShared/styles';
 
 const body = 'text-base text-[#1D4871]/80 leading-relaxed';
 
@@ -45,7 +45,7 @@ export function BeliefList({ includePurpose = false }: { includePurpose?: boolea
     <dl className="space-y-4">
       {items.map((b) => (
         <div key={b.label}>
-          <dt className={`mb-1 ${eyebrow}`}>{b.label}</dt>
+          <dt className={`mb-1 ${label}`}>{b.label}</dt>
           <dd className={body}>{b.text}</dd>
         </div>
       ))}
