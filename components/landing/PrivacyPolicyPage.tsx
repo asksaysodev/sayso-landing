@@ -1,11 +1,13 @@
 import { PageHeader } from '@/components/pages/PageHeader';
+import { PrivacyChoicesLink } from '@/components/consent/PrivacyChoicesLink';
+
 export function PrivacyPolicyPage() {
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
       <PageHeader
         standalone
         title="Privacy Policy"
-        intro={<p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>}
+        intro={<p className="text-sm text-[#1D4871]/50">Last updated: November 19, 2026</p>}
       />
       <div className="max-w-[760px] mx-auto px-6 pb-16 md:pb-24">
         <div className="border-t border-[#1D4871]/10" />
@@ -101,20 +103,24 @@ export function PrivacyPolicyPage() {
               <span className="font-semibold text-[#1D4871]">Cookies &amp; Tracking:</span> Small
               data files stored on your device to enable functionality, improve performance, and
               analyze usage. We use tools like Google Analytics to better understand user behavior.
-              You can adjust cookie settings in your browser.
+              You can choose which cookies we use through <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, and adjust
+              cookie settings in your browser.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">Advertising Measurement:</span> We use
               advertising tools, such as the Meta pixel, that collect information about your visit
               and share it with advertising partners to measure and target our advertising. Some
-              state laws treat this as "sharing" personal information, and you can opt out as
-              described in "Your Rights &amp; Choices" below.
+              state laws treat this as "sharing" personal information, and you can opt out at any
+              time through <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, as described in "Your Rights &amp;
+              Choices" below.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">Visitor Identification:</span> We use
-              a visitor identification service that may associate your visit with business contact
-              information, such as a name, company, or business email, to help us understand who is
-              interested in Sayso.
+              Vector and Leadsy, visitor identification services that may associate your visit with
+              business contact information, such as a name, company, or business email, to help us
+              understand who is interested in Sayso. They load only if you allow advertising and
+              visitor identification, and you can turn them off at any time through{' '}
+              <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />.
             </li>
           </ul>
 
@@ -256,14 +262,44 @@ export function PrivacyPolicyPage() {
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">Retention &amp; Deletion</h3>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             We retain session records while your account is active. After account closure, we
-            delete raw identifiable records within 30 days, except de-identified interaction,
+            delete your account data, including raw identifiable session records, within 30 days,
+            except de-identified interaction,
             reaction, signal, and outcome records, and any data already incorporated into trained
             models or aggregates, which we retain. You can request a copy of your conversation
             data, or ask us to delete it, by emailing{' '}
             <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
               support@asksayso.com
             </a>
-            . See "Your Rights &amp; Choices" below for details.
+            . See "Your Rights &amp; Choices" below for details. Sayso Map logs follow their own
+            retention, described in "Sayso Map" below.
+          </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Sayso Map */}
+        <section className="mt-10 space-y-4">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
+            Sayso Map
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            When you use Sayso Map, we log the following:
+          </p>
+          <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
+            <li>The name you enter</li>
+            <li>Your device ID</li>
+            <li>Your IP address and approximate location</li>
+            <li>Your search inputs and the results we return</li>
+          </ul>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We use these logs to provide support, prevent abuse, and improve the product.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso Map logs are kept until you ask us to delete them. To ask, email{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>{' '}
+            with the subject line "Data Deletion Request."
           </p>
         </section>
 
@@ -274,6 +310,10 @@ export function PrivacyPolicyPage() {
           <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             How We Use Your Information
           </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso uses AI providers (AssemblyAI for transcription, OpenAI for language processing) to
+            turn your calls into cues, notes and summaries.
+          </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             We use the information we collect to:
           </p>
@@ -315,7 +355,8 @@ export function PrivacyPolicyPage() {
               With analytics and advertising partners, such as Google and Meta, who collect
               information about your visit through cookies and similar technologies to help us
               analyze site usage and measure and target advertising. You can opt out of this
-              sharing as described in "Your Rights &amp; Choices" below.
+              sharing through <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, as described in "Your Rights &amp;
+              Choices" below.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">Legal Requirements:</span> When
@@ -360,11 +401,19 @@ export function PrivacyPolicyPage() {
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             If you live in a state that gives you the right to opt out of the sale or sharing of
-            personal information and you would like to opt out, email your request to{' '}
+            personal information, you can opt out at any time through{' '}
+            <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, which is also linked in the footer of every page.
+            Turning off advertising and visitor identification there stops the Meta pixel, Vector
+            and Leadsy for your browser. You can also email your request to{' '}
             <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
               support@asksayso.com
             </a>{' '}
             with the subject line "Opt Out Request."
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We honor Global Privacy Control (GPC). If your browser sends a GPC signal, we treat it as
+            a request to opt out of sale and sharing, and we turn off advertising and visitor
+            identification for that browser.
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             You have the right to request that we delete personal data we've collected from you.
@@ -379,8 +428,8 @@ export function PrivacyPolicyPage() {
             data.
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            Once verified, we'll delete your data from our active systems and confirm completion
-            within 30 days, unless we're required to retain certain information for legal, security,
+            Once verified, we'll delete your account data from our active systems and confirm
+            completion within 30 days, unless we're required to retain certain information for legal, security,
             or contractual reasons (for example, to comply with financial recordkeeping laws or
             resolve disputes).
           </p>
