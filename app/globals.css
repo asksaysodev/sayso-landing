@@ -400,3 +400,18 @@
     display: none;
   }
 }
+
+/* Blog post body (BlogArticleContent wraps posts in .prose-sayso). Code blocks such as
+   "Call Notes" templates wrap instead of widening the page on phones. */
+.prose pre,
+.prose code,
+.prose-sayso pre,
+.prose-sayso code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
+.prose pre,
+.prose-sayso pre {
+  overflow-x: auto;
+}
