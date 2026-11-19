@@ -58,6 +58,7 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 | `cta-download-page` | Opens the create-account flow (`openSignup`) | [components/landing/DownloadPage.tsx](../../components/landing/DownloadPage.tsx) (via `DownloadButton`) | /download main button |
 | `pricing-billing-toggle-monthly` / `pricing-billing-toggle-annual` | Switches the billing period | [app/pricing/page.tsx](../../app/pricing/page.tsx) (passed to HomePricing) | /pricing billing toggle |
 | `cta-book-demo-pricing-coming-soon` | Link to `/demo` | [app/pricing/page.tsx](../../app/pricing/page.tsx) | "Questions? Chat with our team" below the pricing cards |
+| `link-faq-all-pricing` | Link to `/faq/` | [components/landing/HomePricing/components/PricingFaq.tsx](../../components/landing/HomePricing/components/PricingFaq.tsx) | "See all questions" under the /pricing FAQ (inside the `data-faq` marker) |
 | `cta-onboarding-get-started` | Starts onboarding flow | [components/onboarding/OnboardingFlow.tsx](../../components/onboarding/OnboardingFlow.tsx) | Welcome screen start button |
 | `cta-book-demo-onboarding-complete` | Opens demo calendar | [components/onboarding/OnboardingNavButtons.tsx](../../components/onboarding/OnboardingNavButtons.tsx) | Terminal CTA after onboarding |
 | `cta-book-demo-subscribed` | Opens demo calendar | [app/subscribed/BookDemoCTA.tsx](../../app/subscribed/BookDemoCTA.tsx) | Hero CTA on /subscribed confirmation page |
