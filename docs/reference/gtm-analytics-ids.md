@@ -12,12 +12,15 @@ All attributes use the `data-analytics-id` name (namespaced, won't collide with 
 
 | `data-analytics-id` | Action | File | Notes |
 |---|---|---|---|
-| `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Desktop navbar, visible on every page |
-| `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile hamburger menu, only in DOM when menu open |
+| `cta-book-demo-navbar` | Opens demo calendar | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Desktop navbar "Book a demo" text link beside Log in (1024px and up), every page |
+| `cta-download-navbar` | Opens the create-account flow (`openSignup`) | [components/landing/SaysoNavbar/index.tsx](../../components/landing/SaysoNavbar/index.tsx) | Navbar "Get Sayso" blue pill, every page and every width. Reuses the id retired in PR #124 |
+| `cta-book-demo-mobile-menu` | Opens demo calendar | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile drawer "Book a demo" row under Log in, only in DOM when menu open |
+| `cta-download-mobile-menu` | Opens the create-account flow (`openSignup`) | [components/landing/SaysoNavbar/components/MobileMenu.tsx](../../components/landing/SaysoNavbar/components/MobileMenu.tsx) | Mobile drawer "Get Sayso" blue pill, only in DOM when menu open. Reuses the id retired in PR #124 |
 | `nav-composer` | Opens composer.asksayso.com (free script generator) in a new tab | [lib/navigation.ts](../../lib/navigation.ts) (`resourcesFeatured`) | Resources menu and mobile drawer |
 | `cta-team-platform-strip` | Opens demo calendar | [components/landing/HomeTopStrip.tsx](../../components/landing/HomeTopStrip.tsx) | Pill strip above the homepage navbar ("see the team platform") |
 | `cta-download-hero` | Opens signup and download | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero |
-| `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero. Hidden at 640px and below (navbar Book a demo covers phones) |
+| `cta-book-demo-hero` | Opens demo calendar | [components/landing/HomeHero/components/HeroActions.tsx](../../components/landing/HomeHero/components/HeroActions.tsx) | Homepage hero "Book a demo →" text link beside Get Sayso, every width |
+| `cta-try-demo-hero` | Scrolls to the guided demo (`#demo`) | [components/landing/HomeHero/components/DemoScrollCue.tsx](../../components/landing/HomeHero/components/DemoScrollCue.tsx) | Small "Try the live demo ↓" cue at the foot of the homepage hero |
 | `cta-book-demo-live-demo` | Opens demo calendar | [components/landing/HomeLiveDemo/components/EndCover.tsx](../../components/landing/HomeLiveDemo/components/EndCover.tsx) | Cover over the demo stage after the homepage guided demo ends |
 | `cta-download-live-demo` | Opens the create-account flow (`openSignup`) | [components/landing/HomeLiveDemo/components/CoachCard.tsx](../../components/landing/HomeLiveDemo/components/CoachCard.tsx) | End card of the homepage guided demo (Get Sayso) |
 | `cta-download-home-pricing-individual` | Opens the create-account flow (`openSignup`) | [components/landing/HomePricing/types.ts](../../components/landing/HomePricing/types.ts) (`HOME_PRICING_IDS`) | Homepage pricing, Individual Agent+ Get Sayso. /pricing keeps `cta-download-pricing-individual` (below) |
@@ -69,8 +72,6 @@ These ids no longer exist on the site. Retire (pause or delete) the matching GTM
 
 | `data-analytics-id` | Was | Retired by | Why |
 |---|---|---|---|
-| `cta-download-navbar` | Desktop navbar Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | The new navbar has only Log in and Book a demo, per the approved design |
-| `cta-download-mobile-menu` | Mobile menu Download button (opened the system-select modal) | Flat redesign foundation (PR #124) | Same as above: the mobile drawer ends with Log in and Book a demo |
 | `contact-email` | Footer "Email Support" `mailto:support@asksayso.com` link | Flat redesign foundation (PR #124) | Email Support was removed from the footer on purpose |
 | `cta-download-three-steps-section` | Old homepage "How it works" Download button | Homepage redesign (PR #126) | The old three-step section was replaced by the new How it works section |
 | `cta-book-demo-three-steps-section` | Old homepage "How it works" Book a demo button | Homepage redesign (PR #126) | Same as above |

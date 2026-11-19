@@ -1,9 +1,10 @@
 'use client';
 
 /**
- * Site navbar: logo, primary links with the Resources menu, log in and the
- * Book a demo button. Sticky and full width; it picks up a blurred background
- * once the page scrolls.
+ * Site navbar: logo, primary links with the Resources menu, Book a demo and
+ * log in as plain links, and the blue Get Sayso pill. Phones show only the
+ * pill and the menu button; the drawer holds the rest. Sticky and full width;
+ * it picks up a blurred background once the page scrolls.
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -14,19 +15,27 @@ import { loginHref } from '@/lib/navigation';
 import { DesktopNav } from './components/DesktopNav';
 import { MobileMenu } from './components/MobileMenu';
 
+/** Plain navy text link in the bar (Book a demo, Log in). */
+const navLink =
+  'h-10 items-center rounded-full px-3 text-sm font-semibold text-[#1D4871] transition-colors hover:bg-[#1D4871]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2';
+
 export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean } = {}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // When autoHide is on (e.g. the Product Tour page), the bar slides away on
   // scroll-down and returns on scroll-up to free up vertical space.
   const [hidden, setHidden] = useState(false);
-  const { openDemoCalendar } = useDemoCalendar();
+  const { openDemoCalendar, openSignup } = useDemoCalendar();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
   const bookDemoFromMenu = useCallback(() => {
     setIsMobileMenuOpen(false);
     openDemoCalendar();
   }, [openDemoCalendar]);
+  const getSaysoFromMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+    openSignup();
+  }, [openSignup]);
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -63,21 +72,24 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
         <DesktopNav />
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <a
-            href={loginHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex h-10 items-center rounded-full px-3 text-sm font-semibold text-[#1D4871] transition-colors hover:bg-[#1D4871]/5"
-          >
-            Log in
-          </a>
           <button
             type="button"
             onClick={openDemoCalendar}
             data-analytics-id="cta-book-demo-navbar"
-            className="inline-flex h-10 items-center rounded-full bg-white px-4 text-sm font-semibold text-[#10233A] shadow-card-sm transition hover:-translate-y-px hover:shadow-card-sm-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
+            className={`hidden lg:inline-flex ${navLink}`}
           >
             Book a demo
+          </button>
+          <a href={loginHref} target="_blank" rel="noopener noreferrer" className={`hidden lg:inline-flex ${navLink}`}>
+            Log in
+          </a>
+          <button
+            type="button"
+            onClick={openSignup}
+            data-analytics-id="cta-download-navbar"
+            className="inline-flex h-10 items-center rounded-full bg-[#2367EE] px-4 text-sm font-semibold text-white shadow-button transition hover:-translate-y-px hover:bg-[#1F5AD6] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
+          >
+            Get Sayso
           </button>
           <button
             ref={menuButtonRef}
@@ -96,6 +108,7 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
         open={isMobileMenuOpen}
         onClose={closeMobileMenu}
         onBookDemo={bookDemoFromMenu}
+        onGetSayso={getSaysoFromMenu}
         returnFocusRef={menuButtonRef}
       />
     </nav>

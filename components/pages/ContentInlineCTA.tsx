@@ -6,11 +6,14 @@ import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 interface ContentInlineCTAProps {
   location: string;
   headline?: string;
+  /** Which button is the filled blue one (and comes first). Team-focused pages pass 'demo'. Default 'download'. */
+  primary?: 'download' | 'demo';
 }
 
 export function ContentInlineCTA({
   location,
   headline = 'See It in Action',
+  primary = 'download',
 }: ContentInlineCTAProps) {
   const { openDemoCalendar, openSignup } = useDemoCalendar();
 
@@ -21,12 +24,25 @@ export function ContentInlineCTA({
           {headline}
         </h3>
         <div className="flex items-center justify-center gap-4 flex-wrap">
-          <Button onClick={openSignup} data-analytics-id={`cta-download-${location}-inline`}>
-            Get Sayso
-          </Button>
-          <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}-inline`}>
-            Book a demo
-          </Button>
+          {primary === 'demo' ? (
+            <>
+              <Button onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}-inline`}>
+                Book a demo
+              </Button>
+              <Button variant="secondary" onClick={openSignup} data-analytics-id={`cta-download-${location}-inline`}>
+                Get Sayso
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button onClick={openSignup} data-analytics-id={`cta-download-${location}-inline`}>
+                Get Sayso
+              </Button>
+              <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}-inline`}>
+                Book a demo
+              </Button>
+            </>
+          )}
         </div>
       </div>
     </div>

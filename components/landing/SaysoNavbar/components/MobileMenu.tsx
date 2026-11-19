@@ -2,7 +2,8 @@
 
 /**
  * Mobile drawer: slides in from the right with the primary links, a Resources
- * accordion (featured links plus the three columns), log in and Book a demo.
+ * accordion (featured links plus the three columns), log in, Book a demo and
+ * the blue Get Sayso pill.
  * Modal while open: rendered in a portal on <body> (the blurred navbar would
  * otherwise trap a fixed overlay inside itself), the rest of the page is
  * inert, focus moves to the close button, Tab stays inside the drawer, page
@@ -20,13 +21,14 @@ interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
   onBookDemo: () => void;
+  onGetSayso: () => void;
   /** The hamburger button; focus returns here when the drawer closes. */
   returnFocusRef: RefObject<HTMLButtonElement | null>;
 }
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
-export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: MobileMenuProps) {
+export function MobileMenu({ open, onClose, onBookDemo, onGetSayso, returnFocusRef }: MobileMenuProps) {
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -161,13 +163,16 @@ export function MobileMenu({ open, onClose, onBookDemo, returnFocusRef }: Mobile
         <a href={loginHref} target="_blank" rel="noopener noreferrer" className={rowClass}>
           Log in
         </a>
+        <button type="button" onClick={onBookDemo} data-analytics-id="cta-book-demo-mobile-menu" className={`${rowClass} text-left`}>
+          Book a demo
+        </button>
         <button
           type="button"
-          onClick={onBookDemo}
-          data-analytics-id="cta-book-demo-mobile-menu"
-          className="mt-6 h-12 rounded-full bg-white text-base font-semibold text-[#10233A] shadow-card-sm"
+          onClick={onGetSayso}
+          data-analytics-id="cta-download-mobile-menu"
+          className="mt-6 h-12 rounded-full bg-[#2367EE] text-base font-semibold text-white shadow-button"
         >
-          Book a demo
+          Get Sayso
         </button>
       </div>
     </div>,
