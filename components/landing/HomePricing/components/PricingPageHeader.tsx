@@ -1,4 +1,4 @@
-/** /pricing page header: a one-line H1 and the plan summary as the subhead. Kept short so both plan cards fit on a laptop screen. */
+/** /pricing page header: a one-line H1 only. Kept short so both plan cards fit on a laptop screen. */
 export function PricingPageHeader() {
   return (
     <div className="mx-auto mb-5 max-w-[740px] text-center">
@@ -8,7 +8,6 @@ export function PricingPageHeader() {
       >
         Sayso pricing
       </h1>
-      <p className="mt-2.5 text-[clamp(16px,2vw,18px)] leading-[1.5] text-[#556B86]">One plan for agents. Built out for teams.</p>
     </div>
   );
 }

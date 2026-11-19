@@ -205,7 +205,7 @@ export function ConsentManager() {
             Your privacy on Sayso
           </h2>
           <p id={bannerTextId} className="mt-1.5 text-sm leading-relaxed text-[#1D4871]/80">
-            We use cookies for analytics and advertising. You choose what&apos;s on.
+            Cookies help us improve Sayso and show you relevant content. You decide which ones run.
           </p>
           <div className="mt-4 grid grid-cols-2 gap-3">
             <button type="button" className={bluePill} onClick={() => decide({ analytics: true, advertising: true })}>

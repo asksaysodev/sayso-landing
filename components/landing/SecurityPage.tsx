@@ -64,7 +64,7 @@ export function SecurityPage() {
             We actively protect against common vulnerabilities and attacks.
           </p>
           <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
-            <li>Security headers on our web apps, including HSTS, clickjacking protection and content-type protection</li>
+            <li>Security headers on our website, including HSTS, clickjacking protection and content-type protection</li>
             <li>Protection against cross-site scripting (XSS)</li>
             <li>Secure API validation and routing</li>
             <li>
