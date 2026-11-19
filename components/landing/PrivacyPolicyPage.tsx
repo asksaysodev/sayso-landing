@@ -1,11 +1,13 @@
 import { PageHeader } from '@/components/pages/PageHeader';
+import { PrivacyChoicesLink } from '@/components/consent/PrivacyChoicesLink';
+
 export function PrivacyPolicyPage() {
   return (
     <main className="bg-[#F4F4F5] min-h-screen">
       <PageHeader
         standalone
         title="Privacy Policy"
-        intro={<p className="text-sm text-[#1D4871]/50">Last updated: August 7, 2026</p>}
+        intro={<p className="text-sm text-[#1D4871]/50">Last updated: November 19, 2026</p>}
       />
       <div className="max-w-[760px] mx-auto px-6 pb-16 md:pb-24">
         <div className="border-t border-[#1D4871]/10" />
@@ -101,20 +103,24 @@ export function PrivacyPolicyPage() {
               <span className="font-semibold text-[#1D4871]">Cookies &amp; Tracking:</span> Small
               data files stored on your device to enable functionality, improve performance, and
               analyze usage. We use tools like Google Analytics to better understand user behavior.
-              You can adjust cookie settings in your browser.
+              You can choose which cookies we use through <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, and adjust
+              cookie settings in your browser.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">Advertising Measurement:</span> We use
               advertising tools, such as the Meta pixel, that collect information about your visit
               and share it with advertising partners to measure and target our advertising. Some
-              state laws treat this as "sharing" personal information, and you can opt out as
-              described in "Your Rights &amp; Choices" below.
+              state laws treat this as "sharing" personal information, and you can opt out at any
+              time through <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, as described in "Your Rights &amp;
+              Choices" below.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">Visitor Identification:</span> We use
-              a visitor identification service that may associate your visit with business contact
-              information, such as a name, company, or business email, to help us understand who is
-              interested in Sayso.
+              Vector and Leadsy, visitor identification services that may associate your visit with
+              business contact information, such as a name, company, or business email, to help us
+              understand who is interested in Sayso. They load only if you allow advertising and
+              visitor identification, and you can turn them off at any time through{' '}
+              <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />.
             </li>
           </ul>
 
@@ -256,14 +262,44 @@ export function PrivacyPolicyPage() {
           <h3 className="text-base font-semibold text-[#1D4871] pt-2">Retention &amp; Deletion</h3>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             We retain session records while your account is active. After account closure, we
-            delete raw identifiable records within 30 days, except de-identified interaction,
+            delete your account data, including raw identifiable session records, within 30 days,
+            except de-identified interaction,
             reaction, signal, and outcome records, and any data already incorporated into trained
             models or aggregates, which we retain. You can request a copy of your conversation
             data, or ask us to delete it, by emailing{' '}
             <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
               support@asksayso.com
             </a>
-            . See "Your Rights &amp; Choices" below for details.
+            . See "Your Rights &amp; Choices" below for details. Sayso Map logs follow their own
+            retention, described in "Sayso Map" below.
+          </p>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Sayso Map */}
+        <section className="mt-10 space-y-4">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
+            Sayso Map
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            When you use Sayso Map, we log the following:
+          </p>
+          <ul className="space-y-2 text-base text-[#1D4871]/80 leading-relaxed pl-5 list-disc">
+            <li>The name you enter</li>
+            <li>Your device ID</li>
+            <li>Your IP address and approximate location</li>
+            <li>Your search inputs and the results we return</li>
+          </ul>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We use these logs to provide support, prevent abuse, and improve the product.
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso Map logs are kept until you ask us to delete them. To ask, email{' '}
+            <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
+              support@asksayso.com
+            </a>{' '}
+            with the subject line "Data Deletion Request."
           </p>
         </section>
 
@@ -274,6 +310,10 @@ export function PrivacyPolicyPage() {
           <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
             How We Use Your Information
           </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            Sayso uses AI providers (AssemblyAI for transcription, OpenAI for language processing) to
+            turn your calls into cues, notes and summaries.
+          </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             We use the information we collect to:
           </p>
@@ -307,6 +347,11 @@ export function PrivacyPolicyPage() {
               <span className="font-semibold text-[#1D4871]">Vendors &amp; Service Providers:</span>{' '}
               With trusted third parties who perform services for us (e.g., hosting, analytics,
               payment processing) under contractual confidentiality and data protection obligations.
+              The full list is in{' '}
+              <a href="#service-providers" className="text-[#2367EE] hover:underline">
+                Service Providers We Use
+              </a>{' '}
+              below.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">
@@ -315,7 +360,8 @@ export function PrivacyPolicyPage() {
               With analytics and advertising partners, such as Google and Meta, who collect
               information about your visit through cookies and similar technologies to help us
               analyze site usage and measure and target advertising. You can opt out of this
-              sharing as described in "Your Rights &amp; Choices" below.
+              sharing through <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, as described in "Your Rights &amp;
+              Choices" below.
             </li>
             <li>
               <span className="font-semibold text-[#1D4871]">Legal Requirements:</span> When
@@ -330,6 +376,117 @@ export function PrivacyPolicyPage() {
               believe disclosure is necessary to prevent fraud, security issues, or potential harm.
             </li>
           </ul>
+        </section>
+
+        <div className="mt-10 border-t border-[#1D4871]/10" />
+
+        {/* Service Providers */}
+        <section id="service-providers" className="mt-10 scroll-mt-24 space-y-4">
+          <h2 className="font-hero text-xl md:text-2xl font-extrabold tracking-[-0.02em] text-[#10233A]">
+            Service Providers We Use
+          </h2>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            These are the providers that help us run Sayso, what each one does, and the data it
+            receives.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[560px] text-left text-sm text-[#1D4871]/80 leading-relaxed">
+              <thead>
+                <tr className="text-[#10233A]">
+                  <th scope="col" className="py-2 pr-4 font-bold">Provider</th>
+                  <th scope="col" className="py-2 pr-4 font-bold">What they do</th>
+                  <th scope="col" className="py-2 font-bold">Data they receive</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Heroku</td>
+                  <td className="py-2.5 pr-4">Application hosting (US)</td>
+                  <td className="py-2.5">All data the Sayso app processes</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Supabase</td>
+                  <td className="py-2.5 pr-4">Database and authentication</td>
+                  <td className="py-2.5">Account details, transcripts, conversation signals and notes</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">AssemblyAI</td>
+                  <td className="py-2.5 pr-4">Call audio transcription</td>
+                  <td className="py-2.5">Live call audio (not kept, not used for training)</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">OpenAI</td>
+                  <td className="py-2.5 pr-4">AI processing of transcripts for cues and notes</td>
+                  <td className="py-2.5">Call transcripts (not used for training)</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Stripe</td>
+                  <td className="py-2.5 pr-4">Payments</td>
+                  <td className="py-2.5">Billing name, email and payment details</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Resend</td>
+                  <td className="py-2.5 pr-4">Transactional email</td>
+                  <td className="py-2.5">Your email address and the email we send</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Sentry</td>
+                  <td className="py-2.5 pr-4">Error monitoring</td>
+                  <td className="py-2.5">Error reports, which can include your account ID</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Vercel, Netlify</td>
+                  <td className="py-2.5 pr-4">Website and web app hosting</td>
+                  <td className="py-2.5">Visit data such as IP address</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">RentCast</td>
+                  <td className="py-2.5 pr-4">Property and market data (Pulse, Sayso Map)</td>
+                  <td className="py-2.5">Zip codes and addresses you look up</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Google (Analytics, Tag Manager, Places)</td>
+                  <td className="py-2.5 pr-4">Site analytics, address lookup</td>
+                  <td className="py-2.5">Website usage (if you allow analytics) and addresses typed for lookup</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Meta</td>
+                  <td className="py-2.5 pr-4">Advertising measurement (Meta pixel)</td>
+                  <td className="py-2.5">Website visit data, only if you allow advertising</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Vector</td>
+                  <td className="py-2.5 pr-4">Visitor identification</td>
+                  <td className="py-2.5">Website visit data, only if you allow advertising</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Leadsy</td>
+                  <td className="py-2.5 pr-4">Visitor identification</td>
+                  <td className="py-2.5">Website visit data, only if you allow advertising</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Calendly</td>
+                  <td className="py-2.5 pr-4">Demo scheduling</td>
+                  <td className="py-2.5">Name, email and booking details</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">beehiiv</td>
+                  <td className="py-2.5 pr-4">Newsletter</td>
+                  <td className="py-2.5">Email address</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Sure Send</td>
+                  <td className="py-2.5 pr-4">Demo request forms on our website</td>
+                  <td className="py-2.5">Email and phone number you enter</td>
+                </tr>
+                <tr className="border-t border-[#1D4871]/10 align-top">
+                  <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Follow Up Boss, Sure Send, Zoom</td>
+                  <td className="py-2.5 pr-4">Integrations, only when you connect them</td>
+                  <td className="py-2.5">The notes and data you choose to sync</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <div className="mt-10 border-t border-[#1D4871]/10" />
@@ -360,11 +517,19 @@ export function PrivacyPolicyPage() {
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             If you live in a state that gives you the right to opt out of the sale or sharing of
-            personal information and you would like to opt out, email your request to{' '}
+            personal information, you can opt out at any time through{' '}
+            <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, which is also linked in the footer of every page.
+            Turning off advertising and visitor identification there stops the Meta pixel, Vector
+            and Leadsy for your browser. You can also email your request to{' '}
             <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
               support@asksayso.com
             </a>{' '}
             with the subject line "Opt Out Request."
+          </p>
+          <p className="text-base text-[#1D4871]/80 leading-relaxed">
+            We honor Global Privacy Control (GPC). If your browser sends a GPC signal, we treat it as
+            a request to opt out of sale and sharing, and we turn off advertising and visitor
+            identification for that browser.
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             You have the right to request that we delete personal data we've collected from you.
@@ -379,8 +544,8 @@ export function PrivacyPolicyPage() {
             data.
           </p>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
-            Once verified, we'll delete your data from our active systems and confirm completion
-            within 30 days, unless we're required to retain certain information for legal, security,
+            Once verified, we'll delete your account data from our active systems and confirm
+            completion within 30 days, unless we're required to retain certain information for legal, security,
             or contractual reasons (for example, to comply with financial recordkeeping laws or
             resolve disputes).
           </p>

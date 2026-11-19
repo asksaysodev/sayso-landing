@@ -39,7 +39,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === V2 Comic Book Styles === */
+/* === V2 utilities === */
 
 /* Halftone dot pattern overlay */
 .v2-halftone {
@@ -56,199 +56,102 @@
   z-index: 0;
 }
 
-/* Hard comic shadow for cards/panels */
+/* Legacy utility names from the comic era, now flat: soft shadows, hairline
+   borders. Kept because a few components still use the class names. */
 .v2-comic-shadow {
-  box-shadow: 4px 4px 0px #1D4871;
-}
-
-.v2-comic-shadow-sm {
-  box-shadow: 3px 3px 0px #1D4871;
-}
-
-.v2-comic-shadow-blue {
-  box-shadow: 4px 4px 0px #2367EE;
-}
-
-/* Comic panel border */
-.v2-comic-border {
-  border: 2.5px solid #1D4871;
-}
-
-.v2-comic-border-light {
-  border: 2px solid #1D4871;
-}
-
-/* Starburst / action burst background */
-.v2-starburst {
-  position: relative;
-}
-.v2-starburst::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  transform: translate(-50%, -50%);
-  background: conic-gradient(
-    from 0deg,
-    #FFDE59 0deg 15deg,
-    transparent 15deg 30deg,
-    #FFDE59 30deg 45deg,
-    transparent 45deg 60deg,
-    #FFDE59 60deg 75deg,
-    transparent 75deg 90deg,
-    #FFDE59 90deg 105deg,
-    transparent 105deg 120deg,
-    #FFDE59 120deg 135deg,
-    transparent 135deg 150deg,
-    #FFDE59 150deg 165deg,
-    transparent 165deg 180deg,
-    #FFDE59 180deg 195deg,
-    transparent 195deg 210deg,
-    #FFDE59 210deg 225deg,
-    transparent 225deg 240deg,
-    #FFDE59 240deg 255deg,
-    transparent 255deg 270deg,
-    #FFDE59 270deg 285deg,
-    transparent 285deg 300deg,
-    #FFDE59 300deg 315deg,
-    transparent 315deg 330deg,
-    #FFDE59 330deg 345deg,
-    transparent 345deg 360deg
-  );
-  opacity: 0.15;
-  z-index: -1;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* Speed lines behind elements */
-.v2-speed-lines {
-  position: relative;
-}
-.v2-speed-lines::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -30px;
-  width: 30px;
-  height: 60%;
-  transform: translateY(-50%);
-  background: repeating-linear-gradient(
-    to right,
-    #2367EE 0px,
-    #2367EE 2px,
-    transparent 2px,
-    transparent 6px
-  );
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-/* Comic button hover effect */
-.v2-comic-btn {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 3px 3px 0px #1D4871;
-}
-.v2-comic-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 5px 5px 0px #1D4871;
-}
-.v2-comic-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px #1D4871;
-}
-
-/* Action lines radiating from center */
-.v2-action-lines {
-  position: relative;
-  overflow: visible;
-}
-.v2-action-lines::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140%;
-  height: 140%;
-  transform: translate(-50%, -50%);
-  background:
-    repeating-conic-gradient(
-      from 0deg,
-      transparent 0deg 8deg,
-      rgba(35, 103, 238, 0.06) 8deg 10deg
-    );
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Tilted card effect */
-.v2-tilt-left {
-  transform: rotate(-1.5deg);
-  transition: transform 0.2s ease;
-}
-.v2-tilt-left:hover {
-  transform: rotate(0deg);
-}
-
-.v2-tilt-right {
-  transform: rotate(1.5deg);
-  transition: transform 0.2s ease;
-}
-.v2-tilt-right:hover {
-  transform: rotate(0deg);
-}
-
-/* Pow/Zap badge style */
-.v2-pow-badge {
-  background: #FFDE59;
-  color: #1D4871;
-  font-family: var(--font-bangers), cursive;
-  border: 2.5px solid #1D4871;
-  box-shadow: 2px 2px 0px #1D4871;
-  letter-spacing: 0.05em;
-}
-
-/* === Flat redesign (Nov 2026) ===
-   The comic utilities above now render flat across the site: soft shadows
-   instead of hard offsets, hairline borders instead of thick navy ones, no
-   tilts, glows or bursts. Pages wrapped in .legacy-comic (the ad landing
-   pages, pending their own redesign) keep the original comic look. */
-.v2-comic-shadow:not(.legacy-comic *),
-.v2-comic-shadow-blue:not(.legacy-comic *) {
   box-shadow: 0 1px 2px rgba(16, 35, 58, 0.06), 0 14px 34px -16px rgba(16, 35, 58, 0.25);
 }
-.v2-comic-shadow-sm:not(.legacy-comic *) {
+.v2-comic-shadow-sm {
   box-shadow: 0 1px 2px rgba(16, 35, 58, 0.06), 0 8px 20px -12px rgba(16, 35, 58, 0.22);
 }
-.v2-comic-border:not(.legacy-comic *),
-.v2-comic-border-light:not(.legacy-comic *),
-.v4-panel-border:not(.legacy-comic *) {
+.v2-comic-border {
   border: 1px solid rgba(16, 35, 58, 0.12);
 }
-.v2-comic-btn:not(.legacy-comic *),
-.v2-comic-btn:not(.legacy-comic *):hover,
-.v2-comic-btn:not(.legacy-comic *):active {
+
+/* Pill button lift: soft blue shadow, small rise on hover. */
+.v2-comic-btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   box-shadow: 0 1px 2px rgba(16, 35, 58, 0.18), 0 8px 20px -8px rgba(35, 103, 238, 0.45);
 }
-.v2-comic-btn:not(.legacy-comic *):hover { transform: translateY(-1px); }
-.v2-comic-btn:not(.legacy-comic *):active { transform: scale(0.98); }
-.v2-tilt-left:not(.legacy-comic *),
-.v2-tilt-right:not(.legacy-comic *) {
-  transform: none;
+.v2-comic-btn:hover { transform: translateY(-1px); }
+.v2-comic-btn:active { transform: scale(0.98); }
+
+/* Persona ad pages (/agent, /isa, /broker, /sales-leader): the Sure Send demo
+   form in the brand style. Scoped to .persona-demo-form so the other Sure Send
+   embeds keep their own look. */
+.persona-demo-form .ss-form-wrapper {
+  font-family: inherit;
+  color: #10233A;
+  background: transparent;
 }
-.v2-pow-badge:not(.legacy-comic *) {
-  border: 0;
-  box-shadow: none;
+.persona-demo-form .ss-form-label {
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 700;
+  color: #10233A;
 }
-.v4-hero-glow:not(.legacy-comic *) {
-  animation: none;
+.persona-demo-form .ss-form-input {
+  padding: 11px 14px;
+  font-size: 16px;
+  border-color: rgba(16, 35, 58, 0.18);
+  border-radius: 12px;
 }
-.v2-starburst:not(.legacy-comic *)::before,
-.v2-speed-lines:not(.legacy-comic *)::after,
-.v2-action-lines:not(.legacy-comic *)::before {
-  display: none;
+.persona-demo-form .ss-form-input:focus {
+  border-color: #2367EE;
+  box-shadow: 0 0 0 3px rgba(35, 103, 238, 0.18);
+}
+.persona-demo-form .ss-form-text-block {
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #556B86;
+  background: transparent;
+}
+.persona-demo-form .ss-form-text-block p {
+  margin-bottom: 6px;
+}
+.persona-demo-form .ss-form-text-block a {
+  color: #2367EE;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.persona-demo-form .ss-form-submit {
+  height: 48px;
+  padding: 0 24px;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background: #2367EE;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(16, 35, 58, 0.18), 0 8px 20px -8px rgba(35, 103, 238, 0.55);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.persona-demo-form .ss-form-submit:hover {
+  filter: none;
+  background: #1F5AD6;
+  transform: translateY(-1px);
+}
+.persona-demo-form .ss-form-submit:focus-visible {
+  outline: 3px solid #2367EE;
+  outline-offset: 2px;
+}
+/* Phones: the consent text moves under the button so the button sits above
+   the fold. Same text, same form; only the visual order changes. */
+@media (max-width: 640px) {
+  .persona-demo-form .ss-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .persona-demo-form .ss-form-fields-grid {
+    display: contents;
+  }
+  .persona-demo-form .ss-form-text-block {
+    order: 1;
+    margin-bottom: 0;
+  }
+  .persona-demo-form .ss-form-submit {
+    margin-top: 2px;
+  }
 }
 
 /* === V4 Superhero Styles === */
@@ -260,15 +163,6 @@
 }
 .v4-hero-float {
   animation: v4HeroFloat 3s ease-in-out infinite;
-}
-
-/* Hero glow pulse on buttons */
-@keyframes v4HeroGlow {
-  0%, 100% { box-shadow: 3px 3px 0px #1D4871, 0 0 15px rgba(35, 103, 238, 0.3); }
-  50% { box-shadow: 3px 3px 0px #1D4871, 0 0 30px rgba(35, 103, 238, 0.6), 0 0 60px rgba(35, 103, 238, 0.2); }
-}
-.v4-hero-glow {
-  animation: v4HeroGlow 2s ease-in-out infinite;
 }
 
 /* Slide in from left */
@@ -313,12 +207,6 @@
 .v4-panel-hidden {
   opacity: 0;
   transform: translateY(30px);
-}
-
-/* Thicker comic panel border for V4 */
-.v4-panel-border {
-  border: 3px solid #1D4871;
-  border-radius: 16px;
 }
 
 /* Halftone on dark backgrounds (white dots) */
@@ -398,5 +286,38 @@
   }
   body.printing-script-sheet .script-sheet-print {
     display: none;
+  }
+}
+
+/* Blog post body (BlogArticleContent wraps posts in .prose-sayso). Code blocks such as
+   "Call Notes" templates wrap instead of widening the page on phones. */
+.prose pre,
+.prose code,
+.prose-sayso pre,
+.prose-sayso code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
+.prose pre,
+.prose-sayso pre {
+  overflow-x: auto;
+}
+
+/* Embed skeleton (components/embeds/EmbedSkeleton.tsx): grey bars with a soft sweep
+   while a third-party form or scheduler loads. Static for reduced-motion users. */
+.embed-shimmer {
+  background: linear-gradient(90deg, #E9EDF1 0%, #F4F6F8 50%, #E9EDF1 100%);
+  background-size: 200% 100%;
+  animation: embedShimmer 1.4s ease-in-out infinite;
+}
+@keyframes embedShimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .embed-shimmer {
+    animation: none;
+    background: #E9EDF1;
   }
 }

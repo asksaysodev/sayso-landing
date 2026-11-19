@@ -4,6 +4,7 @@
  * The persona pages' demo request form. The Sure Send form captures email and
  * phone (so the team can follow up with people who don't book), then the
  * Calendly request-demo event opens right away with the email filled in.
+ * The `persona-demo-form` class gives the embed the brand look (see globals.css).
  */
 import SsFormEmbed, { type SsFormValues } from '@/components/landing/SsFormEmbed';
 import { CALENDLY_REQUEST_DEMO_URL, calendlyUrlWithEmail, openCalendlyPopup } from '@/lib/calendly';
@@ -25,10 +26,11 @@ export function PersonaDemoForm() {
         id={DEMO_FORM_ID}
         embedCode={DEMO_FORM_EMBED_CODE}
         onSuccess={openBooking}
-        className="scroll-mt-6 text-left [&_.ss-form-wrapper]:p-0"
+        reserveClassName="min-h-[461px] md:min-h-[394px]"
+        className="persona-demo-form scroll-mt-6 text-left [&_.ss-form-wrapper]:p-0"
       />
       <p className="mt-3 text-center text-sm text-[#556B86]">
-        Next: pick a time on the calendar. Most demos take 10 to 15 minutes.
+        Next: pick a time on the calendar. Most demos take 20 minutes.
       </p>
     </>
   );

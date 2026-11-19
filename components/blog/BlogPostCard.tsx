@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { pill } from '@/components/landing/HomeShared/styles';
 
 /** The fields a blog card needs. Plain data, so client components can render cards too. */
 export interface BlogCardPost {
@@ -19,7 +20,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block h-full">
       <article className="flex h-full flex-col rounded-[20px] bg-white p-6 shadow-card transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-card-hover">
-        <span className="mb-3 inline-block self-start rounded-md bg-[#FFDE59] px-3 py-1 font-comic text-sm tracking-[0.06em] text-[#1D4871]">
+        <span className={`mb-3 self-start ${pill}`}>
           {post.categoryName}
         </span>
 

@@ -2,9 +2,14 @@ import type { Metadata } from 'next';
 import SaysoNavbar from '@/components/landing/SaysoNavbar';
 import { Footer } from '@/components/landing/Footer';
 import { HomePricing } from '@/components/landing/HomePricing';
+import { PricingFaq } from '@/components/landing/HomePricing/components/PricingFaq';
+import { PricingPageHeader } from '@/components/landing/HomePricing/components/PricingPageHeader';
+import { PricingProof } from '@/components/landing/HomePricing/components/PricingProof';
 import { Button } from '@/components/ui/Button';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
+import { PRICING_FAQ_ITEMS, faqSchemaItems } from '@/lib/content/faq';
+import { generateFAQPageJsonLd } from '@/lib/seo/schema';
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -44,13 +49,21 @@ const PRICING_PAGE_IDS = {
   teams: 'cta-book-demo-pricing-teams',
 };
 
+// Built from the same list as the visible FAQ, so the two always match.
+const faqJsonLd = generateFAQPageJsonLd(faqSchemaItems(PRICING_FAQ_ITEMS));
+
 export default function PricingPage() {
   return (
     <DemoCalendarProvider>
       <div className="relative min-h-screen bg-[#F4F4F5]">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <SaysoNavbar />
         <main>
-          <HomePricing titleAs="h1" srTitlePrefix="Sayso pricing:" analyticsIds={PRICING_PAGE_IDS} className="!pt-[92px]">
+          <HomePricing header={<PricingPageHeader />} analyticsIds={PRICING_PAGE_IDS} agentFirst className="!pt-4 min-[641px]:!pt-5">
+            <p className="mt-5 text-center text-xs text-[#556B86]">
+              Prices are shown in USD. You can cancel anytime, and there are no contracts.
+            </p>
+            <PricingProof />
             <div className="mx-auto mt-10 max-w-[640px] text-center">
               <p className="text-base leading-relaxed text-[#556B86]">
                 Every plan includes a custom setup and training. Founding member and early access pricing is locked
@@ -59,10 +72,8 @@ export default function PricingPage() {
               <Button href="/demo" variant="secondary" className="mt-6" data-analytics-id="cta-book-demo-pricing-coming-soon">
                 Questions? Chat with our team
               </Button>
-              <p className="mt-6 text-xs text-[#556B86]">
-                Prices are shown in USD. You can cancel anytime, and there are no contracts.
-              </p>
             </div>
+            <PricingFaq />
           </HomePricing>
         </main>
         <Footer />

@@ -34,11 +34,16 @@ export interface PlaybookScript {
 /** Sample market data shown in the Pulse panel. */
 export interface MarketSample {
   zip: string;
+  /** City and state, e.g. "Fort Lauderdale, FL". */
   place: string;
-  daysOnMarket: number;
-  priceTrend: string;
-  pricePerSqft: number;
-  inventory: string;
+  medianPrice: number;
+  medianPricePerSqft: number;
+  medianDaysOnMarket: number;
+  newListings: number;
+  /** Buyers or Sellers. */
+  market: string;
+  /** Last-90-day price trend. */
+  priceTrend: 'up' | 'down' | 'flat';
 }
 
 export interface SaysoWidgetProps {

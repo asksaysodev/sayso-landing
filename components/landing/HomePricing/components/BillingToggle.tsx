@@ -1,6 +1,7 @@
 /**
- * Monthly / Annual switch: above the pricing cards on desktop, inside the
- * Individual Agent+ card on phones (the parent passes the layout classes). Annual shows the green SAVE
+ * Monthly / Annual switch: on the homepage it sits above the pricing cards on
+ * desktop and inside the Individual Agent+ card on phones; /pricing shows one
+ * above the cards at every width (the parent passes the layout classes). Annual shows the green SAVE
  * badge (percent derived in lib/content/pricing). Each page passes its own
  * analytics ids, so GTM can tell the homepage and /pricing apart.
  */

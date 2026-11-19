@@ -31,7 +31,7 @@ export function ValuePropsSection({ entry }: ValuePropsSectionProps) {
               key={prop.title}
               className={`${panel} p-6 md:p-7`}
             >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#FFDE59] text-[#1D4871] font-comic text-lg mb-4">
+              <span aria-hidden="true" className="mb-4 inline-grid h-10 w-10 place-items-center rounded-full bg-[#1D4871] font-hero text-base font-bold text-white">
                 {index + 1}
               </span>
               <h3 className="font-hero font-bold text-lg md:text-xl text-[#10233A] mb-2 leading-snug">

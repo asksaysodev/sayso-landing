@@ -63,7 +63,7 @@ export default function DemoPage() {
         <main className="lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
           <PageHeader
             standalone
-            title="Book a 25-min Demo"
+            title="Book a 20-min Demo"
             className="lg:[@media(max-height:860px)]:!pb-6 lg:[@media(max-height:860px)]:!pt-10"
           />
 

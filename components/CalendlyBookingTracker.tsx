@@ -11,20 +11,20 @@
  */
 import { useEffect } from 'react';
 import { lastCalendlyEvent, loadCalendlyStyles, preloadDemoPopup } from '@/lib/calendly';
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { hasNonEssentialConsent, onConsent } from '@/lib/consent';
 
 export function CalendlyBookingTracker() {
   useEffect(() => {
     // Calendly's stylesheet waits for the load event so it never delays the
-    // first paint. Then build the hidden demo popup so "Book a demo" opens instantly.
+    // first paint. The hidden demo popup (so "Book a demo" opens instantly) is
+    // built only once the visitor allows any non-essential cookies, including
+    // consent given mid-visit. Before that, Book a demo opens Calendly's widget
+    // on click.
     if (document.readyState === 'complete') loadCalendlyStyles();
     else window.addEventListener('load', loadCalendlyStyles, { once: true });
-    preloadDemoPopup();
+    const stopConsent = onConsent((choice) => {
+      if (hasNonEssentialConsent(choice)) preloadDemoPopup();
+    });
     const onMessage = (e: MessageEvent) => {
       if (e.origin !== 'https://calendly.com') return;
       const data = e.data as { event?: string } | null;
@@ -37,7 +37,10 @@ export function CalendlyBookingTracker() {
       });
     };
     window.addEventListener('message', onMessage);
-    return () => window.removeEventListener('message', onMessage);
+    return () => {
+      stopConsent();
+      window.removeEventListener('message', onMessage);
+    };
   }, []);
 
   return null;

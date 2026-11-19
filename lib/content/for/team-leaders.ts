@@ -4,6 +4,7 @@ export const teamLeaders: UseCaseEntry = {
   slug: 'team-leaders',
   updatedAt: '2026-11-07',
   persona: 'Team Leaders',
+  primaryCta: 'demo',
   keyword: 'how to coach real estate agents on calls at scale',
   seoTitle: 'Coach Real Estate Agents on Calls at Scale - Team Leaders',
   seoDescription:

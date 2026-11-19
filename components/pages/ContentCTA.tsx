@@ -7,12 +7,15 @@ interface ContentCTAProps {
   location: string;
   headline?: string;
   subheading?: string;
+  /** Which button is the filled blue one (and comes first). Team-focused pages pass 'demo'. Default 'download'. */
+  primary?: 'download' | 'demo';
 }
 
 export function ContentCTA({
   location,
   headline = 'Ready to Win the Moment?',
   subheading = 'See how Sayso gives you real-time guidance on every call.',
+  primary = 'download',
 }: ContentCTAProps) {
   const { openDemoCalendar, openSignup } = useDemoCalendar();
 
@@ -27,12 +30,25 @@ export function ContentCTA({
             {subheading}
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Button onClick={openSignup} data-analytics-id={`cta-download-${location}`}>
-              Get Sayso
-            </Button>
-            <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}`}>
-              Book a demo
-            </Button>
+            {primary === 'demo' ? (
+              <>
+                <Button onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}`}>
+                  Book a demo
+                </Button>
+                <Button variant="secondary" onClick={openSignup} data-analytics-id={`cta-download-${location}`}>
+                  Get Sayso
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button onClick={openSignup} data-analytics-id={`cta-download-${location}`}>
+                  Get Sayso
+                </Button>
+                <Button variant="secondary" onClick={openDemoCalendar} data-analytics-id={`cta-book-demo-${location}`}>
+                  Book a demo
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -1,9 +1,11 @@
 /**
  * Homepage hero: headline, lede, call-to-action row, a meta line,
- * centered social proof with a rotating agent quote, and the Ask AI links.
+ * centered social proof with a rotating agent quote, the Ask AI links and a
+ * small scroll cue down to the guided demo.
  */
 import { soft, wrap } from '../HomeShared/styles';
 import { AskAiLinks } from './components/AskAiLinks';
+import { DemoScrollCue } from './components/DemoScrollCue';
 import { HeroActions } from './components/HeroActions';
 import { ProofFaces } from './components/ProofFaces';
 import { RotatingQuote } from './components/RotatingQuote';
@@ -41,6 +43,7 @@ export function HomeHero() {
         </div>
       </div>
       <AskAiLinks />
+      <DemoScrollCue />
     </section>
   );
 }

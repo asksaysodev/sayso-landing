@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { BlogPost, formatCategoryName } from '@/lib/blog';
 import { PageHeader } from '@/components/pages/PageHeader';
+import { pill } from '@/components/landing/HomeShared/styles';
 
 interface BlogArticleHeaderProps {
   post: BlogPost;
@@ -24,7 +25,7 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
   return (
     <PageHeader
       eyebrow={
-        <span className="inline-block rounded-md bg-[#FFDE59] px-3 py-1 font-comic text-[15px] tracking-[0.06em] text-[#1D4871]">
+        <span className={pill}>
           {formatCategoryName(post.category)}
         </span>
       }

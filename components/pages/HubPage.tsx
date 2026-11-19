@@ -7,6 +7,7 @@ import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { renderInlineMarkdown } from '@/lib/utils/render-inline-markdown';
 import type { HubPageConfig } from '@/lib/content/hubs/types';
+import { pill } from '@/components/landing/HomeShared/styles';
 
 const GRID = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5';
 /** Hubs with 2 to 6 cards swipe on mobile; longer directories (glossary, objections) and single-card hubs stay a grid. */
@@ -161,7 +162,7 @@ function HubCard({
   if (page.bannerText) {
     return (
       <div className="relative">
-        <div className="absolute -top-2 right-4 z-10 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-base tracking-[0.06em] px-3 py-0.5 whitespace-nowrap">
+        <div className={`absolute -top-3 right-4 z-10 whitespace-nowrap ${pill}`}>
           {page.bannerText}
         </div>
         {card}
@@ -180,7 +181,7 @@ function FeatureRequestCard({
   return (
     <div className="relative">
       {card.bannerText && (
-        <div className="absolute -top-2 right-4 z-10 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-base tracking-[0.06em] px-3 py-0.5 whitespace-nowrap">
+        <div className={`absolute -top-3 right-4 z-10 whitespace-nowrap ${pill}`}>
           {card.bannerText}
         </div>
       )}

@@ -60,20 +60,21 @@ export const PHASE_A: Beat[] = [
   C(700, 'Acknowledge it, ask what a shorter commute would change'),
 ];
 
-/** Zip step: the Pulse cue appears. After step 2 there is no talking, only cues and letters. */
-export const PHASE_B: Beat[] = [C(300, 'Open Pulse, share days on market and price trend')];
-
-/** The call wraps up (reset step): the remaining letters fill in. */
+/**
+ * The call wraps up (reset step): the remaining letters fill in. After step 2
+ * there is no talking, only cues and letters. Paced slowly so each cue can be
+ * read before the next one lands.
+ */
 export const PHASE_C: Beat[] = [
-  K(400, 2),
-  C(500, 'Validate it, ask if they’re working with an agent'),
-  K(900, 3),
-  C(500, 'Ask what price range feels comfortable'),
-  K(900, 1),
-  K(400, 4),
-  C(500, 'Offer two times to tour this weekend'),
-  K(900, 5),
-  C(500, 'Confirm the tour and send the listings'),
+  K(900, 2),
+  C(1400, 'Validate it, ask if they’re working with an agent'),
+  K(2600, 3),
+  C(1400, 'Ask what price range feels comfortable'),
+  K(2600, 1),
+  K(900, 4),
+  C(1400, 'Offer two times to tour this weekend'),
+  K(2600, 5),
+  C(1400, 'Confirm the tour and send the listings'),
 ];
 
 /** Demo state before the visitor starts the call. */

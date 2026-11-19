@@ -1,5 +1,6 @@
 /**
- * FAQ copy for /faq (every question, grouped) and the homepage (a short set).
+ * FAQ copy for /faq (every question, grouped), the homepage (a short set) and
+ * /pricing (a short pricing set).
  *
  * Answers may contain links written as [text](href). `FaqList` renders them via
  * `faqAnswerParts`; `faqSchemaItems` strips them for structured data.
@@ -202,6 +203,36 @@ export const HOME_FAQ_ITEMS: FaqItem[] = [
   {
     question: 'How do I get started, and what does it cost?',
     answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on usage and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually. You can cancel anytime; there are no contracts.`,
+  },
+];
+
+/**
+ * /pricing set: questions people ask next to the price. Every answer restates
+ * copy already on the site (/faq, the homepage FAQ and the plan cards).
+ */
+export const PRICING_FAQ_ITEMS: FaqItem[] = [
+  {
+    question: 'Can I cancel anytime?',
+    answer: 'Yes. You can cancel anytime; there are no contracts.',
+  },
+  {
+    question: 'Is there a contract?',
+    answer: 'No. There are no contracts, and you can cancel anytime.',
+  },
+  {
+    question: 'How long does setup take?',
+    answer:
+      'Most agents are set up in under 5 minutes, and onboarding includes a launch guide, a help center, and a support team. Every plan includes a custom setup and training.',
+  },
+  {
+    question: 'Does it work with my dialer and CRM?',
+    answer:
+      'Yes. Sayso works alongside your existing browser-based dialer, so you don’t need to change your workflow, and Smart Capture syncs your call notes to your CRM.',
+  },
+  {
+    question: 'How does team pricing work?',
+    answer:
+      'Teams and Brokerages pricing is custom and based on usage. Early Access Team pricing starts at $369/month and includes implementation, train-the-trainer, and the company dashboard. [Book a demo](/demo/) to get pricing for your team.',
   },
 ];
 

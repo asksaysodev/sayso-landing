@@ -124,7 +124,7 @@ export function Faq() {
   return (
     <section className="py-12 md:py-14">
       <div className="max-w-[680px] mx-auto px-5 md:px-6">
-        <h2 className="font-comic text-3xl md:text-4xl text-[#1D4871] text-center tracking-wide mb-8">
+        <h2 className="font-hero font-extrabold text-3xl md:text-4xl tracking-[-0.03em] text-[#10233A] text-center mb-8">
           Questions
         </h2>
         <div className="flex flex-col gap-3">
