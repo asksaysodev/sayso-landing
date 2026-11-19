@@ -20,7 +20,7 @@ This document describes the layout, style, and component pattern used for person
 - **No heavy animations** - static layout only, no framer-motion or interactive panels
 - **Centered single column** - `max-w-xl mx-auto` (~576px) for all content
 - **Same footer** - uses the standard `<Footer />` component
-- **Sayso brand styles** throughout: `font-comic` (Bangers) for headings, `#1D4871` dark blue for text, `#FFDE59` yellow for the primary CTA button with `3px 3px 0px #1D4871` cartoon shadow
+- **Sayso brand styles** throughout: Manrope (`font-hero`, 800) for headings, `#10233A` / `#1D4871` navy for text, `#F4F4F5` page background, soft shadows (`shadow-card`), and the blue `#2367EE` pill button (`Button` primary). Never Bangers.
 
 ---
 
@@ -28,12 +28,13 @@ This document describes the layout, style, and component pattern used for person
 
 ### 1. Hero
 
-- White background (`bg-white`)
+- Page background `#F4F4F5`
 - Logo centered at top (links to `/`, uses `logo-pos-horizontal.png`)
-- `h1` in `font-comic text-3xl sm:text-4xl text-[#1D4871]` - no bold/strong tags, uniform weight
+- Audience eyebrow above the `h1`: Manrope 12px 700, 0.12em tracking, `#556B86`, shown as written
+- `h1` in `font-hero text-[30px] sm:text-[40px] font-extrabold tracking-[-0.03em] text-[#10233A]` - no bold/strong tags
 - Subtext paragraph in `text-base text-[#1D4871]/70`
-- Single CTA button: yellow `bg-[#FFDE59]`, `border-2 border-[#1D4871]`, `boxShadow: '3px 3px 0px #1D4871'`, with `<LightningIcon>` prefix
-- CTA uses `openDemoCalendar()` from `useDemoCalendar()` hook
+- The Sure Send demo form (`PersonaDemoForm`) in a white card with a soft shadow. The `.persona-demo-form` styles in `app/globals.css` give it Manrope labels, rounded inputs and a blue `#2367EE` pill submit labeled "Book my demo". On phones the consent text sits under the button so the button stays above the fold.
+- Under the form: "Next: pick a time on the calendar. Most demos take 20 minutes."
 
 ### 2. Trust Strip
 
@@ -44,44 +45,44 @@ This document describes the layout, style, and component pattern used for person
 ### 3. Problem Section
 
 - `text-center`, `max-w-xl mx-auto`
-- `h2` in `font-comic` - no bold/strong tags
+- `h2` in `font-hero font-extrabold tracking-[-0.02em] text-[#10233A]` - no bold/strong tags
 - Bullet list using `<Check>` icon from lucide-react in `text-[#2367EE]`
 - Bullet text: `text-sm italic text-[#1D4871]/75`
 - First bullet restates the persona's core frustration; subsequent bullets are specific pain points
 
 ### 4. Mid-Hook
 
-- Single `font-comic` statement that reinforces the core problem
-- `text-xl sm:text-2xl text-[#1D4871]`, centered
+- Single Manrope 800 statement that reinforces the core problem
+- `text-xl sm:text-2xl text-[#10233A]`, centered
 - No bullet, no icon - standalone emphasis line
 
 ### 5. How It Works (gray panel)
 
-- Full-width section with `bg-[#f0f2f5]` light gray background
+- Full-width section with the `#E3E8EC` wash background
 - Inner content constrained to `max-w-xl mx-auto px-6`
-- `h2` heading in `font-comic`
+- `h2` heading in `font-hero font-extrabold tracking-[-0.02em] text-[#10233A]`
 - **Two-column grid** (`grid grid-cols-2 gap-4`) of white cards:
-  - Each card: `bg-white rounded-2xl overflow-hidden shadow-sm`
-  - Card header: `font-comic text-lg` title + `text-xs text-[#1D4871]/60` description
+  - Each card: `bg-white rounded-[20px] overflow-hidden shadow-card`
+  - Card header: `font-hero text-lg font-bold` title + `text-xs text-[#1D4871]/60` description
   - Card visual: `h-36 mx-3 mb-3 rounded-xl overflow-hidden` containing a `PersonaStepWidget`
   - Step 1 uses `<PersonaStepWidget preset="bar" />` - the real Sayso toolbar mid-call
   - Step 2 uses `<PersonaStepWidget preset="cues" />` - the real Sayso widget with live cues open
 
 ### 6. Benefits (inside the gray panel)
 
-- Sits directly below the two step cards, still inside `bg-[#f0f2f5]`
+- Sits directly below the two step cards, still inside the wash
 - **Three-column grid** (`grid grid-cols-3 gap-4 mt-4`)
-- Each benefit: `bg-white rounded-2xl shadow-sm p-4`
+- Each benefit: `bg-white rounded-[20px] shadow-card p-4`
 - Icon in a `w-9 h-9 rounded-full bg-[#2367EE]/10` circle, icon color `text-[#2367EE]`
-- Title: `font-semibold text-[#1D4871] text-sm`
+- Title: `font-hero font-bold text-[#10233A] text-sm`
 - Description: `text-xs text-[#1D4871]/65`
 - Icons from lucide-react (`Zap`, `TrendingUp`, `Users` - swap as appropriate per persona)
 
 ### 7. Closing CTA
 
-- Back to white background, centered
-- `h2` in `font-comic` - no bold/strong tags
-- Same yellow CTA button as hero
+- Back to the page background, centered
+- `h2` in `font-hero font-extrabold tracking-[-0.02em] text-[#10233A]` - no bold/strong tags
+- `AdPageCTAButton`: blue pill "Book my demo" that scrolls to the hero form
 
 ### 8. Footer
 

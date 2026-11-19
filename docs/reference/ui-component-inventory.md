@@ -238,7 +238,6 @@ Static content pages with no props. Content is hardcoded in the component.
 | Gray | `#D7DEE1` | Light gray, borders |
 | Background | `#F4F4F5` | Off-white, page backgrounds |
 | `font-hero` | Serif/display | Hero headlines |
-| `font-comic` | Bangers | Comic-style bold text |
 | `font-sans` | Manrope | Body text, UI |
 
 ---

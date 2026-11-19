@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Manrope, Bangers } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -21,17 +21,6 @@ const manrope = Manrope({
   variable: '--font-manrope',
   display: 'swap',
 })
-
-// Bangers is only used for section labels below the hero, so it is not
-// preloaded: it would compete with the hero for bandwidth on slow phones.
-const bangers = Bangers({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-bangers',
-  display: 'swap',
-  preload: false,
-})
-
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -161,7 +150,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${bangers.variable}`}>
+    <html lang="en" className={manrope.variable}>
       <head>
       {/* GTM (and the GA4 tag inside it) loads only on www.asksayso.com, so Vercel
           previews and localhost stay out of the live GA4 property. */}

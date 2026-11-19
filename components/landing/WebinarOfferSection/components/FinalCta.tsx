@@ -11,7 +11,7 @@ export function FinalCta() {
   return (
     <section className="bg-[#1D4871] text-white text-center px-5 py-16 md:py-20">
       <div className="max-w-[880px] mx-auto">
-        <h2 className="font-comic text-3xl md:text-4xl tracking-wide leading-tight">
+        <h2 className="font-hero font-extrabold text-3xl md:text-4xl tracking-[-0.03em] leading-tight">
           The offer is valid through
           <br />
           Friday at 5:00 PM PT

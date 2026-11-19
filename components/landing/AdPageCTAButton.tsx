@@ -1,22 +1,17 @@
-import { LightningIcon } from '@/components/icons/LightningIcon';
+import { Button } from '@/components/ui/Button';
 import { DEMO_FORM_ID } from '@/components/landing/PersonaAdShared/constants';
 
 interface AdPageCTAButtonProps {
   location: string;
 }
 
+/** Closing CTA on the persona ad pages: the blue pill that scrolls back to the demo form. */
 export function AdPageCTAButton({ location }: AdPageCTAButtonProps) {
   return (
     <div className="flex items-center justify-center">
-      <a
-        href={`#${DEMO_FORM_ID}`}
-        data-analytics-id={`cta-book-demo-persona-${location}`}
-        className="inline-flex items-center justify-center rounded-full bg-[#FFDE59] px-6 py-3 text-base font-semibold text-[#1D4871] border-2 border-[#1D4871]"
-        style={{ boxShadow: '3px 3px 0px #1D4871' }}
-      >
-        <LightningIcon size={16} className="mr-2 flex-shrink-0" />
-        Book a Demo
-      </a>
+      <Button href={`#${DEMO_FORM_ID}`} data-analytics-id={`cta-book-demo-persona-${location}`}>
+        Book my demo
+      </Button>
     </div>
   );
 }

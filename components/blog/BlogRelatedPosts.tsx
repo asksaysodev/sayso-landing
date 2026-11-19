@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { LightningIcon } from '@/components/icons/LightningIcon';
 import Carousel from '@/components/ui/Carousel';
 import { BlogPostMeta, formatCategoryName } from '@/lib/blog';
+import { pill } from '@/components/landing/HomeShared/styles';
 
 interface BlogRelatedPostsProps {
   posts: BlogPostMeta[];
@@ -33,7 +34,7 @@ export function BlogRelatedPosts({ posts }: BlogRelatedPostsProps) {
                 )}
               </div>
               <div className="p-4">
-                <span className="inline-block px-2 py-0.5 mb-2 rounded-md bg-[#FFDE59] text-[#1D4871] font-comic text-sm tracking-[0.06em]">
+                <span className={`mb-2 ${pill}`}>
                   {formatCategoryName(post.category)}
                 </span>
                 <h4 className="font-hero font-extrabold text-base leading-snug text-[#10233A] line-clamp-2 group-hover:text-[#2367EE] transition-colors">

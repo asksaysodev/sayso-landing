@@ -9,7 +9,7 @@ import { HomeTeams } from '@/components/landing/HomeTeams';
 
 export function SalesLeaderAdPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[#F4F4F5] min-h-screen">
 
       {/* ── Hero ── */}
       <PersonaAdHero
@@ -33,7 +33,7 @@ export function SalesLeaderAdPage() {
 
       {/* ── Problem ── */}
       <section className="max-w-xl mx-auto px-6 py-8 text-center">
-        <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-3 leading-snug">
+        <h2 className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl mb-3 leading-snug">
           Your agents are making the calls. But they aren&apos;t converting to appointments.
         </h2>
         <ul className="space-y-3">
@@ -52,22 +52,22 @@ export function SalesLeaderAdPage() {
 
       {/* ── Mid-hook ── */}
       <section className="max-w-xl mx-auto px-6 py-4 text-center">
-        <p className="font-comic text-xl sm:text-2xl text-[#1D4871]">
+        <p className="font-hero text-xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-2xl">
           Conversations is the key KPI, but agents don&apos;t know how to have them, and your results suffer
         </p>
       </section>
 
       {/* ── How Sayso helps ── */}
-      <section className="bg-[#f0f2f5] py-10">
+      <section className="bg-[#E3E8EC] py-10">
         <div className="max-w-xl mx-auto px-6">
-          <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-6">
+          <h2 className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl mb-6">
             How Sayso helps during calls
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Step 1 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <div className="bg-white rounded-[20px] overflow-hidden shadow-card">
               <div className="px-4 pt-4 pb-2">
-                <h3 className="font-comic text-lg text-[#1D4871] mb-1">1. Turn Sayso on</h3>
+                <h3 className="font-hero text-lg font-bold text-[#10233A] mb-1">1. Turn Sayso on</h3>
                 <p className="text-xs text-[#1D4871]/60">Agents start Sayso when they begin calling</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
@@ -76,9 +76,9 @@ export function SalesLeaderAdPage() {
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <div className="bg-white rounded-[20px] overflow-hidden shadow-card">
               <div className="px-4 pt-4 pb-2">
-                <h3 className="font-comic text-lg text-[#1D4871] mb-1">2. Get live guidance</h3>
+                <h3 className="font-hero text-lg font-bold text-[#10233A] mb-1">2. Get live guidance</h3>
                 <p className="text-xs text-[#1D4871]/60">Real-time prompts keep the conversation on track</p>
               </div>
               <div className="h-36 mx-3 mb-3 rounded-xl overflow-hidden">
@@ -106,11 +106,11 @@ export function SalesLeaderAdPage() {
                 desc: 'Confidence and conversion rate go up across the team.',
               },
             ].map((b) => (
-              <div key={b.title} className="bg-white rounded-2xl shadow-sm p-4 flex flex-col gap-2">
+              <div key={b.title} className="bg-white rounded-[20px] shadow-card p-4 flex flex-col gap-2">
                 <div className="w-9 h-9 rounded-full bg-[#2367EE]/10 flex items-center justify-center text-[#2367EE]">
                   {b.icon}
                 </div>
-                <h3 className="font-semibold text-[#1D4871] text-sm leading-tight">{b.title}</h3>
+                <h3 className="font-hero font-bold text-[#10233A] text-sm leading-tight">{b.title}</h3>
                 <p className="text-xs text-[#1D4871]/65 leading-relaxed">{b.desc}</p>
               </div>
             ))}
@@ -123,7 +123,7 @@ export function SalesLeaderAdPage() {
 
       {/* ── Closing CTA ── */}
       <section className="max-w-xl mx-auto px-6 py-10 text-center">
-        <h2 className="font-comic text-2xl sm:text-3xl text-[#1D4871] mb-8">
+        <h2 className="font-hero text-2xl font-extrabold tracking-[-0.02em] text-[#10233A] sm:text-3xl mb-8">
           Maximize the potential in the leads you&apos;re already generating.
         </h2>
         <AdPageCTAButton location="sales-leader-footer" />

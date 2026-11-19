@@ -4,6 +4,7 @@
  */
 import Image from 'next/image';
 import Link from 'next/link';
+import { panel } from '@/components/landing/HomeShared/styles';
 import { PROOF_VIDEO_URL } from './constants';
 import { PersonaDemoForm } from './PersonaDemoForm';
 
@@ -22,9 +23,9 @@ interface PersonaAdHeroProps {
 
 export function PersonaAdHero({ persona, label, headline, subheadline, proof }: PersonaAdHeroProps) {
   return (
-    <section className="pt-10 pb-8 px-6 text-center">
+    <section className="pt-6 pb-8 px-6 text-center sm:pt-10">
       <div className="max-w-xl mx-auto">
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-5 sm:mb-8">
           <Link href="/" aria-label="Sayso home">
             <Image
               src="/logos/logo-pos-horizontal.png"
@@ -35,12 +36,12 @@ export function PersonaAdHero({ persona, label, headline, subheadline, proof }: 
             />
           </Link>
         </div>
-        <p className="text-xs font-bold tracking-widest text-[#2367EE] mb-3">{label}</p>
-        <h1 className="font-comic text-3xl sm:text-4xl text-[#1D4871] leading-tight mb-4">
+        <p className="mb-3 font-hero text-xs font-bold tracking-[0.12em] text-[#556B86]">{label}</p>
+        <h1 className="mb-4 text-balance font-hero text-[30px] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#10233A] sm:text-[40px]">
           {headline}
         </h1>
         <p className="font-hero font-semibold text-lg text-[#1D4871] leading-snug mb-3">{subheadline}</p>
-        <p className="text-sm text-[#1D4871]/70 mb-6 leading-relaxed">
+        <p className="text-sm text-[#556B86] mb-6 leading-relaxed">
           {proof} One user achieved{' '}
           <a
             href={PROOF_VIDEO_URL}
@@ -53,7 +54,9 @@ export function PersonaAdHero({ persona, label, headline, subheadline, proof }: 
           </a>
           .
         </p>
-        <PersonaDemoForm />
+        <div className={`${panel} p-4 text-left sm:p-5`}>
+          <PersonaDemoForm />
+        </div>
         <div className="mt-6 flex items-center justify-center gap-3">
           <span className="text-xs font-semibold uppercase tracking-wider text-[#556B86]">Trusted by</span>
           <Image
