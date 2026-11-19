@@ -15,8 +15,10 @@
  *   utm_* params on the current URL.
  * Submissions still go through beehiiv's own form, so form-based automations fire.
  */
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { siteUrl } from '@/lib/config';
+import { EmbedFrame } from '@/components/embeds/EmbedFrame';
+import { crossOriginFrameLoaded } from '@/components/embeds/crossOriginFrameLoaded';
 
 const BEEHIIV_ORIGIN = 'https://subscribe-forms.beehiiv.com';
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
@@ -50,11 +52,14 @@ export function BeehiivForm({
   'data-analytics-id': dataAnalyticsId,
 }: BeehiivFormProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [loaded, setLoaded] = useState(false);
   const referrer = `${siteUrl}${pagePath}`;
 
   useEffect(() => {
     const iframe = iframeRef.current;
     if (!iframe) return;
+    // It may have loaded before hydration attached onLoad.
+    if (crossOriginFrameLoaded(iframe)) setLoaded(true);
 
     // Carry utm_* params through like the loader does. Only visitors who arrive
     // with them pay for a reload of the iframe.
@@ -85,14 +90,17 @@ export function BeehiivForm({
 
   return (
     <div className={className} data-analytics-id={dataAnalyticsId}>
-      <iframe
-        ref={iframeRef}
-        src={formSrc(formId, layout, referrer)}
-        title={title}
-        scrolling="no"
-        className="block w-full border-0"
-        style={{ height: INITIAL_HEIGHT }}
-      />
+      <EmbedFrame loaded={loaded} compactSkeleton>
+        <iframe
+          ref={iframeRef}
+          src={formSrc(formId, layout, referrer)}
+          title={title}
+          scrolling="no"
+          className="block w-full border-0"
+          style={{ height: INITIAL_HEIGHT }}
+          onLoad={() => setLoaded(true)}
+        />
+      </EmbedFrame>
     </div>
   );
 }
