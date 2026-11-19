@@ -21,7 +21,7 @@ export function FeaturePanel({ feature }: { feature: Feature }) {
           <SaysoWidget {...WIDGET_PRESETS[feature.preset]} />
         </WidgetScaler>
         {feature.preset === 'pulse' && (
-          <p className="mt-2 text-center text-xs text-[rgba(244,244,245,0.6)]">Sample market data</p>
+          <p className="mt-2 text-center text-xs text-[#556B86]">Sample market data</p>
         )}
       </div>
       <div className="min-h-[178px] px-1 pb-1 pt-3.5 min-[961px]:min-h-0 min-[961px]:p-1.5">
