@@ -12,7 +12,7 @@ export const doorKnocking: GlossaryEntry = {
   definition:
     'Door knocking is an in-person prospecting strategy where real estate agents walk through a neighborhood and visit homeowners at their front door to start conversations about buying or selling. It gives agents a direct, face-to-face way to introduce themselves, share local market knowledge, and build trust with potential clients in a specific area.',
   howItWorks: [
-    'Door knocking in real estate typically starts with choosing a target neighborhood. Agents pick an area near a recent listing, open house, or sale, then map out a route of 30 to 50 homes to visit in a single session.',
+    'Door knocking in real estate typically starts with choosing a target neighborhood. Agents pick an area near a recent listing, open house, or sale, then map out a route of 30 to 50 homes to visit in a single session. It is the in-person version of [circle prospecting](/glossary/circle-prospecting/).',
     'At each door, the conversation is short and low pressure. You introduce yourself, mention a reason for stopping by, like a nearby home that just sold, and ask whether the homeowner has thought about their property\'s value. The goal is to start a relationship, not to pitch.',
     'Most homeowners will not be ready to act immediately. The agents who succeed with door knocking are the ones who follow up consistently by calling or emailing the contacts they make in the field.',
   ],
