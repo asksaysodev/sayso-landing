@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Manrope } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -16,10 +16,12 @@ import { AUTHORS } from '@/lib/authors'
 const PRODUCTION_HOSTNAME = 'www.asksayso.com'
 import './globals.css'
 
-// Load Manrope for hero text (800 for the homepage headlines)
-const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['700', '800'],
+// Manrope for hero text (800 for the homepage headlines). Self-hosted: the
+// latin variable file covers 700 and 800. Loading it from Google Fonts at build
+// time failed on Vercel (next/font could not parse the response).
+const manrope = localFont({
+  src: './fonts/manrope-latin.woff2',
+  weight: '700 800',
   variable: '--font-manrope',
   display: 'swap',
 })

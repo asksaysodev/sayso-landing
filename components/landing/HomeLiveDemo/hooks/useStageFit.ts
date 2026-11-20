@@ -11,8 +11,8 @@ import { useEffect, useState, type RefObject } from 'react';
 import { useIsomorphicLayoutEffect } from '@/lib/hooks/useIsomorphicLayoutEffect';
 
 /** Widget design sizes at its tallest: Playbook beside the column, or stacked under it. */
-const WIDE = { width: 1010, height: 400 };
-const STACKED = { width: 604, height: 752 };
+const WIDE = { width: 1010, height: 480 };
+const STACKED = { width: 604, height: 832 };
 /** Must match WidgetScaler's default stackBelow. */
 const STACK_BELOW = 760;
 

@@ -6,7 +6,7 @@ export function DemoScrollCue() {
     <a
       href="#demo"
       data-analytics-id="cta-try-demo-hero"
-      className={`mt-6 inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] font-semibold text-[#556B86] hover:text-[#1D4871] ${focusRing}`}
+      className={`mt-6 inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] font-semibold text-[#2367EE] hover:text-[#1F5AD6] ${focusRing}`}
     >
       Try the interactive demo <span aria-hidden="true">&darr;</span>
     </a>

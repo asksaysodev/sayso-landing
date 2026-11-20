@@ -107,6 +107,7 @@ export const footerNav: NavSection[] = [
       { label: 'Contact', href: '/contact' },
       { label: 'Request a Demo', href: '/request-demo', dataAnalyticsId: 'request-demo-footer' },
       { label: 'Help Center', href: 'https://asksayso.notion.site/helpcenter', external: true, dataAnalyticsId: 'help-center' },
+      { label: 'Log In', href: loginHref, external: true, dataAnalyticsId: 'login-footer' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Careers', href: '/careers' },
     ],
