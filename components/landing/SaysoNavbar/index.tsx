@@ -14,7 +14,7 @@ import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
 import { DesktopNav } from './components/DesktopNav';
 import { MobileMenu } from './components/MobileMenu';
 
-/** Plain navy text link in the bar (Book a demo). Log in is in the mobile menu only. */
+/** Plain navy text link in the bar (Book a demo). Log in is in the mobile menu and the footer. */
 const navLink =
   'h-10 items-center rounded-full px-3 text-sm font-semibold text-[#1D4871] transition-colors hover:bg-[#1D4871]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2';
 
