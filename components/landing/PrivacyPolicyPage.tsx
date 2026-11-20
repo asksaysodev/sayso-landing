@@ -471,8 +471,8 @@ export function PrivacyPolicyPage() {
                 </tr>
                 <tr className="border-t border-[#1D4871]/10 align-top">
                   <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">beehiiv</td>
-                  <td className="py-2.5 pr-4">Newsletter</td>
-                  <td className="py-2.5">Email address</td>
+                  <td className="py-2.5 pr-4">Newsletter, signup source attribution</td>
+                  <td className="py-2.5">Email address, and the campaign or site you came from, only if you allow advertising</td>
                 </tr>
                 <tr className="border-t border-[#1D4871]/10 align-top">
                   <td className="py-2.5 pr-4 font-semibold text-[#1D4871]">Sure Send</td>
@@ -519,8 +519,8 @@ export function PrivacyPolicyPage() {
             If you live in a state that gives you the right to opt out of the sale or sharing of
             personal information, you can opt out at any time through{' '}
             <PrivacyChoicesLink className="text-[#2367EE] hover:underline" />, which is also linked in the footer of every page.
-            Turning off advertising and visitor identification there stops the Meta pixel, Vector
-            and Leadsy for your browser. You can also email your request to{' '}
+            Turning off advertising and visitor identification there stops the Meta pixel, Vector,
+            Leadsy and beehiiv attribution for your browser. You can also email your request to{' '}
             <a href="mailto:support@asksayso.com" className="text-[#2367EE] hover:underline">
               support@asksayso.com
             </a>{' '}

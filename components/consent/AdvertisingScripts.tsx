@@ -1,7 +1,10 @@
 'use client';
 
 /**
- * Meta pixel, Vector and Leadsy: advertising and visitor identification tags.
+ * Meta pixel, Vector, Leadsy and beehiiv attribution: advertising and visitor
+ * identification tags. beehiiv's attribution.js sets an attribution_data cookie
+ * (campaign source and referrer) for newsletter signups, so it waits for
+ * consent too.
  * They render only after the visitor allows Advertising, and load right away
  * when consent arrives mid-visit (no reload). Ids and config are unchanged from
  * the old root layout tags.
@@ -43,6 +46,11 @@ fbq('track', 'PageView');`,
           !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
           vector.load("80c5a758-0d80-4bfc-a31f-ca301c7405b8");
         `}</Script>
+      <Script
+        id="beehiiv-attribution"
+        src="https://subscribe-forms.beehiiv.com/attribution.js"
+        strategy="lazyOnload"
+      />
     </>
   );
 }

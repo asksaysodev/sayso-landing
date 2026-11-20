@@ -6,7 +6,7 @@
  * - First visit: a banner (bottom-left card on desktop, bottom sheet on phones)
  *   with Accept all and Reject non-essential.
  * - Choices panel: Essential (always on), Google Analytics (GA4), Ads & visitor
- *   identification (Meta, Vector, Leadsy). Opened from the footer's
+ *   identification (Meta, Vector, Leadsy, beehiiv attribution). Opened from the footer's
  *   "Your Privacy Choices" link or the privacy policy.
  * - Global Privacy Control: advertising is off and the banner is not shown;
  *   the panel notes that the signal was honored.
