@@ -42,7 +42,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'What does Sayso do, and who is it for?',
         answer:
-          'Sayso is real-time call guidance that helps real estate teams and brokerages with 5 or more agents book more appointments from their outbound prospecting and follow-up calls.',
+          'Sayso is [real-time call guidance](/blog/what-is-live-call-guidance/) that helps real estate teams and brokerages with 5 or more agents book more appointments from their outbound prospecting and follow-up calls.',
       },
       {
         question: 'What problem does Sayso solve?',
@@ -193,7 +193,7 @@ export const HOME_FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Will it distract me on a live call?',
     answer:
-      'No. Cues come in automatically as the prospect talks, so you don’t need to click anything and can stay focused on the conversation. You can minimize or hide Sayso at any point during a call, and agents find on-screen guidance less stressful than remembering a script.',
+      'No. Cues come in automatically as the prospect talks, so you don’t need to click anything and can stay focused on the conversation. You can minimize or hide Sayso at any point during a call, and agents find [on-screen guidance](/blog/what-is-live-call-guidance/) less stressful than remembering a script.',
   },
   {
     question: 'My agents won’t use another tool. Why is this different?',
