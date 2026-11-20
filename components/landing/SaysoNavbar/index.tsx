@@ -11,11 +11,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { useDemoCalendar } from '@/app/context/landing/DemoCalendarContext';
-import { loginHref } from '@/lib/navigation';
 import { DesktopNav } from './components/DesktopNav';
 import { MobileMenu } from './components/MobileMenu';
 
-/** Plain navy text link in the bar (Book a demo, Log in). */
+/** Plain navy text link in the bar (Book a demo). Log in is in the mobile menu and the footer. */
 const navLink =
   'h-10 items-center rounded-full px-3 text-sm font-semibold text-[#1D4871] transition-colors hover:bg-[#1D4871]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2';
 
@@ -61,17 +60,20 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
       } ${autoHide && hidden ? '-translate-y-full' : ''}`}
     >
       <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-6 px-4 md:px-6">
-        <Link
-          href="/"
-          aria-label="Sayso home"
-          className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
-        >
-          <Image src="/logos/logo-pos-transparent-horizontal.png" alt="Sayso" width={90} height={29} loading="eager" />
-        </Link>
+        {/* Equal-width sides on desktop keep the links centered on the page, under the team pill. */}
+        <div className="flex lg:flex-1">
+          <Link
+            href="/"
+            aria-label="Sayso home"
+            className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2367EE] focus-visible:ring-offset-2"
+          >
+            <Image src="/logos/logo-pos-transparent-horizontal.png" alt="Sayso" width={90} height={29} loading="eager" />
+          </Link>
+        </div>
 
         <DesktopNav />
 
-        <div className="ml-auto flex items-center gap-2 lg:ml-0">
+        <div className="ml-auto flex items-center gap-2 lg:ml-0 lg:flex-1 lg:justify-end">
           <button
             type="button"
             onClick={openDemoCalendar}
@@ -80,9 +82,6 @@ export default function SaysoNavbar({ autoHide = false }: { autoHide?: boolean }
           >
             Book a demo
           </button>
-          <a href={loginHref} target="_blank" rel="noopener noreferrer" className={`hidden lg:inline-flex ${navLink}`}>
-            Log in
-          </a>
           <button
             type="button"
             onClick={openSignup}
