@@ -1,8 +1,9 @@
-import { Caveat } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const caveat = Caveat({
-  subsets: ['latin'],
-  weight: ['400', '500'],
+// Self-hosted (latin variable file, covers 400-500) so builds never fetch from Google Fonts.
+const caveat = localFont({
+  src: '../fonts/caveat-latin.woff2',
+  weight: '400 500',
   variable: '--font-caveat',
   display: 'swap',
 });
