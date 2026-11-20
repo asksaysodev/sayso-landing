@@ -5,7 +5,7 @@
  *
  * - First visit: a banner (bottom-left card on desktop, bottom sheet on phones)
  *   with Accept all and Reject non-essential.
- * - Choices panel: Essential (always on), Analytics (GA4), Advertising & visitor
+ * - Choices panel: Essential (always on), Google Analytics (GA4), Ads & visitor
  *   identification (Meta, Vector, Leadsy). Opened from the footer's
  *   "Your Privacy Choices" link or the privacy policy.
  * - Global Privacy Control: advertising is off and the banner is not shown;
@@ -237,8 +237,7 @@ export function ConsentManager() {
             </button>
           </div>
           <p className="mt-1.5 text-sm leading-relaxed text-[#1D4871]/80">
-            Choose which cookies and tags Sayso can use. You can change this any time from the
-            footer.
+            Choose the cookies and tags Sayso uses. Change any time from the footer.
           </p>
           {gpc && (
             <p className="mt-3 rounded-xl bg-[#F4F4F5] px-3 py-2 text-xs font-semibold text-[#1D4871]">
@@ -249,21 +248,21 @@ export function ConsentManager() {
             <Toggle
               id={`${uid}-essential`}
               label="Essential"
-              description="Needed for the site to work, such as remembering this choice. Always on."
+              description="Needed for functionality, like remembering this choice."
               checked
               disabled
             />
             <Toggle
               id={`${uid}-analytics`}
-              label="Analytics"
-              description="Google Analytics, so we can see which pages help visitors."
+              label="Google Analytics"
+              description="So we can see which pages provide value."
               checked={draft.analytics}
               onChange={(v) => setDraft((d) => ({ ...d, analytics: v }))}
             />
             <Toggle
               id={`${uid}-advertising`}
-              label="Advertising & visitor identification"
-              description="Meta, Vector and Leadsy, to measure our ads and learn which companies visit."
+              label="Ads & visitor identification"
+              description="To measure ads and learn who visits."
               checked={draft.advertising}
               onChange={(v) => setDraft((d) => ({ ...d, advertising: v }))}
             />

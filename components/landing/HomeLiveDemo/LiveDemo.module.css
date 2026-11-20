@@ -219,7 +219,7 @@
   display: flex;
   justify-content: center;
   min-height: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
 }
 .captionPill {
   display: inline-flex;
