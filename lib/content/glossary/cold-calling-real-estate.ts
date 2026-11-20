@@ -14,7 +14,7 @@ export const coldCallingRealEstate: GlossaryEntry = {
   definitionFollowUp:
     'For scripts for each lead source, answers to common objections and the calling rules, read [our cold calling real estate guide](/blog/real-estate-cold-calling-guide/).',
   howItWorks: [
-    'Cold calling works by reaching out to prospects who have not contacted you first. Agents typically start with a targeted list, such as expired listings, FSBO homeowners, or contacts from a specific neighborhood. Each call follows a script designed to open a conversation and uncover whether the prospect has a need you can help with.',
+    'Cold calling works by reaching out to prospects who have not contacted you first. Agents typically start with a targeted list, such as expired listings, FSBO homeowners, or contacts from a specific neighborhood. Each call follows a script designed to open a conversation and uncover whether the prospect has a need you can help with. To hear how strong calls sound, see [what top agents say on calls](/blog/what-top-agents-say-on-calls/).',
     'The first call is rarely the one that books the appointment. Most cold calls are brief introductions that plant a seed. The real value comes from consistent follow-up over days and weeks.',
     'Agents who cold call regularly build a pipeline of prospects at various stages of readiness. Some are ready to meet now, while others need months of follow-up before they commit to an appointment.',
   ],
