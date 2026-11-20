@@ -221,10 +221,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <ConsentManager />
         <Analytics />
         <SpeedInsights />
-        <Script
-          src="https://subscribe-forms.beehiiv.com/attribution.js"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   )

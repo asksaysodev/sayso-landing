@@ -7,7 +7,8 @@
  *
  * Categories:
  * - analytics: GA4 (through GTM, Google Consent Mode v2 advanced)
- * - advertising: Meta pixel, Vector and Leadsy (loaded only after consent)
+ * - advertising: Meta pixel, Vector, Leadsy and beehiiv attribution (loaded
+ *   only after consent)
  *
  * Global Privacy Control: when the browser sends GPC, advertising is off unless
  * the visitor turned it on themselves while GPC was on.
