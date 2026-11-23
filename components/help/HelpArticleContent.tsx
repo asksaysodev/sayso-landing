@@ -23,7 +23,7 @@ function Callout({ type = 'note', title, children }: { type?: 'note' | 'tip' | '
     <div className={`my-6 flex gap-3 rounded-2xl border px-5 py-4 ${styles.box}`}>
       <div className="mt-0.5 shrink-0">{styles.icon}</div>
       <div className="min-w-0 text-[15px] leading-relaxed text-[#1D4871]/85 [&>p]:mb-2 [&>p:last-child]:mb-0 [&>ul]:mb-2 [&>ol]:mb-2">
-        <p className="mb-1 font-bold text-[#10233A]">{title ?? styles.label}</p>
+        {title && <p className="mb-1 font-bold text-[#10233A]">{title}</p>}
         {children}
       </div>
     </div>

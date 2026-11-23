@@ -68,11 +68,7 @@ export default function HelpHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="px-4 pb-10 pt-10 text-center sm:pt-14">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[#2367EE]">Sayso Help Center</p>
-        <h1 className="mb-4 font-hero text-4xl font-extrabold tracking-[-0.03em] text-[#10233A] sm:text-5xl">How can we help?</h1>
-        <p className="mx-auto mb-8 max-w-xl text-lg text-[#1D4871]/75">
-          Guides for the desktop app, the web app, agents on calls, and the admins who run their teams.
-        </p>
+        <h1 className="mb-8 font-hero text-4xl font-extrabold tracking-[-0.03em] text-[#10233A] sm:text-5xl">How can we help?</h1>
         <HelpSearch variant="hero" />
       </section>
 
@@ -87,13 +83,13 @@ export default function HelpHubPage() {
           >
             <CalendarClock className="mb-3 h-5 w-5 text-[#FFDE59]" aria-hidden />
             <p className="font-hero text-lg font-extrabold">Weekly office hours</p>
-            <p className="mt-1 text-sm text-white/80">{HELP_SUPPORT.officeHoursSchedule}. Bring any question about Sayso.</p>
+            <p className="mt-1 text-sm text-white/80">{HELP_SUPPORT.officeHoursSchedule}</p>
             <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#FFDE59]">
               Join on Google Meet <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
             </span>
           </a>
-          <StripLink href="/help/support/report-a-bug/" icon={<Bug className="h-5 w-5" aria-hidden />} title="Report a bug" text="What to send so we can fix it fast." />
-          <StripLink href="/help/support/send-your-logs/" icon={<FileText className="h-5 w-5" aria-hidden />} title="Send your logs" text="Where to find them on Mac and Windows." />
+          <StripLink href="/help/support/report-a-bug/" icon={<Bug className="h-5 w-5" aria-hidden />} title="Report a bug" />
+          <StripLink href="/help/support/send-your-logs/" icon={<FileText className="h-5 w-5" aria-hidden />} title="Send your logs" />
           <StripLink href={`mailto:${HELP_SUPPORT.email}`} icon={<Mail className="h-5 w-5" aria-hidden />} title="Email support" text={HELP_SUPPORT.email} />
         </section>
 
@@ -101,14 +97,13 @@ export default function HelpHubPage() {
         <section aria-label="Browse by topic" className="grid gap-5 md:grid-cols-2">
           {boxes.map((box) => (
             <div key={box.id} className="flex flex-col rounded-3xl bg-white p-6 shadow-card sm:p-7">
-              <Link href={`/help/${box.id}/`} className="group mb-5 flex items-start gap-4">
+              <Link href={`/help/${box.id}/`} className="group mb-5 flex items-center gap-4">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#2367EE]/10 text-[#2367EE]">{BOX_ICONS[box.id]}</span>
                 <span>
                   <span className="flex items-center gap-2 font-hero text-xl font-extrabold text-[#10233A] group-hover:text-[#2367EE]">
                     {box.title}
                     <ArrowRight className="h-4 w-4 opacity-0 transition group-hover:opacity-100" aria-hidden />
                   </span>
-                  <span className="mt-1 block text-sm leading-relaxed text-[#1D4871]/70">{box.description}</span>
                 </span>
               </Link>
               <ul className="mt-auto divide-y divide-[#D7DEE1]/70 border-t border-[#D7DEE1]/70">
@@ -146,7 +141,6 @@ export default function HelpHubPage() {
             <Sparkles className="mt-1 h-5 w-5 shrink-0 text-[#2367EE]" aria-hidden />
             <div>
               <p className="font-hero text-lg font-extrabold text-[#10233A]">What&apos;s new in Sayso</p>
-              <p className="text-sm text-[#1D4871]/70">Release notes for the desktop app and the web app.</p>
             </div>
           </div>
           <Link href="/help/support/whats-new/" className="inline-flex h-11 items-center rounded-full bg-[#2367EE] px-5 text-sm font-semibold text-white shadow-button hover:bg-[#1d5ad6]">
@@ -158,13 +152,13 @@ export default function HelpHubPage() {
   );
 }
 
-function StripLink({ href, icon, title, text }: { href: string; icon: React.ReactNode; title: string; text: string }) {
+function StripLink({ href, icon, title, text }: { href: string; icon: React.ReactNode; title: string; text?: string }) {
   const className = 'group rounded-2xl bg-white p-5 shadow-card-sm transition hover:shadow-card-sm-hover';
   const inner = (
     <>
       <span className="mb-3 block text-[#2367EE]">{icon}</span>
       <span className="block font-bold text-[#10233A] group-hover:text-[#2367EE]">{title}</span>
-      <span className="mt-1 block break-words text-sm text-[#1D4871]/70">{text}</span>
+      {text && <span className="mt-1 block break-words text-sm text-[#1D4871]/70">{text}</span>}
     </>
   );
   return href.startsWith('mailto:') ? (

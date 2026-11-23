@@ -85,9 +85,7 @@ export default async function HelpArticlePage({ params }: Props) {
         </aside>
 
         <article className="min-w-0 max-w-[760px]">
-          <p className="mb-2 text-sm font-semibold text-[#2367EE]">{group.title}</p>
           <h1 className="mb-3 font-hero text-3xl font-extrabold leading-tight tracking-[-0.03em] text-[#10233A] sm:text-4xl">{article.title}</h1>
-          <p className="mb-2 text-lg leading-relaxed text-[#1D4871]/75">{article.description}</p>
           <p className="mb-8 text-sm text-[#1D4871]/50">Updated {formatDate(article.updated)}</p>
 
           <HelpArticleContent content={article.content} />

@@ -54,8 +54,7 @@ export default async function HelpSectionPage({ params }: Props) {
         <HelpSearch />
       </div>
 
-      <h1 className="mb-3 font-hero text-4xl font-extrabold tracking-[-0.03em] text-[#10233A]">{sec.title}</h1>
-      <p className="mb-10 max-w-2xl text-lg text-[#1D4871]/75">{sec.description}</p>
+      <h1 className="mb-10 font-hero text-4xl font-extrabold tracking-[-0.03em] text-[#10233A]">{sec.title}</h1>
 
       <div className="space-y-10">
         {groups.map((g) => (
@@ -69,7 +68,6 @@ export default async function HelpSectionPage({ params }: Props) {
                       {a.title}
                       <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-[#2367EE] opacity-0 transition group-hover:opacity-100" aria-hidden />
                     </span>
-                    <span className="mt-1 line-clamp-2 text-sm text-[#1D4871]/70">{a.description}</span>
                   </Link>
                 </li>
               ))}
