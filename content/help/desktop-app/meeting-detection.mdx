@@ -1,0 +1,66 @@
+---
+title: "Meeting detection: Sayso asks when a call starts"
+seoTitle: Sayso meeting detection
+description: When a call starts in your browser, Sayso shows a small prompt to start coaching. What it detects, when it stays quiet, and how to turn it off.
+group: coach
+order: 70
+updated: 2026-11-23
+keywords: [meeting detection, call detection, sayso identified a call, prompt, popup, auto launch, google meet, zoom, browser call, detect call, turn off, disable]
+---
+
+With meeting detection on, Sayso shows a small prompt at the top of your screen when a call starts in your web browser: <Ui>Sayso identified a call</Ui>.
+
+<Screenshot src="/help/desktop-app/meeting-detection-1.webp" alt="The Sayso identified a call prompt with the Start button and close button" caption="The prompt that appears when a call starts in your browser." />
+
+## Start coaching from the prompt
+
+1. Hover over <Ui>Start</Ui>. It splits into <Ui>Start for Seller</Ui> and <Ui>Start for Buyer</Ui>.
+2. Click the one that matches your lead. The Coach widget opens with the session already running.
+
+The prompt never takes focus away from your call. You can keep talking and typing while it's on screen.
+
+To ignore it, click the <Ui>X</Ui>, or do nothing. The ring around the <Ui>X</Ui> counts down and the prompt disappears after 10 seconds. Hovering over the prompt pauses the countdown.
+
+## What Sayso detects
+
+Sayso watches for a **web browser** that starts using your microphone. When a browser keeps the microphone on for 3 seconds, Sayso treats it as a call and shows the prompt.
+
+| Detected | Not detected |
+|---|---|
+| Calls in Chrome, Edge, Safari, Firefox, Arc, Brave, Opera and Vivaldi. This covers dialers and CRMs that place calls in your browser, and meetings in Google Meet or Zoom in the browser. | The Zoom desktop app, Microsoft Teams desktop app, other desktop dialer apps, and calls on your cell phone or desk phone. |
+
+Google Meet turns on your microphone on its "ready to join" screen, so the prompt can appear before you click Join.
+
+Sayso doesn't listen to anything to detect a call. It only notices which app turned the microphone on. Nothing is captured until you start a session.
+
+## What you need
+
+- **Mac:** macOS 14.2 (Sonoma) or newer. On macOS 13 and early versions of 14, Sayso can't tell which app is using the microphone, so meeting detection doesn't run. Everything else in Sayso still works.
+- **Windows:** Windows 10 or 11.
+- Sayso must be running and you must be signed in with an active subscription.
+
+## When the prompt won't appear
+
+Sayso stays quiet when:
+
+- The Coach widget is already open, or a session is already running.
+- You already dismissed the prompt for this call, or let it time out. The next call prompts again.
+- Sayso is reconnecting to the internet.
+- You're signed out, or the account has no active subscription.
+- Meeting detection is turned off in Settings.
+
+More fixes in ["Sayso identified a call" prompt doesn't appear](/help/desktop-app/meeting-detection-not-showing/).
+
+## Turn meeting detection on or off
+
+1. Open <Ui>Settings</Ui> from the Sayso menu or the gear in the Coach widget.
+2. Click <Ui>General</Ui>.
+3. Set <Ui>Meeting detection</Ui> ("Ask to launch Sayso when a call starts in your browser") to <Ui>Enabled</Ui> or <Ui>Disabled</Ui>.
+
+It's on by default. The setting is saved to your account, so it applies on every computer you sign in on.
+
+<Screenshot src="/help/desktop-app/meeting-detection-2.webp" alt="Sayso Settings, General tab, with the Meeting detection setting" caption="Settings > General > Meeting detection." />
+
+<Callout type="tip">
+Turn on [Launch at Login](/help/desktop-app/launch-at-login/) too. Meeting detection only works while Sayso is running.
+</Callout>

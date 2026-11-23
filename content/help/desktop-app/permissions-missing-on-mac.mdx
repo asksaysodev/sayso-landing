@@ -1,0 +1,43 @@
+---
+title: Permissions look on but Sayso says they are missing
+seoTitle: Sayso Mac permissions on but not working
+description: If System Settings shows Sayso's permissions turned on but Sayso keeps asking, you likely have two copies of the app or stale permissions from an older version.
+group: troubleshooting
+order: 70
+updated: 2026-11-23
+keywords: [permissions missing, permissions on but not working, keeps asking for permissions, two copies, sayso 2, keep both, tccutil, reset permissions, screen recording not working, mac]
+---
+
+macOS ties permissions to one exact copy of an app. If something doesn't match, the switches look on in System Settings but Sayso can't use them, and it keeps showing the Permissions screen.
+
+## Fix 1: Remove extra copies
+
+The most common cause is two copies of Sayso, for example "Sayso" and "Sayso 2", usually from choosing <Ui>Keep Both</Ui> during an install.
+
+1. Quit Sayso from the Sayso menu.
+2. Open your Applications folder and drag every copy of Sayso to the Trash.
+3. Empty the Trash.
+4. Install Sayso again. When asked, choose <Ui>Replace</Ui>, never <Ui>Keep Both</Ui>. See [Install Sayso on a Mac](/help/desktop-app/install-on-mac/).
+5. Open Sayso and allow both permissions again.
+
+<Screenshot src="/help/desktop-app/mac-permissions-1.webp" alt="The Sayso Permissions screen" width={520} />
+
+## Fix 2: Clear the old permissions
+
+If you had Sayso installed before June 2026, the old version's permissions can get stuck. Clear them once so macOS asks fresh:
+
+1. Open <Ui>System Settings</Ui> > <Ui>Privacy & Security</Ui> > <Ui>Screen & System Audio Recording</Ui> (or <Ui>Screen Recording</Ui>).
+2. Select Sayso and click the minus (<Ui>-</Ui>) button to remove it, or turn it off. Click <Ui>Quit</Ui> if asked.
+3. Do the same under <Ui>Microphone</Ui>.
+4. Open Sayso again. It asks for both permissions; allow them and click <Ui>Quit and Reopen →</Ui>.
+
+<Callout type="note" title="Comfortable with Terminal?">
+You can clear both at once. Quit Sayso, open Terminal and run these two lines, then open Sayso and allow both permissions:
+
+```
+tccutil reset ScreenCapture com.asksayso.app
+tccutil reset Microphone com.asksayso.app
+```
+</Callout>
+
+This is a one-time fix. If Sayso still asks after both fixes, restart your Mac once, then email support@asksayso.com with [your logs](/help/support/send-your-logs/).

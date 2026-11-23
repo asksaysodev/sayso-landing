@@ -1,0 +1,48 @@
+---
+title: Allow microphone and screen and system audio on Mac
+seoTitle: Sayso Mac permissions setup
+description: Sayso needs two permissions on a Mac, one for your voice and one for the lead's. Turn on both, then click Quit and Reopen.
+group: install
+order: 50
+updated: 2026-11-23
+keywords: [permissions, microphone, screen recording, screen and system audio recording, privacy and security, quit and reopen, mac, allow, don't allow, system settings]
+---
+
+The first time you sign in on a Mac, Sayso shows a <Ui>Permissions</Ui> screen with two items. Sayso needs both to coach you:
+
+| Permission | Why Sayso needs it |
+|---|---|
+| <Ui>Microphone</Ui> | To capture your side of the conversation during calls |
+| <Ui>Screen & System Audio</Ui> | To capture audio from your leads during conversations |
+
+Sayso only captures audio during active calls. It does not record or save your screen. See [Why Sayso needs these permissions](/help/support/why-permissions/).
+
+<Screenshot src="/help/desktop-app/mac-permissions-1.webp" alt="The Sayso Permissions screen on Mac with Microphone and Screen and System Audio rows" caption="The Permissions screen on a Mac." />
+
+## Turn on both permissions
+
+1. Click <Ui>Allow Microphone</Ui>. When macOS asks, click <Ui>Allow</Ui>. The Microphone row turns green.
+2. Click <Ui>Open System Settings</Ui>. macOS shows its own screen recording prompt. Click its <Ui>Open System Settings</Ui> button.
+3. In System Settings, under <Ui>Privacy & Security</Ui>, open <Ui>Screen & System Audio Recording</Ui> (called <Ui>Screen Recording</Ui> on some macOS versions).
+4. Turn on the switch next to <Ui>Sayso</Ui>. If macOS asks, enter your Mac password.
+5. Go back to Sayso and click <Ui>Quit and Reopen →</Ui>.
+
+Sayso restarts. If both permissions are on, Sayso opens in the menu bar.
+
+<Callout type="note" title="Why Sayso has to restart">
+macOS only applies the screen and system audio permission when an app starts. Sayso can't see it until it reopens, which is why the last step is <Ui>Quit and Reopen</Ui>. If the permission was not turned on, Sayso shows the Permissions screen again after it reopens.
+</Callout>
+
+## If you clicked "Don't Allow"
+
+macOS won't ask a second time. Turn the permission on yourself:
+
+1. Open the Apple menu, then <Ui>System Settings</Ui>.
+2. Click <Ui>Privacy & Security</Ui>.
+3. Open <Ui>Microphone</Ui> and turn on <Ui>Sayso</Ui>.
+4. Open <Ui>Screen & System Audio Recording</Ui> (or <Ui>Screen Recording</Ui>) and turn on <Ui>Sayso</Ui>.
+5. Quit Sayso from the menu bar and open it again.
+
+## Sayso keeps asking even though both are on
+
+This usually means there are two copies of Sayso, or permissions from an older version are stuck. See [Permissions look on but Sayso says they are missing](/help/desktop-app/permissions-missing-on-mac/).
