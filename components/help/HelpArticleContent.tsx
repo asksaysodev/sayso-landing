@@ -31,26 +31,49 @@ function Callout({ type = 'note', title, children }: { type?: 'note' | 'tip' | '
   );
 }
 
+/** Pixel width of a WebP/PNG in /public, read from the file header (no image library). */
+function imageWidth(file: string): number | null {
+  try {
+    const b = fs.readFileSync(file);
+    if (b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP') {
+      const chunk = b.toString('ascii', 12, 16);
+      if (chunk === 'VP8X') return 1 + b.readUIntLE(24, 3);
+      if (chunk === 'VP8L') return 1 + (((b[22] & 0x3f) << 8) | b[21]);
+      if (chunk === 'VP8 ') return b.readUInt16LE(26) & 0x3fff;
+    }
+    if (b.toString('ascii', 1, 4) === 'PNG') return b.readUInt32BE(16);
+  } catch {
+    // fall through
+  }
+  return null;
+}
+
 function Screenshot({ src, alt, caption, width }: { src: string; alt: string; caption?: string; width?: number }) {
+  const file = path.join(process.cwd(), 'public', src);
   // A screenshot that has not been captured yet shows as a labeled gap in
   // previews instead of a broken image. Capture it or remove the tag before release.
-  if (src.startsWith('/') && !fs.existsSync(path.join(process.cwd(), 'public', src))) {
+  if (src.startsWith('/') && !fs.existsSync(file)) {
     return (
       <div className="my-6 rounded-xl border-2 border-dashed border-[#D7DEE1] bg-white/60 px-5 py-6 text-center text-sm text-[#1D4871]/60">
         <span className="font-semibold text-[#1D4871]">Screenshot pending:</span> {alt}
       </div>
     );
   }
+  // Screenshots are captured at 2x, so half the pixel width is their real
+  // on-screen size. Never show one larger than that, so small widgets stay sharp.
+  const px = imageWidth(file);
+  const natural = px ? Math.round(px / 2) : undefined;
+  const maxWidth = width && natural ? Math.min(width, natural) : width ?? natural;
   return (
     <figure className="my-6">
-      {/* Plain img: screenshots vary in size and are already optimized PNG/WebP files. */}
+      {/* Plain img: screenshots vary in size and are already optimized WebP files. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         alt={alt}
         loading="lazy"
         decoding="async"
-        style={width ? { maxWidth: width } : undefined}
+        style={maxWidth ? { maxWidth } : undefined}
         className="mx-auto w-full rounded-xl border border-[#D7DEE1] bg-white shadow-card"
       />
       {caption && <figcaption className="mt-2 text-center text-sm text-[#1D4871]/60">{caption}</figcaption>}
