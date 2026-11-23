@@ -1,0 +1,43 @@
+---
+title: Connect Sure Send
+description: Create an API token in Sure Send and paste it into Sayso to send call notes to your Sure Send leads.
+group: integrations
+order: 20
+updated: 2026-11-23
+keywords: [sure send, suresend, crm, api token, connect crm, integration]
+---
+
+Sure Send connects with an API token that you create in Sure Send. Once connected, you can link any conversation to a Sure Send lead and Sayso adds the call notes to it.
+
+## Step 1: Create a token in Sure Send
+
+1. Log in to Sure Send at [suresend.ai](https://suresend.ai/).
+2. Open **Settings → API Tokens**.
+3. Click **Create Token**. We recommend the **Team** scope.
+4. Copy the token right away. Sure Send shows it only once. If you lose it, revoke it in Sure Send and create a new one.
+
+## Step 2: Paste it into Sayso
+
+1. In the web app, open <Ui>Account Settings</Ui> > <Ui>Connections</Ui>.
+2. On the <Ui>Sure Send</Ui> card, click <Ui>Connect</Ui>.
+3. Paste the token into <Ui>API token</Ui>.
+4. Click <Ui>Connect</Ui>.
+
+When it works, you see <Ui>Sure Send connected</Ui>. Click <Ui>Done</Ui>. The card now shows <Ui>Connected</Ui> with the Sure Send account name, for example "Team: Your Team Name".
+
+<Screenshot src="/help/web-app/connect-sure-send-1.webp" alt="The Connect Sure Send window with the API token field" />
+
+## If the token isn't accepted
+
+You see "That token wasn't recognized." Check that you copied the whole token with no spaces at the start or end. If it still fails, create a fresh token in Sure Send and paste that one.
+
+## Limits
+
+- Each agent connects their own Sure Send token.
+- When you create a new lead in Sure Send from Sayso, **Email** and **Stage** are required.
+- If you also connected Follow Up Boss, Sayso uses Follow Up Boss for linking leads.
+
+## Related
+
+- [Send a conversation to your CRM](/help/web-app/link-conversation-to-lead/)
+- [Disconnect or reconnect a CRM](/help/web-app/disconnect-or-reconnect/)

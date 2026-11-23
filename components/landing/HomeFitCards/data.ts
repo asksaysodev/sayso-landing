@@ -57,6 +57,6 @@ export const FIT_CARDS: FitCard[] = [
     title: 'Set up in minutes',
     body: 'Many agents are set up in less than 5 minutes, with a launch guide, a help center and weekly office hours.',
     art: { kind: 'big', text: '5 MIN' },
-    link: { label: 'Help center', href: 'https://asksayso.notion.site/helpcenter', external: true },
+    link: { label: 'Help center', href: '/help/' },
   },
 ];

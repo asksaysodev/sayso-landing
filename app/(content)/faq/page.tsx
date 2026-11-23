@@ -30,14 +30,9 @@ export default function FaqPage() {
               Contact us
             </Link>{' '}
             or browse the{' '}
-            <a
-              href="https://asksayso.notion.site/helpcenter"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`whitespace-nowrap rounded font-semibold text-[#2367EE] ${focusRing}`}
-            >
+            <Link href="/help/" className={`whitespace-nowrap rounded font-semibold text-[#2367EE] ${focusRing}`}>
               help center
-            </a>
+            </Link>
             .
           </>
         }

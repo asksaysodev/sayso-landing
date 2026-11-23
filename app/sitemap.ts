@@ -8,6 +8,8 @@ import { getAllProductEntries } from '@/lib/content/products';
 import { getAllPartnerIntegrations } from '@/lib/content/partner-integrations';
 import { getAllUseCaseEntries } from '@/lib/content/for';
 import { getAllCaseStudyEntries } from '@/lib/content/case-studies';
+import { getAllHelpArticles } from '@/lib/help';
+import { HELP_SECTIONS } from '@/lib/help-sections';
 
 // Regenerate hourly so scheduled posts enter the sitemap when their publishedAt
 // date passes, without waiting for a manual redeploy. Matches the blog pages'
@@ -40,6 +42,7 @@ const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/integrations': '2026-06-23',
   '/objections': '2026-09-13',
   '/glossary': '2026-04-19',
+  '/help': '2026-11-23',
   '/tools/prospecting-calculator': '2026-11-07',
   '/resources': '2026-11-08',
   '/resources/script-book': '2026-11-08',
@@ -143,5 +146,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticPages, ...blogPages, ...contentPages];
+  // Help Center: section pages (dated by their newest article) and every article.
+  const helpArticles = getAllHelpArticles();
+  const helpPages: MetadataRoute.Sitemap = [
+    ...HELP_SECTIONS.map((sec) => {
+      const newest = helpArticles.filter((a) => a.section === sec.id).reduce((d, a) => (a.updated > d ? a.updated : d), '');
+      return newest
+        ? { url: `${siteUrl}/help/${sec.id}/`, lastModified: new Date(newest), changeFrequency: 'weekly' as const, priority: 0.5 }
+        : null;
+    }).filter((p): p is NonNullable<typeof p> => p !== null),
+    ...helpArticles.map((a) => ({
+      url: `${siteUrl}${a.url}`,
+      lastModified: new Date(a.updated),
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
+    })),
+  ];
+
+  return [...staticPages, ...blogPages, ...contentPages, ...helpPages];
 }

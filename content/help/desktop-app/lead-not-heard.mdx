@@ -1,0 +1,55 @@
+---
+title: Sayso hears me but not the lead
+seoTitle: Sayso can't hear the other person on the call
+description: Sayso hears the lead through your computer's audio. If only your side comes through, the call isn't playing through your computer or a Mac permission is missing.
+group: troubleshooting
+order: 20
+updated: 2026-11-23
+keywords: [can't hear lead, prospect not heard, other side, system audio, screen recording, one side, cell phone, mobile, dialer setting, output device]
+---
+
+Sayso hears your voice through your microphone and the lead's voice through your computer's audio output. When the lead's side is missing, Cue has nothing to react to.
+
+## 1. Place the call from your computer
+
+If the call rings on your cell phone, Sayso can't hear it.
+
+- Dial from your CRM or dialer on the computer, in Google Chrome.
+- Check your dialer's calling setting. It must be set to call through the computer, internet or "ask me". If it's set to always use your mobile phone, the call goes to your cell.
+- Calls you answer on your cell phone, including Zillow calls, don't work with Sayso.
+
+See [Set up your dialer for Sayso](/help/agents/set-up-your-dialer/).
+
+<Screenshot src="/help/desktop-app/mac-permissions-1.webp" alt="The Sayso Permissions screen with Screen and System Audio" width={520} />
+
+## 2. Play the call through your default speakers or headphones
+
+Sayso listens to your computer's default audio output. Put your headphones on before the call and make them the output device:
+
+<Tabs>
+<Tab label="Mac">
+
+Open <Ui>System Settings</Ui> > <Ui>Sound</Ui> > <Ui>Output</Ui> and select your headphones.
+
+</Tab>
+<Tab label="Windows">
+
+Right-click the speaker icon in the taskbar, click <Ui>Sound settings</Ui>, and under <Ui>Output</Ui> select your headphones.
+
+</Tab>
+</Tabs>
+
+## 3. On a Mac, check the screen and system audio permission
+
+This permission is how Sayso hears the lead on a Mac. Sayso only uses the audio and never records your screen.
+
+1. Open <Ui>System Settings</Ui> > <Ui>Privacy & Security</Ui>.
+2. Open <Ui>Screen & System Audio Recording</Ui> (or <Ui>Screen Recording</Ui>).
+3. Turn on <Ui>Sayso</Ui>.
+4. If you just turned it on, quit Sayso and open it again. macOS only applies this permission when an app starts.
+
+Permission on but still nothing? See [Permissions look on but Sayso says they are missing](/help/desktop-app/permissions-missing-on-mac/).
+
+## Test it
+
+Start a session, press Reset, and have a teammate call you. If Smart Capture fills in with what they say, Sayso is hearing them.

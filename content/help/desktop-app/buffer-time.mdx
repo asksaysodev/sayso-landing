@@ -1,0 +1,43 @@
+---
+title: "Buffer Time: when prompts start"
+seoTitle: Sayso Buffer Time setting
+description: Buffer Time is how long Sayso waits after you press Start or Reset before it begins coaching. Most agents should leave it at 0 seconds.
+group: features
+order: 40
+updated: 2026-11-23
+keywords: [buffer time, delay, wait, prompts start, voicemail greeting, call screening, ivr, seconds]
+---
+
+Every time you start a session or press Reset, Sayso waits for the Buffer Time before Cue starts prompting and Smart Capture starts taking notes. This keeps ringing, call-screening messages ("please state your name") and voicemail greetings out of the conversation.
+
+## Recommended: 0 seconds
+
+Leave it at 0 (the default) and press Reset when a person answers and starts talking. Coaching starts right away and nothing from before the pickup gets in.
+
+<Screenshot src="/help/desktop-app/prompt-style-1.webp" alt="Desktop Settings, Cue tab, with Buffer Time" />
+
+## When to add seconds
+
+- You press Reset as soon as you dial, before anyone answers.
+- Your dialer plays a screening message or menu after the person picks up.
+
+In those cases, set enough seconds to cover what plays before the person is on the line. Start around 7 to 10 seconds and adjust.
+
+## Change it
+
+1. Open <Ui>Settings</Ui> from the Sayso menu or the gear in the Coach widget.
+2. Click <Ui>Cue</Ui>.
+3. Drag the <Ui>Buffer Time</Ui> slider. You can choose from 0 to 30 seconds.
+
+The setting is saved to your account. See [When to hit Reset](/help/agents/when-to-reset/) for how Reset and Buffer Time work together.
+
+## Buffer Time and Auto Stop are different
+
+| | Auto Stop | Buffer Time |
+|---|---|---|
+| What it does | Ends the session after the lead has been silent too long | Waits before coaching starts |
+| When it applies | During a session, when no one is talking | Right after you press Start or Reset |
+| Where to set it | Settings > General | Settings > Cue |
+| Range | 2 to 10 minutes (default 5) | 0 to 30 seconds (default 0) |
+
+Read more about [Auto Stop](/help/desktop-app/auto-stop/).
