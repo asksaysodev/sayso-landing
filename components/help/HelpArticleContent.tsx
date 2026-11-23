@@ -6,6 +6,7 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import { Info, Lightbulb, TriangleAlert } from 'lucide-react';
 import { Tab, Tabs } from '@/components/help/HelpTabs';
+import { Clip } from '@/components/help/HelpClip';
 
 /**
  * MDX renderer for help articles. Components available in .mdx:
@@ -131,6 +132,7 @@ const components = {
   Faq,
   Tabs,
   Tab,
+  Clip,
 };
 
 export function HelpArticleContent({ content }: { content: string }) {
