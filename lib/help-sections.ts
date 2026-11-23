@@ -26,12 +26,12 @@ export const HELP_SECTIONS: HelpSection[] = [
   {
     id: 'desktop-app',
     title: 'Desktop app',
-    description: 'Install Sayso on Mac or Windows, find it in your menu bar or taskbar, and use the Coach on calls.',
+    description: 'Install Sayso on Mac or Windows, find it in your menu bar or taskbar, and use the Coach widget on calls.',
     hubBox: true,
     groups: [
       { id: 'install', title: 'Download and install' },
       { id: 'find-and-open', title: 'Find and open Sayso' },
-      { id: 'coach', title: 'The Coach window' },
+      { id: 'coach', title: 'Coach widget' },
       { id: 'features', title: 'Cue, Smart Capture, Pulse and Playbooks' },
       { id: 'settings', title: 'Desktop settings' },
       { id: 'troubleshooting', title: 'Desktop troubleshooting' },

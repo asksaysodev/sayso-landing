@@ -75,19 +75,19 @@ export default function HelpHubPage() {
       <div className="mx-auto max-w-6xl px-4">
         {/* General help strip */}
         <section aria-label="Get help" className="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          <a
-            href={HELP_SUPPORT.officeHoursUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-2xl bg-[#1D4871] p-5 text-white shadow-card transition hover:-translate-y-px lg:col-span-2"
-          >
-            <CalendarClock className="mb-3 h-5 w-5 text-[#FFDE59]" aria-hidden />
-            <p className="font-hero text-lg font-extrabold">Weekly office hours</p>
-            <p className="mt-1 text-sm text-white/80">{HELP_SUPPORT.officeHoursSchedule}</p>
-            <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#FFDE59]">
-              Join on Google Meet <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
-            </span>
-          </a>
+          <div className="flex flex-col rounded-2xl bg-white p-5 shadow-card-sm lg:col-span-2">
+            <CalendarClock className="mb-3 h-5 w-5 text-[#2367EE]" aria-hidden />
+            <p className="font-bold text-[#10233A]">Weekly office hours</p>
+            <p className="mt-1 text-sm text-[#1D4871]/70">{HELP_SUPPORT.officeHoursSchedule}</p>
+            <a
+              href={HELP_SUPPORT.officeHoursUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex h-10 items-center gap-1.5 self-start rounded-full bg-[#2367EE] px-4 text-sm font-semibold text-white shadow-button transition hover:bg-[#1d5ad6]"
+            >
+              Join on Google Meet <ArrowRight className="h-4 w-4" aria-hidden />
+            </a>
+          </div>
           <StripLink href="/help/support/report-a-bug/" icon={<Bug className="h-5 w-5" aria-hidden />} title="Report a bug" />
           <StripLink href="/help/support/send-your-logs/" icon={<FileText className="h-5 w-5" aria-hidden />} title="Send your logs" />
           <StripLink href={`mailto:${HELP_SUPPORT.email}`} icon={<Mail className="h-5 w-5" aria-hidden />} title="Email support" text={HELP_SUPPORT.email} />
