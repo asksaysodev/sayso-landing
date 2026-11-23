@@ -1,0 +1,69 @@
+---
+title: Why Sayso needs these permissions
+description: On a Mac, Sayso asks for Microphone and Screen & System Audio so it can hear both sides of your call. On Windows it only needs the microphone. Here is what each one does.
+group: privacy
+order: 20
+updated: 2026-11-23
+keywords: [permissions, microphone, screen recording, system audio, privacy and security, allow, don't allow]
+---
+
+Sayso coaches you by listening to the conversation. To hear both sides, it needs access to your microphone and to the sound your computer plays.
+
+## On a Mac
+
+The first time you open Sayso, the <Ui>Permissions</Ui> screen asks for two things:
+
+| Permission | What it is for |
+|---|---|
+| <Ui>Microphone</Ui> | To hear your side of the conversation |
+| <Ui>Screen & System Audio</Ui> | To hear the lead through your computer's audio |
+
+<Screenshot src="/help/support/why-permissions-1.webp" alt="The Sayso Permissions screen on Mac listing Microphone and Screen & System Audio" caption="The Permissions screen on a Mac." />
+
+macOS groups system audio with screen recording, so the second permission is listed under **Screen Recording** in System Settings. Sayso only uses the audio. Nothing on your screen is captured or saved.
+
+Without both permissions, Sayso hears only half the call and prompts will not work. After you allow Screen & System Audio, macOS needs Sayso to restart, which is why the button says <Ui>Quit and Reopen →</Ui>.
+
+For the full steps, see [Allow microphone and screen & system audio on Mac](/help/desktop-app/mac-permissions/).
+
+## On Windows
+
+Windows lets Sayso hear your computer's audio without a separate permission, so Sayso only asks for the <Ui>Microphone</Ui>. Turn on <Ui>Microphone access</Ui> and <Ui>Let desktop apps access your microphone</Ui> in Windows Settings, then click <Ui>Continue →</Ui>. No restart is needed.
+
+For the full steps, see [Allow microphone access on Windows](/help/desktop-app/windows-microphone-permission/).
+
+## When Sayso listens
+
+Sayso only captures audio while a coaching session is active, after you start a session in the Coach. It stops when you press Stop or when [Auto Stop](/help/desktop-app/auto-stop/) ends the session.
+
+[Meeting detection](/help/desktop-app/meeting-detection/) is different: it only checks whether your browser is using the microphone, so Sayso can ask if you want to start coaching. It does not listen to the call.
+
+Audio is never saved. A written transcript of each coached conversation is saved with the conversation. See [Privacy and your data](/help/support/privacy-and-data/).
+
+## Clicked "Don't Allow" by accident?
+
+<Tabs>
+<Tab label="Mac">
+
+1. Open **System Settings**, then **Privacy & Security**.
+2. Open **Microphone** and turn on **Sayso**.
+3. Open **Screen Recording** and turn on **Sayso**.
+4. Quit Sayso and open it again.
+
+If the switches are on but Sayso still says a permission is missing, you may have two copies of Sayso installed. See [Install Sayso on Mac](/help/desktop-app/install-on-mac/).
+
+</Tab>
+<Tab label="Windows">
+
+1. Open **Settings**, then **Privacy & security**, then **Microphone**.
+2. Turn on **Microphone access**.
+3. Turn on **Let desktop apps access your microphone**.
+4. Go back to Sayso and click <Ui>Continue →</Ui>.
+
+</Tab>
+</Tabs>
+
+## Other pop-ups you might see
+
+- **"Downloaded from the internet" on a Mac:** click **Open**. macOS shows this for apps downloaded outside the App Store.
+- **Local network or notifications:** Sayso works whether you allow these or not.

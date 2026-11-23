@@ -1,0 +1,26 @@
+---
+title: The "Sayso identified a call" prompt doesn't appear
+seoTitle: Sayso meeting detection not working? Fixes
+description: If Sayso doesn't ask to launch when your call starts, check where the call is happening, your setting, and your macOS version.
+group: troubleshooting
+order: 50
+updated: 2026-11-23
+keywords: [meeting detection not working, call detection, prompt not showing, sayso identified a call, no popup, zoom app, teams, macos 14.2]
+---
+
+Work through these checks in order.
+
+1. **Is Sayso running?** Meeting detection only works while Sayso is open. Look for the Sayso icon in your menu bar or taskbar, and turn on [Launch at Login](/help/desktop-app/launch-at-login/) so it's always running.
+2. **Is the call in a web browser?** Sayso detects calls in Chrome, Edge, Safari, Firefox, Arc, Brave, Opera and Vivaldi. It doesn't detect the Zoom or Teams desktop apps, other desktop dialer apps, or calls on your phone. For those, open the Coach yourself with <Kbd>Ctrl</Kbd> + <Kbd>S</Kbd> (Mac) or <Kbd>Alt</Kbd> + <Kbd>Shift</Kbd> + <Kbd>S</Kbd> (Windows).
+3. **Is the setting on?** Open <Ui>Settings</Ui> > <Ui>General</Ui> and check that <Ui>Meeting detection</Ui> is <Ui>Enabled</Ui>.
+4. **Is your Mac new enough?** Meeting detection needs macOS 14.2 or newer. Check Apple menu > <Ui>About This Mac</Ui>. On older versions, open the Coach yourself.
+5. **Is the Coach already open?** Sayso doesn't prompt when the Coach is open or a session is running. Just click a Start button in the Coach.
+6. **Did you already dismiss it?** If you closed the prompt or let it time out, Sayso won't ask again during that same call. It asks again on your next call.
+7. **Are you signed in with an active subscription?** Sayso doesn't prompt when you're signed out or the account has no active subscription.
+8. **Is Sayso reconnecting?** Sayso doesn't prompt while it's reconnecting to the internet.
+
+Sayso shows the prompt once the browser has held your microphone for about 3 seconds. If your dialer only turns the microphone on after the lead answers, the prompt appears then.
+
+Still nothing? [Quit and reopen Sayso](/help/desktop-app/quit-sayso/), then email support@asksayso.com with your browser, dialer and [your logs](/help/support/send-your-logs/).
+
+See [Meeting detection](/help/desktop-app/meeting-detection/) for how it works.

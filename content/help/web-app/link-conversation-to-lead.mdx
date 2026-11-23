@@ -1,0 +1,57 @@
+---
+title: Send a conversation to your CRM
+description: Link a call to an existing lead or create a new one, and Sayso adds a note with the summary, Smart Capture and Pulse data to that lead.
+group: integrations
+order: 30
+updated: 2026-11-23
+keywords: [add lead, send notes to crm, push notes, sync, follow up boss note, sure send, create lead, link lead]
+---
+
+Once Follow Up Boss or Sure Send is connected, every one of your conversations has an <Ui>Add lead</Ui> button. Pick the lead the call was with, and Sayso posts the call notes to that lead in your CRM.
+
+Not connected yet? See [Connect Follow Up Boss](/help/web-app/connect-follow-up-boss/) or [Connect Sure Send](/help/web-app/connect-sure-send/).
+
+## Link the call to an existing lead
+
+1. Open <Ui>Conversations</Ui> and find the call.
+2. Click <Ui>Add lead</Ui> under the summary.
+3. Type the lead's email or phone number in <Ui>Search by email or phone</Ui>.
+4. Click the lead.
+
+The lead's name now shows on the conversation, and Sayso adds the note to that lead in your CRM.
+
+<Screenshot src="/help/web-app/link-conversation-to-lead-1.webp" alt="The Add lead menu with a search box and matching leads" />
+
+## Create a new lead
+
+If the person isn't in your CRM yet:
+
+1. Click <Ui>Add lead</Ui>, then <Ui>Create lead</Ui> at the bottom of the menu.
+2. Fill in <Ui>First name</Ui>, <Ui>Last name</Ui> and <Ui>Phone</Ui>. <Ui>Email</Ui> is optional for Follow Up Boss and required for Sure Send. Sure Send also asks for a <Ui>Stage</Ui>.
+3. Click <Ui>Create lead</Ui>.
+
+Sayso creates the lead in your CRM and links the call to it in one step. In Follow Up Boss, the new lead's source is **Sayso**.
+
+## What the note in your CRM looks like
+
+Sayso adds a note titled **Sayso Note** to the lead. It includes:
+
+- The call **summary**
+- Every **Smart Capture** field (Location, Price, Motivation, Agent, Mortgage, Appointment). Empty fields say "Not captured", which tells you what to ask next time.
+- **Market Pulse** numbers, if you used Pulse
+- **Appointment: Booked**, if Sayso detected one
+
+<Callout type="tip">
+Smart Capture can mishear names and street names. Glance at the notes before you link the lead, or fix them afterward and resync. See [Edit Smart Capture notes after a call](/help/web-app/edit-smart-capture/).
+</Callout>
+
+## Good to know
+
+- You can only link leads on your own calls.
+- Calls aren't sent to your CRM automatically. Linking is what sends the note.
+- Using a CRM Sayso doesn't connect to yet? Copy the notes from the Smart Capture tab and paste them into your CRM. Then [request an integration](/help/web-app/request-an-integration/).
+
+## Related
+
+- [Open, change or unlink a linked lead](/help/web-app/edit-or-open-linked-lead/)
+- [Send your notes to your CRM after a call](/help/agents/send-notes-to-your-crm/)

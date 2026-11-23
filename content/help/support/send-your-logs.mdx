@@ -1,0 +1,70 @@
+---
+title: Why we ask for your logs, and how to send them
+seoTitle: Send your Sayso logs
+description: Logs are a timeline of what the Sayso desktop app did on your computer. Here is what is in them, where to find them on Mac and Windows, and how to send them.
+group: contact
+order: 40
+updated: 2026-11-23
+keywords: [logs, log file, debug, diagnostics, troubleshooting, appdata, application support]
+---
+
+## What logs are
+
+The Sayso desktop app keeps a small text file on your computer for each day you use it. It records what the app did and when: signing in, connecting to our servers, starting and stopping sessions, and which audio devices it saw.
+
+If something is not working, logs let our team see what happened without guessing or asking you to recreate the problem.
+
+## What logs help us find
+
+- **Microphone problems:** whether your microphone was sending sound, how loud it was, and when it went silent
+- **Audio device changes:** a headset or Bluetooth device disconnecting, or your computer switching microphones in the middle of a call
+- **Connection drops:** when the Coach lost its connection and whether it reconnected
+- **Sign-in issues:** whether your session expired or failed to refresh
+- **App errors:** anything that failed behind the scenes
+
+## What is in them, and what is not
+
+Logs do **not** contain:
+
+- Audio from your calls
+- Full call transcripts
+- Your password or sign-in tokens. Sayso removes these before anything is written to the file.
+
+Logs **can** contain:
+
+- The email on your Sayso account
+- Your computer's user name, because it shows up in file paths
+- The coaching prompts Sayso showed you
+- Details Smart Capture picked up during calls, such as a lead's area or price range
+
+We only use your logs to fix the problem you reported. If there is anything in them you would rather we not see, tell us before you send them.
+
+## Find your logs
+
+<Tabs>
+<Tab label="Mac">
+
+1. Open **Finder**.
+2. Press <Kbd>Cmd</Kbd> + <Kbd>Shift</Kbd> + <Kbd>G</Kbd>.
+3. Paste this and press <Kbd>Return</Kbd>: `~/Library/Application Support/sayso-app/logs`
+4. You will see files named like `sayso-2026-11-18.log`.
+
+</Tab>
+<Tab label="Windows">
+
+1. Press <Kbd>Windows</Kbd> + <Kbd>R</Kbd>.
+2. Paste this and press <Kbd>Enter</Kbd>: `%APPDATA%\sayso-app\logs`
+3. You will see files named like `sayso-2026-11-18.log`.
+
+</Tab>
+</Tabs>
+
+<Callout type="note">
+Sayso keeps about a week of log files and deletes older ones automatically. Send your logs within a few days of the problem, or the file for that day may be gone.
+</Callout>
+
+## Send them
+
+1. Pick the files to send. Each file is named for the day Sayso was opened (in UTC time), and Sayso keeps writing to that same file until you quit it. If you leave Sayso open for days, the newest file covers all of them. When in doubt, send the newest file plus any file dated the day of the problem.
+2. Email the files to [support@asksayso.com](mailto:support@asksayso.com), or attach them to your [bug report](/help/support/report-a-bug/).
+3. Tell us roughly what time the problem happened, with your time zone. It helps us find it fast.
