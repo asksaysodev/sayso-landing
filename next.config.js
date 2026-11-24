@@ -105,6 +105,17 @@ const nextConfig = {
   async redirects() {
     return [
       // ──────────────────────────────────────────────────
+      // SEO MERGES (Nov 2026): overlapping pages folded into the page Google
+      // prefers. 301, straight to the final URL with its trailing slash.
+      // ──────────────────────────────────────────────────
+      ...[
+        ['/glossary/cold-calling-real-estate', '/blog/real-estate-cold-calling-guide/'],
+        ['/blog/real-estate-objection-handling', '/objections/'],
+      ].flatMap(([from, to]) => [
+        { source: from, destination: to, statusCode: 301 },
+        { source: `${from}/`, destination: to, statusCode: 301 },
+      ]),
+      // ──────────────────────────────────────────────────
       // PERSONA PAGE REDIRECTS — activate when /for/ pages are live
       // ──────────────────────────────────────────────────
       // ──────────────────────────────────────────────────
