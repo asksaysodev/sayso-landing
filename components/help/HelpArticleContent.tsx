@@ -81,6 +81,27 @@ function Screenshot({ src, alt, caption, width }: { src: string; alt: string; ca
   );
 }
 
+/** Phone screenshots in a row: <PhoneSteps><Phone src alt caption /></PhoneSteps> */
+function PhoneSteps({ children }: { children: React.ReactNode }) {
+  return <div className="mx-auto my-6 grid max-w-[560px] grid-cols-2 gap-5">{children}</div>;
+}
+
+function Phone({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <figure className="m-0">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className="w-full rounded-[22px] border-[5px] border-[#10233A] bg-white shadow-card"
+      />
+      {caption && <figcaption className="mt-2 text-center text-sm leading-snug text-[#1D4871]/70">{caption}</figcaption>}
+    </figure>
+  );
+}
+
 function Kbd({ children }: { children: React.ReactNode }) {
   return (
     <kbd className="inline-block min-w-[1.6em] rounded-md border border-[#D7DEE1] border-b-2 bg-white px-1.5 py-0.5 text-center font-sans text-[13px] font-semibold text-[#10233A]">
@@ -156,6 +177,8 @@ const components = {
   Tabs,
   Tab,
   Clip,
+  PhoneSteps,
+  Phone,
 };
 
 export function HelpArticleContent({ content }: { content: string }) {
