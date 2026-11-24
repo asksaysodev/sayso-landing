@@ -52,10 +52,12 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
   if (post.type === 'supporting' && post.pillar) {
     const pillar = getPostBySlug(post.pillar);
     if (pillar) {
+      // A WebPage reference, not a second BlogPosting: Google reads a nested
+      // BlogPosting as another article and flags its missing author and image.
       base.isPartOf = {
-        '@type': 'BlogPosting',
+        '@type': 'WebPage',
         '@id': `${siteUrl}/blog/${pillar.slug}/`,
-        headline: pillar.title,
+        name: pillar.title,
       };
     }
   }
