@@ -16,6 +16,24 @@ const resourcesHub: HubPageConfig = {
       linkText: 'Get the free script book',
     },
     {
+      title: 'Prospecting and Cold Calling',
+      slug: 'prospecting',
+      description: 'Lead sources, calling rules, call reluctance and every prospecting guide.',
+      linkText: 'Browse prospecting guides',
+    },
+    {
+      title: 'Call Coaching and Training',
+      slug: 'coaching-and-training',
+      description: 'Coaching programs, role play, call skills and live call guidance.',
+      linkText: 'Browse coaching and training guides',
+    },
+    {
+      title: 'Appointments and Follow-Up',
+      slug: 'appointments-and-follow-up',
+      description: 'Booking the meeting, listing appointments and following up with leads.',
+      linkText: 'Browse appointment and follow-up guides',
+    },
+    {
       title: 'Blog',
       slug: 'blog',
       linkText: 'Read the blog',

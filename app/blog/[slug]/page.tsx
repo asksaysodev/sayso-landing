@@ -17,6 +17,7 @@ import { BlogClusterPosts } from '@/components/blog/BlogClusterPosts';
 // Do not re-add BlogTableOfContents or BlogClusterNav sidebar here.
 import { BlogNewsletterCTA } from '@/components/blog/BlogNewsletterCTA';
 import { siteUrl } from '@/lib/config';
+import { hubForPost, showHubLink } from '@/lib/content/topic-hubs';
 
 // Revalidate hourly so scheduled posts appear on production within an hour of their publishedAt date.
 export const revalidate = 3600;
@@ -79,6 +80,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       ? post // The post itself is the pillar
       : null;
   const clusterPillar = post.cluster ? getPillarPost(post.cluster) : null;
+  const topicHub = hubForPost(post);
+  const hubLink = showHubLink(post.slug) ? topicHub : null;
+  const hasPillarParent = post.type === 'supporting' && !!pillarPost && pillarPost.slug !== post.slug;
+  // Without a live pillar post, the topic hub is the parent page in breadcrumbs.
+  const hubParent = !hasPillarParent && hubLink ? hubLink : null;
   const clusterSupporting = post.cluster ? getSupportingPosts(post.cluster) : [];
 
   // Build breadcrumbs: supporting posts show pillar in path if it exists
@@ -86,6 +92,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? [
         { name: 'Blog', url: '/blog/' },
         { name: pillarPost.title, url: `/blog/${pillarPost.slug}/` },
+        { name: post.title, url: `/blog/${post.slug}/` },
+      ]
+    : hubParent
+    ? [
+        { name: 'Blog', url: '/blog/' },
+        { name: hubParent.label, url: hubParent.href },
         { name: post.title, url: `/blog/${post.slug}/` },
       ]
     : [
@@ -99,6 +111,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? [
         { label: 'Blog', href: '/blog' },
         { label: pillarPost.title, href: `/blog/${pillarPost.slug}` },
+        { label: post.title },
+      ]
+    : hubParent
+    ? [
+        { label: 'Blog', href: '/blog' },
+        { label: hubParent.label, href: hubParent.href },
         { label: post.title },
       ]
     : [
@@ -155,10 +173,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Early CTA - pillar posts only */}
       {post.type === 'pillar' && <BlogEarlyCTA />}
 
-      {/* Pillar uplink - supporting posts only, when pillar exists */}
-      {post.type === 'supporting' && pillarPost && pillarPost.slug !== post.slug && (
-        <BlogPillarUplink pillar={pillarPost} />
-      )}
+      {/* Uplinks: the pillar guide (supporting posts) and the topic hub (every post) */}
+      <BlogPillarUplink pillar={hasPillarParent ? pillarPost : null} hub={hubLink} />
 
       <BlogArticleContent content={openingPart} />
       {showInlineCta && post.ctaVariant && (
