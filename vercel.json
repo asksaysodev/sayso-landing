@@ -1,6 +1,0 @@
-{
-  "redirects": [
-    { "source": "/glossary/cold-calling-real-estate", "destination": "/blog/real-estate-cold-calling-guide/", "statusCode": 301 },
-    { "source": "/blog/real-estate-objection-handling", "destination": "/objections/", "statusCode": 301 }
-  ]
-}
