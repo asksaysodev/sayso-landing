@@ -11,6 +11,15 @@ function formatClusterName(cluster: string): string {
     .join(' ');
 }
 
+/**
+ * Frontmatter dates have no timezone. Vercel runs in UTC, so a post goes live at
+ * that time in UTC; say so explicitly, as Google asks for a timezone.
+ */
+function withTimezone(date: string): string {
+  if (/(Z|[+-]\d{2}:?\d{2})$/.test(date)) return date;
+  return `${date.includes('T') ? date : `${date}T00:00:00`}Z`;
+}
+
 export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: string) {
   const base: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -23,8 +32,8 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
       ...(post.author.path && { url: `${siteUrl}${post.author.path}` }),
     },
     publisher: SAYSO_PUBLISHER,
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
+    datePublished: withTimezone(post.publishedAt),
+    dateModified: withTimezone(post.updatedAt),
     description: post.description,
     mainEntityOfPage: {
       '@type': 'WebPage',
