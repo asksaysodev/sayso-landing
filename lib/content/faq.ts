@@ -77,7 +77,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'Won’t AI callers replace this?',
         answer:
-          'AI callers replace the agent, and Sayso makes the agent better. Sayso keeps a person on the call and helps that person in the conversations that matter.',
+          'No. AI callers won’t replace Sayso because they are a different tool with a different job. An AI caller places calls instead of an agent. Sayso works for the agent who is on the call, helping them in the live conversation. If your team uses an AI caller, every conversation it hands to an agent is still one where Sayso helps.',
       },
       {
         question: 'Who is behind Sayso?',
@@ -97,7 +97,12 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'Does it work on my cell phone?',
         answer:
-          'Not yet. A phone app is coming soon. Today Sayso works on calls made from your laptop or desktop, including browser-based dialers, Zoom and Google Meet. How would you use Sayso from your phone? Let us know at [support@asksayso.com](mailto:support@asksayso.com).',
+          'Not as a phone app yet; that is coming soon. Today Sayso works on calls your computer hears, and you can take your cell phone calls on your computer (see the next question). How would you use Sayso from your phone? Let us know at [support@asksayso.com](mailto:support@asksayso.com).',
+      },
+      {
+        question: 'How do I take my cell phone calls on my computer?',
+        answer:
+          'On Windows, the Phone Link app connects your Android phone or iPhone over Bluetooth, so you can make and answer cell calls from your PC. On a Mac, turn on Calls from iPhone: sign in to the same Apple Account on both devices, connect them to the same Wi-Fi, and select Calls from iPhone in FaceTime settings. Calls then go through FaceTime or the Phone app on your Mac. iPhone Mirroring does not carry phone calls, so use Calls from iPhone instead. Either way the call audio is on your computer, which is where Sayso listens.',
       },
       {
         question: 'Does it support Spanish?',
