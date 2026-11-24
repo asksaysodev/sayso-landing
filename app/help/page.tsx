@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Bug, CalendarClock, FileText, Headphones, LayoutDashboard, Mail, Monitor, Sparkles, UsersRound } from 'lucide-react';
+import { ArrowRight, Bug, CalendarClock, FileText, Headphones, LayoutDashboard, Mail, MapPin, Monitor, PenLine, Sparkles, UsersRound } from 'lucide-react';
 import { HelpSearch } from '@/components/help/HelpSearch';
 import { HELP_SECTIONS, HELP_SUPPORT } from '@/lib/help-sections';
 import { getAllHelpArticles, getSectionArticles } from '@/lib/help';
@@ -118,6 +118,23 @@ export default function HelpHubPage() {
               </ul>
             </div>
           ))}
+        </section>
+
+        <section aria-label="Sayso tools" className="mt-12">
+          <h2 className="mb-4 font-hero text-xl font-extrabold text-[#10233A]">Sayso tools</h2>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { href: '/help/tools/sayso-map/', icon: <MapPin className="h-5 w-5" aria-hidden />, title: 'Sayso Map' },
+              { href: '/help/tools/sayso-composer/', icon: <PenLine className="h-5 w-5" aria-hidden />, title: 'Sayso Composer' },
+            ].map((t) => (
+              <Link key={t.href} href={t.href} className="group flex items-center gap-4 rounded-2xl bg-white p-5 shadow-card-sm transition hover:shadow-card-sm-hover">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#2367EE]/10 text-[#2367EE]">{t.icon}</span>
+                <span>
+                  <span className="block font-bold text-[#10233A] group-hover:text-[#2367EE]">{t.title}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {popular.length > 0 && (

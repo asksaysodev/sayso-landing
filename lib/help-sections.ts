@@ -79,6 +79,16 @@ export const HELP_SECTIONS: HelpSection[] = [
     ],
   },
   {
+    id: 'tools',
+    title: 'Sayso tools',
+    description: 'Sayso Map for finding comps on your phone, and Sayso Composer for writing prospecting scripts.',
+    hubBox: false,
+    groups: [
+      { id: 'map', title: 'Sayso Map' },
+      { id: 'composer', title: 'Sayso Composer' },
+    ],
+  },
+  {
     id: 'support',
     title: 'Support',
     description: 'Office hours, bug reports, logs, privacy and what is new in Sayso.',
