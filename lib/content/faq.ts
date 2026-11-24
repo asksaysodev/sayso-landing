@@ -22,7 +22,7 @@ export interface FaqGroup {
 
 const SIGNUP_HREF = 'https://app.asksayso.com/signup?signup=true';
 
-/** Questions that appear word for word on both /faq and the homepage. */
+/** Homepage questions reused word for word elsewhere. */
 const shared = {
   dialer: {
     question: 'Do I need to change my dialer or CRM?',
@@ -35,6 +35,10 @@ const shared = {
   },
 } satisfies Record<string, FaqItem>;
 
+/**
+ * /faq: questions the homepage FAQ does not already answer. The homepage keeps
+ * dialers, recording, consent, distraction, adoption, pricing and cancelling.
+ */
 export const FAQ_GROUPS: FaqGroup[] = [
   {
     title: 'About Sayso',
@@ -42,22 +46,17 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'What does Sayso do, and who is it for?',
         answer:
-          'Sayso is [real-time call guidance](/blog/what-is-live-call-guidance/) that helps real estate teams and brokerages with 5 or more agents book more appointments from their outbound prospecting and follow-up calls.',
+          'Sayso is [real-time call guidance](/blog/what-is-live-call-guidance/): it shows you what to ask or say next during prospecting and follow-up calls. It’s for individual agents, ISAs and real estate teams.',
       },
       {
         question: 'What problem does Sayso solve?',
         answer:
-          'Agents freeze when a call goes off-script, and today leaders coach them the next day from a recording, after the appointment is already lost.',
+          'Agents freeze when a call goes off-script. Leaders coach them the next day from a recording, after the appointment is already lost. Sayso coaches during the call.',
       },
       {
         question: 'How does Sayso work?',
         answer:
-          'Sayso works on your computer, next to your dialer, and understands your calls. When the prospect says something, it shows you what to ask next, takes your notes, and pulls up local market data so you can stay focused on the conversation.',
-      },
-      {
-        question: 'What does Sayso look like on a call?',
-        answer:
-          'Short lines on screen based on what the prospect says, and clean, CRM-ready notes when it ends.',
+          'Sayso is a desktop app that listens to your call. As the prospect talks, Cue suggests what to ask or say next in the Coach widget. Type a ZIP code and Pulse shows local market data. When the call ends, Smart Capture writes your notes, ready for your CRM. See [Cue](/help/desktop-app/cue/).',
         image: {
           src: '/full-widget.png',
           alt: 'The Sayso window during a call, with a Cue and Smart Capture notes',
@@ -66,42 +65,48 @@ export const FAQ_GROUPS: FaqGroup[] = [
         },
       },
       {
+        question: 'How often will Sayso help me?',
+        answer:
+          'Only while you’re talking with a consumer. Sayso doesn’t get more people to pick up or speed up anything outside the conversation. Most agents dial 10 to 30 numbers before they have a conversation, and Sayso helps in that conversation.',
+      },
+      {
         question: 'How is Sayso different from call review tools, scripts and AI callers?',
         answer:
-          'Call review tools tell you what went wrong after the call, scripts fall apart when the call goes off track, and AI callers replace the agent. Sayso guides the agent live, responds to what the prospect says, and keeps your agent on the phone.',
+          'Call review tools tell you what went wrong after the call. Scripts fall apart when the call goes off track. AI callers replace the agent. Sayso coaches the agent live, based on what the prospect says.',
+      },
+      {
+        question: 'Won’t AI callers replace this?',
+        answer:
+          'No. They’re different tools with different jobs. An AI caller makes calls instead of an agent; Sayso coaches the agent who’s on the call. When an AI caller hands a conversation to an agent, Sayso coaches that conversation.',
       },
       {
         question: 'Who is behind Sayso?',
         answer:
-          'I’m Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, a 50-agent team, and I built Sayso because the coaching I gave after the call didn’t stick during the next one. Learn more here: [About Sayso](/about/)',
+          'I’m Kuvaal Patel, Director of Agent Development at Anderson Real Estate Group, a 50-agent team. I built Sayso because the coaching I gave after the call didn’t stick during the next one. See [About Sayso](/about/).',
       },
     ],
   },
   {
     title: 'Setup and fit',
     items: [
-      shared.dialer,
-      {
-        question: 'Does it work on my cell phone?',
-        answer:
-          'Not yet. Sayso is built for dial blocks on your laptop or desktop, and a phone app is on our radar. How would you use Sayso from your phone? Let us know at [support@asksayso.com](mailto:support@asksayso.com).',
-      },
-      {
-        question: 'Do agents have to remember to turn it on?',
-        answer: 'No. Sayso detects when a call starts.',
-      },
-      {
-        question: 'Does it work for ISAs?',
-        answer: 'Yes.',
-      },
-      {
-        question: 'Does it support Spanish?',
-        answer: 'Not yet.',
-      },
       {
         question: 'Do I need to be tech-savvy?',
         answer:
-          'No. Most agents are set up in under 5 minutes, and onboarding includes a launch guide, a help center, and a support team.',
+          'No. The desktop app installs in under 60 seconds on Mac (macOS 13 or newer) or Windows 10 or 11. You need headphones, and a dialer, Zoom or Google Meet that plays the call through your computer. Interactive onboarding, walkthrough videos, the [help center](/help/) and weekly [office hours](/help/support/office-hours/) cover the rest. See [System requirements](/help/support/system-requirements/).',
+      },
+      {
+        question: 'Does it work on my cell phone?',
+        answer:
+          'Not yet; a phone app is coming soon. You can take your cell calls on your computer instead with Windows Phone Link or Calls from iPhone on a Mac.',
+      },
+      {
+        question: 'How do I take my cell phone calls on my computer?',
+        answer:
+          'On Windows, use Phone Link. It connects your Android phone or iPhone over Bluetooth, and you make and answer calls on your PC. On a Mac, turn on Calls from iPhone: use the same Apple Account and Wi-Fi on both devices, then select Calls from iPhone in FaceTime settings. iPhone Mirroring does not carry calls. Either way the call plays on your computer, and Sayso coaches it.',
+      },
+      {
+        question: 'Does it support Spanish?',
+        answer: 'Not yet. Spanish is coming soon.',
       },
     ],
   },
@@ -111,69 +116,32 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'Is it a script?',
         answer:
-          'You can upload custom scripts to Sayso or use Sayso’s defaults. The Cues are not canned replies, they are context based prompts.',
-      },
-      {
-        question: 'Does it help with objections?',
-        answer: 'Yes. Sayso shows you how to handle and move forward from the objection.',
+          'No. Cue suggests short prompts based on what the prospect just said, not canned replies. Add your own scripts as Playbooks, or use Sayso’s defaults.',
       },
       {
         question: 'Can it coach our method?',
-        answer: 'Load your scripts into Playbook today, and team-specific prompts are coming.',
+        answer:
+          'Yes, with your materials. Upload your scripts, frameworks and objection manuals to Playbooks as PDF, Word or text files. Prompts tuned to your sales methodology are coming, estimated by the end of 2026. See [Upload playbooks](/help/desktop-app/upload-playbooks/).',
+      },
+      {
+        question: 'How does Sayso handle objections?',
+        answer:
+          'Sayso reads the conversation to find the concern behind the objection, then gives you a short prompt to pivot. You respond in your own words. For sample responses, see the [objection library](/objections/).',
       },
       {
         question: 'Does it know my market?',
-        answer: 'Yes. Pulse shows local prices, days on market, and inventory during the call.',
-      },
-      {
-        question: 'Won’t AI callers replace this?',
-        answer: 'AI replaces the agent, and Sayso makes the agent better.',
-      },
-      {
-        question: 'Do I need to click anything to get a cue?',
         answer:
-          'No. Cues come in automatically as the prospect talks, so you can stay focused on the conversation.',
-      },
-      {
-        question: 'Will it distract me on a live call?',
-        answer:
-          'You can minimize or hide Sayso at any point during a call, and agents find on-screen guidance less stressful than remembering a script.',
+          'Yes. Type a ZIP code during a call and Pulse shows median price, price per square foot, days on market, new listings and the market trend. Pulse and Sayso Map cover the whole United States. See [Pulse](/help/desktop-app/pulse/).',
       },
     ],
   },
   {
-    title: 'Privacy and compliance',
+    title: 'Privacy and security',
     items: [
       {
-        question: 'Is my data safe, and who owns it?',
+        question: 'How does Sayso handle my data?',
         answer:
-          'Sayso never records call audio, and transcripts and notes are encrypted, stored in the US, and never used to train outside AI models. You can request a copy or deletion anytime. See more: [Security](/security/) · [Privacy](/privacy/)',
-      },
-      {
-        question: 'Does it record my calls or my screen?',
-        answer: 'No. The setup permission only lets Sayso hear the call, and we don’t save audio recordings.',
-      },
-      shared.twoParty,
-    ],
-  },
-  {
-    title: 'Teams and pricing',
-    items: [
-      {
-        question: 'How do I get started, and what does it cost?',
-        answer: `[Get Sayso here](${SIGNUP_HREF}). Early Access Team pricing starts at $369/month based on usage and includes implementation, train-the-trainer, and the company dashboard. Individual agents pay ${INDIVIDUAL_PRICE.annual}/month, billed annually.`,
-      },
-      {
-        question: 'Can I see if my agents are using it?',
-        answer: 'Yes. The company dashboard shows usage agent by agent.',
-      },
-      {
-        question: 'My agents won’t use another tool. Why is this different?',
-        answer: 'Sayso starts when the call starts, so there’s not much to remember.',
-      },
-      {
-        question: 'Can I cancel?',
-        answer: 'Yes. You can cancel anytime; there are no contracts.',
+          'Our [Security](/security/) page and [Privacy Policy](/privacy/) cover it. For what Sayso saves after a call, see [What’s saved](/help/web-app/what-is-saved/).',
       },
     ],
   },

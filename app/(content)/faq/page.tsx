@@ -8,9 +8,9 @@ import { focusRing } from '@/components/landing/HomeShared/styles';
 import { FAQ_GROUPS, FAQ_ITEMS, faqSchemaItems } from '@/lib/content/faq';
 
 export const metadata = buildMetadata({
-  title: 'Sayso FAQ: Real-Time Call Guidance for Real Estate Teams',
+  title: 'Sayso FAQ: Real-Time Call Guidance for Real Estate Agents',
   description:
-    'Answers about Sayso: how real-time call guidance works, setup, dialers and CRMs, privacy and two-party consent, team pricing and the company dashboard.',
+    'Answers about Sayso: what it does, how it works on a call, setup on Mac and Windows, objections, your own scripts and methods, and market data.',
   path: '/faq',
 });
 
@@ -51,6 +51,13 @@ export default function FaqPage() {
             <FaqList items={group.items} />
           </section>
         ))}
+        <p className="mt-12 text-base leading-relaxed text-[#1D4871]/70 font-sans">
+          Questions about dialers, recording, two-party consent, pricing and cancelling are answered in the{' '}
+          <Link href="/#faq" className={`rounded font-semibold text-[#2367EE] ${focusRing}`}>
+            homepage FAQ
+          </Link>
+          .
+        </p>
       </div>
 
       <ContentCTA location="faq" />
