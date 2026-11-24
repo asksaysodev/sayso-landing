@@ -69,7 +69,7 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
  */
 export function extractFaqFromContent(content: string): { question: string; answer: string }[] {
   const lines = content.split('\n');
-  const faqIndex = lines.findIndex((line) => /^##\s+FAQ\b/i.test(line));
+  const faqIndex = lines.findIndex((line) => /^##\s+(FAQ\b|Frequently Asked Questions\b)/i.test(line));
   if (faqIndex === -1) return [];
 
   const faqLines = lines.slice(faqIndex + 1);
@@ -81,8 +81,8 @@ export function extractFaqFromContent(content: string): { question: string; answ
     // Stop at the next H2 section
     if (/^##\s+/.test(line) && !/^###/.test(line)) break;
 
-    // Bold text on its own line is a question
-    const questionMatch = line.match(/^\*\*(.+?)\*\*\s*$/);
+    // A question is bold text on its own line or an H3 heading
+    const questionMatch = line.match(/^\*\*(.+?)\*\*\s*$/) || line.match(/^###\s+(.+?)\s*$/);
     if (questionMatch) {
       if (currentQuestion && currentAnswer.trim()) {
         pairs.push({ question: currentQuestion, answer: currentAnswer.trim() });
