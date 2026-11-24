@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing/Footer';
 import { SecurityPage } from '@/components/landing/SecurityPage';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Security',
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 export default function Security() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Security', url: '/security/' }]} />
       <div className="relative bg-[#F4F4F5]">
         <SaysoNavbar />
         <SecurityPage />

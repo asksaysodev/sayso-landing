@@ -7,6 +7,7 @@ import { REVIEWS } from '@/components/landing/HomeReviews/data';
 import { CalendlyInlineWidget } from '@/components/CalendlyInlineWidget';
 import { siteUrl } from '@/lib/config';
 import { PageHeader } from '@/components/pages/PageHeader';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Book a Demo',
@@ -54,6 +55,7 @@ const REVIEW = REVIEWS.find((r) => r.name === 'David Simpson') ?? REVIEWS[0];
 export default function DemoPage() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Book a Demo', url: '/demo/' }]} />
       {/* On desktop the navbar, header and booking area fill exactly one screen
           height, so the calendar and side card fit without scrolling. Phones stack
           and scroll normally. */}

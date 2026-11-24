@@ -2,6 +2,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 import { generateFAQPageJsonLd } from '@/lib/seo/schema';
 import { DifferencesPage } from '@/components/pages/DifferencesPage';
 import { LEADER_FAQ } from '@/components/pages/DifferencesPage/data';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata = buildMetadata({
   title: 'Sayso vs. FUB, MaverickRE, Battr and call coaching',
@@ -15,6 +16,7 @@ const faqJsonLd = generateFAQPageJsonLd(LEADER_FAQ);
 export default function Differences() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Sayso vs. Other Tools', url: '/differences/' }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <DifferencesPage />
     </>

@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ReferralPageContent } from '@/components/landing/ReferralPageContent';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Referral Program',
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 export default function ReferralPage() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Referral Program', url: '/referral/' }]} />
       <div className="relative bg-[#F4F4F5]">
         <SaysoNavbar />
         <ReferralPageContent />

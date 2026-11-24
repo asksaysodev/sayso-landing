@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing/Footer';
 import { CareersPageContent } from '@/components/landing/CareersPageContent';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 const description =
   'Join Sayso and help close the gap between knowing what to do and doing it when it matters. See our mission, values, and how we work.';
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Careers', url: '/careers/' }]} />
       <div className="relative bg-[#F4F4F5]">
         <SaysoNavbar />
         <CareersPageContent />

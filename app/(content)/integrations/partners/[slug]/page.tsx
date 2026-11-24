@@ -1,3 +1,4 @@
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import {
@@ -31,5 +32,16 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const entry = getPartnerIntegrationBySlug(slug);
   if (!entry) notFound();
-  return <PartnerIntegrationPage entry={entry} />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Integrations', url: '/integrations/' },
+          { name: `Sayso + ${entry.partnerName}`, url: `/integrations/partners/${entry.slug}/` },
+        ]}
+      />
+      <PartnerIntegrationPage entry={entry} />
+    </>
+  );
 }

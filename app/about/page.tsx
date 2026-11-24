@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing/Footer';
 import { AboutPageContent } from '@/components/landing/AboutPageContent';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]} />
       <div className="relative bg-[#F4F4F5]">
         <SaysoNavbar />
         <AboutPageContent />
