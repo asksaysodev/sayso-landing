@@ -21,7 +21,8 @@ export interface GlossaryEntry {
   tips?: { title: string; body: string }[];
   /** Each string renders as its own paragraph. Supports [text](/url/) inline markdown for CTA links. */
   howSaysoHelps: string[];
-  relatedTerms: { term: string; slug: string }[];
+  /** href overrides the /glossary/<slug>/ link, for terms merged into another page. */
+  relatedTerms: { term: string; slug: string; href?: string }[];
   /** Link to a deeper blog post. Optional - omit if the post does not exist yet. */
   deeperLink?: { title: string; href: string };
   faq: { question: string; answer: string }[];

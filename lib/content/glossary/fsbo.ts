@@ -49,7 +49,7 @@ export const fsbo: GlossaryEntry = {
     'Sayso\'s [Call Notes](/products/smart-capture/) logs every FSBO conversation to your CRM for you, so a seller you reach in week one is easy to pick back up in week three when they are ready to talk. [Book a demo](/demo/) to see how Sayso helps you convert FSBO leads into listing appointments.',
   ],
   relatedTerms: [
-    { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
+    { term: 'Cold Calling', slug: 'cold-calling-real-estate', href: '/blog/real-estate-cold-calling-guide/' },
     { term: 'Expired Listing', slug: 'expired-listing' },
     { term: 'ISA (Inside Sales Agent)', slug: 'isa-real-estate' },
     { term: 'Lead Nurturing', slug: 'lead-nurturing' },

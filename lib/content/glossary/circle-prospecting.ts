@@ -53,7 +53,7 @@ export const circleProspecting: GlossaryEntry = {
     'Sayso also logs each circle prospecting call automatically, so the homeowner who said "maybe next year" is still in your pipeline when next year arrives. [Book a demo](/demo/) to see how Sayso turns neighborhood calls into listing appointments.',
   ],
   relatedTerms: [
-    { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
+    { term: 'Cold Calling', slug: 'cold-calling-real-estate', href: '/blog/real-estate-cold-calling-guide/' },
     { term: 'Door Knocking', slug: 'door-knocking' },
     { term: 'Drip Campaign', slug: 'drip-campaign' },
     { term: 'ISA (Inside Sales Agent)', slug: 'isa-real-estate' },

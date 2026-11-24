@@ -1,6 +1,5 @@
 import type { GlossaryEntry } from './types';
 import { circleProspecting } from './circle-prospecting';
-import { coldCallingRealEstate } from './cold-calling-real-estate';
 import { doorKnocking } from './door-knocking';
 import { dripCampaign } from './drip-campaign';
 import { expiredListing } from './expired-listing';
@@ -10,7 +9,7 @@ import { leadNurturing } from './lead-nurturing';
 import { listingAppointment } from './listing-appointment';
 import { sphereOfInfluence } from './sphere-of-influence';
 
-const entries: GlossaryEntry[] = [circleProspecting, coldCallingRealEstate, doorKnocking, dripCampaign, expiredListing, fsbo, isaRealEstate, leadNurturing, listingAppointment, sphereOfInfluence];
+const entries: GlossaryEntry[] = [circleProspecting, doorKnocking, dripCampaign, expiredListing, fsbo, isaRealEstate, leadNurturing, listingAppointment, sphereOfInfluence];
 
 export function getAllGlossaryEntries(): GlossaryEntry[] {
   return entries;

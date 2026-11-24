@@ -48,13 +48,6 @@ const glossaryHub: HubPageConfig = {
       linkText: 'What does FSBO mean?',
     },
     {
-      title: 'Cold Calling',
-      slug: 'cold-calling-real-estate',
-      description: 'Calling prospects you have no prior relationship with to generate new business.',
-      keyword: 'what is cold calling in real estate',
-      linkText: 'Get the cold calling definition',
-    },
-    {
       title: 'Lead Nurturing',
       slug: 'lead-nurturing',
       description: 'The process of building relationships with leads who are not ready to act yet.',
