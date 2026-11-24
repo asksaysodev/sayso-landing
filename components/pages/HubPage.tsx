@@ -98,6 +98,46 @@ export function HubPage({ config }: HubPageProps) {
         )}
       </section>
 
+      {/* Guide sections */}
+      {config.guideSections?.map((section) => (
+        <section key={section.heading} className="max-w-[800px] mx-auto px-6 pb-10">
+          <h2 className="font-hero font-extrabold tracking-[-0.03em] text-[#10233A] text-[28px] md:text-4xl leading-[1.1] mb-4">
+            {section.heading}
+          </h2>
+          <div className="space-y-4">
+            {section.paragraphs.map((paragraph, index) => (
+              <p key={index} className="text-[#1D4871]/70 text-base leading-relaxed font-sans">
+                {renderInlineMarkdown(paragraph)}
+              </p>
+            ))}
+          </div>
+          {section.bullets && (
+            <ol className="list-decimal pl-6 mt-4 space-y-2 text-[#1D4871]/70 text-base leading-relaxed font-sans">
+              {section.bullets.map((item, index) => (
+                <li key={index}>{renderInlineMarkdown(item)}</li>
+              ))}
+            </ol>
+          )}
+          {section.script && (
+            <div className="bg-white rounded-2xl p-6 my-6 shadow-card">
+              <span className="text-xs uppercase tracking-wide text-[#1D4871]/50 font-bold block mb-2">
+                {section.script.label}
+              </span>
+              <div className="space-y-3 text-[#1D4871] italic font-sans leading-relaxed">
+                {section.script.lines.map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </div>
+            </div>
+          )}
+          {section.after?.map((paragraph, index) => (
+            <p key={index} className="mt-4 text-[#1D4871]/70 text-base leading-relaxed font-sans">
+              {renderInlineMarkdown(paragraph)}
+            </p>
+          ))}
+        </section>
+      ))}
+
       {/* Related reading */}
       {config.relatedReading && (
         <section className="max-w-[800px] mx-auto px-6 pb-10">

@@ -11,6 +11,15 @@ function formatClusterName(cluster: string): string {
     .join(' ');
 }
 
+/**
+ * Frontmatter dates have no timezone. Vercel runs in UTC, so a post goes live at
+ * that time in UTC; say so explicitly, as Google asks for a timezone.
+ */
+function withTimezone(date: string): string {
+  if (/(Z|[+-]\d{2}:?\d{2})$/.test(date)) return date;
+  return `${date.includes('T') ? date : `${date}T00:00:00`}Z`;
+}
+
 export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: string) {
   const base: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -23,8 +32,8 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
       ...(post.author.path && { url: `${siteUrl}${post.author.path}` }),
     },
     publisher: SAYSO_PUBLISHER,
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
+    datePublished: withTimezone(post.publishedAt),
+    dateModified: withTimezone(post.updatedAt),
     description: post.description,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -52,10 +61,12 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
   if (post.type === 'supporting' && post.pillar) {
     const pillar = getPostBySlug(post.pillar);
     if (pillar) {
+      // A WebPage reference, not a second BlogPosting: Google reads a nested
+      // BlogPosting as another article and flags its missing author and image.
       base.isPartOf = {
-        '@type': 'BlogPosting',
+        '@type': 'WebPage',
         '@id': `${siteUrl}/blog/${pillar.slug}/`,
-        headline: pillar.title,
+        name: pillar.title,
       };
     }
   }
@@ -69,7 +80,7 @@ export function generateArticleJsonLd(post: BlogPost | BlogPostMeta, siteUrl: st
  */
 export function extractFaqFromContent(content: string): { question: string; answer: string }[] {
   const lines = content.split('\n');
-  const faqIndex = lines.findIndex((line) => /^##\s+FAQ\b/i.test(line));
+  const faqIndex = lines.findIndex((line) => /^##\s+(FAQ\b|Frequently Asked Questions\b)/i.test(line));
   if (faqIndex === -1) return [];
 
   const faqLines = lines.slice(faqIndex + 1);
@@ -81,8 +92,8 @@ export function extractFaqFromContent(content: string): { question: string; answ
     // Stop at the next H2 section
     if (/^##\s+/.test(line) && !/^###/.test(line)) break;
 
-    // Bold text on its own line is a question
-    const questionMatch = line.match(/^\*\*(.+?)\*\*\s*$/);
+    // A question is bold text on its own line or an H3 heading
+    const questionMatch = line.match(/^\*\*(.+?)\*\*\s*$/) || line.match(/^###\s+(.+?)\s*$/);
     if (questionMatch) {
       if (currentQuestion && currentAnswer.trim()) {
         pairs.push({ question: currentQuestion, answer: currentAnswer.trim() });

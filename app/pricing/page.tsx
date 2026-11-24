@@ -10,6 +10,7 @@ import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext'
 import { siteUrl } from '@/lib/config';
 import { PRICING_FAQ_ITEMS, faqSchemaItems } from '@/lib/content/faq';
 import { generateFAQPageJsonLd } from '@/lib/seo/schema';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -55,6 +56,7 @@ const faqJsonLd = generateFAQPageJsonLd(faqSchemaItems(PRICING_FAQ_ITEMS));
 export default function PricingPage() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Pricing', url: '/pricing/' }]} />
       <div className="relative min-h-screen bg-[#F4F4F5]">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
         <SaysoNavbar />

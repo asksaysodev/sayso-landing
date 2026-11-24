@@ -50,7 +50,7 @@ export const expiredListing: GlossaryEntry = {
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
-    { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
+    { term: 'Cold Calling', slug: 'cold-calling-real-estate', href: '/blog/real-estate-cold-calling-guide/' },
     { term: 'FSBO (For Sale By Owner)', slug: 'fsbo' },
     { term: 'Lead Nurturing', slug: 'lead-nurturing' },
     { term: 'Listing Appointment', slug: 'listing-appointment' },

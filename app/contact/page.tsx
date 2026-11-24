@@ -5,6 +5,7 @@ import SsFormEmbed from '@/components/landing/SsFormEmbed';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
 import { PageHeader } from '@/components/pages/PageHeader';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -39,6 +40,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Contact Us', url: '/contact/' }]} />
       <div className="relative bg-[#F4F4F5] min-h-screen">
         <SaysoNavbar />
         <main>
