@@ -30,6 +30,17 @@ export interface HubPageConfig {
     intro?: string;
     items: { slug: string; phrase: string; answer: string }[];
   };
+  /**
+   * Optional long-form guide sections shown after the card grid. Paragraphs and
+   * bullets support [text](/url/) inline markdown; a script renders as a quote card.
+   */
+  guideSections?: {
+    heading: string;
+    paragraphs: string[];
+    bullets?: string[];
+    script?: { label: string; lines: string[] };
+    after?: string[];
+  }[];
   /** Optional related-reading block shown after the card grid. Each paragraph supports [text](/url/) inline markdown. */
   relatedReading?: { heading: string; paragraphs: string[] };
   faq?: { question: string; answer: string }[];

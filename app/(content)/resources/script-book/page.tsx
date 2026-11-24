@@ -3,6 +3,10 @@ import { PageHeader } from '@/components/pages/PageHeader';
 import { ContentCTA } from '@/components/pages/ContentCTA';
 import { FAQ } from '@/components/pages/FAQ';
 import { BeehiivForm } from '@/components/tools/BeehiivForm';
+import { TopicHubPostList } from '@/components/pages/TopicHubPostList';
+
+// Revalidate hourly, like the blog, so scheduled script guides join the list on their publish date.
+export const revalidate = 3600;
 
 export const metadata = buildMetadata({
   title: 'Free Real Estate Script Book for Agents',
@@ -170,6 +174,14 @@ export default function ScriptBookPage() {
           </p>
         </section>
       </article>
+
+      <section className="max-w-[800px] mx-auto px-6 pb-4">
+        <p className="text-[#1D4871]/70 text-base leading-relaxed font-sans">
+          The script book covers the core calls. The guides below go deeper on one situation each, with word-for-word
+          scripts, what to say when the prospect pushes back, and when to make the call.
+        </p>
+      </section>
+      <TopicHubPostList hub="scripts" heading="Real estate scripts by situation" />
 
       <FAQ items={faqItems} />
 

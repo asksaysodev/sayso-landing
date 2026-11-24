@@ -3,6 +3,7 @@ import { Footer } from '@/components/landing/Footer';
 import { DownloadPage } from '@/components/landing/DownloadPage';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { buildMetadata } from '@/lib/seo/metadata';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata = buildMetadata({
   title: 'Download Sayso | Real-Time Call Coaching for Real Estate Agents',
@@ -14,6 +15,7 @@ export const metadata = buildMetadata({
 export default function Download() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Download Sayso', url: '/download/' }]} />
       <div className="relative bg-[#F4F4F5]">
         <SaysoNavbar />
         <DownloadPage />

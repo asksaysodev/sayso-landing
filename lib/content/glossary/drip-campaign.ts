@@ -49,7 +49,7 @@ export const dripCampaign: GlossaryEntry = {
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
-    { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
+    { term: 'Cold Calling', slug: 'cold-calling-real-estate', href: '/blog/real-estate-cold-calling-guide/' },
     { term: 'Lead Nurturing', slug: 'lead-nurturing' },
     { term: 'Sphere of Influence', slug: 'sphere-of-influence' },
   ],

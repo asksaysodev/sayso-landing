@@ -211,7 +211,7 @@ export function GlossaryPage({ entry }: GlossaryPageProps) {
                 {entry.relatedTerms.map((related) => (
                   <li key={related.slug}>
                     <Link
-                      href={`/glossary/${related.slug}`}
+                      href={related.href ?? `/glossary/${related.slug}`}
                       className="text-[#2367EE] hover:underline font-bold font-sans"
                     >
                       {related.term}

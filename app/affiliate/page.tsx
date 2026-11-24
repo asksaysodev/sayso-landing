@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing/Footer';
 import { AffiliatePageContent } from '@/components/landing/AffiliatePageContent';
 import { DemoCalendarProvider } from '@/app/context/landing/DemoCalendarContext';
 import { siteUrl } from '@/lib/config';
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Affiliate Program',
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 export default function AffiliatePage() {
   return (
     <DemoCalendarProvider>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Affiliate Program', url: '/affiliate/' }]} />
       <div className="relative bg-[#F4F4F5]">
         <SaysoNavbar />
         <AffiliatePageContent />

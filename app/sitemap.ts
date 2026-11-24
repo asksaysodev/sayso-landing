@@ -10,6 +10,7 @@ import { getAllUseCaseEntries } from '@/lib/content/for';
 import { getAllCaseStudyEntries } from '@/lib/content/case-studies';
 import { getAllHelpArticles } from '@/lib/help';
 import { HELP_SECTIONS } from '@/lib/help-sections';
+import { TOPIC_HUB_PAGES } from '@/lib/content/topic-hub-pages';
 
 // Regenerate hourly so scheduled posts enter the sitemap when their publishedAt
 // date passes, without waiting for a manual redeploy. Matches the blog pages'
@@ -40,12 +41,12 @@ const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/products': '2026-05-09',
   '/for': '2026-11-05',
   '/integrations': '2026-06-23',
-  '/objections': '2026-09-13',
-  '/glossary': '2026-04-19',
+  '/objections': '2026-11-24',
+  '/glossary': '2026-11-24',
   '/help': '2026-11-23',
   '/tools/prospecting-calculator': '2026-11-07',
-  '/resources': '2026-11-08',
-  '/resources/script-book': '2026-11-08',
+  '/resources': '2026-11-24',
+  '/resources/script-book': '2026-11-24',
   '/why-sayso': '2026-11-06',
   '/differences': '2026-11-06',
   '/pricing': '2026-11-05',
@@ -146,6 +147,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  // Topic hubs under /resources/ (not in the nav, so listed here).
+  const topicHubPages: MetadataRoute.Sitemap = TOPIC_HUB_PAGES.map((page) => ({
+    url: `${siteUrl}/resources/${page.slug}/`,
+    lastModified: new Date(page.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
   // Help Center: section pages (dated by their newest article) and every article.
   const helpArticles = getAllHelpArticles();
   const helpPages: MetadataRoute.Sitemap = [
@@ -163,5 +172,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticPages, ...blogPages, ...contentPages, ...helpPages];
+  return [...staticPages, ...topicHubPages, ...blogPages, ...contentPages, ...helpPages];
 }

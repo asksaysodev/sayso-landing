@@ -54,7 +54,7 @@ export const doorKnocking: GlossaryEntry = {
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
-    { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
+    { term: 'Cold Calling', slug: 'cold-calling-real-estate', href: '/blog/real-estate-cold-calling-guide/' },
     { term: 'Listing Appointment', slug: 'listing-appointment' },
   ],
   deeperLink: {

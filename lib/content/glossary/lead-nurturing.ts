@@ -51,7 +51,7 @@ export const leadNurturing: GlossaryEntry = {
   ],
   relatedTerms: [
     { term: 'Circle Prospecting', slug: 'circle-prospecting' },
-    { term: 'Cold Calling', slug: 'cold-calling-real-estate' },
+    { term: 'Cold Calling', slug: 'cold-calling-real-estate', href: '/blog/real-estate-cold-calling-guide/' },
     { term: 'Drip Campaign', slug: 'drip-campaign' },
     { term: 'Listing Appointment', slug: 'listing-appointment' },
     { term: 'Sphere of Influence', slug: 'sphere-of-influence' },
