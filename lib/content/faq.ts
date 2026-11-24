@@ -67,7 +67,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'How often will Sayso help me?',
         answer:
-          'Only while you’re talking with a consumer. Sayso doesn’t get more people to pick up or speed up anything outside the conversation. Most agents dial 10 to 30 numbers before they have a conversation, and Sayso helps in that conversation.',
+          'Only while you’re talking with a consumer. Sayso doesn’t get more people to pick up or speed up anything outside the conversation. Most agents dial 10 to 30 numbers before they have a conversation, and Sayso helps in that conversation. See [When Sayso helps](/help/agents/when-sayso-helps/).',
       },
       {
         question: 'How is Sayso different from call review tools, scripts and AI callers?',
@@ -102,7 +102,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'How do I take my cell phone calls on my computer?',
         answer:
-          'On Windows, use Phone Link. It connects your Android phone or iPhone over Bluetooth, and you make and answer calls on your PC. On a Mac, turn on Calls from iPhone: use the same Apple Account and Wi-Fi on both devices, then select Calls from iPhone in FaceTime settings. iPhone Mirroring does not carry calls. Either way the call plays on your computer, and Sayso coaches it.',
+          'On Windows, use Phone Link. It connects your Android phone or iPhone over Bluetooth, and you make and answer calls on your PC. On a Mac, turn on Calls from iPhone: use the same Apple Account and Wi-Fi on both devices, then select Calls from iPhone in FaceTime settings. iPhone Mirroring does not carry calls. Either way the call plays on your computer, and Sayso coaches it. See [Phone Link on Windows](/help/agents/cell-calls-on-windows/) and [iPhone calls on a Mac](/help/agents/iphone-calls-on-mac/).',
       },
       {
         question: 'Does it support Spanish?',
