@@ -10,7 +10,8 @@ Keeps asksayso.com/help in step with product releases. Fully automatic when ever
 5. Trusted steps re-check, open the docs PR, wait for Vercel, merge, release to main, confirm the live pages, and post in #sayso-marketing-page.
 
 ## Messages
-- Channel: "new pages:" / "updated:" lists, or "Re: Recent merge to production, no help center updates needed."
+- Channel: "new pages:" / "updated:" lists, or "<Product>: <what was merged in one plain line>. No help center updates needed." (for example "Sayso Map: small map updates. No help center updates needed."). The line is written from commit titles only (`scripts/docs-sync/summarize.mjs`); if it can't be written the post falls back to "Re: Recent merge to production (<Product>), no help center updates needed."
+- Thread replies: reply under any Docs Sync post in the channel (no @mention needed) and Dash answers in plain English. Each post carries hidden Slack metadata (product, commits, summary) that the Dash Worker (`asksaysodev/sayso-stills-bot`, `worker/src/docs.js`) reads to answer. Dash only knows what the commit titles and summary say.
 - Holds and failures: DM to Kuvaal only, plain English, after automatic retries.
 
 ## Switches and secrets
