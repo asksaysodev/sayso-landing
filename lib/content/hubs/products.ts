@@ -45,14 +45,6 @@ const productsHub: HubPageConfig = {
     },
   ],
   noKeyword: true,
-  // featureRequestCard: {
-  //   title: 'Have an Idea?',
-  //   description:
-  //     'Tell us what features you want next. We build Sayso based on what agents actually need.',
-  //   linkText: 'Submit a feature request',
-  //   href: '/feedback',
-  //   bannerText: "We're all ears!",
-  // }, // TODO: re-enable when feedback page is ready
 };
 
 

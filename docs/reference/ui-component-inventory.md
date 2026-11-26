@@ -190,13 +190,6 @@
 - **Props:** `size?: number`, `color?: string`, `className?: string`
 - **Visual behavior:** Lightning bolt SVG rendered at specified size and color.
 
-### CannyBoard
-- **Path:** `components/CannyBoard.tsx`
-- **Description:** Wrapper for Canny feedback board integration with user identification.
-- **Used on:** Feedback page (`/feedback`)
-- **Props:** `user: CannyUser` (id, name, email, avatarURL?), `basePath?: string`, `boardToken: string`
-- **Visual behavior:** Loads Canny SDK dynamically, displays loading message while initializing, renders feedback board (min-height 600px) with brand primary color.
-
 ---
 
 ## 7. Page-Specific Components (NOT Reusable)

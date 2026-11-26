@@ -3,7 +3,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 // Full Content Security Policy, sent as Report-Only: browsers log what it would
 // block to the console but block nothing. It lists every third party the site
 // loads today (GTM/GA4, Meta pixel, Vector, Leadsy, Calendly, beehiiv, Vercel
-// Analytics and Speed Insights, YouTube, Notion and Sure Send embeds, Canny).
+// Analytics and Speed Insights, YouTube, Notion and Sure Send embeds).
 // Once the console stays clean, move it to the enforced Content-Security-Policy
 // header below. Next.js and GTM rely on inline scripts, so 'unsafe-inline'
 // stays until the site moves to nonces. The dev server also needs 'unsafe-eval'.
@@ -21,7 +21,6 @@ const cspReportOnly = [
     'https://assets.calendly.com',
     'https://subscribe-forms.beehiiv.com https://*.beehiiv.com',
     'https://va.vercel-scripts.com https://vercel.live',
-    'https://sdk.canny.io',
     'https://suresend.ai https://*.suresend.ai',
   ]
     .filter(Boolean)
@@ -37,7 +36,6 @@ const cspReportOnly = [
     'https://calendly.com https://*.calendly.com',
     'https://*.beehiiv.com',
     'https://*.vercel-insights.com https://*.vercel-scripts.com https://vercel.live wss://*.pusher.com',
-    'https://*.canny.io',
     'https://suresend.ai https://*.suresend.ai',
     'https://*.asksayso.com',
   ]
@@ -52,7 +50,6 @@ const cspReportOnly = [
     'https://www.googletagmanager.com https://*.facebook.com',
     'https://*.vector.co',
     'https://vercel.live',
-    'https://*.canny.io',
     'https://suresend.ai https://*.suresend.ai',
   ].join(' '),
   "img-src 'self' data: blob: https:",

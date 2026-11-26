@@ -21,7 +21,6 @@ export const revalidate = 3600;
 const EXCLUDED_PATHS = new Set([
   '/privacy',
   '/terms',
-  '/feedback',
   '/case-studies', // noindex: hub has a single study; the study itself is listed via getAllCaseStudyEntries
   '/founderpricing', // noindex: time-limited promo overlapping /pricing/
   '/request-demo', // noindex: duplicates the /demo/ booking page
