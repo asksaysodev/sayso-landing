@@ -33,6 +33,9 @@ const POPULAR = [
   '/help/desktop-app/no-prompts/',
   '/help/admins/invite-agents/',
   '/help/admins/email-reports/',
+  '/help/agents/when-sayso-helps/',
+  '/help/agents/cell-calls-on-windows/',
+  '/help/agents/iphone-calls-on-mac/',
 ];
 
 export default function HelpHubPage() {
