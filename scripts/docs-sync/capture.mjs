@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {execFileSync, spawn} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
+import {setTimeout as holdFrame} from 'node:timers/promises';
 import {chromium} from 'playwright';
 import sharp from 'sharp';
 
@@ -34,6 +35,32 @@ async function map(page) {
   await page.goto(origin);
   await page.getByRole('link',{name:'Filters'}).click();
   await page.getByRole('heading',{name:'Filters'}).waitFor();
+  const buyer = page.getByRole('textbox', {name:'Buyer text template', exact:true});
+  const seller = page.getByRole('textbox', {name:'Seller text template', exact:true});
+  if (await buyer.isVisible() && await seller.isVisible()) {
+    const templateSection = page.locator('section.group').filter({
+      has:page.getByRole('heading', {name:'Text template', exact:true})
+    });
+    await page.evaluate(() => document.fonts.ready);
+    await sharp(await templateSection.screenshot()).webp({quality:86}).toFile(shot);
+
+    await holdFrame(700);
+    const buyerBefore = await buyer.inputValue();
+    const sellerBefore = await seller.inputValue();
+    const sellerCard = templateSection.locator('.tpl-card').filter({has:seller});
+    await seller.fill('');
+    await seller.pressSequentially('Here are nearby homes for ', {delay:65});
+    await sellerCard.getByRole('button', {name:'Subject address', exact:true}).click();
+    await holdFrame(600);
+    await sellerCard.getByRole('button', {name:'Similar homes list', exact:true}).click();
+    if (!(await seller.inputValue()).includes('{original}{homes}') ||
+        await buyer.inputValue() !== buyerBefore) throw Error('Map templates did not update independently');
+    await holdFrame(850);
+    await sellerCard.getByRole('button', {name:'Reset', exact:true}).click();
+    if (await seller.inputValue() !== sellerBefore) throw Error('Map seller template did not reset');
+    await holdFrame(800);
+    return;
+  }
   await screenshot(page);
   const template=page.getByRole('textbox',{name:'Text message template'});
   await template.scrollIntoViewIfNeeded();
