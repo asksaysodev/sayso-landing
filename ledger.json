@@ -12,9 +12,10 @@
       "at": "2026-11-26T18:00:51.025Z"
     },
     "sayso-map": {
-      "sha": "2129fd32f2368c402752b5a89475fce08d64b3a7",
-      "status": "baseline",
-      "at": "2026-11-26T18:00:51.025Z"
+      "sha": "b7de976a238a834c42d467421a89bf3cb7bd36ba",
+      "status": "skipped",
+      "at": "2026-11-26T21:06:42.118Z",
+      "note": "Sayso Map got bug fixes only: condition ratings retry after a failure, failed searches no longer use a daily search, the PDF says Top 3 of N when more homes match, and long lines no longer push cards under the map."
     },
     "sayso-composer": {
       "sha": "6e9c25e2535e8d373b8fbadc4eb37eb4d37b9fbe",
