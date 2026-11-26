@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/demo/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Book a Demo | Sayso',
     description:
       'Schedule a meeting with the founders to see how Sayso can help your real estate team book more appointments.',

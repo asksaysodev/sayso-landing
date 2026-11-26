@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/pricing/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Pricing | Sayso',
     description:
       'Simple, transparent pricing for individual agents and teams. Cancel anytime, no contracts.',

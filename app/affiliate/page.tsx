@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/affiliate/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Affiliate Program | Sayso',
     description: 'Earn recurring commission by referring users to Sayso. Apply to become a Sayso affiliate today.',
     url: `${siteUrl}/affiliate/`,

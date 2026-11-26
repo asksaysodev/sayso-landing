@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/referral/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Referral Program | Sayso',
     description: 'Invite someone to Sayso and you both get rewarded. Share your unique referral code and earn credits.',
     url: `${siteUrl}/referral/`,

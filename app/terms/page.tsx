@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/terms/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Terms and Conditions | Sayso',
     description: 'Review the terms and conditions governing your use of Sayso and the AskSayso platform.',
     url: `${siteUrl}/terms/`,
