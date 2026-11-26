@@ -116,9 +116,6 @@ const nextConfig = {
         { source: `${from}/`, destination: to, statusCode: 301 },
       ]),
       // ──────────────────────────────────────────────────
-      // PERSONA PAGE REDIRECTS — activate when /for/ pages are live
-      // ──────────────────────────────────────────────────
-      // ──────────────────────────────────────────────────
       // PRODUCT PAGE SLUG REDIRECTS
       // ──────────────────────────────────────────────────
       {
@@ -241,29 +238,6 @@ const nextConfig = {
         destination: '/why-sayso/',
         permanent: true,
       },
-      // ──────────────────────────────────────────────────
-      // PERSONA PAGE REDIRECTS — activate when /for/ pages are live
-      // ──────────────────────────────────────────────────
-      // {
-      //   source: '/agent',
-      //   destination: '/for/solo-agents',
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/broker',
-      //   destination: '/for/team-leaders',
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/isa',
-      //   destination: '/for/isas',
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/sales-leader',
-      //   destination: '/for/team-leaders',
-      //   permanent: true,
-      // },
     ];
   },
 }

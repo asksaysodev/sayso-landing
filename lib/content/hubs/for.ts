@@ -1,5 +1,4 @@
 import type { HubPageConfig } from './types';
-import { registerHub } from './index';
 
 const forHub: HubPageConfig = {
   slug: 'for',
@@ -44,6 +43,5 @@ const forHub: HubPageConfig = {
   noKeyword: true,
 };
 
-registerHub(forHub);
 
 export { forHub };

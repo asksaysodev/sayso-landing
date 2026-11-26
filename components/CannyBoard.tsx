@@ -28,11 +28,7 @@ interface CannyBoardProps {
  */
 export function CannyBoard({ user, basePath = '/feedback', boardToken }: CannyBoardProps) {
   useEffect(() => {
-    console.log('CannyBoard mounting with:', {
-      boardToken,
-      appID: process.env.NEXT_PUBLIC_CANNY_APP_ID,
-      basePath,
-    });
+    let renderTimer: number | undefined;
 
     // Dynamically load the Canny SDK script
     const script = document.createElement('script');
@@ -40,10 +36,8 @@ export function CannyBoard({ user, basePath = '/feedback', boardToken }: CannyBo
     script.async = true;
 
     script.onload = () => {
-      console.log('Canny SDK loaded');
       // Initialize Canny with the window object
       if (window && typeof window.Canny !== 'undefined') {
-        console.log('Canny available, identifying user...');
         // Identify user
         window.Canny('identify', {
           appID: process.env.NEXT_PUBLIC_CANNY_APP_ID,
@@ -56,8 +50,7 @@ export function CannyBoard({ user, basePath = '/feedback', boardToken }: CannyBo
         });
 
         // Wait a moment for identification to complete, then render
-        setTimeout(() => {
-          console.log('Rendering board with token:', boardToken);
+        renderTimer = window.setTimeout(() => {
           // Clear the loading message container before rendering
           const cannyDiv = document.querySelector('[data-canny]');
           if (cannyDiv) {
@@ -82,6 +75,7 @@ export function CannyBoard({ user, basePath = '/feedback', boardToken }: CannyBo
     document.body.appendChild(script);
 
     return () => {
+      window.clearTimeout(renderTimer);
       // Cleanup: remove the script if component unmounts
       if (script.parentNode) {
         script.parentNode.removeChild(script);

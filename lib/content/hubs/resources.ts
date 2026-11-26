@@ -1,5 +1,4 @@
 import type { HubPageConfig } from './types';
-import { registerHub } from './index';
 
 const resourcesHub: HubPageConfig = {
   slug: 'resources',
@@ -73,6 +72,5 @@ const resourcesHub: HubPageConfig = {
   noKeyword: true,
 };
 
-registerHub(resourcesHub);
 
 export { resourcesHub };

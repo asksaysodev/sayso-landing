@@ -1,5 +1,4 @@
 import type { HubPageConfig } from './types';
-import { registerHub } from './index';
 
 const objectionsHub: HubPageConfig = {
   slug: 'objections',
@@ -287,6 +286,5 @@ const objectionsHub: HubPageConfig = {
   ],
 };
 
-registerHub(objectionsHub);
 
 export { objectionsHub };

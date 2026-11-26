@@ -1,5 +1,4 @@
 import type { HubPageConfig } from './types';
-import { registerHub } from './index';
 
 const productsHub: HubPageConfig = {
   slug: 'products',
@@ -56,6 +55,5 @@ const productsHub: HubPageConfig = {
   // }, // TODO: re-enable when feedback page is ready
 };
 
-registerHub(productsHub);
 
 export { productsHub };

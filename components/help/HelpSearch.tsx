@@ -22,7 +22,16 @@ interface Result {
 
 let indexPromise: Promise<HelpSearchEntry[]> | null = null;
 function loadIndex() {
-  indexPromise ??= fetch('/help/search.json').then((r) => r.json());
+  // A failed load is not cached, so the next open of the search tries again.
+  indexPromise ??= fetch('/help/search.json')
+    .then((r) => {
+      if (!r.ok) throw new Error(`help search index: ${r.status}`);
+      return r.json() as Promise<HelpSearchEntry[]>;
+    })
+    .catch((e) => {
+      indexPromise = null;
+      throw e;
+    });
   return indexPromise;
 }
 

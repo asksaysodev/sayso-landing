@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyFeedbackPassword, mockFeedbackUser } from '@/lib/auth';
-import { generateCannyToken } from '@/lib/canny';
 
 /**
  * POST /api/feedback/auth
- * Verifies the feedback page password and returns an SSO token
+ * Verifies the feedback page password and returns the shared feedback user
  *
  * Request body:
  * {
@@ -14,7 +13,7 @@ import { generateCannyToken } from '@/lib/canny';
  * Response on success:
  * {
  *   success: true,
- *   ssoToken: string
+ *   user: { id, name, email }
  * }
  *
  * Response on failure:
