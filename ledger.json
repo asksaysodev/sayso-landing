@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "products": {
+    "sayso-web-app": {
+      "sha": "ad588ca3004f62a829176e3e8cd3aba42a17fdc6",
+      "status": "baseline",
+      "at": "2026-11-26T18:00:51.025Z"
+    },
+    "sayso-desktop-app": {
+      "sha": "1a8727669a1dfff6da9039b38dbb0b6f34cc809c",
+      "status": "baseline",
+      "at": "2026-11-26T18:00:51.025Z"
+    },
+    "sayso-map": {
+      "sha": "2129fd32f2368c402752b5a89475fce08d64b3a7",
+      "status": "baseline",
+      "at": "2026-11-26T18:00:51.025Z"
+    },
+    "sayso-composer": {
+      "sha": "6e9c25e2535e8d373b8fbadc4eb37eb4d37b9fbe",
+      "status": "baseline",
+      "at": "2026-11-26T18:00:51.025Z"
+    },
+    "sayso-backend": {
+      "sha": "c74376535d66ee71a042c3a9f719ad68693e01d1",
+      "status": "baseline",
+      "at": "2026-11-26T18:00:51.025Z"
+    }
+  }
+}
