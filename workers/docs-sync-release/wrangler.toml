@@ -1,0 +1,10 @@
+name = "sayso-docs-sync"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+# Secrets (set with `npx wrangler secret put <NAME>` from this folder):
+#   GITHUB_WEBHOOK_SECRET  the secret on the asksaysodev organization webhook
+#   DISPATCH_TOKEN         fine-grained GitHub token: sayso-landing only, Contents read and write
+[vars]
+LANDING_REPO = "asksaysodev/sayso-landing"
