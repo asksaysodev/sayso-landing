@@ -1,0 +1,234 @@
+name: Docs Sync
+
+# Keeps asksayso.com/help in step with product releases.
+# Every 2 hours: find new production releases, let Claude update the affected articles and screenshots,
+# then publish automatically if every check passes. Otherwise hold the change as a draft PR and tell Dash.
+on:
+  schedule:
+    - cron: '23 */2 * * *'
+  push:
+    branches: [feat/docs-sync-lite]   # TEMPORARY: replays from .github/docs-sync-test.json while building; remove before merge
+  workflow_dispatch:
+    inputs:
+      jobs:
+        description: 'Replay specific releases: JSON list of {"product","from","to"}. Leave empty to check production.'
+        required: false
+      mode:
+        description: live publishes; dry-run opens a draft PR only (no merge, release, Slack or ledger update)
+        type: choice
+        options: [dry-run, live]
+        default: dry-run
+
+permissions: {}
+
+concurrency:
+  group: docs-sync
+  cancel-in-progress: false
+
+env:
+  # Live publishing only ever runs from development.
+  MODE: ${{ github.ref == 'refs/heads/development' && (github.event_name == 'schedule' && 'live' || inputs.mode) || 'dry-run' }}
+  TOOLS: .docs-sync/tools/scripts/docs-sync
+
+jobs:
+  detect:
+    # Scheduled runs only when switched on (repository variable DOCS_SYNC_ENABLED=true).
+    if: github.event_name != 'schedule' || vars.DOCS_SYNC_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write   # the docs-sync-ledger branch only
+    outputs:
+      matrix: ${{ steps.detect.outputs.matrix }}
+      any: ${{ steps.detect.outputs.any }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - id: reader
+        env:
+          DOCS_SYNC_APP_ID: ${{ vars.DOCS_SYNC_APP_ID }}
+          DOCS_SYNC_APP_PRIVATE_KEY: ${{ secrets.DOCS_SYNC_APP_PRIVATE_KEY }}
+        run: node scripts/docs-sync/github-app.mjs
+      - id: detect
+        env:
+          DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          DOCS_SYNC_JOBS: ${{ inputs.jobs }}
+        run: |
+          if [ "${{ github.event_name }}" = push ] && [ -f .github/docs-sync-test.json ]; then export DOCS_SYNC_JOBS="$(cat .github/docs-sync-test.json)"; fi
+          node scripts/docs-sync/detect.mjs
+
+  draft:
+    # Claude works here with read-only access. It never sees a publishing token or Slack credentials.
+    needs: detect
+    if: needs.detect.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.detect.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ matrix.help_ref || 'development' }}
+          persist-credentials: false
+      - name: Check out this run's Docs Sync tools
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          path: .docs-sync/tools
+          persist-credentials: false
+      - id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund --ignore-scripts
+      - id: reader
+        env:
+          DOCS_SYNC_APP_ID: ${{ vars.DOCS_SYNC_APP_ID }}
+          DOCS_SYNC_APP_PRIVATE_KEY: ${{ secrets.DOCS_SYNC_APP_PRIVATE_KEY }}
+        run: node $TOOLS/github-app.mjs
+      - name: Collect the interface changes
+        id: diff
+        env:
+          DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
+        run: node $TOOLS/diff.mjs "${{ matrix.product }}" "${{ matrix.from }}" "${{ matrix.to }}"
+
+      - name: Check out the screenshot renderer
+        if: steps.diff.outputs.has_ui == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: asksaysodev/sayso-stills-bot
+          token: ${{ steps.reader.outputs.token }}
+          path: .docs-sync/stills
+          persist-credentials: false
+      - name: Check out the released product
+        if: steps.diff.outputs.has_ui == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: asksaysodev/${{ matrix.product }}
+          ref: ${{ matrix.to }}
+          token: ${{ steps.reader.outputs.token }}
+          path: .docs-sync/stills/product/${{ matrix.product }}
+          persist-credentials: false
+      - name: Install the renderer
+        if: steps.diff.outputs.has_ui == 'true'
+        timeout-minutes: 10
+        run: |
+          (cd .docs-sync/stills/harness && npm ci --no-audit --no-fund && (timeout 180 npx playwright install --with-deps chromium || timeout 180 npx playwright install --with-deps chromium))
+          case "${{ matrix.product }}" in
+            sayso-web-app|sayso-desktop-app|sayso-composer)
+              (cd ".docs-sync/stills/product/${{ matrix.product }}" && npm ci --ignore-scripts --no-audit --no-fund) ;;
+          esac
+
+      - name: Update the Help Center
+        if: steps.diff.outputs.has_ui == 'true'
+        timeout-minutes: 30
+        uses: anthropics/claude-code-action@4411a9e9b0283becf4b924f7bce360fd7756c78c # v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
+          prompt: |
+            Read .docs-sync/tools/scripts/docs-sync/AGENT.md fully and follow it exactly for the ${{ matrix.product }} production release described in .docs-sync/release/release.json.
+            Today's date is the date of this run (use `date +%F`). Finish by writing .docs-sync/result.json.
+          claude_args: >-
+            --model ${{ vars.DOCS_SYNC_MODEL || 'claude-opus-5-5' }}
+            --max-turns 120
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep"
+            --disallowedTools "Read(./.docs-sync/stills/product/*/api/**),Read(./.docs-sync/stills/product/*/lib/**),Read(./.docs-sync/stills/product/*/server/**),Read(./.docs-sync/stills/product/*/supabase/**),Read(./.docs-sync/stills/product/**/.env*),WebFetch,WebSearch"
+
+      - name: Nothing customer-facing changed
+        if: steps.diff.outputs.has_ui != 'true'
+        run: echo '{"decision":"skip","summary":"No interface files changed in this release."}' > .docs-sync/result.json
+      - name: Package the changes
+        if: always()
+        run: |
+          git add -A content/help public/help
+          git diff --cached --binary "${{ steps.base.outputs.sha }}" > .docs-sync/changes.patch
+          echo "${{ steps.base.outputs.sha }}" > .docs-sync/base.txt
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: docs-sync-${{ matrix.product }}-${{ matrix.to }}
+          include-hidden-files: true
+          retention-days: 7
+          path: |
+            .docs-sync/changes.patch
+            .docs-sync/base.txt
+            .docs-sync/result.json
+            .docs-sync/release/release.json
+            .docs-sync/shots.json
+
+  publish:
+    # Trusted steps only: checks, PR, merge, release, Dash. No AI here.
+    needs: [detect, draft]
+    if: always() && needs.detect.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJSON(needs.detect.outputs.matrix) }}
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: docs-sync-${{ matrix.product }}-${{ matrix.to }}
+          path: ${{ runner.temp }}/draft
+      - id: base
+        run: echo "sha=$(cat '${{ runner.temp }}/draft/base.txt')" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ steps.base.outputs.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check out this run's Docs Sync tools
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          path: .docs-sync/tools
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund --ignore-scripts
+      - name: Apply the draft (Help Center files only)
+        run: |
+          D='${{ runner.temp }}/draft'
+          mkdir -p .docs-sync/release
+          cp "$D/release.json" .docs-sync/release/release.json
+          cp "$D/result.json" .docs-sync/result.json 2>/dev/null || true
+          if [ -s "$D/changes.patch" ]; then
+            if git apply --numstat "$D/changes.patch" | awk '{print $3}' | grep -vE '^(content/help/|public/help/)'; then
+              echo '{"decision":"hold","hold_reason":"The draft touched files outside the Help Center."}' > .docs-sync/result.json
+            else
+              git apply --index "$D/changes.patch"
+            fi
+          fi
+      - id: gates
+        run: node $TOOLS/check.mjs HEAD
+      - name: Publish or hold
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DASH_SLACK_BOT_TOKEN: ${{ secrets.DASH_SLACK_BOT_TOKEN }}
+          DASH_SLACK_CHANNEL_ID: ${{ secrets.DASH_SLACK_CHANNEL_ID || vars.DASH_SLACK_CHANNEL_ID }}
+          DOCS_SYNC_MODE: ${{ env.MODE }}
+        run: node $TOOLS/publish.mjs
+      - name: Tell Dash the run failed
+        if: failure() && env.MODE == 'live'
+        env:
+          DASH_SLACK_BOT_TOKEN: ${{ secrets.DASH_SLACK_BOT_TOKEN }}
+          DASH_SLACK_CHANNEL_ID: ${{ secrets.DASH_SLACK_CHANNEL_ID || vars.DASH_SLACK_CHANNEL_ID }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          PRODUCT: ${{ matrix.product }}
+          TO: ${{ matrix.to }}
+        run: |
+          node -e "fetch('https://slack.com/api/chat.postMessage',{method:'POST',headers:{Authorization:'Bearer '+process.env.DASH_SLACK_BOT_TOKEN,'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({channel:process.env.DASH_SLACK_CHANNEL_ID,text:'Docs Sync failed for '+process.env.PRODUCT+' \x60'+process.env.TO.slice(0,7)+'\x60. <'+process.env.RUN+'|Run details>'})})"
