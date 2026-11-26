@@ -1,7 +1,5 @@
 // Verified production evidence only. Callers retain event identities as well as SHAs.
 export const products = ['sayso-desktop-app', 'sayso-web-app', 'sayso-backend', 'sayso-map', 'sayso-composer'];
-export const mapProject = 'prj_eW2ksMU5h3MWQCal18fIEILOoBUd';
-export const mapTeam = 'team_xB1qUuGI103ezs0hoOHOEWBg';
 const shaPattern = /^[0-9a-f]{40}$/;
 
 export function stableRelease(release) {
@@ -19,15 +17,10 @@ export function productionStatus(repo, deploy, status) {
       status.environment_url === 'https://sayso-server-5b0876782ec2.herokuapp.com/' &&
       /^https:\/\/dashboard\.heroku\.com\/apps\/sayso-server\/activity\//.test(status.log_url);
   }
-  return deploy.environment === 'Production' && deploy.creator?.login === 'vercel[bot]' &&
-    status.creator?.login === 'vercel[bot]' && new URL(status.environment_url).hostname.endsWith('.vercel.app');
-}
-
-export function verifiedMap(deploy) {
-  return (deploy.projectId || deploy.project?.id) === mapProject &&
-    deploy.target === 'production' && (deploy.readyState || deploy.state) === 'READY' &&
-    deploy.meta?.githubOrg === 'asksaysodev' && deploy.meta?.githubRepo === 'sayso-map' &&
-    shaPattern.test(deploy.meta.githubCommitSha);
+  if (deploy.environment !== 'Production' || deploy.creator?.login !== 'vercel[bot]' ||
+      status.creator?.login !== 'vercel[bot]' || !URL.canParse(status.environment_url)) return false;
+  const url = new URL(status.environment_url);
+  return url.protocol === 'https:' && url.hostname.endsWith('.vercel.app');
 }
 
 export async function readJson(url, token) {
@@ -51,26 +44,9 @@ export async function* pages(get, path, limit = 20) {
   throw Error('Reconciliation window exceeds pagination budget');
 }
 
-export async function discoverProduct(repo, since, gh, vercel) {
+export async function discoverProduct(repo, since, gh) {
   const events = [];
   const active = [];
-  if (repo === 'sayso-map') {
-    let until = '';
-    for (let page = 0; page < 20; page++) {
-      const data = await vercel('/v6/deployments?projectId=' + mapProject + '&target=production&state=READY&limit=100&since=' + Date.parse(since) + until);
-      for (const d of data.deployments) {
-        const detail = await vercel('/v13/deployments/' + encodeURIComponent(d.uid || d.id) + '?');
-        if (!verifiedMap(detail)) throw Error('Unexpected Map deployment metadata');
-        events.push({id:detail.id, sha:detail.meta.githubCommitSha, time:new Date(d.ready || d.created).toISOString()});
-      }
-      if (!data.pagination?.next) break;
-      if (page === 19) throw Error('Map reconciliation window exceeds pagination budget');
-      until = '&until=' + data.pagination.next;
-    }
-    const live = await vercel('/v13/deployments/sayso-map.vercel.app?');
-    if (!verifiedMap(live)) throw Error('Map alias could not be verified');
-    return {events, liveSha:live.meta.githubCommitSha};
-  }
   if (!products.includes(repo)) throw Error('Unknown product');
   if (repo === 'sayso-desktop-app') {
     for await (const d of pages(gh, '/releases')) {

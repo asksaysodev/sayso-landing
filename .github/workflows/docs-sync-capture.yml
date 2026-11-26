@@ -29,7 +29,6 @@ jobs:
         env:
           CAPTURE_PRODUCT: ${{ inputs.product }}
           DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
-          DOCS_SYNC_VERCEL_TOKEN: ${{ secrets.DOCS_SYNC_VERCEL_TOKEN }}
         run: node scripts/docs-sync/capture-source.mjs
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:

@@ -32,7 +32,6 @@ jobs:
       - name: Verify production evidence
         env:
           DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
-          DOCS_SYNC_VERCEL_TOKEN: ${{ secrets.DOCS_SYNC_VERCEL_TOKEN }}
           DOCS_SYNC_SINCE: ${{ steps.cursor.outputs.since }}
         run: node scripts/docs-sync/discover.mjs
       - name: Index article impact for queued releases

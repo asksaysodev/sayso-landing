@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import {products, mapTeam, discoverProduct, readJson} from './releases.mjs';
+import {products, discoverProduct, readJson} from './releases.mjs';
 
 const token = process.env.DOCS_SYNC_READ_TOKEN;
 if (!token) throw Error('Missing read-only installation token');
@@ -9,8 +9,7 @@ let failed = false;
 for (const repo of products) {
   try {
     results[repo] = await discoverProduct(repo, since,
-      path => readJson('https://api.github.com/repos/asksaysodev/' + repo + path, token),
-      path => readJson('https://api.vercel.com' + path + '&teamId=' + mapTeam, process.env.DOCS_SYNC_VERCEL_TOKEN));
+      path => readJson('https://api.github.com/repos/asksaysodev/' + repo + path, token));
     console.log(repo + ': ' + results[repo].events.length + ' verified events');
   } catch (error) {
     failed = true;
