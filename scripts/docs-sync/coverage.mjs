@@ -32,12 +32,46 @@ const mapTopics = {
   },
 };
 
+const productTopics = {
+  'sayso-map':mapTopics,
+  'sayso-composer': {
+    scriptWizard: {
+      article:'content/help/tools/sayso-composer.mdx',
+      heading:'## Build a script',
+      evidence:/^src\/components\/wizard\//m,
+    },
+  },
+  'sayso-web-app': {
+    manageBilling: {
+      article:'content/help/web-app/subscription-tab.mdx',
+      heading:'## Subscription management',
+      evidence:/\b(?:ManageBillingButton|SubscriptionManagementCard|Manage billing)\b/i,
+    },
+  },
+  'sayso-desktop-app': {
+    meetingDetection: {
+      article:'content/help/desktop-app/meeting-detection.mdx',
+      evidence:/^electron\/callDetection\/|\b(?:Meeting detection|postCallDetectionPromptEnabled)\b/im,
+    },
+  },
+};
+
+export function decisionForComparison(repo, comparison, articles) {
+  if (!['ahead','behind','identical'].includes(comparison.status) || !Array.isArray(comparison.files) ||
+      comparison.files.length >= 300 || !Number.isSafeInteger(comparison.total_commits) ||
+      comparison.total_commits < 0 || comparison.total_commits > 100 ||
+      (comparison.status !== 'identical' && comparison.files.length === 0)) return null;
+  if (comparison.status === 'identical' && (comparison.files.length || comparison.total_commits)) return null;
+  return assessCoverage(repo, comparison.files, articles);
+}
+
 export function initialBaseline(repo, first) {
   return repo==='sayso-map' && first.time > mapBaseline.time && first.sha !== mapBaseline.sha ? mapBaseline.sha : null;
 }
 
 export function assessCoverage(repo, files, articles) {
-  const topics = repo === 'sayso-map' ? Object.entries(mapTopics) : [];
+  const rules = productTopics[repo] || {};
+  const topics = Object.entries(rules);
   const matched = new Set();
   let unmatchedFiles=0, filesWithoutPatch=0;
   for (const file of files) {
@@ -51,9 +85,9 @@ export function assessCoverage(repo, files, articles) {
     changedFiles:files.length,
     unmatchedFiles,
     filesWithoutPatch,
-    requiresNewArticleReview:true,
+    requiresNewArticleReview:files.length>0,
     topics:[...matched].sort().map(topic=>{
-      const spec=mapTopics[topic];
+      const spec=rules[topic];
       const article=articles.find(a=>a.path===spec.article);
       const covered=article && (!spec.heading || article.content.split('\n').includes(spec.heading));
       return {topic,article:spec.article,disposition:covered?'review-existing':'consider-new-article'};
@@ -76,12 +110,13 @@ export function checkMapCrossLinks(articles) {
 }
 
 export function validateCoverage(repo, coverage) {
-  if (!products.includes(repo) || !coverage || coverage.requiresNewArticleReview !== true ||
+  const rules = productTopics[repo] || {};
+  if (!products.includes(repo) || !coverage || coverage.requiresNewArticleReview !== (coverage.changedFiles>0) ||
       !['changedFiles','unmatchedFiles','filesWithoutPatch'].every(k=>Number.isSafeInteger(coverage[k]) && coverage[k]>=0) ||
       coverage.unmatchedFiles>coverage.changedFiles || coverage.filesWithoutPatch>coverage.changedFiles ||
-      !Array.isArray(coverage.topics) || coverage.topics.length>Object.keys(mapTopics).length ||
-      coverage.topics.some(row=>repo!=='sayso-map' || !Object.hasOwn(mapTopics,row.topic) ||
-        mapTopics[row.topic].article!==row.article || !['review-existing','consider-new-article'].includes(row.disposition))) {
+      !Array.isArray(coverage.topics) || coverage.topics.length>Object.keys(rules).length ||
+      coverage.topics.some(row=>!Object.hasOwn(rules,row.topic) ||
+        rules[row.topic].article!==row.article || !['review-existing','consider-new-article'].includes(row.disposition))) {
     throw Error('Unexpected release coverage');
   }
 }

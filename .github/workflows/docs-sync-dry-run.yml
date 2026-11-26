@@ -3,7 +3,12 @@ on:
   workflow_dispatch:
   push:
     branches: [feat/help-center-docs-sync]
-    paths: ['.github/workflows/docs-sync-dry-run.yml', 'scripts/docs-sync/model.mjs', 'scripts/docs-sync/topics.mjs']
+    paths:
+      - '.github/workflows/docs-sync-dry-run.yml'
+      - 'scripts/docs-sync/coverage.mjs'
+      - 'scripts/docs-sync/replay-decisions.mjs'
+      - 'scripts/docs-sync/model.mjs'
+      - 'scripts/docs-sync/topics.mjs'
 permissions:
   contents: read
 jobs:
@@ -36,3 +41,25 @@ jobs:
           const {review}=JSON.parse(fs.readFileSync('.docs-sync/impact.json'));
           fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Desktop v1.3.5 to v1.3.8. Indexed '+review.length+' articles. '+review.filter(x=>x.candidate).length+' candidates require semantic review. Only fixed public topic names and batch positions were submitted for topic review. No publication.');
           NODE
+  decisions:
+    if: github.ref == 'refs/heads/development' || github.ref == 'refs/heads/feat/help-center-docs-sync'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - run: node scripts/docs-sync/inventory.mjs
+      - name: Mint the scoped GitHub App reader
+        id: reader
+        env:
+          DOCS_SYNC_APP_ID: ${{ vars.DOCS_SYNC_APP_ID }}
+          DOCS_SYNC_APP_PRIVATE_KEY: ${{ secrets.DOCS_SYNC_APP_PRIVATE_KEY }}
+        run: node scripts/docs-sync/github-app.mjs
+      - name: Replay new, update and skip decisions on released code
+        env:
+          DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
+        run: node scripts/docs-sync/replay-decisions.mjs

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import {evaluate} from './impact.mjs';
 import {topicIds} from './topics.mjs';
-import {assessCoverage,initialBaseline} from './coverage.mjs';
+import {decisionForComparison,initialBaseline} from './coverage.mjs';
 import {products,readJson} from './releases.mjs';
 
 const base='https://api.github.com/repos/asksaysodev/';
@@ -26,18 +26,18 @@ for(const repo of products){
    if(!from){flag('verified-baseline-needed');return;}
    if(!remaining)return;
    remaining--;
-   let compare=await gh('/compare/'+from+'...'+to);
+   let compare=from===to?{status:'identical',files:[],total_commits:0}:await gh('/compare/'+from+'...'+to);
    const direction=compare.status;
    if(direction==='behind')compare=await gh('/compare/'+to+'...'+from);
-   if(!['ahead','behind','identical'].includes(direction)||!Array.isArray(compare.files)||
-     compare.files.length>=300||compare.total_commits>100){flag('comparison-needs-manual-review');return;}
+   const coverage=decisionForComparison(repo,compare,articles);
+   if(!coverage){flag('comparison-needs-manual-review');return;}
    const files=compare.files.map(f=>({path:f.filename}));
    const rows=evaluate(articles,{release:{repo,head:to},files});
    // Only public article names and release identities enter the durable ledger.
    // Source filenames, model inputs and provider responses remain on the ephemeral runner.
    summaries[repo] ||= {};
-   summaries[repo][id]={from,to,direction,coverage:assessCoverage(repo,compare.files,articles),topics:topicIds(compare.files.map(f=>f.filename+' '+(f.patch||'')).join('\n')),articles:rows.map(r=>({path:r.path,hash:r.sha256,candidate:r.candidate})),
-     status:'indexed-awaiting-semantic-review'};
+   summaries[repo][id]={from,to,direction,coverage,topics:topicIds(compare.files.map(f=>f.filename+' '+(f.patch||'')).join('\n')),articles:rows.map(r=>({path:r.path,hash:r.sha256,candidate:r.candidate})),
+     status:coverage.requiresNewArticleReview?'indexed-awaiting-semantic-review':'docs-current-identical-commit'};
  };
  for(let i=0;i<ordered.length;i++){
    const [id,e]=ordered[i];

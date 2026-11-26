@@ -7,6 +7,10 @@ const tags=inventory.map(a=>topicIds(a.content));
 const cache=new Map();
 for(const reviews of Object.values(report.summaries)){
  for(const review of Object.values(reviews)){
+   if(!review.coverage.requiresNewArticleReview){
+     delete review.topics;
+     continue;
+   }
    const key=JSON.stringify(review.topics);
    let verdicts=cache.get(key);
    if(!verdicts){
@@ -32,6 +36,10 @@ if (process.env.GITHUB_STEP_SUMMARY) {
  for(const [repo,releases] of Object.entries(report.summaries)){
    for(const review of Object.values(releases)){
      const {changedFiles,unmatchedFiles,filesWithoutPatch,topics}=review.coverage;
+     if(!review.coverage.requiresNewArticleReview){
+       lines.push(`- ${repo} \`${review.to.slice(0,8)}\` · Same production source. No code-driven documentation changes detected.`);
+       continue;
+     }
      lines.push(`- ${repo} \`${review.from.slice(0,8)}…${review.to.slice(0,8)}\` · ${changedFiles} changed files, ${unmatchedFiles} outside known topic rules, ${filesWithoutPatch} missing patches. Check for new articles.`);
      for(const topic of topics){
        lines.push(`  - ${topic.disposition==='consider-new-article'?'Consider a new article':'Review existing article'} · \`${topic.article}\``);
