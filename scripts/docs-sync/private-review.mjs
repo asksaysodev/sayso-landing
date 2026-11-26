@@ -61,17 +61,33 @@ async function waitForServer(){
 }
 
 export async function reviewPrivately(input){
+  const shape=structuredClone(schema);
+  shape.properties.files.minItems=input.files.length;
+  shape.properties.files.maxItems=input.files.length;
+  shape.properties.proposals.maxItems=4;
   const response=await fetch(endpoint+'/v1/chat/completions',{
     method:'POST',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(480000),redirect:'error',
-    body:JSON.stringify({temperature:0,seed:7,max_tokens:2600,response_format:{type:'json_schema',json_schema:{schema}},
+    body:JSON.stringify({stream:true,temperature:0,seed:7,max_tokens:1100,response_format:{type:'json_schema',json_schema:{schema:shape}},
       messages:[{role:'system',content:instructions},{role:'user',content:JSON.stringify(input)+'\n/no_think'}]}),
   });
   if(!response.ok)throw Error('Offline reviewer returned HTTP '+response.status);
-  const data=await response.json();
-  const choice=data.choices?.[0];
-  if(choice?.finish_reason!=='stop')throw Error('Offline reviewer output reached its limit');
+  let buffer='', content='', finish;
+  for await (const chunk of response.body.pipeThrough(new TextDecoderStream())){
+    buffer+=chunk;
+    const rows=buffer.split('\n');
+    buffer=rows.pop();
+    for(const row of rows){
+      if(!row.startsWith('data:'))continue;
+      const event=row.slice(5).trim();
+      if(event==='[DONE]')continue;
+      const choice=JSON.parse(event).choices?.[0];
+      if(choice?.delta?.content)content+=choice.delta.content;
+      if(choice?.finish_reason)finish=choice.finish_reason;
+    }
+  }
+  if(finish!=='stop')throw Error('Offline reviewer output reached its limit or the stream ended early');
   let result;
-  try{result=JSON.parse(choice.message.content);}catch{throw Error('Offline reviewer returned invalid JSON');}
+  try{result=JSON.parse(content);}catch{throw Error('Offline reviewer returned invalid JSON');}
   return validatePrivateReview(input,result);
 }
 
@@ -81,18 +97,20 @@ async function main(){
  const drafts=[];
  const lines=['## Offline historical documentation review',''];
  for(const scenario of cases){
+   console.log('Starting offline comparison: '+scenario.repo+'.');
    const reviewed=await reviewPrivately(scenario.input);
    const decisions=reviewed.proposals.map(p=>({action:p.action,visual:p.visual,
      article:scenario.input.articles.find(a=>a.id===p.article)?.path}));
    const expected=decisions.some(p=>p.action==='update'&&p.article===scenario.test.expectedArticle&&p.visual);
-   lines.push('- '+scenario.repo+': '+reviewed.files.length+' files reviewed, '+reviewed.proposals.length+
-     ' proposals, '+reviewed.pending+' files pending. Expected screenshot update: '+(expected?'found':'missing')+'.');
+   const result='- '+scenario.repo+': '+reviewed.files.length+' files reviewed, '+reviewed.proposals.length+
+     ' proposals, '+reviewed.pending+' files pending. Expected screenshot update: '+(expected?'found':'missing')+'.';
+   console.log(result);
+   lines.push(result);
    // Persist the draft in the ephemeral private workspace only.
    drafts.push({repo:scenario.repo,expected,reviewed});
  }
  await fs.writeFile('.docs-sync/private-replay-drafts.json',JSON.stringify(drafts),{mode:0o600});
  const summary=lines.join('\n')+'\n';
- console.log(summary);
  if(process.env.GITHUB_STEP_SUMMARY)await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,summary);
  if(drafts.some(x=>!x.expected))throw Error('Offline editorial replay missed a previously verified update');
 }
