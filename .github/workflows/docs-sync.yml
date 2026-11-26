@@ -1,11 +1,12 @@
 name: Docs Sync
 
 # Keeps asksayso.com/help in step with product releases.
-# Every 2 hours: find new production releases, let Claude update the affected articles and screenshots,
-# then publish automatically if every check passes. Otherwise hold the change as a draft PR and tell Dash.
+# Started 30 quiet minutes after a production release (docs-sync-trigger.yml), plus a daily safety sweep.
+# Claude updates the affected articles and screenshots; it publishes on its own only if every check passes.
+# Channel: the update list or "no help center updates needed". Holds and failures: a DM to Kuvaal only.
 on:
   schedule:
-    - cron: '23 */2 * * *'
+    - cron: '17 15 * * *'
   push:
     branches: [feat/docs-sync-lite]   # TEMPORARY: replays from .github/docs-sync-test.json while building; remove before merge
   workflow_dispatch:
@@ -144,6 +145,40 @@ jobs:
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep"
             --disallowedTools "Read(./.docs-sync/stills/product/*/api/**),Read(./.docs-sync/stills/product/*/lib/**),Read(./.docs-sync/stills/product/*/server/**),Read(./.docs-sync/stills/product/*/supabase/**),Read(./.docs-sync/stills/product/**/.env*),WebFetch,WebSearch"
 
+      - name: Check the draft and build the site
+        id: c1
+        if: steps.diff.outputs.has_ui == 'true'
+        run: node $TOOLS/selfcheck.mjs "${{ steps.base.outputs.sha }}" "$TOOLS"
+      - name: Claude fixes its draft (1 of 2)
+        if: steps.diff.outputs.has_ui == 'true' && steps.c1.outputs.ok == 'false'
+        timeout-minutes: 15
+        uses: anthropics/claude-code-action@4411a9e9b0283becf4b924f7bce360fd7756c78c # v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
+          prompt: Read .docs-sync/tools/scripts/docs-sync/AGENT.md, then follow its "Fix mode" section using .docs-sync/fix.txt.
+          claude_args: >-
+            --model ${{ vars.DOCS_SYNC_MODEL || 'claude-opus-5-5' }}
+            --max-turns 60
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep"
+            --disallowedTools "WebFetch,WebSearch"
+      - name: Check again
+        id: c2
+        if: steps.diff.outputs.has_ui == 'true' && steps.c1.outputs.ok == 'false'
+        run: node $TOOLS/selfcheck.mjs "${{ steps.base.outputs.sha }}" "$TOOLS"
+      - name: Claude fixes its draft (2 of 2)
+        if: steps.diff.outputs.has_ui == 'true' && steps.c2.outputs.ok == 'false'
+        timeout-minutes: 15
+        uses: anthropics/claude-code-action@4411a9e9b0283becf4b924f7bce360fd7756c78c # v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
+          prompt: Read .docs-sync/tools/scripts/docs-sync/AGENT.md, then follow its "Fix mode" section using .docs-sync/fix.txt. This is the last attempt.
+          claude_args: >-
+            --model ${{ vars.DOCS_SYNC_MODEL || 'claude-opus-5-5' }}
+            --max-turns 60
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep"
+            --disallowedTools "WebFetch,WebSearch"
       - name: Nothing customer-facing changed
         if: steps.diff.outputs.has_ui != 'true'
         run: echo '{"decision":"skip","summary":"No interface files changed in this release."}' > .docs-sync/result.json
@@ -220,15 +255,16 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           DASH_SLACK_BOT_TOKEN: ${{ secrets.DASH_SLACK_BOT_TOKEN }}
           DASH_SLACK_CHANNEL_ID: ${{ secrets.DASH_SLACK_CHANNEL_ID || vars.DASH_SLACK_CHANNEL_ID }}
+          DOCS_SYNC_DM_USER: U098NPXEU0J   # Kuvaal: holds and failures go only to him
           DOCS_SYNC_MODE: ${{ env.MODE }}
         run: node $TOOLS/publish.mjs
-      - name: Tell Dash the run failed
-        if: failure() && env.MODE == 'live'
+      - name: DM Kuvaal if the run itself broke
+        if: failure() && env.MODE == 'live' && hashFiles('.docs-sync/dm-sent') == ''
         env:
           DASH_SLACK_BOT_TOKEN: ${{ secrets.DASH_SLACK_BOT_TOKEN }}
-          DASH_SLACK_CHANNEL_ID: ${{ secrets.DASH_SLACK_CHANNEL_ID || vars.DASH_SLACK_CHANNEL_ID }}
+          DASH_SLACK_CHANNEL_ID: U098NPXEU0J
           RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           PRODUCT: ${{ matrix.product }}
           TO: ${{ matrix.to }}
         run: |
-          node -e "fetch('https://slack.com/api/chat.postMessage',{method:'POST',headers:{Authorization:'Bearer '+process.env.DASH_SLACK_BOT_TOKEN,'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({channel:process.env.DASH_SLACK_CHANNEL_ID,text:'Docs Sync failed for '+process.env.PRODUCT+' \x60'+process.env.TO.slice(0,7)+'\x60. <'+process.env.RUN+'|Run details>'})})"
+          node -e "fetch('https://slack.com/api/chat.postMessage',{method:'POST',headers:{Authorization:'Bearer '+process.env.DASH_SLACK_BOT_TOKEN,'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({channel:process.env.DASH_SLACK_CHANNEL_ID,text:'*The Help Center update for '+process.env.PRODUCT+' did not finish.*\\nWhat happened: the Docs Sync run itself broke before it could publish or hold.\\nHow to fix it: open the run details and re-run the failed job. Nothing was published. <'+process.env.RUN+'|Run details>'})})"

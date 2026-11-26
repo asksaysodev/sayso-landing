@@ -1,0 +1,31 @@
+name: Docs Sync trigger
+
+# A production release of any product arrives here (from the release-event Worker).
+# Each new release cancels the waiting run for that product and starts the 30-minute timer again,
+# so a burst of merges becomes one Help Center update.
+on:
+  repository_dispatch:
+    types: [production-release]
+
+permissions: {}
+
+concurrency:
+  group: docs-sync-wait-${{ github.event.client_payload.product }}
+  cancel-in-progress: true
+
+jobs:
+  wait-then-sync:
+    if: vars.DOCS_SYNC_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      actions: write
+    steps:
+      - name: Wait for 30 quiet minutes
+        run: |
+          echo "Production release of ${{ github.event.client_payload.product }} (${{ github.event.client_payload.sha }}). Waiting 30 minutes for more merges."
+          sleep 1800
+      - name: Start Docs Sync
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run docs-sync.yml --repo "$GITHUB_REPOSITORY" --ref development -f mode=live

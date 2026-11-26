@@ -62,10 +62,17 @@ Write `.docs-sync/result.json`:
 {
   "decision": "publish" | "skip" | "hold",
   "summary": "One plain sentence: what changed for customers.",
-  "articles": [{"path": "content/help/tools/x.mdx", "action": "new" | "update", "title": "..."}],
+  "articles": [{"path": "content/help/tools/x.mdx", "action": "new" | "update", "title": "...", "change": "For updates: one short sentence a 5th grader understands, about what changed for the agent. Example: You can now save your comps as a PDF."}],
   "images": [{"path": "public/help/tools/x.webp", "action": "new" | "replace"}],
-  "hold_reason": "Plain words, only when decision is hold."
+  "hold_reason": "Only when decision is hold: what you couldn't tell, in plain words a busy founder reads in 5 seconds.",
+  "hold_fix": "Only when decision is hold: the one thing a person should do, in plain words."
 }
 ```
 
+Don't list What's New in `articles`. Write `change` without UI markup, under 15 words, no jargon.
+
 Before writing it, reread every article you changed against the writing rules above and fix anything that breaks them.
+
+## Fix mode
+
+If `.docs-sync/fix.txt` exists, you are fixing your own earlier draft: the site build or the publish checks failed. Read `fix.txt`, fix only what it lists in the files you already changed (rewrite a sentence that breaks a writing rule, correct a link, fix MDX), keep everything else, and update `.docs-sync/result.json` if anything in it changed. Don't start over.

@@ -25,7 +25,14 @@ if (manual) {
     const get = (p) => readJson(`https://api.github.com/repos/asksaysodev/${repo}${p}`, reader);
     let live;
     try {
-      live = (await discoverProduct(repo, since, get)).liveSha;
+      const found = await discoverProduct(repo, since, get);
+      live = found.liveSha;
+      // A burst of merges: wait until the product has been quiet for 30 minutes, then cover them all at once.
+      const latest = found.events[0]?.time;
+      if (latest && Date.now() - Date.parse(latest) < 30 * 60e3) {
+        console.log(`${repo}: released ${Math.round((Date.now() - Date.parse(latest)) / 60e3)} min ago, waiting for 30 quiet minutes`);
+        continue;
+      }
     } catch (e) {
       console.log(`${repo}: skipped this run (${e.message})`);
       continue;
