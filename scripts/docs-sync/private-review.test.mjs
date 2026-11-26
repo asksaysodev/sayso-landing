@@ -19,7 +19,16 @@ test('offline review must account for every source file and target an existing p
   {files:[file(1,'customer-facing')],proposals:[]},
   {files:[files[0],files[0]],proposals:[]},
   {files,proposals:[{...proposal,article:8}]},
-  {files,proposals:[{...proposal,files:[2]}]},
+  {files,proposals:[{...proposal,files:[3]}]},
   {files,proposals:[{...proposal,action:'new'}]},
  ]) assert.throws(()=>validatePrivateReview(input,result));
+});
+
+test('a draft citing internal changes alone stays unverified',()=>{
+ const reviewed=validatePrivateReview(input,{files:[file(1,'customer-facing'),file(2,'internal')],
+   proposals:[{...proposal,files:[2,2]}]});
+ assert.equal(reviewed.proposals[0].supported,false);
+ assert.deepEqual(reviewed.proposals[0].files,[2]);
+ assert.equal(reviewed.unverifiedProposals,1);
+ assert.equal(reviewed.pending,1);
 });

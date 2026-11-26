@@ -44,13 +44,16 @@ export function validatePrivateReview(input,result){
     if(typeof p.title!=='string'||!p.title.trim()||p.title.length>160||
        typeof p.draft!=='string'||!p.draft.trim()||p.draft.length>2400||
        typeof p.visual!=='boolean') throw Error('Invalid proposal text or visual flag');
-    if(!Array.isArray(p.files)||!p.files.length||new Set(p.files).size!==p.files.length||
-       p.files.some(id=>!reviewed.has(id))||
-       !p.files.some(id=>reviewed.get(id)==='customer-facing')) throw Error('Invalid proposal source citations');
+    if(!Array.isArray(p.files)||!p.files.length||p.files.some(id=>!reviewed.has(id)))
+      throw Error('Proposal cited a file outside the provided comparison');
   }
-  const cited=new Set(result.proposals.flatMap(p=>p.files));
+  const proposals=result.proposals.map(p=>({
+    ...p,files:[...new Set(p.files)],
+    supported:p.files.some(id=>reviewed.get(id)==='customer-facing'),
+  }));
+  const cited=new Set(proposals.filter(p=>p.supported).flatMap(p=>p.files));
   const pending=result.files.filter(f=>f.status==='uncertain'||(f.status==='customer-facing'&&!cited.has(f.id))).length;
-  return {files:result.files,proposals:result.proposals,pending};
+  return {files:result.files,proposals,pending,unverifiedProposals:proposals.filter(p=>!p.supported).length};
 }
 
 async function waitForServer(){
@@ -72,7 +75,10 @@ export async function reviewPrivately(input){
   const shape=structuredClone(schema);
   shape.properties.files.minItems=input.files.length;
   shape.properties.files.maxItems=input.files.length;
-  shape.properties.proposals.maxItems=4;
+  shape.properties.proposals.maxItems=3;
+  shape.properties.proposals.items.properties.files={type:'array',minItems:1,maxItems:4,
+    items:{type:'integer',enum:input.files.map(f=>f.id)}};
+  shape.properties.proposals.items.properties.article={type:'integer',enum:[0,...input.articles.map(a=>a.id)]};
   const response=await fetch(endpoint+'/v1/chat/completions',{
     method:'POST',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(480000),redirect:'error',
     body:JSON.stringify({stream:true,temperature:0,seed:7,max_tokens:720,response_format:{type:'json_schema',json_schema:{schema:shape}},
@@ -107,11 +113,11 @@ async function main(){
  for(const scenario of cases){
    console.log('Starting offline comparison: '+scenario.repo+'.');
    const reviewed=await reviewPrivately(scenario.input);
-   const decisions=reviewed.proposals.map(p=>({action:p.action,visual:p.visual,
+   const decisions=reviewed.proposals.filter(p=>p.supported).map(p=>({action:p.action,visual:p.visual,
      article:scenario.input.articles.find(a=>a.id===p.article)?.path}));
    const expected=decisions.some(p=>p.action==='update'&&p.article===scenario.test.expectedArticle&&p.visual);
    const result='- '+scenario.repo+': '+reviewed.files.length+' files reviewed, '+reviewed.proposals.length+
-     ' proposals, '+reviewed.pending+' files pending. Expected screenshot update: '+(expected?'found':'missing')+'.';
+     ' proposals, '+reviewed.pending+' files pending, '+reviewed.unverifiedProposals+' proposals lack a customer-facing citation. Expected screenshot update: '+(expected?'found':'missing')+'.';
    console.log(result);
    lines.push(result);
    // Persist the draft in the ephemeral private workspace only.
