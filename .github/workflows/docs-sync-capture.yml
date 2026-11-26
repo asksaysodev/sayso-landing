@@ -58,9 +58,8 @@ jobs:
         with:
           name: ${{ inputs.product }}-${{ steps.source.outputs.sha }}
           path: |
-            .docs-sync/media/screen.webp
+            .docs-sync/media/*.webp
             .docs-sync/media/walkthrough.mp4
-            .docs-sync/media/poster.webp
           include-hidden-files: true
           retention-days: 7
           if-no-files-found: error

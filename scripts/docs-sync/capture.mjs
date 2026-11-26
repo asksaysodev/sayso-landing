@@ -2,14 +2,14 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {execFileSync, spawn} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
-import {setTimeout as holdFrame} from 'node:timers/promises';
+import {captureMap} from './capture-map.mjs';
 import {chromium} from 'playwright';
 import sharp from 'sharp';
 
 const [product, rootArg, outArg] = process.argv.slice(2);
 const root = path.resolve(rootArg), out = path.resolve(outArg);
 const origin = 'http://127.0.0.1:3861';
-const viewport = product === 'sayso-map' ? {width:390,height:844} : {width:1280,height:800};
+const viewport = product === 'sayso-map' ? {width:1280,height:900} : {width:1280,height:800};
 await fs.mkdir(out,{recursive:true});
 const browser = await chromium.launch(process.env.STILLS_BROWSER_CHANNEL ? {channel:process.env.STILLS_BROWSER_CHANNEL} : {});
 let server, context;
@@ -17,58 +17,6 @@ const shot = path.join(out,'screen.webp');
 async function screenshot(page) {
   await page.evaluate(()=>document.fonts.ready);
   await sharp(await page.screenshot()).webp({quality:86}).toFile(shot);
-}
-
-async function map(page) {
-  const publicDir = path.join(root,product,'public');
-  await context.route('**/*', async route=>{
-    const url = new URL(route.request().url());
-    if (url.origin !== origin) return route.abort();
-    const file = path.resolve(publicDir,'.' + (url.pathname === '/' ? '/index.html' : url.pathname));
-    if (!file.startsWith(publicDir + path.sep)) return route.abort();
-    try {await route.fulfill({path:file});} catch {await route.abort();}
-  });
-  await page.addInitScript(()=>{
-    localStorage.setItem('saysoMap.name.v1',JSON.stringify('Jamie Carter'));
-    localStorage.setItem('saysoMap.pass.v1',JSON.stringify('fixture'));
-  });
-  await page.goto(origin);
-  await page.getByRole('link',{name:'Filters'}).click();
-  await page.getByRole('heading',{name:'Filters'}).waitFor();
-  const buyer = page.getByRole('textbox', {name:'Buyer text template', exact:true});
-  const seller = page.getByRole('textbox', {name:'Seller text template', exact:true});
-  if (await buyer.isVisible() && await seller.isVisible()) {
-    const templateSection = page.locator('section.group').filter({
-      has:page.getByRole('heading', {name:'Text template', exact:true})
-    });
-    await page.evaluate(() => document.fonts.ready);
-    await sharp(await templateSection.screenshot()).webp({quality:86}).toFile(shot);
-
-    await holdFrame(700);
-    const buyerBefore = await buyer.inputValue();
-    const sellerBefore = await seller.inputValue();
-    const sellerCard = templateSection.locator('.tpl-card').filter({has:seller});
-    await seller.fill('');
-    await seller.pressSequentially('Here are nearby homes for ', {delay:65});
-    await sellerCard.getByRole('button', {name:'Subject address', exact:true}).click();
-    await holdFrame(600);
-    await sellerCard.getByRole('button', {name:'Similar homes list', exact:true}).click();
-    if (!(await seller.inputValue()).includes('{original}{homes}') ||
-        await buyer.inputValue() !== buyerBefore) throw Error('Map templates did not update independently');
-    await holdFrame(850);
-    await sellerCard.getByRole('button', {name:'Reset', exact:true}).click();
-    if (await seller.inputValue() !== sellerBefore) throw Error('Map seller template did not reset');
-    await holdFrame(800);
-    return;
-  }
-  await screenshot(page);
-  const template=page.getByRole('textbox',{name:'Text message template'});
-  await template.scrollIntoViewIfNeeded();
-  await template.fill('');
-  await template.pressSequentially('Here are nearby homes for ',{delay:55});
-  await page.getByRole('button',{name:'Subject address',exact:true}).click();
-  if (!(await template.inputValue()).includes('{original}')) throw Error('Template insertion did not match the release contract');
-  await page.getByRole('button',{name:'Reset template'}).click();
 }
 
 async function startComposer() {
@@ -110,14 +58,22 @@ try {
   } else {
     if(!['sayso-map','sayso-composer'].includes(product)) throw Error('Unknown capture product');
     if(product==='sayso-composer') await startComposer();
-    context=await browser.newContext({viewport,deviceScaleFactor:2,serviceWorkers:'block',recordVideo:{dir:out,size:viewport}});
+    const options={viewport,deviceScaleFactor:product==='sayso-map'?3:2,serviceWorkers:'block'};
+    const mapPublic=path.join(root,product,'public');
+    if(product==='sayso-map'){
+      context=await browser.newContext(options);
+      try {await captureMap(await context.newPage(),mapPublic,out);}
+      finally {await context.close();}
+    }
+    context=await browser.newContext({...options,recordVideo:{dir:out,size:viewport}});
     const page=await context.newPage(), video=page.video();
-    await (product==='sayso-map'?map:composer)(page);
+    if(product==='sayso-map') await captureMap(page,mapPublic,out,{recordTemplates:true});
+    else await composer(page);
     await context.close();
     const raw=await video.path();
-    execFileSync('ffmpeg',['-loglevel','error','-y','-i',raw,'-an','-c:v','libx264','-pix_fmt','yuv420p','-crf','24','-movflags','+faststart',path.join(out,'walkthrough.mp4')]);
+    execFileSync('ffmpeg',['-loglevel','error','-y','-i',raw,'-an','-c:v','libx264','-pix_fmt','yuv420p','-crf',product==='sayso-map'?'18':'24','-movflags','+faststart',path.join(out,'walkthrough.mp4')]);
     await fs.unlink(raw);
-    await fs.copyFile(shot,path.join(out,'poster.webp'));
+    if(product!=='sayso-map') await fs.copyFile(shot,path.join(out,'poster.webp'));
   }
 } finally {
   await browser.close();
