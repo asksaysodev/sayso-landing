@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/security/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Security | Sayso',
     description: 'Learn how Sayso protects your data, conversations, and account access at every level.',
     url: `${siteUrl}/security/`,

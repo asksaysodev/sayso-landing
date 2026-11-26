@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Real-Time AI Call Coaching for Real Estate Agents | Sayso',
     description:
       'Sayso gives real estate agents live call coaching, objection prompts, and automatic CRM notes so more prospecting conversations become appointments.',

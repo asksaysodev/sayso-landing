@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/about/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'About | Sayso',
     description:
       'Sayso improves sales execution with real-time conversation guidance. Founded by Kuvaal Patel to close the gap between knowing what to do and doing it on calls.',

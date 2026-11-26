@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/contact/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Contact Us | Sayso',
     description:
       'Get in touch with the Sayso team. Send us a message and we\'ll get back to you shortly.',
