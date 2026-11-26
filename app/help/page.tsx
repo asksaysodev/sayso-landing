@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Bug, CalendarClock, FileText, Headphones, LayoutDashboard, Mail, MapPin, Monitor, PenLine, Sparkles, UsersRound } from 'lucide-react';
+import { ArrowRight, Bug, CalendarClock, FileText, LayoutDashboard, Mail, MapPin, Monitor, PenLine, PhoneCall, Sparkles, UsersRound } from 'lucide-react';
 import { HelpSearch } from '@/components/help/HelpSearch';
 import { HELP_SECTIONS, HELP_SUPPORT } from '@/lib/help-sections';
 import { getAllHelpArticles, getSectionArticles } from '@/lib/help';
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const BOX_ICONS: Record<string, React.ReactNode> = {
   'desktop-app': <Monitor className="h-6 w-6" aria-hidden />,
   'web-app': <LayoutDashboard className="h-6 w-6" aria-hidden />,
-  agents: <Headphones className="h-6 w-6" aria-hidden />,
+  agents: <PhoneCall className="h-6 w-6" aria-hidden />,
   admins: <UsersRound className="h-6 w-6" aria-hidden />,
 };
 

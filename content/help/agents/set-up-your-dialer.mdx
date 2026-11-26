@@ -1,17 +1,17 @@
 ---
 title: Set up your dialer for Sayso
-description: Sayso works with any dialer or CRM that plays the call through your computer. This article covers the common ones and what doesn't work.
+description: Sayso works with any dialer or CRM that plays the call through your computer. Here are the common ones and what doesn't work.
 group: getting-started
 order: 50
-updated: 2026-11-23
-keywords: [dialer, mojo, vulcan7, redx, follow up boss calling, google voice, zillow, cell phone, mobile, calling settings, power dialer]
+updated: 2026-11-25
+keywords: [dialer, softphone, zoom phone, vonage, landline, desk phone, office phone system, mojo, vulcan7, redx, follow up boss calling, google voice, zillow, cell phone, mobile, calling settings, power dialer]
 ---
 
 ## How Sayso hears the call
 
-If you can hear the call through your computer's headphones, Sayso can hear it too. If the call rings on your cell phone, Sayso can't.
+If you hear the call through your computer, Sayso hears it too. If the call rings on your cell phone, Sayso can't hear it.
 
-Sayso doesn't dial. It coaches the conversation while your dialer places the call. Check your dialer's calling setting: it must be internet, computer or "ask me", never "always use mobile phone".
+Sayso doesn't dial. It coaches while your dialer places the call. Set your dialer's calling setting to internet, computer or "ask me", never "always use mobile phone".
 
 <Screenshot src="/help/desktop-app/meeting-detection-1.webp" alt="The Sayso identified a call prompt" width={520} />
 
@@ -19,32 +19,42 @@ Sayso doesn't dial. It coaches the conversation while your dialer places the cal
 
 | Tool | How to use it |
 | --- | --- |
-| Follow Up Boss | Call from Follow Up Boss on your computer, in Chrome. Use Calling Lists to dial one lead after another. Connect Follow Up Boss to send notes. |
+| Follow Up Boss | Call from Follow Up Boss in Chrome on your computer. Use Calling Lists to dial one lead after another. Connect Follow Up Boss to send notes. |
 | Sure Send | Call from Sure Send on your computer. Connect Sure Send with an API token to send notes. |
-| Mojo | Dial your Mojo session number from your CRM's computer dialer (not your cell), so the session plays through your computer. |
+| Mojo | Dial your Mojo session number from your CRM's computer dialer, not your cell. |
 | Vulcan7, REDX | Use the computer dialer, not call-through to your cell. |
-| Google Voice | A free computer dialer if you don't have one. Identity verification can take a day. |
-| Browser-based dialers | Any dialer that plays the call in your browser or a desktop app works. |
-| Zoom, Google Meet | Works for video consults. The other person's audio counts as the lead. |
+| Google Voice | A free computer dialer. Identity verification takes up to a day. |
+| Browser-based dialers | Any dialer that plays the call in your browser or a desktop app. |
+| Zoom, Google Meet | For video consults. The other person's audio counts as the lead. |
+
+## Office phone systems (Zoom Phone, Vonage and others)
+
+Many phone systems have an app for your computer, called a softphone. Sayso works when you talk through that app. You don't need headphones. Sayso doesn't work when the call connects on a desk phone or your cell, even if you clicked to dial on your computer.
+
+1. Open your phone system's app on your computer.
+2. Set calls to ring on the computer, not a desk phone or your cell.
+3. Make a test call. If you hear the other person through your computer, Sayso hears them too.
+
+<Screenshot src="/help/agents/set-up-your-dialer-1.webp" alt="Diagram: a call that plays through your computer reaches Sayso, a call that connects on a desk phone or cell does not" />
 
 ## What doesn't work
 
-- Calls placed or answered on your cell phone, including Zillow calls on your phone.
-- Dialers set to route calls to your mobile phone.
-- A separate desk phone or handset.
+- Calls placed or answered on your cell phone, including Zillow calls.
+- Dialers set to route calls to your cell phone.
+- A desk phone or handset, even if you clicked to dial on your computer.
 
 <Callout type="tip">
-Got a lead call on your cell phone? Call them back from your CRM's computer dialer so Sayso can coach the conversation.
+Got a lead call on your cell phone? Call them back from your CRM's computer dialer.
 </Callout>
 
 ## Sending notes to your CRM
 
 Follow Up Boss and Sure Send connect directly. See [Send a conversation to your CRM](/help/web-app/link-conversation-to-lead/). For any other CRM, copy your Smart Capture notes from the Coach widget or from **Conversations** and paste them in.
 
-Want your CRM or dialer to connect directly? [Request an integration](/help/support/request-a-feature/).
+To ask for a direct connection to your CRM or dialer, [request an integration](/help/support/request-a-feature/).
 
 ## Troubleshooting
 
-- **Sayso isn't hearing the call:** the audio isn't coming through your computer. Check your dialer setting and wear headphones. See [Set up your audio](/help/agents/set-up-your-audio/).
+- **Sayso isn't hearing the call:** the audio isn't playing through your computer. Check your dialer's calling setting. See [Set up your audio](/help/agents/set-up-your-audio/).
 - **Prompts react to screeners or hold music:** press **Reset** when a person answers, or raise **Buffer Time**. See [Buffer Time](/help/desktop-app/buffer-time/).
-- **Using a power dialer or multi-line dialer?** See [Using Sayso during a dial block or power dialer session](/help/agents/power-dialer-sessions/).
+- **Power dialer or multi-line dialer:** see [Using Sayso during a dial block or power dialer session](/help/agents/power-dialer-sessions/).

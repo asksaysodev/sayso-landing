@@ -92,7 +92,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: 'Do I need to be tech-savvy?',
         answer:
-          'No. The desktop app installs in under 60 seconds on Mac (macOS 13 or newer) or Windows 10 or 11. You need headphones, and a dialer, Zoom or Google Meet that plays the call through your computer. Interactive onboarding, walkthrough videos, the [help center](/help/) and weekly [office hours](/help/support/office-hours/) cover the rest. See [System requirements](/help/support/system-requirements/).',
+          'No. The desktop app installs in under 60 seconds on Mac (macOS 13 or newer) or Windows 10 or 11. You need a dialer, Zoom or Google Meet that plays the call through your computer. Interactive onboarding, walkthrough videos, the [help center](/help/) and weekly [office hours](/help/support/office-hours/) cover the rest. See [System requirements](/help/support/system-requirements/).',
       },
       {
         question: 'Does it work on my cell phone?',
