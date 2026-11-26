@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/privacy/`,
   },
   openGraph: {
+    siteName: 'Sayso',
     title: 'Privacy Policy | Sayso',
     description: 'Learn how AskSayso, Inc. collects, uses, and protects your personal information.',
     url: `${siteUrl}/privacy/`,
