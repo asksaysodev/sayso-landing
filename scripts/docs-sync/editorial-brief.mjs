@@ -4,7 +4,7 @@ const catalog = {
   condition: {
     product:'Sayso Map',
     task:'Understand a condition rating on a similar home',
-    existing:'Find comps with Sayso Map explains how to search and read the results.',
+    existing:'Find comps with Sayso Map covers address search and comparing nearby homes. Its earlier instructions cover list price, property details and result cards.',
     covered:'What Sayso Map condition ratings mean explains the badges and their details.',
     facts:[
       'Similar homes can display a condition badge based on available listing photos.',
@@ -16,7 +16,7 @@ const catalog = {
   estimate: {
     product:'Sayso Map',
     task:'Understand an off-market value estimate and its confidence label',
-    existing:'Find comps with Sayso Map explains how to search and read the results.',
+    existing:'Find comps with Sayso Map covers address search and comparing nearby homes. Its earlier instructions cover list price, property details and result cards.',
     covered:'Understand off-market value estimates in Sayso Map explains the estimate and confidence.',
     facts:[
       'For an off-market home, Map can show an automated value estimate labeled AVM.',
@@ -60,8 +60,8 @@ const catalog = {
   },
   meetingDetection: {
     product:'Sayso Desktop',
-    task:'Start coaching when Sayso detects a browser call',
-    existing:'The general session guide explains how to start coaching.',
+    task:'Understand when a browser call triggers the meeting detection prompt and how to turn the prompt off',
+    existing:'The general session guide covers starting coaching manually from the Coach widget and choosing a buyer or seller session.',
     covered:'The Meeting detection article explains how to start coaching from the prompt.',
     facts:[
       'Meeting detection can show a prompt when a call starts in a supported web browser.',

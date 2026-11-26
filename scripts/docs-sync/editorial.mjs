@@ -4,6 +4,9 @@ import {buildEditorialBrief} from './editorial-brief.mjs';
 const instructions = [
   'You are a Sayso Help Center editor. Use only the supplied customer-facing facts.',
   'Choose update if the existing article already answers the customer task. Choose new if the task adds a standalone customer question the existing article does not answer. Choose skip for a change that does not affect customer instructions or screenshots.',
+  'Compare the specific task with the scope of the current article. Sharing a screen or product with a broad guide does not mean that guide already answers the task.',
+  'A standalone interpretation question, such as what a newly introduced indicator or estimate means, merits a new article if the existing guide only describes navigation or the surrounding workflow.',
+  'Keep an existing task in its current article when the release changes placement, labels, visuals, or the number of controls used to complete it.',
   'Return a plain-text draft for new or update, 1 to 4 short sentences. If the change only affects screenshots, say what needs recapturing and keep the existing instructions. For skip leave draft empty.',
   'Return the numeric evidence IDs supporting the draft. Avoid copying markup, internal details, or adding facts. Use exact user-facing labels and Sayso capitalization. Avoid em dashes and marketing language.',
 ].join(' ');
