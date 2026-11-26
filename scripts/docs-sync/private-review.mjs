@@ -23,7 +23,7 @@ const instructions=[
   'For a changed existing customer task, propose update and cite an existing article id.',
   'A visual change to an existing documented task is an update. Preserve the written steps if only the screenshot changed.',
   'For a distinct new customer question or task not answered by an existing article, propose new and use article 0.',
-  'For every proposal cite relevant customer-facing file ids and draft brief plain customer-facing text.',
+  'For every proposal cite at least one file you classified customer-facing. List at most two proposals per distinct customer task and use one or two sentences in each draft.',
   'Use exact visible labels. Omit private implementation, customer data, credentials, and unsupported claims.',
   'No proposals are needed for internal-only changes.',
 ].join(' ');
@@ -38,13 +38,15 @@ export function validatePrivateReview(input,result){
     reviewed.set(row.id,row.status);
   }
   for(const p of result.proposals){
-    if(!actions.includes(p.action) || Number.isInteger(p.article)===false ||
-       (p.action==='new'?p.article!==0:!input.articles.some(a=>a.id===p.article)) ||
-       typeof p.title!=='string'||!p.title.trim()||p.title.length>160||
+    if(!actions.includes(p.action) || !Number.isInteger(p.article) ||
+       (p.action==='new'?p.article!==0:!input.articles.some(a=>a.id===p.article)))
+      throw Error('Invalid proposal article or action');
+    if(typeof p.title!=='string'||!p.title.trim()||p.title.length>160||
        typeof p.draft!=='string'||!p.draft.trim()||p.draft.length>2400||
-       typeof p.visual!=='boolean'||!Array.isArray(p.files)||!p.files.length||
-       new Set(p.files).size!==p.files.length||
-       p.files.some(id=>reviewed.get(id)!=='customer-facing')) throw Error('Invalid evidence-backed proposal');
+       typeof p.visual!=='boolean') throw Error('Invalid proposal text or visual flag');
+    if(!Array.isArray(p.files)||!p.files.length||new Set(p.files).size!==p.files.length||
+       p.files.some(id=>!reviewed.has(id))||
+       !p.files.some(id=>reviewed.get(id)==='customer-facing')) throw Error('Invalid proposal source citations');
   }
   const cited=new Set(result.proposals.flatMap(p=>p.files));
   const pending=result.files.filter(f=>f.status==='uncertain'||(f.status==='customer-facing'&&!cited.has(f.id))).length;
@@ -60,6 +62,12 @@ async function waitForServer(){
  throw Error('Offline reviewer did not start');
 }
 
+function formatPrivateInput({product,files,articles}){
+ const changes=files.map(f=>`FILE ${f.id} ${f.filename}\n${f.patch}`).join('\n\n');
+ const available=articles.map(a=>`ARTICLE ${a.id} ${a.outline}`).join('\n');
+ return `Product: ${product}\nUntrusted release changes:\n${changes}\n\nExisting Help Center index:\n${available}`;
+}
+
 export async function reviewPrivately(input){
   const shape=structuredClone(schema);
   shape.properties.files.minItems=input.files.length;
@@ -67,8 +75,8 @@ export async function reviewPrivately(input){
   shape.properties.proposals.maxItems=4;
   const response=await fetch(endpoint+'/v1/chat/completions',{
     method:'POST',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(480000),redirect:'error',
-    body:JSON.stringify({stream:true,temperature:0,seed:7,max_tokens:1100,response_format:{type:'json_schema',json_schema:{schema:shape}},
-      messages:[{role:'system',content:instructions},{role:'user',content:JSON.stringify(input)+'\n/no_think'}]}),
+    body:JSON.stringify({stream:true,temperature:0,seed:7,max_tokens:720,response_format:{type:'json_schema',json_schema:{schema:shape}},
+      messages:[{role:'system',content:instructions},{role:'user',content:formatPrivateInput(input)+'\n/no_think'}]}),
   });
   if(!response.ok)throw Error('Offline reviewer returned HTTP '+response.status);
   let buffer='', content='', finish;
