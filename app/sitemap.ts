@@ -53,7 +53,7 @@ const STATIC_PAGE_UPDATED_AT: Record<string, string> = {
   '/about': '2026-11-08',
   '/careers': '2026-11-08',
   '/author/kuvaal-patel': '2026-11-13',
-  '/faq': '2026-11-24',
+  '/faq': '2026-11-25',
   '/security': '2026-10-04',
   '/contact': '2026-06-14',
   '/referral': '2026-10-04',
