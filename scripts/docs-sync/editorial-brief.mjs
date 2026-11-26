@@ -39,8 +39,8 @@ const catalog = {
   scriptWizard: {
     product:'Sayso Composer',
     task:'Build a script using the Composer on-screen questions',
-    existing:'What Sayso Composer is already includes a Build a script section.',
-    covered:'What Sayso Composer is already includes a Build a script section.',
+    existing:'What Sayso Composer is includes a Build a script section and a screenshot of the wizard’s first step.',
+    covered:'What Sayso Composer is includes a Build a script section and a screenshot of the wizard’s first step.',
     facts:[
       'The existing workflow still uses the Composer script wizard.',
       'The wizard and progress indicator were restyled.',
@@ -50,11 +50,11 @@ const catalog = {
   manageBilling: {
     product:'Sayso Web App',
     task:'Open the existing billing page to manage a subscription',
-    existing:'Your subscription already explains how to open Manage billing.',
-    covered:'Your subscription already explains how to open Manage billing.',
+    existing:'Your subscription explains how to open Manage billing and includes a screenshot showing the previous appearance of that button.',
+    covered:'Your subscription explains how to open Manage billing and includes a screenshot showing the previous appearance of that button.',
     facts:[
       'The existing Manage billing control remains on the Subscription screen.',
-      'The button is top-aligned in its card and uses the secondary button style.',
+      'The management card previously centered its controls vertically. The latest version aligns them to the top and uses the secondary button style for Manage billing.',
       'Review screenshots of the Subscription screen for the current placement.',
     ],
   },
