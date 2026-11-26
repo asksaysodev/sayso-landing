@@ -22,7 +22,6 @@ jobs:
           persist-credentials: false
       - env:
           GH_TOKEN: ${{ github.token }}
-          DOCS_SYNC_VERCEL_TOKEN: ${{ secrets.DOCS_SYNC_VERCEL_TOKEN }}
           DASH_SLACK_BOT_TOKEN: ${{ secrets.DASH_SLACK_BOT_TOKEN }}
           DASH_SLACK_CHANNEL_ID: ${{ vars.DASH_SLACK_CHANNEL_ID || secrets.DASH_SLACK_CHANNEL_ID }}
         run: node scripts/docs-sync/notify.mjs

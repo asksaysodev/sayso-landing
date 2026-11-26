@@ -1,4 +1,4 @@
-import {dashMessage,messageId} from './publication.mjs';
+import {dashMessage,messageId,verifyLiveHelpDeployment} from './publication.mjs';
 import {productionStatus} from './releases.mjs';
 const api='https://api.github.com/repos/asksaysodev/sayso-landing';
 const channel=process.env.DASH_SLACK_CHANNEL_ID;
@@ -32,10 +32,7 @@ if(process.argv[2]==='auth-test'){
  if(!deployment)throw Error('Missing landing deployment');
  const statuses=await gh('/deployments/'+deployment.id+'/statuses?per_page=1');
  if(!productionStatus('sayso-landing',deployment,statuses?.[0])){console.log('Landing deployment is not successfully published');process.exit(0);}
- const alias=await fetch('https://api.vercel.com/v13/deployments/www.asksayso.com?teamId=team_xB1qUuGI103ezs0hoOHOEWBg',{headers:{Authorization:'Bearer '+process.env.DOCS_SYNC_VERCEL_TOKEN},signal:AbortSignal.timeout(20000)});
- if(!alias.ok)throw Error('Landing production alias verification failed');
- const live=await alias.json();
- if(live.meta?.githubOrg!=='asksaysodev'||live.meta.githubRepo!=='sayso-landing'||live.target!=='production'||live.readyState!=='READY'||live.meta.githubCommitSha!==deployment.sha)throw Error('Production alias and GitHub deployment disagree');
+ await verifyLiveHelpDeployment(deployment.sha);
  for(let page=1;page<=100;page++){
    const prs=await gh('/issues?state=closed&labels=docs-sync&per_page=100&page='+page);
    for(const issue of prs){

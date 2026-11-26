@@ -37,6 +37,17 @@ export function dashMessage(pr,files,releases) {
  return ['Sayso Help Center published · '+refs.join(', '),...Object.entries(fields).filter(([,v])=>v.length).map(([k,v])=>k+': '+v.join(', ')),
    (notes?'Release notes updated · ':'')+'<'+base+'/help/support/whats-new/|What’s New> · <https://github.com/asksaysodev/sayso-landing/pull/'+pr+'|Documentation PR>'].join('\n');
 }
+export async function verifyLiveHelpDeployment(sha, request=fetch) {
+ if(!/^[a-f0-9]{40}$/.test(sha))throw Error('Invalid landing deployment SHA');
+ const response=await request(base+'/help/deployment.json',{
+   cache:'no-store',redirect:'error',signal:AbortSignal.timeout(15000),
+ });
+ if(!response.ok)throw Error('Live Help Center deployment identity is unavailable');
+ const live=await response.json();
+ if(live.environment!=='production'||live.commit!==sha)
+   throw Error('Live Help Center and GitHub deployment disagree');
+}
+
 export function messageId(key){
  const id=crypto.createHash('sha256').update(key).digest('hex').slice(0,32).split('');
  id[12]='5';id[16]='8';

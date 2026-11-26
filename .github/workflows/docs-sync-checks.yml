@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'scripts/docs-sync/**'
+      - 'app/help/deployment.json/**'
       - '.github/workflows/docs-sync-*.yml'
       - 'content/help/**'
       - 'public/help/**'
