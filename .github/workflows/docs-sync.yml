@@ -174,6 +174,15 @@ jobs:
       - name: Nothing customer-facing changed
         if: steps.diff.outputs.has_ui != 'true'
         run: echo '{"decision":"skip","summary":"No interface files changed in this release."}' > .docs-sync/result.json
+      - name: Say what was merged in one plain line
+        # Commit titles only, never code. Dash posts the line, and uses it to answer replies in the thread.
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DOCS_SYNC_MODEL: ${{ vars.DOCS_SYNC_MODEL }}
+        run: node $TOOLS/summarize.mjs
       - name: Package the changes
         if: always()
         run: |
