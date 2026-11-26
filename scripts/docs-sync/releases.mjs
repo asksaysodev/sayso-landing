@@ -49,22 +49,32 @@ export async function discoverProduct(repo, since, gh) {
   const active = [];
   if (!products.includes(repo)) throw Error('Unknown product');
   if (repo === 'sayso-desktop-app') {
-    for await (const d of pages(gh, '/releases')) {
-      if (!stableRelease(d)) continue;
-      if (d.published_at < since && events.length) continue;
+    const stable = [];
+    for await (const release of pages(gh, '/releases')) {
+      if (stableRelease(release)) stable.push(release);
+    }
+    stable.sort((a,b) => b.published_at.localeCompare(a.published_at));
+    for (const d of stable) {
+      if (d.published_at < since && events.some(e => e.time < since) &&
+          new Set(events.map(e => e.sha)).size >= 2) break;
       const {sha} = await gh('/commits/' + encodeURIComponent(d.tag_name));
       if (!shaPattern.test(sha)) throw Error('Unresolved tag');
       events.push({id:String(d.id),sha,time:d.published_at,version:d.tag_name});
     }
   } else {
     const environment = repo === 'sayso-backend' ? 'sayso-server' : 'Production';
+    const successfulShas = new Set();
+    let hasPredecessor = false;
     for await (const d of pages(gh, '/deployments?environment=' + environment)) {
-      if (d.created_at < since && active.length) break;
+      if (d.created_at < since && active.length && hasPredecessor && successfulShas.size >= 2) break;
       const statuses = await gh('/deployments/' + d.id + '/statuses?per_page=100');
       if(statuses.length===100) throw Error('Deployment status history requires manual reconciliation');
       if(productionStatus(repo,d,statuses[0])) active.push({sha:d.sha,time:statuses[0].created_at});
-      for (const s of statuses.filter(s => productionStatus(repo,d,s)))
+      for (const s of statuses.filter(s => productionStatus(repo,d,s))) {
         events.push({id:d.id + '-' + s.id,sha:d.sha,time:s.created_at});
+        successfulShas.add(d.sha);
+        hasPredecessor ||= s.created_at < since;
+      }
     }
   }
   events.sort((a,b) => b.time.localeCompare(a.time));

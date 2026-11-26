@@ -48,3 +48,35 @@ test('Map, Web App and Composer discover successful GitHub Production deployment
 test('pagination refuses to silently truncate release history',async()=>{
  await assert.rejects(async()=>{for await(const _ of pages(async()=>Array(100).fill(1),'/x',1)){}},/pagination budget/);
 });
+
+test('quiet web products retain two distinct successful production commits', async()=>{
+ const creator={login:'vercel[bot]'};
+ const time='2026-11-03T00:00:00Z';
+ const deploys=[{id:5,sha},{id:4,sha},{id:3,sha:'b'.repeat(40)},{id:2,sha:'c'.repeat(40)}]
+   .map(d=>({...d,environment:'Production',creator,created_at:time}));
+ const gh=async route=>{
+  if(route.startsWith('/deployments?'))return deploys;
+  const id=Number(route.split('/')[2]);
+  assert.notEqual(id,2);
+  return [{id,state:'success',creator,created_at:time,environment_url:'https://app.vercel.app'}];
+ };
+ for(const repo of ['sayso-composer','sayso-web-app']){
+  const {events}=await discoverProduct(repo,'2026-11-26T00:00:00Z',gh);
+  assert.deepEqual([...new Set(events.map(e=>e.sha))],[sha,'b'.repeat(40)]);
+ }
+});
+
+test('quiet Desktop history keeps distinct stable release commits in publication order', async()=>{
+ const assets=['latest.yml','latest-mac.yml','Sayso.exe','Sayso.dmg'].map(name=>({name,state:'uploaded',size:100}));
+ const releases=[{id:2,tag_name:'v1.3.5',published_at:'2026-10-26T17:58:23Z'},
+  {id:3,tag_name:'v1.3.8',published_at:'2026-11-03T18:49:08Z'},
+  {id:1,tag_name:'v1.3.4',published_at:'2026-10-19T00:00:00Z'}].map(r=>({...r,assets}));
+ const gh=async route=>{
+   if(route.startsWith('/releases?'))return releases;
+   assert.notEqual(route,'/commits/v1.3.4');
+   return {sha:route.endsWith('v1.3.8')?sha:'b'.repeat(40)};
+ };
+ const {events,liveSha}=await discoverProduct('sayso-desktop-app','2026-11-26T00:00:00Z',gh);
+ assert.equal(liveSha,sha);
+ assert.deepEqual(events.map(e=>e.version),['v1.3.8','v1.3.5']);
+});
