@@ -46,6 +46,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.description,
+      url: `${siteUrl}/blog/${slug}/`,
+      siteName: 'Sayso',
       images: [post.heroImage],
       type: 'article',
       publishedTime: post.publishedAt,
