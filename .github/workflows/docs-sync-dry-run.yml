@@ -25,10 +25,14 @@ jobs:
         run: node scripts/docs-sync/evidence.mjs sayso-desktop-app 277933727b4cd57279154fcc83ea702033da3a58 1a8727669a1dfff6da9039b38dbb0b6f34cc809c
       - name: Index dependencies and evaluate every article locally
         run: node scripts/docs-sync/impact.mjs
+      - name: Review fixed public topic vocabulary only
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/docs-sync/review.mjs
       - name: Summarize historical coverage
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           const {review}=JSON.parse(fs.readFileSync('.docs-sync/impact.json'));
-          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Desktop v1.3.5 to v1.3.8. Indexed '+review.length+' articles. '+review.filter(x=>x.candidate).length+' candidates require semantic review. No external AI calls or publication.');
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Desktop v1.3.5 to v1.3.8. Indexed '+review.length+' articles. '+review.filter(x=>x.candidate).length+' candidates require semantic review. Only fixed public topic names and batch positions were submitted for topic review. No publication.');
           NODE
