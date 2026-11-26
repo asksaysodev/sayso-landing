@@ -53,6 +53,7 @@ export async function* pages(get, path, limit = 20) {
 
 export async function discoverProduct(repo, since, gh, vercel) {
   const events = [];
+  const active = [];
   if (repo === 'sayso-map') {
     let until = '';
     for (let page = 0; page < 20; page++) {
@@ -82,13 +83,18 @@ export async function discoverProduct(repo, since, gh, vercel) {
   } else {
     const environment = repo === 'sayso-backend' ? 'sayso-server' : 'Production';
     for await (const d of pages(gh, '/deployments?environment=' + environment)) {
-      if (d.created_at < since && events.length) break;
+      if (d.created_at < since && active.length) break;
       const statuses = await gh('/deployments/' + d.id + '/statuses?per_page=100');
+      if(statuses.length===100) throw Error('Deployment status history requires manual reconciliation');
+      if(productionStatus(repo,d,statuses[0])) active.push({sha:d.sha,time:statuses[0].created_at});
       for (const s of statuses.filter(s => productionStatus(repo,d,s)))
         events.push({id:d.id + '-' + s.id,sha:d.sha,time:s.created_at});
     }
   }
   events.sort((a,b) => b.time.localeCompare(a.time));
   if (!events.length) throw Error('No successful production evidence for ' + repo);
-  return {events, liveSha:events[0].sha};
+  if(repo==='sayso-desktop-app')return {events,liveSha:events[0].sha};
+  active.sort((a,b)=>b.time.localeCompare(a.time));
+  if(!active.length)throw Error('Current production deployment is unverified');
+  return {events,liveSha:active[0].sha};
 }

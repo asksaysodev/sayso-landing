@@ -13,7 +13,7 @@ async function api(path,options={}){
 }
 const installation=await api('/orgs/asksaysodev/installation');
 const repos=['sayso-desktop-app','sayso-web-app','sayso-backend','sayso-map','sayso-composer','sayso-stills-bot'];
-const result=await api('/app/installations/'+installation.id+'/access_tokens',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({repositories:repos,permissions:{contents:'read',deployments:'read',pull_requests:'read',actions:'read',checks:'read',statuses:'read'}})});
+const result=await api('/app/installations/'+installation.id+'/access_tokens',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({repositories:repos,permissions:{contents:'read',deployments:'read',pull_requests:'read'}})});
 if(!result.token)throw Error('No installation token returned');
 console.log('::add-mask::'+result.token);
 if(!process.env.GITHUB_OUTPUT)throw Error('Expected GitHub Actions output file');

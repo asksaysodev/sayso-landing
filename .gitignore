@@ -47,3 +47,6 @@ next-env.d.ts
 !.claude/commands/
 !.claude/skills/
 
+
+# Temporary Docs Sync evidence, private sources and media
+.docs-sync/

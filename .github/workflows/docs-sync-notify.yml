@@ -1,0 +1,28 @@
+name: Docs Sync publication receipts
+on:
+  schedule:
+    - cron: '43 */2 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+  deployments: read
+concurrency:
+  group: docs-sync-publication
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/development' && vars.DOCS_SYNC_NOTIFY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          DOCS_SYNC_VERCEL_TOKEN: ${{ secrets.DOCS_SYNC_VERCEL_TOKEN }}
+          DASH_SLACK_BOT_TOKEN: ${{ secrets.DASH_SLACK_BOT_TOKEN }}
+          DASH_SLACK_CHANNEL_ID: ${{ vars.DASH_SLACK_CHANNEL_ID || secrets.DASH_SLACK_CHANNEL_ID }}
+        run: node scripts/docs-sync/notify.mjs

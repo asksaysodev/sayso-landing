@@ -1,0 +1,67 @@
+name: Docs Sync released UI capture
+on:
+  workflow_dispatch:
+    inputs:
+      product:
+        type: choice
+        required: true
+        options: [sayso-map, sayso-composer, sayso-desktop-app, sayso-web-app]
+permissions:
+  contents: read
+jobs:
+  capture:
+    if: github.ref == 'refs/heads/development'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - id: reader
+        env:
+          DOCS_SYNC_APP_ID: ${{ vars.DOCS_SYNC_APP_ID }}
+          DOCS_SYNC_APP_PRIVATE_KEY: ${{ secrets.DOCS_SYNC_APP_PRIVATE_KEY }}
+        run: node scripts/docs-sync/github-app.mjs
+      - id: source
+        env:
+          CAPTURE_PRODUCT: ${{ inputs.product }}
+          DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
+          DOCS_SYNC_VERCEL_TOKEN: ${{ secrets.DOCS_SYNC_VERCEL_TOKEN }}
+        run: node scripts/docs-sync/capture-source.mjs
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: asksaysodev/${{ inputs.product }}
+          ref: ${{ steps.source.outputs.sha }}
+          token: ${{ steps.reader.outputs.token }}
+          path: product/${{ inputs.product }}
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        if: inputs.product == 'sayso-web-app' || inputs.product == 'sayso-desktop-app'
+        with:
+          repository: asksaysodev/sayso-stills-bot
+          ref: 5b694bcfb36c6ebee3ee9a273f003c63badc0dd7
+          token: ${{ steps.reader.outputs.token }}
+          path: product/sayso-stills-bot
+          persist-credentials: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Install released UI dependencies
+        if: inputs.product != 'sayso-map'
+        working-directory: product/${{ inputs.product }}
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - env:
+          CAPTURE_PRODUCT: ${{ inputs.product }}
+        run: node scripts/docs-sync/capture.mjs "$CAPTURE_PRODUCT" product .docs-sync/media
+      - name: Retain synthetic media for review
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: ${{ inputs.product }}-${{ steps.source.outputs.sha }}
+          path: |
+            .docs-sync/media/screen.webp
+            .docs-sync/media/walkthrough.mp4
+            .docs-sync/media/poster.webp
+          include-hidden-files: true
+          retention-days: 7
+          if-no-files-found: error
