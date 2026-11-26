@@ -2,7 +2,7 @@ import {outbound} from './topics.mjs';
 let attempts=0;
 export async function reviewTopics(changed,articles){
  const payload=outbound(changed,articles);
- const body=JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:512,system:'Classify Help Center topic relationships. Return only a JSON array of article slot numbers that merit human inspection given changedTopics. Include indirect dependencies. Do not generate factual claims.',
+ const body=JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1024,output_config:{format:{type:'json_schema',schema:{type:'object',properties:{slots:{type:'array',items:{type:'integer'}}},required:['slots'],additionalProperties:false}}},system:'Classify Help Center topic relationships. Return the slot numbers that merit human inspection given changedTopics. Include indirect dependencies. Do not generate factual claims.',
    messages:[{role:'user',content:JSON.stringify(payload)}]});
  for(let retry=0;retry<3;retry++){
    if(++attempts>24)throw Error('Model request budget reached');
@@ -15,7 +15,7 @@ export async function reviewTopics(changed,articles){
    }
    const data=await response.json();
    let slots;
-   try{slots=JSON.parse(data.content[0].text.trim().replace(/^```(?:json)?\s*|\s*```$/g,''));}catch{throw Error('Invalid topic review response');}
+   try{slots=JSON.parse(data.content[0].text.trim().replace(/^```(?:json)?\s*|\s*```$/g,'')).slots;}catch{throw Error('Invalid topic review response');}
    if(data.stop_reason!=='end_turn'||!Array.isArray(slots)||slots.length>articles.length||
      !slots.every(n=>Number.isInteger(n)&&n>=0&&n<articles.length)||new Set(slots).size!==slots.length)throw Error('Unexpected topic review slots');
    return slots;

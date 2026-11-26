@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [feat/help-center-docs-sync]
-    paths: ['.github/workflows/docs-sync-dry-run.yml']
+    paths: ['.github/workflows/docs-sync-dry-run.yml', 'scripts/docs-sync/model.mjs', 'scripts/docs-sync/topics.mjs']
 permissions:
   contents: read
 jobs:
