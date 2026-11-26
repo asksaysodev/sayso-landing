@@ -1,0 +1,25 @@
+name: Docs Sync checks
+on:
+  pull_request:
+    paths:
+      - 'scripts/docs-sync/**'
+      - '.github/workflows/docs-sync-*.yml'
+      - 'content/help/**'
+      - 'public/help/**'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund
+      - run: node --test scripts/docs-sync/*.test.mjs
+      - run: node scripts/docs-sync/inventory.mjs
+      - run: npm run build
