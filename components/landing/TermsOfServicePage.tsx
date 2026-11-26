@@ -94,7 +94,7 @@ export function TermsOfServicePage() {
           </ul>
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             By using the Service, you agree to our{' '}
-            <a href="/privacy" className="text-[#2367EE] hover:underline">
+            <a href="/privacy/" className="text-[#2367EE] hover:underline">
               Privacy Policy
             </a>
             , which explains how we collect, store, and use your information.
@@ -111,7 +111,7 @@ export function TermsOfServicePage() {
           <p className="text-base text-[#1D4871]/80 leading-relaxed">
             When you use Sayso during calls, the Service generates conversation data as described
             in our{' '}
-            <a href="/privacy" className="text-[#2367EE] hover:underline">
+            <a href="/privacy/" className="text-[#2367EE] hover:underline">
               Privacy Policy
             </a>
             , including transcripts, cues, interaction and reaction data, notes, summaries, and

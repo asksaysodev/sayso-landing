@@ -46,13 +46,4 @@ export interface HubPageConfig {
   faq?: { question: string; answer: string }[];
   /** Set true for hubs without a keyword target. */
   noKeyword?: boolean;
-  /** Optional CTA card rendered as the last item in the card grid. */
-  featureRequestCard?: {
-    title: string;
-    description: string;
-    linkText: string;
-    href: string;
-    /** Comic-style banner text shown near the card. */
-    bannerText?: string;
-  };
 }

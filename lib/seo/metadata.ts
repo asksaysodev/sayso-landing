@@ -1,6 +1,13 @@
 import type { Metadata } from 'next';
 import { siteUrl } from '@/lib/config';
 
+/** Open Graph fields every page should carry. A page-level `openGraph` replaces the
+ *  root layout's, so pages that build their own must spread these back in. */
+export const OG_DEFAULTS = {
+  siteName: 'Sayso',
+  images: [{ url: '/images/og-default.png', width: 1200, height: 630 }],
+};
+
 interface BuildMetadataOptions {
   /** Page title - max 60 chars recommended. Used in <title> as "[title] | Sayso" via root layout template. */
   title: string;
@@ -46,6 +53,7 @@ export function buildMetadata({
       title,
       description,
       url: canonicalUrl,
+      siteName: OG_DEFAULTS.siteName,
       images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {

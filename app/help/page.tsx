@@ -6,6 +6,7 @@ import { HELP_SECTIONS, HELP_SUPPORT } from '@/lib/help-sections';
 import { getAllHelpArticles, getSectionArticles } from '@/lib/help';
 import { generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import { siteUrl } from '@/lib/config';
+import { OG_DEFAULTS } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = {
   title: 'Help Center',
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
     'Step-by-step help for Sayso: install the desktop app on Mac or Windows, use live coaching on calls, manage your account, invite agents and build teams.',
   alternates: { canonical: `${siteUrl}/help/` },
   openGraph: {
+    ...OG_DEFAULTS,
+    url: `${siteUrl}/help/`,
     title: 'Sayso Help Center',
     description: 'Step-by-step help for the Sayso desktop app, web app, agents and team admins.',
     type: 'website',

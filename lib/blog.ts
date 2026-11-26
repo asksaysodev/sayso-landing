@@ -36,7 +36,6 @@ export interface BlogPost {
   publishedAt: string;
   updatedAt: string;
   readingTime: number;
-  featured: boolean;
   type: 'pillar' | 'supporting' | 'standalone';
   cluster?: string;
   pillar?: string;
@@ -79,7 +78,6 @@ function parseMdxFile(filePath: string): BlogPost {
     publishedAt: data.publishedAt || new Date().toISOString().split('T')[0],
     updatedAt: data.updatedAt || data.publishedAt || new Date().toISOString().split('T')[0],
     readingTime: data.readingTime || Math.ceil(stats.minutes),
-    featured: data.featured || false,
     type: data.type || 'standalone',
     cluster: data.cluster || undefined,
     pillar: data.pillar || undefined,

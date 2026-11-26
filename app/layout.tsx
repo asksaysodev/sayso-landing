@@ -107,21 +107,21 @@ const siteNavigationJsonLd = {
       '@type': 'SiteNavigationElement' as const,
       position: 2 + i,
       name: link.label,
-      url: `${siteUrl}${link.href}`,
+      url: `${siteUrl}${link.href.replace(/\/?$/, '/')}`,
     })),
     ...headerNav.flatMap((section, sIdx) =>
       section.links.map((link, lIdx) => ({
         '@type': 'SiteNavigationElement' as const,
         position: 10 + sIdx * 10 + lIdx,
         name: link.label,
-        url: `${siteUrl}${link.href}`,
+        url: `${siteUrl}${link.href.replace(/\/?$/, '/')}`,
       })),
     ),
     {
       '@type': 'SiteNavigationElement',
       position: 100,
       name: 'Book a Demo',
-      url: `${siteUrl}/demo`,
+      url: `${siteUrl}/demo/`,
     },
   ],
 };

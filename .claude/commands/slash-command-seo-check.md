@@ -57,7 +57,7 @@ Read `app/sitemap.ts` to get the full list of URLs it would emit. Read each corr
 - A page that is in the sitemap AND has `noindex: true` (or `robots: { index: false }`) is a **FAIL**. Google will see a contradiction and ignore the page.
 - A page that is NOT in the sitemap but is also NOT noindexed is a **WARN**. It can be crawled but won't be submitted. Acceptable for utility pages, but flag it so the developer can decide intentionally.
 - The following paths are intentionally excluded from the sitemap and are expected to be noindex or utility pages. Do not flag them as WARN:
-  - `/privacy`, `/terms`, `/feedback`, `/integrations`, `/case-studies`
+  - `/privacy`, `/terms`, `/integrations`, `/case-studies`
 
 ---
 
@@ -95,7 +95,7 @@ Read `app/robots.ts`. For any new page added in this branch, confirm it is not a
 
 **Rules:**
 - A new page whose path is blocked by a `disallow` rule in `robots.ts` is a **FAIL**. Googlebot cannot crawl it at all.
-- Current disallowed paths for reference: `/api/`, `/feedback`
+- Current disallowed paths for reference: `/api/`
 
 ---
 

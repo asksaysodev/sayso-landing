@@ -1,5 +1,4 @@
 import type { HubPageConfig } from './types';
-import { registerHub } from './index';
 
 const integrationsHub: HubPageConfig = {
   slug: 'integrations',
@@ -32,6 +31,5 @@ const integrationsHub: HubPageConfig = {
   noKeyword: false,
 };
 
-registerHub(integrationsHub);
 
 export { integrationsHub };
