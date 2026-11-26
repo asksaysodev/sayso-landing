@@ -1,5 +1,4 @@
 import type { HubPageConfig } from './types';
-import { registerHub } from './index';
 
 const caseStudiesHub: HubPageConfig = {
   slug: 'case-studies',
@@ -23,6 +22,5 @@ const caseStudiesHub: HubPageConfig = {
   noKeyword: true,
 };
 
-registerHub(caseStudiesHub);
 
 export { caseStudiesHub };

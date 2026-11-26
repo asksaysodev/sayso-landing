@@ -6,38 +6,47 @@ Formatting and content standards for Sayso blog posts. For the full publishing w
 
 ## Frontmatter Reference
 
-Every blog post starts with a YAML frontmatter block. Here is the full schema for reference:
+Every blog post starts with a YAML frontmatter block. This matches what `lib/blog.ts` reads; update both together.
 
 ```yaml
 ---
-title: "Your Article Title"
-seoTitle: "Shorter Search Title"     # Optional. Overrides only the <title> tag (template adds " | Sayso"). The H1 always uses title.
-slug: "your-article-slug"           # Becomes the URL: /blog/your-article-slug
-description: "1–2 sentence SEO summary shown in search results and post previews."
+title: "Expired Listing Scripts: What to Say and the Best Time to Call"   # The H1
+seoTitle: "Expired Listing Scripts and the Best Time to Call"             # Optional. Only changes the <title> tag (the template adds " | Sayso"). Never the H1.
+description: "1-2 sentence summary shown in search results and post previews."
+slug: "expired-listing-scripts"     # URL: /blog/expired-listing-scripts/. Defaults to the file name.
+type: "supporting"                  # pillar | supporting | standalone (default standalone)
+cluster: "cold-calling"             # Needed for pillar and supporting posts
+pillar: "real-estate-cold-calling-guide"   # Supporting posts only: slug of the pillar post
 category: "cold-calling"            # See categories below
-tags: ["tag one", "tag two", "tag three"]
-author:
-  name: "Author Name"
-  role: "Author Role"
-  avatar: "/logo-sayso.png"
-  linkedin: "https://linkedin.com/in/username"   # Optional
-coverImage: "/blog/covers/default.jpg"
-publishedAt: "2026-03-03"
-updatedAt: "2026-03-03"
-readingTime: 5                      # Integer, minutes
-featured: false                     # Only ONE post should have featured: true
+tags: ["expired listings", "cold calling", "scripts"]
+ctaVariant: "script"                # Optional: script | coaching | leads | prospecting | team. Any other value fails the build.
+author: "kuvaal-patel"              # A key from lib/authors.ts, not an object. Unknown keys fail the build. Defaults to kuvaal-patel.
+publishedAt: "2026-03-14"
+updatedAt: "2026-11-07T09:00:00"    # Defaults to publishedAt
+coverImage: "/blog/covers/blog-card.jpg"   # Card image. This is the default.
+heroImage: "/blog/covers/blog-hero.jpg"    # Top of the post and the og:image. This is the default.
+readingTime: 5                      # Optional. Worked out from the word count when left off.
 ---
 ```
 
+Notes:
+
+- `featured` is no longer read. Older posts still carry it; leave it off new posts.
+- A supporting post with no `pillar` or `cluster`, or a pillar that does not exist, prints a build warning.
+- Always set `publishedAt`. A post without it takes the build date.
+
 ### Categories
 
-| Slug | Use for |
+| Slug | Posts today |
 | ----- | ----- |
-| `cold-calling` | Cold calling tactics, objection handling, call tips |
-| `ai-tools` | AI coaching tools, technology comparisons |
-| `scripts` | Call scripts, templates, word-for-word guides |
-| `real-estate` | Real estate specific strategies and market insights |
-| `success-stories` | Customer case studies and team results |
+| `cold-calling` | 29 |
+| `conversation-skills` | 18 |
+| `appointment-setting` | 8 |
+| `coaching-and-tools` | 6 |
+| `follow-up` | 6 |
+| `mindset` | 3 |
+
+Use one of these six. A new slug creates a new category page.
 
 ---
 

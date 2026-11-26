@@ -1,5 +1,4 @@
 import type { HubPageConfig } from './types';
-import { registerHub } from './index';
 
 const glossaryHub: HubPageConfig = {
   slug: 'glossary',
@@ -79,6 +78,5 @@ const glossaryHub: HubPageConfig = {
   noKeyword: true,
 };
 
-registerHub(glossaryHub);
 
 export { glossaryHub };

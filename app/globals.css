@@ -41,21 +41,6 @@
 
 /* === V2 utilities === */
 
-/* Halftone dot pattern overlay */
-.v2-halftone {
-  position: relative;
-}
-.v2-halftone::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, #1D4871 0.5px, transparent 0.5px);
-  background-size: 12px 12px;
-  opacity: 0.03;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* Legacy utility names from the comic era, now flat: soft shadows, hairline
    borders. Kept because a few components still use the class names. */
 .v2-comic-shadow {
@@ -152,81 +137,6 @@
   .persona-demo-form .ss-form-submit {
     margin-top: 2px;
   }
-}
-
-/* === V4 Superhero Styles === */
-
-/* Floating hero animation */
-@keyframes v4HeroFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-.v4-hero-float {
-  animation: v4HeroFloat 3s ease-in-out infinite;
-}
-
-/* Slide in from left */
-@keyframes v4SlideInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-.v4-slide-in-left {
-  animation: v4SlideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Fly in from right */
-@keyframes v4FlyInRight {
-  from { opacity: 0; transform: translateX(60px) scale(0.8); }
-  to { opacity: 1; transform: translateX(0) scale(1); }
-}
-.v4-fly-in-right {
-  animation: v4FlyInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  animation-delay: 0.3s;
-  opacity: 0;
-}
-
-/* Badge pop-in */
-@keyframes v4BadgePop {
-  from { opacity: 0; transform: scale(0) rotate(-15deg); }
-  to { opacity: 1; transform: scale(1) rotate(var(--badge-rotate, 12deg)); }
-}
-.v4-badge-pop {
-  animation: v4BadgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
-
-/* Panel reveal on scroll */
-@keyframes v4PanelReveal {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.v4-panel-reveal {
-  animation: v4PanelReveal 0.6s ease-out forwards;
-}
-.v4-panel-hidden {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-/* Halftone on dark backgrounds (white dots) */
-.v4-halftone-dark {
-  position: relative;
-}
-.v4-halftone-dark::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.5) 0.5px, transparent 0.5px);
-  background-size: 12px 12px;
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Yellow accent top border for pricing cards */
-.v4-accent-top {
-  border-top: 4px solid #FFDE59;
 }
 
 /* Custom range slider for the Founder Pricing calculator.

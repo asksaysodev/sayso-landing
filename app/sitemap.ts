@@ -21,7 +21,6 @@ export const revalidate = 3600;
 const EXCLUDED_PATHS = new Set([
   '/privacy',
   '/terms',
-  '/feedback',
   '/case-studies', // noindex: hub has a single study; the study itself is listed via getAllCaseStudyEntries
   '/founderpricing', // noindex: time-limited promo overlapping /pricing/
   '/request-demo', // noindex: duplicates the /demo/ booking page
@@ -66,9 +65,7 @@ const PRIORITY_MAP: Record<string, number> = {
   '/demo': 0.9,
   '/blog': 0.9,
   '/pricing': 0.8,
-  '/case-studies': 0.7,
   '/contact': 0.7,
-  '/request-demo': 0.7,
 };
 
 /** Default priority by path prefix. */
