@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { client, LANDING, writeLedger } from './github.mjs';
-import { updateMessage, NO_UPDATES } from './slack-format.mjs';
+import { updateMessage, noUpdates, releaseMetadata, cleanPlain } from './slack-format.mjs';
 
 const mode = process.env.DOCS_SYNC_MODE === 'live' ? 'live' : 'dry-run';
 const gh = client(process.env.GITHUB_TOKEN);
@@ -103,8 +103,8 @@ const held = !gates.pass || gates.decision === 'hold';
 
 if (gates.pass && gates.decision === 'skip') {
   console.log(`${productName} ${short}: no Help Center change needed. ${result.summary || ''}`);
-  await toChannel(NO_UPDATES);
-  await ledger('skipped', { note: (result.summary || '').slice(0, 300) });
+  await toChannel({ ...noUpdates(productName, result.plain), metadata: releaseMetadata(release, result, 'skip') });
+  await ledger('skipped', { note: (result.summary || '').slice(0, 300), plain: cleanPlain(result.plain) });
   process.exit(0);
 }
 
@@ -223,7 +223,7 @@ try {
     }
     if (!ok) throw Error(`${pageUrl(f)} isn't showing the update after 5 minutes`);
   }
-  await toChannel(updateMessage(newPages, updated));
+  await toChannel({ ...updateMessage(newPages, updated), metadata: releaseMetadata(release, result, 'publish') });
   await ledger('published', { pr: pr.number, release: rel.number });
 } catch (e) {
   const fixes = {

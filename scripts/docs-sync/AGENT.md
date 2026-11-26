@@ -62,6 +62,7 @@ Write `.docs-sync/result.json`:
 {
   "decision": "publish" | "skip" | "hold",
   "summary": "One plain sentence: what changed for customers.",
+  "plain": "3 to 10 lowercase words a 5th grader understands, saying what kind of work this release was. Examples: simple code cleanup / small map updates / new report page and small fixes.",
   "articles": [{"path": "content/help/tools/x.mdx", "action": "new" | "update", "title": "...", "change": "For updates: one short sentence a 5th grader understands, about what changed for the agent. Example: You can now save your comps as a PDF."}],
   "images": [{"path": "public/help/tools/x.webp", "action": "new" | "replace"}],
   "hold_reason": "Only when decision is hold: what you couldn't tell, in plain words a busy founder reads in 5 seconds.",
@@ -69,7 +70,7 @@ Write `.docs-sync/result.json`:
 }
 ```
 
-Don't list What's New in `articles`. Write `change` without UI markup, under 15 words, no jargon.
+Don't list What's New in `articles`. Write `change` without UI markup, under 15 words, no jargon. Always write `plain`, also when the decision is skip or hold: it is posted to the team as the one-line answer to "what was merged?". No code words, file names, ids or people's names in it, and no period at the end.
 
 Before writing it, reread every article you changed against the writing rules above and fix anything that breaks them.
 
