@@ -1,15 +1,15 @@
 ---
 title: Change Sayso Map filters
-description: Set how far Sayso Map searches, how close a match needs to be, how many homes to show, and the text message it writes for you.
+description: Set how far Sayso Map searches, how close a match needs to be, how many homes to show, and the buyer and seller texts it prepares.
 group: map
 order: 40
-updated: 2026-11-24
+updated: 2026-11-26
 keywords: [filters, radius, bedrooms, bathrooms, square feet, price range, results, text template, reset to defaults]
 ---
 
 Tap <Ui>Filters</Ui> at the top of Sayso Map. Changes apply to your next search.
 
-<Screenshot src="/help/tools/sayso-map-filters-1.webp" alt="Sayso Map Filters with Radius, Bedrooms, Bathrooms, Sq Ft and Price" width={300} />
+<Screenshot src="/help/tools/sayso-map-filters-1.webp" alt="Sayso Map Filters with Search area, How close a match and Results" />
 
 ## Search area
 
@@ -18,15 +18,19 @@ Tap <Ui>Filters</Ui> at the top of Sayso Map. Changes apply to your next search.
 ## How close a match
 
 - <Ui>Bedrooms</Ui> and <Ui>Bathrooms</Ui>: <Ui>Exact</Ui>, <Ui>±1</Ui> or <Ui>±2</Ui>.
-- <Ui>Sq Ft</Ui> and <Ui>Price</Ui>: within ±5%, ±10%, ±15% or ±20% of the home you searched.
+- <Ui>Sq Ft</Ui> and <Ui>Price</Ui>: within ±5%, ±10%, ±15% or ±20% of the home you searched. For an off-market home, the price filter uses the [off-market value estimate](/help/tools/sayso-map-off-market-estimates/) when one is available.
 
 ## Results
 
 <Ui>Homes</Ui> sets how many similar homes Sayso Map looks for, from 1 to 5. By default it widens the search until it finds 2 and shows up to 3.
 
-## Text message
+## Text template
 
-<Ui>Template</Ui> is the message under <Ui>Text to send</Ui>. Tap a field, such as <Ui>Subject address</Ui> or <Ui>Similar homes list</Ui>, to insert it. Tap <Ui>Reset template</Ui> to go back to the original message.
+In <Ui>Filters</Ui>, scroll to <Ui>Text template</Ui>. Edit <Ui>Buyer text</Ui> for a home listed for sale or <Ui>Seller text</Ui> for an off-market home. Sayso Map uses the matching template under <Ui>Text to send</Ui> when you open the results.
+
+Tap where you want to insert a field, then tap <Ui>Subject address</Ui> or <Ui>Similar homes list</Ui>. Tap <Ui>Reset</Ui> in that template to restore its original message.
+
+<Screenshot src="/help/tools/sayso-map-text-templates.webp" alt="The separate Buyer text and Seller text editors in Filters" />
 
 ## Start over
 
