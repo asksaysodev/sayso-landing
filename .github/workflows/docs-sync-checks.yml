@@ -22,4 +22,5 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: node --test scripts/docs-sync/*.test.mjs
       - run: node scripts/docs-sync/inventory.mjs
+      - run: node scripts/docs-sync/validate.mjs
       - run: npm run build
