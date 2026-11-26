@@ -3,28 +3,42 @@ title: Connect Follow Up Boss
 description: Link your Follow Up Boss account in Settings, Connections, to send call notes to your leads.
 group: integrations
 order: 10
-updated: 2026-11-23
-keywords: [follow up boss, fub, crm, connect crm, integration, oauth]
+updated: 2026-11-25
+keywords: [follow up boss, api key, connection error, fub role, fub, crm, connect crm, integration, oauth]
 ---
 
-Sayso works alongside Follow Up Boss. Once connected, you can link any conversation to a lead in Follow Up Boss, and Sayso adds a note to that lead with the call summary, your Smart Capture notes and Pulse data.
+Sayso works alongside Follow Up Boss. Once connected, link any conversation to a Follow Up Boss lead and Sayso adds a note with the call summary, your Smart Capture notes and Pulse data.
 
 ## Connect
 
 1. In the web app, click your name in the top-right corner and choose <Ui>Account Settings</Ui>.
 2. Open <Ui>Connections</Ui>.
 3. On the <Ui>Follow Up Boss</Ui> card, click <Ui>Connect</Ui>.
-4. Sign in to Follow Up Boss if it asks, and approve access for Sayso.
+4. Sign in to Follow Up Boss if asked, and approve access for Sayso.
 5. You land back on <Ui>Connections</Ui> with the message <Ui>Follow Up Boss connected!</Ui> The card now shows <Ui>Connected</Ui>.
 
 <Screenshot src="/help/web-app/connect-follow-up-boss-1.webp" alt="The Connections tab with the Follow Up Boss card showing Connected" />
 
-If you click cancel on the Follow Up Boss screen, you see <Ui>Follow Up Boss connection cancelled.</Ui> and nothing changes. Click <Ui>Connect</Ui> to try again.
+If you cancel on the Follow Up Boss screen, you see <Ui>Follow Up Boss connection cancelled.</Ui> Click <Ui>Connect</Ui> to try again.
+
+## Connection questions
+
+<Faq q="Do I need a Follow Up Boss API key?">
+No. You sign in to Follow Up Boss and approve access.
+</Faq>
+
+<Faq q="Does my Follow Up Boss role matter?">
+No. Any Follow Up Boss user can connect.
+</Faq>
+
+<Faq q="The connection failed or showed an error.">
+Email [support@asksayso.com](mailto:support@asksayso.com) with what you saw.
+</Faq>
 
 ## How the connection works
 
-- **Each agent connects their own account.** Connections belong to your Sayso login, not to your team. Every agent on a team connects their own Follow Up Boss user. See [CRM connections are per agent](/help/admins/crm-connections-for-teams/).
-- **Notes go out when you link a lead.** Sayso doesn't push every call automatically. You choose the lead for each conversation. See [Send a conversation to your CRM](/help/web-app/link-conversation-to-lead/).
+- **Each agent connects their own account.** Connections belong to your Sayso login, not your team. See [CRM connections are per agent](/help/admins/crm-connections-for-teams/).
+- **Notes go out when you link a lead.** Sayso doesn't send every call. You choose the lead for each conversation. See [Send a conversation to your CRM](/help/web-app/link-conversation-to-lead/).
 - **Leads you create from Sayso** are added to Follow Up Boss with **Sayso** as the lead source.
 - **Connected to Sure Send too?** When both are connected, Sayso uses Follow Up Boss for linking leads.
 
