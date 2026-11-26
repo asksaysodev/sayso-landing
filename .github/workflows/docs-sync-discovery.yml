@@ -1,6 +1,11 @@
 name: Docs Sync production reconciliation
 on:
   workflow_dispatch:
+  push:
+    branches: [feat/help-center-docs-sync]
+    paths:
+      - '.github/workflows/docs-sync-discovery.yml'
+      - 'scripts/docs-sync/release-window.mjs'
   schedule:
     - cron: '17 */2 * * *'
 permissions: {}
@@ -9,7 +14,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   discover:
-    if: github.ref == 'refs/heads/development' && vars.DOCS_SYNC_ENABLED == 'true'
+    if: >-
+      (github.ref == 'refs/heads/development' && vars.DOCS_SYNC_ENABLED == 'true') ||
+      (github.event_name == 'push' && github.ref == 'refs/heads/feat/help-center-docs-sync' && vars.DOCS_SYNC_APP_ID != '')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -18,11 +25,21 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
       - name: Read reconciliation cursor
         id: cursor
         env:
           GH_TOKEN: ${{ github.token }}
-        run: node scripts/docs-sync/ledger.mjs cursor
+        run: |
+          if [ "$GITHUB_REF" = refs/heads/feat/help-center-docs-sync ]; then
+            mkdir -p .docs-sync
+            printf '%s\n' '{"version":1,"products":{}}' > .docs-sync/previous.json
+            echo "since=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+          else
+            node scripts/docs-sync/ledger.mjs cursor
+          fi
       - name: Mint product reader
         id: reader
         env:
@@ -35,15 +52,47 @@ jobs:
           DOCS_SYNC_SINCE: ${{ steps.cursor.outputs.since }}
         run: node scripts/docs-sync/discover.mjs
       - name: Index article impact for queued releases
+        id: queue
         env:
+          DOCS_SYNC_PRIVATE_REVIEW_ENABLED: ${{ github.ref == 'refs/heads/development' && vars.DOCS_SYNC_PRIVATE_REVIEW_ENABLED == 'true' }}
+          DOCS_SYNC_REPLAY_ONLY: ${{ github.ref == 'refs/heads/feat/help-center-docs-sync' }}
           DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
         run: |
           node scripts/docs-sync/inventory.mjs
           node scripts/docs-sync/queue.mjs
+      - name: Verify the fresh-start comparison on the draft branch
+        if: github.ref == 'refs/heads/feat/help-center-docs-sync'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const {products,reviewStarts,summaries,manualReviews}=JSON.parse(fs.readFileSync('.docs-sync/releases.json'));
+          const lines=['## Fresh-start production comparisons',''];
+          for(const [repo,product] of Object.entries(products)){
+            const event=reviewStarts[repo];
+            const review=summaries[repo]?.[event];
+            if(!event||(!review&&!manualReviews[repo]?.[event]))throw Error('Missing fresh-start outcome for '+repo);
+            if(review&&review.to!==product.liveSha)throw Error('Review did not target production');
+            if(repo==='sayso-map'&&event==='8078515501-23201152324'&&(!review||review.from!==review.to))
+              throw Error('Map migration compared historical changes with an identical redeploy');
+            lines.push(review
+              ? '- '+repo+': '+review.from.slice(0,8)+' → '+review.to.slice(0,8)+' · '+review.coverage.changedFiles+' changed files.'
+              : '- '+repo+': '+manualReviews[repo][event]+'.');
+          }
+          const output=lines.join('\n')+'\n';
+          console.log(output);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,output);
+          NODE
       - name: Review fixed public topics with isolated credentials
+        if: github.ref == 'refs/heads/development'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/docs-sync/review-queue.mjs
+      - name: Install verified offline reviewer
+        if: steps.queue.outputs.offline == 'true'
+        run: bash scripts/docs-sync/private-runner.sh install
+      - name: Draft in an isolated local process
+        if: steps.queue.outputs.offline == 'true'
+        run: bash scripts/docs-sync/private-runner.sh run queue
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: release-identities
@@ -53,6 +102,7 @@ jobs:
           retention-days: 1
   ledger:
     needs: discover
+    if: github.ref == 'refs/heads/development' && vars.DOCS_SYNC_ENABLED == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write

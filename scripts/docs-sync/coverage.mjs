@@ -1,9 +1,5 @@
 import {products} from './releases.mjs';
 
-// This Vercel production deployment preceded the first GitHub Deployment record for Map.
-// https://vercel.com/sayso-web/sayso-map/BDgUekkzyz2JCznuxGdpuy2N5FiN
-const mapBaseline = {sha:'319de1819fdc0bf211d05ba05eb45e0a6b0a3a74',time:'2026-11-26T02:08:40Z'};
-
 const mapTopics = {
   condition: {
     article:'content/help/tools/sayso-map-condition-ratings.mdx',
@@ -63,10 +59,6 @@ export function decisionForComparison(repo, comparison, articles) {
       (comparison.status !== 'identical' && comparison.files.length === 0)) return null;
   if (comparison.status === 'identical' && (comparison.files.length || comparison.total_commits)) return null;
   return assessCoverage(repo, comparison.files, articles);
-}
-
-export function initialBaseline(repo, first) {
-  return repo==='sayso-map' && first.time > mapBaseline.time && first.sha !== mapBaseline.sha ? mapBaseline.sha : null;
 }
 
 export function assessCoverage(repo, files, articles) {

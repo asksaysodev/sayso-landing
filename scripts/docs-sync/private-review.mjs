@@ -96,4 +96,31 @@ async function main(){
  if(process.env.GITHUB_STEP_SUMMARY)await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,summary);
  if(drafts.some(x=>!x.expected))throw Error('Offline editorial replay missed a previously verified update');
 }
-if(process.argv[1]?.endsWith('/private-review.mjs'))await main();
+async function reviewQueue(){
+ const queue=JSON.parse(await fs.readFile('.docs-sync/private-queue.json'));
+ const report=JSON.parse(await fs.readFile('.docs-sync/releases.json'));
+ const drafts=[];
+ const summary=['## Offline release review',''];
+ await waitForServer();
+ for(const item of queue){
+   const release=report.summaries[item.repo][item.id];
+   try{
+     const reviewed=await reviewPrivately(item.input);
+     drafts.push({repo:item.repo,id:item.id,reviewed});
+     release.privateReview='draft-needs-verification';
+     summary.push('- '+item.repo+': '+reviewed.proposals.length+' proposals and '+reviewed.pending+' unresolved files.');
+   }catch{
+     release.privateReview='review-needs-retry';
+     summary.push('- '+item.repo+': offline review failed validation or reached its time limit.');
+   }
+ }
+ await fs.writeFile('.docs-sync/private-drafts.json',JSON.stringify(drafts),{mode:0o600});
+ await fs.writeFile('.docs-sync/releases.json',JSON.stringify(report));
+ if(process.env.GITHUB_STEP_SUMMARY)await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,summary.join('\n')+'\n');
+}
+
+if(process.argv[1]?.endsWith('/private-review.mjs')){
+ if(process.argv[2]==='queue')await reviewQueue();
+ else if(process.argv[2]==='replay')await main();
+ else throw Error('Offline review requires an explicit mode');
+}

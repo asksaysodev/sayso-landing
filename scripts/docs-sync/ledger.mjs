@@ -16,6 +16,12 @@ export function reconcile(previous,report,observedAt) {
       if(old && old.sha!==e.sha)throw Error('Deployment identity changed');
       if(!old)state.events[e.id]={sha:e.sha,time:e.time,status:'pending-review'};
     }
+    const start=report.reviewStarts?.[repo];
+    if(start!==undefined){
+      if(!Object.hasOwn(state.events,start)||(state.reviewStart&&state.reviewStart!==start))
+        throw Error('Invalid release review starting point');
+      state.reviewStart=start;
+    }
     if(state.liveSha!==data.liveSha){
       state.transitions.push({from:state.liveSha,to:data.liveSha,observedAt,status:'pending-review'});
       state.liveSha=data.liveSha;
@@ -36,6 +42,8 @@ export function reconcile(previous,report,observedAt) {
       if(!sha.test(impact.to)||!sha.test(impact.from)||!impact.articles?.length||
         impact.articles.some(a=>!/^content\/help\/[a-z0-9-]+\/[a-z0-9-]+\.mdx$/.test(a.path)||!/^([a-f0-9]{64})$/.test(a.hash)))throw Error('Unexpected impact index');
       if (impact.coverage) validateCoverage(repo,impact.coverage);
+      if(impact.privateReview!==undefined&&!['input-needs-verification','draft-needs-verification','review-needs-retry'].includes(impact.privateReview))
+        throw Error('Unknown offline review status');
       const state=next.products[repo];
       const target=state.events[id]??state.transitions.findLast(t=>'transition-'+t.from+'-'+t.to===id);
       if(target && (target.sha || target.to)===impact.to){
@@ -44,7 +52,7 @@ export function reconcile(previous,report,observedAt) {
         next.inventories ||= {};
         next.inventories[key] ||= inventory;
         delete target.reviewBlock;
-        target.impact={coverage:impact.coverage,from:impact.from,to:impact.to,direction:impact.direction,status:impact.status,
+        target.impact={coverage:impact.coverage,privateReview:impact.privateReview,from:impact.from,to:impact.to,direction:impact.direction,status:impact.status,
           inventory:key,candidates:impact.articles.flatMap((a,i)=>a.candidate?[i]:[])};
       }
     }

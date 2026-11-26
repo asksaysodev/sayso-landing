@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-import {decisionForComparison,initialBaseline,validateCoverage} from './coverage.mjs';
+import {decisionForComparison,validateCoverage} from './coverage.mjs';
 import {productionStatus,readJson,stableRelease} from './releases.mjs';
 
 const inventory=JSON.parse(await fs.readFile('.docs-sync/inventory.json'));
@@ -7,7 +7,8 @@ const token=process.env.DOCS_SYNC_READ_TOKEN;
 if (!token) throw Error('Missing GitHub App reader credential');
 
 const cases=[
-  {repo:'sayso-map',to:{id:8078515501,sha:'2129fd32f2368c402752b5a89475fce08d64b3a7'},
+  // Deliberate historical catch-up test. The scheduled workflow compares adjacent deployments.
+  {repo:'sayso-map',historicalBaseline:'319de1819fdc0bf211d05ba05eb45e0a6b0a3a74',to:{id:8078515501,sha:'2129fd32f2368c402752b5a89475fce08d64b3a7'},
     absent:['condition','estimate'],update:['address','pdf','templates']},
   {repo:'sayso-composer',from:{id:5922093567,sha:'c07e79f29e0af6ee57635d1a929d4443cadf94fd'},
     to:{id:7616220383,sha:'6e9c25e2535e8d373b8fbadc4eb37eb4d37b9fbe'},update:['scriptWizard']},
@@ -39,10 +40,10 @@ async function verify(get,repo,ref){
 const editorialTopics=new Set(['condition','estimate','templates','scriptWizard','manageBilling','meetingDetection']);
 const editorialCases=[];
 const summary=['## Historical documentation decisions',''];
-for(const {repo,from,to,absent=[],update=[]} of cases){
+for(const {repo,from,to,historicalBaseline,absent=[],update=[]} of cases){
   const get=route=>readJson('https://api.github.com/repos/asksaysodev/'+repo+route,token);
   const release=await verify(get,repo,to);
-  const baseline=from ? (await verify(get,repo,from)).sha : initialBaseline(repo,release);
+  const baseline=from ? (await verify(get,repo,from)).sha : historicalBaseline;
   if(!baseline)throw Error('No verified baseline for '+repo);
   const changed=await get('/compare/'+baseline+'...'+release.sha);
   if(changed.status!=='ahead')throw Error('Unexpected historical comparison direction for '+repo);

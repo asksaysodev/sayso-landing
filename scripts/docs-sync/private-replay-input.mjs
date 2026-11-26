@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import {productionStatus,readJson} from './releases.mjs';
+import {makePrivateInput} from './private-input.mjs';
 
 const token=process.env.DOCS_SYNC_READ_TOKEN;
 if(!token)throw Error('Missing scoped GitHub reader');
@@ -43,21 +44,8 @@ for(const scenario of cases){
  const comparison=await get('/compare/'+from.sha+'...'+to.sha);
  if(comparison.status!=='ahead'||!comparison.files?.length||comparison.files.length>20||
     comparison.files.some(f=>typeof f.patch!=='string')) throw Error('Incomplete historical comparison');
- const tokens=text=>text.replace(/([a-z])([A-Z])/g,'$1 $2').toLowerCase().match(/[a-z]{5,}/g)||[];
- const naming=new Set(comparison.files.flatMap(file=>tokens(file.filename.split('/').at(-1))));
- const score=article=>new Set(tokens(article.path+' '+article.content).filter(word=>naming.has(word))).size;
- const detailed=new Set([...articles].sort((a,b)=>score(b)-score(a)).slice(0,9).map(a=>a.path));
- const input={
-   product:repo,
-   files:comparison.files.map(({filename,patch},i)=>({id:i+1,filename,patch})),
-   articles:articles.map(({path,content},i)=>({
-     id:i+1,path,
-     outline:detailed.has(path)
-       ?content.split('\n').filter(l=>/^title:|^##? |<Ui>|<(?:Screenshot|Clip|Phone)\b/.test(l)).join('\n').slice(0,850)
-       :content.split('\n').find(l=>l.startsWith('title:')),
-   })),
- };
- if(JSON.stringify(input).length>47000)throw Error('Private replay exceeds its input budget');
+ const input=makePrivateInput(repo,comparison.files,articles);
+ if(!input)throw Error('Private replay exceeds its input budget');
  if(!input.articles.some(a=>a.path===expectedArticle))throw Error('Missing replay article');
  prepared.push({repo,input,test:{expectedArticle}});
 }

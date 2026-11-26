@@ -1,16 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {assessCoverage,checkMapCrossLinks,decisionForComparison,initialBaseline,validateCoverage} from './coverage.mjs';
+import {assessCoverage,checkMapCrossLinks,decisionForComparison,validateCoverage} from './coverage.mjs';
 
 const condition='content/help/tools/sayso-map-condition-ratings.mdx';
 const estimate='content/help/tools/sayso-map-off-market-estimates.mdx';
-
-test('a first Map GitHub deployment is compared against the verified Vercel baseline',()=>{
-  const release={sha:'2129fd32f2368c402752b5a89475fce08d64b3a7',time:'2026-11-26T06:49:57Z'};
-  assert.equal(initialBaseline('sayso-map',release),'319de1819fdc0bf211d05ba05eb45e0a6b0a3a74');
-  assert.equal(initialBaseline('sayso-map',{...release,time:'2026-11-25T00:00:00Z'}),null);
-  assert.equal(initialBaseline('sayso-composer',release),null);
-});
 
 test('new behavior is checked against the inventory and unknown files stay visible',()=>{
   const files=[
