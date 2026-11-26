@@ -2,52 +2,50 @@ import type { ObjectionEntry } from './types';
 
 export const needToThinkAboutIt: ObjectionEntry = {
   slug: 'need-to-think-about-it',
-  updatedAt: '2026-11-07',
+  updatedAt: '2026-11-26',
   keyword: 'what to say when prospect shuts down',
-  seoTitle: 'What to Say When a Prospect Shuts Down',
+  seoTitle: '"I Need to Think About It": 3 Scripts to Respond',
   seoDescription:
-    'Learn what to say when a prospect shuts down with 3 proven response scripts. Turn "I need to think about it" into a real conversation and book appointments.',
-  h1: 'What to Say When a Prospect Shuts Down in Real Estate',
+    'Three short scripts to say when a prospect shuts down with "I need to think about it" on a call, plus what the stall usually means and how to set the next step.',
+  h1: '"I Need to Think About It": 3 Scripts to Respond',
   objectionQuote: 'I need to think about it.',
   openingParagraph:
-    'Knowing what to say when a prospect shuts down is one of the most valuable skills in real estate prospecting. When someone says "I need to think about it," they are usually avoiding a decision, not making one. The right response keeps the conversation alive without adding pressure.',
-  whyTheyTitle: 'Why Prospects Say "I Need to Think About It"',
+    'This is a script card for the moment a prospect shuts down mid-call. Keep it open while you dial. Each script below is a few lines you can say word for word, and each one ends with a question so the prospect keeps talking instead of hanging up.',
+  whyTheyTitle: 'What It Usually Means',
   whyTheySayThis:
-    'When a prospect says they need to think about it, they are rarely planning to sit down and evaluate your offer. They are reacting to the discomfort of being asked to commit. It is a protective reflex, the conversational equivalent of stepping back from a decision that feels too big or too soon.\n\nSometimes the real objection is hiding underneath. They might be unsure about timing, uncertain about affordability, or waiting for a spouse to weigh in. Recognizing what to say when a prospect shuts down starts with understanding that "I need to think about it" is almost never about thinking.\n\nOther times, the prospect genuinely feels overwhelmed. They have been on several calls, talked to multiple agents, and do not know who to trust. In these moments, lowering the stakes and asking one simple question can reopen a conversation that felt closed.',
+    'Most of the time, "I need to think about it" is a way to step back from a commitment that feels big, not a plan to go away and weigh your offer. There is usually one unspoken concern behind it, such as timing, money, a partner who is not on the call, or doubt about whether you are the right agent.\n\nYour goal on the call is narrow: get the prospect to name that one concern out loud. Once it has a name, you can answer it or book a time to talk it through.',
   responses: {
     safe: {
-      label: 'The Safe Response',
+      label: 'Script 1: Name the Concern',
       script:
-        '"I completely understand, it\'s a big decision. Can I ask, when you say you need to think about it, is it more about timing or just wanting to make sure it\'s the right move?"',
+        '"That makes sense, it\'s a big step. Help me understand where your head is at. Is it more the timing, or more about being sure this is the right move for you?"',
       whyItWorks:
-        'This validates their position and gently asks them to define what "thinking about it" actually means. Most prospects have not articulated their hesitation to themselves, and this question helps both of you get to the real concern.',
+        'Two simple choices are easier to answer than an open question. The prospect picks one, and now you know which conversation to have next.',
     },
     stronger: {
-      label: 'The Stronger Response',
+      label: 'Script 2: Ask for the One Thing',
       script:
-        '"Totally fair. Most people who tell me that usually have one specific thing they\'re unsure about. What\'s yours?"',
+        '"Fair enough. When people tell me that, there\'s usually one piece they\'re stuck on. What\'s that piece for you?"',
       whyItWorks:
-        'This skips past the vague brush-off and asks for the real concern. It gives the prospect permission to be honest about what is actually holding them back instead of hiding behind a polite exit.',
+        'It tells the prospect that hesitating is normal, then asks for one specific thing. A single item feels small enough to say out loud.',
     },
     advanced: {
-      label: 'The Advanced Response',
+      label: 'Script 3: Think It Through Together',
       script:
-        '"I hear you. And honestly, the best time to think about it is while we\'re talking, because I can answer whatever is on your mind right now. What part feels unclear?"',
+        '"Of course. Since we\'re both on the line right now, let\'s think it through together, and I can answer anything that comes up. Which part feels least clear to you?"',
       whyItWorks:
-        'This reframes "thinking about it" from a solo activity into a collaborative one. You position yourself as a resource instead of a salesperson, and "what part feels unclear" invites them to share the real hesitation.',
+        'It turns thinking it over from something they do alone, after the call, into something you do with them while you can still help.',
     },
   },
   whatToSayNext:
-    'After the initial response, focus on uncovering the real concern behind the hesitation. Ask questions like "What would help you feel more confident about this?" or "Is there someone else involved in the decision?" If they still want time, set a specific follow-up: "I\'ll check in Thursday afternoon, does that work?" Agents who know what to say when a prospect shuts down convert more of these conversations because they stay present instead of accepting the brush-off.',
+    'If they name the concern, answer it in a sentence or two and ask for the appointment again. If they still want time, pick the next call before you hang up: "Let\'s set a time to pick this back up. Is Thursday at 2 or Friday morning better for you?" A set day and time keeps the lead warm.',
   commonMistakes: [
-    'Saying "sure, take your time" and ending the call, which almost guarantees you never hear from them again',
-    'Responding with more information or a pitch, which adds overwhelm instead of clarity',
-    'Taking it personally and letting frustration show in your tone',
-    'Failing to set a specific follow-up date and time before the call ends',
-    'Asking "what do you need to think about?" in a confrontational tone instead of a curious one',
+    'Saying "no problem, take your time" and ending the call with nothing on the calendar',
+    'Answering the stall with a longer pitch instead of a question',
+    'Asking two questions in a row, which gives the prospect an easy way to dodge both',
   ],
   howSaysoHelps:
-    'When a prospect hides behind "I need to think about it," Sayso shows you a question that separates a real concern from a polite brush-off, so you can address what is actually holding them back. You stay calm instead of rushing to fill the silence. Sayso also files what surfaced, so no hesitant prospect quietly slips off your radar before the next touch.',
+    'Sayso listens to your live calls and puts a question like these on your screen the moment a prospect stalls, so you ask instead of retreating. After the call, it logs what came up so your next touch picks up where the conversation left off.',
   relatedObjections: [
     { title: '"Not Ready Yet"', slug: 'not-ready-yet', keyword: 'how to handle "not ready yet" real estate' },
     { title: '"Not Interested"', slug: 'not-interested', keyword: 'what to say when lead is not interested' },
@@ -56,28 +54,18 @@ export const needToThinkAboutIt: ObjectionEntry = {
   ],
   faq: [
     {
-      question: 'What does "I need to think about it" really mean in real estate?',
+      question: 'Which of the three scripts should I start with?',
       answer:
-        'It usually means the prospect is uncomfortable committing, not that they need more time to evaluate. The hesitation is emotional, not logical. Asking one clarifying question can reveal the real concern behind the phrase.',
+        'Start with Script 1 on most calls, since the two choices make it the easiest to answer. Use Script 2 if the prospect has been chatty and open, and Script 3 when they seem close to yes but nervous about deciding on the spot.',
     },
     {
-      question: 'How do you keep a conversation going when a prospect shuts down?',
+      question: 'Do these scripts work with both buyers and sellers?',
       answer:
-        'Validate their hesitation, then ask a specific question to uncover what is driving it. Something like "What part feels unclear?" keeps the door open without adding pressure.',
-    },
-    {
-      question: 'Should you follow up after a prospect says "I need to think about it"?',
-      answer:
-        'Always. Set a specific date and time before the call ends. Prospects who "need to think" often just need a reason to continue the conversation later.',
-    },
-    {
-      question: 'How can AI help when a prospect shuts down on a call?',
-      answer:
-        'Tools like Sayso guide you in real time during the call, showing you exactly what to say when a prospect hesitates. Instead of freezing or guessing, you see a proven response on your screen and can redirect the conversation with confidence.',
+        'Yes. None of the lines assume which side of the move the prospect is on, so you can use them word for word with buyers, sellers, or someone who has not decided yet.',
     },
   ],
   relatedBlogPost: {
-    title: 'The "I Need to Think About It" Objection',
+    title: 'The full guide to handling "I need to think about it"',
     href: '/blog/think-about-it-objection',
   },
   relatedFeature: {
