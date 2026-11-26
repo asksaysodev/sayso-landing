@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {products} from './releases.mjs';
+import {validateCoverage} from './coverage.mjs';
 const sha=/^[a-f0-9]{40}$/;
 export function reconcile(previous,report,observedAt) {
   if(previous.version!==1)throw Error('Unknown ledger format');
@@ -20,11 +21,21 @@ export function reconcile(previous,report,observedAt) {
       state.liveSha=data.liveSha;
     }
   }
+  for (const [repo,flags] of Object.entries(report.manualReviews||{})) {
+    if (!products.includes(repo)) throw Error('Unknown manual review product');
+    const state=next.products[repo];
+    for (const [id,reason] of Object.entries(flags)) {
+      if (!['verified-baseline-needed','comparison-needs-manual-review'].includes(reason)) throw Error('Unknown manual review reason');
+      const event=state.events[id]??state.transitions.findLast(t=>'transition-'+t.from+'-'+t.to===id);
+      if (event) event.reviewBlock=reason;
+    }
+  }
   for(const [repo,summaries] of Object.entries(report.summaries||{})){
     if(!products.includes(repo))throw Error('Unknown review product');
     for(const [id,impact] of Object.entries(summaries)){
       if(!sha.test(impact.to)||!sha.test(impact.from)||!impact.articles?.length||
         impact.articles.some(a=>!/^content\/help\/[a-z0-9-]+\/[a-z0-9-]+\.mdx$/.test(a.path)||!/^([a-f0-9]{64})$/.test(a.hash)))throw Error('Unexpected impact index');
+      if (impact.coverage) validateCoverage(repo,impact.coverage);
       const state=next.products[repo];
       const target=state.events[id]??state.transitions.findLast(t=>'transition-'+t.from+'-'+t.to===id);
       if(target && (target.sha || target.to)===impact.to){
@@ -32,7 +43,8 @@ export function reconcile(previous,report,observedAt) {
         const key=createHash('sha256').update(JSON.stringify(inventory)).digest('hex');
         next.inventories ||= {};
         next.inventories[key] ||= inventory;
-        target.impact={from:impact.from,to:impact.to,direction:impact.direction,status:impact.status,
+        delete target.reviewBlock;
+        target.impact={coverage:impact.coverage,from:impact.from,to:impact.to,direction:impact.direction,status:impact.status,
           inventory:key,candidates:impact.articles.flatMap((a,i)=>a.candidate?[i]:[])};
       }
     }

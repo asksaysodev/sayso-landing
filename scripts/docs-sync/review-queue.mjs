@@ -27,3 +27,19 @@ for(const reviews of Object.values(report.summaries)){
  }
 }
 await fs.writeFile('.docs-sync/releases.json',JSON.stringify(report));
+if (process.env.GITHUB_STEP_SUMMARY) {
+ const lines=['## Documentation coverage',''];
+ for(const [repo,releases] of Object.entries(report.summaries)){
+   for(const review of Object.values(releases)){
+     const {changedFiles,unmatchedFiles,filesWithoutPatch,topics}=review.coverage;
+     lines.push(`- ${repo} \`${review.from.slice(0,8)}…${review.to.slice(0,8)}\` · ${changedFiles} changed files, ${unmatchedFiles} outside known topic rules, ${filesWithoutPatch} missing patches. Check for new articles.`);
+     for(const topic of topics){
+       lines.push(`  - ${topic.disposition==='consider-new-article'?'Consider a new article':'Review existing article'} · \`${topic.article}\``);
+     }
+   }
+ }
+ for(const [repo,flags] of Object.entries(report.manualReviews||{})){
+   for(const reason of Object.values(flags)) lines.push(`- ${repo} · Pending review (${reason}).`);
+ }
+ await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,lines.join('\n')+'\n');
+}

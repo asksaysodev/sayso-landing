@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createProcessor} from '@mdx-js/mdx';
 import matter from 'gray-matter';
+import {checkMapCrossLinks} from './coverage.mjs';
 
 const fields={Screenshot:['src','width','alt','caption'],Clip:['src','poster','width','alt','caption'],Phone:['src','alt','caption'],PhoneSteps:[],Tabs:[],Tab:['label'],Ui:[],Kbd:[],Callout:['type','title'],Faq:['q']};
 const safeLocal=/^\/help\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+$/;
@@ -47,5 +48,7 @@ if(process.argv[1]?.endsWith('/validate.mjs')){
      }
    }catch(e){throw Error(article.path+': '+e.message);}
  }
+ const missingLinks=checkMapCrossLinks(inventory);
+ if(missingLinks.length)throw Error('Missing Map cross-links: '+missingLinks.map(x=>x.path+' → '+x.route).join(', '));
  console.log('Validated MDX, Help Center routes and referenced media for '+inventory.length+' articles.');
 }
