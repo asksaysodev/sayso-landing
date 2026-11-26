@@ -41,6 +41,10 @@ jobs:
         run: |
           node scripts/docs-sync/inventory.mjs
           node scripts/docs-sync/queue.mjs
+      - name: Review fixed public topics with isolated credentials
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/docs-sync/review-queue.mjs
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: release-identities

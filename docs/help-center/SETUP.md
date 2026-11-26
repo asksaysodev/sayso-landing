@@ -2,7 +2,7 @@
 
 ## What runs on GitHub
 
-The PR check installs locked dependencies, tests the integration, inventories Help Center articles and builds the website. The historical dry run verifies the stable Desktop v1.3.5 and v1.3.8 releases and compares their resolved commit SHAs on a hosted runner. It performs deterministic dependency matching. A candidate still requires a semantic review before anyone edits an article.
+The PR check installs locked dependencies, tests the integration, inventories Help Center articles and builds the website. The historical dry run verifies the stable Desktop v1.3.5 and v1.3.8 releases and compares their resolved commit SHAs on a hosted runner. It performs deterministic dependency matching and a bounded model review. The outbound request is reconstructed entirely from a fixed public Help Center vocabulary and article positions in each batch. No free-form value from an article, product repository or fixture is accepted. The topic combinations can indicate which broad areas changed. A candidate still requires a semantic review before anyone edits an article.
 
 After this PR reaches the default branch, the discovery workflow can reconcile releases every two hours. It reads stable Desktop releases, Vercel Production deployment statuses for Web App and Composer, Heroku's sayso-server deployment statuses for Backend, and Vercel production records and the live alias for Map. Provider errors stop the checkpoint. The first seven days establish an initial window. Later runs overlap the previous successful scan by seven days. GitHub deployment history outside that window and alias transitions between polls may need manual replay. A release without a verified comparison baseline stays pending.
 
@@ -15,7 +15,7 @@ The capture workflow resolves the live release before checkout. Desktop and Web 
 - Install an organization-owned reader GitHub App on the five product repositories and Stills Bot. Grant Contents, Deployments and Pull requests read access, plus implicit Metadata read. Configure repository variable DOCS_SYNC_APP_ID and repository secret DOCS_SYNC_APP_PRIVATE_KEY. Product repositories require no code changes. The built-in landing token owns the ledger.
 - Configure DOCS_SYNC_VERCEL_TOKEN as a read credential for Map and landing deployment metadata in the Sayso Web team. A connected desktop Vercel session cannot authenticate the hosted runner.
 - The preflight checks the existing ANTHROPIC_API_KEY against the provider's model-list endpoint and checks the Dash bot identity without posting. DASH_SLACK_CHANNEL_ID accepts a repository variable or secret. The expected channel is C0AFQT4KF1D.
-- Leave DOCS_SYNC_ENABLED and DOCS_SYNC_NOTIFY_ENABLED unset until the remaining acceptance tests pass. These switches separately control discovery and notification. Publication and AI generation are not enabled.
+- Leave DOCS_SYNC_ENABLED and DOCS_SYNC_NOTIFY_ENABLED unset until the remaining acceptance tests pass. These switches separately control discovery and notification. Factual generation and automatic publication are not enabled.
 - GitHub reported no classic protection or active branch rules on development or main and repository auto-merge disabled at the time of the audit. Establish the intended required checks and review policy before enabling any automatic merge. A low-risk classifier alone cannot authorize a merge.
 
 ## Publication receipts
@@ -33,7 +33,7 @@ Example Dash message using fictional PR and release references:
 
 The map and composer directories in examples contain 2× screenshots and silent MP4 recordings from verified source. Map source was 319de1819fdc0bf211d05ba05eb45e0a6b0a3a74 and Composer source was 6e9c25e2535e8d373b8fbadc4eb37eb4d37b9fbe. The example Map article is staged outside site content. For a reviewed publication its media URLs must point to the approved files under public/help. The samples establish rendered UI behavior in a fictional session. They do not test live accounts or connected production APIs.
 
-The remote historical dry run covers dependency analysis only. Semantic generation, missing article creation, release note consolidation, full asset freshness review, remote private-source captures, end-to-end publication and live Slack delivery still need acceptance testing. Candidate matches are intentionally broad. Production enablement remains blocked.
+The remote historical dry run covers dependency analysis and public topic classification. Semantic generation, missing article creation, release note consolidation, full asset freshness review, remote private-source captures, end-to-end publication and live Slack delivery still need acceptance testing. Candidate matches are intentionally broad. Production enablement remains blocked.
 
 ## Disable or roll back
 

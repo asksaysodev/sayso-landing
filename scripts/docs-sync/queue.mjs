@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import {evaluate} from './impact.mjs';
+import {topicIds} from './topics.mjs';
 import {products,readJson} from './releases.mjs';
 
 const base='https://api.github.com/repos/asksaysodev/';
@@ -8,7 +9,7 @@ const articles=JSON.parse(await fs.readFile('.docs-sync/inventory.json'));
 const report=JSON.parse(await fs.readFile('.docs-sync/releases.json'));
 const previous=JSON.parse(await fs.readFile('.docs-sync/previous.json'));
 const summaries={};
-let remaining=8;
+let remaining=3;
 for(const repo of products){
  const prior=previous.products[repo]||{events:{},transitions:[]};
  const discovered=report.products[repo];
@@ -27,7 +28,7 @@ for(const repo of products){
    // Only public article names and release identities enter the durable ledger.
    // Source filenames, model inputs and provider responses remain on the ephemeral runner.
    summaries[repo] ||= {};
-   summaries[repo][id]={from,to,direction,articles:rows.map(r=>({path:r.path,hash:r.sha256,candidate:r.candidate})),
+   summaries[repo][id]={from,to,direction,topics:topicIds(compare.files.map(f=>f.filename+' '+(f.patch||'')).join('\n')),articles:rows.map(r=>({path:r.path,hash:r.sha256,candidate:r.candidate})),
      status:'indexed-awaiting-semantic-review'};
  };
  for(let i=1;i<ordered.length;i++){
