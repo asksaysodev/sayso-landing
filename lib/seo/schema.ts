@@ -29,7 +29,7 @@ export function generateBreadcrumbJsonLd(
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${siteUrl}${item.url}`,
+      item: `${siteUrl}${item.url.replace(/\/?$/, '/')}`,
     })),
   };
 }
@@ -145,7 +145,7 @@ export function generateWebPageJsonLd(
     '@type': 'WebPage',
     name,
     description,
-    url: `${siteUrl}${url}`,
+    url: `${siteUrl}${url.replace(/\/?$/, '/')}`,
     publisher: SAYSO_PUBLISHER,
   };
 }

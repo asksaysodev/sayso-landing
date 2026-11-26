@@ -7,6 +7,7 @@ import { HELP_SECTIONS, getHelpSection } from '@/lib/help-sections';
 import { getSectionArticles } from '@/lib/help';
 import { generateBreadcrumbJsonLd } from '@/lib/seo/schema';
 import { siteUrl } from '@/lib/config';
+import { OG_DEFAULTS } from '@/lib/seo/metadata';
 
 export const dynamicParams = false;
 
@@ -26,6 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${sec.title} | Help Center`,
     description: sec.description,
     alternates: { canonical: `${siteUrl}/help/${sec.id}/` },
+    openGraph: {
+      ...OG_DEFAULTS,
+      title: `${sec.title} | Sayso Help Center`,
+      description: sec.description,
+      url: `${siteUrl}/help/${sec.id}/`,
+      type: 'website',
+    },
   };
 }
 

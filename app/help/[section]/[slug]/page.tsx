@@ -10,6 +10,7 @@ import { getHelpSection, HELP_SUPPORT } from '@/lib/help-sections';
 import { getAdjacentArticles, getAllHelpArticles, getHelpArticle, getHelpNav } from '@/lib/help';
 import { generateBreadcrumbJsonLd, SAYSO_PUBLISHER } from '@/lib/seo/schema';
 import { siteUrl } from '@/lib/config';
+import { OG_DEFAULTS } from '@/lib/seo/metadata';
 
 export const dynamicParams = false;
 
@@ -29,7 +30,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${article.seoTitle || article.title} | Help Center`,
     description: article.description,
     alternates: { canonical: `${siteUrl}${article.url}` },
-    openGraph: { title: article.title, description: article.description, type: 'article', modifiedTime: article.updated },
+    openGraph: {
+      ...OG_DEFAULTS,
+      title: article.title,
+      description: article.description,
+      url: `${siteUrl}${article.url}`,
+      type: 'article',
+      modifiedTime: article.updated,
+    },
   };
 }
 
