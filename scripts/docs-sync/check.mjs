@@ -89,7 +89,7 @@ const banned = [
   [/\b(?:helps you|lets you|allows you to|enables you to)\b/i, 'soft verb'],
   [/\b(?:make sure|note that|here's how|in short|keep in mind)\b/i, 'signposting'],
   [/\bso (?:that )?you can\b/i, 'purpose tail'],
-  [/\b(?:right away|it takes seconds|in seconds)\b/i, 'padding'],
+  [/\b(?:right away|it takes seconds|in seconds|for you)\b/i, 'padding'],
   [/\b(?:reps?|team leaders?|phone calls?|free trial|trial)\b/i, 'banned term'],
   [/\bSAYSO\b|\bsayso\b(?!\.com|@| map| composer)|\bSaysoRe\b/, 'product spelling'],
   [/\b(?:headphones? (?:are|is) (?:required|needed|recommended))\b/i, 'headphones claim'],

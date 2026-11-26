@@ -1,6 +1,4 @@
 [
-  {"product":"sayso-map","from":"319de1819fdc0bf211d05ba05eb45e0a6b0a3a74","to":"2129fd32f2368c402752b5a89475fce08d64b3a7","help_ref":"933687ac15f89787696ec5f41a077753dd2e1f50"},
   {"product":"sayso-map","from":"319de1819fdc0bf211d05ba05eb45e0a6b0a3a74","to":"2129fd32f2368c402752b5a89475fce08d64b3a7"},
-  {"product":"sayso-web-app","from":"a5dfbbb97bad3bf68b8bd6673d4dfe0786075067","to":"ad588ca3004f62a829176e3e8cd3aba42a17fdc6"},
-  {"product":"sayso-composer","from":"c07e79f29e0af6ee57635d1a929d4443cadf94fd","to":"6e9c25e2535e8d373b8fbadc4eb37eb4d37b9fbe"}
+  {"product":"sayso-desktop-app","from":"277933727b4cd57279154fcc83ea702033da3a58","to":"1a8727669a1dfff6da9039b38dbb0b6f34cc809c"}
 ]

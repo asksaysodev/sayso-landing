@@ -174,7 +174,7 @@ jobs:
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
-          name: docs-sync-${{ matrix.product }}-${{ matrix.to }}
+          name: docs-sync-${{ matrix.product }}-${{ matrix.to }}-${{ matrix.help_ref || 'dev' }}
           include-hidden-files: true
           retention-days: 7
           path: |
@@ -200,7 +200,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: docs-sync-${{ matrix.product }}-${{ matrix.to }}
+          name: docs-sync-${{ matrix.product }}-${{ matrix.to }}-${{ matrix.help_ref || 'dev' }}
           path: ${{ runner.temp }}/draft
       - id: base
         run: echo "sha=$(cat '${{ runner.temp }}/draft/base.txt')" >> "$GITHUB_OUTPUT"
