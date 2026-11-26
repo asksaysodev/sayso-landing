@@ -10,5 +10,7 @@ interface BlogBreadcrumbProps {
 }
 
 export function BlogBreadcrumb({ items }: BlogBreadcrumbProps) {
-  return <Breadcrumb items={items} />;
+  // The post template outputs BreadcrumbList JSON-LD itself, so the visible
+  // breadcrumb skips its own copy.
+  return <Breadcrumb items={items} jsonLd={false} />;
 }

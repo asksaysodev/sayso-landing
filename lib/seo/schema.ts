@@ -29,7 +29,8 @@ export function generateBreadcrumbJsonLd(
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${siteUrl}${item.url.replace(/\/?$/, '/')}`,
+      // The current page may have no URL; Google allows the last item without one.
+      ...(item.url && { item: `${siteUrl}${item.url.replace(/\/?$/, '/')}` }),
     })),
   };
 }
