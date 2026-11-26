@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/docs-sync-dry-run.yml'
       - 'scripts/docs-sync/coverage.mjs'
+      - 'scripts/docs-sync/editorial*.mjs'
       - 'scripts/docs-sync/replay-decisions.mjs'
       - 'scripts/docs-sync/model.mjs'
       - 'scripts/docs-sync/topics.mjs'
@@ -63,3 +64,7 @@ jobs:
         env:
           DOCS_SYNC_READ_TOKEN: ${{ steps.reader.outputs.token }}
         run: node scripts/docs-sync/replay-decisions.mjs
+      - name: Draft from approved customer-facing evidence with Anthropic
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/docs-sync/editorial-replay.mjs

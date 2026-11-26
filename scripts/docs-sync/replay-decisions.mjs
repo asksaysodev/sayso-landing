@@ -36,6 +36,8 @@ async function verify(get,repo,ref){
   return {sha:ref.sha,time:success.created_at};
 }
 
+const editorialTopics=new Set(['condition','estimate','templates','scriptWizard','manageBilling','meetingDetection']);
+const editorialCases=[];
 const summary=['## Historical documentation decisions',''];
 for(const {repo,from,to,absent=[],update=[]} of cases){
   const get=route=>readJson('https://api.github.com/repos/asksaysodev/'+repo+route,token);
@@ -52,6 +54,9 @@ for(const {repo,from,to,absent=[],update=[]} of cases){
     for(const topic of topics){
       if(decision.topics.find(entry=>entry.topic===topic)?.disposition!==expected)
         throw Error('Unexpected '+repo+' '+topic+' decision');
+      if(editorialTopics.has(topic)) editorialCases.push({
+        topic,hasArticle:expected==='review-existing',expected:expected==='review-existing'?'update':'new',
+      });
     }
   }
   const redeploy=await get('/compare/'+release.sha+'...'+release.sha);
@@ -59,6 +64,7 @@ for(const {repo,from,to,absent=[],update=[]} of cases){
   if(!same||same.requiresNewArticleReview)throw Error('Same source comparison should be skipped');
   summary.push(`- ${repo}: ${decision.changedFiles} changed files. Verified ${absent.length} new-article and ${update.length} update decisions. An identical production SHA skips review.`);
 }
+await fs.writeFile('.docs-sync/editorial-cases.json',JSON.stringify(editorialCases));
 const output=summary.join('\n')+'\n';
 if(process.env.GITHUB_STEP_SUMMARY)await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,output);
 console.log(output);
