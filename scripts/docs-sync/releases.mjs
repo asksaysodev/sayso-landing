@@ -58,8 +58,9 @@ export async function discoverProduct(repo, since, gh, vercel) {
     for (let page = 0; page < 20; page++) {
       const data = await vercel('/v6/deployments?projectId=' + mapProject + '&target=production&state=READY&limit=100&since=' + Date.parse(since) + until);
       for (const d of data.deployments) {
-        if (!verifiedMap(d)) throw Error('Unexpected Map deployment metadata');
-        events.push({id:d.uid, sha:d.meta.githubCommitSha, time:new Date(d.ready || d.created).toISOString()});
+        const detail = await vercel('/v13/deployments/' + encodeURIComponent(d.uid || d.id) + '?');
+        if (!verifiedMap(detail)) throw Error('Unexpected Map deployment metadata');
+        events.push({id:detail.id, sha:detail.meta.githubCommitSha, time:new Date(d.ready || d.created).toISOString()});
       }
       if (!data.pagination?.next) break;
       if (page === 19) throw Error('Map reconciliation window exceeds pagination budget');

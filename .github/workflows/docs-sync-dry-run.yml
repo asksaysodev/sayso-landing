@@ -1,0 +1,34 @@
+name: Docs Sync historical dry run
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/help-center-docs-sync]
+    paths: ['.github/workflows/docs-sync-dry-run.yml']
+permissions:
+  contents: read
+jobs:
+  historical:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - run: node scripts/docs-sync/inventory.mjs
+      - name: Verify both published releases and collect deployed diff
+        env:
+          DOCS_SYNC_READ_TOKEN: ${{ github.token }}
+          HISTORICAL_DESKTOP: '1'
+        run: node scripts/docs-sync/evidence.mjs sayso-desktop-app 277933727b4cd57279154fcc83ea702033da3a58 1a8727669a1dfff6da9039b38dbb0b6f34cc809c
+      - name: Index dependencies and evaluate every article locally
+        run: node scripts/docs-sync/impact.mjs
+      - name: Summarize historical coverage
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const {review}=JSON.parse(fs.readFileSync('.docs-sync/impact.json'));
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Desktop v1.3.5 to v1.3.8. Indexed '+review.length+' articles. '+review.filter(x=>x.candidate).length+' candidates require semantic review. No external AI calls or publication.');
+          NODE
