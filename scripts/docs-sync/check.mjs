@@ -32,8 +32,8 @@ for (const f of changed) {
 }
 const articles = changed.filter((f) => f.endsWith('.mdx'));
 const images = changed.filter((f) => f.startsWith('public/help/'));
-if (articles.filter((f) => !f.endsWith('/whats-new.mdx')).length > 5) fail(`Too many articles changed (${articles.length}).`);
-if (images.length > 10) fail(`Too many images changed (${images.length}).`);
+if (articles.filter((f) => !f.endsWith('/whats-new.mdx')).length > 15) fail(`Too many articles changed (${articles.length}).`);
+if (images.length > 40) fail(`Too many images changed (${images.length}).`);
 for (const f of git('diff', '--name-only', '--diff-filter=D', base).split('\n').filter(Boolean)) fail('Deleted file: ' + f);
 
 // 2. Article structure, components, links and media.

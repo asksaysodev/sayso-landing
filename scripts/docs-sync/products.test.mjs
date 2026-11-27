@@ -7,6 +7,12 @@ test('only interface files are sent to Claude', () => {
   assert.equal(isInterfaceFile('sayso-map', 'lib/pdf-template.mjs'), true);
   assert.equal(isInterfaceFile('sayso-map', 'lib/match.mjs'), false);
   assert.equal(isInterfaceFile('sayso-map', 'api/search.mjs'), false);
+  assert.equal(isInterfaceFile('sayso-map', 'account-app/src/views/Settings/SettingsModal.tsx'), true);
+  assert.equal(isInterfaceFile('sayso-map', 'account-app/src/constants/plans.ts'), true);
+  assert.equal(isInterfaceFile('sayso-map', 'account-app/index.html'), true);
+  assert.equal(isInterfaceFile('sayso-map', 'account-app/src/lib/api.ts'), false);
+  assert.equal(isInterfaceFile('sayso-map', 'account-app/src/dev/mockApi.ts'), false);
+  assert.equal(isInterfaceFile('sayso-map', 'account-app/package.json'), false);
   assert.equal(isInterfaceFile('sayso-web-app', 'src/pages/Settings.tsx'), true);
   assert.equal(isInterfaceFile('sayso-web-app', 'src/pages/Settings.test.tsx'), false);
   assert.equal(isInterfaceFile('sayso-web-app', '.env.production'), false);

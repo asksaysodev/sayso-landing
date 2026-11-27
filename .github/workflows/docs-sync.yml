@@ -136,6 +136,8 @@ jobs:
           case "${{ matrix.product }}" in
             sayso-web-app|sayso-desktop-app|sayso-composer)
               (cd ".docs-sync/stills/product/${{ matrix.product }}" && npm ci --ignore-scripts --no-audit --no-fund) ;;
+            sayso-map)
+              (cd .docs-sync/stills/product/sayso-map/account-app && npm ci --ignore-scripts --no-audit --no-fund) ;;
           esac
 
       - name: Install Claude Code
