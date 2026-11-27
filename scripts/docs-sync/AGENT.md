@@ -51,7 +51,7 @@ If the harness can't render a screen this release changed (it prints `SCREEN BRO
 ## Limits
 
 - Change only `content/help/**` and `public/help/**`. Write your notes and scratch files only under `.docs-sync/`.
-- At most 15 articles plus What's New, and at most 10 images per release. If more is needed, hold and say so.
+- At most 15 articles plus What's New, and at most 40 images per release. If more is needed, hold and say so.
 - Don't commit, push, open PRs or call any network service. Don't read files outside this repo, `.docs-sync/` and the product interface files listed in `release.json`.
 
 ## Finish
