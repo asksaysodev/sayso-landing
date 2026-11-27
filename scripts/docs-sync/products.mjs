@@ -11,7 +11,7 @@ export const PRODUCTS = {
   },
   'sayso-map': {
     name: 'Sayso Map',
-    include: [/^public\//, /^lib\/(?:pdf|email)-template\.mjs$/],
+    include: [/^public\//, /^lib\/(?:pdf|email)-template\.mjs$/, /^account-app\/index\.html$/, /^account-app\/src\/(?!lib\/|dev\/)/],
   },
   'sayso-composer': {
     name: 'Sayso Composer',

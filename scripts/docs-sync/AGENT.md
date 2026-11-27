@@ -31,7 +31,7 @@ Only state what the release code shows. No features, limits, prices or behavior 
 - No em dashes or en dashes. No exclamation marks.
 - Structure: titles never start with "The" or "A". No eyebrows and no subtitle or intro text under headings. Descriptions are 1 to 2 plain sentences. End with a `## Related` list when linking to other articles.
 - Terms: "Sayso" (capital S only), "SaysoRE", "Coach widget", "Sure Send", "Sayso Map", "Sayso Composer". Agents, not reps. Calls, not phone calls. Never "run" a call. Admin or owner, never team leader. Cover buyers and sellers when both apply. UI labels exactly as the code shows them, wrapped in `<Ui>...</Ui>`. Say "tap" for touch-first tools (Sayso Map) and "click" for the desktop and web apps, matching the surrounding articles.
-- Facts: transcripts are kept, audio is never recorded. Never mention trials. Cancel or pause is Settings > Subscription > Manage billing. Sayso works next to CRMs and dialers, never replaces them. No Composer pricing. Map and Composer access is via support@asksayso.com. No invented stats. Headphones are never required. No shared logins.
+- Facts: transcripts are kept, audio is never recorded. Never mention trials. Cancel or pause is Settings > Subscription > Manage billing. Sayso works next to CRMs and dialers, never replaces them. No Composer pricing. For Map and Composer access (sign up, log in, plans, team passcode), describe what the release code shows; existing articles that say to email support for access are outdated where the code now has self-serve sign-up. support@asksayso.com stays the contact for help. No invented stats. Headphones are never required. No shared logins.
 - Match the existing MDX: frontmatter `title`, `description`, `group` (must exist in `lib/help-sections.ts`), `order`, `updated` (today, YYYY-MM-DD), `keywords`. Components allowed: Screenshot, Clip, Phone, PhoneSteps, Tabs, Tab, Ui, Kbd, Callout, Faq, with literal props only. Links to other articles use `/help/<section>/<slug>/`.
 - When you change an article, set its `updated` date to today. Leave articles you don't change untouched.
 - For a new feature (not a fix), add one bullet under the right product in `content/help/support/whats-new.mdx`, newest first, linking to the article, and set that file's `updated` date.
@@ -51,7 +51,7 @@ If the harness can't render a screen this release changed (it prints `SCREEN BRO
 ## Limits
 
 - Change only `content/help/**` and `public/help/**`. Write your notes and scratch files only under `.docs-sync/`.
-- At most 5 articles plus What's New, and at most 10 images per release. If more is needed, hold and say so.
+- At most 15 articles plus What's New, and at most 10 images per release. If more is needed, hold and say so.
 - Don't commit, push, open PRs or call any network service. Don't read files outside this repo, `.docs-sync/` and the product interface files listed in `release.json`.
 
 ## Finish
