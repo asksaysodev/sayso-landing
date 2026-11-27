@@ -19,9 +19,11 @@
       "release": 228
     },
     "sayso-composer": {
-      "sha": "6e9c25e2535e8d373b8fbadc4eb37eb4d37b9fbe",
-      "status": "baseline",
-      "at": "2026-11-26T18:00:51.025Z"
+      "sha": "bac2d60c4f30535a7a663ae9992e9fc1a65d7640",
+      "status": "published",
+      "at": "2026-11-27T07:06:35.296Z",
+      "pr": 231,
+      "release": 232
     },
     "sayso-backend": {
       "sha": "c74376535d66ee71a042c3a9f719ad68693e01d1",
