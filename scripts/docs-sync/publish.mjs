@@ -185,7 +185,9 @@ let stage = 'checking for other unreleased changes';
 let rel;
 try {
   const pending = await gh(`/repos/${LANDING}/compare/main...development`);
-  if (pending.files?.length) {
+  // Docs Sync's own tooling can't change the site, so it never blocks a docs release (it ships along with it).
+  const tooling = /^(?:scripts\/docs-sync\/|\.github\/workflows\/docs-sync[^/]*\.ya?ml$|docs\/help-center\/DOCS_SYNC\.md$)/;
+  if (pending.files?.some((f) => !tooling.test(f.filename))) {
     const e = Error('the development branch has other changes that aren\'t released yet, and releasing now would ship them too');
     e.fix = 'release or hold those other changes first. Then merge the draft PR and release it as usual.';
     throw e;
