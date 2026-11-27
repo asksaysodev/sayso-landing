@@ -13,9 +13,11 @@
     },
     "sayso-map": {
       "sha": "68b8207a9a7a88e3bc7e1e90c16eeb2a3eb24e8f",
-      "status": "held",
-      "at": "2026-11-27T08:09:36.151Z",
-      "reason": "Map's old name-and-passcode screen is gone and the new sign-up, log in, plan and billing screens can't be rendered for screenshots yet, so the access article can't be redone correctly."
+      "status": "error",
+      "at": "2026-11-27T08:26:21.858Z",
+      "pr": 236,
+      "stage": "checking for other unreleased changes",
+      "error": "the development branch has other changes that aren't released yet, and releasing now would ship them too"
     },
     "sayso-composer": {
       "sha": "bac2d60c4f30535a7a663ae9992e9fc1a65d7640",
