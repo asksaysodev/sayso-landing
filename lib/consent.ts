@@ -15,11 +15,59 @@
  *
  * The head script in app/layout.tsx (consentDefaultScript) reads the same
  * cookie before GTM loads, so keep the cookie format in sync with it.
+ *
+ * On asksayso.com and its subdomains the cookie is written for the whole domain
+ * (Domain=.asksayso.com), so one choice covers every Sayso site. On localhost and
+ * Vercel previews it stays host-only. Older visitors have a host-only copy;
+ * migrateConsentCookie (and the same steps in the head script) moves it to the
+ * shared cookie once, so the browser never keeps two cookies with this name.
  */
 
 export const CONSENT_COOKIE = 'sayso_consent';
 export const CONSENT_POLICY_VERSION = '2026-11-19';
 const MAX_AGE_SECONDS = 60 * 60 * 24 * 365;
+const SHARED_COOKIE_DOMAIN = '.asksayso.com';
+
+/** `.asksayso.com` on asksayso.com hosts; null (host-only) on localhost and previews. */
+export function consentCookieDomain(hostname?: string): string | null {
+  const host = hostname ?? (typeof location === 'undefined' ? '' : location.hostname);
+  return host === 'asksayso.com' || host.endsWith('.asksayso.com') ? SHARED_COOKIE_DOMAIN : null;
+}
+
+/** Every sayso_consent value the page can see (two while a host-only copy is still around). */
+function consentCookieValues(): string[] {
+  return document.cookie
+    .split('; ')
+    .filter((c) => c.startsWith(`${CONSENT_COOKIE}=`))
+    .map((c) => c.slice(CONSENT_COOKIE.length + 1));
+}
+
+/** Deletes the host-only copy. Without a Domain attribute, this matches only that copy. */
+function deleteHostOnlyConsentCookie(): void {
+  document.cookie = `${CONSENT_COOKIE}=; Max-Age=0; Path=/`;
+}
+
+function writeConsentCookie(value: string): void {
+  const domain = consentCookieDomain();
+  const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = `${CONSENT_COOKIE}=${value}; Max-Age=${MAX_AGE_SECONDS}; Path=/${domain ? `; Domain=${domain}` : ''}; SameSite=Lax${secure}`;
+}
+
+/**
+ * One-time move from a host-only cookie to the shared one, on asksayso.com hosts.
+ * document.cookie can't say which copy is which, so: note the value, delete the
+ * host-only copy, and if no shared copy is left, write the noted value as the
+ * shared cookie. If a shared copy already exists, it wins. Keep in sync with the
+ * same steps in consentDefaultScript.
+ */
+export function migrateConsentCookie(): void {
+  if (typeof document === 'undefined' || !consentCookieDomain()) return;
+  const before = consentCookieValues();
+  if (before.length === 0) return;
+  deleteHostOnlyConsentCookie();
+  if (consentCookieValues().length > 0) return;
+  writeConsentCookie(before[0]);
+}
 
 /** Fired on window when the visitor's choice changes. */
 export const CONSENT_CHANGE_EVENT = 'sayso:consent-change';
@@ -55,6 +103,7 @@ function encode(choice: ConsentChoice): string {
 /** The stored choice for the current policy version, or null if none. */
 export function readConsent(): ConsentChoice | null {
   if (typeof document === 'undefined') return null;
+  migrateConsentCookie();
   const m = document.cookie.match(new RegExp(`(?:^|; )${CONSENT_COOKIE}=([^;]+)`));
   if (!m) return null;
   const [version, bits] = decodeURIComponent(m[1]).split(':');
@@ -100,8 +149,8 @@ export function pushConsentUpdate(choice: ConsentChoice | null): void {
 /** Saves the choice, updates Consent Mode and tells listeners. */
 export function saveConsent(choice: { analytics: boolean; advertising: boolean }): ConsentChoice {
   const full: ConsentChoice = { ...choice, gpc: gpcEnabled() };
-  const secure = window.location.protocol === 'https:' ? '; Secure' : '';
-  document.cookie = `${CONSENT_COOKIE}=${encodeURIComponent(encode(full))}; Max-Age=${MAX_AGE_SECONDS}; Path=/; SameSite=Lax${secure}`;
+  if (consentCookieDomain()) deleteHostOnlyConsentCookie();
+  writeConsentCookie(encodeURIComponent(encode(full)));
   pushConsentUpdate(full);
   window.dispatchEvent(new CustomEvent<ConsentChoice>(CONSENT_CHANGE_EVENT, { detail: full }));
   return full;
@@ -122,7 +171,11 @@ export function openPrivacyChoices(): void {
 /**
  * Inline head script that runs before GTM: Consent Mode v2 defaults (all
  * denied), then the stored choice, if any, applied right away as an update.
+ * On asksayso.com hosts it first runs the same one-time move as
+ * migrateConsentCookie, so GTM always reads the single shared cookie.
  */
 export const consentDefaultScript = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-(function(){try{var m=document.cookie.match(/(?:^|; )${CONSENT_COOKIE}=([^;]+)/);if(!m)return;var p=decodeURIComponent(m[1]).split(':');if(p[0]!=='${CONSENT_POLICY_VERSION}'||!p[1]||p[1].length<3)return;var b=p[1];var gpc=navigator.globalPrivacyControl===true;var ads=b.charAt(1)==='1'&&(!gpc||b.charAt(2)==='1')?'granted':'denied';gtag('consent','update',{ad_storage:ads,ad_user_data:ads,ad_personalization:ads,analytics_storage:b.charAt(0)==='1'?'granted':'denied'});}catch(e){}})();`;
+(function(){try{var n='${CONSENT_COOKIE}',h=location.hostname,d=h==='asksayso.com'||h.slice(-13)==='.asksayso.com';function vals(){return document.cookie.split('; ').filter(function(c){return c.indexOf(n+'=')===0}).map(function(c){return c.slice(n.length+1)})}
+if(d){var was=vals();if(was.length){document.cookie=n+'=; Max-Age=0; Path=/';if(!vals().length){document.cookie=n+'='+was[0]+'; Max-Age=${MAX_AGE_SECONDS}; Path=/; Domain=${SHARED_COOKIE_DOMAIN}; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')}}}
+var v=vals()[0];if(!v)return;var p=decodeURIComponent(v).split(':');if(p[0]!=='${CONSENT_POLICY_VERSION}'||!p[1]||p[1].length<3)return;var b=p[1];var gpc=navigator.globalPrivacyControl===true;var ads=b.charAt(1)==='1'&&(!gpc||b.charAt(2)==='1')?'granted':'denied';gtag('consent','update',{ad_storage:ads,ad_user_data:ads,ad_personalization:ads,analytics_storage:b.charAt(0)==='1'?'granted':'denied'});}catch(e){}})();`;
