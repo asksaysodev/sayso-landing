@@ -12,11 +12,10 @@
       "at": "2026-11-26T18:00:51.025Z"
     },
     "sayso-map": {
-      "sha": "30bd1fd68cdaed9899182fa18e827646e7a516dd",
-      "status": "published",
-      "at": "2026-11-27T00:25:19.992Z",
-      "pr": 227,
-      "release": 228
+      "sha": "68b8207a9a7a88e3bc7e1e90c16eeb2a3eb24e8f",
+      "status": "held",
+      "at": "2026-11-27T07:47:23.765Z",
+      "reason": "Map now has sign-up, plans and billing, but those screens live in a file this release didn't include, so I can't see the plans, prices, free limits or button names. It also contradicts our rule that Map access goes through support, and the rewrite touches more than 5 articles."
     },
     "sayso-composer": {
       "sha": "bac2d60c4f30535a7a663ae9992e9fc1a65d7640",
