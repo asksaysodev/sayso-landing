@@ -12,11 +12,11 @@
       "at": "2026-11-26T18:00:51.025Z"
     },
     "sayso-map": {
-      "sha": "9fa522e1a8a06ce079bcc87dd25ab5e05dd7c478",
-      "status": "published",
-      "at": "2026-11-27T19:03:46.426Z",
-      "pr": 240,
-      "release": 241
+      "sha": "18c4c6d3fe9f6e3ab0fd2eb72e2e6941e617ae86",
+      "status": "skipped",
+      "at": "2026-11-27T22:54:14.345Z",
+      "note": "Sayso Map now sends welcome and plan-change emails whose links can open Settings > Subscription, and phones no longer zoom in when a text box is tapped; no documented task, label or screen changed.",
+      "plain": "new welcome emails and a phone zoom fix"
     },
     "sayso-composer": {
       "sha": "bac2d60c4f30535a7a663ae9992e9fc1a65d7640",
