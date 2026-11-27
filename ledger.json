@@ -12,11 +12,11 @@
       "at": "2026-11-26T18:00:51.025Z"
     },
     "sayso-map": {
-      "sha": "2631f73b93f89258851097c103fbf63769a63651",
+      "sha": "30bd1fd68cdaed9899182fa18e827646e7a516dd",
       "status": "published",
-      "at": "2026-11-26T22:22:11.534Z",
-      "pr": 225,
-      "release": 226
+      "at": "2026-11-27T00:25:19.992Z",
+      "pr": 227,
+      "release": 228
     },
     "sayso-composer": {
       "sha": "6e9c25e2535e8d373b8fbadc4eb37eb4d37b9fbe",
