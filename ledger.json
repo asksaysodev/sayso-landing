@@ -13,11 +13,10 @@
     },
     "sayso-map": {
       "sha": "68b8207a9a7a88e3bc7e1e90c16eeb2a3eb24e8f",
-      "status": "error",
-      "at": "2026-11-27T08:26:21.858Z",
+      "status": "published",
+      "at": "2026-11-27T15:05:47.803Z",
       "pr": 236,
-      "stage": "checking for other unreleased changes",
-      "error": "the development branch has other changes that aren't released yet, and releasing now would ship them too"
+      "release": 239
     },
     "sayso-composer": {
       "sha": "bac2d60c4f30535a7a663ae9992e9fc1a65d7640",
