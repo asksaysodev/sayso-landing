@@ -1,8 +1,8 @@
 /**
- * Resources dropdown panel: Blog, the Prospecting Calculator, the Ultimate
- * Script Book and the free script generator (Composer, opens in a new tab) as
- * plain link tiles at the top, then the Products, Solutions and About columns, then a link to the
- * resources hub. Centered on the viewport (not the trigger) so it never runs
+ * Resources dropdown panel: the Sayso tools (Map and Composer, open in a new
+ * tab) as cards at the top, then Blog, the Prospecting Calculator and the
+ * Ultimate Script Book as link tiles, then the Products, Solutions and About
+ * columns (About ends with the Help Center), then a link to the resources hub. Centered on the viewport (not the trigger) so it never runs
  * off the right edge on narrower desktops.
  *
  * The panel is `fixed`, but its containing block changes: the viewport when the
@@ -18,7 +18,10 @@
 
 import { useLayoutEffect, useRef } from 'react';
 import Link from 'next/link';
-import { headerNav, resourcesFeatured, resourcesHubHref } from '@/lib/navigation';
+import { FileText, MapPin } from 'lucide-react';
+import { headerNav, resourcesFeatured, resourcesHubHref, resourcesTools } from '@/lib/navigation';
+
+const TOOL_ICONS = { 'nav-map': MapPin, 'nav-composer': FileText } as const;
 
 export function ResourcesMenu({ onNavigate }: { onNavigate: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -66,6 +69,31 @@ export function ResourcesMenu({ onNavigate }: { onNavigate: () => void }) {
       className="fixed left-1/2 top-16 z-50 w-max max-w-[92vw] -translate-x-1/2 pt-2"
     >
       <div className="rounded-2xl bg-white p-5 shadow-popover">
+        <div className="mb-4 grid grid-cols-2 gap-3">
+          {resourcesTools.map((tool) => {
+            const Icon = TOOL_ICONS[tool.dataAnalyticsId as keyof typeof TOOL_ICONS] ?? MapPin;
+            return (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                onClick={onNavigate}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-id={tool.dataAnalyticsId}
+                className="group flex items-center gap-3 rounded-2xl bg-[#F4F4F5] px-4 py-3 ring-1 ring-[#1D4871]/10 transition hover:ring-[#2367EE]/40"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-[#2367EE] shadow-card-sm">
+                  <Icon size={18} aria-hidden />
+                </span>
+                <span>
+                  <span className="block text-[14px] font-semibold text-[#10233A] group-hover:text-[#2367EE]">{tool.label}</span>
+                  <span className="block text-xs text-[#556B86]">{tool.subtitle}</span>
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+
         <div className="mb-5 flex flex-wrap gap-2">
           {resourcesFeatured.map((link) => (
             <Link
@@ -96,6 +124,7 @@ export function ResourcesMenu({ onNavigate }: { onNavigate: () => void }) {
                   key={link.href}
                   href={link.href}
                   onClick={onNavigate}
+                  data-analytics-id={link.dataAnalyticsId}
                   className="block py-1.5 text-sm text-[#10233A] hover:text-[#2367EE]"
                 >
                   {link.label}
