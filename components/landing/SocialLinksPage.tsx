@@ -96,10 +96,10 @@ export function SocialLinksPage() {
                 <Icon size={20} aria-hidden />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="flex items-center gap-2">
-                  <span className="text-[16px] font-semibold leading-tight text-[#10233A]">{title}</span>
+                <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <span className="whitespace-nowrap text-[16px] font-semibold leading-tight text-[#10233A]">{title}</span>
                   {badge && (
-                    <span className="rounded-full bg-[#FFDE59] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#10233A]">
+                    <span className="whitespace-nowrap rounded-full bg-[#FFDE59] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#10233A]">
                       {badge}
                     </span>
                   )}
