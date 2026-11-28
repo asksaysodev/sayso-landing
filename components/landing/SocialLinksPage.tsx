@@ -35,7 +35,7 @@ const LINKS: SocialLink[] = [
   {
     title: 'Sayso Map',
     description: 'Run comps and find other options without the MLS',
-    badge: 'Free',
+    badge: 'Free trial',
     href: 'https://map.asksayso.com',
     icon: MapPin,
     external: true,
@@ -44,7 +44,7 @@ const LINKS: SocialLink[] = [
   {
     title: 'Sayso Composer',
     description: 'Custom call scripts for any scenario',
-    badge: 'Free',
+    badge: 'Free trial',
     href: 'https://composer.asksayso.com',
     icon: FileText,
     external: true,
