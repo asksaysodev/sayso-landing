@@ -33,10 +33,11 @@ export const resourcesFeatured: NavLink[] = [
   { label: 'Blog', href: '/blog' },
   { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator' },
   {
-    label: 'Ultimate Script Book',
+    label: 'Script Book',
     href: '/resources/script-book',
     dataAnalyticsId: 'nav-script-book',
   },
+  { label: 'Help Center', href: '/help', dataAnalyticsId: 'nav-help-center' },
 ];
 
 /** Sayso tools shown as cards at the top of the Resources menu. Both open in a new tab. */
@@ -91,7 +92,6 @@ export const headerNav: NavSection[] = [
       { label: 'Objection Library', href: '/objections' },
       { label: 'Glossary', href: '/glossary' },
       { label: 'FAQ', href: '/faq' },
-      { label: 'Help Center', href: '/help', dataAnalyticsId: 'nav-help-center' },
     ],
   },
 ];
