@@ -101,6 +101,20 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Social bio short links: /ig, /tt, /li, /yt forward to /social with UTM tags.
+      // Temporary (307) so the targets can change without browsers caching them.
+      ...[
+        ['ig', 'instagram'],
+        ['tt', 'tiktok'],
+        ['li', 'linkedin'],
+        ['yt', 'youtube'],
+      ].flatMap(([path, source]) =>
+        [`/${path}`, `/${path}/`].map((from) => ({
+          source: from,
+          destination: `/social/?utm_source=${source}&utm_medium=social&utm_campaign=bio`,
+          permanent: false,
+        })),
+      ),
       // ──────────────────────────────────────────────────
       // SEO MERGES (Nov 2026): overlapping pages folded into the page Google
       // prefers. 301, straight to the final URL with its trailing slash.
