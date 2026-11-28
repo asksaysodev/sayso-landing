@@ -1,6 +1,6 @@
 /**
  * Resources dropdown panel: the Sayso tools (Map and Composer, open in a new
- * tab) as cards at the top, then Blog, the Prospecting Calculator, the Script
+ * tab) as cards at the top, then the Prospecting Calculator, Blog, the Script
  * Book and the Help Center as link tiles on one line, then the Products,
  * Solutions and About columns, then a link to the resources hub. Centered on the viewport (not the trigger) so it never runs
  * off the right edge on narrower desktops.

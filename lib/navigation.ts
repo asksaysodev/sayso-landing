@@ -30,8 +30,8 @@ export const primaryNav: NavLink[] = [
 
 /** Highlighted links at the top of the Resources menu. */
 export const resourcesFeatured: NavLink[] = [
-  { label: 'Blog', href: '/blog' },
   { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator' },
+  { label: 'Blog', href: '/blog' },
   {
     label: 'Script Book',
     href: '/resources/script-book',
