@@ -15,7 +15,7 @@ import { createPortal } from 'react-dom';
 import type { RefObject } from 'react';
 import Link from 'next/link';
 import { ChevronDown, X } from 'lucide-react';
-import { headerNav, loginHref, primaryNav, resourcesFeatured, resourcesHubHref } from '@/lib/navigation';
+import { headerNav, loginHref, primaryNav, resourcesFeatured, resourcesHubHref, resourcesTools } from '@/lib/navigation';
 
 interface MobileMenuProps {
   open: boolean;
@@ -126,7 +126,7 @@ export function MobileMenu({ open, onClose, onBookDemo, onGetSayso, returnFocusR
           </button>
           {resourcesOpen && (
             <div className="pb-3">
-              {resourcesFeatured.map((link) => (
+              {[...resourcesTools, ...resourcesFeatured].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
