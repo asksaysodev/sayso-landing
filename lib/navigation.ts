@@ -30,17 +30,30 @@ export const primaryNav: NavLink[] = [
 
 /** Highlighted links at the top of the Resources menu. */
 export const resourcesFeatured: NavLink[] = [
-  { label: 'Blog', href: '/blog' },
   { label: 'Prospecting Calculator', href: '/tools/prospecting-calculator' },
+  { label: 'Blog', href: '/blog' },
   {
-    label: 'Ultimate Script Book',
+    label: 'Script Book',
     href: '/resources/script-book',
     dataAnalyticsId: 'nav-script-book',
   },
+  { label: 'Help Center', href: '/help', dataAnalyticsId: 'nav-help-center' },
+];
+
+/** Sayso tools shown as cards at the top of the Resources menu. Both open in a new tab. */
+export const resourcesTools: NavLink[] = [
   {
-    label: 'Free Script Generator',
+    label: 'Sayso Map',
+    href: 'https://map.asksayso.com',
+    external: true,
+    subtitle: 'Similar homes for any address',
+    dataAnalyticsId: 'nav-map',
+  },
+  {
+    label: 'Sayso Composer',
     href: 'https://composer.asksayso.com',
     external: true,
+    subtitle: 'A prospecting script in 60 seconds',
     dataAnalyticsId: 'nav-composer',
   },
 ];
