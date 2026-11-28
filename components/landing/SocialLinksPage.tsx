@@ -30,7 +30,7 @@ const LINKS: SocialLink[] = [
     description: 'See Sayso coach a live call',
     href: '/social/demo',
     icon: PlayCircle,
-    analyticsId: 'social-demo',
+    analyticsId: 'cta-social-demo',
   },
   {
     title: 'Sayso Map',
@@ -39,7 +39,7 @@ const LINKS: SocialLink[] = [
     href: 'https://map.asksayso.com',
     icon: MapPin,
     external: true,
-    analyticsId: 'social-map',
+    analyticsId: 'cta-social-map',
   },
   {
     title: 'Sayso Composer',
@@ -48,7 +48,7 @@ const LINKS: SocialLink[] = [
     href: 'https://composer.asksayso.com',
     icon: FileText,
     external: true,
-    analyticsId: 'social-composer',
+    analyticsId: 'cta-social-composer',
   },
 ];
 
