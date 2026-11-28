@@ -34,7 +34,7 @@ const resourcesHub: HubPageConfig = {
     {
       title: 'Prospecting Calculator',
       slug: 'prospecting-calculator',
-      description: 'Work out how many dials and conversations it takes to hit your appointment goal.',
+      description: 'Enter your yearly client goal to see the dials, conversations and appointments you need each day.',
       linkText: 'Run the numbers',
       href: '/tools/prospecting-calculator',
     },
