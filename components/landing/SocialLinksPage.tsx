@@ -3,7 +3,7 @@
 /**
  * Link page for social profile URL slots (Instagram, TikTok, LinkedIn, YouTube).
  * Phone-first and short enough to fit one phone screen: the logo, the headline,
- * the Book a call button (Calendly popup), then cards for the interactive demo
+ * the Book a demo button (Calendly popup), then cards for the interactive demo
  * (/social/demo), Sayso Map and Sayso Composer. Not indexed (see app/social).
  */
 import Link from 'next/link';
@@ -19,6 +19,8 @@ interface SocialLink {
   href: string;
   icon: LucideIcon;
   external?: boolean;
+  /** Small pill next to the title. */
+  badge?: string;
   analyticsId: string;
 }
 
@@ -32,7 +34,8 @@ const LINKS: SocialLink[] = [
   },
   {
     title: 'Sayso Map',
-    description: 'Similar homes near any address',
+    description: 'Run comps and find other options without the MLS',
+    badge: 'Free',
     href: 'https://map.asksayso.com',
     icon: MapPin,
     external: true,
@@ -40,7 +43,8 @@ const LINKS: SocialLink[] = [
   },
   {
     title: 'Sayso Composer',
-    description: 'A call script in 60 seconds',
+    description: 'Custom call scripts for any scenario',
+    badge: 'Free',
     href: 'https://composer.asksayso.com',
     icon: FileText,
     external: true,
@@ -57,7 +61,7 @@ export function BookCallButton({ location }: { location: string }) {
       data-analytics-id={`cta-book-demo-${location}`}
       className="w-full rounded-full bg-[#2367EE] px-6 py-4 text-[17px] font-semibold text-white shadow-button transition hover:-translate-y-px hover:bg-[#1d5ad6]"
     >
-      Book a call
+      Book a demo
     </button>
   );
 }
@@ -77,11 +81,10 @@ export function SocialLinksPage() {
 
       <div className="mt-7">
         <BookCallButton location="social" />
-        <p className="mt-2 text-center text-[13px] text-[#556B86]">20 minutes with the Sayso team</p>
       </div>
 
       <ul className="mt-6 space-y-3">
-        {LINKS.map(({ title, description, href, icon: Icon, external, analyticsId }) => (
+        {LINKS.map(({ title, description, href, icon: Icon, external, badge, analyticsId }) => (
           <li key={title}>
             <Link
               href={href}
@@ -93,7 +96,14 @@ export function SocialLinksPage() {
                 <Icon size={20} aria-hidden />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-[16px] font-semibold leading-tight text-[#10233A]">{title}</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-[16px] font-semibold leading-tight text-[#10233A]">{title}</span>
+                  {badge && (
+                    <span className="rounded-full bg-[#FFDE59] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#10233A]">
+                      {badge}
+                    </span>
+                  )}
+                </span>
                 <span className="block text-[13px] text-[#556B86]">{description}</span>
               </span>
               <ArrowRight size={18} aria-hidden className="shrink-0 text-[#2367EE] transition group-hover:translate-x-0.5" />

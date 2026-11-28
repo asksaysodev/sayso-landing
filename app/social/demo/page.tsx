@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 // The interactive demo on its own, opened from /social. Not indexed.
 export const metadata = buildMetadata({
   title: 'Interactive demo',
-  description: 'See Sayso coach a live call in your browser, then book a call with the Sayso team.',
+  description: 'See Sayso coach a live call in your browser, then book a demo with the Sayso team.',
   path: '/social/demo',
   noindex: true,
 });
@@ -29,7 +29,6 @@ export default function SocialDemoPage() {
         <div className="mx-auto flex max-w-[440px] flex-col px-5 pb-8">
           <div className="mt-6">
             <BookCallButton location="social-demo" />
-            <p className="mt-2 text-center text-[13px] text-[#556B86]">20 minutes with the Sayso team</p>
           </div>
           <Link href="/social" className="mt-4 text-center text-sm font-semibold text-[#2367EE] hover:underline">
             Back to links
